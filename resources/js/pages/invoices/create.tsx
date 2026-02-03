@@ -45,6 +45,8 @@ interface OrderItem {
     id: number;
     container_number: string;
     price_value: number;
+    entry_date?: string | null;
+    exit_date?: string | null;
     // ...property lain
     product_id: number;
     product?: Product; // <-- Tambahkan ini!
@@ -94,6 +96,28 @@ export default function CreateInvoice() {
     const formatRupiah = (n: number) => {
         const num = Number(n) || 0;
         return num > 0 ? `Rp ${num.toLocaleString('id-ID')}` : '';
+    };
+
+    // Helper format datetime - hanya jam
+    const formatTime = (d?: string | null) => {
+        if (!d) return '-';
+        try {
+            const date = new Date(d);
+            return date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+        } catch {
+            return '-';
+        }
+    };
+
+    // Helper format date - hanya tanggal
+    const formatDate = (d?: string | null) => {
+        if (!d) return '-';
+        try {
+            const date = new Date(d);
+            return date.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: '2-digit' });
+        } catch {
+            return '-';
+        }
     };
 
     const today = new Date();
@@ -436,6 +460,12 @@ export default function CreateInvoice() {
                                                                     <div className="text-sm text-gray-500">
                                                                         {/* Nama produk utama */}
                                                                         {item.product?.service_type ?? '-'}
+                                                                    </div>
+
+                                                                    {/* Waktu Kontainer */}
+                                                                    <div className="flex gap-4 text-xs text-gray-600">
+                                                                        <span>Gate In: {formatDate(item.entry_date)} {formatTime(item.entry_date)}</span>
+                                                                        {item.exit_date && <span>Gate Out: {formatDate(item.exit_date)} {formatTime(item.exit_date)}</span>}
                                                                     </div>
                                                                 </label>
                                                                 <div className="w-32 text-right">Rp {priceValue.toLocaleString('id-ID')}</div>

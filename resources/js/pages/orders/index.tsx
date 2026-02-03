@@ -41,6 +41,8 @@ type Props = {
         trashed?: string;
         sort_by?: string;
         sort_dir?: string;
+        date_from?: string;
+        date_to?: string;
     };
 };
 type Customer = {
@@ -126,6 +128,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const filters = rawFilters || {};
     const [search, setSearch] = useState(filters?.search ?? '');
     const [isTrashed, setIsTrashed] = useState(!!filters.trashed);
+    const [dateFrom, setDateFrom] = useState(filters?.date_from ?? '');
+    const [dateTo, setDateTo] = useState(filters?.date_to ?? '');
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
@@ -210,7 +214,12 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const roleId = props.auth?.user?.role_id;
 
     const handleSearch = () => {
-        router.get('/orders', { search, trashed: filters.trashed });
+        router.get('/orders', {
+            search,
+            trashed: filters.trashed,
+            date_from: dateFrom || undefined,
+            date_to: dateTo || undefined,
+        });
     };
 
     const [isEntryDialogOpen, setIsEntryDialogOpen] = useState(false);
@@ -350,6 +359,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     sort_dir: direction,
                     trashed: filters.trashed,
                     search: filters.search,
+                    date_from: filters.date_from,
+                    date_to: filters.date_to,
                 })}
                 className="flex items-center gap-1 font-semibold text-gray-700 hover:text-black"
             >
@@ -416,6 +427,47 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             />
                             <Button onClick={handleSearch} className="w-full sm:w-auto">
                                 Search
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Filter Tanggal */}
+                    <div className="space-y-2">
+                        <Label>Filter Rentang Tanggal</Label>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                            <div className="flex-1">
+                                <Label htmlFor="date-from" className="text-xs text-gray-500">Dari Tanggal</Label>
+                                <Input
+                                    id="date-from"
+                                    type="date"
+                                    value={dateFrom}
+                                    onChange={(e) => setDateFrom(e.target.value)}
+                                    className="w-full"
+                                />
+                            </div>
+                            <div className="flex-1">
+                                <Label htmlFor="date-to" className="text-xs text-gray-500">Sampai Tanggal</Label>
+                                <Input
+                                    id="date-to"
+                                    type="date"
+                                    value={dateTo}
+                                    onChange={(e) => setDateTo(e.target.value)}
+                                    className="w-full"
+                                />
+                            </div>
+                            <Button onClick={handleSearch} className="sm:w-auto">
+                                Filter
+                            </Button>
+                            <Button
+                                variant="outline"
+                                onClick={() => {
+                                    setDateFrom('');
+                                    setDateTo('');
+                                    router.get('/orders', { search, trashed: filters.trashed });
+                                }}
+                                className="sm:w-auto"
+                            >
+                                Reset
                             </Button>
                         </div>
                     </div>

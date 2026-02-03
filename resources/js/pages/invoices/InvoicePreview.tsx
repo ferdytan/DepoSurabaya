@@ -144,21 +144,20 @@ export default function InvoicePreview() {
             padding: 0 !important;
           }
 
-          /* Pastikan semua elemen turunannya juga tidak punya border */
           #invoice-content * {
-            border-color: transparent !important;
             box-shadow: none !important;
             background: transparent !important;
           }
 
-          /* Kecuali jika ada elemen yang memang butuh border (seperti tabel), tambahkan kembali */
-          #invoice-content table {
-            border: 1px solid #000;
+          /* Border tabel untuk cetakan */
+          #invoice-content table,
+          #invoice-content th,
+          #invoice-content td {
+            border: 1px solid #000 !important;
             border-collapse: collapse;
           }
           #invoice-content th,
           #invoice-content td {
-            border: 1px solid #000;
             padding: 4px;
             vertical-align: top;
           }
@@ -434,14 +433,14 @@ export default function InvoicePreview() {
                         {/* Pembayaran & Tanda Tangan */}
                         <div className="no-break-inside mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
                             {/* Kiri: Pembayaran */}
-                            <div className="w-full rounded-md bg-gray-50 p-4 text-sm md:w-1/2">
+                            <div className="w-full rounded-md bg-gray-50 p-4 text-xs md:w-1/2">
                                 <div className="font-semibold">Pembayaran ke Rekening {company?.bank_name ?? 'BCA'}:</div>
-                                <div className="text-lg tracking-wide">{company?.bank_account ?? '463 521 9999'}</div>
+                                <div className="text-base tracking-wide">{company?.bank_account ?? '463 521 9999'}</div>
                                 <div className="mt-1 text-gray-700">{company?.bank_holder ?? 'Depo Surabaya Sejahtera'}</div>
                             </div>
 
                             {/* Kanan: Tanda Tangan */}
-                            <div className="w-full text-center text-sm md:w-1/2 md:text-right">
+                            <div className="w-full text-center text-xs md:w-1/2 md:text-right">
                                 <div>
                                     Surabaya,&nbsp;
                                     {new Intl.DateTimeFormat('id-ID', {
@@ -450,16 +449,12 @@ export default function InvoicePreview() {
                                         year: 'numeric',
                                     }).format(new Date(period_end))}
                                 </div>
+                                {/* Space untuk tanda tangan dan materai */}
                                 <div
-                                    className="mt-6 h-16 border-t pt-1"
+                                    className="mt-4"
                                     style={{
-                                        border: 'none',
-                                        height: 'auto',
-                                        minHeight: '3rem', // Beri ruang minimal
-                                        marginTop: '0.5rem', // Jarak atas
-                                        marginBottom: '0.5rem', // Jarak bawah
-                                        paddingTop: 0,
-                                        paddingBottom: 0,
+                                        minHeight: '5rem', // Ruang untuk tanda tangan + materai
+                                        marginTop: '0.5rem',
                                     }}
                                 ></div>
                                 <div className="font-semibold">(PT. Depo Surabaya Sejahtera)</div>

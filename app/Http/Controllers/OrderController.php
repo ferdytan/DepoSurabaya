@@ -18,6 +18,8 @@ class OrderController extends Controller
 {
     $trashed = $request->input('trashed');
     $search = $request->input('search');
+    $dateFrom = $request->input('date_from');
+    $dateTo = $request->input('date_to');
 
     $query = OrderItem::with([
         'order.customer',
@@ -51,6 +53,14 @@ class OrderController extends Controller
         });
     }
 
+    // 📅 Filter Rentang Tanggal (berdasarkan entry_date)
+    if ($dateFrom) {
+        $query->where('entry_date', '>=', $dateFrom);
+    }
+    if ($dateTo) {
+        $query->where('entry_date', '<=', $dateTo . ' 23:59:59');
+    }
+
     // Urutkan
     $orders = $query->latest()->paginate(10);
 
@@ -69,6 +79,8 @@ class OrderController extends Controller
         'filters' => [
             'search' => $search,
             'trashed' => $trashed,
+            'date_from' => $dateFrom,
+            'date_to' => $dateTo,
         ],
         'flash' => [
             'success' => session('success'),

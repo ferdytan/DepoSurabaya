@@ -10,7 +10,8 @@
       "Bash(php artisan migrate:*)",
       "Bash(php:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }

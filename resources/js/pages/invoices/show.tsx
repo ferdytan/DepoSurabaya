@@ -37,6 +37,7 @@ interface Company {
     bank_name?: string;
     bank_account?: string;
     bank_holder?: string;
+    logo?: string;
 }
 
 interface InvoicePayload {
@@ -187,10 +188,17 @@ export default function ShowInvoice() {
                 <div id="invoice-content" className="mx-auto max-w-5xl space-y-6 rounded-xl border bg-white p-8 shadow">
                     {/* Header Perusahaan */}
                     <div className="flex items-start justify-between">
-                        <div>
-                            <h2 className="mb-1 text-2xl font-semibold">{company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}</h2>
-                            <div>{company?.address ?? 'Jl. Tanjung Sadari No. 90'}</div>
-                            <div>{company?.phone ?? '031-353 9484, 031-3539485'}</div>
+                        <div className="flex items-center gap-4">
+                            <img
+                                src="/logo.png"
+                                alt="Company Logo"
+                                className="h-16 w-auto object-contain"
+                            />
+                            <div>
+                                <h2 className="mb-1 text-2xl font-semibold">{company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}</h2>
+                                <div>{company?.address ?? 'Jl. Tanjung Sadari No. 90'}</div>
+                                <div>{company?.phone ?? '031-353 9484, 031-3539485'}</div>
+                            </div>
                         </div>
 
                         <div className="text-right">

@@ -39,6 +39,7 @@ interface Company {
     bank_name?: string;
     bank_account?: string;
     bank_holder?: string;
+    logo?: string;
 }
 
 interface InvoicePreviewProps {
@@ -53,13 +54,14 @@ interface InvoicePreviewProps {
     materai: number;
     grand_total: number;
     terbilang: string;
-    company?: Company;
 }
 
+type PageProps = { preview: InvoicePreviewProps; company?: Company };
+
 export default function InvoicePreview() {
-    const page = usePage<{ preview: InvoicePreviewProps }>();
-    const { preview } = page.props;
-    const { customer, invoice_number, order, period_start, period_end, status, terbilang, company } = preview;
+    const page = usePage<PageProps>();
+    const { preview, company } = page.props;
+    const { customer, invoice_number, order, period_start, period_end, status, terbilang } = preview;
 
     const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
     const rupiah = (n: number) => Number(n || 0).toLocaleString('id-ID');
@@ -274,10 +276,17 @@ export default function InvoicePreview() {
                     <div id="invoice-content" className="mx-auto max-w-5xl space-y-6 rounded-xl border bg-white p-8 shadow">
                         {/* Header Perusahaan */}
                         <div className="flex items-start justify-between">
-                            <div>
-                                <h2 className="mb-1 text-2xl font-semibold">{company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}</h2>
-                                <div>{company?.address ?? 'Jl. Tanjung Sadari No. 90'}</div>
-                                <div>{company?.phone ?? '031-353 9484, 031-3539485'}</div>
+                            <div className="flex items-center gap-4">
+                                <img
+                                    src="/logo.png"
+                                    alt="Company Logo"
+                                    className="h-16 w-auto object-contain"
+                                />
+                                <div>
+                                    <h2 className="mb-1 text-2xl font-semibold">{company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}</h2>
+                                    <div>{company?.address ?? 'Jl. Tanjung Sadari No. 90'}</div>
+                                    <div>{company?.phone ?? '031-353 9484, 031-3539485'}</div>
+                                </div>
                             </div>
                             <div className="text-right">
                                 <div className="font-semibold">

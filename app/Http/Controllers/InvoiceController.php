@@ -280,10 +280,14 @@ class InvoiceController extends Controller
 
         // Info perusahaan (silakan ganti dari config/setting sesuai kebutuhan)
         $company = [
-            'name'    => 'PT. DEPO SURABAYA SEJAHTERA',
-            'address' => 'Jl. Tanjung Sadari No. 90',
-            'phone'   => 'Telp. 031-353 9484, 031-3539485',
-            'fax'     => 'Fax. 031-3539482',
+            'name'        => 'PT. DEPO SURABAYA SEJAHTERA',
+            'address'     => 'Jl. Tanjung Sadari No. 90',
+            'phone'       => 'Telp. 031-353 9484, 031-3539485',
+            'fax'         => 'Fax. 031-3539482',
+            'logo'        => asset('logo.png'),
+            'bank_name'   => 'BCA',
+            'bank_account'=> '463 521 9999',
+            'bank_holder' => 'Depo Surabaya Sejahtera',
         ];
 
         return Inertia::render('invoices/show', [
@@ -376,10 +380,14 @@ class InvoiceController extends Controller
             'customer' => $order->customer,
             'items' => $items,
             'company' => [
-                'name' => 'PT. DEPO SURABAYA SEJAHTERA',
-                'address' => 'Jl. Tanjung Sadari No. 90',
-                'phone' => 'Telp. 031-353 9484, 031-3539485',
-                'fax' => 'Fax. 031-3539482',
+                'name'        => 'PT. DEPO SURABAYA SEJAHTERA',
+                'address'     => 'Jl. Tanjung Sadari No. 90',
+                'phone'       => 'Telp. 031-353 9484, 031-3539485',
+                'fax'         => 'Fax. 031-3539482',
+                'logo'        => asset('logo.png'),
+                'bank_name'   => 'BCA',
+                'bank_account'=> '463 521 9999',
+                'bank_holder' => 'Depo Surabaya Sejahtera',
             ]
         ]);
     }
@@ -505,6 +513,16 @@ class InvoiceController extends Controller
 
         return Inertia::render('invoices/InvoicePreview', [
             'preview' => $preview,
+            'company' => [
+                'name'        => 'PT. DEPO SURABAYA SEJAHTERA',
+                'address'     => 'Jl. Tanjung Sadari No. 90',
+                'phone'       => 'Telp. 031-353 9484, 031-3539485',
+                'fax'         => 'Fax. 031-3539482',
+                'logo'        => asset('logo.png'),
+                'bank_name'   => 'BCA',
+                'bank_account'=> '463 521 9999',
+                'bank_holder' => 'Depo Surabaya Sejahtera',
+            ],
         ]);
     }
 

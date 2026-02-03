@@ -134,6 +134,7 @@ class InvoiceController extends Controller
         'order_item_ids'=> ['required','array','min:1'],
         'order_item_ids.*' => ['integer'],
         'subtotal'      => ['required','integer','min:0'],
+        'discount'      => ['nullable','integer','min:0'],
         'ppn'           => ['required','integer','min:0'],
         'materai'       => ['required','integer','min:0'],
         'grand_total'   => ['required','integer','min:0'],
@@ -142,6 +143,7 @@ class InvoiceController extends Controller
         'additional_product_quantities.*.order_item_id' => ['required','integer'],
         'additional_product_quantities.*.additional_product_id' => ['required','integer'],
         'additional_product_quantities.*.quantity' => ['required','integer','min:0'],
+        'show_period'   => ['boolean'],
     ]);
 
     return DB::transaction(function () use ($data) {
@@ -191,11 +193,13 @@ class InvoiceController extends Controller
             'period_start'   => $data['period_start'],
             'period_end'     => $data['period_end'],
             'subtotal'       => $subtotal,
+            'discount'       => (int) ($data['discount'] ?? 0),
             'ppn'            => $ppn,
             'materai'        => $materai,
             'grand_total'    => $grand,
             'terbilang'      => $terbilang, // ✅ pakai hasil generate, bukan dari request
             'status'         => 'unpaid',
+            'show_period'    => (bool) ($data['show_period'] ?? true),
         ]);
 
         foreach ($orderItems as $oi) {
@@ -265,11 +269,13 @@ class InvoiceController extends Controller
             'period_start'   => $invoice->period_start,
             'period_end'     => $invoice->period_end,
             'subtotal'       => (int) $invoice->subtotal,
+            'discount'       => (int) ($invoice->discount ?? 0),
             'ppn'            => (int) $invoice->ppn,
             'materai'        => (int) $invoice->materai,
             'grand_total'    => (int) $invoice->grand_total,
             'terbilang'      => $invoice->terbilang,
             'status'         => strtolower($invoice->status ?? 'unpaid'),
+            'show_period'    => (bool) ($invoice->show_period ?? true),
             'customer'       => [
                 'id'   => $invoice->customer->id,
                 'name' => $invoice->customer->name,
@@ -451,11 +457,13 @@ class InvoiceController extends Controller
             'period_end'     => ['required','date','after_or_equal:period_start'],
             'applyMaterai'   => ['boolean'],
             'materai'        => ['nullable','integer','min:0'],
+            'discount'       => ['nullable','integer','min:0'],
             // HAPUS validasi terbilang di sini
             'additional_product_quantities' => ['array'],
             'additional_product_quantities.*.order_item_id' => ['required','integer'],
             'additional_product_quantities.*.additional_product_id' => ['required','integer'],
             'additional_product_quantities.*.quantity' => ['required','integer','min:0'],
+            'show_period'    => ['boolean'],
         ]);
 
         $qtyMap = [];
@@ -488,8 +496,12 @@ class InvoiceController extends Controller
         }
 
         $materai = (int) ($validated['applyMaterai'] ?? true ? ($validated['materai'] ?? 10000) : 0);
-        $ppn     = (int) round($subtotal * 0.11);
-        $grand   = $subtotal + $ppn + $materai;
+        $discount = (int) ($validated['discount'] ?? 0);
+
+        // Hitung: (Subtotal - Diskon) + PPN + Materai
+        $afterDiscount = $subtotal - $discount;
+        $ppn     = (int) round($afterDiscount * 0.11);
+        $grand   = $afterDiscount + $ppn + $materai;
 
         // ✅ Generate terbilang di backend
         $terbilang = $this->numberToWords($grand);
@@ -505,10 +517,12 @@ class InvoiceController extends Controller
             'period_end'     => $validated['period_end'],
             'status'         => 'DRAFT',
             'subtotal'       => $subtotal,
+            'discount'       => $discount,
             'ppn'            => $ppn,
             'materai'        => $materai,
             'grand_total'    => $grand,
             'terbilang'      => $terbilang, // ✅ bukan dari request
+            'show_period'    => (bool) ($validated['show_period'] ?? true),
         ];
 
         return Inertia::render('invoices/InvoicePreview', [

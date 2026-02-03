@@ -46,11 +46,13 @@ interface InvoicePayload {
     period_start: string;
     period_end: string;
     subtotal: number;
+    discount?: number;
     ppn: number;
     materai: number;
     grand_total: number;
     terbilang: string;
     status: string;
+    show_period?: boolean;
     customer: Customer;
     order: Order;
     order_items: OrderItem[];
@@ -60,6 +62,8 @@ type PageProps = { invoice: InvoicePayload; company?: Company };
 export default function ShowInvoice() {
     const page = usePage<PageProps>();
     const { invoice, company } = page.props;
+    const showPeriod = invoice.show_period ?? true;
+    const discount = invoice.discount ?? 0;
 
     const st = (invoice.status ?? 'unpaid').toString().toLowerCase();
     const rupiah = (n: number) => Number(n || 0).toLocaleString('id-ID');
@@ -202,13 +206,15 @@ export default function ShowInvoice() {
                         </div>
 
                         <div className="text-right">
-                            <div className="font-semibold">
-                                Periode:{' '}
-                                <span className="font-normal">
-                                    {dateID(invoice.period_start)} – {dateID(invoice.period_end)}
-                                </span>
-                            </div>
-                            <div className="font-semibold">
+                            {showPeriod && (
+                                <div className="font-semibold">
+                                    Periode:{' '}
+                                    <span className="font-normal">
+                                        {dateID(invoice.period_start)} – {dateID(invoice.period_end)}
+                                    </span>
+                                </div>
+                            )}
+                            <div className="font-semibold print:hidden">
                                 Status:{' '}
                                 <span className={st === 'paid' ? 'text-green-600' : 'text-yellow-500'}>
                                     {st === 'paid' ? 'Lunas' : 'Belum Lunas'}
@@ -297,6 +303,12 @@ export default function ShowInvoice() {
                                     <td className="py-1 pr-4 text-gray-700">Total sebelum PPN</td>
                                     <td className="text-right">Rp {rupiah(invoice.subtotal)}</td>
                                 </tr>
+                                {discount > 0 && (
+                                    <tr>
+                                        <td className="py-1 pr-4 text-orange-600">Diskon</td>
+                                        <td className="text-right text-orange-600">- Rp {rupiah(discount)}</td>
+                                    </tr>
+                                )}
                                 <tr>
                                     <td className="py-1 pr-4 text-gray-700">PPN</td>
                                     <td className="text-right">Rp {rupiah(invoice.ppn)}</td>

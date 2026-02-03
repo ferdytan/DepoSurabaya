@@ -50,10 +50,12 @@ interface InvoicePreviewProps {
     period_end: string;
     status: string;
     subtotal: number;
+    discount?: number;
     ppn: number;
     materai: number;
     grand_total: number;
     terbilang: string;
+    show_period?: boolean;
 }
 
 type PageProps = { preview: InvoicePreviewProps; company?: Company };
@@ -61,7 +63,7 @@ type PageProps = { preview: InvoicePreviewProps; company?: Company };
 export default function InvoicePreview() {
     const page = usePage<PageProps>();
     const { preview, company } = page.props;
-    const { customer, invoice_number, order, period_start, period_end, status, terbilang } = preview;
+    const { customer, invoice_number, order, period_start, period_end, status, terbilang, show_period = true, discount = 0 } = preview;
 
     const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
     const rupiah = (n: number) => Number(n || 0).toLocaleString('id-ID');
@@ -289,13 +291,15 @@ export default function InvoicePreview() {
                                 </div>
                             </div>
                             <div className="text-right">
-                                <div className="font-semibold">
-                                    Periode:{' '}
-                                    <span className="font-normal">
-                                        {dateID(period_start)} – {dateID(period_end)}
-                                    </span>
-                                </div>
-                                <div className="font-semibold">
+                                {show_period && (
+                                    <div className="font-semibold">
+                                        Periode:{' '}
+                                        <span className="font-normal">
+                                            {dateID(period_start)} – {dateID(period_end)}
+                                        </span>
+                                    </div>
+                                )}
+                                <div className="font-semibold print:hidden">
                                     Status: <span className="text-yellow-500">{status}</span>
                                 </div>
                             </div>
@@ -396,11 +400,17 @@ export default function InvoicePreview() {
                                 <tbody>
                                     <tr>
                                         <td className="py-1 pr-4 text-gray-700">Total sebelum PPN</td>
-                                        <td className="text-right">Rp {rupiah(totals.subtotal)}</td>
+                                        <td className="text-right">Rp {rupiah(preview.subtotal)}</td>
                                     </tr>
+                                    {discount > 0 && (
+                                        <tr>
+                                            <td className="py-1 pr-4 text-orange-600">Diskon</td>
+                                            <td className="text-right text-orange-600">- Rp {rupiah(discount)}</td>
+                                        </tr>
+                                    )}
                                     <tr>
                                         <td className="py-1 pr-4 text-gray-700">PPN</td>
-                                        <td className="text-right">Rp {rupiah(totals.ppn)}</td>
+                                        <td className="text-right">Rp {rupiah(preview.ppn)}</td>
                                     </tr>
                                     <tr>
                                         <td className="py-1 pr-4 text-gray-700">Materai</td>
@@ -408,7 +418,7 @@ export default function InvoicePreview() {
                                     </tr>
                                     <tr>
                                         <td className="py-1 pr-4 font-bold">Grand Total</td>
-                                        <td className="text-right font-bold">Rp {rupiah(totals.grand_total)}</td>
+                                        <td className="text-right font-bold">Rp {rupiah(preview.grand_total)}</td>
                                     </tr>
                                     {terbilang && (
                                         <tr>

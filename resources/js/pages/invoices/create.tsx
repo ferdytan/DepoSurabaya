@@ -90,6 +90,12 @@ export default function CreateInvoice() {
     const page = usePage<PageProps>();
     const { customers, invoice_number } = page.props;
 
+    // Helper format rupiah - tampilkan kosong jika 0
+    const formatRupiah = (n: number) => {
+        const num = Number(n) || 0;
+        return num > 0 ? `Rp ${num.toLocaleString('id-ID')}` : '';
+    };
+
     const today = new Date();
     const nextWeek = new Date(today);
     nextWeek.setDate(today.getDate() + 7);
@@ -102,12 +108,16 @@ export default function CreateInvoice() {
         period_start: today.toISOString().split('T')[0],
         period_end: nextWeek.toISOString().split('T')[0],
         subtotal: 0,
+        discount: 0, // Diskon
         ppn: 0,
         grand_total: 0,
         terbilang: '',
         applyMaterai: true, // Default materai aktif
         materai: 10000, // Default nilai materai
+        showPeriod: true, // Default tampilkan periode
     });
+
+    const [showDiscountInput, setShowDiscountInput] = useState(false);
 
     const [selectedCustomerId, setSelectedCustomerId] = useState<string>('');
     const [orders, setOrders] = useState<Order[]>([]);
@@ -171,6 +181,7 @@ export default function CreateInvoice() {
                 selectedOrderId,
                 selectedContainers,
                 form.materai,
+                form.discount,
                 numberToWords,
                 addQty, // NEW
             );
@@ -191,7 +202,7 @@ export default function CreateInvoice() {
                 terbilang: '',
             }));
         }
-    }, [selectedContainers, orders, form.materai, selectedOrderId, addQty]);
+    }, [selectedContainers, orders, form.materai, form.discount, selectedOrderId, addQty]);
 
     // tambahkan parameter addQty pada calculateInvoiceTotals
     function calculateInvoiceTotals(
@@ -199,6 +210,7 @@ export default function CreateInvoice() {
         selectedOrderId: string,
         selectedContainers: Set<number>,
         materai: number,
+        discount: number,
         numberToWords: (num: number) => string,
         addQty: Record<string, number>, // NEW
     ) {
@@ -220,8 +232,10 @@ export default function CreateInvoice() {
             });
         }
 
-        const ppn = Math.round(subtotal * 0.11);
-        const grandTotal = subtotal + ppn + materai;
+        // Hitung: (Subtotal - Diskon) + PPN + Materai
+        const afterDiscount = subtotal - discount;
+        const ppn = Math.round(afterDiscount * 0.11);
+        const grandTotal = afterDiscount + ppn + materai;
         const terbilang = numberToWords(grandTotal);
 
         return { subtotal, ppn, grandTotal, terbilang };
@@ -294,6 +308,7 @@ export default function CreateInvoice() {
                 order_item_ids: Array.from(selectedContainers),
                 additional_product_quantities: additionalSelections, // NEW
                 applyMaterai: form.applyMaterai,
+                show_period: form.showPeriod, // Kirim flag show period
             });
         } catch (err: unknown) {
             const error = err as AxiosErrorResponse; // casting aman karena kita punya tipe
@@ -485,29 +500,45 @@ export default function CreateInvoice() {
                             </div>
                         )}
 
-                        {/* Periode Layanan */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label htmlFor="period_start">Periode Mulai</Label>
-                                <Input
-                                    id="period_start"
-                                    name="period_start"
-                                    type="date"
-                                    value={form.period_start}
-                                    onChange={(e) => setForm({ ...form, period_start: e.target.value })}
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <Label htmlFor="period_end">Periode Akhir</Label>
-                                <Input
-                                    id="period_end"
-                                    name="period_end"
-                                    type="date"
-                                    value={form.period_end}
-                                    onChange={(e) => setForm({ ...form, period_end: e.target.value })}
-                                />
-                            </div>
+                        {/* Show/Hide Periode Toggle */}
+                        <div className="flex items-center space-x-2 rounded-md border p-3">
+                            <input
+                                type="checkbox"
+                                id="showPeriod"
+                                checked={form.showPeriod}
+                                onChange={(e) => setForm({ ...form, showPeriod: e.target.checked })}
+                                className="h-4 w-4"
+                            />
+                            <label htmlFor="showPeriod" className="text-sm font-medium">
+                                Tampilkan Periode pada Invoice
+                            </label>
                         </div>
+
+                        {/* Periode Layanan - Hanya tampil jika showPeriod = true */}
+                        {form.showPeriod && (
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="period_start">Periode Mulai</Label>
+                                    <Input
+                                        id="period_start"
+                                        name="period_start"
+                                        type="date"
+                                        value={form.period_start}
+                                        onChange={(e) => setForm({ ...form, period_start: e.target.value })}
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="period_end">Periode Akhir</Label>
+                                    <Input
+                                        id="period_end"
+                                        name="period_end"
+                                        type="date"
+                                        value={form.period_end}
+                                        onChange={(e) => setForm({ ...form, period_end: e.target.value })}
+                                    />
+                                </div>
+                            </div>
+                        )}
 
                         {/* Hidden Input untuk terbilang */}
                         <Input name="terbilang" value={form.terbilang} type="hidden" />
@@ -517,14 +548,65 @@ export default function CreateInvoice() {
                             <Label>Subtotal</Label>
                             <Input
                                 name="subtotal"
-                                value={isNaN(form.subtotal) ? '0' : `Rp ${form.subtotal.toLocaleString('id-ID')}`}
+                                value={formatRupiah(form.subtotal)}
                                 readOnly
                                 className="bg-gray-100"
                             />
                         </div>
+
+                        {/* Diskon - Kondisional */}
+                        {showDiscountInput ? (
+                            <div className="space-y-2 rounded-md border border-orange-200 bg-orange-50 p-3">
+                                <div className="flex items-center justify-between">
+                                    <Label htmlFor="discount" className="text-orange-800">Diskon</Label>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setShowDiscountInput(false);
+                                            setForm((prev) => ({ ...prev, discount: 0 }));
+                                        }}
+                                        className="text-xs text-red-600 hover:text-red-800"
+                                    >
+                                        × Batal
+                                    </button>
+                                </div>
+                                <Input
+                                    id="discount"
+                                    name="discount"
+                                    type="number"
+                                    min="0"
+                                    value={form.discount || ''}
+                                    onChange={(e) => setForm({ ...form, discount: Number(e.target.value) || 0 })}
+                                    className="bg-white"
+                                    placeholder="Masukkan nominal diskon"
+                                />
+                            </div>
+                        ) : (
+                            <button
+                                type="button"
+                                onClick={() => setShowDiscountInput(true)}
+                                className="flex w-full items-center justify-center rounded-md border border-dashed border-gray-300 py-2 text-sm text-gray-500 hover:border-orange-400 hover:text-orange-600"
+                            >
+                                + Tambah Diskon
+                            </button>
+                        )}
+
+                        {/* Tampilkan Diskon hanya jika > 0 */}
+                        {form.discount > 0 && (
+                            <div className="space-y-2">
+                                <Label className="text-orange-600">Diskon</Label>
+                                <Input
+                                    name="discount_display"
+                                    value={formatRupiah(form.discount)}
+                                    readOnly
+                                    className="bg-orange-50 border-orange-200"
+                                />
+                            </div>
+                        )}
+
                         <div className="space-y-2">
                             <Label>PPN (11%)</Label>
-                            <Input name="ppn" value={`Rp ${form.ppn.toLocaleString('id-ID')}`} readOnly className="bg-gray-100" />
+                            <Input name="ppn" value={formatRupiah(form.ppn)} readOnly className="bg-gray-100" />
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -532,7 +614,7 @@ export default function CreateInvoice() {
                                 <Label>Materai</Label>
                                 <Input
                                     name="materai"
-                                    value={`Rp ${form.materai.toLocaleString('id-ID')}`}
+                                    value={formatRupiah(form.materai)}
                                     readOnly
                                     disabled={!form.applyMaterai}
                                     className={`bg-gray-100 ${!form.applyMaterai ? 'opacity-50' : ''}`}
@@ -562,7 +644,7 @@ export default function CreateInvoice() {
 
                         <div className="space-y-2">
                             <Label>Grand Total</Label>
-                            <Input name="grand_total" value={`Rp ${form.grand_total.toLocaleString()}`} readOnly className="bg-gray-100" />
+                            <Input name="grand_total" value={formatRupiah(form.grand_total)} readOnly className="bg-gray-100" />
                         </div>
 
                         {/* Submit Button */}

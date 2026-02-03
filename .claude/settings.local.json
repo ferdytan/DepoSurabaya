@@ -5,7 +5,12 @@
       "Bash(dir:*)",
       "Bash(curl:*)",
       "Bash(npm run build:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(php artisan make:migration:*)",
+      "Bash(php artisan migrate:*)",
+      "Bash(php:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

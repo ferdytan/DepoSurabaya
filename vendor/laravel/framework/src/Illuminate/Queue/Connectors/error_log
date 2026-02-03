@@ -1,0 +1,248 @@
+[25-Sep-2025 06:40:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[25-Sep-2025 06:46:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[25-Sep-2025 09:40:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[25-Sep-2025 09:57:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[25-Sep-2025 13:12:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[28-Sep-2025 14:07:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[24-Oct-2025 05:57:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[24-Oct-2025 07:36:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[24-Oct-2025 09:02:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[24-Oct-2025 13:49:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[24-Oct-2025 15:16:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[30-Oct-2025 10:07:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[24-Nov-2025 06:21:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[24-Nov-2025 07:10:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[24-Nov-2025 10:25:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[24-Nov-2025 10:39:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[24-Nov-2025 12:01:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[30-Nov-2025 17:01:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[21-Dec-2025 16:29:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[21-Dec-2025 17:16:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[21-Dec-2025 21:04:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[21-Dec-2025 22:48:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[21-Dec-2025 22:51:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[28-Dec-2025 03:05:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[05-Jan-2026 19:09:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[05-Jan-2026 19:50:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[05-Jan-2026 19:50:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[05-Jan-2026 19:51:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[05-Jan-2026 20:19:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[05-Jan-2026 21:05:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[16-Jan-2026 07:10:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[16-Jan-2026 15:08:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[17-Jan-2026 02:57:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[17-Jan-2026 08:15:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[20-Jan-2026 10:36:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[20-Jan-2026 16:38:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[22-Jan-2026 08:53:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[22-Jan-2026 09:53:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[22-Jan-2026 14:37:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[22-Jan-2026 15:17:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[22-Jan-2026 17:25:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[22-Jan-2026 17:41:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[23-Jan-2026 00:19:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[23-Jan-2026 10:36:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[24-Jan-2026 06:57:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[26-Jan-2026 07:46:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[26-Jan-2026 09:34:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[26-Jan-2026 11:21:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[26-Jan-2026 17:35:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[27-Jan-2026 20:20:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[02-Feb-2026 22:08:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[02-Feb-2026 22:08:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[02-Feb-2026 22:08:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[02-Feb-2026 22:08:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[02-Feb-2026 22:08:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[02-Feb-2026 22:08:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7
+[02-Feb-2026 22:15:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/BeanstalkdConnector.php on line 10
+[02-Feb-2026 22:15:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/DatabaseConnector.php on line 8
+[02-Feb-2026 22:15:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/NullConnector.php on line 7
+[02-Feb-2026 22:15:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/RedisConnector.php on line 8
+[02-Feb-2026 22:15:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php on line 9
+[02-Feb-2026 22:15:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Queue\Connectors\ConnectorInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SyncConnector.php on line 7

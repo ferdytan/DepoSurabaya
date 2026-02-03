@@ -1,0 +1,584 @@
+[18-Oct-2025 21:40:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[18-Oct-2025 23:15:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[19-Oct-2025 02:28:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[19-Oct-2025 03:09:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[19-Oct-2025 03:47:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[19-Oct-2025 22:47:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[20-Oct-2025 02:10:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[20-Oct-2025 16:58:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[21-Oct-2025 00:05:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[21-Oct-2025 16:00:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[21-Oct-2025 22:10:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[22-Oct-2025 02:05:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[22-Oct-2025 03:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[22-Oct-2025 05:16:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[22-Oct-2025 23:40:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[23-Oct-2025 08:21:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[24-Oct-2025 04:59:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[24-Oct-2025 06:01:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[24-Oct-2025 06:43:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[24-Oct-2025 07:48:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[24-Oct-2025 08:35:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[24-Oct-2025 08:49:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[24-Oct-2025 11:08:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[24-Oct-2025 11:29:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[24-Oct-2025 12:23:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[24-Oct-2025 12:45:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[24-Oct-2025 15:12:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[24-Oct-2025 15:23:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[25-Oct-2025 12:25:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[25-Oct-2025 14:04:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[25-Oct-2025 15:46:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[01-Nov-2025 20:33:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[01-Nov-2025 21:59:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[16-Nov-2025 19:51:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[16-Nov-2025 19:55:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[16-Nov-2025 20:00:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[16-Nov-2025 20:07:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[16-Nov-2025 20:13:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[17-Nov-2025 05:14:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[18-Nov-2025 07:53:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[18-Nov-2025 11:08:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[19-Nov-2025 20:55:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[21-Nov-2025 03:01:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[21-Nov-2025 10:12:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[21-Nov-2025 22:45:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[23-Nov-2025 06:30:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[23-Nov-2025 18:10:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[24-Nov-2025 01:29:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[24-Nov-2025 01:36:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[24-Nov-2025 02:29:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[24-Nov-2025 04:36:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[24-Nov-2025 05:11:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[24-Nov-2025 06:33:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[24-Nov-2025 06:47:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[24-Nov-2025 09:06:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[24-Nov-2025 09:27:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[24-Nov-2025 10:45:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[24-Nov-2025 10:46:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[24-Nov-2025 13:26:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[25-Nov-2025 13:28:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[25-Nov-2025 14:19:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[25-Nov-2025 22:59:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[26-Nov-2025 01:13:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[26-Nov-2025 23:17:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[28-Nov-2025 07:34:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[14-Dec-2025 12:12:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[14-Dec-2025 12:46:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[14-Dec-2025 13:09:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[14-Dec-2025 13:09:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[14-Dec-2025 13:10:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[14-Dec-2025 13:10:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[14-Dec-2025 13:25:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[14-Dec-2025 13:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[14-Dec-2025 13:35:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[14-Dec-2025 13:35:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[14-Dec-2025 13:35:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[14-Dec-2025 13:36:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[21-Dec-2025 16:26:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[21-Dec-2025 19:41:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[21-Dec-2025 19:58:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[21-Dec-2025 20:46:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[21-Dec-2025 22:58:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[21-Dec-2025 23:09:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[22-Dec-2025 02:11:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[22-Dec-2025 03:20:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[22-Dec-2025 06:06:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[22-Dec-2025 06:26:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[22-Dec-2025 08:06:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[25-Dec-2025 15:18:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[19-Jan-2026 19:08:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[20-Jan-2026 04:55:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[20-Jan-2026 04:58:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[20-Jan-2026 10:52:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[20-Jan-2026 10:55:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[20-Jan-2026 17:44:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[20-Jan-2026 17:46:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[20-Jan-2026 17:49:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[20-Jan-2026 17:51:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[21-Jan-2026 01:27:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[21-Jan-2026 15:05:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[21-Jan-2026 22:10:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[22-Jan-2026 08:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[22-Jan-2026 09:57:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[22-Jan-2026 13:56:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[22-Jan-2026 13:59:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[22-Jan-2026 14:03:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[22-Jan-2026 16:09:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[22-Jan-2026 16:31:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[22-Jan-2026 16:36:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[22-Jan-2026 16:51:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[22-Jan-2026 17:20:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[22-Jan-2026 17:46:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[22-Jan-2026 20:30:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[23-Jan-2026 20:56:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[24-Jan-2026 04:36:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[25-Jan-2026 04:54:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[25-Jan-2026 22:54:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[26-Jan-2026 06:51:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[26-Jan-2026 06:58:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[26-Jan-2026 08:36:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[26-Jan-2026 10:08:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[29-Jan-2026 15:53:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[02-Feb-2026 22:40:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[02-Feb-2026 22:40:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[02-Feb-2026 22:40:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[02-Feb-2026 22:40:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[02-Feb-2026 22:40:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[02-Feb-2026 22:40:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[02-Feb-2026 22:40:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[02-Feb-2026 22:40:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[02-Feb-2026 22:40:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[02-Feb-2026 22:40:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[02-Feb-2026 22:40:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[02-Feb-2026 22:40:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25
+[02-Feb-2026 22:56:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/AjaxDataCollector.php on line 22
+[02-Feb-2026 22:56:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ConfigDataCollector.php on line 26
+[02-Feb-2026 22:56:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollector.php on line 29
+[02-Feb-2026 22:56:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Service\ResetInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DataCollectorInterface.php on line 23
+[02-Feb-2026 22:56:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/DumpDataCollector.php on line 32
+[02-Feb-2026 22:56:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/EventDataCollector.php on line 29
+[02-Feb-2026 22:56:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/ExceptionDataCollector.php on line 23
+[02-Feb-2026 22:56:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php on line 27
+[02-Feb-2026 22:56:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/MemoryDataCollector.php on line 22
+[02-Feb-2026 22:56:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RequestDataCollector.php on line 32
+[02-Feb-2026 22:56:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/RouterDataCollector.php on line 22
+[02-Feb-2026 22:56:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\DataCollector\DataCollector" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/DataCollector/TimeDataCollector.php on line 25

@@ -1,0 +1,104 @@
+[28-Oct-2025 11:30:50 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[28-Oct-2025 11:34:41 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[28-Oct-2025 13:01:18 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Person" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php on line 7
+[28-Oct-2025 14:39:41 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Internet" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php on line 5
+[28-Oct-2025 14:44:05 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\PhoneNumber" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php on line 5
+[13-Jan-2026 05:48:37 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Person" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php on line 7
+[15-Jan-2026 08:38:32 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\PhoneNumber" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php on line 5
+[15-Jan-2026 19:07:41 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[16-Jan-2026 00:30:31 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\PhoneNumber" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php on line 5
+[16-Jan-2026 00:55:31 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[16-Jan-2026 04:34:19 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Person" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php on line 7
+[16-Jan-2026 07:15:46 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Internet" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php on line 5
+[16-Jan-2026 09:04:10 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[17-Jan-2026 02:39:51 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[26-Jan-2026 03:19:37 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[26-Jan-2026 08:37:06 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[02-Feb-2026 21:54:13 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[02-Feb-2026 21:54:14 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[02-Feb-2026 21:54:14 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Internet" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php on line 5
+[02-Feb-2026 21:54:15 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Person" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php on line 7
+[02-Feb-2026 21:54:15 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\PhoneNumber" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php on line 5
+[02-Feb-2026 21:56:05 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\en_US\Address" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Address.php on line 5
+[02-Feb-2026 21:56:05 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Company" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Company.php on line 5
+[02-Feb-2026 21:56:06 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Internet" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Internet.php on line 5
+[02-Feb-2026 21:56:07 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\Person" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/Person.php on line 7
+[02-Feb-2026 21:56:08 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Provider\PhoneNumber" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Provider/en_ZA/PhoneNumber.php on line 5

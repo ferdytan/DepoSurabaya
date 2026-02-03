@@ -1,0 +1,76 @@
+[25-Sep-2025 10:00:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[29-Sep-2025 03:11:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[05-Nov-2025 11:24:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[05-Nov-2025 14:48:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[08-Dec-2025 11:25:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[08-Dec-2025 15:49:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[05-Jan-2026 11:33:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[05-Jan-2026 19:11:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[07-Jan-2026 05:43:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[09-Jan-2026 20:35:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[09-Jan-2026 21:33:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[16-Jan-2026 12:47:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[19-Jan-2026 07:53:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[22-Jan-2026 02:37:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[26-Jan-2026 09:39:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[02-Feb-2026 22:04:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[02-Feb-2026 22:04:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9
+[02-Feb-2026 22:10:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Encryption\Encrypter" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/Encrypter.php on line 11
+[02-Feb-2026 22:10:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php on line 9

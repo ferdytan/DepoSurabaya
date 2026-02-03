@@ -1,0 +1,72 @@
+[18-Oct-2025 12:28:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[18-Oct-2025 16:22:04 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[17-Nov-2025 20:35:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[18-Nov-2025 00:00:08 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[11-Dec-2025 14:33:48 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[14-Dec-2025 00:01:46 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[15-Dec-2025 11:28:31 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[15-Dec-2025 11:28:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[27-Dec-2025 23:30:36 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[30-Dec-2025 14:01:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[10-Jan-2026 16:48:47 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[16-Jan-2026 03:37:46 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[16-Jan-2026 05:09:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[19-Jan-2026 02:54:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[02-Feb-2026 22:17:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[02-Feb-2026 22:17:43 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21
+[02-Feb-2026 22:27:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/MonologTestCase.php on line 26
+[02-Feb-2026 22:27:11 UTC] PHP Fatal error:  Uncaught Error: Class "Monolog\Test\MonologTestCase" not found in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/monolog/monolog/src/Monolog/Test/TestCase.php on line 21

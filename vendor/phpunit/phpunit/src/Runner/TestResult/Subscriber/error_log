@@ -1,0 +1,892 @@
+[25-Sep-2025 06:34:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[25-Sep-2025 07:11:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[25-Sep-2025 07:37:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[25-Sep-2025 08:02:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[25-Sep-2025 09:28:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[25-Sep-2025 09:31:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[25-Sep-2025 09:53:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[25-Sep-2025 10:43:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[25-Sep-2025 10:52:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[25-Sep-2025 10:57:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[25-Sep-2025 13:39:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[25-Sep-2025 13:42:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[25-Sep-2025 16:07:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[25-Sep-2025 18:20:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[28-Sep-2025 14:04:15 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[28-Sep-2025 15:25:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[28-Sep-2025 18:11:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[28-Sep-2025 18:14:20 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[28-Sep-2025 18:21:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[28-Sep-2025 18:27:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[28-Sep-2025 19:48:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[28-Sep-2025 22:53:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[29-Sep-2025 03:12:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[29-Sep-2025 03:20:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[29-Sep-2025 04:47:42 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[24-Oct-2025 04:02:46 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[24-Oct-2025 04:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[24-Oct-2025 05:23:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[24-Oct-2025 07:07:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[24-Oct-2025 08:11:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[24-Oct-2025 08:20:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[24-Oct-2025 12:28:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[24-Oct-2025 12:53:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[24-Oct-2025 12:57:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[24-Oct-2025 14:15:46 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[24-Oct-2025 15:28:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[24-Oct-2025 16:10:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[25-Oct-2025 03:21:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[30-Oct-2025 04:56:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[30-Oct-2025 07:26:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[30-Oct-2025 07:45:11 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[30-Oct-2025 08:14:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[30-Oct-2025 13:17:12 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[30-Oct-2025 13:46:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[30-Oct-2025 13:56:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[30-Oct-2025 14:09:42 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[30-Oct-2025 15:32:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[30-Oct-2025 15:48:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[30-Oct-2025 16:05:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[24-Nov-2025 00:52:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[24-Nov-2025 00:54:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[24-Nov-2025 03:23:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[24-Nov-2025 05:23:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[24-Nov-2025 05:42:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[24-Nov-2025 06:28:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[24-Nov-2025 08:57:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[24-Nov-2025 09:17:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[24-Nov-2025 10:03:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[24-Nov-2025 10:15:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[24-Nov-2025 10:25:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[24-Nov-2025 10:51:44 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[24-Nov-2025 12:00:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[24-Nov-2025 21:39:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[08-Dec-2025 09:00:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[08-Dec-2025 09:45:11 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[08-Dec-2025 11:13:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[08-Dec-2025 11:17:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[08-Dec-2025 11:54:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[08-Dec-2025 12:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[08-Dec-2025 14:57:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[08-Dec-2025 17:04:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[08-Dec-2025 17:25:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[08-Dec-2025 18:58:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[08-Dec-2025 19:29:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[21-Dec-2025 19:15:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[21-Dec-2025 19:37:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[21-Dec-2025 19:54:11 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[21-Dec-2025 20:23:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[22-Dec-2025 02:30:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[22-Dec-2025 02:31:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[22-Dec-2025 02:37:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[22-Dec-2025 04:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[22-Dec-2025 15:19:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[22-Dec-2025 16:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[22-Dec-2025 17:11:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[25-Dec-2025 04:32:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[25-Dec-2025 12:41:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[25-Dec-2025 13:34:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[05-Jan-2026 18:36:11 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[05-Jan-2026 18:36:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[05-Jan-2026 19:26:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[05-Jan-2026 19:26:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[05-Jan-2026 19:26:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[05-Jan-2026 19:27:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[05-Jan-2026 20:30:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[05-Jan-2026 20:30:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[05-Jan-2026 20:30:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[05-Jan-2026 20:30:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[05-Jan-2026 21:02:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[05-Jan-2026 21:02:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[05-Jan-2026 21:08:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[05-Jan-2026 21:08:19 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[05-Jan-2026 21:16:41 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[05-Jan-2026 21:16:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[05-Jan-2026 21:17:12 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[05-Jan-2026 21:17:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[05-Jan-2026 21:25:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[05-Jan-2026 21:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[05-Jan-2026 21:26:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[05-Jan-2026 21:26:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[05-Jan-2026 21:30:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[05-Jan-2026 21:30:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[05-Jan-2026 21:32:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[09-Jan-2026 12:56:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[09-Jan-2026 15:04:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[09-Jan-2026 15:55:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[09-Jan-2026 16:00:19 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[09-Jan-2026 17:26:46 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[09-Jan-2026 20:26:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[09-Jan-2026 23:16:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[09-Jan-2026 23:32:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[09-Jan-2026 23:56:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[10-Jan-2026 02:52:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[11-Jan-2026 20:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[14-Jan-2026 07:55:42 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[14-Jan-2026 08:41:17 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[16-Jan-2026 07:59:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[16-Jan-2026 08:04:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[16-Jan-2026 17:31:19 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[16-Jan-2026 20:46:40 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[16-Jan-2026 21:22:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[17-Jan-2026 00:41:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[17-Jan-2026 05:19:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[18-Jan-2026 05:48:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[19-Jan-2026 00:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[20-Jan-2026 08:12:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[20-Jan-2026 13:00:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[20-Jan-2026 17:23:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[20-Jan-2026 19:40:40 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[20-Jan-2026 22:09:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[21-Jan-2026 03:55:37 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[21-Jan-2026 08:52:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[21-Jan-2026 12:45:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[21-Jan-2026 13:32:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[21-Jan-2026 18:16:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[21-Jan-2026 18:59:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[21-Jan-2026 19:01:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[21-Jan-2026 20:30:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[21-Jan-2026 20:33:46 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[21-Jan-2026 20:36:19 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[21-Jan-2026 21:52:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[21-Jan-2026 21:54:41 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[21-Jan-2026 22:49:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[22-Jan-2026 04:03:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[22-Jan-2026 08:42:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[22-Jan-2026 08:54:04 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[22-Jan-2026 09:01:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[22-Jan-2026 09:45:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[22-Jan-2026 13:01:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[22-Jan-2026 14:03:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[22-Jan-2026 14:40:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[22-Jan-2026 17:12:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[22-Jan-2026 18:02:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[22-Jan-2026 18:07:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[22-Jan-2026 21:36:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[22-Jan-2026 22:10:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[22-Jan-2026 22:11:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[23-Jan-2026 23:55:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[24-Jan-2026 09:51:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[24-Jan-2026 10:38:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[25-Jan-2026 19:21:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[25-Jan-2026 19:48:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[25-Jan-2026 21:31:11 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[02-Feb-2026 22:30:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:30:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:30:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[02-Feb-2026 22:30:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[02-Feb-2026 22:30:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[02-Feb-2026 22:30:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[02-Feb-2026 22:30:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[02-Feb-2026 22:30:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[02-Feb-2026 22:30:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[02-Feb-2026 22:30:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[02-Feb-2026 22:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[02-Feb-2026 22:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[02-Feb-2026 22:30:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[02-Feb-2026 22:30:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[02-Feb-2026 22:30:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:30:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[02-Feb-2026 22:30:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[02-Feb-2026 22:30:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:30:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[02-Feb-2026 22:30:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:30:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[02-Feb-2026 22:30:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[02-Feb-2026 22:30:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[02-Feb-2026 22:30:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[02-Feb-2026 22:43:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/AfterTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:43:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:43:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/ExecutionStartedSubscriber.php on line 20
+[02-Feb-2026 22:43:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[02-Feb-2026 22:43:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestErroredSubscriber.php on line 20
+[02-Feb-2026 22:43:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFailedSubscriber.php on line 20
+[02-Feb-2026 22:43:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestFinishedSubscriber.php on line 20
+[02-Feb-2026 22:43:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[02-Feb-2026 22:43:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestPreparedSubscriber.php on line 20
+[02-Feb-2026 22:43:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:43:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestRunnerTriggeredWarningSubscriber.php on line 20
+[02-Feb-2026 22:43:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSkippedSubscriber.php on line 20
+[02-Feb-2026 22:43:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteFinishedSubscriber.php on line 20
+[02-Feb-2026 22:43:57 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteSkippedSubscriber.php on line 20
+[02-Feb-2026 22:43:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestSuiteStartedSubscriber.php on line 20
+[02-Feb-2026 22:43:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:43:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[02-Feb-2026 22:43:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[02-Feb-2026 22:44:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:44:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[02-Feb-2026 22:44:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitErrorSubscriber.php on line 20
+[02-Feb-2026 22:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[02-Feb-2026 22:44:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[02-Feb-2026 22:44:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TestRunner\TestResult\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Runner/TestResult/Subscriber/TestTriggeredWarningSubscriber.php on line 20

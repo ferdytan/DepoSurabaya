@@ -1,0 +1,476 @@
+[25-Sep-2025 06:02:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[25-Sep-2025 07:30:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[25-Sep-2025 08:10:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[25-Sep-2025 09:06:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[25-Sep-2025 09:18:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[25-Sep-2025 10:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[25-Sep-2025 12:01:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[25-Sep-2025 12:55:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[25-Sep-2025 16:00:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[28-Sep-2025 15:52:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[28-Sep-2025 16:20:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[28-Sep-2025 18:18:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[29-Sep-2025 04:10:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[29-Sep-2025 05:24:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[24-Oct-2025 04:43:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[24-Oct-2025 07:23:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[24-Oct-2025 08:53:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[24-Oct-2025 08:56:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[24-Oct-2025 09:59:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[24-Oct-2025 11:06:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[24-Oct-2025 14:31:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[24-Oct-2025 14:38:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[25-Oct-2025 01:53:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[30-Oct-2025 05:17:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[30-Oct-2025 05:42:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[30-Oct-2025 07:48:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[30-Oct-2025 13:02:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[30-Oct-2025 13:49:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[30-Oct-2025 15:48:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[24-Nov-2025 01:08:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[24-Nov-2025 02:33:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[24-Nov-2025 04:04:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[24-Nov-2025 05:46:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[24-Nov-2025 06:14:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[24-Nov-2025 07:04:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[24-Nov-2025 10:47:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[24-Nov-2025 11:07:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[24-Nov-2025 17:20:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[30-Nov-2025 08:05:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[30-Nov-2025 09:10:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[30-Nov-2025 10:00:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[30-Nov-2025 11:24:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[30-Nov-2025 12:24:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[30-Nov-2025 15:58:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[21-Dec-2025 19:46:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[21-Dec-2025 20:29:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[21-Dec-2025 22:29:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[21-Dec-2025 23:33:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[22-Dec-2025 06:53:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[23-Dec-2025 02:04:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[25-Dec-2025 10:16:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[25-Dec-2025 13:26:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[25-Dec-2025 13:39:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[27-Dec-2025 22:19:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[27-Dec-2025 23:43:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[28-Dec-2025 02:20:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[28-Dec-2025 06:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[28-Dec-2025 07:52:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[28-Dec-2025 09:26:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[19-Jan-2026 15:08:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[19-Jan-2026 17:33:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[19-Jan-2026 20:00:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[20-Jan-2026 19:02:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[22-Jan-2026 11:30:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[22-Jan-2026 12:27:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[22-Jan-2026 12:54:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[22-Jan-2026 13:53:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[22-Jan-2026 14:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[22-Jan-2026 16:34:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[22-Jan-2026 17:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[22-Jan-2026 20:16:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[23-Jan-2026 17:06:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[24-Jan-2026 00:08:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[24-Jan-2026 01:35:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[24-Jan-2026 09:18:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[24-Jan-2026 15:37:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[24-Jan-2026 22:08:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[24-Jan-2026 23:44:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[25-Jan-2026 02:14:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[25-Jan-2026 05:10:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[25-Jan-2026 10:56:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[25-Jan-2026 18:40:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[27-Jan-2026 03:37:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[27-Jan-2026 16:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[27-Jan-2026 18:49:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[27-Jan-2026 21:53:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[28-Jan-2026 00:55:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[28-Jan-2026 01:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[28-Jan-2026 02:46:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[02-Feb-2026 22:08:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[02-Feb-2026 22:08:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[02-Feb-2026 22:08:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[02-Feb-2026 22:08:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[02-Feb-2026 22:08:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[02-Feb-2026 22:08:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[02-Feb-2026 22:08:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[02-Feb-2026 22:08:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[02-Feb-2026 22:08:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[02-Feb-2026 22:08:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[02-Feb-2026 22:08:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[02-Feb-2026 22:08:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[02-Feb-2026 22:08:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[02-Feb-2026 22:08:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[02-Feb-2026 22:08:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24
+[02-Feb-2026 22:15:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/BatchesTableCommand.php on line 11
+[02-Feb-2026 22:15:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ClearCommand.php on line 15
+[02-Feb-2026 22:15:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FailedTableCommand.php on line 11
+[02-Feb-2026 22:15:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/FlushFailedCommand.php on line 9
+[02-Feb-2026 22:15:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ForgetFailedCommand.php on line 9
+[02-Feb-2026 22:15:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListenCommand.php on line 12
+[02-Feb-2026 22:15:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/ListFailedCommand.php on line 11
+[02-Feb-2026 22:15:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/MonitorCommand.php on line 13
+[02-Feb-2026 22:15:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneBatchesCommand.php on line 13
+[02-Feb-2026 22:15:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/PruneFailedJobsCommand.php on line 11
+[02-Feb-2026 22:15:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RestartCommand.php on line 11
+[02-Feb-2026 22:15:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryBatchCommand.php on line 11
+[02-Feb-2026 22:15:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php on line 15
+[02-Feb-2026 22:15:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\MigrationGeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/TableCommand.php on line 11
+[02-Feb-2026 22:15:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Console/WorkCommand.php on line 24

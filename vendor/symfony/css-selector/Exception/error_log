@@ -1,0 +1,196 @@
+[18-Oct-2025 12:47:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[18-Oct-2025 20:14:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[18-Oct-2025 20:26:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[24-Oct-2025 05:14:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[24-Oct-2025 08:48:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[02-Nov-2025 07:53:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[05-Nov-2025 16:02:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[06-Nov-2025 08:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[09-Nov-2025 07:58:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[09-Nov-2025 13:17:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[09-Nov-2025 13:27:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[09-Nov-2025 14:29:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[09-Nov-2025 16:54:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[09-Nov-2025 17:05:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[10-Nov-2025 00:07:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[10-Nov-2025 23:33:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[12-Nov-2025 17:04:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[13-Nov-2025 09:54:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[15-Nov-2025 06:37:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[18-Nov-2025 20:59:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[18-Nov-2025 23:28:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[24-Nov-2025 01:49:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[24-Nov-2025 05:49:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[24-Nov-2025 08:19:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[24-Nov-2025 15:28:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[14-Dec-2025 09:59:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[14-Dec-2025 11:40:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[14-Dec-2025 12:48:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[14-Dec-2025 12:48:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[28-Dec-2025 02:53:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[28-Dec-2025 03:26:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[28-Dec-2025 07:49:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[28-Dec-2025 19:39:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[19-Jan-2026 07:15:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[19-Jan-2026 23:41:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[25-Jan-2026 03:02:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[28-Jan-2026 01:25:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[28-Jan-2026 03:20:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[28-Jan-2026 04:37:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[28-Jan-2026 05:08:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[02-Feb-2026 15:50:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[02-Feb-2026 22:37:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[02-Feb-2026 22:37:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[02-Feb-2026 22:37:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[02-Feb-2026 22:37:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24
+[02-Feb-2026 22:53:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ExpressionErrorException.php on line 22
+[02-Feb-2026 22:53:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/InternalErrorException.php on line 22
+[02-Feb-2026 22:53:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/ParseException.php on line 22
+[02-Feb-2026 22:53:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Exception\ParseException" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Exception/SyntaxErrorException.php on line 24

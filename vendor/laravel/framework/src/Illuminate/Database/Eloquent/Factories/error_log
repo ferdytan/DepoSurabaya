@@ -1,0 +1,10 @@
+[02-Feb-2026 22:04:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Sequence" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/CrossJoinSequence.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/CrossJoinSequence.php on line 7
+[02-Feb-2026 22:04:20 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php on line 25
+[02-Feb-2026 22:09:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Sequence" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/CrossJoinSequence.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/CrossJoinSequence.php on line 7
+[02-Feb-2026 22:09:48 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php on line 25

@@ -1,0 +1,64 @@
+[02-Feb-2026 22:13:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/AutolinkParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/AutolinkParser.php on line 25
+[02-Feb-2026 22:13:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BacktickParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BacktickParser.php on line 26
+[02-Feb-2026 22:13:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BangParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BangParser.php on line 24
+[02-Feb-2026 22:13:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/CloseBracketParser.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/CloseBracketParser.php on line 37
+[02-Feb-2026 22:13:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EntityParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EntityParser.php on line 26
+[02-Feb-2026 22:13:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EscapableParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EscapableParser.php on line 26
+[02-Feb-2026 22:13:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/HtmlInlineParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/HtmlInlineParser.php on line 25
+[02-Feb-2026 22:13:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/OpenBracketParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/OpenBracketParser.php on line 24
+[02-Feb-2026 22:21:16 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/AutolinkParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/AutolinkParser.php on line 25
+[02-Feb-2026 22:21:16 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BacktickParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BacktickParser.php on line 26
+[02-Feb-2026 22:21:17 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BangParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/BangParser.php on line 24
+[02-Feb-2026 22:21:18 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/CloseBracketParser.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/CloseBracketParser.php on line 37
+[02-Feb-2026 22:21:18 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EntityParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EntityParser.php on line 26
+[02-Feb-2026 22:21:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EscapableParser.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/EscapableParser.php on line 26
+[02-Feb-2026 22:21:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/HtmlInlineParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/HtmlInlineParser.php on line 25
+[02-Feb-2026 22:21:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/OpenBracketParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Parser/Inline/OpenBracketParser.php on line 24

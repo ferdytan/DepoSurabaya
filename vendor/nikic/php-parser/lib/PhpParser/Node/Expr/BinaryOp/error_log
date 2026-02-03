@@ -1,0 +1,356 @@
+[16-Oct-2025 04:12:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php on line 7
+[16-Oct-2025 04:14:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php on line 7
+[16-Oct-2025 22:07:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php on line 7
+[17-Oct-2025 10:46:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php on line 7
+[18-Oct-2025 01:28:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php on line 7
+[18-Oct-2025 02:27:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php on line 7
+[18-Oct-2025 02:49:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php on line 7
+[18-Oct-2025 02:56:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php on line 7
+[18-Oct-2025 03:00:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php on line 7
+[18-Oct-2025 03:04:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php on line 7
+[18-Oct-2025 03:56:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php on line 7
+[18-Oct-2025 04:00:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php on line 7
+[18-Oct-2025 04:03:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php on line 7
+[18-Oct-2025 04:20:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php on line 7
+[18-Oct-2025 04:56:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php on line 7
+[14-Dec-2025 10:46:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php on line 7
+[21-Jan-2026 19:46:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php on line 7
+[21-Jan-2026 19:50:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php on line 7
+[21-Jan-2026 20:21:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php on line 7
+[21-Jan-2026 20:23:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php on line 7
+[21-Jan-2026 21:18:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php on line 7
+[21-Jan-2026 21:36:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php on line 7
+[21-Jan-2026 21:38:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php on line 7
+[21-Jan-2026 22:08:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php on line 7
+[21-Jan-2026 22:10:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php on line 7
+[21-Jan-2026 22:13:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php on line 7
+[21-Jan-2026 22:15:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php on line 7
+[21-Jan-2026 22:19:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php on line 7
+[21-Jan-2026 22:47:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php on line 7
+[21-Jan-2026 22:56:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php on line 7
+[23-Jan-2026 03:22:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php on line 7
+[23-Jan-2026 04:09:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php on line 7
+[23-Jan-2026 06:22:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php on line 7
+[23-Jan-2026 07:52:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php on line 7
+[26-Jan-2026 18:19:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php on line 7
+[02-Feb-2026 22:22:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php on line 7
+[02-Feb-2026 22:22:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php on line 7
+[02-Feb-2026 22:22:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php on line 7
+[02-Feb-2026 22:22:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php on line 7
+[02-Feb-2026 22:22:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php on line 7
+[02-Feb-2026 22:22:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php on line 7
+[02-Feb-2026 22:22:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php on line 7
+[02-Feb-2026 22:22:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php on line 7
+[02-Feb-2026 22:22:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php on line 7
+[02-Feb-2026 22:22:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php on line 7
+[02-Feb-2026 22:22:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php on line 7
+[02-Feb-2026 22:22:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php on line 7
+[02-Feb-2026 22:22:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php on line 7
+[02-Feb-2026 22:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php on line 7
+[02-Feb-2026 22:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php on line 7
+[02-Feb-2026 22:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php on line 7
+[02-Feb-2026 22:22:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php on line 7
+[02-Feb-2026 22:22:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php on line 7
+[02-Feb-2026 22:22:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php on line 7
+[02-Feb-2026 22:22:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php on line 7
+[02-Feb-2026 22:22:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php on line 7
+[02-Feb-2026 22:22:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php on line 7
+[02-Feb-2026 22:22:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php on line 7
+[02-Feb-2026 22:22:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php on line 7
+[02-Feb-2026 22:23:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php on line 7
+[02-Feb-2026 22:23:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php on line 7
+[02-Feb-2026 22:23:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php on line 7
+[02-Feb-2026 22:33:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php on line 7
+[02-Feb-2026 22:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php on line 7
+[02-Feb-2026 22:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php on line 7
+[02-Feb-2026 22:33:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php on line 7
+[02-Feb-2026 22:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php on line 7
+[02-Feb-2026 22:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php on line 7
+[02-Feb-2026 22:33:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php on line 7
+[02-Feb-2026 22:33:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php on line 7
+[02-Feb-2026 22:33:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php on line 7
+[02-Feb-2026 22:33:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php on line 7
+[02-Feb-2026 22:33:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php on line 7
+[02-Feb-2026 22:33:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php on line 7
+[02-Feb-2026 22:33:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php on line 7
+[02-Feb-2026 22:33:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php on line 7
+[02-Feb-2026 22:33:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php on line 7
+[02-Feb-2026 22:33:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php on line 7
+[02-Feb-2026 22:33:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php on line 7
+[02-Feb-2026 22:33:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php on line 7
+[02-Feb-2026 22:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php on line 7
+[02-Feb-2026 22:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php on line 7
+[02-Feb-2026 22:33:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php on line 7
+[02-Feb-2026 22:33:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php on line 7
+[02-Feb-2026 22:33:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php on line 7
+[02-Feb-2026 22:33:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php on line 7
+[02-Feb-2026 22:33:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php on line 7
+[02-Feb-2026 22:33:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php on line 7
+[02-Feb-2026 22:33:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\BinaryOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php on line 7

@@ -1,0 +1,48 @@
+[25-Sep-2025 12:21:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12
+[25-Sep-2025 19:50:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[11-Nov-2025 18:31:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[11-Nov-2025 21:03:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12
+[15-Dec-2025 13:47:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12
+[16-Dec-2025 00:39:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[16-Jan-2026 05:43:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[17-Jan-2026 00:25:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12
+[02-Feb-2026 22:09:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[02-Feb-2026 22:09:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12
+[02-Feb-2026 22:15:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php on line 15
+[02-Feb-2026 22:15:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Redis\Connector" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PredisConnector.php on line 12

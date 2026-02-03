@@ -1,0 +1,400 @@
+[25-Sep-2025 08:20:28 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[25-Sep-2025 10:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[25-Sep-2025 11:27:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[25-Sep-2025 12:05:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[25-Sep-2025 14:45:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[25-Sep-2025 18:09:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[28-Sep-2025 13:40:48 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[28-Sep-2025 15:29:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[28-Sep-2025 18:04:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[28-Sep-2025 22:16:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[29-Sep-2025 02:58:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[29-Sep-2025 03:01:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[29-Sep-2025 03:09:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[24-Oct-2025 04:12:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[24-Oct-2025 05:16:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[24-Oct-2025 05:25:02 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[24-Oct-2025 07:52:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[24-Oct-2025 08:11:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[24-Oct-2025 15:05:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[30-Oct-2025 10:01:52 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[30-Oct-2025 12:52:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[30-Oct-2025 13:37:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[30-Oct-2025 14:26:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[30-Oct-2025 14:56:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[30-Oct-2025 15:21:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[30-Oct-2025 17:31:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[24-Nov-2025 01:13:03 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[24-Nov-2025 01:20:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[24-Nov-2025 01:47:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[24-Nov-2025 04:36:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[24-Nov-2025 06:05:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[24-Nov-2025 10:18:22 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[30-Nov-2025 07:13:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[30-Nov-2025 09:54:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[30-Nov-2025 14:03:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[30-Nov-2025 16:19:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[30-Nov-2025 17:07:58 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[30-Nov-2025 18:10:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[30-Nov-2025 19:03:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[21-Dec-2025 17:47:16 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[21-Dec-2025 18:05:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[21-Dec-2025 19:45:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[21-Dec-2025 21:12:33 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[22-Dec-2025 04:59:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[22-Dec-2025 07:57:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[28-Dec-2025 03:53:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[28-Dec-2025 05:33:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[28-Dec-2025 05:59:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[28-Dec-2025 06:22:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[28-Dec-2025 09:27:23 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[28-Dec-2025 10:28:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[30-Dec-2025 00:29:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[05-Jan-2026 11:41:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[05-Jan-2026 11:41:37 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[05-Jan-2026 19:17:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[05-Jan-2026 19:17:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[05-Jan-2026 19:18:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[05-Jan-2026 19:18:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[05-Jan-2026 19:18:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[05-Jan-2026 19:57:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[05-Jan-2026 20:43:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[05-Jan-2026 20:44:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[05-Jan-2026 20:44:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[05-Jan-2026 20:44:45 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[05-Jan-2026 21:00:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[16-Jan-2026 08:47:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[16-Jan-2026 12:52:19 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[16-Jan-2026 13:28:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[17-Jan-2026 05:14:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[21-Jan-2026 05:24:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[21-Jan-2026 09:43:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[21-Jan-2026 12:53:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[21-Jan-2026 15:50:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[22-Jan-2026 00:47:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[22-Jan-2026 08:57:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[22-Jan-2026 09:03:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[22-Jan-2026 12:52:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[22-Jan-2026 13:29:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[22-Jan-2026 13:30:25 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[22-Jan-2026 13:57:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[22-Jan-2026 14:49:59 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[22-Jan-2026 15:35:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[23-Jan-2026 05:35:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[24-Jan-2026 14:52:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[25-Jan-2026 13:38:41 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[26-Jan-2026 10:13:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[26-Jan-2026 11:33:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[26-Jan-2026 13:39:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[27-Jan-2026 17:45:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[27-Jan-2026 18:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[27-Jan-2026 21:48:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[27-Jan-2026 23:29:04 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[28-Jan-2026 00:08:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[28-Jan-2026 03:26:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[28-Jan-2026 04:10:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[02-Feb-2026 22:02:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[02-Feb-2026 22:02:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[02-Feb-2026 22:02:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[02-Feb-2026 22:02:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[02-Feb-2026 22:02:18 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[02-Feb-2026 22:02:19 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[02-Feb-2026 22:02:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[02-Feb-2026 22:02:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[02-Feb-2026 22:02:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[02-Feb-2026 22:02:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[02-Feb-2026 22:02:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[02-Feb-2026 22:02:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[02-Feb-2026 22:02:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14
+[02-Feb-2026 22:07:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\EventMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheEventMutex.php on line 9
+[02-Feb-2026 22:07:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Console\Scheduling\SchedulingMutex" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CacheSchedulingMutex.php on line 8
+[02-Feb-2026 22:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Scheduling\Event" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/CallbackEvent.php on line 12
+[02-Feb-2026 22:07:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Event.php on line 24
+[02-Feb-2026 22:07:07 UTC] PHP Fatal error:  Trait "Illuminate\Console\Scheduling\ManagesAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/PendingEventAttributes.php on line 8
+[02-Feb-2026 22:07:07 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/Schedule.php on line 25
+[02-Feb-2026 22:07:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleClearCacheCommand.php on line 9
+[02-Feb-2026 22:07:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleFinishCommand.php on line 12
+[02-Feb-2026 22:07:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php on line 11
+[02-Feb-2026 22:07:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleListCommand.php on line 17
+[02-Feb-2026 22:07:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleRunCommand.php on line 22
+[02-Feb-2026 22:07:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleTestCommand.php on line 12
+[02-Feb-2026 22:07:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Scheduling/ScheduleWorkCommand.php on line 14

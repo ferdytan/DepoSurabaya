@@ -1,0 +1,208 @@
+[25-Sep-2025 06:51:37 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[25-Sep-2025 09:25:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[25-Sep-2025 10:16:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[29-Sep-2025 05:42:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[12-Oct-2025 17:11:53 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[24-Oct-2025 12:35:15 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[30-Oct-2025 04:55:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[30-Oct-2025 05:46:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[30-Oct-2025 12:21:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[11-Nov-2025 21:36:42 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[30-Nov-2025 12:37:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[30-Nov-2025 14:53:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[30-Nov-2025 16:05:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[30-Nov-2025 16:22:16 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[08-Dec-2025 12:54:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[12-Dec-2025 00:11:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[22-Dec-2025 14:06:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[22-Dec-2025 14:48:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[22-Dec-2025 21:01:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[23-Dec-2025 21:35:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[27-Dec-2025 22:28:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[27-Dec-2025 23:55:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[28-Dec-2025 07:15:55 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[28-Dec-2025 08:41:20 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[29-Dec-2025 01:42:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[05-Jan-2026 09:58:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[05-Jan-2026 12:04:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[05-Jan-2026 12:04:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[09-Jan-2026 19:32:36 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[10-Jan-2026 05:00:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[10-Jan-2026 05:46:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[10-Jan-2026 20:55:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[14-Jan-2026 21:19:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[18-Jan-2026 18:10:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[19-Jan-2026 22:45:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[20-Jan-2026 09:46:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[25-Jan-2026 10:15:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[25-Jan-2026 14:11:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[27-Jan-2026 19:02:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[27-Jan-2026 20:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[27-Jan-2026 21:35:04 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[28-Jan-2026 02:55:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[02-Feb-2026 22:27:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[02-Feb-2026 22:27:59 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[02-Feb-2026 22:28:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[02-Feb-2026 22:28:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[02-Feb-2026 22:28:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22
+[02-Feb-2026 22:39:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php on line 20
+[02-Feb-2026 22:39:52 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php on line 31
+[02-Feb-2026 22:39:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php on line 15
+[02-Feb-2026 22:39:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php on line 26
+[02-Feb-2026 22:39:54 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php on line 22

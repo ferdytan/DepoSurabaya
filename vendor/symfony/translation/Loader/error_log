@@ -1,0 +1,776 @@
+[01-Oct-2025 01:00:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[01-Oct-2025 01:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[01-Oct-2025 04:14:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[04-Oct-2025 13:58:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[04-Oct-2025 14:31:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[04-Oct-2025 15:26:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[04-Oct-2025 20:15:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[18-Oct-2025 10:07:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[18-Oct-2025 10:52:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[18-Oct-2025 19:15:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[18-Oct-2025 20:10:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[26-Oct-2025 23:48:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[30-Oct-2025 09:10:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[30-Oct-2025 10:00:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[02-Nov-2025 21:21:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[05-Nov-2025 08:54:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[05-Nov-2025 09:38:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[05-Nov-2025 09:42:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[05-Nov-2025 13:14:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[05-Nov-2025 13:40:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[05-Nov-2025 14:23:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[05-Nov-2025 14:55:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[05-Nov-2025 15:06:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[05-Nov-2025 16:17:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[06-Nov-2025 21:40:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[07-Nov-2025 04:24:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[08-Nov-2025 16:42:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[08-Nov-2025 21:05:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[08-Nov-2025 21:25:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[09-Nov-2025 02:35:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[09-Nov-2025 03:21:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[09-Nov-2025 13:15:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[09-Nov-2025 13:19:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[09-Nov-2025 13:24:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[09-Nov-2025 14:55:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[09-Nov-2025 15:28:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[09-Nov-2025 17:35:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[09-Nov-2025 17:48:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[09-Nov-2025 18:27:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[09-Nov-2025 19:41:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[09-Nov-2025 19:50:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[09-Nov-2025 20:18:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[09-Nov-2025 21:55:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[09-Nov-2025 22:25:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[09-Nov-2025 23:41:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[10-Nov-2025 09:44:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[10-Nov-2025 10:10:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[10-Nov-2025 12:25:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[10-Nov-2025 13:11:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[10-Nov-2025 18:18:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[10-Nov-2025 22:01:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[10-Nov-2025 23:27:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[11-Nov-2025 01:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[11-Nov-2025 02:12:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[11-Nov-2025 03:01:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[11-Nov-2025 03:28:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[11-Nov-2025 06:03:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[11-Nov-2025 06:46:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[11-Nov-2025 17:03:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[11-Nov-2025 19:20:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[12-Nov-2025 11:09:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[12-Nov-2025 11:54:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[12-Nov-2025 17:44:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[13-Nov-2025 07:49:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[13-Nov-2025 19:17:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[13-Nov-2025 19:38:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[13-Nov-2025 21:56:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[13-Nov-2025 23:04:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[16-Nov-2025 17:12:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[16-Nov-2025 17:35:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[17-Nov-2025 06:06:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[17-Nov-2025 06:20:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[17-Nov-2025 19:10:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[17-Nov-2025 20:55:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[18-Nov-2025 00:54:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[18-Nov-2025 04:04:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[08-Dec-2025 09:56:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[08-Dec-2025 10:21:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[08-Dec-2025 12:06:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[08-Dec-2025 15:01:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[08-Dec-2025 15:57:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[08-Dec-2025 18:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[08-Dec-2025 19:07:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[08-Dec-2025 20:02:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[08-Dec-2025 23:18:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[14-Dec-2025 05:28:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[14-Dec-2025 07:08:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[14-Dec-2025 09:35:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[14-Dec-2025 09:35:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[14-Dec-2025 09:36:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[14-Dec-2025 09:36:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[14-Dec-2025 09:36:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[14-Dec-2025 10:31:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[14-Dec-2025 10:32:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[14-Dec-2025 11:27:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[14-Dec-2025 12:02:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[14-Dec-2025 12:02:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[14-Dec-2025 12:02:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[15-Dec-2025 13:52:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[15-Dec-2025 17:49:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[15-Dec-2025 19:34:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[15-Dec-2025 21:37:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[09-Jan-2026 14:19:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[09-Jan-2026 15:54:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[09-Jan-2026 15:59:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[09-Jan-2026 16:57:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[09-Jan-2026 19:25:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[09-Jan-2026 20:27:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[09-Jan-2026 21:15:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[09-Jan-2026 21:27:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[09-Jan-2026 23:31:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[10-Jan-2026 02:44:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[11-Jan-2026 23:17:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[13-Jan-2026 00:53:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[13-Jan-2026 00:53:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[13-Jan-2026 08:44:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[14-Jan-2026 02:33:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[16-Jan-2026 07:23:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[16-Jan-2026 08:00:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[16-Jan-2026 08:22:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[16-Jan-2026 11:02:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[16-Jan-2026 16:07:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[18-Jan-2026 22:25:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[19-Jan-2026 06:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[19-Jan-2026 18:04:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[19-Jan-2026 18:07:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[19-Jan-2026 18:09:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[20-Jan-2026 03:26:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[20-Jan-2026 04:43:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[20-Jan-2026 07:44:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[22-Jan-2026 04:15:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[22-Jan-2026 08:23:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[22-Jan-2026 09:09:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[22-Jan-2026 10:52:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[23-Jan-2026 05:19:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[24-Jan-2026 04:36:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[24-Jan-2026 08:43:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[24-Jan-2026 09:04:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[24-Jan-2026 11:01:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[24-Jan-2026 13:40:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[24-Jan-2026 18:05:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[24-Jan-2026 20:28:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[24-Jan-2026 20:30:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[25-Jan-2026 05:26:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[26-Jan-2026 05:34:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[26-Jan-2026 10:03:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[26-Jan-2026 10:07:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[26-Jan-2026 12:21:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[27-Jan-2026 03:36:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[27-Jan-2026 05:54:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[28-Jan-2026 07:25:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[28-Jan-2026 14:06:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[28-Jan-2026 18:43:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[28-Jan-2026 20:06:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[29-Jan-2026 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[30-Jan-2026 06:52:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[30-Jan-2026 22:17:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[31-Jan-2026 04:04:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[31-Jan-2026 06:03:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[31-Jan-2026 07:23:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[31-Jan-2026 08:46:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[02-Feb-2026 03:36:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[02-Feb-2026 05:33:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[02-Feb-2026 07:24:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[02-Feb-2026 08:43:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[02-Feb-2026 16:25:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[02-Feb-2026 16:42:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[02-Feb-2026 22:43:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[02-Feb-2026 22:43:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[02-Feb-2026 22:43:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[02-Feb-2026 22:44:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[02-Feb-2026 22:44:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[02-Feb-2026 22:44:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[02-Feb-2026 22:44:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[02-Feb-2026 22:44:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[02-Feb-2026 22:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[02-Feb-2026 22:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[02-Feb-2026 22:44:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[02-Feb-2026 22:44:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[02-Feb-2026 22:44:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[02-Feb-2026 23:01:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/ArrayLoader.php on line 21
+[02-Feb-2026 23:01:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/CsvFileLoader.php on line 21
+[02-Feb-2026 23:01:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\ArrayLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/FileLoader.php on line 22
+[02-Feb-2026 23:01:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\IcuResFileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuDatFileLoader.php on line 24
+[02-Feb-2026 23:01:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24
+[02-Feb-2026 23:01:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IniFileLoader.php on line 19
+[02-Feb-2026 23:01:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/JsonFileLoader.php on line 21
+[02-Feb-2026 23:01:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/MoFileLoader.php on line 19
+[02-Feb-2026 23:01:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PhpFileLoader.php on line 19
+[02-Feb-2026 23:01:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/PoFileLoader.php on line 18
+[02-Feb-2026 23:01:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/QtFileLoader.php on line 26
+[02-Feb-2026 23:01:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/XliffFileLoader.php on line 29
+[02-Feb-2026 23:01:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Loader\FileLoader" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/YamlFileLoader.php on line 25
+[03-Feb-2026 04:44:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Loader\LoaderInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Loader/IcuResFileLoader.php on line 24

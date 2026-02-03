@@ -1,0 +1,24 @@
+[06-Jan-2026 21:19:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php on line 7
+[06-Jan-2026 21:24:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php on line 7
+[02-Feb-2026 22:23:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php on line 7
+[02-Feb-2026 22:23:34 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php on line 7
+[02-Feb-2026 22:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php on line 7
+[02-Feb-2026 22:34:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Stmt\TraitUseAdaptation" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php on line 7

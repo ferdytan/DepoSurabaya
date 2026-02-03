@@ -1,0 +1,624 @@
+[18-Oct-2025 08:53:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[18-Oct-2025 09:09:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[18-Oct-2025 09:43:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[18-Oct-2025 11:04:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[18-Oct-2025 11:37:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[18-Oct-2025 12:43:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[18-Oct-2025 14:02:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[18-Oct-2025 17:01:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[18-Oct-2025 20:18:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[18-Oct-2025 20:54:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[18-Oct-2025 21:45:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[19-Oct-2025 22:06:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[02-Nov-2025 16:40:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[02-Nov-2025 19:07:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[02-Nov-2025 20:26:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[02-Nov-2025 20:57:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[03-Nov-2025 08:22:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[03-Nov-2025 18:52:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[03-Nov-2025 20:36:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[03-Nov-2025 22:04:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[04-Nov-2025 04:44:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[06-Nov-2025 16:59:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[07-Nov-2025 03:22:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[07-Nov-2025 04:46:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[07-Nov-2025 06:19:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[07-Nov-2025 13:13:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[08-Nov-2025 10:35:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[08-Nov-2025 13:51:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[16-Nov-2025 02:24:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[16-Nov-2025 16:17:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[16-Nov-2025 17:52:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[16-Nov-2025 23:30:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[16-Nov-2025 23:42:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 00:26:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 00:29:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[17-Nov-2025 01:15:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 01:33:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[17-Nov-2025 02:12:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[17-Nov-2025 02:18:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 02:20:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 02:31:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 02:35:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 02:36:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[17-Nov-2025 02:49:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 02:51:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 02:53:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[17-Nov-2025 02:55:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 02:56:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 02:58:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[17-Nov-2025 03:08:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 03:16:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[17-Nov-2025 03:17:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 03:20:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[17-Nov-2025 03:21:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 03:24:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 03:37:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[17-Nov-2025 03:41:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 03:44:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 03:50:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[17-Nov-2025 03:54:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 04:09:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[17-Nov-2025 04:09:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[17-Nov-2025 04:10:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[17-Nov-2025 04:11:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 08:35:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 19:14:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[17-Nov-2025 19:44:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[17-Nov-2025 20:34:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[17-Nov-2025 21:13:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[17-Nov-2025 22:24:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[17-Nov-2025 22:47:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[18-Nov-2025 00:53:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[18-Nov-2025 05:36:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[18-Nov-2025 18:51:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[18-Nov-2025 21:09:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[19-Nov-2025 02:23:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[19-Nov-2025 13:31:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[22-Nov-2025 06:30:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[22-Nov-2025 14:18:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[24-Nov-2025 09:04:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[14-Dec-2025 09:01:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[14-Dec-2025 11:41:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[14-Dec-2025 12:14:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[14-Dec-2025 12:14:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[14-Dec-2025 12:15:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[14-Dec-2025 12:15:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[14-Dec-2025 12:49:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[14-Dec-2025 12:49:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[14-Dec-2025 13:41:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[15-Dec-2025 11:20:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[15-Dec-2025 16:27:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[15-Dec-2025 16:55:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[15-Dec-2025 17:49:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[15-Dec-2025 18:53:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[15-Dec-2025 20:29:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[27-Dec-2025 23:11:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[29-Dec-2025 08:45:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[03-Jan-2026 08:56:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[07-Jan-2026 19:45:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[09-Jan-2026 04:38:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[11-Jan-2026 02:35:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[14-Jan-2026 03:39:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[16-Jan-2026 05:03:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[16-Jan-2026 06:53:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[16-Jan-2026 07:12:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[16-Jan-2026 07:18:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[16-Jan-2026 10:51:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[16-Jan-2026 11:53:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[17-Jan-2026 01:34:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[19-Jan-2026 01:34:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[19-Jan-2026 19:33:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[19-Jan-2026 19:35:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[19-Jan-2026 19:38:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[19-Jan-2026 23:47:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[20-Jan-2026 13:07:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[21-Jan-2026 00:40:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[22-Jan-2026 01:48:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[22-Jan-2026 14:22:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[23-Jan-2026 14:22:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[24-Jan-2026 01:56:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[24-Jan-2026 13:11:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[24-Jan-2026 16:36:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[25-Jan-2026 14:02:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[26-Jan-2026 03:41:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[26-Jan-2026 15:14:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[27-Jan-2026 13:02:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[28-Jan-2026 02:04:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[28-Jan-2026 13:44:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[29-Jan-2026 12:35:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[29-Jan-2026 19:36:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[30-Jan-2026 12:28:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[31-Jan-2026 13:25:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[02-Feb-2026 13:09:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[02-Feb-2026 20:27:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[02-Feb-2026 22:42:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[02-Feb-2026 22:42:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[02-Feb-2026 22:42:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[02-Feb-2026 22:42:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[02-Feb-2026 22:42:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[02-Feb-2026 22:42:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[02-Feb-2026 22:42:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[02-Feb-2026 22:42:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[02-Feb-2026 22:42:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[02-Feb-2026 22:59:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[02-Feb-2026 22:59:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidParameterException.php on line 19
+[02-Feb-2026 22:59:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MethodNotAllowedException.php on line 21
+[02-Feb-2026 22:59:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/MissingMandatoryParametersException.php on line 20
+[02-Feb-2026 22:59:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19
+[02-Feb-2026 22:59:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[02-Feb-2026 22:59:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[02-Feb-2026 22:59:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteNotFoundException.php on line 19
+[02-Feb-2026 22:59:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RuntimeException.php on line 14
+[03-Feb-2026 00:09:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/ResourceNotFoundException.php on line 21
+[03-Feb-2026 02:22:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Routing\Exception\ExceptionInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/InvalidArgumentException.php on line 14
+[03-Feb-2026 03:54:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\RuntimeException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/RouteCircularReferenceException.php on line 14
+[03-Feb-2026 03:55:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Routing\Exception\ResourceNotFoundException" not found in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/Exception/NoConfigurationException.php on line 19

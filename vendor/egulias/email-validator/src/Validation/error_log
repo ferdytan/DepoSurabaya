@@ -1,0 +1,192 @@
+[16-Oct-2025 07:36:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[18-Oct-2025 05:41:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[18-Oct-2025 11:04:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[18-Oct-2025 15:40:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[19-Oct-2025 02:48:50 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[24-Oct-2025 07:37:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[24-Oct-2025 09:40:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[17-Nov-2025 22:48:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[24-Nov-2025 05:28:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[24-Nov-2025 08:25:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[24-Nov-2025 10:25:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[24-Nov-2025 11:14:07 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[09-Dec-2025 02:35:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[11-Dec-2025 07:32:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[13-Dec-2025 10:47:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[13-Dec-2025 16:04:29 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[13-Dec-2025 17:31:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[14-Dec-2025 03:28:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[14-Dec-2025 11:33:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[14-Dec-2025 18:38:56 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[15-Dec-2025 06:19:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[15-Dec-2025 13:31:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[16-Dec-2025 02:36:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[18-Dec-2025 09:25:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[20-Dec-2025 16:42:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[20-Dec-2025 16:50:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[20-Dec-2025 16:58:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[20-Dec-2025 17:10:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[20-Dec-2025 17:36:16 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[21-Dec-2025 19:47:05 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[21-Dec-2025 22:06:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[22-Dec-2025 02:33:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[23-Dec-2025 05:37:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[16-Jan-2026 02:43:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[22-Jan-2026 12:02:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[22-Jan-2026 15:53:19 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[22-Jan-2026 17:45:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[22-Jan-2026 18:58:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[02-Feb-2026 21:52:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[02-Feb-2026 21:52:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[02-Feb-2026 21:52:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[02-Feb-2026 21:52:17 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[02-Feb-2026 21:52:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11
+[02-Feb-2026 21:53:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/DNSCheckValidation.php on line 14
+[02-Feb-2026 21:53:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MessageIDValidation.php on line 11
+[02-Feb-2026 21:53:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/MultipleValidationWithAnd.php on line 11
+[02-Feb-2026 21:53:30 UTC] PHP Fatal error:  Uncaught Error: Class "Egulias\EmailValidator\Validation\RFCValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/NoRFCWarningsValidation.php on line 9
+[02-Feb-2026 21:53:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Validation\EmailValidation" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Validation/RFCValidation.php on line 11

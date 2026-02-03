@@ -1,0 +1,536 @@
+[25-Sep-2025 09:56:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[16-Oct-2025 15:46:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[16-Oct-2025 16:14:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[16-Oct-2025 16:25:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[16-Oct-2025 16:28:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[16-Oct-2025 16:28:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[16-Oct-2025 16:33:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[16-Oct-2025 16:47:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[16-Oct-2025 17:18:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[16-Oct-2025 23:35:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[18-Oct-2025 07:07:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[18-Oct-2025 08:45:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[18-Oct-2025 10:46:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[18-Oct-2025 12:23:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[18-Oct-2025 12:26:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[18-Oct-2025 13:31:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[18-Oct-2025 13:52:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[18-Oct-2025 14:16:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[18-Oct-2025 15:20:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[18-Oct-2025 15:49:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[18-Oct-2025 16:20:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[18-Oct-2025 18:00:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[18-Oct-2025 18:11:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[18-Oct-2025 18:27:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[19-Oct-2025 01:44:24 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[30-Oct-2025 14:12:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[12-Nov-2025 06:57:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[17-Nov-2025 20:43:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[17-Nov-2025 21:39:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[17-Nov-2025 23:15:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[17-Nov-2025 23:18:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[17-Nov-2025 23:51:03 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[18-Nov-2025 01:41:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[18-Nov-2025 01:46:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[18-Nov-2025 02:37:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[18-Nov-2025 02:52:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[18-Nov-2025 03:40:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[18-Nov-2025 09:32:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[19-Nov-2025 23:50:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[22-Nov-2025 20:59:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[23-Nov-2025 09:33:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[29-Nov-2025 10:34:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[29-Nov-2025 11:16:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[30-Nov-2025 17:14:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[01-Dec-2025 17:11:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[01-Dec-2025 17:12:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[01-Dec-2025 19:20:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[02-Dec-2025 13:29:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[03-Dec-2025 13:02:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[04-Dec-2025 21:33:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[04-Dec-2025 21:33:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[04-Dec-2025 23:41:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[07-Dec-2025 06:13:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[07-Dec-2025 23:54:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[08-Dec-2025 08:08:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[08-Dec-2025 10:26:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[08-Dec-2025 11:53:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[10-Dec-2025 00:10:27 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[10-Dec-2025 13:44:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[10-Dec-2025 17:33:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[11-Dec-2025 11:58:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[11-Dec-2025 14:20:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[11-Dec-2025 15:15:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[13-Dec-2025 07:42:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[13-Dec-2025 09:57:51 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[15-Dec-2025 10:07:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[15-Dec-2025 11:38:14 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[15-Dec-2025 12:47:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[15-Dec-2025 14:55:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[15-Dec-2025 15:03:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[15-Dec-2025 15:36:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[15-Dec-2025 17:16:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[15-Dec-2025 17:38:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[15-Dec-2025 20:11:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[15-Dec-2025 20:26:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[15-Dec-2025 21:58:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[20-Dec-2025 05:33:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[20-Dec-2025 10:38:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[20-Dec-2025 10:39:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[20-Dec-2025 10:39:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[20-Dec-2025 11:56:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[20-Dec-2025 13:09:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[20-Dec-2025 13:57:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[20-Dec-2025 14:36:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[20-Dec-2025 15:25:43 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[20-Dec-2025 16:17:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[20-Dec-2025 16:42:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[28-Dec-2025 06:50:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[04-Jan-2026 20:40:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[16-Jan-2026 03:45:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[16-Jan-2026 04:13:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[16-Jan-2026 05:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[16-Jan-2026 05:27:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[16-Jan-2026 07:51:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[16-Jan-2026 08:02:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[16-Jan-2026 09:44:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[16-Jan-2026 10:28:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[16-Jan-2026 10:35:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[16-Jan-2026 13:42:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[19-Jan-2026 02:57:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[19-Jan-2026 12:46:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[19-Jan-2026 22:08:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[20-Jan-2026 09:02:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[20-Jan-2026 15:35:51 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[21-Jan-2026 04:04:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[25-Jan-2026 00:16:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[27-Jan-2026 22:40:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[30-Jan-2026 18:45:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[31-Jan-2026 21:33:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[02-Feb-2026 18:42:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[02-Feb-2026 22:34:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[02-Feb-2026 22:34:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[02-Feb-2026 22:34:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[02-Feb-2026 22:34:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[02-Feb-2026 22:34:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[02-Feb-2026 22:34:44 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[02-Feb-2026 22:34:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[02-Feb-2026 22:34:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[02-Feb-2026 22:34:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[02-Feb-2026 22:34:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[02-Feb-2026 22:34:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[02-Feb-2026 22:34:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22
+[02-Feb-2026 22:48:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/BuilderNotFoundException.php on line 22
+[02-Feb-2026 22:48:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DateTimeException.php on line 22
+[02-Feb-2026 22:48:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/DceSecurityException.php on line 22
+[02-Feb-2026 22:48:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidArgumentException.php on line 22
+[02-Feb-2026 22:48:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidBytesException.php on line 22
+[02-Feb-2026 22:49:00 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Exception\InvalidArgumentException" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/InvalidUuidStringException.php on line 23
+[02-Feb-2026 22:49:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NameException.php on line 22
+[02-Feb-2026 22:49:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/NodeException.php on line 22
+[02-Feb-2026 22:49:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/RandomSourceException.php on line 25
+[02-Feb-2026 22:49:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/TimeSourceException.php on line 22
+[02-Feb-2026 22:49:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnableToBuildUuidException.php on line 22
+[02-Feb-2026 22:49:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Exception\UuidExceptionInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Exception/UnsupportedOperationException.php on line 22

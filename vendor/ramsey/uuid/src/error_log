@@ -1,0 +1,218 @@
+[14-Oct-2025 10:08:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[14-Oct-2025 16:59:18 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[14-Oct-2025 17:09:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[14-Oct-2025 18:08:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[16-Oct-2025 01:49:27 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[18-Oct-2025 14:44:31 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[18-Oct-2025 14:56:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[18-Oct-2025 20:52:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[24-Oct-2025 10:52:15 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[30-Oct-2025 09:09:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[30-Oct-2025 10:37:33 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[02-Nov-2025 10:40:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[02-Nov-2025 12:53:51 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[03-Nov-2025 00:18:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[03-Nov-2025 22:48:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[07-Nov-2025 06:59:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[08-Nov-2025 19:40:05 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[17-Nov-2025 06:47:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[18-Nov-2025 00:16:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[18-Nov-2025 03:28:35 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[24-Nov-2025 01:41:20 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[24-Nov-2025 02:31:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[13-Dec-2025 22:09:19 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[14-Dec-2025 02:59:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[14-Dec-2025 05:14:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[14-Dec-2025 09:27:55 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[15-Dec-2025 14:56:10 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[21-Dec-2025 18:00:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[21-Dec-2025 19:11:40 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[21-Dec-2025 20:26:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[25-Dec-2025 02:40:54 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[31-Dec-2025 00:22:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[02-Jan-2026 03:49:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[06-Jan-2026 06:24:01 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[10-Jan-2026 00:57:24 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[17-Jan-2026 22:33:26 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[22-Jan-2026 01:43:29 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[22-Jan-2026 04:26:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[22-Jan-2026 08:34:10 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[22-Jan-2026 10:51:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[22-Jan-2026 15:07:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[22-Jan-2026 16:09:58 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[24-Jan-2026 04:52:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[25-Jan-2026 02:04:13 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[26-Jan-2026 05:34:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[27-Jan-2026 01:34:41 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[28-Jan-2026 07:06:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[28-Jan-2026 13:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[29-Jan-2026 21:13:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[30-Jan-2026 04:06:39 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[30-Jan-2026 22:15:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[30-Jan-2026 23:58:52 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[02-Feb-2026 18:47:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[02-Feb-2026 20:20:39 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[02-Feb-2026 21:24:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[02-Feb-2026 22:34:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[02-Feb-2026 22:34:29 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[02-Feb-2026 22:34:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[02-Feb-2026 22:34:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[02-Feb-2026 22:48:38 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[02-Feb-2026 22:48:40 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\DeprecatedUuidMethodsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Uuid.php on line 47
+[02-Feb-2026 22:48:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47
+[02-Feb-2026 22:48:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\DeprecatedUuidInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidInterface.php on line 29
+[03-Feb-2026 06:25:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/DegradedUuid.php on line 23
+[03-Feb-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\UuidFactoryInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/UuidFactory.php on line 47

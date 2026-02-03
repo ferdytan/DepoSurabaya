@@ -1,0 +1,128 @@
+[25-Sep-2025 08:02:45 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[25-Sep-2025 09:09:35 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[25-Sep-2025 16:59:01 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[28-Sep-2025 22:49:02 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[24-Oct-2025 10:10:10 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[24-Oct-2025 16:19:21 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[24-Oct-2025 16:42:53 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[30-Oct-2025 08:10:06 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[24-Nov-2025 01:43:47 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[24-Nov-2025 09:15:13 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[24-Nov-2025 13:20:55 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[30-Nov-2025 06:02:37 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[21-Dec-2025 17:16:03 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[22-Dec-2025 05:09:29 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[28-Dec-2025 03:48:00 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[16-Jan-2026 23:45:17 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[18-Jan-2026 14:25:16 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[18-Jan-2026 21:17:43 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[19-Jan-2026 11:44:09 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[22-Jan-2026 13:50:22 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[22-Jan-2026 18:26:43 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[24-Jan-2026 14:48:10 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[26-Jan-2026 15:04:32 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[27-Jan-2026 20:08:37 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[02-Feb-2026 22:13:34 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[02-Feb-2026 22:13:34 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[02-Feb-2026 22:13:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[02-Feb-2026 22:13:35 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24
+[02-Feb-2026 22:21:38 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionContinueParser.php on line 23
+[02-Feb-2026 22:21:39 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionListContinueParser.php on line 25
+[02-Feb-2026 22:21:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionStartParser.php on line 23
+[02-Feb-2026 22:21:40 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/DescriptionList/Parser/DescriptionTermContinueParser.php on line 24

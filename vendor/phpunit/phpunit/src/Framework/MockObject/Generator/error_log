@@ -1,0 +1,70 @@
+[25-Sep-2025 18:43:46 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[25-Sep-2025 19:17:27 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[28-Sep-2025 14:50:38 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[28-Sep-2025 23:45:38 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[05-Nov-2025 09:54:43 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[05-Nov-2025 10:55:42 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[05-Nov-2025 18:28:40 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[05-Nov-2025 20:44:44 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[08-Dec-2025 16:29:51 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[08-Dec-2025 17:32:01 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[08-Dec-2025 19:32:23 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[08-Dec-2025 19:54:27 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[09-Jan-2026 18:25:39 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[10-Jan-2026 00:08:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[11-Jan-2026 06:37:53 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[17-Jan-2026 00:52:28 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[19-Jan-2026 19:15:23 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[20-Jan-2026 19:43:12 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[25-Jan-2026 18:45:42 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[26-Jan-2026 10:46:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[02-Feb-2026 22:28:45 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[02-Feb-2026 22:28:46 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[02-Feb-2026 22:28:46 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[02-Feb-2026 22:28:46 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21
+[02-Feb-2026 22:40:57 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Generator.php on line 84
+[02-Feb-2026 22:40:58 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockClass.php on line 20
+[02-Feb-2026 22:40:59 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\MockObject\Generator\TemplateLoader" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockMethod.php on line 38
+[02-Feb-2026 22:41:00 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Generator\MockType" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/MockTrait.php on line 21

@@ -1,0 +1,8 @@
+[02-Feb-2026 22:06:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Foundation\ExceptionRenderer" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Whoops/WhoopsExceptionRenderer.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Whoops/WhoopsExceptionRenderer.php on line 10
+[02-Feb-2026 22:12:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Foundation\ExceptionRenderer" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Whoops/WhoopsExceptionRenderer.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Whoops/WhoopsExceptionRenderer.php on line 10

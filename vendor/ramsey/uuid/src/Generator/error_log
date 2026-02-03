@@ -1,0 +1,432 @@
+[29-Sep-2025 03:43:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[17-Oct-2025 12:21:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[18-Oct-2025 08:51:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[18-Oct-2025 10:29:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[18-Oct-2025 11:40:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[18-Oct-2025 11:50:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[18-Oct-2025 14:42:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[18-Oct-2025 15:58:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[18-Oct-2025 16:37:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[18-Oct-2025 17:55:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[19-Oct-2025 02:04:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[19-Oct-2025 02:16:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[30-Oct-2025 14:06:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[16-Nov-2025 09:58:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[17-Nov-2025 19:02:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[17-Nov-2025 19:17:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[17-Nov-2025 19:28:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[17-Nov-2025 19:53:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[17-Nov-2025 21:41:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[18-Nov-2025 01:25:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[18-Nov-2025 03:34:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[18-Nov-2025 05:06:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[18-Nov-2025 05:48:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[20-Nov-2025 02:49:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[22-Nov-2025 16:29:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[23-Nov-2025 03:08:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[23-Nov-2025 15:00:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[23-Nov-2025 18:42:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[23-Nov-2025 22:36:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[24-Nov-2025 12:01:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[25-Nov-2025 03:55:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[25-Nov-2025 07:45:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[27-Nov-2025 16:45:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[28-Nov-2025 10:41:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[29-Nov-2025 11:53:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[29-Nov-2025 15:47:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[29-Nov-2025 17:16:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[30-Nov-2025 01:25:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[30-Nov-2025 01:26:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[30-Nov-2025 09:28:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[01-Dec-2025 01:28:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[01-Dec-2025 01:41:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[01-Dec-2025 02:31:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[01-Dec-2025 11:06:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[03-Dec-2025 05:44:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[03-Dec-2025 05:44:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[04-Dec-2025 06:17:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[04-Dec-2025 07:04:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[04-Dec-2025 15:36:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[07-Dec-2025 15:03:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[15-Dec-2025 11:12:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[15-Dec-2025 15:08:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[15-Dec-2025 18:05:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[15-Dec-2025 18:21:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[15-Dec-2025 18:33:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[15-Dec-2025 20:18:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[15-Dec-2025 20:53:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[15-Dec-2025 21:33:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[15-Dec-2025 22:44:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[19-Dec-2025 18:44:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[20-Dec-2025 10:39:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[20-Dec-2025 10:39:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[20-Dec-2025 10:40:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[20-Dec-2025 13:10:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[20-Dec-2025 13:10:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[20-Dec-2025 13:11:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[20-Dec-2025 14:37:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[20-Dec-2025 15:25:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[20-Dec-2025 15:57:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[20-Dec-2025 15:57:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[28-Dec-2025 05:53:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[16-Jan-2026 05:09:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[16-Jan-2026 06:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[16-Jan-2026 08:51:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[16-Jan-2026 10:03:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[16-Jan-2026 10:04:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[16-Jan-2026 10:47:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[16-Jan-2026 11:08:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[16-Jan-2026 15:28:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[16-Jan-2026 22:57:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[19-Jan-2026 22:11:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[20-Jan-2026 09:05:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[20-Jan-2026 23:02:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[24-Jan-2026 22:21:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[24-Jan-2026 22:23:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[25-Jan-2026 02:11:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[25-Jan-2026 02:14:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[27-Jan-2026 18:59:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[02-Feb-2026 22:34:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[02-Feb-2026 22:34:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[02-Feb-2026 22:34:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[02-Feb-2026 22:34:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[02-Feb-2026 22:34:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[02-Feb-2026 22:34:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[02-Feb-2026 22:34:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[02-Feb-2026 22:34:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[02-Feb-2026 22:34:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[02-Feb-2026 22:34:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45
+[02-Feb-2026 22:49:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/CombGenerator.php on line 59
+[02-Feb-2026 22:49:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\DceSecurityGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php:37
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DceSecurityGenerator.php on line 37
+[02-Feb-2026 22:49:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultNameGenerator.php on line 26
+[02-Feb-2026 22:49:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php on line 40
+[02-Feb-2026 22:49:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\NameGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidNameGenerator.php on line 30
+[02-Feb-2026 22:49:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidRandomGenerator.php on line 27
+[02-Feb-2026 22:49:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/PeclUuidTimeGenerator.php on line 27
+[02-Feb-2026 22:49:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php on line 25
+[02-Feb-2026 22:49:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\RandomGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/RandomLibAdapter.php on line 28
+[02-Feb-2026 22:49:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Generator\TimeGeneratorInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Generator/UnixTimeGenerator.php on line 45

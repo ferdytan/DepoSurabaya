@@ -1,0 +1,76 @@
+[25-Sep-2025 11:42:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[25-Sep-2025 18:39:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[24-Oct-2025 10:14:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[24-Oct-2025 10:17:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[24-Nov-2025 08:59:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[24-Nov-2025 12:23:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[21-Dec-2025 19:43:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[22-Dec-2025 07:59:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[21-Jan-2026 18:12:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[21-Jan-2026 21:24:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[22-Jan-2026 13:09:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[22-Jan-2026 14:56:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[26-Jan-2026 04:30:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[28-Jan-2026 20:18:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[29-Jan-2026 10:15:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[02-Feb-2026 22:03:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[02-Feb-2026 22:03:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5
+[02-Feb-2026 22:08:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldBeUnique" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldBeUniqueUntilProcessing.php on line 5
+[02-Feb-2026 22:08:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\ShouldQueue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Contracts/Queue/ShouldQueueAfterCommit.php on line 5

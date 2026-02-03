@@ -1,0 +1,120 @@
+[02-Feb-2026 22:28:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/CannotUseAddMethodsException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/CannotUseAddMethodsException.php on line 19
+[02-Feb-2026 22:28:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsEnumerationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsEnumerationException.php on line 19
+[02-Feb-2026 22:28:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsFinalException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsFinalException.php on line 19
+[02-Feb-2026 22:28:48 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/DuplicateMethodException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/DuplicateMethodException.php on line 22
+[02-Feb-2026 22:28:49 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/Exception.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/Exception.php on line 19
+[02-Feb-2026 22:28:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/InvalidMethodNameException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/InvalidMethodNameException.php on line 19
+[02-Feb-2026 22:28:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/NameAlreadyInUseException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/NameAlreadyInUseException.php on line 19
+[02-Feb-2026 22:28:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/OriginalConstructorInvocationRequiredException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/OriginalConstructorInvocationRequiredException.php on line 17
+[02-Feb-2026 22:28:50 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ReflectionException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ReflectionException.php on line 17
+[02-Feb-2026 22:28:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/RuntimeException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/RuntimeException.php on line 17
+[02-Feb-2026 22:28:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/SoapExtensionNotAvailableException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/SoapExtensionNotAvailableException.php on line 17
+[02-Feb-2026 22:28:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownClassException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownClassException.php on line 19
+[02-Feb-2026 22:28:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownInterfaceException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownInterfaceException.php on line 19
+[02-Feb-2026 22:28:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTraitException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTraitException.php on line 21
+[02-Feb-2026 22:28:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTypeException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTypeException.php on line 19
+[02-Feb-2026 22:41:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/CannotUseAddMethodsException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/CannotUseAddMethodsException.php on line 19
+[02-Feb-2026 22:41:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsEnumerationException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsEnumerationException.php on line 19
+[02-Feb-2026 22:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsFinalException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ClassIsFinalException.php on line 19
+[02-Feb-2026 22:41:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/DuplicateMethodException.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/DuplicateMethodException.php on line 22
+[02-Feb-2026 22:41:04 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/Exception.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/Exception.php on line 19
+[02-Feb-2026 22:41:04 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/InvalidMethodNameException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/InvalidMethodNameException.php on line 19
+[02-Feb-2026 22:41:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/NameAlreadyInUseException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/NameAlreadyInUseException.php on line 19
+[02-Feb-2026 22:41:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/OriginalConstructorInvocationRequiredException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/OriginalConstructorInvocationRequiredException.php on line 17
+[02-Feb-2026 22:41:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ReflectionException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/ReflectionException.php on line 17
+[02-Feb-2026 22:41:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/RuntimeException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/RuntimeException.php on line 17
+[02-Feb-2026 22:41:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/SoapExtensionNotAvailableException.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/SoapExtensionNotAvailableException.php on line 17
+[02-Feb-2026 22:41:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownClassException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownClassException.php on line 19
+[02-Feb-2026 22:41:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownInterfaceException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownInterfaceException.php on line 19
+[02-Feb-2026 22:41:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTraitException.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTraitException.php on line 21
+[02-Feb-2026 22:41:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTypeException.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Generator/Exception/UnknownTypeException.php on line 19

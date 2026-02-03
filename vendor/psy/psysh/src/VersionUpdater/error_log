@@ -1,0 +1,152 @@
+[28-Sep-2025 12:58:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[16-Oct-2025 05:44:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[16-Oct-2025 06:24:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[16-Oct-2025 07:11:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[16-Oct-2025 08:52:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[16-Oct-2025 18:14:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[18-Oct-2025 09:27:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[18-Oct-2025 18:33:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[19-Oct-2025 02:23:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[30-Oct-2025 14:54:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[18-Nov-2025 02:50:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[24-Nov-2025 07:16:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[30-Nov-2025 08:45:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[11-Dec-2025 04:27:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[14-Dec-2025 01:56:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[14-Dec-2025 08:38:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[15-Dec-2025 09:20:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[15-Dec-2025 16:20:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[18-Dec-2025 12:26:20 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[20-Dec-2025 14:20:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[20-Dec-2025 15:13:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[20-Dec-2025 15:13:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[21-Dec-2025 21:14:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[26-Dec-2025 20:00:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[26-Dec-2025 20:00:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[30-Dec-2025 02:55:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[20-Jan-2026 06:42:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[20-Jan-2026 12:57:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[20-Jan-2026 13:00:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[22-Jan-2026 18:50:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[27-Jan-2026 17:31:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[02-Feb-2026 09:06:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[02-Feb-2026 22:34:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[02-Feb-2026 22:34:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[02-Feb-2026 22:34:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19
+[02-Feb-2026 22:48:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/GitHubChecker.php on line 16
+[02-Feb-2026 22:48:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\VersionUpdater\GitHubChecker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/IntervalChecker.php on line 14
+[02-Feb-2026 22:48:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\VersionUpdater\Checker" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/VersionUpdater/NoopChecker.php on line 19

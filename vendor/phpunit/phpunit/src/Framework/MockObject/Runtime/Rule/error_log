@@ -1,0 +1,64 @@
+[02-Feb-2026 22:29:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyInvokedCount.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyInvokedCount.php on line 19
+[02-Feb-2026 22:29:07 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Rule\ParametersRule" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyParameters.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyParameters.php on line 19
+[02-Feb-2026 22:29:07 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvocationOrder.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvocationOrder.php on line 21
+[02-Feb-2026 22:29:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastCount.php on line 21
+[02-Feb-2026 22:29:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastOnce.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastOnce.php on line 20
+[02-Feb-2026 22:29:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtMostCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtMostCount.php on line 21
+[02-Feb-2026 22:29:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedCount.php on line 21
+[02-Feb-2026 22:29:09 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Rule\ParametersRule" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/Parameters.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/Parameters.php on line 28
+[02-Feb-2026 22:41:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyInvokedCount.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyInvokedCount.php on line 19
+[02-Feb-2026 22:41:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Rule\ParametersRule" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyParameters.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/AnyParameters.php on line 19
+[02-Feb-2026 22:41:31 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\SelfDescribing" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvocationOrder.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvocationOrder.php on line 21
+[02-Feb-2026 22:41:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastCount.php on line 21
+[02-Feb-2026 22:41:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastOnce.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtLeastOnce.php on line 20
+[02-Feb-2026 22:41:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtMostCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedAtMostCount.php on line 21
+[02-Feb-2026 22:41:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Rule\InvocationOrder" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedCount.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/InvokedCount.php on line 21
+[02-Feb-2026 22:41:34 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Rule\ParametersRule" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/Parameters.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Rule/Parameters.php on line 28

@@ -1,0 +1,248 @@
+[18-Oct-2025 08:45:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[18-Oct-2025 18:05:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[18-Oct-2025 18:57:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[18-Oct-2025 22:18:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[19-Oct-2025 03:57:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[20-Oct-2025 04:00:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[20-Oct-2025 04:18:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[20-Oct-2025 04:39:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[20-Oct-2025 08:10:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[20-Oct-2025 11:19:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[22-Oct-2025 10:26:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[22-Oct-2025 22:04:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[24-Oct-2025 03:01:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[25-Oct-2025 20:37:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[30-Oct-2025 06:57:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[09-Nov-2025 17:53:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[11-Nov-2025 08:55:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[11-Nov-2025 12:41:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[11-Nov-2025 19:57:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[13-Nov-2025 03:08:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[16-Nov-2025 18:31:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[16-Nov-2025 18:35:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[16-Nov-2025 18:43:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[16-Nov-2025 18:45:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[16-Nov-2025 19:03:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[17-Nov-2025 17:54:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[24-Nov-2025 04:39:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[24-Nov-2025 04:56:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[24-Nov-2025 07:14:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[24-Nov-2025 12:09:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[14-Dec-2025 11:37:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[14-Dec-2025 12:12:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[14-Dec-2025 13:25:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[14-Dec-2025 13:39:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[14-Dec-2025 13:46:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[15-Dec-2025 16:23:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[21-Dec-2025 20:12:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[21-Dec-2025 22:45:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[22-Dec-2025 01:04:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[22-Dec-2025 07:43:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[14-Jan-2026 02:36:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[16-Jan-2026 08:31:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[20-Jan-2026 10:50:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[21-Jan-2026 00:27:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[21-Jan-2026 05:33:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[21-Jan-2026 07:10:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[21-Jan-2026 10:31:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[23-Jan-2026 19:21:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[26-Jan-2026 15:10:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[27-Jan-2026 18:55:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[29-Jan-2026 20:36:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[30-Jan-2026 19:58:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[02-Feb-2026 22:40:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[02-Feb-2026 22:40:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[02-Feb-2026 22:40:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[02-Feb-2026 22:40:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[02-Feb-2026 22:40:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20
+[02-Feb-2026 22:55:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ArgumentResolver.php on line 33
+[02-Feb-2026 22:55:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Controller\ControllerResolver" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php on line 24
+[02-Feb-2026 22:55:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/ControllerResolver.php on line 26
+[02-Feb-2026 22:55:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php on line 20
+[02-Feb-2026 22:55:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Controller\ControllerResolverInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php on line 20

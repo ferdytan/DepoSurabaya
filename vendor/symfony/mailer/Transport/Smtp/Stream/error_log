@@ -1,0 +1,76 @@
+[25-Sep-2025 07:52:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[28-Sep-2025 18:49:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[24-Oct-2025 10:39:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[30-Oct-2025 07:39:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[24-Nov-2025 12:28:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[30-Nov-2025 12:16:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[16-Dec-2025 02:34:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[16-Dec-2025 04:02:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[28-Dec-2025 04:47:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[14-Jan-2026 12:08:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[16-Jan-2026 23:04:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[18-Jan-2026 09:46:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[19-Jan-2026 23:11:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[25-Jan-2026 04:49:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[28-Jan-2026 09:01:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[02-Feb-2026 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[02-Feb-2026 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24
+[02-Feb-2026 22:57:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/ProcessStream.php on line 24
+[02-Feb-2026 22:57:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\Stream\AbstractStream" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/Stream/SocketStream.php on line 24

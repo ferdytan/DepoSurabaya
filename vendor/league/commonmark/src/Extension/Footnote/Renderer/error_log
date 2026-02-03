@@ -1,0 +1,160 @@
+[25-Sep-2025 07:06:33 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[25-Sep-2025 07:09:18 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[25-Sep-2025 10:27:40 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[25-Sep-2025 21:10:32 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[24-Oct-2025 06:24:36 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[24-Oct-2025 09:00:33 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[24-Oct-2025 09:46:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[24-Oct-2025 14:25:26 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[24-Nov-2025 03:12:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[24-Nov-2025 06:06:32 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[24-Nov-2025 10:41:47 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[24-Nov-2025 11:25:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[22-Dec-2025 04:03:13 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[22-Dec-2025 04:27:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[23-Dec-2025 20:17:13 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[25-Dec-2025 13:26:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[05-Jan-2026 16:35:42 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[05-Jan-2026 19:25:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[05-Jan-2026 20:28:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[05-Jan-2026 21:02:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[16-Jan-2026 16:43:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[17-Jan-2026 21:40:41 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[19-Jan-2026 13:32:42 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[21-Jan-2026 09:37:44 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[21-Jan-2026 20:45:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[22-Jan-2026 03:20:11 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[22-Jan-2026 10:21:11 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[22-Jan-2026 13:36:25 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[22-Jan-2026 16:02:03 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[22-Jan-2026 17:29:18 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[22-Jan-2026 21:22:15 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[24-Jan-2026 00:53:59 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[02-Feb-2026 22:13:52 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[02-Feb-2026 22:13:52 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[02-Feb-2026 22:13:53 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[02-Feb-2026 22:13:53 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26
+[02-Feb-2026 22:22:04 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteBackrefRenderer.php on line 26
+[02-Feb-2026 22:22:04 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteContainerRenderer.php on line 26
+[02-Feb-2026 22:22:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRefRenderer.php on line 26
+[02-Feb-2026 22:22:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Renderer/FootnoteRenderer.php on line 26

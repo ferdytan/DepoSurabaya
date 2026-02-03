@@ -1,0 +1,40 @@
+[02-Feb-2026 22:27:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/DirectTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/DirectTrigger.php on line 17
+[02-Feb-2026 22:27:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IndirectTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IndirectTrigger.php on line 17
+[02-Feb-2026 22:27:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/SelfTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/SelfTrigger.php on line 17
+[02-Feb-2026 22:27:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/TestTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/TestTrigger.php on line 17
+[02-Feb-2026 22:27:35 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/UnknownTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/UnknownTrigger.php on line 17
+[02-Feb-2026 22:39:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/DirectTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/DirectTrigger.php on line 17
+[02-Feb-2026 22:39:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IndirectTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/IndirectTrigger.php on line 17
+[02-Feb-2026 22:39:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/SelfTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/SelfTrigger.php on line 17
+[02-Feb-2026 22:39:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/TestTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/TestTrigger.php on line 17
+[02-Feb-2026 22:39:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\Code\IssueTrigger\IssueTrigger" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/UnknownTrigger.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/Issue/UnknownTrigger.php on line 17

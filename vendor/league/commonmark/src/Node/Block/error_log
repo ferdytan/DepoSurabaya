@@ -1,0 +1,128 @@
+[25-Sep-2025 14:38:59 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[29-Sep-2025 03:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[29-Sep-2025 04:47:57 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[30-Oct-2025 07:15:55 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[30-Oct-2025 13:20:15 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[30-Oct-2025 15:00:40 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[30-Nov-2025 07:03:03 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[30-Nov-2025 10:01:17 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[30-Nov-2025 11:24:49 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[27-Dec-2025 07:38:47 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[28-Dec-2025 07:42:53 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[28-Dec-2025 09:13:31 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[28-Dec-2025 09:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[06-Jan-2026 09:09:04 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[06-Jan-2026 11:24:27 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[12-Jan-2026 00:01:25 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[12-Jan-2026 02:23:27 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[12-Jan-2026 21:54:09 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[13-Jan-2026 01:42:00 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[18-Jan-2026 10:38:00 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[20-Jan-2026 11:26:39 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[23-Jan-2026 20:04:11 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[24-Jan-2026 17:22:35 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[27-Jan-2026 21:19:17 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[27-Jan-2026 22:49:03 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[28-Jan-2026 00:18:29 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[02-Feb-2026 22:14:31 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[02-Feb-2026 22:14:31 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[02-Feb-2026 22:14:32 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19
+[02-Feb-2026 22:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Node" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/AbstractBlock.php on line 27
+[02-Feb-2026 22:22:57 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Document.php on line 23
+[02-Feb-2026 22:22:58 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Block\AbstractBlock" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Node/Block/Paragraph.php on line 19

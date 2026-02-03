@@ -1,0 +1,195 @@
+[25-Sep-2025 07:54:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[25-Sep-2025 13:46:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[25-Sep-2025 17:15:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[25-Sep-2025 17:24:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[25-Sep-2025 18:17:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[28-Sep-2025 17:50:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[24-Oct-2025 14:43:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[30-Oct-2025 04:26:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[30-Oct-2025 06:24:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[30-Oct-2025 09:18:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[30-Oct-2025 11:15:46 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[30-Oct-2025 13:54:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[30-Nov-2025 05:51:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[30-Nov-2025 07:20:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[30-Nov-2025 08:36:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[30-Nov-2025 13:17:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[30-Nov-2025 14:10:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[30-Nov-2025 18:10:36 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[18-Dec-2025 00:45:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[27-Dec-2025 22:08:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[28-Dec-2025 04:18:07 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[28-Dec-2025 06:38:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[28-Dec-2025 06:44:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[28-Dec-2025 07:20:40 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[28-Dec-2025 10:18:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[30-Dec-2025 16:12:45 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[05-Jan-2026 09:14:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[05-Jan-2026 11:22:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[05-Jan-2026 18:04:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[06-Jan-2026 08:16:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[07-Jan-2026 02:35:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[07-Jan-2026 16:36:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[08-Jan-2026 07:46:33 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[08-Jan-2026 18:48:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[09-Jan-2026 13:06:09 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[11-Jan-2026 14:39:26 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[12-Jan-2026 02:21:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[12-Jan-2026 15:08:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[13-Jan-2026 03:24:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[13-Jan-2026 09:40:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[14-Jan-2026 03:53:28 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[19-Jan-2026 20:55:45 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[20-Jan-2026 01:24:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[20-Jan-2026 11:32:29 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[20-Jan-2026 13:37:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[25-Jan-2026 09:02:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[25-Jan-2026 21:46:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[26-Jan-2026 04:25:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[27-Jan-2026 17:56:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[27-Jan-2026 19:16:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[27-Jan-2026 21:27:31 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[27-Jan-2026 21:45:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[27-Jan-2026 22:25:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[27-Jan-2026 23:00:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[02-Feb-2026 22:08:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[02-Feb-2026 22:08:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[02-Feb-2026 22:08:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[02-Feb-2026 22:08:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[02-Feb-2026 22:08:24 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[02-Feb-2026 22:08:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9
+[02-Feb-2026 22:14:51 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/Factory.php on line 11
+[02-Feb-2026 22:14:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeInvokedProcess.php on line 7
+[02-Feb-2026 22:14:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/FakeProcessResult.php on line 9
+[02-Feb-2026 22:14:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\InvokedProcess" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/InvokedProcess.php on line 10
+[02-Feb-2026 22:14:55 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/PendingProcess.php on line 15
+[02-Feb-2026 22:14:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Process\ProcessResult" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Process/ProcessResult.php on line 9

@@ -1,0 +1,140 @@
+[25-Sep-2025 07:57:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[25-Sep-2025 09:37:00 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[29-Sep-2025 00:22:11 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[18-Oct-2025 10:22:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[24-Oct-2025 09:53:26 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[24-Oct-2025 19:20:02 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[30-Oct-2025 15:59:03 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[18-Nov-2025 01:10:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[24-Nov-2025 07:00:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[24-Nov-2025 21:06:11 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[30-Nov-2025 17:56:41 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[15-Dec-2025 18:18:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[21-Dec-2025 16:34:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[22-Dec-2025 05:47:09 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[28-Dec-2025 08:01:53 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[06-Jan-2026 13:13:01 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[06-Jan-2026 15:10:59 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[06-Jan-2026 15:11:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[06-Jan-2026 16:41:39 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[14-Jan-2026 06:21:07 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[15-Jan-2026 19:08:40 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[16-Jan-2026 04:52:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[16-Jan-2026 20:38:38 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[17-Jan-2026 15:05:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[19-Jan-2026 09:34:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[20-Jan-2026 16:17:18 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[25-Jan-2026 02:32:10 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[02-Feb-2026 22:26:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[02-Feb-2026 22:26:13 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[02-Feb-2026 22:26:13 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[02-Feb-2026 22:26:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17
+[02-Feb-2026 22:37:29 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Finished.php on line 21
+[02-Feb-2026 22:37:29 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php on line 17
+[02-Feb-2026 22:37:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Event" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/Started.php on line 22
+[02-Feb-2026 22:37:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Event\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php on line 17

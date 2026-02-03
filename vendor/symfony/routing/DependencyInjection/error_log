@@ -1,0 +1,61 @@
+[22-Oct-2025 02:54:07 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[22-Oct-2025 04:29:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[24-Oct-2025 13:48:33 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[24-Oct-2025 15:43:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[25-Oct-2025 13:03:15 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[25-Oct-2025 14:40:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[10-Nov-2025 17:55:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[10-Nov-2025 19:14:54 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[16-Nov-2025 10:16:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[16-Nov-2025 10:17:44 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[22-Nov-2025 09:23:22 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[23-Nov-2025 17:13:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[24-Nov-2025 07:41:28 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[24-Nov-2025 16:21:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[14-Dec-2025 13:40:56 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[14-Dec-2025 13:52:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[28-Dec-2025 06:55:17 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[28-Dec-2025 07:34:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[21-Jan-2026 00:37:40 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[26-Jan-2026 07:46:58 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[26-Jan-2026 09:24:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[02-Feb-2026 22:42:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[02-Feb-2026 22:42:46 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24
+[02-Feb-2026 22:59:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/AddExpressionLanguageProvidersPass.php on line 23
+[02-Feb-2026 22:59:30 UTC] PHP Fatal error:  Trait "Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait" not found in /home/depossco/public_html/tools/vendor/symfony/routing/DependencyInjection/RoutingResolverPass.php on line 24

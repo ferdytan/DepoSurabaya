@@ -1,0 +1,153 @@
+[14-Oct-2025 23:06:51 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[14-Oct-2025 23:06:58 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[15-Oct-2025 09:15:58 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[16-Oct-2025 01:20:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[16-Oct-2025 05:07:36 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[16-Oct-2025 05:37:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[18-Oct-2025 14:03:50 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[18-Oct-2025 17:54:04 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[18-Oct-2025 20:31:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[18-Oct-2025 20:48:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[17-Nov-2025 18:15:40 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[17-Nov-2025 21:37:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[17-Nov-2025 22:10:31 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[18-Nov-2025 05:12:25 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[20-Nov-2025 03:33:57 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[23-Nov-2025 01:04:04 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[24-Nov-2025 06:15:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[24-Nov-2025 07:02:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[27-Nov-2025 11:25:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[27-Nov-2025 12:16:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[02-Dec-2025 05:26:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[03-Dec-2025 12:06:36 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[06-Dec-2025 15:37:48 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[07-Dec-2025 14:07:42 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[10-Dec-2025 03:09:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[15-Dec-2025 13:03:40 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[15-Dec-2025 16:57:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[15-Dec-2025 21:21:40 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[15-Dec-2025 21:40:36 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[20-Dec-2025 03:28:12 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[20-Dec-2025 05:33:45 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[20-Dec-2025 09:08:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[20-Dec-2025 09:08:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[16-Jan-2026 01:54:50 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[16-Jan-2026 02:50:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[16-Jan-2026 06:47:54 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[16-Jan-2026 08:32:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[19-Jan-2026 02:59:58 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[19-Jan-2026 08:37:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[24-Jan-2026 19:25:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[02-Feb-2026 22:34:57 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[02-Feb-2026 22:34:58 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[02-Feb-2026 22:34:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[02-Feb-2026 22:34:58 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40
+[02-Feb-2026 22:49:18 UTC] PHP Fatal error:  Trait "Ramsey\Uuid\Fields\SerializableFieldsTrait" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Fields.php on line 43
+[02-Feb-2026 22:49:19 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/Uuid.php on line 27
+[02-Feb-2026 22:49:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Uuid\Builder\UuidBuilderInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidBuilder.php on line 30
+[02-Feb-2026 22:49:20 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Uuid\Uuid" not found in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/uuid/src/Nonstandard/UuidV6.php on line 40

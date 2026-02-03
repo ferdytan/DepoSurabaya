@@ -1,0 +1,1264 @@
+[25-Sep-2025 07:32:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[25-Sep-2025 09:07:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[25-Sep-2025 14:26:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[28-Sep-2025 16:25:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[28-Sep-2025 16:38:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[28-Sep-2025 18:28:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[16-Oct-2025 17:52:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[16-Oct-2025 17:52:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[16-Oct-2025 17:53:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[16-Oct-2025 17:54:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[16-Oct-2025 17:54:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[16-Oct-2025 17:55:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[16-Oct-2025 17:56:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[16-Oct-2025 17:57:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[16-Oct-2025 17:57:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[16-Oct-2025 17:59:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[16-Oct-2025 17:59:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[16-Oct-2025 18:00:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[16-Oct-2025 18:01:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[16-Oct-2025 18:01:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[16-Oct-2025 18:02:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[16-Oct-2025 18:03:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[16-Oct-2025 18:04:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[16-Oct-2025 18:04:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[16-Oct-2025 18:06:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[16-Oct-2025 18:06:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[16-Oct-2025 18:07:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[16-Oct-2025 18:08:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[16-Oct-2025 18:09:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[16-Oct-2025 18:10:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[16-Oct-2025 18:11:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[16-Oct-2025 18:13:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[16-Oct-2025 18:13:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[16-Oct-2025 18:13:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[18-Oct-2025 10:16:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[18-Oct-2025 10:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[18-Oct-2025 10:39:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[18-Oct-2025 11:05:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[18-Oct-2025 11:34:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[18-Oct-2025 12:28:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[18-Oct-2025 13:27:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[18-Oct-2025 16:06:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[18-Oct-2025 16:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[18-Oct-2025 16:44:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[18-Oct-2025 16:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[18-Oct-2025 16:51:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[18-Oct-2025 16:58:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[18-Oct-2025 17:00:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[18-Oct-2025 17:04:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[18-Oct-2025 17:06:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[18-Oct-2025 18:03:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[18-Oct-2025 19:57:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[18-Oct-2025 21:11:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[18-Oct-2025 23:31:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[19-Oct-2025 03:34:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[24-Oct-2025 05:20:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[24-Oct-2025 14:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[30-Oct-2025 05:48:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[30-Oct-2025 06:15:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[30-Oct-2025 08:09:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[30-Oct-2025 14:19:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[09-Nov-2025 00:16:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[12-Nov-2025 07:43:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[12-Nov-2025 08:23:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[12-Nov-2025 08:26:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[12-Nov-2025 21:12:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[12-Nov-2025 22:17:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[15-Nov-2025 20:16:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[17-Nov-2025 18:22:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[17-Nov-2025 18:32:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[17-Nov-2025 19:34:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[17-Nov-2025 19:37:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[17-Nov-2025 19:41:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[17-Nov-2025 20:45:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[17-Nov-2025 22:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[17-Nov-2025 23:14:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[18-Nov-2025 01:21:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[18-Nov-2025 01:47:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[18-Nov-2025 02:25:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[18-Nov-2025 02:31:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[18-Nov-2025 02:34:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[18-Nov-2025 02:38:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[18-Nov-2025 02:51:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[18-Nov-2025 04:23:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[18-Nov-2025 04:41:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[18-Nov-2025 05:12:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[18-Nov-2025 05:52:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[18-Nov-2025 05:57:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[18-Nov-2025 07:04:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[19-Nov-2025 16:20:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[19-Nov-2025 22:11:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[20-Nov-2025 04:52:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[20-Nov-2025 08:28:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[20-Nov-2025 09:35:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[20-Nov-2025 14:48:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[20-Nov-2025 17:39:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[20-Nov-2025 17:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[20-Nov-2025 20:28:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[20-Nov-2025 21:01:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[20-Nov-2025 21:50:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[21-Nov-2025 01:47:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[21-Nov-2025 04:27:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[21-Nov-2025 07:25:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[21-Nov-2025 07:25:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[21-Nov-2025 08:58:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[21-Nov-2025 12:45:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[21-Nov-2025 17:01:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[21-Nov-2025 17:01:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[21-Nov-2025 19:55:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[22-Nov-2025 02:15:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[22-Nov-2025 03:05:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[22-Nov-2025 15:22:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[22-Nov-2025 18:30:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[23-Nov-2025 07:52:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[23-Nov-2025 10:02:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[23-Nov-2025 10:48:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[23-Nov-2025 10:48:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[23-Nov-2025 12:30:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[24-Nov-2025 11:00:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[24-Nov-2025 12:15:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[24-Nov-2025 13:50:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[24-Nov-2025 16:42:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[24-Nov-2025 16:42:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[24-Nov-2025 18:17:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[24-Nov-2025 21:41:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[25-Nov-2025 01:34:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[25-Nov-2025 01:34:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[25-Nov-2025 03:55:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[28-Nov-2025 02:04:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[28-Nov-2025 12:10:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[28-Nov-2025 14:28:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[29-Nov-2025 02:47:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[29-Nov-2025 04:15:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[29-Nov-2025 04:15:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[29-Nov-2025 13:41:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[29-Nov-2025 16:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[30-Nov-2025 03:37:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[30-Nov-2025 06:56:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[30-Nov-2025 06:58:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[30-Nov-2025 07:47:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[30-Nov-2025 10:58:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[30-Nov-2025 11:06:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[30-Nov-2025 13:36:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[30-Nov-2025 16:32:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[30-Nov-2025 16:49:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[30-Nov-2025 17:20:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[30-Nov-2025 18:44:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[01-Dec-2025 05:28:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[01-Dec-2025 09:25:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[01-Dec-2025 11:40:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[02-Dec-2025 00:53:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[02-Dec-2025 01:39:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[03-Dec-2025 08:00:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[03-Dec-2025 11:07:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[03-Dec-2025 11:08:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[03-Dec-2025 12:01:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[03-Dec-2025 18:03:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[03-Dec-2025 18:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[03-Dec-2025 23:14:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[04-Dec-2025 00:03:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[04-Dec-2025 10:01:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[04-Dec-2025 13:54:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[04-Dec-2025 16:17:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[05-Dec-2025 04:55:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[05-Dec-2025 05:42:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[06-Dec-2025 21:35:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[15-Dec-2025 10:44:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[15-Dec-2025 11:17:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[15-Dec-2025 11:23:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[15-Dec-2025 12:54:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[15-Dec-2025 13:05:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[15-Dec-2025 13:09:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[15-Dec-2025 13:21:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[15-Dec-2025 14:10:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[15-Dec-2025 14:42:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[15-Dec-2025 16:01:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[15-Dec-2025 16:48:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[15-Dec-2025 17:15:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[15-Dec-2025 17:44:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[15-Dec-2025 18:39:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[15-Dec-2025 20:56:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[15-Dec-2025 21:05:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[15-Dec-2025 21:07:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[15-Dec-2025 21:22:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[15-Dec-2025 22:34:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[15-Dec-2025 23:43:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[15-Dec-2025 23:47:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[20-Dec-2025 08:34:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[20-Dec-2025 11:31:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[20-Dec-2025 11:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[20-Dec-2025 12:43:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[20-Dec-2025 12:44:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[20-Dec-2025 12:44:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[20-Dec-2025 12:44:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[20-Dec-2025 12:45:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[20-Dec-2025 13:35:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[20-Dec-2025 13:35:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[20-Dec-2025 14:18:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[20-Dec-2025 14:18:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[20-Dec-2025 14:19:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[20-Dec-2025 14:19:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[20-Dec-2025 15:11:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[20-Dec-2025 15:11:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[20-Dec-2025 15:11:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[20-Dec-2025 15:12:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[20-Dec-2025 15:12:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[20-Dec-2025 15:48:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[20-Dec-2025 16:06:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[20-Dec-2025 16:27:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[20-Dec-2025 16:47:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[20-Dec-2025 16:47:20 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[20-Dec-2025 16:47:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[20-Dec-2025 16:56:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[22-Dec-2025 00:50:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[27-Dec-2025 23:26:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[28-Dec-2025 00:54:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[28-Dec-2025 02:39:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[28-Dec-2025 04:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[28-Dec-2025 09:59:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[06-Jan-2026 14:13:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[16-Jan-2026 01:41:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[16-Jan-2026 02:11:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[16-Jan-2026 04:04:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[16-Jan-2026 04:43:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[16-Jan-2026 05:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[16-Jan-2026 06:14:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[16-Jan-2026 07:12:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[16-Jan-2026 07:26:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[16-Jan-2026 07:50:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[16-Jan-2026 08:04:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[16-Jan-2026 09:38:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[16-Jan-2026 09:41:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[16-Jan-2026 10:23:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[16-Jan-2026 10:28:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[16-Jan-2026 10:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[16-Jan-2026 11:02:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[16-Jan-2026 11:29:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[16-Jan-2026 11:36:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[16-Jan-2026 22:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[19-Jan-2026 07:38:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[19-Jan-2026 20:14:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[19-Jan-2026 20:17:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[20-Jan-2026 01:03:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[20-Jan-2026 06:35:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[20-Jan-2026 06:37:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[20-Jan-2026 12:49:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[20-Jan-2026 12:52:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[20-Jan-2026 20:16:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[21-Jan-2026 01:20:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[21-Jan-2026 06:42:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[25-Jan-2026 01:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[25-Jan-2026 05:26:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[27-Jan-2026 17:40:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[27-Jan-2026 19:37:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[27-Jan-2026 22:12:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[27-Jan-2026 22:26:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[28-Jan-2026 01:09:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[28-Jan-2026 04:55:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[02-Feb-2026 16:15:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[02-Feb-2026 18:06:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[02-Feb-2026 20:48:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[02-Feb-2026 22:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[02-Feb-2026 22:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[02-Feb-2026 22:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[02-Feb-2026 22:32:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[02-Feb-2026 22:32:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[02-Feb-2026 22:32:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[02-Feb-2026 22:32:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[02-Feb-2026 22:32:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[02-Feb-2026 22:32:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[02-Feb-2026 22:32:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[02-Feb-2026 22:32:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[02-Feb-2026 22:32:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[02-Feb-2026 22:32:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[02-Feb-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[02-Feb-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[02-Feb-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[02-Feb-2026 22:32:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[02-Feb-2026 22:32:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[02-Feb-2026 22:32:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[02-Feb-2026 22:33:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[02-Feb-2026 22:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[02-Feb-2026 22:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[02-Feb-2026 22:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[02-Feb-2026 22:33:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[02-Feb-2026 22:33:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[02-Feb-2026 22:33:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[02-Feb-2026 22:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[02-Feb-2026 22:46:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AbstractClassPass.php on line 22
+[02-Feb-2026 22:46:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/AssignThisVariablePass.php on line 24
+[02-Feb-2026 22:46:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CalledClassPass.php on line 27
+[02-Feb-2026 22:46:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CallTimePassByReferencePass.php on line 28
+[02-Feb-2026 22:46:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/CodeCleanerPass.php on line 19
+[02-Feb-2026 22:46:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/EmptyArrayDimFetchPass.php on line 24
+[02-Feb-2026 22:46:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ExitPass.php on line 20
+[02-Feb-2026 22:46:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FinalClassPass.php on line 21
+[02-Feb-2026 22:46:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionContextPass.php on line 19
+[02-Feb-2026 22:46:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/FunctionReturnInWriteContextPass.php on line 30
+[02-Feb-2026 22:46:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ImplicitReturnPass.php on line 28
+[02-Feb-2026 22:46:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/IssetPass.php on line 26
+[02-Feb-2026 22:46:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32
+[02-Feb-2026 22:46:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LeavePsyshAlonePass.php on line 21
+[02-Feb-2026 22:46:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ListPass.php on line 31
+[02-Feb-2026 22:46:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LoopContextPass.php on line 31
+[02-Feb-2026 22:46:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/MagicConstantsPass.php on line 24
+[02-Feb-2026 22:46:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespaceAwarePass.php on line 22
+[02-Feb-2026 22:46:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/NamespacePass.php on line 30
+[02-Feb-2026 22:46:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/PassableByReferencePass.php on line 30
+[02-Feb-2026 22:46:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/RequirePass.php on line 27
+[02-Feb-2026 22:46:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ReturnTypePass.php on line 29
+[02-Feb-2026 22:46:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/StrictTypesPass.php on line 32
+[02-Feb-2026 22:46:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/UseStatementPass.php on line 34
+[02-Feb-2026 22:46:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidClassNamePass.php on line 33
+[02-Feb-2026 22:46:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidConstructorPass.php on line 34
+[02-Feb-2026 22:46:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\NamespaceAwarePass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/ValidFunctionNamePass.php on line 28
+[03-Feb-2026 00:34:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\CodeCleaner\CodeCleanerPass" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/CodeCleaner/LabelContextPass.php on line 32

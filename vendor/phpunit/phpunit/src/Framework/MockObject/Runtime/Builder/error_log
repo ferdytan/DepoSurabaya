@@ -1,0 +1,32 @@
+[02-Feb-2026 22:29:02 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\InvocationStubber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/InvocationMocker.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/InvocationMocker.php on line 49
+[02-Feb-2026 22:29:03 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\ParametersMatch" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/MethodNameMatch.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/MethodNameMatch.php on line 19
+[02-Feb-2026 22:29:03 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\Stub" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/ParametersMatch.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/ParametersMatch.php on line 17
+[02-Feb-2026 22:29:03 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\Identity" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/Stub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/Stub.php on line 19
+[02-Feb-2026 22:41:22 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\InvocationStubber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/InvocationMocker.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/InvocationMocker.php on line 49
+[02-Feb-2026 22:41:22 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\ParametersMatch" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/MethodNameMatch.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/MethodNameMatch.php on line 19
+[02-Feb-2026 22:41:23 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\Stub" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/ParametersMatch.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/ParametersMatch.php on line 17
+[02-Feb-2026 22:41:24 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Framework\MockObject\Builder\Identity" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/Stub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/Builder/Stub.php on line 19

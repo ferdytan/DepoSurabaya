@@ -1,0 +1,772 @@
+[25-Sep-2025 06:00:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[25-Sep-2025 08:03:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[25-Sep-2025 08:04:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[25-Sep-2025 18:35:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[25-Sep-2025 20:03:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[28-Sep-2025 13:14:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[28-Sep-2025 13:30:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[28-Sep-2025 23:50:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[29-Sep-2025 00:42:55 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[20-Oct-2025 01:21:14 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[20-Oct-2025 02:08:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[20-Oct-2025 03:44:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[20-Oct-2025 04:35:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[20-Oct-2025 07:47:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[20-Oct-2025 12:54:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[20-Oct-2025 19:14:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[20-Oct-2025 21:41:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[20-Oct-2025 23:12:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[21-Oct-2025 06:24:11 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[21-Oct-2025 08:02:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[21-Oct-2025 19:48:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[21-Oct-2025 21:21:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[22-Oct-2025 04:28:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[22-Oct-2025 18:04:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[22-Oct-2025 18:05:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[23-Oct-2025 00:25:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[23-Oct-2025 02:03:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[24-Oct-2025 06:39:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[24-Oct-2025 08:06:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[24-Oct-2025 12:31:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[24-Oct-2025 14:29:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[24-Oct-2025 15:14:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[25-Oct-2025 14:37:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[30-Oct-2025 06:24:25 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[30-Oct-2025 09:34:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[30-Oct-2025 09:50:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[30-Oct-2025 15:28:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[07-Nov-2025 03:06:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[07-Nov-2025 05:48:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[09-Nov-2025 00:59:30 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[12-Nov-2025 14:12:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[12-Nov-2025 16:20:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[12-Nov-2025 22:04:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[12-Nov-2025 22:13:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[13-Nov-2025 04:09:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[13-Nov-2025 05:12:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[15-Nov-2025 20:30:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[15-Nov-2025 21:53:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[15-Nov-2025 23:02:46 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[16-Nov-2025 00:19:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[16-Nov-2025 05:00:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[16-Nov-2025 12:17:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[24-Nov-2025 04:23:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[24-Nov-2025 05:03:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[24-Nov-2025 08:14:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[24-Nov-2025 09:35:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[24-Nov-2025 09:54:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[30-Nov-2025 07:17:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[30-Nov-2025 07:33:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[30-Nov-2025 11:10:07 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[30-Nov-2025 17:14:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[04-Dec-2025 16:19:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[04-Dec-2025 17:04:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[04-Dec-2025 17:48:10 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[04-Dec-2025 19:00:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[04-Dec-2025 19:01:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[04-Dec-2025 19:01:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[04-Dec-2025 19:36:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[04-Dec-2025 20:25:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[04-Dec-2025 20:58:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[21-Dec-2025 16:05:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[21-Dec-2025 20:56:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[21-Dec-2025 21:30:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[21-Dec-2025 22:11:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[22-Dec-2025 07:53:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[25-Dec-2025 14:36:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[28-Dec-2025 03:39:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[28-Dec-2025 06:52:27 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[28-Dec-2025 07:30:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[28-Dec-2025 15:18:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[01-Jan-2026 01:09:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[01-Jan-2026 06:10:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[01-Jan-2026 12:34:29 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[01-Jan-2026 21:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[01-Jan-2026 21:50:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[02-Jan-2026 08:03:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[03-Jan-2026 05:12:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[04-Jan-2026 13:55:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[04-Jan-2026 23:44:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[05-Jan-2026 03:54:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[06-Jan-2026 09:35:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[06-Jan-2026 23:25:33 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[07-Jan-2026 10:45:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[08-Jan-2026 01:24:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[08-Jan-2026 02:55:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[08-Jan-2026 07:46:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[08-Jan-2026 16:39:55 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[08-Jan-2026 22:48:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[10-Jan-2026 00:18:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[10-Jan-2026 00:27:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[10-Jan-2026 05:56:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[10-Jan-2026 18:45:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[11-Jan-2026 16:44:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[11-Jan-2026 23:58:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[13-Jan-2026 00:24:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[13-Jan-2026 01:12:33 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[13-Jan-2026 13:25:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[13-Jan-2026 14:54:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[13-Jan-2026 17:25:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[14-Jan-2026 12:30:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[14-Jan-2026 16:04:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[15-Jan-2026 05:26:03 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[15-Jan-2026 07:33:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[15-Jan-2026 12:31:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[15-Jan-2026 17:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[16-Jan-2026 12:58:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[16-Jan-2026 13:43:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[17-Jan-2026 00:22:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[17-Jan-2026 01:36:56 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[17-Jan-2026 12:58:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[17-Jan-2026 14:11:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[17-Jan-2026 16:54:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[18-Jan-2026 12:56:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[18-Jan-2026 14:21:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[19-Jan-2026 00:27:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[19-Jan-2026 01:45:30 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[19-Jan-2026 13:14:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[19-Jan-2026 14:07:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[19-Jan-2026 17:15:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[20-Jan-2026 12:44:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[20-Jan-2026 13:45:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[21-Jan-2026 00:13:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[21-Jan-2026 00:35:33 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[21-Jan-2026 01:22:46 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[21-Jan-2026 01:25:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[21-Jan-2026 03:05:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[21-Jan-2026 03:57:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[21-Jan-2026 07:04:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[21-Jan-2026 11:55:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[21-Jan-2026 12:47:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[21-Jan-2026 15:52:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[21-Jan-2026 17:30:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[21-Jan-2026 18:58:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[21-Jan-2026 19:51:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[21-Jan-2026 21:22:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[22-Jan-2026 04:51:29 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[22-Jan-2026 06:20:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[22-Jan-2026 09:49:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[22-Jan-2026 13:19:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[22-Jan-2026 14:55:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[22-Jan-2026 16:05:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[22-Jan-2026 17:55:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[22-Jan-2026 18:35:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[22-Jan-2026 19:08:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[22-Jan-2026 19:30:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[23-Jan-2026 00:35:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[23-Jan-2026 01:43:02 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[23-Jan-2026 15:10:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[23-Jan-2026 15:17:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[23-Jan-2026 15:20:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[23-Jan-2026 18:16:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[23-Jan-2026 23:10:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[24-Jan-2026 04:00:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[24-Jan-2026 05:11:24 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[24-Jan-2026 06:02:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[24-Jan-2026 07:25:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[24-Jan-2026 10:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[24-Jan-2026 15:36:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[24-Jan-2026 16:00:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[25-Jan-2026 01:33:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[25-Jan-2026 01:42:17 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[25-Jan-2026 16:04:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[25-Jan-2026 18:06:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[25-Jan-2026 20:18:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[26-Jan-2026 09:19:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[26-Jan-2026 22:15:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[26-Jan-2026 22:16:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[27-Jan-2026 00:23:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[27-Jan-2026 01:52:18 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[27-Jan-2026 14:37:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[27-Jan-2026 16:44:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[27-Jan-2026 19:23:59 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[27-Jan-2026 20:25:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[28-Jan-2026 01:59:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[28-Jan-2026 02:15:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[28-Jan-2026 07:47:54 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[28-Jan-2026 12:34:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[29-Jan-2026 19:53:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[29-Jan-2026 21:34:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[30-Jan-2026 09:36:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[30-Jan-2026 10:43:30 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[30-Jan-2026 14:11:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[31-Jan-2026 16:43:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[02-Feb-2026 13:23:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[02-Feb-2026 15:23:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[02-Feb-2026 22:43:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[02-Feb-2026 22:43:31 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[02-Feb-2026 22:43:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[02-Feb-2026 22:43:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[02-Feb-2026 22:43:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[02-Feb-2026 22:43:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[02-Feb-2026 22:43:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[02-Feb-2026 22:43:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[02-Feb-2026 22:43:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[02-Feb-2026 23:00:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23
+[02-Feb-2026 23:00:30 UTC] PHP Fatal error:  Trait "Symfony\Contracts\Translation\TranslatorTrait" not found in /home/depossco/public_html/tools/vendor/symfony/translation/IdentityTranslator.php on line 23
+[02-Feb-2026 23:00:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\LocaleAwareInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LocaleSwitcher.php on line 20
+[02-Feb-2026 23:00:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/LoggingTranslator.php on line 21
+[02-Feb-2026 23:00:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\MessageCatalogueInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/MessageCatalogue.php on line 20
+[02-Feb-2026 23:00:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/PseudoLocalizationTranslator.php on line 20
+[02-Feb-2026 23:00:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatableMessage.php on line 20
+[02-Feb-2026 23:00:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Translator.php on line 34
+[02-Feb-2026 23:00:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\TranslatorBagInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/TranslatorBag.php on line 17
+[03-Feb-2026 02:12:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Contracts\Translation\TranslatorInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/DataCollectorTranslator.php on line 23

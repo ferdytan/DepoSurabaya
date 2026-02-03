@@ -1,0 +1,128 @@
+[18-Oct-2025 13:23:46 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[18-Oct-2025 14:45:38 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[18-Oct-2025 19:06:25 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[16-Nov-2025 13:14:42 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[17-Nov-2025 18:15:57 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[17-Nov-2025 21:18:51 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[18-Nov-2025 01:07:14 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[20-Nov-2025 02:49:25 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[23-Nov-2025 17:55:48 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[24-Nov-2025 12:49:39 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[27-Nov-2025 17:31:19 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[29-Nov-2025 17:22:20 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[01-Dec-2025 17:07:20 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[02-Dec-2025 09:05:37 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[04-Dec-2025 21:28:08 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[15-Dec-2025 15:49:49 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[15-Dec-2025 19:49:24 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[15-Dec-2025 22:22:19 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[20-Dec-2025 13:39:45 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[05-Jan-2026 04:30:01 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[06-Jan-2026 15:18:01 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[16-Jan-2026 01:24:56 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[16-Jan-2026 03:03:30 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[16-Jan-2026 05:00:44 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[19-Jan-2026 15:17:18 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[25-Jan-2026 03:29:11 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[02-Feb-2026 21:57:09 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[02-Feb-2026 21:57:10 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[02-Feb-2026 21:57:10 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8
+[02-Feb-2026 22:00:16 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Cookie\CookieJarInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php on line 11
+[02-Feb-2026 22:00:17 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php on line 10
+[02-Feb-2026 22:00:18 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Cookie\CookieJar" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php on line 8

@@ -1,0 +1,848 @@
+[25-Sep-2025 06:39:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[25-Sep-2025 07:41:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[25-Sep-2025 08:40:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[25-Sep-2025 08:41:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[25-Sep-2025 08:58:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[25-Sep-2025 10:04:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[25-Sep-2025 16:12:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[25-Sep-2025 18:47:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[28-Sep-2025 14:40:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[28-Sep-2025 14:50:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[28-Sep-2025 15:19:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[28-Sep-2025 15:53:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[28-Sep-2025 16:57:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[28-Sep-2025 17:08:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[29-Sep-2025 02:41:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[29-Sep-2025 05:19:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[12-Oct-2025 23:20:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[17-Oct-2025 02:08:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[17-Oct-2025 02:16:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[17-Oct-2025 02:24:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[17-Oct-2025 02:26:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[17-Oct-2025 02:51:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[17-Oct-2025 03:02:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[17-Oct-2025 03:15:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[17-Oct-2025 03:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[17-Oct-2025 03:25:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[17-Oct-2025 03:39:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[17-Oct-2025 04:03:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[17-Oct-2025 07:44:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[17-Oct-2025 07:46:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[17-Oct-2025 07:48:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[17-Oct-2025 07:50:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[17-Oct-2025 07:57:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[17-Oct-2025 08:01:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[17-Oct-2025 08:05:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[17-Oct-2025 08:31:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[17-Oct-2025 10:06:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[17-Oct-2025 10:12:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[17-Oct-2025 11:04:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[18-Oct-2025 02:18:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[18-Oct-2025 14:23:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[19-Oct-2025 15:07:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[24-Oct-2025 05:08:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[24-Oct-2025 05:48:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[24-Oct-2025 09:41:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[24-Oct-2025 12:43:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[24-Oct-2025 13:00:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[24-Oct-2025 13:07:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[24-Oct-2025 13:28:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[24-Oct-2025 15:49:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[30-Oct-2025 04:43:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[30-Oct-2025 06:42:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[30-Oct-2025 06:46:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[30-Oct-2025 12:33:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[30-Oct-2025 14:06:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[30-Oct-2025 14:23:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[30-Oct-2025 14:46:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[30-Oct-2025 15:45:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[04-Nov-2025 19:07:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[05-Nov-2025 13:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[11-Nov-2025 17:46:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[24-Nov-2025 02:32:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[24-Nov-2025 07:53:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[24-Nov-2025 09:03:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[30-Nov-2025 06:44:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[30-Nov-2025 07:57:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[30-Nov-2025 08:03:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[30-Nov-2025 09:18:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[30-Nov-2025 11:12:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[30-Nov-2025 12:27:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[30-Nov-2025 12:52:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[30-Nov-2025 13:09:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[30-Nov-2025 14:05:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[30-Nov-2025 14:54:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[30-Nov-2025 17:12:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[30-Nov-2025 17:16:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[30-Nov-2025 17:47:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[12-Dec-2025 04:00:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[15-Dec-2025 16:09:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[21-Dec-2025 18:43:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[25-Dec-2025 12:01:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[27-Dec-2025 21:55:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[27-Dec-2025 22:39:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[28-Dec-2025 00:48:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[28-Dec-2025 03:08:08 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[28-Dec-2025 03:09:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[28-Dec-2025 03:34:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[28-Dec-2025 03:55:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[28-Dec-2025 04:54:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[28-Dec-2025 05:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[28-Dec-2025 07:27:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[28-Dec-2025 07:33:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[28-Dec-2025 08:04:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[28-Dec-2025 08:24:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[28-Dec-2025 11:23:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[04-Jan-2026 13:58:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[06-Jan-2026 05:55:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[06-Jan-2026 05:56:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[06-Jan-2026 12:07:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[06-Jan-2026 13:44:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[06-Jan-2026 13:45:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[06-Jan-2026 16:46:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[06-Jan-2026 17:19:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[06-Jan-2026 17:36:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[06-Jan-2026 18:02:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[06-Jan-2026 18:02:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[06-Jan-2026 18:02:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[06-Jan-2026 18:03:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[06-Jan-2026 18:03:20 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[06-Jan-2026 18:03:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[06-Jan-2026 18:44:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[06-Jan-2026 18:44:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[06-Jan-2026 19:25:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[06-Jan-2026 19:25:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[06-Jan-2026 20:15:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[06-Jan-2026 20:15:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[06-Jan-2026 20:33:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[06-Jan-2026 21:03:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[06-Jan-2026 21:03:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[07-Jan-2026 20:07:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[07-Jan-2026 20:07:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[08-Jan-2026 05:30:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[08-Jan-2026 06:59:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[08-Jan-2026 13:14:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[08-Jan-2026 16:25:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[08-Jan-2026 19:52:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[08-Jan-2026 22:55:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[09-Jan-2026 10:45:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[09-Jan-2026 10:46:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[09-Jan-2026 17:07:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[09-Jan-2026 18:36:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[09-Jan-2026 19:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[09-Jan-2026 21:33:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[10-Jan-2026 01:57:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[10-Jan-2026 04:12:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[10-Jan-2026 06:32:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[10-Jan-2026 11:28:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[10-Jan-2026 21:41:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[11-Jan-2026 00:51:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[11-Jan-2026 12:17:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[11-Jan-2026 13:04:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[11-Jan-2026 13:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[12-Jan-2026 00:00:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[12-Jan-2026 00:01:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[12-Jan-2026 03:10:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[12-Jan-2026 15:10:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[12-Jan-2026 22:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[14-Jan-2026 09:51:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[14-Jan-2026 22:02:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[14-Jan-2026 22:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[16-Jan-2026 04:07:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[18-Jan-2026 10:28:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[18-Jan-2026 11:18:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[18-Jan-2026 11:57:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[18-Jan-2026 12:37:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[22-Jan-2026 11:12:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[25-Jan-2026 15:59:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[25-Jan-2026 16:02:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[25-Jan-2026 16:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[25-Jan-2026 16:07:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[25-Jan-2026 22:04:47 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[25-Jan-2026 22:07:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[26-Jan-2026 11:01:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[27-Jan-2026 16:47:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[27-Jan-2026 19:58:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[27-Jan-2026 20:52:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[27-Jan-2026 21:24:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[27-Jan-2026 21:26:18 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[27-Jan-2026 21:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[27-Jan-2026 21:50:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[27-Jan-2026 22:23:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[27-Jan-2026 23:12:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[27-Jan-2026 23:31:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[28-Jan-2026 00:08:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[28-Jan-2026 03:23:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[28-Jan-2026 04:41:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[28-Jan-2026 04:46:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[28-Jan-2026 09:22:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:33:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[02-Feb-2026 22:33:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:33:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[02-Feb-2026 22:33:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:33:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[02-Feb-2026 22:33:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[02-Feb-2026 22:33:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[02-Feb-2026 22:33:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[02-Feb-2026 22:33:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:33:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[02-Feb-2026 22:33:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[02-Feb-2026 22:33:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[02-Feb-2026 22:33:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[02-Feb-2026 22:33:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[02-Feb-2026 22:33:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:34:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[02-Feb-2026 22:34:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21
+[02-Feb-2026 22:47:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php on line 25
+[02-Feb-2026 22:47:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:47:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassAttributesMatcher.php on line 22
+[02-Feb-2026 22:47:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:47:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassMethodsMatcher.php on line 22
+[02-Feb-2026 22:47:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ClassNamesMatcher.php on line 21
+[02-Feb-2026 22:47:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/CommandsMatcher.php on line 24
+[02-Feb-2026 22:47:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ConstantsMatcher.php on line 21
+[02-Feb-2026 22:47:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:47:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/FunctionsMatcher.php on line 21
+[02-Feb-2026 22:47:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/KeywordsMatcher.php on line 21
+[02-Feb-2026 22:47:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoClientMatcher.php on line 21
+[02-Feb-2026 22:48:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/MongoDatabaseMatcher.php on line 21
+[02-Feb-2026 22:48:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectAttributesMatcher.php on line 24
+[02-Feb-2026 22:48:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractDefaultParametersMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodDefaultParametersMatcher.php on line 14
+[02-Feb-2026 22:48:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/ObjectMethodsMatcher.php on line 24
+[02-Feb-2026 22:48:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\TabCompletion\Matcher\AbstractContextAwareMatcher" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/TabCompletion/Matcher/VariablesMatcher.php on line 21

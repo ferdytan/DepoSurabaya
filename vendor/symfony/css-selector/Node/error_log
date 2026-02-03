@@ -1,0 +1,588 @@
+[18-Oct-2025 09:10:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[18-Oct-2025 10:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[18-Oct-2025 10:59:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[18-Oct-2025 11:11:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[18-Oct-2025 12:44:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[18-Oct-2025 13:00:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[18-Oct-2025 13:58:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[18-Oct-2025 15:36:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[18-Oct-2025 17:21:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[18-Oct-2025 17:49:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[18-Oct-2025 19:32:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[18-Oct-2025 21:37:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[18-Oct-2025 22:25:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[18-Oct-2025 22:58:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[19-Oct-2025 02:21:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[19-Oct-2025 05:13:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[19-Oct-2025 22:42:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[23-Oct-2025 11:48:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[23-Oct-2025 11:48:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[25-Oct-2025 01:00:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[25-Oct-2025 03:11:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[01-Nov-2025 07:39:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[02-Nov-2025 07:55:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[03-Nov-2025 01:31:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[03-Nov-2025 05:28:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[03-Nov-2025 09:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[03-Nov-2025 10:57:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[04-Nov-2025 07:45:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[04-Nov-2025 07:53:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[05-Nov-2025 13:37:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[05-Nov-2025 14:17:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[05-Nov-2025 21:09:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[05-Nov-2025 22:11:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[06-Nov-2025 10:09:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[06-Nov-2025 14:18:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[06-Nov-2025 17:36:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[07-Nov-2025 16:14:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[07-Nov-2025 16:21:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[08-Nov-2025 12:59:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[09-Nov-2025 06:15:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[10-Nov-2025 15:30:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[10-Nov-2025 15:40:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[10-Nov-2025 16:16:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[10-Nov-2025 16:40:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[10-Nov-2025 17:40:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[10-Nov-2025 18:03:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[10-Nov-2025 18:52:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[10-Nov-2025 19:40:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[10-Nov-2025 19:52:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[10-Nov-2025 23:15:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[10-Nov-2025 23:26:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[11-Nov-2025 00:20:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[12-Nov-2025 03:36:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[12-Nov-2025 14:52:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[16-Nov-2025 04:35:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[17-Nov-2025 02:30:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[17-Nov-2025 17:37:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[17-Nov-2025 18:26:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[17-Nov-2025 19:09:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[17-Nov-2025 23:36:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[18-Nov-2025 00:46:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[18-Nov-2025 01:31:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[18-Nov-2025 04:10:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[18-Nov-2025 11:40:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[19-Nov-2025 02:48:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[19-Nov-2025 02:48:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[19-Nov-2025 05:20:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[21-Nov-2025 23:11:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[24-Nov-2025 02:37:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[24-Nov-2025 03:55:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[24-Nov-2025 04:58:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[24-Nov-2025 06:17:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[24-Nov-2025 09:32:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[24-Nov-2025 09:47:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[24-Nov-2025 10:06:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[24-Nov-2025 12:42:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[14-Dec-2025 06:13:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[14-Dec-2025 06:14:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[14-Dec-2025 07:31:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[14-Dec-2025 07:32:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[14-Dec-2025 07:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[14-Dec-2025 07:32:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[14-Dec-2025 07:32:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[14-Dec-2025 09:00:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[14-Dec-2025 09:00:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[14-Dec-2025 09:00:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[14-Dec-2025 11:39:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[14-Dec-2025 13:14:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[15-Dec-2025 10:51:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[15-Dec-2025 17:20:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[15-Dec-2025 17:49:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[27-Dec-2025 23:28:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[28-Dec-2025 00:03:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[28-Dec-2025 00:25:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[28-Dec-2025 02:29:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[28-Dec-2025 04:45:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[28-Dec-2025 05:58:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[28-Dec-2025 07:17:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[28-Dec-2025 08:58:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[28-Dec-2025 11:03:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[14-Jan-2026 03:09:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[16-Jan-2026 00:41:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[16-Jan-2026 10:45:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[16-Jan-2026 11:34:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[19-Jan-2026 04:18:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[20-Jan-2026 05:03:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[24-Jan-2026 07:38:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[24-Jan-2026 07:38:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[24-Jan-2026 14:06:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[24-Jan-2026 14:09:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[24-Jan-2026 14:11:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[24-Jan-2026 16:33:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[25-Jan-2026 22:27:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[27-Jan-2026 16:26:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[27-Jan-2026 17:52:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[27-Jan-2026 22:02:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[27-Jan-2026 22:45:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[27-Jan-2026 23:50:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[28-Jan-2026 00:10:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[28-Jan-2026 02:19:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[28-Jan-2026 04:14:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[28-Jan-2026 04:40:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[02-Feb-2026 15:49:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[02-Feb-2026 22:37:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[02-Feb-2026 22:37:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[02-Feb-2026 22:37:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[02-Feb-2026 22:37:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[02-Feb-2026 22:37:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[02-Feb-2026 22:37:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[02-Feb-2026 22:37:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[02-Feb-2026 22:37:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[02-Feb-2026 22:37:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[02-Feb-2026 22:37:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[02-Feb-2026 22:37:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[02-Feb-2026 22:37:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24
+[02-Feb-2026 22:53:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\CssSelector\Node\NodeInterface" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AbstractNode.php on line 24
+[02-Feb-2026 22:53:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/AttributeNode.php on line 24
+[02-Feb-2026 22:53:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ClassNode.php on line 24
+[02-Feb-2026 22:53:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/CombinedSelectorNode.php on line 24
+[02-Feb-2026 22:53:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/ElementNode.php on line 24
+[02-Feb-2026 22:53:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/FunctionNode.php on line 26
+[02-Feb-2026 22:53:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/HashNode.php on line 24
+[02-Feb-2026 22:53:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/MatchingNode.php on line 24
+[02-Feb-2026 22:53:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/NegationNode.php on line 24
+[02-Feb-2026 22:53:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/PseudoNode.php on line 24
+[02-Feb-2026 22:53:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SelectorNode.php on line 24
+[02-Feb-2026 22:53:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\CssSelector\Node\AbstractNode" not found in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/css-selector/Node/SpecificityAdjustmentNode.php on line 24

@@ -1,0 +1,268 @@
+[25-Sep-2025 06:20:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[25-Sep-2025 11:39:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[25-Sep-2025 17:34:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[28-Sep-2025 15:37:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[28-Sep-2025 19:34:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[29-Sep-2025 03:36:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[24-Oct-2025 08:22:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[24-Oct-2025 12:33:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[30-Oct-2025 05:36:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[30-Oct-2025 08:12:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[30-Oct-2025 14:41:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[30-Oct-2025 17:14:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[24-Nov-2025 04:37:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[24-Nov-2025 07:43:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[30-Nov-2025 08:13:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[30-Nov-2025 11:44:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[30-Nov-2025 11:46:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[30-Nov-2025 12:39:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[21-Dec-2025 22:08:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[28-Dec-2025 00:42:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[28-Dec-2025 06:36:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[28-Dec-2025 09:06:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[28-Dec-2025 10:20:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[30-Dec-2025 02:30:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[06-Jan-2026 15:19:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[06-Jan-2026 15:19:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[06-Jan-2026 15:50:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[06-Jan-2026 16:47:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[06-Jan-2026 17:24:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[06-Jan-2026 18:08:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[06-Jan-2026 18:08:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[07-Jan-2026 06:55:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[07-Jan-2026 12:55:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[08-Jan-2026 00:33:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[08-Jan-2026 07:46:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[08-Jan-2026 11:43:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[08-Jan-2026 17:14:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[11-Jan-2026 14:38:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[11-Jan-2026 18:56:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[12-Jan-2026 00:47:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[13-Jan-2026 03:22:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[14-Jan-2026 13:50:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[18-Jan-2026 19:44:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[18-Jan-2026 23:53:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[19-Jan-2026 02:57:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[20-Jan-2026 01:20:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[20-Jan-2026 07:10:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[22-Jan-2026 12:35:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[25-Jan-2026 16:35:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[25-Jan-2026 16:37:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[27-Jan-2026 17:25:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[27-Jan-2026 22:09:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[28-Jan-2026 02:04:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[28-Jan-2026 02:19:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[28-Jan-2026 03:02:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[02-Feb-2026 22:07:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[02-Feb-2026 22:07:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[02-Feb-2026 22:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[02-Feb-2026 22:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[02-Feb-2026 22:07:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[02-Feb-2026 22:07:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13
+[02-Feb-2026 22:13:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/File.php on line 7
+[02-Feb-2026 22:13:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\JsonResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php on line 12
+[02-Feb-2026 22:13:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\RedirectResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php on line 15
+[02-Feb-2026 22:13:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Request.php on line 26
+[02-Feb-2026 22:13:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Response" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Response.php on line 15
+[02-Feb-2026 22:13:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\File\UploadedFile" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/UploadedFile.php on line 13

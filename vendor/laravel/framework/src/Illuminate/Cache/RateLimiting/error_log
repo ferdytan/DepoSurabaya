@@ -1,0 +1,72 @@
+[25-Sep-2025 09:10:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[25-Sep-2025 09:41:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[24-Oct-2025 11:51:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[24-Nov-2025 05:33:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[24-Nov-2025 21:11:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[21-Dec-2025 17:37:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[21-Dec-2025 23:38:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[06-Jan-2026 20:38:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[06-Jan-2026 21:00:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[23-Jan-2026 07:00:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[26-Jan-2026 20:42:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[30-Jan-2026 01:48:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[31-Jan-2026 07:01:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[31-Jan-2026 08:27:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[02-Feb-2026 22:01:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[02-Feb-2026 22:01:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5
+[02-Feb-2026 22:06:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\Limit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/GlobalLimit.php on line 5
+[02-Feb-2026 22:06:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cache\RateLimiting\GlobalLimit" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Cache/RateLimiting/Unlimited.php on line 5

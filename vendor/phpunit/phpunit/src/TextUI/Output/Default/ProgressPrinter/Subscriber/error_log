@@ -1,0 +1,200 @@
+[21-Jan-2026 22:38:34 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php on line 20
+[21-Jan-2026 22:41:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php on line 20
+[21-Jan-2026 22:59:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php on line 20
+[21-Jan-2026 23:01:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[21-Jan-2026 23:05:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[21-Jan-2026 23:08:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php on line 20
+[21-Jan-2026 23:15:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[21-Jan-2026 23:18:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[21-Jan-2026 23:20:49 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[21-Jan-2026 23:23:20 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[21-Jan-2026 23:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[21-Jan-2026 23:33:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[21-Jan-2026 23:37:19 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[21-Jan-2026 23:39:51 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[02-Feb-2026 22:31:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:31:59 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[02-Feb-2026 22:32:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php on line 20
+[02-Feb-2026 22:32:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php on line 20
+[02-Feb-2026 22:32:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php on line 20
+[02-Feb-2026 22:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[02-Feb-2026 22:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPreparedSubscriber.php on line 20
+[02-Feb-2026 22:32:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php on line 20
+[02-Feb-2026 22:32:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php on line 20
+[02-Feb-2026 22:32:02 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:32:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[02-Feb-2026 22:32:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[02-Feb-2026 22:32:03 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:32:04 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[02-Feb-2026 22:32:04 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:32:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[02-Feb-2026 22:32:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[02-Feb-2026 22:32:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php on line 20
+[02-Feb-2026 22:45:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/BeforeTestClassMethodErroredSubscriber.php on line 20
+[02-Feb-2026 22:45:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestConsideredRiskySubscriber.php on line 20
+[02-Feb-2026 22:45:23 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestErroredSubscriber.php on line 20
+[02-Feb-2026 22:45:24 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFailedSubscriber.php on line 20
+[02-Feb-2026 22:45:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php on line 20
+[02-Feb-2026 22:45:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php on line 20
+[02-Feb-2026 22:45:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPreparedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPreparedSubscriber.php on line 20
+[02-Feb-2026 22:45:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php on line 20
+[02-Feb-2026 22:45:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php on line 20
+[02-Feb-2026 22:45:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:45:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php on line 20
+[02-Feb-2026 22:45:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredNoticeSubscriber.php on line 20
+[02-Feb-2026 22:45:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:45:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php on line 20
+[02-Feb-2026 22:45:30 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitDeprecationSubscriber.php on line 20
+[02-Feb-2026 22:45:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpunitWarningSubscriber.php on line 20
+[02-Feb-2026 22:45:31 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpWarningSubscriber.php on line 20
+[02-Feb-2026 22:45:32 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\TextUI\Output\Default\ProgressPrinter\Subscriber" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredWarningSubscriber.php on line 20

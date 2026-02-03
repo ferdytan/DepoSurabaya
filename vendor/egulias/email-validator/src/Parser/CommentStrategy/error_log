@@ -1,0 +1,84 @@
+[25-Sep-2025 11:24:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[28-Sep-2025 13:31:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[16-Oct-2025 10:12:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[18-Oct-2025 16:22:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[24-Oct-2025 05:45:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[30-Oct-2025 14:15:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[24-Nov-2025 00:41:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[08-Dec-2025 10:35:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[25-Dec-2025 17:46:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[05-Jan-2026 14:46:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[05-Jan-2026 14:46:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[09-Jan-2026 21:12:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[10-Jan-2026 04:20:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[13-Jan-2026 01:42:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[15-Jan-2026 19:11:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[16-Jan-2026 02:29:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[22-Jan-2026 17:49:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[02-Feb-2026 21:51:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[02-Feb-2026 21:51:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13
+[02-Feb-2026 21:53:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/DomainComment.php on line 11
+[02-Feb-2026 21:53:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Egulias\EmailValidator\Parser\CommentStrategy\CommentStrategy" not found in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/egulias/email-validator/src/Parser/CommentStrategy/LocalComment.php on line 13

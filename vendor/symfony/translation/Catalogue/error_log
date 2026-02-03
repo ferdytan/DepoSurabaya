@@ -1,0 +1,156 @@
+[04-Oct-2025 05:50:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[04-Oct-2025 10:40:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[18-Oct-2025 10:03:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[03-Nov-2025 03:20:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[05-Nov-2025 11:25:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[05-Nov-2025 14:58:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[09-Nov-2025 16:43:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[09-Nov-2025 17:03:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[09-Nov-2025 21:01:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[11-Nov-2025 03:46:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[11-Nov-2025 11:22:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[11-Nov-2025 13:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[14-Nov-2025 15:42:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[17-Nov-2025 01:43:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[17-Nov-2025 01:52:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[17-Nov-2025 15:47:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[17-Nov-2025 23:47:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[08-Dec-2025 15:35:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[08-Dec-2025 19:09:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[14-Dec-2025 03:23:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[14-Dec-2025 03:23:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[14-Dec-2025 05:28:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[15-Dec-2025 20:04:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[09-Jan-2026 17:48:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[09-Jan-2026 23:48:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[10-Jan-2026 01:28:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[16-Jan-2026 05:41:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[18-Jan-2026 20:33:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[25-Jan-2026 23:11:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[27-Jan-2026 22:10:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[30-Jan-2026 08:20:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[02-Feb-2026 22:43:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[02-Feb-2026 22:43:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[02-Feb-2026 22:43:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[02-Feb-2026 23:00:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Translation\Catalogue\OperationInterface" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/AbstractOperation.php on line 27
+[02-Feb-2026 23:00:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/MergeOperation.php on line 25
+[02-Feb-2026 23:00:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[03-Feb-2026 00:52:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26
+[03-Feb-2026 10:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Translation\Catalogue\AbstractOperation" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Catalogue/TargetOperation.php on line 26

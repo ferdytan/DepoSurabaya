@@ -1,0 +1,168 @@
+[25-Sep-2025 06:10:36 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[25-Sep-2025 06:21:56 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[25-Sep-2025 18:15:24 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[28-Sep-2025 12:24:00 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[24-Oct-2025 06:13:02 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[24-Oct-2025 07:45:22 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[24-Oct-2025 09:36:01 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[30-Oct-2025 12:00:18 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[24-Nov-2025 04:22:19 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[24-Nov-2025 08:17:47 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[24-Nov-2025 08:25:25 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[30-Nov-2025 09:01:49 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[12-Dec-2025 12:25:38 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[21-Dec-2025 19:56:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[22-Dec-2025 00:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[25-Dec-2025 12:46:40 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[28-Dec-2025 00:03:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[30-Dec-2025 04:51:47 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[05-Jan-2026 10:02:06 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[05-Jan-2026 10:03:25 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[07-Jan-2026 21:03:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[13-Jan-2026 14:21:05 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[13-Jan-2026 17:43:08 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[15-Jan-2026 08:49:00 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[20-Jan-2026 09:53:29 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[21-Jan-2026 23:12:01 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[22-Jan-2026 08:57:21 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[22-Jan-2026 14:18:04 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[22-Jan-2026 17:41:09 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[22-Jan-2026 20:44:41 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[25-Jan-2026 10:17:55 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[25-Jan-2026 10:20:25 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[27-Jan-2026 23:21:17 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[28-Jan-2026 21:53:27 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[02-Feb-2026 22:30:11 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[02-Feb-2026 22:30:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[02-Feb-2026 22:30:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[02-Feb-2026 22:30:13 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22
+[02-Feb-2026 22:43:01 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AnnotationParser.php on line 43
+[02-Feb-2026 22:43:02 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php:92
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/AttributeParser.php on line 92
+[02-Feb-2026 22:43:02 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/CachingParser.php on line 22
+[02-Feb-2026 22:43:04 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Metadata\Parser\Parser" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Metadata/Parser/ParserChain.php on line 22

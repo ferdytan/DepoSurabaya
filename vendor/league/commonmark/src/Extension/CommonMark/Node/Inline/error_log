@@ -1,0 +1,108 @@
+[06-Jan-2026 18:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php on line 21
+[06-Jan-2026 18:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php on line 21
+[06-Jan-2026 18:26:24 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php on line 21
+[06-Jan-2026 18:57:54 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php on line 22
+[06-Jan-2026 20:00:13 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php on line 22
+[06-Jan-2026 20:28:54 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php on line 21
+[06-Jan-2026 20:29:09 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php on line 22
+[23-Jan-2026 04:50:26 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php on line 22
+[25-Jan-2026 18:06:50 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php on line 21
+[25-Jan-2026 18:09:21 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php on line 21
+[25-Jan-2026 18:11:52 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php on line 21
+[26-Jan-2026 00:59:19 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php on line 22
+[02-Feb-2026 22:13:09 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php on line 21
+[02-Feb-2026 22:13:10 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php on line 21
+[02-Feb-2026 22:13:10 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php on line 22
+[02-Feb-2026 22:13:11 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php on line 22
+[02-Feb-2026 22:13:11 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php on line 21
+[02-Feb-2026 22:13:12 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php on line 21
+[02-Feb-2026 22:13:12 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php on line 22
+[02-Feb-2026 22:21:02 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/AbstractWebResource.php on line 21
+[02-Feb-2026 22:21:02 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Code.php on line 21
+[02-Feb-2026 22:21:03 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Emphasis.php on line 22
+[02-Feb-2026 22:21:04 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractStringContainer" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/HtmlInline.php on line 22
+[02-Feb-2026 22:21:05 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php on line 21
+[02-Feb-2026 22:21:05 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Link.php on line 21
+[02-Feb-2026 22:21:06 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Node\Inline\AbstractInline" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Strong.php on line 22
+[03-Feb-2026 01:46:03 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Extension\CommonMark\Node\Inline\AbstractWebResource" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Node/Inline/Image.php on line 21

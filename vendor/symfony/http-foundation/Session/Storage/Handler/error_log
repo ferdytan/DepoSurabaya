@@ -1,0 +1,288 @@
+[25-Sep-2025 10:17:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[25-Sep-2025 15:47:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[25-Sep-2025 19:34:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[28-Sep-2025 13:55:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[28-Sep-2025 14:59:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[29-Sep-2025 01:53:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[29-Sep-2025 05:25:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[24-Oct-2025 03:58:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[24-Oct-2025 07:46:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[24-Oct-2025 12:19:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[30-Oct-2025 09:00:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[30-Oct-2025 13:28:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[30-Oct-2025 13:37:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[30-Oct-2025 15:59:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[24-Nov-2025 01:50:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[24-Nov-2025 05:22:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[24-Nov-2025 12:45:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[30-Nov-2025 10:13:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[30-Nov-2025 10:25:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[30-Nov-2025 10:26:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[30-Nov-2025 11:21:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[21-Dec-2025 22:14:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[28-Dec-2025 00:59:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[28-Dec-2025 03:50:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[28-Dec-2025 03:53:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[28-Dec-2025 05:00:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[28-Dec-2025 07:54:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[28-Dec-2025 10:22:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[30-Dec-2025 19:09:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[30-Dec-2025 19:10:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[30-Dec-2025 19:10:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[04-Jan-2026 12:21:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[04-Jan-2026 13:59:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[05-Jan-2026 15:02:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[05-Jan-2026 16:45:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[07-Jan-2026 18:09:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[13-Jan-2026 04:15:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[13-Jan-2026 04:56:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[13-Jan-2026 09:01:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[15-Jan-2026 06:26:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[16-Jan-2026 09:51:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[16-Jan-2026 15:54:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[18-Jan-2026 14:35:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[19-Jan-2026 01:36:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[20-Jan-2026 17:11:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[20-Jan-2026 17:14:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[20-Jan-2026 17:16:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[22-Jan-2026 06:22:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[22-Jan-2026 08:44:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[22-Jan-2026 11:19:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[25-Jan-2026 08:17:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[27-Jan-2026 18:40:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[27-Jan-2026 18:57:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[27-Jan-2026 21:02:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[27-Jan-2026 21:11:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[27-Jan-2026 22:57:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[28-Jan-2026 02:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[28-Jan-2026 03:22:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[02-Feb-2026 22:39:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[02-Feb-2026 22:39:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[02-Feb-2026 22:39:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[02-Feb-2026 22:39:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[02-Feb-2026 22:39:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[02-Feb-2026 22:39:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[02-Feb-2026 22:39:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19
+[02-Feb-2026 22:55:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Cache\Marshaller\MarshallerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/IdentityMarshaller.php on line 19
+[02-Feb-2026 22:55:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MemcachedSessionHandler.php on line 22
+[02-Feb-2026 22:55:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php on line 29
+[02-Feb-2026 22:55:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/NullSessionHandler.php on line 19
+[02-Feb-2026 22:55:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/PdoSessionHandler.php on line 47
+[02-Feb-2026 22:55:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/RedisSessionHandler.php on line 23
+[02-Feb-2026 22:55:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php on line 19

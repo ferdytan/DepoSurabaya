@@ -1,0 +1,308 @@
+[25-Sep-2025 08:31:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[25-Sep-2025 09:39:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[25-Sep-2025 16:55:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[25-Sep-2025 20:23:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[28-Sep-2025 14:40:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[28-Sep-2025 15:51:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[28-Sep-2025 17:06:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[15-Oct-2025 11:53:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[15-Oct-2025 15:26:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[15-Oct-2025 17:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[15-Oct-2025 17:41:42 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[24-Oct-2025 07:38:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[24-Oct-2025 11:33:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[24-Oct-2025 14:46:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[30-Oct-2025 05:02:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[30-Oct-2025 08:00:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[30-Oct-2025 13:16:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[30-Oct-2025 16:09:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[30-Nov-2025 07:52:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[30-Nov-2025 08:18:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[30-Nov-2025 14:34:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[30-Nov-2025 15:21:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[30-Nov-2025 16:35:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[30-Nov-2025 16:52:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[30-Nov-2025 17:05:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[27-Dec-2025 21:28:34 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[27-Dec-2025 22:53:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[28-Dec-2025 00:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[28-Dec-2025 00:52:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[28-Dec-2025 02:10:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[28-Dec-2025 03:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[28-Dec-2025 08:02:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[05-Jan-2026 19:46:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[05-Jan-2026 20:15:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[05-Jan-2026 20:16:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[05-Jan-2026 20:57:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[05-Jan-2026 20:57:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[05-Jan-2026 21:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[05-Jan-2026 21:10:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[06-Jan-2026 17:48:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[10-Jan-2026 02:48:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[13-Jan-2026 15:07:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[16-Jan-2026 06:28:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[16-Jan-2026 12:49:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[16-Jan-2026 15:54:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[17-Jan-2026 05:12:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[17-Jan-2026 07:32:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[17-Jan-2026 14:15:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[18-Jan-2026 12:07:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[18-Jan-2026 18:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[18-Jan-2026 23:04:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[20-Jan-2026 12:57:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[20-Jan-2026 15:45:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[20-Jan-2026 15:48:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[20-Jan-2026 17:15:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[20-Jan-2026 22:08:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[27-Jan-2026 18:17:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[27-Jan-2026 19:26:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[27-Jan-2026 19:29:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[27-Jan-2026 23:14:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[28-Jan-2026 00:29:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[28-Jan-2026 02:07:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[28-Jan-2026 09:11:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[02-Feb-2026 22:23:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[02-Feb-2026 22:23:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[02-Feb-2026 22:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[02-Feb-2026 22:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[02-Feb-2026 22:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[02-Feb-2026 22:23:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[02-Feb-2026 22:23:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19
+[02-Feb-2026 22:34:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CloningVisitor.php on line 13
+[02-Feb-2026 22:34:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/CommentAnnotatingVisitor.php on line 10
+[02-Feb-2026 22:34:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FindingVisitor.php on line 12
+[02-Feb-2026 22:34:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/FirstFindingVisitor.php on line 13
+[02-Feb-2026 22:34:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php on line 14
+[02-Feb-2026 22:34:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NodeConnectingVisitor.php on line 19
+[02-Feb-2026 22:34:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeVisitorAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/ParentConnectingVisitor.php on line 19

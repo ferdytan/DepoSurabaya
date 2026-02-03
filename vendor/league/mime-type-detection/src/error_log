@@ -1,0 +1,196 @@
+[18-Oct-2025 07:14:25 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[18-Oct-2025 10:14:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[18-Oct-2025 10:16:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[18-Oct-2025 17:05:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[24-Oct-2025 04:52:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[24-Oct-2025 05:46:06 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[24-Oct-2025 08:44:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[24-Oct-2025 09:33:30 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[24-Oct-2025 13:37:51 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[03-Nov-2025 11:34:56 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[05-Nov-2025 13:38:28 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[14-Nov-2025 00:53:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[17-Nov-2025 00:27:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[17-Nov-2025 11:19:12 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[18-Nov-2025 09:41:56 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[18-Nov-2025 11:06:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[22-Nov-2025 10:44:13 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[24-Nov-2025 06:30:11 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[24-Nov-2025 07:05:14 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[24-Nov-2025 07:07:30 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[24-Nov-2025 09:03:51 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[24-Nov-2025 11:48:51 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[26-Nov-2025 09:27:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[26-Nov-2025 09:27:12 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[14-Dec-2025 09:01:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[14-Dec-2025 12:40:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[14-Dec-2025 12:56:57 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[14-Dec-2025 13:19:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[14-Dec-2025 13:31:10 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[14-Dec-2025 13:47:29 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[14-Dec-2025 13:47:44 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[14-Dec-2025 13:50:23 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[16-Dec-2025 10:46:29 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[09-Jan-2026 14:20:41 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[09-Jan-2026 21:29:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[10-Jan-2026 00:30:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[10-Jan-2026 00:30:58 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[11-Jan-2026 23:01:33 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[25-Jan-2026 04:00:52 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[02-Feb-2026 22:15:31 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[02-Feb-2026 22:15:31 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[02-Feb-2026 22:15:32 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[02-Feb-2026 22:15:32 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[02-Feb-2026 22:15:33 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5
+[02-Feb-2026 22:24:17 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php on line 7
+[02-Feb-2026 22:24:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php on line 9
+[02-Feb-2026 22:24:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\MimeTypeDetector" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php on line 12
+[02-Feb-2026 22:24:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php on line 7
+[02-Feb-2026 22:24:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\MimeTypeDetection\ExtensionToMimeTypeMap" not found in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php on line 5

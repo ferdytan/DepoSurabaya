@@ -1,0 +1,720 @@
+[14-Oct-2025 18:30:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[14-Oct-2025 18:37:11 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[14-Oct-2025 20:51:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[16-Oct-2025 00:15:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[16-Oct-2025 01:12:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[16-Oct-2025 01:22:31 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[16-Oct-2025 01:36:46 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[16-Oct-2025 01:55:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[16-Oct-2025 02:14:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[16-Oct-2025 03:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[16-Oct-2025 04:39:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[18-Oct-2025 11:14:59 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[18-Oct-2025 13:20:11 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[18-Oct-2025 13:57:00 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[18-Oct-2025 14:01:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[18-Oct-2025 17:29:20 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[18-Oct-2025 19:20:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[18-Oct-2025 19:43:17 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[24-Oct-2025 04:36:34 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[24-Oct-2025 05:16:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[24-Oct-2025 06:43:29 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[24-Oct-2025 09:57:57 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[24-Oct-2025 10:04:58 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[24-Oct-2025 16:16:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[27-Oct-2025 15:49:34 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[27-Oct-2025 23:25:09 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[30-Oct-2025 09:58:04 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[31-Oct-2025 00:18:57 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[02-Nov-2025 04:54:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[04-Nov-2025 15:25:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[05-Nov-2025 13:30:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[06-Nov-2025 07:54:04 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[07-Nov-2025 23:51:32 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[09-Nov-2025 17:17:07 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[09-Nov-2025 19:01:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[10-Nov-2025 17:06:33 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[13-Nov-2025 04:15:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[14-Nov-2025 00:58:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[14-Nov-2025 07:51:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[15-Nov-2025 08:34:27 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[15-Nov-2025 11:17:46 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[15-Nov-2025 21:41:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[15-Nov-2025 21:45:37 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[15-Nov-2025 22:06:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[16-Nov-2025 15:24:10 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[16-Nov-2025 23:08:57 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[16-Nov-2025 23:44:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[16-Nov-2025 23:48:28 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[17-Nov-2025 05:39:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[17-Nov-2025 07:03:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[17-Nov-2025 07:08:47 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[17-Nov-2025 07:09:26 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[17-Nov-2025 07:10:31 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[17-Nov-2025 18:30:26 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[17-Nov-2025 18:52:46 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[18-Nov-2025 00:59:43 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[18-Nov-2025 04:19:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[18-Nov-2025 08:41:48 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[18-Nov-2025 14:30:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[18-Nov-2025 22:31:58 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[19-Nov-2025 01:59:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[22-Nov-2025 10:14:04 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[22-Nov-2025 16:53:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[23-Nov-2025 06:01:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[23-Nov-2025 20:59:36 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[24-Nov-2025 02:21:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[24-Nov-2025 03:01:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[24-Nov-2025 03:54:57 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[24-Nov-2025 06:09:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[24-Nov-2025 06:54:45 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[24-Nov-2025 06:56:25 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[24-Nov-2025 11:22:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[01-Dec-2025 07:52:13 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[13-Dec-2025 20:37:50 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[13-Dec-2025 20:38:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[13-Dec-2025 22:13:38 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[14-Dec-2025 00:19:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[14-Dec-2025 03:00:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[14-Dec-2025 03:00:24 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[14-Dec-2025 05:14:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[14-Dec-2025 05:15:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[14-Dec-2025 05:15:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[14-Dec-2025 09:28:11 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[14-Dec-2025 12:34:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[14-Dec-2025 20:35:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[15-Dec-2025 10:56:35 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[15-Dec-2025 15:30:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[16-Dec-2025 22:23:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[21-Dec-2025 18:28:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[21-Dec-2025 19:17:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[21-Dec-2025 20:54:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[21-Dec-2025 21:50:31 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[21-Dec-2025 22:42:35 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[21-Dec-2025 23:34:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[22-Dec-2025 00:38:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[22-Dec-2025 00:42:24 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[22-Dec-2025 01:54:32 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[06-Jan-2026 06:24:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[06-Jan-2026 06:44:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[08-Jan-2026 01:25:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[08-Jan-2026 09:07:19 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[14-Jan-2026 08:13:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[14-Jan-2026 09:35:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[16-Jan-2026 11:39:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[16-Jan-2026 18:44:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[18-Jan-2026 17:07:03 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[18-Jan-2026 17:09:34 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[18-Jan-2026 20:14:18 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[18-Jan-2026 20:16:48 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[18-Jan-2026 21:47:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[19-Jan-2026 09:23:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[19-Jan-2026 22:14:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[20-Jan-2026 00:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[20-Jan-2026 01:13:31 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[22-Jan-2026 01:47:48 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[22-Jan-2026 08:06:44 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[22-Jan-2026 09:04:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[22-Jan-2026 11:10:11 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[22-Jan-2026 12:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[22-Jan-2026 13:02:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[22-Jan-2026 14:03:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[22-Jan-2026 14:38:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[22-Jan-2026 16:15:41 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[22-Jan-2026 16:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[22-Jan-2026 17:44:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[22-Jan-2026 18:36:45 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[24-Jan-2026 01:34:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[24-Jan-2026 05:46:25 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[24-Jan-2026 07:05:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[24-Jan-2026 09:03:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[24-Jan-2026 10:27:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[24-Jan-2026 22:58:27 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[25-Jan-2026 02:51:02 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[25-Jan-2026 19:54:51 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[25-Jan-2026 20:08:03 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[26-Jan-2026 01:10:13 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[26-Jan-2026 03:34:26 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[26-Jan-2026 10:31:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[26-Jan-2026 22:04:25 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[27-Jan-2026 19:05:06 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[28-Jan-2026 00:03:45 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[28-Jan-2026 01:22:59 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[28-Jan-2026 09:14:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[28-Jan-2026 11:03:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[28-Jan-2026 16:04:09 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[29-Jan-2026 09:13:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[29-Jan-2026 21:03:20 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[30-Jan-2026 03:24:44 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[30-Jan-2026 05:35:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[30-Jan-2026 23:02:19 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[31-Jan-2026 09:34:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[31-Jan-2026 12:12:41 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[01-Feb-2026 21:36:38 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[02-Feb-2026 09:24:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[02-Feb-2026 15:53:33 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[02-Feb-2026 21:18:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[02-Feb-2026 22:08:08 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[02-Feb-2026 22:34:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[02-Feb-2026 22:34:12 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[02-Feb-2026 22:34:13 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[02-Feb-2026 22:34:13 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[02-Feb-2026 22:34:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[02-Feb-2026 22:34:14 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[02-Feb-2026 22:34:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[02-Feb-2026 22:34:15 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[02-Feb-2026 22:34:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[02-Feb-2026 22:34:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[02-Feb-2026 22:34:16 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[02-Feb-2026 22:48:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractArray.php on line 29
+[02-Feb-2026 22:48:18 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php:51
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractCollection.php on line 51
+[02-Feb-2026 22:48:18 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/AbstractSet.php on line 25
+[02-Feb-2026 22:48:19 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractCollection" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Collection.php on line 76
+[02-Feb-2026 22:48:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/CollectionInterface.php on line 32
+[02-Feb-2026 22:48:20 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\Queue" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueue.php on line 32
+[02-Feb-2026 22:48:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\QueueInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/DoubleEndedQueueInterface.php on line 166
+[02-Feb-2026 22:48:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/GenericArray.php on line 22
+[02-Feb-2026 22:48:22 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32
+[02-Feb-2026 22:48:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Ramsey\Collection\ArrayInterface" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php:100
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/QueueInterface.php on line 100
+[02-Feb-2026 22:48:23 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractSet" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Set.php on line 41
+[03-Feb-2026 00:46:46 UTC] PHP Fatal error:  Uncaught Error: Class "Ramsey\Collection\AbstractArray" not found in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/ramsey/collection/src/Queue.php on line 32

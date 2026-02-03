@@ -1,0 +1,324 @@
+[18-Oct-2025 09:31:58 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[18-Oct-2025 13:07:28 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[24-Oct-2025 08:35:35 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[24-Oct-2025 08:35:55 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[24-Oct-2025 10:51:35 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[24-Oct-2025 11:51:42 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[24-Oct-2025 12:04:25 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[24-Oct-2025 13:35:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[12-Nov-2025 22:24:32 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[17-Nov-2025 01:05:59 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[17-Nov-2025 18:53:03 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[18-Nov-2025 04:08:56 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[19-Nov-2025 23:14:01 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[19-Nov-2025 23:58:55 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[20-Nov-2025 01:31:46 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[24-Nov-2025 01:24:42 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[24-Nov-2025 02:55:23 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[24-Nov-2025 05:29:41 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[24-Nov-2025 07:27:51 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[24-Nov-2025 08:35:35 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[24-Nov-2025 12:35:07 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[02-Dec-2025 09:04:35 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[02-Dec-2025 17:53:51 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[03-Dec-2025 05:06:03 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[03-Dec-2025 12:10:41 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[04-Dec-2025 05:03:25 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[06-Dec-2025 08:45:09 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[06-Dec-2025 15:40:11 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[10-Dec-2025 11:46:54 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[10-Dec-2025 12:16:06 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[10-Dec-2025 13:53:40 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[10-Dec-2025 18:28:33 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[11-Dec-2025 00:29:53 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[11-Dec-2025 08:12:01 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[11-Dec-2025 19:44:09 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[13-Dec-2025 05:29:06 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[15-Dec-2025 17:32:15 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[20-Dec-2025 15:48:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[20-Dec-2025 15:48:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[20-Dec-2025 16:26:16 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[20-Dec-2025 16:26:32 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[20-Dec-2025 16:38:37 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[20-Dec-2025 16:38:53 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[20-Dec-2025 17:21:49 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[20-Dec-2025 17:47:32 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[28-Dec-2025 00:13:42 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[28-Dec-2025 01:37:39 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[28-Dec-2025 01:47:16 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[28-Dec-2025 04:11:40 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[28-Dec-2025 04:52:38 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[28-Dec-2025 09:23:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[28-Dec-2025 16:31:19 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[16-Jan-2026 22:48:21 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[20-Jan-2026 18:30:35 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[20-Jan-2026 18:33:06 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[21-Jan-2026 05:46:16 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[21-Jan-2026 05:48:47 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[21-Jan-2026 20:12:20 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[27-Jan-2026 16:14:11 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[27-Jan-2026 16:49:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[27-Jan-2026 17:43:40 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[27-Jan-2026 20:30:59 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[27-Jan-2026 20:59:14 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[28-Jan-2026 00:11:23 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[28-Jan-2026 02:05:30 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[02-Feb-2026 22:24:40 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[02-Feb-2026 22:24:41 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[02-Feb-2026 22:24:41 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[02-Feb-2026 22:24:42 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[02-Feb-2026 22:24:42 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[02-Feb-2026 22:24:42 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[02-Feb-2026 22:24:43 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[02-Feb-2026 22:24:43 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12
+[02-Feb-2026 22:35:25 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AbstractVersionConstraint.php on line 12
+[02-Feb-2026 22:35:26 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AndVersionConstraintGroup.php on line 12
+[02-Feb-2026 22:35:26 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\VersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/AnyVersionConstraint.php on line 12
+[02-Feb-2026 22:35:27 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/ExactVersionConstraint.php on line 12
+[02-Feb-2026 22:35:28 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/GreaterThanOrEqualToVersionConstraint.php on line 12
+[02-Feb-2026 22:35:28 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/OrVersionConstraintGroup.php on line 12
+[02-Feb-2026 22:35:29 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorAndMinorVersionConstraint.php on line 12
+[02-Feb-2026 22:35:30 UTC] PHP Fatal error:  Uncaught Error: Class "PharIo\Version\AbstractVersionConstraint" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/constraints/SpecificMajorVersionConstraint.php on line 12

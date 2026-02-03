@@ -1,0 +1,784 @@
+[25-Sep-2025 05:44:05 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[25-Sep-2025 06:37:29 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[25-Sep-2025 07:12:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[25-Sep-2025 07:26:03 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[25-Sep-2025 07:59:13 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[25-Sep-2025 09:00:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[25-Sep-2025 12:38:39 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[25-Sep-2025 14:24:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[25-Sep-2025 19:09:45 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[25-Sep-2025 20:32:03 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[28-Sep-2025 16:40:44 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[28-Sep-2025 17:10:38 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[28-Sep-2025 21:34:29 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[28-Sep-2025 23:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[29-Sep-2025 00:20:04 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[29-Sep-2025 00:47:39 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[29-Sep-2025 03:47:20 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[29-Sep-2025 04:19:41 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[12-Oct-2025 23:52:40 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[13-Oct-2025 01:54:00 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[24-Oct-2025 04:56:21 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[24-Oct-2025 07:19:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[24-Oct-2025 07:36:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[24-Oct-2025 08:31:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[24-Oct-2025 09:12:44 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[24-Oct-2025 09:18:32 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[24-Oct-2025 10:01:35 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[24-Oct-2025 14:11:46 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[30-Oct-2025 04:49:14 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[30-Oct-2025 06:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[30-Oct-2025 08:14:09 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[30-Oct-2025 10:32:58 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[30-Oct-2025 10:49:41 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[30-Oct-2025 12:25:09 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[30-Oct-2025 13:51:44 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[30-Oct-2025 14:10:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[30-Oct-2025 15:16:35 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[30-Oct-2025 16:02:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[11-Nov-2025 21:26:24 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[11-Nov-2025 22:37:41 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[24-Nov-2025 03:58:57 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[24-Nov-2025 08:33:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[24-Nov-2025 09:28:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[24-Nov-2025 10:15:05 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[24-Nov-2025 10:30:01 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[24-Nov-2025 12:00:44 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[30-Nov-2025 06:13:03 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[30-Nov-2025 08:12:22 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[30-Nov-2025 08:21:08 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[30-Nov-2025 08:24:59 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[30-Nov-2025 08:32:28 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[30-Nov-2025 09:01:14 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[30-Nov-2025 09:23:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[30-Nov-2025 09:52:36 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[30-Nov-2025 10:35:42 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[30-Nov-2025 10:40:15 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[30-Nov-2025 12:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[30-Nov-2025 14:44:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[08-Dec-2025 13:00:07 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[11-Dec-2025 21:26:14 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[15-Dec-2025 16:51:40 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[17-Dec-2025 15:41:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[22-Dec-2025 13:12:18 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[27-Dec-2025 22:18:14 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[27-Dec-2025 22:38:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[28-Dec-2025 00:06:00 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[28-Dec-2025 00:39:42 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[28-Dec-2025 01:02:27 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[28-Dec-2025 02:25:23 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[28-Dec-2025 03:07:59 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[28-Dec-2025 03:51:37 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[28-Dec-2025 04:29:33 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[28-Dec-2025 05:28:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[28-Dec-2025 06:13:52 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[28-Dec-2025 06:30:25 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[28-Dec-2025 06:50:42 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[28-Dec-2025 06:51:16 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[28-Dec-2025 08:44:34 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[28-Dec-2025 09:11:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[28-Dec-2025 10:00:09 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[28-Dec-2025 14:01:52 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[29-Dec-2025 16:02:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[30-Dec-2025 07:57:32 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[30-Dec-2025 07:57:48 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[30-Dec-2025 07:58:04 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[30-Dec-2025 20:59:28 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[30-Dec-2025 20:59:43 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[30-Dec-2025 21:00:00 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[05-Jan-2026 10:12:59 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[05-Jan-2026 16:47:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[05-Jan-2026 18:44:12 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[06-Jan-2026 17:46:33 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[06-Jan-2026 17:47:04 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[07-Jan-2026 12:18:49 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[07-Jan-2026 12:56:05 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[07-Jan-2026 15:53:28 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[07-Jan-2026 18:00:12 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[07-Jan-2026 18:10:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[09-Jan-2026 22:23:28 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[09-Jan-2026 22:24:18 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[10-Jan-2026 03:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[10-Jan-2026 03:35:05 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[13-Jan-2026 02:27:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[13-Jan-2026 12:03:06 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[13-Jan-2026 15:07:13 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[14-Jan-2026 00:56:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[14-Jan-2026 07:44:30 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[14-Jan-2026 12:12:57 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[14-Jan-2026 16:16:40 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[14-Jan-2026 18:43:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[14-Jan-2026 23:53:41 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[14-Jan-2026 23:54:12 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[15-Jan-2026 08:00:46 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[15-Jan-2026 08:45:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[15-Jan-2026 09:33:36 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[15-Jan-2026 10:13:30 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[15-Jan-2026 11:00:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[15-Jan-2026 11:53:16 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[15-Jan-2026 11:53:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[16-Jan-2026 09:39:27 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[17-Jan-2026 09:25:20 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[19-Jan-2026 08:44:32 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[19-Jan-2026 19:53:12 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[20-Jan-2026 00:02:35 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[20-Jan-2026 05:20:16 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[20-Jan-2026 05:22:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[20-Jan-2026 11:12:50 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[20-Jan-2026 18:05:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[20-Jan-2026 18:08:17 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[20-Jan-2026 18:10:49 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[20-Jan-2026 18:13:19 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[22-Jan-2026 04:09:05 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[22-Jan-2026 09:06:35 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[25-Jan-2026 00:48:59 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[25-Jan-2026 10:26:07 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[25-Jan-2026 21:04:11 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[26-Jan-2026 01:30:58 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[26-Jan-2026 06:50:21 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[27-Jan-2026 17:26:31 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[27-Jan-2026 17:43:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[27-Jan-2026 19:21:08 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[27-Jan-2026 19:43:18 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[27-Jan-2026 20:09:04 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[27-Jan-2026 20:34:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[27-Jan-2026 21:10:46 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[27-Jan-2026 21:11:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[27-Jan-2026 21:52:16 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[27-Jan-2026 23:03:11 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[27-Jan-2026 23:19:12 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[27-Jan-2026 23:48:27 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[28-Jan-2026 01:57:26 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[28-Jan-2026 02:31:40 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[28-Jan-2026 03:58:22 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[28-Jan-2026 04:01:15 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[28-Jan-2026 04:18:36 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[28-Jan-2026 06:56:27 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[02-Feb-2026 22:16:45 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[02-Feb-2026 22:16:45 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[02-Feb-2026 22:16:45 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[02-Feb-2026 22:16:46 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[02-Feb-2026 22:16:46 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[02-Feb-2026 22:16:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[02-Feb-2026 22:16:47 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[02-Feb-2026 22:16:48 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[02-Feb-2026 22:16:48 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[02-Feb-2026 22:16:49 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[02-Feb-2026 22:16:49 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[02-Feb-2026 22:16:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[02-Feb-2026 22:16:50 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[02-Feb-2026 22:16:50 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[02-Feb-2026 22:16:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[02-Feb-2026 22:16:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[02-Feb-2026 22:16:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[02-Feb-2026 22:16:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[02-Feb-2026 22:16:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[02-Feb-2026 22:16:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20
+[02-Feb-2026 22:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AndAnyOtherArgs.php on line 13
+[02-Feb-2026 22:25:52 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Any.php on line 13
+[02-Feb-2026 22:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyArgs.php on line 13
+[02-Feb-2026 22:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/AnyOf.php on line 15
+[02-Feb-2026 22:25:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Closure.php on line 13
+[02-Feb-2026 22:25:54 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Contains.php on line 16
+[02-Feb-2026 22:25:55 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Ducktype.php on line 17
+[02-Feb-2026 22:25:56 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasKey.php on line 19
+[02-Feb-2026 22:25:57 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/HasValue.php on line 18
+[02-Feb-2026 22:25:57 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsEqual.php on line 13
+[02-Feb-2026 22:25:58 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/IsSame.php on line 13
+[02-Feb-2026 22:25:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Mockery\Matcher\MatcherInterface" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php on line 17
+[02-Feb-2026 22:25:59 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php on line 13
+[02-Feb-2026 22:26:00 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/MustBe.php on line 18
+[02-Feb-2026 22:26:00 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NoArgs.php on line 15
+[02-Feb-2026 22:26:01 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Not.php on line 13
+[02-Feb-2026 22:26:01 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/NotAnyOf.php on line 13
+[02-Feb-2026 22:26:02 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Pattern.php on line 15
+[02-Feb-2026 22:26:02 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Subset.php on line 17
+[02-Feb-2026 22:26:03 UTC] PHP Fatal error:  Uncaught Error: Class "Mockery\Matcher\MatcherAbstract" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Matcher/Type.php on line 20

@@ -1,0 +1,48 @@
+[02-Feb-2026 22:13:26 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/CodeRenderer.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/CodeRenderer.php on line 27
+[02-Feb-2026 22:13:26 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/EmphasisRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/EmphasisRenderer.php on line 26
+[02-Feb-2026 22:13:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/HtmlInlineRenderer.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/HtmlInlineRenderer.php on line 28
+[02-Feb-2026 22:13:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/ImageRenderer.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/ImageRenderer.php on line 32
+[02-Feb-2026 22:13:28 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/LinkRenderer.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/LinkRenderer.php on line 29
+[02-Feb-2026 22:13:28 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/StrongRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/StrongRenderer.php on line 26
+[02-Feb-2026 22:21:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/CodeRenderer.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/CodeRenderer.php on line 27
+[02-Feb-2026 22:21:27 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/EmphasisRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/EmphasisRenderer.php on line 26
+[02-Feb-2026 22:21:28 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/HtmlInlineRenderer.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/HtmlInlineRenderer.php on line 28
+[02-Feb-2026 22:21:29 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/ImageRenderer.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/ImageRenderer.php on line 32
+[02-Feb-2026 22:21:30 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/LinkRenderer.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/LinkRenderer.php on line 29
+[02-Feb-2026 22:21:30 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Renderer\NodeRendererInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/StrongRenderer.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Renderer/Inline/StrongRenderer.php on line 26

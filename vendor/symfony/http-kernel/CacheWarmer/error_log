@@ -1,0 +1,144 @@
+[18-Oct-2025 09:43:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[18-Oct-2025 15:54:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[24-Oct-2025 08:28:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[02-Nov-2025 21:45:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[04-Nov-2025 21:51:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[05-Nov-2025 12:52:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[05-Nov-2025 15:37:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[08-Nov-2025 06:17:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[09-Nov-2025 17:50:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[09-Nov-2025 20:50:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[13-Nov-2025 03:11:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[13-Nov-2025 06:12:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[16-Nov-2025 18:47:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[16-Nov-2025 18:50:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[16-Nov-2025 19:01:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[17-Nov-2025 23:26:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[24-Nov-2025 10:15:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[24-Nov-2025 10:43:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[14-Dec-2025 12:11:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[14-Dec-2025 13:34:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[14-Dec-2025 13:45:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[15-Dec-2025 19:48:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[21-Dec-2025 21:23:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[21-Dec-2025 21:48:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[19-Jan-2026 19:05:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[20-Jan-2026 17:37:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[22-Jan-2026 08:21:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[22-Jan-2026 12:09:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[22-Jan-2026 13:54:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[02-Feb-2026 22:40:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[02-Feb-2026 22:40:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[02-Feb-2026 22:40:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[02-Feb-2026 22:55:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmer.php on line 19
+[02-Feb-2026 22:55:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php on line 23
+[02-Feb-2026 22:55:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19
+[03-Feb-2026 04:43:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php on line 19

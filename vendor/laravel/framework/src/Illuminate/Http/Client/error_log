@@ -1,0 +1,107 @@
+[25-Sep-2025 05:53:23 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[25-Sep-2025 06:15:33 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[25-Sep-2025 07:12:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[25-Sep-2025 17:03:08 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[29-Sep-2025 02:33:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[12-Oct-2025 17:08:45 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[24-Oct-2025 07:45:51 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[24-Oct-2025 09:22:48 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[24-Oct-2025 11:51:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[30-Oct-2025 13:42:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[12-Nov-2025 00:45:27 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[24-Nov-2025 02:53:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[24-Nov-2025 05:47:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[24-Nov-2025 08:21:24 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[24-Nov-2025 13:47:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[30-Nov-2025 11:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[08-Dec-2025 10:24:43 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php on line 31
+[15-Dec-2025 19:42:48 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[21-Dec-2025 16:33:20 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[21-Dec-2025 19:03:07 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[22-Dec-2025 00:12:56 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[22-Dec-2025 07:39:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[28-Dec-2025 09:41:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[09-Jan-2026 20:23:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php on line 31
+[12-Jan-2026 20:16:57 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php on line 31
+[13-Jan-2026 00:57:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[13-Jan-2026 06:26:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[14-Jan-2026 03:07:35 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[14-Jan-2026 22:08:46 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[15-Jan-2026 06:15:47 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[16-Jan-2026 11:37:32 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[17-Jan-2026 11:39:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[20-Jan-2026 20:56:00 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[20-Jan-2026 20:58:31 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[21-Jan-2026 02:13:45 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[21-Jan-2026 03:01:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[21-Jan-2026 12:54:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[22-Jan-2026 12:30:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[22-Jan-2026 15:27:23 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[22-Jan-2026 22:12:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[23-Jan-2026 01:05:41 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[23-Jan-2026 06:15:43 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[25-Jan-2026 19:21:23 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[26-Jan-2026 20:42:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[27-Jan-2026 22:59:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[02-Feb-2026 22:07:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[02-Feb-2026 22:07:07 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[02-Feb-2026 22:07:08 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php on line 31
+[02-Feb-2026 22:07:08 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[02-Feb-2026 22:07:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[02-Feb-2026 22:07:09 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[02-Feb-2026 22:07:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9
+[02-Feb-2026 22:13:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ConnectionException.php on line 5
+[02-Feb-2026 22:13:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Factory.php on line 21
+[02-Feb-2026 22:13:31 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php on line 31
+[02-Feb-2026 22:13:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Request.php on line 11
+[02-Feb-2026 22:13:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Client\HttpClientException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/RequestException.php on line 7
+[02-Feb-2026 22:13:33 UTC] PHP Fatal error:  Trait "Illuminate\Http\Client\Concerns\DeterminesStatusCode" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/Response.php on line 16
+[02-Feb-2026 22:13:34 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Client/ResponseSequence.php on line 9

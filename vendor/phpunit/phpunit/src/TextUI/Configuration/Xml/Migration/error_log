@@ -1,0 +1,8 @@
+[02-Feb-2026 22:31:35 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/MigrationException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/MigrationException.php on line 20
+[02-Feb-2026 22:44:48 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPUnit\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/MigrationException.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/MigrationException.php on line 20

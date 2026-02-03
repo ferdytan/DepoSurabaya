@@ -1,0 +1,359 @@
+[25-Sep-2025 09:14:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[25-Sep-2025 09:54:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[25-Sep-2025 10:39:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[28-Sep-2025 15:37:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[28-Sep-2025 16:25:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[28-Sep-2025 20:38:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[29-Sep-2025 00:40:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[29-Sep-2025 03:24:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[29-Sep-2025 05:04:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[24-Oct-2025 08:19:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[24-Oct-2025 09:12:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[24-Oct-2025 13:11:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[30-Oct-2025 06:43:48 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[30-Oct-2025 07:11:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[30-Oct-2025 07:19:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[30-Oct-2025 10:50:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[30-Oct-2025 12:27:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[30-Oct-2025 15:30:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[24-Nov-2025 03:22:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[30-Nov-2025 06:59:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[30-Nov-2025 07:14:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[30-Nov-2025 08:22:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[30-Nov-2025 09:16:24 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[30-Nov-2025 09:18:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[30-Nov-2025 11:12:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[30-Nov-2025 15:02:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[30-Nov-2025 15:14:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[18-Dec-2025 00:44:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[27-Dec-2025 21:47:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[27-Dec-2025 22:56:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[27-Dec-2025 23:08:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[28-Dec-2025 00:38:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[28-Dec-2025 01:21:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[28-Dec-2025 07:11:33 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[28-Dec-2025 07:24:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[29-Dec-2025 23:29:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[29-Dec-2025 23:30:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[30-Dec-2025 07:34:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[31-Dec-2025 04:11:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[04-Jan-2026 12:25:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[04-Jan-2026 13:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[05-Jan-2026 09:38:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[05-Jan-2026 11:40:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[05-Jan-2026 11:41:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[05-Jan-2026 16:15:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[05-Jan-2026 18:16:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[05-Jan-2026 19:17:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[05-Jan-2026 20:42:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[09-Jan-2026 22:21:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[13-Jan-2026 13:35:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[13-Jan-2026 14:22:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[14-Jan-2026 04:44:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[15-Jan-2026 14:22:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[18-Jan-2026 03:17:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[18-Jan-2026 15:19:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[19-Jan-2026 00:00:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[19-Jan-2026 01:28:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[20-Jan-2026 08:03:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[20-Jan-2026 12:12:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[21-Jan-2026 16:30:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[21-Jan-2026 16:30:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[22-Jan-2026 12:59:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[23-Jan-2026 20:54:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[24-Jan-2026 09:50:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[24-Jan-2026 10:36:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[25-Jan-2026 05:54:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[25-Jan-2026 13:33:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[25-Jan-2026 13:35:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[26-Jan-2026 00:14:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[26-Jan-2026 05:37:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[26-Jan-2026 10:10:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[27-Jan-2026 18:00:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[27-Jan-2026 18:25:29 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[27-Jan-2026 20:22:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[27-Jan-2026 21:27:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[27-Jan-2026 23:58:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[27-Jan-2026 23:59:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[28-Jan-2026 02:45:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[28-Jan-2026 02:51:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[28-Jan-2026 03:19:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[02-Feb-2026 22:02:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[02-Feb-2026 22:02:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[02-Feb-2026 22:02:05 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[02-Feb-2026 22:02:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[02-Feb-2026 22:02:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[02-Feb-2026 22:02:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[02-Feb-2026 22:02:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[02-Feb-2026 22:02:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[02-Feb-2026 22:02:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14
+[02-Feb-2026 22:06:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Application" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Application.php on line 25
+[02-Feb-2026 22:06:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Output\ConsoleOutput" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/BufferedConsoleOutput.php on line 7
+[02-Feb-2026 22:06:47 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/CacheCommandMutex.php on line 11
+[02-Feb-2026 22:06:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 14
+[02-Feb-2026 22:06:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\CommandLoader\CommandLoaderInterface" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/ContainerCommandLoader.php on line 10
+[02-Feb-2026 22:06:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/GeneratorCommand.php on line 13
+[02-Feb-2026 22:06:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php on line 9
+[02-Feb-2026 22:06:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Style\SymfonyStyle" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/OutputStyle.php on line 11
+[02-Feb-2026 22:06:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Helper\SymfonyQuestionHelper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Console/QuestionHelper.php on line 14

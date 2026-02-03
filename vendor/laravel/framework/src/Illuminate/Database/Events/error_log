@@ -1,0 +1,452 @@
+[25-Sep-2025 07:05:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[25-Sep-2025 07:17:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[25-Sep-2025 08:13:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[25-Sep-2025 09:35:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[25-Sep-2025 10:10:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[25-Sep-2025 10:16:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[25-Sep-2025 11:30:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[25-Sep-2025 13:23:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[25-Sep-2025 14:40:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[28-Sep-2025 18:16:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[29-Sep-2025 04:35:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[12-Oct-2025 21:51:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[24-Oct-2025 04:52:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[24-Oct-2025 05:11:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[24-Oct-2025 06:55:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[24-Oct-2025 07:30:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[24-Oct-2025 07:58:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[24-Oct-2025 08:00:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[24-Oct-2025 09:55:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[24-Oct-2025 13:01:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[30-Oct-2025 08:48:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[30-Oct-2025 15:52:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[11-Nov-2025 19:52:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[24-Nov-2025 03:43:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[24-Nov-2025 04:17:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[24-Nov-2025 04:53:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[24-Nov-2025 05:28:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[24-Nov-2025 11:48:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[24-Nov-2025 11:50:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[24-Nov-2025 13:11:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[24-Nov-2025 13:19:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[24-Nov-2025 16:22:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[08-Dec-2025 16:46:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[08-Dec-2025 18:59:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[08-Dec-2025 21:44:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[15-Dec-2025 11:28:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[21-Dec-2025 18:11:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[21-Dec-2025 18:11:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[21-Dec-2025 18:32:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[21-Dec-2025 19:16:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[21-Dec-2025 22:05:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[22-Dec-2025 00:26:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[22-Dec-2025 05:33:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[22-Dec-2025 07:46:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[25-Dec-2025 11:18:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[05-Jan-2026 14:19:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[05-Jan-2026 16:10:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[05-Jan-2026 16:10:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[05-Jan-2026 16:11:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[05-Jan-2026 16:11:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[05-Jan-2026 18:13:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[05-Jan-2026 18:13:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[05-Jan-2026 18:14:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[05-Jan-2026 19:14:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[05-Jan-2026 19:55:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[05-Jan-2026 19:55:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[05-Jan-2026 20:22:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[05-Jan-2026 20:22:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[09-Jan-2026 14:23:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[09-Jan-2026 15:53:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[09-Jan-2026 22:04:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[16-Jan-2026 11:46:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[19-Jan-2026 22:19:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[19-Jan-2026 23:47:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[20-Jan-2026 00:27:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[20-Jan-2026 09:52:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[22-Jan-2026 12:18:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[22-Jan-2026 13:14:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[22-Jan-2026 15:04:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[22-Jan-2026 15:48:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[22-Jan-2026 16:30:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[22-Jan-2026 17:05:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[22-Jan-2026 18:51:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[22-Jan-2026 22:49:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[22-Jan-2026 22:49:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[22-Jan-2026 23:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[22-Jan-2026 23:29:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[25-Jan-2026 23:53:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[25-Jan-2026 23:55:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[25-Jan-2026 23:58:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[26-Jan-2026 00:00:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[26-Jan-2026 02:24:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[26-Jan-2026 02:59:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[26-Jan-2026 04:26:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[26-Jan-2026 05:08:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[26-Jan-2026 09:59:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[26-Jan-2026 19:07:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[02-Feb-2026 22:04:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[02-Feb-2026 22:04:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[02-Feb-2026 22:04:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[02-Feb-2026 22:04:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[02-Feb-2026 22:04:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[02-Feb-2026 22:04:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[02-Feb-2026 22:04:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[02-Feb-2026 22:04:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[02-Feb-2026 22:04:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[02-Feb-2026 22:04:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[02-Feb-2026 22:04:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[02-Feb-2026 22:04:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[02-Feb-2026 22:04:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5
+[02-Feb-2026 22:10:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[02-Feb-2026 22:10:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/DatabaseRefreshed.php on line 7
+[02-Feb-2026 22:10:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEnded.php on line 5
+[02-Feb-2026 22:10:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationEvent.php on line 8
+[02-Feb-2026 22:10:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEnded.php on line 5
+[02-Feb-2026 22:10:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsEvent.php on line 7
+[02-Feb-2026 22:10:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationsEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationsStarted.php on line 5
+[02-Feb-2026 22:10:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/MigrationStarted.php on line 5
+[02-Feb-2026 22:10:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Database\Events\MigrationEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/NoPendingMigrations.php on line 7
+[02-Feb-2026 22:10:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionBeginning.php on line 5
+[02-Feb-2026 22:10:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitted.php on line 5
+[02-Feb-2026 22:10:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionCommitting.php on line 5
+[02-Feb-2026 22:10:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Events\ConnectionEvent" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Events/TransactionRolledBack.php on line 5

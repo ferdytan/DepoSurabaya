@@ -1,0 +1,469 @@
+[25-Sep-2025 07:13:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[25-Sep-2025 08:50:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[25-Sep-2025 09:36:15 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[25-Sep-2025 10:23:53 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[25-Sep-2025 10:39:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[25-Sep-2025 12:12:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[28-Sep-2025 13:03:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[28-Sep-2025 13:51:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[28-Sep-2025 15:09:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[28-Sep-2025 15:49:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[28-Sep-2025 16:20:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[28-Sep-2025 22:34:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[28-Sep-2025 22:49:46 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[29-Sep-2025 00:22:09 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[29-Sep-2025 01:23:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[24-Oct-2025 10:25:10 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[24-Oct-2025 11:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[24-Oct-2025 11:33:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[24-Oct-2025 13:39:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[24-Oct-2025 14:07:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[24-Oct-2025 15:45:49 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[30-Oct-2025 08:46:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[30-Oct-2025 15:03:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[05-Nov-2025 08:46:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[05-Nov-2025 09:05:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[05-Nov-2025 10:50:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[05-Nov-2025 11:22:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[05-Nov-2025 12:14:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[05-Nov-2025 16:10:12 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[05-Nov-2025 16:56:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[24-Nov-2025 01:04:13 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[24-Nov-2025 03:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[24-Nov-2025 06:54:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[24-Nov-2025 07:04:26 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[24-Nov-2025 08:00:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[24-Nov-2025 08:00:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[30-Nov-2025 14:34:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[08-Dec-2025 11:54:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[08-Dec-2025 12:44:24 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[08-Dec-2025 13:01:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[08-Dec-2025 14:31:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[08-Dec-2025 14:39:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[08-Dec-2025 16:28:56 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[08-Dec-2025 19:17:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[08-Dec-2025 19:32:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[18-Dec-2025 02:52:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[21-Dec-2025 16:04:53 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[21-Dec-2025 18:37:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[21-Dec-2025 19:41:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[22-Dec-2025 02:28:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[22-Dec-2025 05:20:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[22-Dec-2025 08:51:49 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[29-Dec-2025 21:27:05 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[03-Jan-2026 11:17:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[04-Jan-2026 13:12:16 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[05-Jan-2026 09:17:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[05-Jan-2026 11:26:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[05-Jan-2026 11:27:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[05-Jan-2026 11:27:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[05-Jan-2026 14:07:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[05-Jan-2026 14:07:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[05-Jan-2026 14:08:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[05-Jan-2026 16:02:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[05-Jan-2026 18:06:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[05-Jan-2026 19:09:10 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[05-Jan-2026 19:09:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[05-Jan-2026 19:51:25 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[05-Jan-2026 20:18:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[06-Jan-2026 06:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[06-Jan-2026 07:30:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[06-Jan-2026 08:16:28 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[06-Jan-2026 10:35:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[06-Jan-2026 13:44:40 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[07-Jan-2026 12:45:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[07-Jan-2026 22:20:11 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[07-Jan-2026 23:04:19 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[08-Jan-2026 06:15:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[08-Jan-2026 11:44:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[08-Jan-2026 14:48:46 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[08-Jan-2026 19:51:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[09-Jan-2026 01:18:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[09-Jan-2026 01:18:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[09-Jan-2026 11:32:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[09-Jan-2026 12:18:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[09-Jan-2026 13:06:18 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[09-Jan-2026 14:09:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[09-Jan-2026 14:38:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[09-Jan-2026 15:33:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[09-Jan-2026 19:35:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[09-Jan-2026 21:01:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[09-Jan-2026 21:53:09 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[09-Jan-2026 23:50:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[10-Jan-2026 01:20:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[11-Jan-2026 13:06:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[11-Jan-2026 22:08:37 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[12-Jan-2026 03:08:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[12-Jan-2026 08:40:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[12-Jan-2026 20:20:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[13-Jan-2026 01:41:54 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[13-Jan-2026 03:22:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[13-Jan-2026 08:12:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[14-Jan-2026 03:54:17 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[14-Jan-2026 12:19:00 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[14-Jan-2026 13:50:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[16-Jan-2026 22:16:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[17-Jan-2026 02:55:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[18-Jan-2026 22:16:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[20-Jan-2026 01:28:11 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[22-Jan-2026 00:49:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[22-Jan-2026 08:12:54 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[22-Jan-2026 10:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[22-Jan-2026 11:25:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[22-Jan-2026 13:11:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[22-Jan-2026 13:17:24 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[22-Jan-2026 15:24:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[22-Jan-2026 17:21:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[25-Jan-2026 12:51:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[25-Jan-2026 17:04:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[25-Jan-2026 17:06:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[25-Jan-2026 17:09:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[25-Jan-2026 21:35:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[25-Jan-2026 21:46:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[26-Jan-2026 04:35:38 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[26-Jan-2026 08:20:34 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[26-Jan-2026 09:31:54 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[26-Jan-2026 11:24:04 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[02-Feb-2026 11:52:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[02-Feb-2026 22:08:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[02-Feb-2026 22:08:28 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[02-Feb-2026 22:08:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[02-Feb-2026 22:08:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[02-Feb-2026 22:08:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[02-Feb-2026 22:08:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[02-Feb-2026 22:08:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[02-Feb-2026 22:08:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[02-Feb-2026 22:08:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[02-Feb-2026 22:08:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[02-Feb-2026 22:08:34 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[02-Feb-2026 22:08:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[02-Feb-2026 22:08:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[02-Feb-2026 22:08:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[02-Feb-2026 22:08:36 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24
+[02-Feb-2026 22:15:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php on line 13
+[02-Feb-2026 22:15:01 UTC] PHP Fatal error:  Trait "Illuminate\Bus\Batchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php on line 14
+[02-Feb-2026 22:15:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php on line 16
+[02-Feb-2026 22:15:03 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php on line 14
+[02-Feb-2026 22:15:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\WorkerOptions" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/ListenerOptions.php on line 5
+[02-Feb-2026 22:15:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/NullQueue.php on line 7
+[02-Feb-2026 22:15:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Queue.php on line 21
+[02-Feb-2026 22:15:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Queue\Factory" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php on line 13
+[02-Feb-2026 22:15:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php on line 24
+[02-Feb-2026 22:15:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php on line 13
+[02-Feb-2026 22:15:08 UTC] PHP Fatal error:  Trait "Illuminate\Queue\SerializesAndRestoresModelIdentifiers" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SerializesModels.php on line 9
+[02-Feb-2026 22:15:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SqsQueue.php on line 11
+[02-Feb-2026 22:15:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\Queue" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php on line 16
+[02-Feb-2026 22:15:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Queue\MaxAttemptsExceededException" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php on line 5
+[02-Feb-2026 22:15:11 UTC] PHP Fatal error:  Trait "Illuminate\Database\DetectsLostConnections" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Queue/Worker.php on line 24

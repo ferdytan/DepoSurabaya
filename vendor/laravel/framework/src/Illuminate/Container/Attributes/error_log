@@ -1,0 +1,444 @@
+[25-Sep-2025 08:14:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[25-Sep-2025 08:19:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[25-Sep-2025 09:46:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[25-Sep-2025 10:31:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[25-Sep-2025 14:02:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[25-Sep-2025 14:34:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[25-Sep-2025 17:16:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[25-Sep-2025 18:22:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[25-Sep-2025 19:25:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[28-Sep-2025 15:23:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[28-Sep-2025 17:41:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[28-Sep-2025 22:45:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[12-Oct-2025 20:59:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[24-Oct-2025 06:57:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[24-Oct-2025 07:09:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[24-Oct-2025 07:33:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[24-Oct-2025 07:59:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[24-Oct-2025 08:49:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[24-Oct-2025 11:42:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[24-Oct-2025 13:47:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[24-Oct-2025 15:56:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[30-Oct-2025 08:11:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[30-Oct-2025 09:58:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[30-Oct-2025 10:28:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[11-Nov-2025 18:33:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[11-Nov-2025 22:33:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[24-Nov-2025 00:14:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[24-Nov-2025 00:26:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[24-Nov-2025 01:23:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[24-Nov-2025 01:39:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[24-Nov-2025 02:36:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[24-Nov-2025 04:04:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[24-Nov-2025 05:45:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[24-Nov-2025 08:46:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[30-Nov-2025 06:57:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[30-Nov-2025 08:37:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[30-Nov-2025 17:05:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[15-Dec-2025 14:10:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[15-Dec-2025 20:40:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[21-Dec-2025 17:29:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[21-Dec-2025 18:56:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[21-Dec-2025 21:53:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[22-Dec-2025 00:15:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[22-Dec-2025 00:22:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[22-Dec-2025 01:12:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[22-Dec-2025 02:00:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[22-Dec-2025 03:51:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[28-Dec-2025 02:38:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[28-Dec-2025 04:42:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[28-Dec-2025 04:49:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[16-Jan-2026 05:48:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[16-Jan-2026 06:49:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[16-Jan-2026 08:47:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[16-Jan-2026 11:59:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[16-Jan-2026 14:19:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[17-Jan-2026 00:37:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[17-Jan-2026 04:46:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[18-Jan-2026 04:05:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[18-Jan-2026 06:32:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[18-Jan-2026 08:59:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[19-Jan-2026 04:31:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[19-Jan-2026 12:30:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[20-Jan-2026 08:07:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[20-Jan-2026 12:09:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[21-Jan-2026 04:36:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[21-Jan-2026 06:16:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[21-Jan-2026 06:16:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[22-Jan-2026 10:09:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[22-Jan-2026 11:23:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[22-Jan-2026 12:18:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[22-Jan-2026 13:15:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[22-Jan-2026 16:22:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[22-Jan-2026 21:19:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[25-Jan-2026 12:48:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[25-Jan-2026 16:57:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[25-Jan-2026 17:00:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[25-Jan-2026 20:23:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[25-Jan-2026 20:43:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[25-Jan-2026 23:09:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[25-Jan-2026 23:15:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[26-Jan-2026 04:30:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[26-Jan-2026 04:33:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[27-Jan-2026 18:04:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[27-Jan-2026 19:02:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[27-Jan-2026 20:04:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[02-Feb-2026 22:02:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[02-Feb-2026 22:02:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[02-Feb-2026 22:02:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[02-Feb-2026 22:02:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[02-Feb-2026 22:02:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[02-Feb-2026 22:02:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[02-Feb-2026 22:02:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[02-Feb-2026 22:02:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[02-Feb-2026 22:02:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[02-Feb-2026 22:02:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[02-Feb-2026 22:02:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[02-Feb-2026 22:02:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[02-Feb-2026 22:02:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12
+[02-Feb-2026 22:07:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Auth.php on line 10
+[02-Feb-2026 22:07:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php on line 10
+[02-Feb-2026 22:07:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Cache.php on line 10
+[02-Feb-2026 22:07:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Config.php on line 10
+[02-Feb-2026 22:07:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Context.php on line 11
+[02-Feb-2026 22:07:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Authenticated" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/CurrentUser.php on line 8
+[02-Feb-2026 22:07:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Database.php on line 10
+[02-Feb-2026 22:07:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Container\Attributes\Database" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/DB.php on line 8
+[02-Feb-2026 22:07:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Give.php on line 10
+[02-Feb-2026 22:07:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Log.php on line 10
+[02-Feb-2026 22:07:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/RouteParameter.php on line 10
+[02-Feb-2026 22:07:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Storage.php on line 10
+[02-Feb-2026 22:07:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Container\ContextualAttribute" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Container/Attributes/Tag.php on line 12

@@ -1,0 +1,1705 @@
+[25-Sep-2025 06:05:20 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[25-Sep-2025 06:41:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[25-Sep-2025 06:57:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[25-Sep-2025 07:01:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[25-Sep-2025 08:35:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[25-Sep-2025 08:59:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[25-Sep-2025 09:09:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[25-Sep-2025 09:29:39 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[25-Sep-2025 10:38:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[25-Sep-2025 15:14:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[25-Sep-2025 15:56:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[25-Sep-2025 16:16:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[25-Sep-2025 16:20:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[25-Sep-2025 18:06:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[25-Sep-2025 18:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[25-Sep-2025 18:51:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[25-Sep-2025 19:48:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[28-Sep-2025 15:21:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[28-Sep-2025 15:35:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[28-Sep-2025 15:54:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[28-Sep-2025 16:36:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[28-Sep-2025 17:37:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[28-Sep-2025 17:45:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[28-Sep-2025 17:48:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[28-Sep-2025 18:31:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[28-Sep-2025 18:36:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[28-Sep-2025 20:34:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[28-Sep-2025 23:05:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[29-Sep-2025 03:16:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[29-Sep-2025 03:16:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[29-Sep-2025 04:15:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[29-Sep-2025 04:46:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[29-Sep-2025 05:06:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[12-Oct-2025 17:21:06 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[12-Oct-2025 20:50:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[12-Oct-2025 22:51:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[17-Oct-2025 05:27:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[17-Oct-2025 05:31:28 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[17-Oct-2025 05:34:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[17-Oct-2025 05:35:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[17-Oct-2025 05:40:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[17-Oct-2025 05:48:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[17-Oct-2025 05:57:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[17-Oct-2025 06:05:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[17-Oct-2025 06:10:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[17-Oct-2025 06:18:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[17-Oct-2025 06:31:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[17-Oct-2025 06:35:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[17-Oct-2025 06:40:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[17-Oct-2025 06:48:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[17-Oct-2025 06:58:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[17-Oct-2025 07:36:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[17-Oct-2025 07:39:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[17-Oct-2025 07:41:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[17-Oct-2025 07:42:18 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[17-Oct-2025 07:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[17-Oct-2025 07:46:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[17-Oct-2025 07:46:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[17-Oct-2025 07:53:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[17-Oct-2025 08:17:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[17-Oct-2025 08:36:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[17-Oct-2025 08:46:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[17-Oct-2025 08:59:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[17-Oct-2025 09:05:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[17-Oct-2025 09:09:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[17-Oct-2025 09:24:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[17-Oct-2025 09:34:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[17-Oct-2025 10:17:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[17-Oct-2025 11:12:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[17-Oct-2025 11:47:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[17-Oct-2025 12:14:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[17-Oct-2025 12:45:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[17-Oct-2025 20:35:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[18-Oct-2025 09:53:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[18-Oct-2025 10:13:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[18-Oct-2025 13:50:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[18-Oct-2025 14:01:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[18-Oct-2025 17:57:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[19-Oct-2025 17:46:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[20-Oct-2025 01:32:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[20-Oct-2025 02:02:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[20-Oct-2025 02:38:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[20-Oct-2025 03:32:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[24-Oct-2025 03:57:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[24-Oct-2025 04:35:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[24-Oct-2025 04:50:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[24-Oct-2025 04:54:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[24-Oct-2025 05:34:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[24-Oct-2025 07:49:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[24-Oct-2025 08:02:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[24-Oct-2025 09:25:00 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[24-Oct-2025 10:09:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[24-Oct-2025 10:57:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[24-Oct-2025 10:59:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[24-Oct-2025 12:29:32 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[24-Oct-2025 12:32:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[24-Oct-2025 14:02:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[24-Oct-2025 15:18:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[24-Oct-2025 16:30:48 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[30-Oct-2025 06:31:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[30-Oct-2025 07:23:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[30-Oct-2025 07:31:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[30-Oct-2025 08:17:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[30-Oct-2025 09:42:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[30-Oct-2025 09:44:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[30-Oct-2025 09:59:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[30-Oct-2025 11:49:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[30-Oct-2025 11:55:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[30-Oct-2025 13:54:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[30-Oct-2025 14:11:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[30-Oct-2025 14:43:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[30-Oct-2025 14:57:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[30-Oct-2025 15:40:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[30-Oct-2025 15:58:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[30-Oct-2025 16:11:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[30-Oct-2025 18:47:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[05-Nov-2025 01:09:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[05-Nov-2025 02:24:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[05-Nov-2025 12:07:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[05-Nov-2025 18:39:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[05-Nov-2025 21:09:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[11-Nov-2025 16:48:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[11-Nov-2025 20:03:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[11-Nov-2025 20:05:54 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[24-Nov-2025 00:43:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[24-Nov-2025 01:56:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[24-Nov-2025 08:39:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[24-Nov-2025 09:08:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[24-Nov-2025 10:02:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[24-Nov-2025 10:11:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[24-Nov-2025 10:42:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[24-Nov-2025 10:52:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[24-Nov-2025 10:56:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[30-Nov-2025 05:33:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[30-Nov-2025 05:35:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[30-Nov-2025 06:18:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[30-Nov-2025 06:25:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[30-Nov-2025 08:24:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[30-Nov-2025 08:29:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[30-Nov-2025 09:24:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[30-Nov-2025 09:27:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[30-Nov-2025 10:09:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[30-Nov-2025 10:21:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[30-Nov-2025 11:05:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[30-Nov-2025 11:45:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[30-Nov-2025 11:56:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[30-Nov-2025 12:17:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[30-Nov-2025 12:51:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[30-Nov-2025 14:58:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[30-Nov-2025 15:35:23 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[30-Nov-2025 15:48:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[30-Nov-2025 16:05:01 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[30-Nov-2025 16:11:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[30-Nov-2025 16:33:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[30-Nov-2025 17:02:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[30-Nov-2025 18:35:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[30-Nov-2025 20:44:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[03-Dec-2025 00:27:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[08-Dec-2025 19:55:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[08-Dec-2025 20:33:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[11-Dec-2025 17:47:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[12-Dec-2025 10:07:05 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[12-Dec-2025 10:54:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[12-Dec-2025 11:36:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[14-Dec-2025 20:22:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[14-Dec-2025 23:12:59 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[15-Dec-2025 01:09:30 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[15-Dec-2025 01:56:57 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[15-Dec-2025 11:14:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[15-Dec-2025 14:02:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[15-Dec-2025 16:53:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[15-Dec-2025 18:38:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[19-Dec-2025 03:00:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[19-Dec-2025 03:33:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[19-Dec-2025 03:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[19-Dec-2025 04:18:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[19-Dec-2025 06:26:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[19-Dec-2025 08:42:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[19-Dec-2025 08:42:17 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[19-Dec-2025 14:42:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[19-Dec-2025 20:33:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[20-Dec-2025 00:16:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[20-Dec-2025 00:17:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[20-Dec-2025 01:45:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[20-Dec-2025 02:30:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[20-Dec-2025 02:30:21 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[20-Dec-2025 05:28:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[20-Dec-2025 07:39:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[20-Dec-2025 07:40:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[20-Dec-2025 11:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[20-Dec-2025 11:35:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[20-Dec-2025 17:46:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[20-Dec-2025 19:29:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[20-Dec-2025 23:39:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[21-Dec-2025 00:26:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[21-Dec-2025 15:14:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[21-Dec-2025 22:22:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[22-Dec-2025 01:36:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[22-Dec-2025 01:40:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[22-Dec-2025 06:41:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[24-Dec-2025 06:29:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[24-Dec-2025 21:54:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[27-Dec-2025 05:43:41 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[27-Dec-2025 21:54:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[27-Dec-2025 23:05:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[27-Dec-2025 23:20:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[28-Dec-2025 00:07:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[28-Dec-2025 00:10:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[28-Dec-2025 00:10:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[28-Dec-2025 00:27:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[28-Dec-2025 01:07:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[28-Dec-2025 01:14:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[28-Dec-2025 01:34:22 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[28-Dec-2025 02:09:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[28-Dec-2025 02:30:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[28-Dec-2025 03:43:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[28-Dec-2025 03:51:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[28-Dec-2025 04:21:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[28-Dec-2025 04:55:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[28-Dec-2025 05:01:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[28-Dec-2025 06:48:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[28-Dec-2025 07:16:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[28-Dec-2025 07:35:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[28-Dec-2025 07:54:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[28-Dec-2025 08:00:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[28-Dec-2025 08:12:05 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[28-Dec-2025 08:24:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[28-Dec-2025 08:33:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[28-Dec-2025 09:08:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[28-Dec-2025 09:39:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[28-Dec-2025 09:59:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[28-Dec-2025 10:05:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[28-Dec-2025 10:37:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[28-Dec-2025 10:54:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[28-Dec-2025 13:10:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[28-Dec-2025 15:25:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[28-Dec-2025 15:25:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[28-Dec-2025 15:25:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[29-Dec-2025 02:46:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[29-Dec-2025 05:36:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[29-Dec-2025 05:37:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[29-Dec-2025 19:20:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[29-Dec-2025 19:20:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[29-Dec-2025 19:21:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[29-Dec-2025 19:21:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[29-Dec-2025 19:22:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[30-Dec-2025 05:18:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[30-Dec-2025 14:02:20 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[30-Dec-2025 14:02:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[30-Dec-2025 14:02:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[30-Dec-2025 14:03:07 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[31-Dec-2025 01:39:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[31-Dec-2025 01:40:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[05-Jan-2026 11:07:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[05-Jan-2026 11:08:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[05-Jan-2026 15:44:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[05-Jan-2026 20:37:22 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[06-Jan-2026 07:30:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[06-Jan-2026 16:02:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[06-Jan-2026 16:03:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[06-Jan-2026 16:48:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[06-Jan-2026 16:49:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[06-Jan-2026 23:39:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[07-Jan-2026 00:21:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[07-Jan-2026 01:05:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[07-Jan-2026 02:36:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[07-Jan-2026 02:36:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[07-Jan-2026 06:12:11 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[07-Jan-2026 07:39:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[07-Jan-2026 08:23:27 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[07-Jan-2026 08:23:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[07-Jan-2026 10:35:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[07-Jan-2026 10:35:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[07-Jan-2026 14:58:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[07-Jan-2026 17:10:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[07-Jan-2026 19:23:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[07-Jan-2026 20:08:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[07-Jan-2026 22:20:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[07-Jan-2026 23:48:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[08-Jan-2026 00:34:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[08-Jan-2026 00:34:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[08-Jan-2026 02:06:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[08-Jan-2026 05:28:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[08-Jan-2026 08:33:56 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[08-Jan-2026 09:18:55 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[08-Jan-2026 09:19:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[08-Jan-2026 12:28:46 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[08-Jan-2026 14:05:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[08-Jan-2026 20:41:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[08-Jan-2026 20:42:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[09-Jan-2026 04:31:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[09-Jan-2026 12:19:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[09-Jan-2026 19:22:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[09-Jan-2026 21:51:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[11-Jan-2026 09:07:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[11-Jan-2026 12:15:09 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[11-Jan-2026 15:26:58 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[11-Jan-2026 16:17:10 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[11-Jan-2026 19:42:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[11-Jan-2026 21:17:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[12-Jan-2026 03:54:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[12-Jan-2026 03:55:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[12-Jan-2026 11:47:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[16-Jan-2026 03:47:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[16-Jan-2026 15:20:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[19-Jan-2026 11:30:21 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[19-Jan-2026 15:02:29 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[19-Jan-2026 20:08:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[20-Jan-2026 00:53:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[20-Jan-2026 00:56:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[20-Jan-2026 00:59:15 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[20-Jan-2026 06:22:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[20-Jan-2026 06:24:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[20-Jan-2026 06:27:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[20-Jan-2026 06:29:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[20-Jan-2026 06:32:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[20-Jan-2026 12:35:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[20-Jan-2026 12:38:04 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[20-Jan-2026 12:42:12 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[20-Jan-2026 12:44:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[20-Jan-2026 20:08:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[20-Jan-2026 20:11:13 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[20-Jan-2026 20:13:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[24-Jan-2026 23:19:19 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[24-Jan-2026 23:21:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[25-Jan-2026 01:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[25-Jan-2026 03:22:49 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[25-Jan-2026 05:24:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[25-Jan-2026 06:50:03 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[25-Jan-2026 12:25:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[25-Jan-2026 21:59:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[27-Jan-2026 16:43:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[27-Jan-2026 17:25:13 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[27-Jan-2026 17:47:13 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[27-Jan-2026 18:01:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[27-Jan-2026 18:26:14 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[27-Jan-2026 18:42:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[27-Jan-2026 19:00:16 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[27-Jan-2026 19:10:25 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[27-Jan-2026 19:36:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[27-Jan-2026 20:14:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[27-Jan-2026 20:38:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[27-Jan-2026 20:38:52 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[27-Jan-2026 21:16:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[27-Jan-2026 22:11:50 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[27-Jan-2026 23:46:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[27-Jan-2026 23:55:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[28-Jan-2026 00:09:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[28-Jan-2026 00:16:01 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[28-Jan-2026 00:38:57 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[28-Jan-2026 00:54:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[28-Jan-2026 01:12:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[28-Jan-2026 01:45:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[28-Jan-2026 01:46:06 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[28-Jan-2026 02:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[28-Jan-2026 02:29:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[28-Jan-2026 03:20:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[28-Jan-2026 03:37:53 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[28-Jan-2026 03:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[28-Jan-2026 03:49:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[28-Jan-2026 04:59:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[28-Jan-2026 07:34:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[28-Jan-2026 09:03:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[28-Jan-2026 09:48:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[02-Feb-2026 22:33:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[02-Feb-2026 22:33:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[02-Feb-2026 22:33:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[02-Feb-2026 22:33:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[02-Feb-2026 22:33:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[02-Feb-2026 22:33:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[02-Feb-2026 22:33:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[02-Feb-2026 22:33:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[02-Feb-2026 22:33:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[02-Feb-2026 22:33:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[02-Feb-2026 22:33:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[02-Feb-2026 22:33:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[02-Feb-2026 22:33:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[02-Feb-2026 22:33:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[02-Feb-2026 22:33:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[02-Feb-2026 22:33:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[02-Feb-2026 22:33:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[02-Feb-2026 22:33:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[02-Feb-2026 22:33:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[02-Feb-2026 22:33:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[02-Feb-2026 22:33:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[02-Feb-2026 22:33:41 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[02-Feb-2026 22:33:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[02-Feb-2026 22:33:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[02-Feb-2026 22:33:43 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[02-Feb-2026 22:33:44 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[02-Feb-2026 22:33:44 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[02-Feb-2026 22:33:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[02-Feb-2026 22:33:45 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[02-Feb-2026 22:33:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[02-Feb-2026 22:33:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[02-Feb-2026 22:33:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[02-Feb-2026 22:33:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[02-Feb-2026 22:33:47 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[02-Feb-2026 22:33:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[02-Feb-2026 22:33:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44
+[02-Feb-2026 22:47:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterAggregate.php on line 44
+[02-Feb-2026 22:47:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterPath.php on line 44
+[02-Feb-2026 22:47:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\Autocompleter" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/AutocompleterWord.php on line 44
+[02-Feb-2026 22:47:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php:695
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleCursor.php on line 695
+[02-Feb-2026 22:47:24 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleException.php on line 44
+[02-Feb-2026 22:47:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamIn" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleInput.php on line 46
+[02-Feb-2026 22:47:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\StreamOut" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleOutput.php on line 45
+[02-Feb-2026 22:47:26 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleProcessus.php on line 42
+[02-Feb-2026 22:47:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ConsoleWindow.php on line 46
+[02-Feb-2026 22:47:28 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventException.php on line 42
+[02-Feb-2026 22:47:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\EventSource" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/EventListenable.php on line 42
+[02-Feb-2026 22:47:30 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ExceptionIdle" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Exception.php on line 42
+[02-Feb-2026 22:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/File.php on line 44
+[02-Feb-2026 22:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileGeneric" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDirectory.php on line 44
+[02-Feb-2026 22:47:32 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileException" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileDoesNotExistException.php on line 46
+[02-Feb-2026 22:47:33 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileException.php on line 46
+[02-Feb-2026 22:47:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Stream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileGeneric.php on line 44
+[02-Feb-2026 22:47:34 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLink.php on line 44
+[02-Feb-2026 22:47:35 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkRead.php on line 46
+[02-Feb-2026 22:47:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\FileLink" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileLinkReadWrite.php on line 44
+[02-Feb-2026 22:47:36 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileRead.php on line 44
+[02-Feb-2026 22:47:37 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\File" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/FileReadWrite.php on line 44
+[02-Feb-2026 22:47:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Protocol.php on line 42
+[02-Feb-2026 22:47:38 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolException.php on line 42
+[02-Feb-2026 22:47:39 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\ProtocolNode" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php:42
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/ProtocolNodeLibrary.php on line 42
+[02-Feb-2026 22:47:40 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Console" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php:1032
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Readline.php on line 1032
+[02-Feb-2026 22:47:41 UTC] PHP Fatal error:  Trait "Psy\Readline\Hoa\EventListens" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/Stream.php on line 44
+[02-Feb-2026 22:47:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamBufferable.php on line 46
+[02-Feb-2026 22:47:42 UTC] PHP Fatal error:  Uncaught Error: Class "Psy\Readline\Hoa\Exception" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamException.php on line 44
+[02-Feb-2026 22:47:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamIn.php on line 44
+[02-Feb-2026 22:47:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamLockable.php on line 46
+[02-Feb-2026 22:47:43 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamOut.php on line 44
+[02-Feb-2026 22:47:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPathable.php on line 44
+[02-Feb-2026 22:47:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamPointable.php on line 44
+[02-Feb-2026 22:47:45 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamStatable.php on line 44
+[02-Feb-2026 22:47:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psy\Readline\Hoa\IStream" not found in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php:44
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/psy/psysh/src/Readline/Hoa/StreamTouchable.php on line 44

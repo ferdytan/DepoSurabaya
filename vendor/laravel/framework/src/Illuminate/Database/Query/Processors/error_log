@@ -1,0 +1,64 @@
+[06-Jan-2026 21:05:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php on line 5
+[06-Jan-2026 21:05:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php on line 7
+[06-Jan-2026 21:09:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php on line 7
+[06-Jan-2026 21:09:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\MySqlProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php on line 5
+[06-Jan-2026 21:16:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php on line 9
+[26-Jan-2026 14:27:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php on line 7
+[02-Feb-2026 22:04:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\MySqlProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php on line 5
+[02-Feb-2026 22:04:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php on line 7
+[02-Feb-2026 22:04:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php on line 7
+[02-Feb-2026 22:04:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php on line 5
+[02-Feb-2026 22:04:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php on line 9
+[02-Feb-2026 22:10:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\MySqlProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MariaDbProcessor.php on line 5
+[02-Feb-2026 22:10:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php on line 7
+[02-Feb-2026 22:10:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php on line 7
+[02-Feb-2026 22:10:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SQLiteProcessor.php on line 5
+[02-Feb-2026 22:10:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Query\Processors\Processor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/SqlServerProcessor.php on line 9

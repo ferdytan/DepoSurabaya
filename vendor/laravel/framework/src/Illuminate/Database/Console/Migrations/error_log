@@ -1,0 +1,72 @@
+[02-Feb-2026 22:03:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/BaseCommand.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/BaseCommand.php on line 8
+[02-Feb-2026 22:03:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php on line 15
+[02-Feb-2026 22:03:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php on line 11
+[02-Feb-2026 22:03:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php on line 21
+[02-Feb-2026 22:03:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php on line 12
+[02-Feb-2026 22:03:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php on line 14
+[02-Feb-2026 22:03:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php on line 13
+[02-Feb-2026 22:03:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php on line 13
+[02-Feb-2026 22:03:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php on line 12
+[02-Feb-2026 22:09:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/BaseCommand.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/BaseCommand.php on line 8
+[02-Feb-2026 22:09:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php on line 15
+[02-Feb-2026 22:09:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/InstallCommand.php on line 11
+[02-Feb-2026 22:09:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php on line 21
+[02-Feb-2026 22:09:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php on line 12
+[02-Feb-2026 22:09:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php on line 14
+[02-Feb-2026 22:09:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php on line 13
+[02-Feb-2026 22:09:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php on line 13
+[02-Feb-2026 22:09:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Console\Migrations\BaseCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php on line 12

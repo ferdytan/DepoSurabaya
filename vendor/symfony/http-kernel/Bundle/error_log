@@ -1,0 +1,144 @@
+[18-Oct-2025 11:20:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[18-Oct-2025 19:35:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[24-Oct-2025 13:35:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[24-Oct-2025 15:20:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[25-Oct-2025 03:12:12 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[05-Nov-2025 15:57:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[05-Nov-2025 16:38:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[06-Nov-2025 00:47:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[09-Nov-2025 04:52:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[12-Nov-2025 13:23:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[16-Nov-2025 17:38:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[16-Nov-2025 17:51:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[17-Nov-2025 05:22:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[18-Nov-2025 14:12:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[22-Nov-2025 02:05:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[24-Nov-2025 05:36:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[24-Nov-2025 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[24-Nov-2025 12:26:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[14-Dec-2025 05:58:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[14-Dec-2025 08:52:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[14-Dec-2025 09:50:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[21-Dec-2025 20:30:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[21-Dec-2025 22:45:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[25-Dec-2025 14:20:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[18-Jan-2026 22:39:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[19-Jan-2026 07:04:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[22-Jan-2026 12:30:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[22-Jan-2026 17:55:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[22-Jan-2026 21:04:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[25-Jan-2026 22:27:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[02-Feb-2026 22:39:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[02-Feb-2026 22:39:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[02-Feb-2026 22:39:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28
+[02-Feb-2026 22:55:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Bundle\Bundle" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/AbstractBundle.php on line 26
+[02-Feb-2026 22:55:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpKernel\Bundle\BundleInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/Bundle.php on line 25
+[02-Feb-2026 22:55:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\DependencyInjection\Extension\Extension" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Bundle/BundleExtension.php on line 28

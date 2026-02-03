@@ -1,0 +1,67 @@
+[06-Jan-2026 20:37:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php on line 9
+[06-Jan-2026 21:12:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\ValidatePostSize" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php on line 7
+[06-Jan-2026 21:21:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php on line 8
+[06-Jan-2026 21:21:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php on line 5
+[06-Jan-2026 21:22:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php on line 18
+[06-Jan-2026 21:25:21 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Http\Middleware\Concerns\ExcludesPaths" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php on line 13
+[06-Jan-2026 21:26:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php on line 7
+[26-Jan-2026 16:09:28 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Http\Middleware\Concerns\ExcludesPaths" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php on line 13
+[02-Feb-2026 22:06:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php on line 5
+[02-Feb-2026 22:06:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php on line 7
+[02-Feb-2026 22:06:26 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Http\Middleware\Concerns\ExcludesPaths" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php on line 13
+[02-Feb-2026 22:06:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php on line 9
+[02-Feb-2026 22:06:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php on line 8
+[02-Feb-2026 22:06:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\ValidatePostSize" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php on line 7
+[02-Feb-2026 22:06:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php on line 18
+[02-Feb-2026 22:12:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php on line 5
+[02-Feb-2026 22:12:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php on line 7
+[02-Feb-2026 22:12:39 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Http\Middleware\Concerns\ExcludesPaths" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php on line 13
+[02-Feb-2026 22:12:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TransformsRequest" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php on line 9
+[02-Feb-2026 22:12:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidateCsrfToken.php on line 8
+[02-Feb-2026 22:12:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\ValidatePostSize" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php on line 7
+[02-Feb-2026 22:12:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php on line 18

@@ -1,0 +1,180 @@
+[25-Sep-2025 13:09:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[25-Sep-2025 15:42:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[28-Sep-2025 16:24:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[29-Sep-2025 04:16:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[23-Oct-2025 18:01:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[23-Oct-2025 23:56:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[24-Oct-2025 05:53:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[24-Oct-2025 14:10:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[30-Oct-2025 14:14:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[30-Oct-2025 16:04:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[24-Nov-2025 03:08:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[30-Nov-2025 08:51:20 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[30-Nov-2025 09:36:46 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[30-Nov-2025 12:42:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[13-Dec-2025 21:06:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[16-Dec-2025 09:11:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[16-Dec-2025 22:50:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[17-Dec-2025 05:48:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[17-Dec-2025 07:20:03 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[18-Dec-2025 14:46:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[21-Dec-2025 18:11:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[28-Dec-2025 05:01:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[28-Dec-2025 07:19:16 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[28-Dec-2025 09:39:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[29-Dec-2025 05:14:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[05-Jan-2026 15:43:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[05-Jan-2026 17:46:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[05-Jan-2026 18:59:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[25-Jan-2026 21:54:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[26-Jan-2026 03:23:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[26-Jan-2026 08:47:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[27-Jan-2026 18:13:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[27-Jan-2026 23:01:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[27-Jan-2026 23:46:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[28-Jan-2026 04:15:30 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[02-Feb-2026 21:52:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[02-Feb-2026 21:52:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[02-Feb-2026 21:52:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[02-Feb-2026 21:52:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[02-Feb-2026 21:53:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14
+[02-Feb-2026 21:53:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerException.php on line 12
+[02-Feb-2026 21:53:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[02-Feb-2026 21:53:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\NotFoundExceptionInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/NotInContainerException.php on line 12
+[02-Feb-2026 22:45:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Psr\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/ContainerInterface.php on line 7
+[03-Feb-2026 00:11:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Faker\Container\ContainerInterface" not found in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/fakerphp/faker/src/Faker/Container/Container.php on line 14

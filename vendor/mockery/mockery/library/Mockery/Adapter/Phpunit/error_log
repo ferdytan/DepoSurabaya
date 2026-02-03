@@ -1,0 +1,44 @@
+[25-Sep-2025 09:04:27 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[25-Sep-2025 14:46:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[29-Sep-2025 05:30:34 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[24-Oct-2025 10:29:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[24-Oct-2025 12:37:14 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[30-Oct-2025 09:06:01 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[24-Nov-2025 03:55:22 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[24-Nov-2025 05:38:18 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[30-Nov-2025 10:32:15 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[21-Dec-2025 23:15:49 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[22-Dec-2025 03:52:56 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[03-Jan-2026 13:01:18 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[16-Jan-2026 17:29:50 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[22-Jan-2026 13:19:05 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[22-Jan-2026 17:14:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[26-Jan-2026 06:52:52 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[02-Feb-2026 14:18:54 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[02-Feb-2026 22:16:26 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[02-Feb-2026 22:16:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[02-Feb-2026 22:16:27 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18
+[02-Feb-2026 22:25:25 UTC] PHP Fatal error:  Trait "Mockery\Adapter\Phpunit\MockeryPHPUnitIntegrationAssertPostConditions" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php on line 23
+[02-Feb-2026 22:25:26 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\TestCase" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php on line 15
+[02-Feb-2026 22:25:27 UTC] PHP Fatal error:  Trait "PHPUnit\Framework\TestListenerDefaultImplementation" not found in /home/depossco/public_html/tools/vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php on line 18

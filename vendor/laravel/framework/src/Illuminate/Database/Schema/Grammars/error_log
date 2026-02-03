@@ -1,0 +1,80 @@
+[06-Jan-2026 21:01:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php on line 13
+[06-Jan-2026 21:10:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php on line 11
+[06-Jan-2026 21:13:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php on line 13
+[06-Jan-2026 21:16:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php on line 12
+[06-Jan-2026 21:16:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\MySqlGrammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php on line 8
+[06-Jan-2026 21:23:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php on line 9
+[23-Jan-2026 04:08:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php on line 13
+[26-Jan-2026 13:35:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php on line 13
+[02-Feb-2026 22:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php on line 13
+[02-Feb-2026 22:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\MySqlGrammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php on line 8
+[02-Feb-2026 22:04:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php on line 12
+[02-Feb-2026 22:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php on line 11
+[02-Feb-2026 22:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php on line 13
+[02-Feb-2026 22:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php on line 9
+[02-Feb-2026 22:10:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php on line 13
+[02-Feb-2026 22:10:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\MySqlGrammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MariaDbGrammar.php on line 8
+[02-Feb-2026 22:10:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php on line 12
+[02-Feb-2026 22:10:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php on line 11
+[02-Feb-2026 22:10:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php on line 13
+[02-Feb-2026 22:10:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Schema\Grammars\Grammar" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php on line 9

@@ -1,0 +1,136 @@
+[21-Jan-2026 20:26:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php on line 7
+[21-Jan-2026 21:41:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php on line 7
+[21-Jan-2026 21:43:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php on line 7
+[21-Jan-2026 21:46:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php on line 7
+[21-Jan-2026 21:48:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php on line 7
+[21-Jan-2026 22:21:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php on line 7
+[26-Jan-2026 06:11:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php on line 7
+[26-Jan-2026 19:07:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php on line 7
+[02-Feb-2026 22:22:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php on line 7
+[02-Feb-2026 22:22:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php on line 7
+[02-Feb-2026 22:22:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php on line 7
+[02-Feb-2026 22:22:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php on line 7
+[02-Feb-2026 22:22:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php on line 7
+[02-Feb-2026 22:22:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php on line 7
+[02-Feb-2026 22:22:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php on line 7
+[02-Feb-2026 22:22:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php on line 7
+[02-Feb-2026 22:22:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php on line 7
+[02-Feb-2026 22:22:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php on line 7
+[02-Feb-2026 22:22:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php on line 7
+[02-Feb-2026 22:22:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php on line 7
+[02-Feb-2026 22:22:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php on line 7
+[02-Feb-2026 22:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php on line 7
+[02-Feb-2026 22:32:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php on line 7
+[02-Feb-2026 22:32:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php on line 7
+[02-Feb-2026 22:32:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Coalesce.php on line 7
+[02-Feb-2026 22:32:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php on line 7
+[02-Feb-2026 22:32:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php on line 7
+[02-Feb-2026 22:32:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php on line 7
+[02-Feb-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php on line 7
+[02-Feb-2026 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php on line 7
+[02-Feb-2026 22:32:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php on line 7
+[02-Feb-2026 22:32:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php on line 7
+[02-Feb-2026 22:32:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php on line 7
+[02-Feb-2026 22:33:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr\AssignOp" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php on line 7

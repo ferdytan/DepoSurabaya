@@ -1,0 +1,16 @@
+[02-Feb-2026 22:04:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php on line 15
+[02-Feb-2026 22:04:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php on line 10
+[02-Feb-2026 22:09:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php on line 15
+[02-Feb-2026 22:09:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php on line 10

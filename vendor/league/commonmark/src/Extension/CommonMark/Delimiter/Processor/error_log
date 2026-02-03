@@ -1,0 +1,8 @@
+[02-Feb-2026 22:13:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Delimiter\Processor\CacheableDelimiterProcessorInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Delimiter/Processor/EmphasisDelimiterProcessor.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Delimiter/Processor/EmphasisDelimiterProcessor.php on line 30
+[02-Feb-2026 22:20:54 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Delimiter\Processor\CacheableDelimiterProcessorInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Delimiter/Processor/EmphasisDelimiterProcessor.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/CommonMark/Delimiter/Processor/EmphasisDelimiterProcessor.php on line 30

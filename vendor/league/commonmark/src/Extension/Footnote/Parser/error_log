@@ -1,0 +1,152 @@
+[28-Sep-2025 14:37:53 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[28-Sep-2025 17:08:31 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[28-Sep-2025 17:12:31 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[28-Sep-2025 20:03:58 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[30-Oct-2025 06:58:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[30-Oct-2025 07:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[30-Oct-2025 16:15:08 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[30-Oct-2025 18:40:37 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[30-Nov-2025 06:24:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[30-Nov-2025 13:35:15 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[30-Nov-2025 14:41:07 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[30-Nov-2025 17:52:24 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[27-Dec-2025 22:48:40 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[28-Dec-2025 05:13:16 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[28-Dec-2025 08:11:58 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[28-Dec-2025 12:25:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[05-Jan-2026 16:35:58 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[05-Jan-2026 20:04:00 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[05-Jan-2026 20:04:16 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[05-Jan-2026 21:15:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[13-Jan-2026 15:13:42 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[17-Jan-2026 08:16:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[21-Jan-2026 18:55:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[26-Jan-2026 18:18:18 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[27-Jan-2026 18:28:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[27-Jan-2026 20:39:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[27-Jan-2026 22:51:01 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[28-Jan-2026 01:43:00 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[30-Jan-2026 11:54:56 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[31-Jan-2026 09:57:38 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[02-Feb-2026 22:13:50 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[02-Feb-2026 22:13:50 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[02-Feb-2026 22:13:51 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[02-Feb-2026 22:13:51 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24
+[02-Feb-2026 22:22:00 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/AnonymousFootnoteRefParser.php on line 27
+[02-Feb-2026 22:22:01 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Parser\Block\AbstractBlockContinueParser" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteParser.php on line 25
+[02-Feb-2026 22:22:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Inline\InlineParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteRefParser.php on line 25
+[02-Feb-2026 22:22:02 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Parser\Block\BlockStartParserInterface" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Extension/Footnote/Parser/FootnoteStartParser.php on line 24

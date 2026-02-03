@@ -1,0 +1,16 @@
+[02-Feb-2026 22:29:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Runtime\PropertyHook" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertyGetHook.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertyGetHook.php on line 17
+[02-Feb-2026 22:29:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Runtime\PropertyHook" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertySetHook.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertySetHook.php on line 17
+[02-Feb-2026 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Runtime\PropertyHook" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertyGetHook.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertyGetHook.php on line 17
+[02-Feb-2026 22:41:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\MockObject\Runtime\PropertyHook" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertySetHook.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/MockObject/Runtime/PropertyHook/PropertySetHook.php on line 17

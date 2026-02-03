@@ -1,0 +1,244 @@
+[28-Sep-2025 14:01:04 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[18-Oct-2025 12:23:16 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[18-Oct-2025 14:53:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[18-Oct-2025 16:28:01 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[18-Oct-2025 17:54:01 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[18-Oct-2025 22:28:42 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[30-Oct-2025 14:24:25 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[17-Nov-2025 18:16:30 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[17-Nov-2025 19:04:04 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[17-Nov-2025 21:26:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[18-Nov-2025 03:12:12 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[18-Nov-2025 04:41:06 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[29-Nov-2025 04:31:40 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[30-Nov-2025 18:12:01 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[08-Dec-2025 14:44:13 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[08-Dec-2025 17:37:39 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[09-Dec-2025 01:49:12 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[10-Dec-2025 16:13:36 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[11-Dec-2025 08:10:36 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[11-Dec-2025 14:30:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[12-Dec-2025 18:12:15 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[13-Dec-2025 19:46:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[14-Dec-2025 01:11:37 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[14-Dec-2025 16:24:28 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[15-Dec-2025 09:57:28 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[15-Dec-2025 13:23:16 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[15-Dec-2025 17:32:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[15-Dec-2025 18:16:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[15-Dec-2025 20:55:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[15-Dec-2025 21:16:03 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[20-Dec-2025 09:02:48 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[20-Dec-2025 14:33:57 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[20-Dec-2025 15:24:08 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[20-Dec-2025 15:56:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[20-Dec-2025 16:16:55 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[28-Dec-2025 01:58:04 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[04-Jan-2026 19:54:52 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[16-Jan-2026 01:07:24 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[16-Jan-2026 02:15:14 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[16-Jan-2026 03:02:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[16-Jan-2026 07:50:42 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[16-Jan-2026 17:36:19 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[19-Jan-2026 05:14:54 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[19-Jan-2026 08:26:57 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[20-Jan-2026 08:36:44 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[20-Jan-2026 15:08:09 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[20-Jan-2026 22:38:13 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[21-Jan-2026 03:45:50 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[02-Feb-2026 11:23:25 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[02-Feb-2026 22:12:47 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[02-Feb-2026 22:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[02-Feb-2026 22:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[02-Feb-2026 22:12:48 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[02-Feb-2026 22:12:49 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[02-Feb-2026 22:12:49 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16
+[02-Feb-2026 22:20:33 UTC] PHP Fatal error:  Uncaught Error: Class "League\CommonMark\Exception\LogicException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/AlreadyInitializedException.php on line 16
+[02-Feb-2026 22:20:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/InvalidArgumentException.php on line 16
+[02-Feb-2026 22:20:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/IOException.php on line 16
+[02-Feb-2026 22:20:35 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/LogicException.php on line 16
+[02-Feb-2026 22:20:36 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/MissingDependencyException.php on line 16
+[02-Feb-2026 22:20:36 UTC] PHP Fatal error:  Uncaught Error: Interface "League\CommonMark\Exception\CommonMarkException" not found in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/commonmark/src/Exception/UnexpectedEncodingException.php on line 16

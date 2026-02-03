@@ -1,0 +1,102 @@
+[25-Sep-2025 08:56:16 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[25-Sep-2025 09:38:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[28-Sep-2025 16:31:50 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[24-Oct-2025 14:58:22 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[24-Oct-2025 16:19:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[30-Oct-2025 17:43:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[24-Nov-2025 10:26:56 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[24-Nov-2025 13:41:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[30-Nov-2025 10:05:24 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[22-Dec-2025 02:16:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[26-Dec-2025 21:45:57 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[28-Dec-2025 08:02:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[05-Jan-2026 11:38:43 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[05-Jan-2026 18:12:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[05-Jan-2026 19:12:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[19-Jan-2026 23:48:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[20-Jan-2026 04:50:41 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[22-Jan-2026 11:09:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[22-Jan-2026 21:22:34 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[25-Jan-2026 02:14:56 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[25-Jan-2026 03:03:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[25-Jan-2026 08:14:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[26-Jan-2026 01:23:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[26-Jan-2026 05:02:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[26-Jan-2026 09:50:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[28-Jan-2026 05:21:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[29-Jan-2026 07:02:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[02-Feb-2026 22:07:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[02-Feb-2026 22:07:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[02-Feb-2026 22:07:29 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18
+[02-Feb-2026 22:13:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Log\ContextLogProcessor" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php on line 10
+[02-Feb-2026 22:13:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php on line 11
+[02-Feb-2026 22:13:56 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Log/Context/Repository.php on line 18

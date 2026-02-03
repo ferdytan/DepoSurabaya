@@ -1,0 +1,153 @@
+[25-Sep-2025 08:52:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[25-Sep-2025 10:37:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[25-Sep-2025 10:53:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[25-Sep-2025 16:17:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[28-Sep-2025 21:22:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[24-Oct-2025 06:34:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[24-Oct-2025 06:41:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[24-Oct-2025 09:22:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[24-Oct-2025 09:38:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[30-Oct-2025 15:10:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[24-Nov-2025 04:58:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[24-Nov-2025 05:10:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[24-Nov-2025 12:11:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[24-Nov-2025 15:26:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[30-Nov-2025 09:06:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[21-Dec-2025 19:55:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[21-Dec-2025 19:57:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[21-Dec-2025 20:38:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[21-Dec-2025 21:43:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[31-Dec-2025 04:29:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[19-Jan-2026 15:57:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[20-Jan-2026 01:47:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[20-Jan-2026 04:04:41 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[22-Jan-2026 16:05:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[22-Jan-2026 17:12:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[22-Jan-2026 17:25:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[22-Jan-2026 18:19:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[23-Jan-2026 10:36:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[24-Jan-2026 08:30:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[25-Jan-2026 05:10:32 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[25-Jan-2026 17:55:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[26-Jan-2026 14:19:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[26-Jan-2026 14:22:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[27-Jan-2026 16:42:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[27-Jan-2026 17:12:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[02-Feb-2026 22:09:09 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[02-Feb-2026 22:09:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[02-Feb-2026 22:09:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[02-Feb-2026 22:09:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[02-Feb-2026 22:09:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13
+[02-Feb-2026 22:15:49 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Macroable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/Connection.php on line 12
+[02-Feb-2026 22:15:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PhpRedisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisClusterConnection.php on line 7
+[02-Feb-2026 22:15:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PhpRedisConnection.php on line 14
+[02-Feb-2026 22:15:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\PredisConnection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisClusterConnection.php on line 8
+[02-Feb-2026 22:15:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Redis\Connections\Connection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Redis/Connections/PredisConnection.php on line 13

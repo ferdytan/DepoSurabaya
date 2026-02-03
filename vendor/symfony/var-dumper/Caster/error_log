@@ -1,0 +1,760 @@
+[16-Oct-2025 18:38:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[16-Oct-2025 18:40:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[18-Oct-2025 08:48:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[18-Oct-2025 09:05:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[18-Oct-2025 09:20:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[18-Oct-2025 10:13:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[18-Oct-2025 12:21:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[18-Oct-2025 13:00:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[18-Oct-2025 14:43:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[18-Oct-2025 15:05:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[18-Oct-2025 15:05:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[18-Oct-2025 15:27:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[18-Oct-2025 16:02:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[18-Oct-2025 16:27:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[18-Oct-2025 16:51:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[18-Oct-2025 17:15:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[18-Oct-2025 18:56:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[18-Oct-2025 19:00:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[18-Oct-2025 19:17:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[19-Oct-2025 02:47:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[19-Oct-2025 03:40:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[19-Oct-2025 04:46:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[20-Oct-2025 02:09:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[20-Oct-2025 08:43:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[20-Oct-2025 08:43:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[20-Oct-2025 15:32:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[20-Oct-2025 19:15:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[21-Oct-2025 04:47:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[21-Oct-2025 06:28:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[21-Oct-2025 16:39:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[21-Oct-2025 19:02:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[22-Oct-2025 06:04:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[22-Oct-2025 08:41:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[22-Oct-2025 19:05:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[23-Oct-2025 07:29:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[30-Oct-2025 10:02:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[02-Nov-2025 21:26:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[05-Nov-2025 05:55:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[05-Nov-2025 12:57:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[12-Nov-2025 05:39:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[14-Nov-2025 06:19:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[14-Nov-2025 15:42:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[14-Nov-2025 22:29:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[14-Nov-2025 23:14:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[15-Nov-2025 04:14:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[15-Nov-2025 13:22:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[15-Nov-2025 16:26:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[16-Nov-2025 02:13:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[16-Nov-2025 11:24:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[16-Nov-2025 11:52:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[16-Nov-2025 12:03:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[16-Nov-2025 12:11:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[16-Nov-2025 12:12:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[16-Nov-2025 12:13:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[16-Nov-2025 13:15:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[16-Nov-2025 13:35:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[16-Nov-2025 13:36:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[16-Nov-2025 13:36:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[16-Nov-2025 13:37:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[16-Nov-2025 13:41:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[16-Nov-2025 17:07:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[16-Nov-2025 18:23:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[16-Nov-2025 19:09:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[16-Nov-2025 19:54:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[16-Nov-2025 20:26:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[17-Nov-2025 02:15:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[17-Nov-2025 10:28:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[17-Nov-2025 14:35:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[17-Nov-2025 15:45:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[17-Nov-2025 18:20:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[17-Nov-2025 20:11:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[17-Nov-2025 20:14:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[17-Nov-2025 20:26:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[17-Nov-2025 21:59:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[17-Nov-2025 22:39:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[17-Nov-2025 23:59:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[18-Nov-2025 00:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[18-Nov-2025 00:51:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[18-Nov-2025 01:16:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[18-Nov-2025 01:56:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[18-Nov-2025 02:15:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[18-Nov-2025 03:37:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[18-Nov-2025 05:39:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[18-Nov-2025 06:15:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[18-Nov-2025 18:37:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[19-Nov-2025 03:34:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[19-Nov-2025 07:02:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[24-Nov-2025 05:44:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[24-Nov-2025 10:37:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[14-Dec-2025 10:04:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[14-Dec-2025 10:05:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[14-Dec-2025 11:00:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[14-Dec-2025 11:00:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[14-Dec-2025 11:00:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[14-Dec-2025 11:01:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[14-Dec-2025 11:01:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[14-Dec-2025 11:01:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[14-Dec-2025 11:41:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[14-Dec-2025 11:42:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[14-Dec-2025 11:42:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[14-Dec-2025 12:18:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[14-Dec-2025 12:49:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[14-Dec-2025 12:50:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[15-Dec-2025 12:07:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[15-Dec-2025 12:15:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[15-Dec-2025 16:16:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[15-Dec-2025 16:17:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[15-Dec-2025 16:33:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[15-Dec-2025 19:13:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[15-Dec-2025 20:27:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[15-Dec-2025 20:42:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[15-Dec-2025 20:50:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[15-Dec-2025 21:13:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[15-Dec-2025 22:02:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[27-Dec-2025 21:38:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[28-Dec-2025 00:03:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[07-Jan-2026 12:52:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[13-Jan-2026 04:04:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[13-Jan-2026 04:04:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[13-Jan-2026 04:04:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[13-Jan-2026 04:04:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[13-Jan-2026 04:05:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[13-Jan-2026 04:05:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[14-Jan-2026 03:40:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[14-Jan-2026 03:40:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[14-Jan-2026 03:40:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[16-Jan-2026 02:08:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[16-Jan-2026 02:44:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[16-Jan-2026 02:46:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[16-Jan-2026 03:37:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[16-Jan-2026 05:07:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[16-Jan-2026 06:04:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[16-Jan-2026 06:35:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[16-Jan-2026 09:08:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[16-Jan-2026 09:16:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[16-Jan-2026 09:32:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[16-Jan-2026 12:29:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[19-Jan-2026 19:45:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[19-Jan-2026 23:49:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[21-Jan-2026 01:27:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[21-Jan-2026 08:00:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[21-Jan-2026 08:01:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[21-Jan-2026 13:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[21-Jan-2026 17:30:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[22-Jan-2026 03:16:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[22-Jan-2026 04:53:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[22-Jan-2026 14:40:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[22-Jan-2026 17:07:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[23-Jan-2026 04:01:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[23-Jan-2026 06:14:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[23-Jan-2026 16:09:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[24-Jan-2026 03:46:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[24-Jan-2026 18:38:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[24-Jan-2026 21:16:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[24-Jan-2026 21:18:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[24-Jan-2026 21:21:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[26-Jan-2026 11:14:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[26-Jan-2026 13:34:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[26-Jan-2026 23:04:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[27-Jan-2026 22:42:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[27-Jan-2026 23:44:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[02-Feb-2026 22:44:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[02-Feb-2026 22:44:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[02-Feb-2026 22:44:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[02-Feb-2026 22:44:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[02-Feb-2026 22:44:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[02-Feb-2026 22:44:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[02-Feb-2026 22:44:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[02-Feb-2026 22:44:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[02-Feb-2026 22:44:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[02-Feb-2026 22:44:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[02-Feb-2026 22:44:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[02-Feb-2026 22:44:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[02-Feb-2026 22:44:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[02-Feb-2026 22:44:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[02-Feb-2026 23:01:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ArgsStub.php on line 21
+[02-Feb-2026 23:01:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ClassStub.php on line 21
+[02-Feb-2026 23:01:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ConstStub.php on line 21
+[02-Feb-2026 23:01:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\CutStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutArrayStub.php on line 19
+[02-Feb-2026 23:01:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/CutStub.php on line 21
+[02-Feb-2026 23:02:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/DsPairStub.php on line 19
+[02-Feb-2026 23:02:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/EnumStub.php on line 21
+[02-Feb-2026 23:02:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\EnumStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/FrameStub.php on line 19
+[02-Feb-2026 23:02:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ImgStub.php on line 17
+[02-Feb-2026 23:02:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/LinkStub.php on line 19
+[02-Feb-2026 23:02:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21
+[02-Feb-2026 23:02:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/TraceStub.php on line 21
+[02-Feb-2026 23:02:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/UninitializedStub.php on line 19
+[02-Feb-2026 23:02:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Caster\ConstStub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/VirtualStub.php on line 14
+[03-Feb-2026 04:43:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Cloner\Stub" not found in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/var-dumper/Caster/ScalarStub.php on line 21

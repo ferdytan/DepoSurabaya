@@ -1,0 +1,84 @@
+[18-Oct-2025 16:53:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[18-Oct-2025 20:28:49 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[21-Oct-2025 03:17:17 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[23-Oct-2025 03:54:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[16-Nov-2025 16:40:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[24-Nov-2025 02:43:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[24-Nov-2025 09:29:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[29-Nov-2025 02:56:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[02-Dec-2025 03:53:25 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[14-Dec-2025 13:38:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[14-Dec-2025 13:56:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[03-Jan-2026 11:55:27 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[03-Jan-2026 12:33:42 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[22-Jan-2026 01:35:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[24-Jan-2026 00:51:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[02-Feb-2026 12:39:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[02-Feb-2026 20:19:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[02-Feb-2026 22:39:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[02-Feb-2026 22:39:19 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32
+[02-Feb-2026 22:54:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\PeekableRequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/AbstractRequestRateLimiter.php on line 25
+[02-Feb-2026 22:54:55 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\HttpFoundation\RateLimiter\RequestRateLimiterInterface" not found in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-foundation/RateLimiter/PeekableRequestRateLimiterInterface.php on line 32

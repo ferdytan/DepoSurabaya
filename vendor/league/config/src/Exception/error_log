@@ -1,0 +1,136 @@
+[18-Oct-2025 09:59:57 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[18-Oct-2025 15:58:57 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[18-Oct-2025 18:37:10 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[20-Oct-2025 04:45:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[09-Nov-2025 00:15:25 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[17-Nov-2025 23:50:54 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[18-Nov-2025 01:33:00 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[18-Nov-2025 04:09:01 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[21-Nov-2025 05:33:31 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[23-Nov-2025 08:16:33 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[24-Nov-2025 14:12:52 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[15-Dec-2025 12:55:14 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[15-Dec-2025 17:09:15 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[15-Dec-2025 20:08:31 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[04-Jan-2026 05:23:02 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[04-Jan-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[05-Jan-2026 03:39:15 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[05-Jan-2026 03:47:37 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[05-Jan-2026 04:44:37 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[05-Jan-2026 19:36:12 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[08-Jan-2026 08:24:04 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[09-Jan-2026 00:28:34 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[16-Jan-2026 00:03:27 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[16-Jan-2026 05:37:21 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[16-Jan-2026 10:15:39 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[19-Jan-2026 02:49:37 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[19-Jan-2026 12:30:22 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[25-Jan-2026 00:06:20 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[02-Feb-2026 22:15:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[02-Feb-2026 22:15:05 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[02-Feb-2026 22:15:06 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18
+[02-Feb-2026 22:23:41 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/InvalidConfigurationException.php on line 16
+[02-Feb-2026 22:23:41 UTC] PHP Fatal error:  Uncaught Error: Interface "League\Config\Exception\ConfigurationExceptionInterface" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/UnknownOptionException.php on line 18
+[02-Feb-2026 22:23:42 UTC] PHP Fatal error:  Uncaught Error: Class "League\Config\Exception\InvalidConfigurationException" not found in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/league/config/src/Exception/ValidationException.php on line 18

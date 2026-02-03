@@ -1,0 +1,468 @@
+[18-Oct-2025 13:45:59 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[18-Oct-2025 21:42:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[20-Oct-2025 04:09:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[20-Oct-2025 20:02:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[21-Oct-2025 04:02:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[21-Oct-2025 06:32:15 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[21-Oct-2025 07:18:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[21-Oct-2025 23:45:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[22-Oct-2025 04:29:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[22-Oct-2025 10:20:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[22-Oct-2025 11:33:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[23-Oct-2025 02:06:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[23-Oct-2025 02:06:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[23-Oct-2025 17:02:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[24-Oct-2025 06:15:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[24-Oct-2025 09:03:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[24-Oct-2025 09:04:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[24-Oct-2025 10:27:19 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[24-Oct-2025 11:41:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[24-Oct-2025 12:52:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[24-Oct-2025 15:01:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[24-Oct-2025 15:39:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[24-Oct-2025 15:54:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[25-Oct-2025 14:37:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[25-Oct-2025 20:32:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[06-Nov-2025 21:39:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[08-Nov-2025 16:45:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[08-Nov-2025 20:16:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[08-Nov-2025 20:58:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[09-Nov-2025 10:13:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[10-Nov-2025 19:50:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[11-Nov-2025 00:15:05 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[11-Nov-2025 04:38:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[11-Nov-2025 11:21:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[12-Nov-2025 19:11:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[16-Nov-2025 11:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[16-Nov-2025 11:22:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[16-Nov-2025 11:46:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[16-Nov-2025 11:47:25 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[16-Nov-2025 12:00:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[16-Nov-2025 12:02:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[16-Nov-2025 19:46:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[16-Nov-2025 19:58:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[16-Nov-2025 23:58:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[17-Nov-2025 21:52:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[24-Nov-2025 02:36:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[24-Nov-2025 03:15:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[24-Nov-2025 04:07:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[24-Nov-2025 05:14:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[24-Nov-2025 08:40:34 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[24-Nov-2025 09:14:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[24-Nov-2025 09:43:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[24-Nov-2025 12:07:08 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[14-Dec-2025 05:58:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[14-Dec-2025 05:58:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[14-Dec-2025 07:26:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[14-Dec-2025 08:52:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[14-Dec-2025 08:53:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[14-Dec-2025 08:53:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[14-Dec-2025 09:50:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[14-Dec-2025 10:51:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[14-Dec-2025 12:45:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[15-Dec-2025 12:35:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[21-Dec-2025 16:46:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[21-Dec-2025 18:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[21-Dec-2025 20:49:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[21-Dec-2025 22:08:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[22-Dec-2025 02:21:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[22-Dec-2025 09:30:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[25-Dec-2025 00:24:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[25-Dec-2025 10:55:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[11-Jan-2026 23:20:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[13-Jan-2026 02:45:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[16-Jan-2026 06:19:10 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[19-Jan-2026 23:21:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[21-Jan-2026 18:07:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[22-Jan-2026 02:24:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[22-Jan-2026 04:53:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[22-Jan-2026 05:35:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[22-Jan-2026 09:29:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[22-Jan-2026 11:22:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[22-Jan-2026 12:32:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[22-Jan-2026 13:51:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[22-Jan-2026 14:09:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[22-Jan-2026 14:34:20 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[22-Jan-2026 22:03:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[22-Jan-2026 22:07:01 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[23-Jan-2026 00:16:56 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[23-Jan-2026 23:18:04 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[23-Jan-2026 23:18:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[24-Jan-2026 10:30:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[24-Jan-2026 13:59:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[24-Jan-2026 16:17:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[24-Jan-2026 16:20:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[24-Jan-2026 18:26:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[24-Jan-2026 20:58:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[26-Jan-2026 09:22:00 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[26-Jan-2026 15:10:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[29-Jan-2026 20:36:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[02-Feb-2026 22:40:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[02-Feb-2026 22:40:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[02-Feb-2026 22:40:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[02-Feb-2026 22:40:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[02-Feb-2026 22:40:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[02-Feb-2026 22:40:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[02-Feb-2026 22:40:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[02-Feb-2026 22:40:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[02-Feb-2026 22:40:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26
+[02-Feb-2026 22:56:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerArgumentsEvent.php on line 29
+[02-Feb-2026 22:56:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ControllerEvent.php on line 28
+[02-Feb-2026 22:56:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ExceptionEvent.php on line 30
+[02-Feb-2026 22:56:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/FinishRequestEvent.php on line 19
+[02-Feb-2026 22:56:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Contracts\EventDispatcher\Event" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/KernelEvent.php on line 23
+[02-Feb-2026 22:56:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/RequestEvent.php on line 25
+[02-Feb-2026 22:56:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ResponseEvent.php on line 27
+[02-Feb-2026 22:56:31 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\KernelEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/TerminateEvent.php on line 26
+[02-Feb-2026 22:56:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\HttpKernel\Event\RequestEvent" not found in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/http-kernel/Event/ViewEvent.php on line 26

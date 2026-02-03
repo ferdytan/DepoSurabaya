@@ -1,0 +1,76 @@
+[25-Sep-2025 07:38:02 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[25-Sep-2025 12:53:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[25-Sep-2025 14:07:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[24-Oct-2025 06:45:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[24-Oct-2025 09:35:44 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[24-Nov-2025 00:22:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[24-Nov-2025 02:49:57 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[24-Nov-2025 05:00:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[21-Dec-2025 18:49:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[22-Dec-2025 03:01:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[22-Dec-2025 19:18:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[05-Jan-2026 14:14:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[05-Jan-2026 14:14:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[05-Jan-2026 19:10:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[22-Jan-2026 16:10:08 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[22-Jan-2026 16:44:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[22-Jan-2026 22:40:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[25-Jan-2026 17:15:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[26-Jan-2026 09:37:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[02-Feb-2026 22:06:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[02-Feb-2026 22:06:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[02-Feb-2026 22:06:23 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20
+[02-Feb-2026 22:12:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Request" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php on line 15
+[02-Feb-2026 22:12:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\HtmlDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/HtmlDumper.php on line 12
+[02-Feb-2026 22:12:36 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php on line 20

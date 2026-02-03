@@ -1,0 +1,256 @@
+[01-Oct-2025 00:16:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[01-Oct-2025 09:17:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[18-Oct-2025 08:22:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[18-Oct-2025 11:45:55 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[24-Oct-2025 05:13:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[30-Oct-2025 12:33:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[30-Oct-2025 13:42:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[06-Nov-2025 02:07:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[09-Nov-2025 13:59:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[09-Nov-2025 17:29:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[09-Nov-2025 21:54:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[10-Nov-2025 00:31:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[12-Nov-2025 03:22:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[15-Nov-2025 15:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[17-Nov-2025 19:57:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[17-Nov-2025 23:57:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[18-Nov-2025 12:55:17 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[19-Nov-2025 20:56:35 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[21-Nov-2025 14:20:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[22-Nov-2025 00:08:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[22-Nov-2025 13:37:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[24-Nov-2025 22:32:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[24-Nov-2025 23:09:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[28-Nov-2025 02:55:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[30-Nov-2025 09:28:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[30-Nov-2025 20:58:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[14-Dec-2025 07:08:52 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[14-Dec-2025 08:36:21 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[14-Dec-2025 09:37:22 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[14-Dec-2025 11:28:30 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[15-Dec-2025 10:49:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[15-Dec-2025 19:52:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[28-Dec-2025 00:39:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[28-Dec-2025 06:25:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[09-Jan-2026 01:15:57 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[11-Jan-2026 10:06:09 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[14-Jan-2026 02:34:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[16-Jan-2026 04:30:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[16-Jan-2026 06:50:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[16-Jan-2026 07:55:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[18-Jan-2026 04:53:14 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[19-Jan-2026 00:54:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[19-Jan-2026 03:51:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[20-Jan-2026 04:45:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[22-Jan-2026 04:25:51 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[24-Jan-2026 05:06:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[25-Jan-2026 01:24:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[25-Jan-2026 07:32:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[26-Jan-2026 05:31:48 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[27-Jan-2026 07:54:32 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[27-Jan-2026 22:44:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[27-Jan-2026 23:58:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[28-Jan-2026 07:15:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[30-Jan-2026 03:13:27 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[31-Jan-2026 08:04:58 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[02-Feb-2026 07:43:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[02-Feb-2026 22:43:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[02-Feb-2026 22:43:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[02-Feb-2026 22:43:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[02-Feb-2026 22:43:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36
+[02-Feb-2026 23:00:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationLintCommand.php on line 32
+[02-Feb-2026 23:00:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPullCommand.php on line 33
+[02-Feb-2026 23:00:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/TranslationPushCommand.php on line 33
+[02-Feb-2026 23:00:42 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Console\Command\Command" not found in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/translation/Command/XliffLintCommand.php on line 36

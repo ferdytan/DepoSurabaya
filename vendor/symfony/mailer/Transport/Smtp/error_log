@@ -1,0 +1,144 @@
+[25-Sep-2025 06:02:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[25-Sep-2025 09:04:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[23-Oct-2025 03:31:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[23-Oct-2025 04:21:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[24-Oct-2025 07:16:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[24-Oct-2025 07:40:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[24-Oct-2025 08:28:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[06-Nov-2025 03:04:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[09-Nov-2025 00:17:49 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[12-Nov-2025 08:17:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[15-Nov-2025 20:01:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[24-Nov-2025 04:07:13 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[24-Nov-2025 08:01:43 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[24-Nov-2025 09:16:41 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[28-Nov-2025 22:11:38 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[05-Dec-2025 08:08:16 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[08-Dec-2025 09:37:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[08-Dec-2025 10:23:39 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[20-Dec-2025 12:23:07 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[20-Dec-2025 12:23:23 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[20-Dec-2025 16:00:50 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[21-Dec-2025 17:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[22-Dec-2025 02:47:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[25-Dec-2025 12:27:44 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[19-Jan-2026 18:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[19-Jan-2026 18:23:11 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[22-Jan-2026 10:52:26 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[22-Jan-2026 13:22:12 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[22-Jan-2026 17:22:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[31-Jan-2026 23:14:03 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[02-Feb-2026 22:41:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[02-Feb-2026 22:41:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[02-Feb-2026 22:41:24 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34
+[02-Feb-2026 22:57:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\Smtp\SmtpTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransport.php on line 29
+[02-Feb-2026 22:57:46 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransportFactory" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/EsmtpTransportFactory.php on line 23
+[02-Feb-2026 22:57:47 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\Mailer\Transport\AbstractTransport" not found in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/mailer/Transport/Smtp/SmtpTransport.php on line 34

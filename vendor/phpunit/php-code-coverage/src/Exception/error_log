@@ -1,0 +1,756 @@
+[25-Sep-2025 06:15:42 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[25-Sep-2025 08:41:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[25-Sep-2025 10:01:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[25-Sep-2025 15:16:08 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[28-Sep-2025 13:28:36 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[28-Sep-2025 16:02:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[29-Sep-2025 03:02:20 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[18-Oct-2025 08:45:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[18-Oct-2025 09:13:45 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[18-Oct-2025 12:48:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[18-Oct-2025 12:49:33 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[18-Oct-2025 12:51:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[18-Oct-2025 13:28:11 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[18-Oct-2025 13:33:14 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[18-Oct-2025 15:28:46 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[18-Oct-2025 15:42:50 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[18-Oct-2025 15:49:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[18-Oct-2025 16:46:52 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[18-Oct-2025 18:00:55 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[24-Oct-2025 05:24:09 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[24-Oct-2025 07:25:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[24-Oct-2025 15:55:16 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[30-Oct-2025 05:53:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[30-Oct-2025 07:17:37 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[30-Oct-2025 08:04:46 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[30-Oct-2025 13:26:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[16-Nov-2025 17:45:12 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[17-Nov-2025 18:48:41 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[17-Nov-2025 19:34:43 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[17-Nov-2025 20:27:35 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[17-Nov-2025 22:06:25 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[17-Nov-2025 22:59:18 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[17-Nov-2025 23:14:40 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[17-Nov-2025 23:35:37 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[18-Nov-2025 02:13:31 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[18-Nov-2025 04:53:12 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[18-Nov-2025 04:58:00 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[18-Nov-2025 05:48:41 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[18-Nov-2025 08:07:02 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[29-Nov-2025 06:45:06 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[29-Nov-2025 07:20:02 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[29-Nov-2025 19:42:08 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[29-Nov-2025 21:53:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[30-Nov-2025 07:38:48 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[30-Nov-2025 11:55:28 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[30-Nov-2025 13:07:50 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[30-Nov-2025 13:27:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[30-Nov-2025 15:09:05 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[30-Nov-2025 16:11:05 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[30-Nov-2025 18:59:21 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[08-Dec-2025 21:12:43 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[09-Dec-2025 04:03:02 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[09-Dec-2025 04:34:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[11-Dec-2025 07:34:43 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[12-Dec-2025 01:36:51 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[12-Dec-2025 08:40:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[12-Dec-2025 09:18:47 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[13-Dec-2025 07:12:42 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[13-Dec-2025 20:36:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[14-Dec-2025 01:16:13 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[14-Dec-2025 02:11:00 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[14-Dec-2025 03:30:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[14-Dec-2025 06:43:45 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[14-Dec-2025 07:27:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[14-Dec-2025 09:32:26 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[14-Dec-2025 21:32:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[14-Dec-2025 22:58:50 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[14-Dec-2025 23:41:41 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[15-Dec-2025 04:48:37 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[15-Dec-2025 12:19:17 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[15-Dec-2025 13:17:58 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[15-Dec-2025 13:37:09 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[15-Dec-2025 14:17:30 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[15-Dec-2025 14:40:53 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[15-Dec-2025 15:14:40 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[15-Dec-2025 15:18:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[15-Dec-2025 17:37:33 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[15-Dec-2025 19:31:04 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[15-Dec-2025 21:17:27 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[15-Dec-2025 21:47:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[15-Dec-2025 22:12:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[15-Dec-2025 22:26:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[15-Dec-2025 22:38:25 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[16-Dec-2025 01:48:38 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[16-Dec-2025 02:33:29 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[16-Dec-2025 03:17:23 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[16-Dec-2025 08:33:47 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[16-Dec-2025 10:03:55 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[16-Dec-2025 10:04:07 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[16-Dec-2025 10:04:55 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[16-Dec-2025 10:05:25 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[16-Dec-2025 18:24:47 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[16-Dec-2025 19:10:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[17-Dec-2025 01:47:19 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[17-Dec-2025 02:32:35 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[17-Dec-2025 18:23:49 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[18-Dec-2025 12:26:52 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[18-Dec-2025 15:26:48 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[19-Dec-2025 01:13:05 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[19-Dec-2025 02:42:30 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[20-Dec-2025 13:14:07 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[20-Dec-2025 13:14:23 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[20-Dec-2025 14:00:38 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[20-Dec-2025 15:58:29 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[20-Dec-2025 16:19:32 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[20-Dec-2025 16:42:51 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[20-Dec-2025 16:43:07 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[20-Dec-2025 16:51:19 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[20-Dec-2025 16:59:28 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[20-Dec-2025 16:59:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[20-Dec-2025 17:12:20 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[20-Dec-2025 17:23:24 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[20-Dec-2025 17:33:07 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[20-Dec-2025 17:36:47 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[20-Dec-2025 17:37:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[20-Dec-2025 17:37:19 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[20-Dec-2025 17:47:48 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[20-Dec-2025 17:48:51 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[21-Dec-2025 15:48:41 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[27-Dec-2025 23:47:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[28-Dec-2025 00:07:12 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[28-Dec-2025 00:47:19 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[28-Dec-2025 01:00:39 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[28-Dec-2025 02:04:35 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[28-Dec-2025 03:57:25 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[28-Dec-2025 09:36:26 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[05-Jan-2026 20:54:11 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[16-Jan-2026 02:04:54 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[16-Jan-2026 02:29:27 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[16-Jan-2026 03:11:58 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[16-Jan-2026 05:41:41 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[16-Jan-2026 05:47:09 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[16-Jan-2026 06:27:37 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[16-Jan-2026 12:01:34 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[16-Jan-2026 12:01:54 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[16-Jan-2026 19:53:09 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[17-Jan-2026 01:19:44 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[20-Jan-2026 04:12:21 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[21-Jan-2026 00:00:25 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[21-Jan-2026 04:59:53 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[21-Jan-2026 17:46:29 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[21-Jan-2026 21:04:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[27-Jan-2026 16:43:28 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[27-Jan-2026 16:57:45 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[27-Jan-2026 17:30:35 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[27-Jan-2026 18:08:37 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[27-Jan-2026 22:04:14 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[28-Jan-2026 01:22:39 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[28-Jan-2026 02:44:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[02-Feb-2026 18:02:52 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[02-Feb-2026 22:24:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[02-Feb-2026 22:24:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[02-Feb-2026 22:25:00 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[02-Feb-2026 22:25:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[02-Feb-2026 22:25:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[02-Feb-2026 22:25:01 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[02-Feb-2026 22:25:02 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[02-Feb-2026 22:25:02 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[02-Feb-2026 22:25:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[02-Feb-2026 22:25:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[02-Feb-2026 22:25:03 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[02-Feb-2026 22:25:04 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[02-Feb-2026 22:25:04 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[02-Feb-2026 22:25:04 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[02-Feb-2026 22:25:05 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[02-Feb-2026 22:25:05 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[02-Feb-2026 22:25:06 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[02-Feb-2026 22:25:06 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[02-Feb-2026 22:25:06 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[02-Feb-2026 22:35:48 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php on line 14
+[02-Feb-2026 22:35:49 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php on line 14
+[02-Feb-2026 22:35:49 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php on line 15
+[02-Feb-2026 22:35:51 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/FileCouldNotBeWrittenException.php on line 14
+[02-Feb-2026 22:35:51 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php on line 12
+[02-Feb-2026 22:35:52 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php on line 14
+[02-Feb-2026 22:35:52 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php on line 14
+[02-Feb-2026 22:35:53 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ParserException.php on line 14
+[02-Feb-2026 22:35:53 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php on line 16
+[02-Feb-2026 22:35:54 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php on line 15
+[02-Feb-2026 22:35:54 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReflectionException.php on line 14
+[02-Feb-2026 22:35:55 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php on line 14
+[02-Feb-2026 22:35:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14
+[02-Feb-2026 22:35:56 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php on line 14
+[02-Feb-2026 22:35:57 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php on line 14
+[02-Feb-2026 22:35:57 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php on line 16
+[02-Feb-2026 22:35:58 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php on line 15
+[02-Feb-2026 22:35:58 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XdebugNotEnabledException.php on line 15
+[02-Feb-2026 22:35:59 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/XmlException.php on line 14
+[03-Feb-2026 00:47:15 UTC] PHP Fatal error:  Uncaught Error: Interface "SebastianBergmann\CodeCoverage\Exception" not found in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php on line 14

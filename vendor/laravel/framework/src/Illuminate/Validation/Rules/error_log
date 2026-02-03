@@ -1,0 +1,204 @@
+[25-Sep-2025 11:54:16 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[25-Sep-2025 12:29:15 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[25-Sep-2025 18:54:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[28-Sep-2025 13:39:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[28-Sep-2025 15:32:55 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[28-Sep-2025 16:59:58 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[28-Sep-2025 17:18:10 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[28-Sep-2025 18:18:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[29-Sep-2025 00:06:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[29-Sep-2025 00:39:02 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[29-Sep-2025 01:01:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[29-Sep-2025 04:27:34 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[24-Oct-2025 08:17:04 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[24-Oct-2025 12:36:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[24-Oct-2025 14:39:35 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[30-Oct-2025 07:05:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[30-Oct-2025 08:06:14 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[30-Oct-2025 08:07:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[30-Oct-2025 09:20:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[30-Oct-2025 11:17:44 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[30-Oct-2025 11:42:38 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[30-Oct-2025 11:52:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[30-Oct-2025 12:41:44 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[30-Oct-2025 17:47:54 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[24-Nov-2025 02:09:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[24-Nov-2025 02:16:29 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[24-Nov-2025 03:26:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[30-Nov-2025 05:51:35 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[30-Nov-2025 09:39:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[30-Nov-2025 12:00:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[30-Nov-2025 12:12:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[30-Nov-2025 12:46:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[30-Nov-2025 18:56:57 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[08-Dec-2025 09:34:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[08-Dec-2025 16:35:24 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[08-Dec-2025 16:48:15 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[21-Dec-2025 20:06:50 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[22-Dec-2025 01:26:11 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[24-Dec-2025 16:22:37 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[03-Jan-2026 06:10:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[03-Jan-2026 07:31:35 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[03-Jan-2026 11:59:18 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[03-Jan-2026 12:34:58 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[03-Jan-2026 17:22:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[05-Jan-2026 11:20:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[05-Jan-2026 11:20:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[05-Jan-2026 11:20:42 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[05-Jan-2026 11:21:14 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[05-Jan-2026 11:21:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[05-Jan-2026 13:56:11 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[05-Jan-2026 13:56:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[05-Jan-2026 15:58:49 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[05-Jan-2026 15:59:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[05-Jan-2026 18:01:17 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[05-Jan-2026 18:01:33 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[05-Jan-2026 18:01:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[09-Jan-2026 14:06:31 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[10-Jan-2026 00:41:02 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[10-Jan-2026 18:06:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[13-Jan-2026 09:45:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[13-Jan-2026 15:20:01 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[16-Jan-2026 18:40:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[19-Jan-2026 14:26:22 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[19-Jan-2026 14:26:52 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[19-Jan-2026 15:53:57 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[20-Jan-2026 04:03:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[20-Jan-2026 08:57:27 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[22-Jan-2026 09:23:06 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[22-Jan-2026 10:20:59 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[22-Jan-2026 21:32:05 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[23-Jan-2026 17:46:33 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[25-Jan-2026 12:39:44 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[25-Jan-2026 12:42:14 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[25-Jan-2026 16:41:11 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[25-Jan-2026 23:02:15 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[26-Jan-2026 04:12:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[26-Jan-2026 04:14:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[28-Jan-2026 00:04:52 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[28-Jan-2026 06:50:39 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[28-Jan-2026 16:47:52 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[28-Jan-2026 21:03:21 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[28-Jan-2026 21:11:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[29-Jan-2026 03:09:46 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[29-Jan-2026 03:55:32 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[30-Jan-2026 23:04:49 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[02-Feb-2026 09:22:55 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[02-Feb-2026 13:16:53 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[02-Feb-2026 15:30:30 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[02-Feb-2026 16:36:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[02-Feb-2026 20:04:23 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[02-Feb-2026 22:10:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[02-Feb-2026 22:10:58 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[02-Feb-2026 22:10:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[02-Feb-2026 22:10:59 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[02-Feb-2026 22:11:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[02-Feb-2026 22:11:00 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[02-Feb-2026 22:11:01 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[02-Feb-2026 22:11:01 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[02-Feb-2026 22:11:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[02-Feb-2026 22:11:02 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[02-Feb-2026 22:11:03 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[02-Feb-2026 22:11:03 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9
+[02-Feb-2026 22:18:10 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/AnyOf.php on line 11
+[02-Feb-2026 22:18:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Validation\Rule" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Can.php on line 9
+[02-Feb-2026 22:18:12 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Date.php on line 11
+[02-Feb-2026 22:18:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php on line 8
+[02-Feb-2026 22:18:13 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Email.php on line 14
+[02-Feb-2026 22:18:14 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Enum.php on line 12
+[02-Feb-2026 22:18:15 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php on line 8
+[02-Feb-2026 22:18:15 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/File.php on line 16
+[02-Feb-2026 22:18:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Validation\Rules\File" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php on line 5
+[02-Feb-2026 22:18:17 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php on line 9
+[02-Feb-2026 22:18:17 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Password.php on line 15
+[02-Feb-2026 22:18:18 UTC] PHP Fatal error:  Trait "Illuminate\Support\Traits\Conditionable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Validation/Rules/Unique.php on line 9

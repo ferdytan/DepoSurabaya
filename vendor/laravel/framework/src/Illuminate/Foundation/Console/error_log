@@ -1,0 +1,1738 @@
+[25-Sep-2025 05:35:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[25-Sep-2025 06:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[25-Sep-2025 06:45:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[25-Sep-2025 07:26:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[25-Sep-2025 07:42:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[25-Sep-2025 07:44:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[25-Sep-2025 08:02:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[25-Sep-2025 08:07:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[25-Sep-2025 08:31:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[25-Sep-2025 08:43:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[25-Sep-2025 09:10:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[25-Sep-2025 09:12:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[25-Sep-2025 09:16:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[25-Sep-2025 09:43:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[25-Sep-2025 09:54:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[25-Sep-2025 09:55:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[25-Sep-2025 09:56:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[25-Sep-2025 10:01:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[25-Sep-2025 10:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[25-Sep-2025 13:36:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[25-Sep-2025 15:43:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[25-Sep-2025 16:01:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[25-Sep-2025 17:50:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[25-Sep-2025 18:42:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[25-Sep-2025 18:56:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[25-Sep-2025 18:59:52 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[25-Sep-2025 19:23:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[25-Sep-2025 19:52:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[28-Sep-2025 12:55:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[28-Sep-2025 14:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[28-Sep-2025 14:47:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[28-Sep-2025 14:53:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[28-Sep-2025 14:55:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[28-Sep-2025 15:16:54 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[28-Sep-2025 16:05:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[28-Sep-2025 16:20:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[28-Sep-2025 16:22:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[28-Sep-2025 16:51:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[28-Sep-2025 17:26:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[28-Sep-2025 17:27:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[28-Sep-2025 17:56:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[28-Sep-2025 17:58:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[28-Sep-2025 18:45:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[28-Sep-2025 20:51:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[28-Sep-2025 23:26:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[28-Sep-2025 23:54:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[29-Sep-2025 00:12:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[29-Sep-2025 00:24:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[29-Sep-2025 01:35:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[29-Sep-2025 01:37:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[29-Sep-2025 02:30:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[29-Sep-2025 02:56:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[29-Sep-2025 03:50:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[29-Sep-2025 03:52:06 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[29-Sep-2025 03:54:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[29-Sep-2025 04:38:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[29-Sep-2025 04:52:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[04-Oct-2025 14:35:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[05-Nov-2025 08:08:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[05-Nov-2025 08:29:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[05-Nov-2025 08:40:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[05-Nov-2025 08:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[05-Nov-2025 08:48:05 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[05-Nov-2025 09:06:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[05-Nov-2025 09:06:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[05-Nov-2025 09:53:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[05-Nov-2025 10:00:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[05-Nov-2025 10:01:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[05-Nov-2025 10:03:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[05-Nov-2025 10:22:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[05-Nov-2025 10:41:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[05-Nov-2025 11:06:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[05-Nov-2025 11:25:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[05-Nov-2025 11:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[05-Nov-2025 12:24:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15
+[05-Nov-2025 12:25:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[05-Nov-2025 12:26:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[05-Nov-2025 12:27:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[05-Nov-2025 12:59:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[05-Nov-2025 12:59:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[05-Nov-2025 13:02:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[05-Nov-2025 13:14:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[05-Nov-2025 13:16:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[05-Nov-2025 13:16:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[05-Nov-2025 13:17:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[05-Nov-2025 13:32:29 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[05-Nov-2025 14:04:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[05-Nov-2025 14:18:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[05-Nov-2025 14:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[05-Nov-2025 15:09:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[05-Nov-2025 15:20:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[05-Nov-2025 15:29:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[05-Nov-2025 15:41:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[05-Nov-2025 16:04:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[05-Nov-2025 16:05:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[05-Nov-2025 16:31:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[05-Nov-2025 16:35:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[05-Nov-2025 16:47:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[05-Nov-2025 16:50:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[05-Nov-2025 16:51:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[05-Nov-2025 17:02:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[05-Nov-2025 17:03:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[05-Nov-2025 17:14:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[05-Nov-2025 18:00:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[05-Nov-2025 18:17:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[05-Nov-2025 18:17:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[05-Nov-2025 18:25:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[05-Nov-2025 18:52:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[05-Nov-2025 19:00:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[05-Nov-2025 19:10:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[05-Nov-2025 19:40:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[05-Nov-2025 19:42:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[05-Nov-2025 19:49:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[05-Nov-2025 19:59:09 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[05-Nov-2025 20:07:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[05-Nov-2025 20:09:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[05-Nov-2025 20:22:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[05-Nov-2025 20:38:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[05-Nov-2025 20:38:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[24-Nov-2025 04:25:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[08-Dec-2025 09:25:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[08-Dec-2025 09:38:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[08-Dec-2025 09:42:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[08-Dec-2025 09:55:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[08-Dec-2025 10:00:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[08-Dec-2025 10:01:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[08-Dec-2025 10:08:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[08-Dec-2025 10:21:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[08-Dec-2025 10:56:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[08-Dec-2025 10:57:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[08-Dec-2025 11:47:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[08-Dec-2025 11:49:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[08-Dec-2025 12:06:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[08-Dec-2025 12:09:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[08-Dec-2025 12:35:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[08-Dec-2025 13:04:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[08-Dec-2025 13:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[08-Dec-2025 13:42:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[08-Dec-2025 13:47:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[08-Dec-2025 13:58:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[08-Dec-2025 14:01:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[08-Dec-2025 14:12:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[08-Dec-2025 14:35:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[08-Dec-2025 14:45:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[08-Dec-2025 15:16:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[08-Dec-2025 15:36:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[08-Dec-2025 15:42:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[08-Dec-2025 15:43:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[08-Dec-2025 15:52:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[08-Dec-2025 16:15:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[08-Dec-2025 16:28:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[08-Dec-2025 16:40:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[08-Dec-2025 16:42:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[08-Dec-2025 16:50:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[08-Dec-2025 17:10:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[08-Dec-2025 17:14:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[08-Dec-2025 17:17:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[08-Dec-2025 17:36:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[08-Dec-2025 17:52:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[08-Dec-2025 17:55:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[08-Dec-2025 17:58:57 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[08-Dec-2025 18:00:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[08-Dec-2025 18:14:20 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[08-Dec-2025 18:16:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[08-Dec-2025 18:35:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[08-Dec-2025 18:39:23 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[08-Dec-2025 18:49:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[08-Dec-2025 18:50:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[08-Dec-2025 19:01:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[08-Dec-2025 19:46:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[08-Dec-2025 19:46:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[08-Dec-2025 20:03:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[08-Dec-2025 20:07:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[08-Dec-2025 20:08:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[08-Dec-2025 20:25:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[08-Dec-2025 20:57:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[08-Dec-2025 20:57:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[08-Dec-2025 21:15:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[08-Dec-2025 21:16:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[08-Dec-2025 21:20:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15
+[08-Dec-2025 21:22:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[08-Dec-2025 22:25:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[22-Dec-2025 04:47:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[09-Jan-2026 12:50:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[09-Jan-2026 13:06:57 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[09-Jan-2026 13:54:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[09-Jan-2026 14:00:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[09-Jan-2026 14:14:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[09-Jan-2026 14:27:37 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[09-Jan-2026 14:32:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[09-Jan-2026 14:42:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[09-Jan-2026 14:54:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[09-Jan-2026 15:00:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[09-Jan-2026 15:06:55 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[09-Jan-2026 15:27:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[09-Jan-2026 15:44:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[09-Jan-2026 15:51:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[09-Jan-2026 15:54:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[09-Jan-2026 16:14:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[09-Jan-2026 16:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[09-Jan-2026 16:46:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[09-Jan-2026 16:49:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[09-Jan-2026 17:17:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[09-Jan-2026 17:26:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[09-Jan-2026 17:44:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[09-Jan-2026 17:45:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[09-Jan-2026 17:56:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[09-Jan-2026 18:05:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[09-Jan-2026 18:35:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[09-Jan-2026 18:35:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[09-Jan-2026 18:35:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[09-Jan-2026 18:38:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[09-Jan-2026 18:52:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[09-Jan-2026 19:12:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15
+[09-Jan-2026 19:16:59 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[09-Jan-2026 19:19:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[09-Jan-2026 19:40:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[09-Jan-2026 19:46:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[09-Jan-2026 19:48:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[09-Jan-2026 19:48:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[09-Jan-2026 20:18:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[09-Jan-2026 20:28:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[09-Jan-2026 20:34:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[09-Jan-2026 20:36:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[09-Jan-2026 20:37:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[09-Jan-2026 20:53:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[09-Jan-2026 21:13:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[09-Jan-2026 21:58:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[09-Jan-2026 22:00:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[09-Jan-2026 22:50:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[09-Jan-2026 23:00:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[09-Jan-2026 23:18:50 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[09-Jan-2026 23:27:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[09-Jan-2026 23:28:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[09-Jan-2026 23:31:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[10-Jan-2026 00:21:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[10-Jan-2026 00:33:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[10-Jan-2026 01:06:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[10-Jan-2026 01:15:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[10-Jan-2026 05:25:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[10-Jan-2026 15:37:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[10-Jan-2026 20:14:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[11-Jan-2026 22:46:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[12-Jan-2026 01:09:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[12-Jan-2026 20:59:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[22-Jan-2026 17:46:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[22-Jan-2026 22:47:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[22-Jan-2026 22:49:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[22-Jan-2026 23:30:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[23-Jan-2026 00:20:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[23-Jan-2026 03:20:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[23-Jan-2026 03:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[23-Jan-2026 04:04:33 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[23-Jan-2026 04:08:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[23-Jan-2026 04:47:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[23-Jan-2026 05:31:15 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[23-Jan-2026 10:35:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[23-Jan-2026 17:46:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[23-Jan-2026 19:26:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[23-Jan-2026 22:30:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[23-Jan-2026 22:31:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[24-Jan-2026 07:42:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[26-Jan-2026 01:39:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[26-Jan-2026 03:45:54 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[26-Jan-2026 04:31:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[26-Jan-2026 04:32:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[26-Jan-2026 17:36:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[26-Jan-2026 19:57:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[27-Jan-2026 07:47:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[27-Jan-2026 08:28:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[27-Jan-2026 09:14:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[27-Jan-2026 16:22:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[27-Jan-2026 17:13:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[27-Jan-2026 19:00:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[27-Jan-2026 20:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[28-Jan-2026 00:51:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[28-Jan-2026 02:20:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[28-Jan-2026 03:50:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[28-Jan-2026 03:51:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[28-Jan-2026 05:22:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15
+[28-Jan-2026 07:37:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[28-Jan-2026 07:37:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[28-Jan-2026 07:37:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[28-Jan-2026 07:38:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[28-Jan-2026 08:35:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[28-Jan-2026 12:22:53 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[28-Jan-2026 12:23:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[28-Jan-2026 12:23:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[28-Jan-2026 13:54:15 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[28-Jan-2026 16:05:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[28-Jan-2026 17:32:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[28-Jan-2026 17:32:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[28-Jan-2026 18:08:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[28-Jan-2026 19:33:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[28-Jan-2026 19:33:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[28-Jan-2026 21:03:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[28-Jan-2026 21:49:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[29-Jan-2026 00:03:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[29-Jan-2026 03:10:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[29-Jan-2026 06:29:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[29-Jan-2026 07:06:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[29-Jan-2026 21:59:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[29-Jan-2026 21:59:08 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[29-Jan-2026 21:59:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[30-Jan-2026 01:02:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[30-Jan-2026 02:34:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[30-Jan-2026 02:34:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[30-Jan-2026 05:45:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[30-Jan-2026 06:25:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[30-Jan-2026 06:25:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[30-Jan-2026 07:19:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[30-Jan-2026 08:45:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[30-Jan-2026 08:45:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[30-Jan-2026 09:37:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[30-Jan-2026 18:21:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[30-Jan-2026 23:59:58 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[31-Jan-2026 00:00:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[31-Jan-2026 01:32:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[31-Jan-2026 03:02:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[02-Feb-2026 22:05:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[02-Feb-2026 22:05:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[02-Feb-2026 22:05:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[02-Feb-2026 22:05:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[02-Feb-2026 22:05:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[02-Feb-2026 22:05:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[02-Feb-2026 22:05:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[02-Feb-2026 22:05:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[02-Feb-2026 22:05:28 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[02-Feb-2026 22:05:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[02-Feb-2026 22:05:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[02-Feb-2026 22:05:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[02-Feb-2026 22:05:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[02-Feb-2026 22:05:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[02-Feb-2026 22:05:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[02-Feb-2026 22:05:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[02-Feb-2026 22:05:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[02-Feb-2026 22:05:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[02-Feb-2026 22:05:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[02-Feb-2026 22:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[02-Feb-2026 22:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[02-Feb-2026 22:05:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[02-Feb-2026 22:05:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[02-Feb-2026 22:05:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[02-Feb-2026 22:05:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[02-Feb-2026 22:05:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[02-Feb-2026 22:05:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[02-Feb-2026 22:05:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[02-Feb-2026 22:05:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[02-Feb-2026 22:05:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[02-Feb-2026 22:05:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[02-Feb-2026 22:05:37 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[02-Feb-2026 22:05:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[02-Feb-2026 22:05:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[02-Feb-2026 22:05:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[02-Feb-2026 22:05:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[02-Feb-2026 22:05:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[02-Feb-2026 22:05:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[02-Feb-2026 22:05:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[02-Feb-2026 22:05:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[02-Feb-2026 22:05:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[02-Feb-2026 22:05:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[02-Feb-2026 22:05:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[02-Feb-2026 22:05:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[02-Feb-2026 22:05:41 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[02-Feb-2026 22:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[02-Feb-2026 22:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[02-Feb-2026 22:05:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[02-Feb-2026 22:05:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[02-Feb-2026 22:05:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[02-Feb-2026 22:05:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[02-Feb-2026 22:05:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[02-Feb-2026 22:05:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[02-Feb-2026 22:05:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[02-Feb-2026 22:05:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[02-Feb-2026 22:05:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[02-Feb-2026 22:05:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[02-Feb-2026 22:05:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[02-Feb-2026 22:05:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[02-Feb-2026 22:05:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[02-Feb-2026 22:05:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[02-Feb-2026 22:05:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[02-Feb-2026 22:05:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15
+[02-Feb-2026 22:11:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php on line 14
+[02-Feb-2026 22:11:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ApiInstallCommand.php on line 15
+[02-Feb-2026 22:11:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php on line 20
+[02-Feb-2026 22:11:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php on line 10
+[02-Feb-2026 22:11:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php on line 13
+[02-Feb-2026 22:11:16 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php on line 10
+[02-Feb-2026 22:11:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClassMakeCommand.php on line 10
+[02-Feb-2026 22:11:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php on line 9
+[02-Feb-2026 22:11:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\Component\VarDumper\Dumper\CliDumper" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php on line 13
+[02-Feb-2026 22:11:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ClosureCommand.php on line 17
+[02-Feb-2026 22:11:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ComponentMakeCommand.php on line 14
+[02-Feb-2026 22:11:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigCacheCommand.php on line 13
+[02-Feb-2026 22:11:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigClearCommand.php on line 10
+[02-Feb-2026 22:11:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigPublishCommand.php on line 13
+[02-Feb-2026 22:11:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConfigShowCommand.php on line 10
+[02-Feb-2026 22:11:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ConsoleMakeCommand.php on line 13
+[02-Feb-2026 22:11:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DocsCommand.php on line 22
+[02-Feb-2026 22:11:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php on line 15
+[02-Feb-2026 22:11:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnumMakeCommand.php on line 14
+[02-Feb-2026 22:11:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentCommand.php on line 9
+[02-Feb-2026 22:11:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentDecryptCommand.php on line 16
+[02-Feb-2026 22:11:25 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EnvironmentEncryptCommand.php on line 16
+[02-Feb-2026 22:11:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventCacheCommand.php on line 10
+[02-Feb-2026 22:11:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventClearCommand.php on line 10
+[02-Feb-2026 22:11:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventGenerateCommand.php on line 10
+[02-Feb-2026 22:11:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventListCommand.php on line 14
+[02-Feb-2026 22:11:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/EventMakeCommand.php on line 10
+[02-Feb-2026 22:11:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ExceptionMakeCommand.php on line 14
+[02-Feb-2026 22:11:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php on line 10
+[02-Feb-2026 22:11:30 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php on line 11
+[02-Feb-2026 22:11:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php on line 11
+[02-Feb-2026 22:11:31 UTC] PHP Fatal error:  Trait "Illuminate\Support\InteractsWithTime" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php on line 33
+[02-Feb-2026 22:11:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php on line 11
+[02-Feb-2026 22:11:32 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php on line 10
+[02-Feb-2026 22:11:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ListenerMakeCommand.php on line 16
+[02-Feb-2026 22:11:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/MailMakeCommand.php on line 18
+[02-Feb-2026 22:11:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ModelMakeCommand.php on line 17
+[02-Feb-2026 22:11:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/NotificationMakeCommand.php on line 18
+[02-Feb-2026 22:11:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ObserverMakeCommand.php on line 15
+[02-Feb-2026 22:11:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeClearCommand.php on line 12
+[02-Feb-2026 22:11:36 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/OptimizeCommand.php on line 12
+[02-Feb-2026 22:11:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PackageDiscoverCommand.php on line 11
+[02-Feb-2026 22:11:37 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/PolicyMakeCommand.php on line 16
+[02-Feb-2026 22:11:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ProviderMakeCommand.php on line 11
+[02-Feb-2026 22:11:39 UTC] PHP Fatal error:  Trait "Illuminate\Foundation\Bus\Dispatchable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/QueuedCommand.php on line 10
+[02-Feb-2026 22:11:39 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RequestMakeCommand.php on line 10
+[02-Feb-2026 22:11:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ResourceMakeCommand.php on line 10
+[02-Feb-2026 22:11:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteCacheCommand.php on line 12
+[02-Feb-2026 22:11:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteClearCommand.php on line 10
+[02-Feb-2026 22:11:41 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php on line 22
+[02-Feb-2026 22:11:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/RuleMakeCommand.php on line 10
+[02-Feb-2026 22:11:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ScopeMakeCommand.php on line 10
+[02-Feb-2026 22:11:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php on line 21
+[02-Feb-2026 22:11:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageLinkCommand.php on line 9
+[02-Feb-2026 22:11:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StorageUnlinkCommand.php on line 9
+[02-Feb-2026 22:11:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/StubPublishCommand.php on line 11
+[02-Feb-2026 22:11:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TestMakeCommand.php on line 15
+[02-Feb-2026 22:11:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/TraitMakeCommand.php on line 10
+[02-Feb-2026 22:11:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/UpCommand.php on line 11
+[02-Feb-2026 22:11:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/VendorPublishCommand.php on line 22
+[02-Feb-2026 22:11:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewCacheCommand.php on line 13
+[02-Feb-2026 22:11:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\Command" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewClearCommand.php on line 11
+[02-Feb-2026 22:11:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Console\GeneratorCommand" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Foundation/Console/ViewMakeCommand.php on line 15

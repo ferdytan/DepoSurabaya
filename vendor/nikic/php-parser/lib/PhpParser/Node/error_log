@@ -1,0 +1,1144 @@
+[25-Sep-2025 06:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[25-Sep-2025 07:24:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[25-Sep-2025 07:49:08 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[25-Sep-2025 08:12:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[25-Sep-2025 08:21:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[25-Sep-2025 08:43:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[25-Sep-2025 09:07:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[25-Sep-2025 09:14:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[25-Sep-2025 09:31:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[25-Sep-2025 10:03:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[25-Sep-2025 10:16:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[25-Sep-2025 10:20:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[25-Sep-2025 11:23:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[25-Sep-2025 14:06:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[25-Sep-2025 15:26:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[25-Sep-2025 15:39:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[25-Sep-2025 20:05:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[28-Sep-2025 13:24:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[28-Sep-2025 14:44:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[28-Sep-2025 15:18:39 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[28-Sep-2025 16:42:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[28-Sep-2025 17:37:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[28-Sep-2025 18:59:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[29-Sep-2025 01:06:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[29-Sep-2025 01:50:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[29-Sep-2025 02:25:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[15-Oct-2025 08:05:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[15-Oct-2025 08:13:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[15-Oct-2025 10:17:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[15-Oct-2025 10:28:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[15-Oct-2025 12:15:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[15-Oct-2025 12:37:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[15-Oct-2025 12:46:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[15-Oct-2025 13:58:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[15-Oct-2025 14:07:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[15-Oct-2025 14:15:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[15-Oct-2025 14:32:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[15-Oct-2025 14:40:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[15-Oct-2025 14:48:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[15-Oct-2025 15:17:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[15-Oct-2025 18:10:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[15-Oct-2025 20:37:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[15-Oct-2025 20:42:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[24-Oct-2025 03:21:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[24-Oct-2025 04:50:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[24-Oct-2025 06:48:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[24-Oct-2025 08:01:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[24-Oct-2025 08:07:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[24-Oct-2025 08:50:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[24-Oct-2025 09:14:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[24-Oct-2025 10:13:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[24-Oct-2025 10:44:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[24-Oct-2025 11:39:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[24-Oct-2025 11:58:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[24-Oct-2025 12:26:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[24-Oct-2025 12:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[24-Oct-2025 12:56:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[24-Oct-2025 14:05:42 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[24-Oct-2025 14:48:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[24-Oct-2025 15:10:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[30-Oct-2025 06:30:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[30-Oct-2025 06:57:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[30-Oct-2025 08:01:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[30-Oct-2025 08:25:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[30-Oct-2025 13:36:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[30-Oct-2025 13:46:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[30-Oct-2025 13:54:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[30-Oct-2025 16:41:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[30-Oct-2025 16:50:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[24-Nov-2025 00:39:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[24-Nov-2025 02:09:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[24-Nov-2025 02:31:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[24-Nov-2025 05:07:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[24-Nov-2025 05:43:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[24-Nov-2025 07:07:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[24-Nov-2025 08:00:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[24-Nov-2025 08:10:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[24-Nov-2025 08:49:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[24-Nov-2025 09:01:12 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[24-Nov-2025 09:37:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[24-Nov-2025 09:44:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[24-Nov-2025 10:58:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[24-Nov-2025 11:07:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[24-Nov-2025 11:33:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[24-Nov-2025 12:09:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[24-Nov-2025 13:47:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[30-Nov-2025 09:18:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[30-Nov-2025 10:36:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[30-Nov-2025 15:01:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[08-Dec-2025 09:57:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[08-Dec-2025 09:59:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[08-Dec-2025 11:06:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[08-Dec-2025 13:30:31 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[08-Dec-2025 17:09:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[08-Dec-2025 18:42:28 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[12-Dec-2025 00:54:39 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[12-Dec-2025 03:57:42 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[12-Dec-2025 10:54:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[14-Dec-2025 21:00:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[15-Dec-2025 04:09:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[17-Dec-2025 11:13:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[17-Dec-2025 23:51:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[21-Dec-2025 16:47:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[21-Dec-2025 17:12:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[21-Dec-2025 18:08:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[21-Dec-2025 18:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[21-Dec-2025 21:31:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[21-Dec-2025 22:55:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[21-Dec-2025 23:38:35 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[21-Dec-2025 23:55:06 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[22-Dec-2025 00:06:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[22-Dec-2025 00:12:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[22-Dec-2025 00:57:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[22-Dec-2025 03:28:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[22-Dec-2025 04:45:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[25-Dec-2025 13:32:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[25-Dec-2025 14:45:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[26-Dec-2025 12:35:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[28-Dec-2025 11:17:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[30-Dec-2025 21:44:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[03-Jan-2026 08:55:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[03-Jan-2026 14:36:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[04-Jan-2026 12:30:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[05-Jan-2026 11:12:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[05-Jan-2026 11:12:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[05-Jan-2026 11:13:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[05-Jan-2026 11:13:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[05-Jan-2026 11:13:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[05-Jan-2026 13:46:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[05-Jan-2026 13:47:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[05-Jan-2026 13:47:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[05-Jan-2026 13:47:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[05-Jan-2026 13:48:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[05-Jan-2026 13:48:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[05-Jan-2026 15:52:54 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[05-Jan-2026 15:53:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[05-Jan-2026 15:53:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[05-Jan-2026 15:53:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[05-Jan-2026 15:53:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[05-Jan-2026 17:56:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[05-Jan-2026 17:59:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[05-Jan-2026 17:59:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[05-Jan-2026 19:07:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[05-Jan-2026 19:47:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[05-Jan-2026 19:47:29 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[05-Jan-2026 20:16:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[05-Jan-2026 21:11:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[06-Jan-2026 23:48:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[07-Jan-2026 14:22:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[07-Jan-2026 18:11:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[08-Jan-2026 00:48:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[08-Jan-2026 00:48:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[09-Jan-2026 17:37:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[09-Jan-2026 19:52:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[09-Jan-2026 20:06:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[09-Jan-2026 20:52:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[09-Jan-2026 21:43:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[09-Jan-2026 22:51:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[09-Jan-2026 23:31:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[09-Jan-2026 23:45:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[09-Jan-2026 23:53:38 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[10-Jan-2026 00:23:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[10-Jan-2026 07:21:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[10-Jan-2026 12:14:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[10-Jan-2026 16:05:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[10-Jan-2026 18:38:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[10-Jan-2026 21:42:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[11-Jan-2026 07:26:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[12-Jan-2026 02:36:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[12-Jan-2026 22:35:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[14-Jan-2026 00:08:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[14-Jan-2026 16:12:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[14-Jan-2026 22:08:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[15-Jan-2026 00:45:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[15-Jan-2026 08:01:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[15-Jan-2026 09:34:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[15-Jan-2026 11:54:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[15-Jan-2026 20:01:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[15-Jan-2026 20:07:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[16-Jan-2026 03:16:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[18-Jan-2026 00:51:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[18-Jan-2026 03:16:03 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[18-Jan-2026 04:08:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[18-Jan-2026 12:54:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[18-Jan-2026 12:56:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[18-Jan-2026 13:43:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[18-Jan-2026 13:44:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[18-Jan-2026 13:44:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[18-Jan-2026 20:36:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[19-Jan-2026 00:01:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[19-Jan-2026 00:49:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[19-Jan-2026 00:50:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[19-Jan-2026 01:27:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[19-Jan-2026 05:23:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[19-Jan-2026 05:23:39 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[19-Jan-2026 05:24:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[19-Jan-2026 06:13:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[20-Jan-2026 20:33:51 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[21-Jan-2026 01:33:58 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[21-Jan-2026 01:37:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[21-Jan-2026 01:40:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[21-Jan-2026 01:42:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[21-Jan-2026 17:23:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[22-Jan-2026 08:10:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[22-Jan-2026 11:12:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[22-Jan-2026 12:04:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[22-Jan-2026 12:14:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[22-Jan-2026 12:38:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[22-Jan-2026 13:18:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[22-Jan-2026 14:21:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[22-Jan-2026 15:07:49 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[22-Jan-2026 15:57:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[22-Jan-2026 16:26:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[22-Jan-2026 18:30:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[22-Jan-2026 20:33:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[22-Jan-2026 21:52:43 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[22-Jan-2026 22:39:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[25-Jan-2026 16:14:44 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[25-Jan-2026 16:17:47 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[25-Jan-2026 16:20:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[25-Jan-2026 16:22:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[25-Jan-2026 19:32:48 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[25-Jan-2026 21:04:01 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[25-Jan-2026 21:51:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[25-Jan-2026 22:30:59 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[25-Jan-2026 22:33:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[25-Jan-2026 22:38:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[25-Jan-2026 22:41:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[25-Jan-2026 22:43:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[26-Jan-2026 03:50:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[02-Feb-2026 09:33:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[02-Feb-2026 15:35:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[02-Feb-2026 16:15:05 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[02-Feb-2026 17:47:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[02-Feb-2026 22:22:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[02-Feb-2026 22:22:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[02-Feb-2026 22:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[02-Feb-2026 22:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[02-Feb-2026 22:22:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[02-Feb-2026 22:22:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[02-Feb-2026 22:22:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[02-Feb-2026 22:22:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[02-Feb-2026 22:22:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[02-Feb-2026 22:22:18 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[02-Feb-2026 22:22:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[02-Feb-2026 22:22:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[02-Feb-2026 22:22:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[02-Feb-2026 22:22:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[02-Feb-2026 22:22:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[02-Feb-2026 22:22:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[02-Feb-2026 22:22:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[02-Feb-2026 22:22:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[02-Feb-2026 22:22:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[02-Feb-2026 22:22:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[02-Feb-2026 22:22:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[02-Feb-2026 22:22:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[02-Feb-2026 22:22:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[02-Feb-2026 22:22:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[02-Feb-2026 22:22:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[02-Feb-2026 22:22:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12
+[02-Feb-2026 22:32:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php on line 7
+[02-Feb-2026 22:32:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ArrayItem.php on line 7
+[02-Feb-2026 22:32:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Attribute.php on line 8
+[02-Feb-2026 22:32:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/AttributeGroup.php on line 7
+[02-Feb-2026 22:32:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ClosureUse.php on line 7
+[02-Feb-2026 22:32:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/ComplexType.php on line 12
+[02-Feb-2026 22:32:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php on line 7
+[02-Feb-2026 22:32:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/DeclareItem.php on line 8
+[02-Feb-2026 22:32:13 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php on line 7
+[02-Feb-2026 22:32:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PhpParser\Node" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php on line 7
+[02-Feb-2026 22:32:14 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Identifier.php on line 10
+[02-Feb-2026 22:32:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[02-Feb-2026 22:32:15 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/IntersectionType.php on line 5
+[02-Feb-2026 22:32:16 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/MatchArm.php on line 8
+[02-Feb-2026 22:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Name.php on line 7
+[02-Feb-2026 22:32:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php on line 7
+[02-Feb-2026 22:32:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php on line 9
+[02-Feb-2026 22:32:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php on line 13
+[02-Feb-2026 22:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php on line 8
+[02-Feb-2026 22:32:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Expr" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php on line 5
+[02-Feb-2026 22:32:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php on line 8
+[02-Feb-2026 22:32:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php on line 7
+[02-Feb-2026 22:32:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\ComplexType" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UnionType.php on line 5
+[02-Feb-2026 22:32:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/UseItem.php on line 9
+[02-Feb-2026 22:32:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VariadicPlaceholder.php on line 10
+[02-Feb-2026 22:32:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Identifier" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php on line 12

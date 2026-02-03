@@ -1,0 +1,18 @@
+[02-Feb-2026 22:27:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\TestData\TestData" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromDataProvider.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromDataProvider.php on line 17
+[02-Feb-2026 22:27:36 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\TestData\TestData" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromTestDependency.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromTestDependency.php on line 17
+[02-Feb-2026 22:27:37 UTC] PHP Fatal error:  Could not check compatibility between PHPUnit\Event\TestData\TestDataCollection::getIterator(): PHPUnit\Event\TestData\TestDataCollectionIterator and IteratorAggregate::getIterator(): Traversable, because class PHPUnit\Event\TestData\TestDataCollectionIterator is not available in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestDataCollection.php on line 84
+[02-Feb-2026 22:39:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\TestData\TestData" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromDataProvider.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromDataProvider.php on line 17
+[02-Feb-2026 22:39:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Event\TestData\TestData" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromTestDependency.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/DataFromTestDependency.php on line 17
+[02-Feb-2026 22:39:29 UTC] PHP Fatal error:  Could not check compatibility between PHPUnit\Event\TestData\TestDataCollection::getIterator(): PHPUnit\Event\TestData\TestDataCollectionIterator and IteratorAggregate::getIterator(): Traversable, because class PHPUnit\Event\TestData\TestDataCollectionIterator is not available in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Event/Value/Test/TestData/TestDataCollection.php on line 84

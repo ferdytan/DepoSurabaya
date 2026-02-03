@@ -1,0 +1,38 @@
+[26-Jan-2026 15:49:43 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\ResourceResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php on line 7
+[02-Feb-2026 22:07:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\ResourceCollection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/AnonymousResourceCollection.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/AnonymousResourceCollection.php on line 5
+[02-Feb-2026 22:07:21 UTC] PHP Fatal error:  Trait "Illuminate\Http\Resources\ConditionallyLoadsAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/JsonResource.php on line 18
+[02-Feb-2026 22:07:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\ResourceResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php on line 7
+[02-Feb-2026 22:07:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\JsonResource" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceCollection.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceCollection.php on line 12
+[02-Feb-2026 22:07:22 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Support\Responsable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceResponse.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceResponse.php on line 9
+[02-Feb-2026 22:13:45 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\ResourceCollection" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/AnonymousResourceCollection.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/AnonymousResourceCollection.php on line 5
+[02-Feb-2026 22:13:46 UTC] PHP Fatal error:  Trait "Illuminate\Http\Resources\ConditionallyLoadsAttributes" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/JsonResource.php on line 18
+[02-Feb-2026 22:13:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\ResourceResponse" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/PaginatedResourceResponse.php on line 7
+[02-Feb-2026 22:13:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Resources\Json\JsonResource" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceCollection.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceCollection.php on line 12
+[02-Feb-2026 22:13:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Illuminate\Contracts\Support\Responsable" not found in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceResponse.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/laravel/framework/src/Illuminate/Http/Resources/Json/ResourceResponse.php on line 9

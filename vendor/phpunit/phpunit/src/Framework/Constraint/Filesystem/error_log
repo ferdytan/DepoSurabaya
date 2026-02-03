@@ -1,0 +1,160 @@
+[28-Sep-2025 22:35:27 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[29-Sep-2025 00:10:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[29-Sep-2025 01:56:52 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[29-Sep-2025 03:05:41 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[30-Oct-2025 07:56:43 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[30-Oct-2025 08:27:45 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[30-Oct-2025 09:40:33 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[30-Oct-2025 16:00:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[30-Nov-2025 13:52:15 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[30-Nov-2025 14:47:18 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[30-Nov-2025 15:13:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[30-Nov-2025 17:45:05 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[28-Dec-2025 00:55:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[28-Dec-2025 01:15:38 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[28-Dec-2025 02:12:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[28-Dec-2025 02:40:29 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[05-Jan-2026 16:43:28 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[05-Jan-2026 18:42:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[05-Jan-2026 18:42:37 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[05-Jan-2026 18:42:53 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[13-Jan-2026 09:49:21 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[13-Jan-2026 13:44:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[19-Jan-2026 23:47:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[24-Jan-2026 16:37:14 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[24-Jan-2026 22:09:00 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[26-Jan-2026 06:41:30 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[26-Jan-2026 06:44:01 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[27-Jan-2026 17:33:47 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[27-Jan-2026 21:14:30 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[28-Jan-2026 01:56:12 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[28-Jan-2026 02:43:58 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[30-Jan-2026 10:23:39 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[02-Feb-2026 22:28:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[02-Feb-2026 22:28:09 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[02-Feb-2026 22:28:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[02-Feb-2026 22:28:10 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18
+[02-Feb-2026 22:40:06 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php on line 18
+[02-Feb-2026 22:40:07 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php on line 18
+[02-Feb-2026 22:40:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php on line 18
+[02-Feb-2026 22:40:08 UTC] PHP Fatal error:  Uncaught Error: Class "PHPUnit\Framework\Constraint\Constraint" not found in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php on line 18

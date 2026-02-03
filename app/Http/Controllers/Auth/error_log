@@ -1,0 +1,524 @@
+[16-Oct-2025 09:26:04 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[16-Oct-2025 19:01:23 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[16-Oct-2025 19:10:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[16-Oct-2025 19:15:11 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[16-Oct-2025 21:25:20 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[18-Oct-2025 16:52:34 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[20-Oct-2025 00:29:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[20-Oct-2025 01:08:29 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[20-Oct-2025 02:32:29 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[20-Oct-2025 07:20:24 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[20-Oct-2025 08:57:47 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[21-Oct-2025 22:57:37 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[22-Oct-2025 07:46:22 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[22-Oct-2025 18:17:48 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[24-Oct-2025 07:20:21 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[24-Oct-2025 08:49:46 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[24-Oct-2025 08:52:08 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[24-Oct-2025 08:52:17 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[24-Oct-2025 11:53:52 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[24-Oct-2025 12:28:34 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[24-Oct-2025 15:09:39 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[24-Oct-2025 19:45:16 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[24-Oct-2025 19:45:36 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[25-Oct-2025 18:02:53 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[02-Nov-2025 15:25:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[03-Nov-2025 00:45:55 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[03-Nov-2025 23:42:36 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[03-Nov-2025 23:49:19 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[04-Nov-2025 03:45:26 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[04-Nov-2025 04:30:20 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[04-Nov-2025 04:30:30 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[04-Nov-2025 09:09:00 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[06-Nov-2025 09:16:42 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[07-Nov-2025 07:48:31 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[07-Nov-2025 07:48:40 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[07-Nov-2025 12:59:51 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[07-Nov-2025 13:00:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[07-Nov-2025 17:35:35 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[08-Nov-2025 12:54:50 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[16-Nov-2025 18:06:50 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[16-Nov-2025 18:12:53 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[16-Nov-2025 18:13:55 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[16-Nov-2025 18:14:59 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[16-Nov-2025 18:17:07 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[16-Nov-2025 18:19:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[17-Nov-2025 05:10:49 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[17-Nov-2025 19:46:08 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[24-Nov-2025 02:42:59 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[24-Nov-2025 06:18:38 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[24-Nov-2025 07:14:02 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[24-Nov-2025 08:23:23 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[24-Nov-2025 11:10:44 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[24-Nov-2025 12:11:11 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[24-Nov-2025 13:10:04 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[14-Dec-2025 09:21:44 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[14-Dec-2025 11:15:30 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[14-Dec-2025 11:55:48 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[14-Dec-2025 12:32:50 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[14-Dec-2025 12:56:09 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[14-Dec-2025 12:56:25 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[14-Dec-2025 13:29:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[14-Dec-2025 13:29:21 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Dec-2025 23:38:37 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[28-Dec-2025 01:31:19 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[28-Dec-2025 03:31:05 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[28-Dec-2025 04:12:47 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[28-Dec-2025 05:24:29 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[28-Dec-2025 06:14:21 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[28-Dec-2025 12:40:27 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[30-Dec-2025 20:12:49 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[08-Jan-2026 05:17:35 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[13-Jan-2026 06:14:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[13-Jan-2026 13:00:58 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[15-Jan-2026 18:29:39 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[16-Jan-2026 07:59:56 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[19-Jan-2026 04:59:11 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[19-Jan-2026 15:54:51 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[20-Jan-2026 02:34:53 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[20-Jan-2026 14:51:53 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[20-Jan-2026 14:54:23 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[21-Jan-2026 06:19:26 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[21-Jan-2026 07:54:32 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[22-Jan-2026 06:35:47 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[22-Jan-2026 18:16:48 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[22-Jan-2026 21:18:26 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[23-Jan-2026 15:17:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[24-Jan-2026 02:57:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[24-Jan-2026 06:33:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[24-Jan-2026 17:22:24 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[24-Jan-2026 19:21:42 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[25-Jan-2026 03:54:30 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[25-Jan-2026 15:35:39 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[25-Jan-2026 15:35:48 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[26-Jan-2026 03:58:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[26-Jan-2026 08:08:09 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[26-Jan-2026 12:50:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[26-Jan-2026 16:28:27 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[26-Jan-2026 19:06:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[26-Jan-2026 22:16:13 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[27-Jan-2026 17:02:24 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[27-Jan-2026 18:21:12 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[27-Jan-2026 22:27:57 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[28-Jan-2026 01:21:51 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[28-Jan-2026 01:47:10 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[28-Jan-2026 02:14:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[28-Jan-2026 03:24:56 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[28-Jan-2026 07:19:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[28-Jan-2026 09:25:18 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[28-Jan-2026 22:40:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[29-Jan-2026 18:22:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[29-Jan-2026 23:13:08 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[29-Jan-2026 23:14:55 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[31-Jan-2026 06:16:14 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[02-Feb-2026 21:26:41 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[02-Feb-2026 21:48:58 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[02-Feb-2026 21:48:58 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[02-Feb-2026 21:48:58 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[02-Feb-2026 21:48:59 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[02-Feb-2026 21:48:59 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[02-Feb-2026 21:49:00 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[02-Feb-2026 21:49:00 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[02-Feb-2026 21:49:00 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[02-Feb-2026 21:49:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 14
+[02-Feb-2026 21:49:02 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13
+[02-Feb-2026 21:49:02 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[02-Feb-2026 21:49:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 11
+[02-Feb-2026 21:49:04 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/NewPasswordController.php on line 17
+[02-Feb-2026 21:49:05 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 12
+[02-Feb-2026 21:49:05 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/RegisteredUserController.php on line 17
+[02-Feb-2026 21:49:06 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[02-Feb-2026 22:42:31 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 13

@@ -1,0 +1,124 @@
+[18-Oct-2025 11:21:31 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[18-Oct-2025 12:23:48 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[18-Oct-2025 16:28:51 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[18-Oct-2025 18:28:38 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[19-Oct-2025 19:54:01 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[17-Nov-2025 18:41:44 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[17-Nov-2025 22:09:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[18-Nov-2025 02:14:23 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[21-Nov-2025 17:54:29 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[08-Dec-2025 00:39:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[09-Dec-2025 03:10:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[11-Dec-2025 18:26:36 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[11-Dec-2025 20:32:40 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[13-Dec-2025 01:46:56 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[15-Dec-2025 10:03:28 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[15-Dec-2025 11:41:21 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[15-Dec-2025 22:47:05 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[20-Dec-2025 14:09:11 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[20-Dec-2025 14:48:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[20-Dec-2025 15:34:54 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[03-Jan-2026 14:31:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[16-Jan-2026 03:14:04 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[16-Jan-2026 14:41:35 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[17-Jan-2026 00:27:26 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[20-Jan-2026 10:57:39 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[02-Feb-2026 22:37:07 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[02-Feb-2026 22:37:08 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[02-Feb-2026 22:37:09 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20
+[02-Feb-2026 22:52:00 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/BashCompletionOutput.php on line 20
+[02-Feb-2026 22:52:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/FishCompletionOutput.php on line 20
+[02-Feb-2026 22:52:02 UTC] PHP Fatal error:  Uncaught Error: Interface "Symfony\Component\Console\Completion\Output\CompletionOutputInterface" not found in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/symfony/console/Completion/Output/ZshCompletionOutput.php on line 20

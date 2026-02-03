@@ -1,0 +1,376 @@
+[25-Sep-2025 09:57:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[25-Sep-2025 12:30:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[25-Sep-2025 18:12:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[28-Sep-2025 13:31:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[28-Sep-2025 13:50:40 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[28-Sep-2025 17:04:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[28-Sep-2025 19:05:50 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[29-Sep-2025 01:15:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[29-Sep-2025 02:06:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[15-Oct-2025 16:47:00 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[15-Oct-2025 17:29:48 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[15-Oct-2025 20:59:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[15-Oct-2025 21:02:42 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[15-Oct-2025 21:16:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[15-Oct-2025 23:13:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[17-Oct-2025 07:05:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[24-Oct-2025 11:45:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[24-Oct-2025 13:05:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[24-Oct-2025 15:54:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[30-Oct-2025 07:03:54 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[30-Oct-2025 08:46:18 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[30-Oct-2025 10:08:34 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[30-Oct-2025 12:21:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[30-Oct-2025 13:14:21 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[30-Oct-2025 16:36:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[24-Nov-2025 08:52:34 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[24-Nov-2025 10:49:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[24-Nov-2025 11:44:33 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[30-Nov-2025 09:35:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[30-Nov-2025 10:29:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[30-Nov-2025 11:19:28 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[30-Nov-2025 11:34:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[30-Nov-2025 17:12:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[30-Nov-2025 19:30:53 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[21-Dec-2025 18:48:20 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[21-Dec-2025 23:53:37 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[22-Dec-2025 04:38:11 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[27-Dec-2025 21:25:59 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[27-Dec-2025 23:37:36 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[28-Dec-2025 03:05:55 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[28-Dec-2025 03:47:17 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[28-Dec-2025 05:21:34 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[29-Dec-2025 02:16:30 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[06-Jan-2026 20:19:04 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[06-Jan-2026 20:19:19 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[06-Jan-2026 20:34:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[06-Jan-2026 20:34:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[06-Jan-2026 20:34:39 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[06-Jan-2026 20:35:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[06-Jan-2026 20:52:46 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[06-Jan-2026 21:15:56 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[06-Jan-2026 21:22:28 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[13-Jan-2026 10:34:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[14-Jan-2026 08:33:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[19-Jan-2026 15:51:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[19-Jan-2026 18:29:52 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[19-Jan-2026 20:48:36 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[24-Jan-2026 17:22:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[24-Jan-2026 18:07:02 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[25-Jan-2026 21:43:45 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[25-Jan-2026 23:27:10 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[26-Jan-2026 00:39:12 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[26-Jan-2026 12:20:41 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[26-Jan-2026 13:18:22 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[27-Jan-2026 07:40:32 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[28-Jan-2026 19:04:57 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[02-Feb-2026 22:23:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[02-Feb-2026 22:23:06 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[02-Feb-2026 22:23:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[02-Feb-2026 22:23:07 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[02-Feb-2026 22:23:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[02-Feb-2026 22:23:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[02-Feb-2026 22:23:08 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[02-Feb-2026 22:23:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[02-Feb-2026 22:23:09 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8
+[02-Feb-2026 22:33:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[02-Feb-2026 22:33:23 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[02-Feb-2026 22:33:24 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\NodeAbstract" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php:7
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php(7): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/InterpolatedStringPart.php on line 7
+[02-Feb-2026 22:33:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Float_.php on line 7
+[02-Feb-2026 22:33:25 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[02-Feb-2026 22:33:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/InterpolatedString.php on line 9
+[02-Feb-2026 22:33:26 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php:8
+Stack trace:
+#0 /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php(5): require()
+#1 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Int_.php on line 8
+[02-Feb-2026 22:33:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php on line 7
+[02-Feb-2026 22:33:27 UTC] PHP Fatal error:  Uncaught Error: Class "PhpParser\Node\Scalar" not found in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php on line 8

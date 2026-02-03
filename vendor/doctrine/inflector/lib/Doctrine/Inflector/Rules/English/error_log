@@ -1,0 +1,12 @@
+[06-Jan-2026 21:01:48 UTC] PHP Fatal error:  Uncaught Error: Class "Doctrine\Inflector\GenericLanguageInflectorFactory" not found in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php on line 10
+[02-Feb-2026 21:51:32 UTC] PHP Fatal error:  Uncaught Error: Class "Doctrine\Inflector\GenericLanguageInflectorFactory" not found in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php on line 10
+[02-Feb-2026 21:52:27 UTC] PHP Fatal error:  Uncaught Error: Class "Doctrine\Inflector\GenericLanguageInflectorFactory" not found in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php on line 10

@@ -1,0 +1,192 @@
+[18-Oct-2025 13:27:28 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[18-Oct-2025 16:57:48 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[24-Oct-2025 11:34:03 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[24-Oct-2025 13:53:43 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[24-Oct-2025 15:42:48 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[17-Nov-2025 06:25:24 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[17-Nov-2025 06:26:22 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[18-Nov-2025 02:38:17 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[23-Nov-2025 13:04:56 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[24-Nov-2025 01:37:18 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[24-Nov-2025 02:28:30 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[24-Nov-2025 02:43:43 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[24-Nov-2025 06:06:16 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[26-Nov-2025 08:46:47 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[26-Nov-2025 22:01:25 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[28-Nov-2025 06:07:04 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[28-Nov-2025 16:35:35 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[14-Dec-2025 09:35:53 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[15-Dec-2025 15:23:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[16-Dec-2025 22:50:16 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[17-Dec-2025 02:35:59 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[19-Dec-2025 01:20:37 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[19-Dec-2025 02:45:49 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[20-Dec-2025 15:10:34 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[20-Dec-2025 16:26:47 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[20-Dec-2025 17:09:11 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[20-Dec-2025 17:22:05 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[20-Dec-2025 17:22:20 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[27-Dec-2025 21:44:33 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[28-Dec-2025 02:37:14 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[28-Dec-2025 03:56:54 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[29-Dec-2025 23:39:16 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[16-Jan-2026 03:32:56 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[20-Jan-2026 11:45:51 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[27-Jan-2026 17:01:47 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[27-Jan-2026 17:23:46 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[27-Jan-2026 22:42:56 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[28-Jan-2026 01:24:15 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[02-Feb-2026 22:24:44 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[02-Feb-2026 22:24:45 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[02-Feb-2026 22:24:45 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[02-Feb-2026 22:24:46 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[02-Feb-2026 22:24:46 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12
+[02-Feb-2026 22:35:31 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidPreReleaseSuffixException.php on line 4
+[02-Feb-2026 22:35:32 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/InvalidVersionException.php on line 4
+[02-Feb-2026 22:35:33 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoBuildMetaDataException.php on line 4
+[02-Feb-2026 22:35:33 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/NoPreReleaseSuffixException.php on line 4
+[02-Feb-2026 22:35:34 UTC] PHP Fatal error:  Uncaught Error: Interface "PharIo\Version\Exception" not found in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/phar-io/version/src/exceptions/UnsupportedVersionConstraintException.php on line 12

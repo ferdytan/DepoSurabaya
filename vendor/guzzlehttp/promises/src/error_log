@@ -1,0 +1,496 @@
+[16-Oct-2025 05:05:51 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[16-Oct-2025 05:43:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[16-Oct-2025 07:59:23 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[16-Oct-2025 08:02:39 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[18-Oct-2025 13:19:04 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[24-Oct-2025 05:27:24 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[24-Oct-2025 06:07:53 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[24-Oct-2025 06:39:03 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[24-Oct-2025 11:36:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[24-Oct-2025 14:14:02 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[24-Oct-2025 14:52:59 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[24-Oct-2025 14:58:41 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[26-Oct-2025 23:00:42 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[04-Nov-2025 21:20:51 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[08-Nov-2025 05:45:47 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[09-Nov-2025 03:44:03 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[09-Nov-2025 09:34:10 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[11-Nov-2025 15:01:10 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[12-Nov-2025 05:25:47 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[12-Nov-2025 18:53:38 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[14-Nov-2025 03:42:26 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[14-Nov-2025 08:40:37 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[14-Nov-2025 14:33:33 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[14-Nov-2025 15:42:10 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[14-Nov-2025 22:28:59 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[15-Nov-2025 06:35:25 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[15-Nov-2025 11:17:35 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[15-Nov-2025 16:25:40 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[15-Nov-2025 22:25:28 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[15-Nov-2025 22:30:10 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[15-Nov-2025 23:32:57 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[16-Nov-2025 03:34:37 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[16-Nov-2025 15:07:27 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[16-Nov-2025 15:53:02 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[16-Nov-2025 15:53:12 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[16-Nov-2025 15:53:19 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[16-Nov-2025 15:58:24 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[16-Nov-2025 16:00:57 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[16-Nov-2025 16:01:48 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[16-Nov-2025 16:14:04 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[16-Nov-2025 16:14:39 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[16-Nov-2025 16:15:43 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[16-Nov-2025 19:54:11 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[17-Nov-2025 05:11:46 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[17-Nov-2025 05:45:02 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[17-Nov-2025 06:07:12 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[17-Nov-2025 10:28:27 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[18-Nov-2025 00:00:10 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[18-Nov-2025 20:57:17 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[19-Nov-2025 02:11:24 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[24-Nov-2025 04:00:09 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[24-Nov-2025 05:50:24 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[24-Nov-2025 06:58:47 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[24-Nov-2025 08:45:35 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[24-Nov-2025 09:22:11 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[24-Nov-2025 11:29:11 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[24-Nov-2025 13:01:06 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[14-Dec-2025 08:03:22 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[14-Dec-2025 09:12:54 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[14-Dec-2025 10:14:03 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[14-Dec-2025 11:53:10 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[14-Dec-2025 11:53:42 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[14-Dec-2025 11:53:58 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[14-Dec-2025 12:54:20 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[14-Dec-2025 12:54:35 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[15-Dec-2025 10:15:15 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[27-Dec-2025 22:30:15 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[28-Dec-2025 02:07:41 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[28-Dec-2025 02:54:47 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[28-Dec-2025 03:04:29 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[28-Dec-2025 04:49:37 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[28-Dec-2025 05:08:36 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[28-Dec-2025 08:33:55 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[12-Jan-2026 12:08:02 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[14-Jan-2026 16:09:22 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[14-Jan-2026 17:12:58 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[16-Jan-2026 10:31:54 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[17-Jan-2026 14:08:01 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[19-Jan-2026 02:04:18 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[19-Jan-2026 05:03:43 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[19-Jan-2026 15:19:49 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[22-Jan-2026 01:38:37 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[22-Jan-2026 04:56:00 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[23-Jan-2026 15:23:38 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[24-Jan-2026 01:52:59 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[24-Jan-2026 16:05:16 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[24-Jan-2026 16:56:09 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[24-Jan-2026 19:00:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[25-Jan-2026 05:10:26 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[26-Jan-2026 03:46:13 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[26-Jan-2026 15:06:00 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[27-Jan-2026 04:44:17 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[27-Jan-2026 14:35:22 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[27-Jan-2026 16:19:58 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[27-Jan-2026 16:24:17 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[27-Jan-2026 18:08:07 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[27-Jan-2026 20:18:50 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[27-Jan-2026 21:48:11 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[28-Jan-2026 03:15:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[28-Jan-2026 05:05:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[28-Jan-2026 06:11:26 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[28-Jan-2026 12:44:58 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[29-Jan-2026 13:34:20 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[30-Jan-2026 10:45:50 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[30-Jan-2026 13:37:57 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[31-Jan-2026 04:57:46 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[31-Jan-2026 13:43:15 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[02-Feb-2026 05:03:42 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[02-Feb-2026 21:57:19 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[02-Feb-2026 21:57:19 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[02-Feb-2026 21:57:20 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[02-Feb-2026 21:57:20 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[02-Feb-2026 21:57:21 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[02-Feb-2026 21:57:22 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[02-Feb-2026 21:57:22 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[02-Feb-2026 21:57:23 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18
+[02-Feb-2026 22:00:29 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/AggregateException.php on line 10
+[02-Feb-2026 22:00:30 UTC] PHP Fatal error:  Uncaught Error: Class "GuzzleHttp\Promise\RejectionException" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/CancellationException.php on line 10
+[02-Feb-2026 22:00:30 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Coroutine.php on line 46
+[02-Feb-2026 22:00:31 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromisorInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/EachPromise.php on line 13
+[02-Feb-2026 22:00:32 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/FulfilledPromise.php on line 15
+[02-Feb-2026 22:00:33 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/Promise.php on line 14
+[02-Feb-2026 22:00:34 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\PromiseInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/RejectedPromise.php on line 15
+[02-Feb-2026 22:00:35 UTC] PHP Fatal error:  Uncaught Error: Interface "GuzzleHttp\Promise\TaskQueueInterface" not found in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/depossco/public_html/tools/vendor/guzzlehttp/promises/src/TaskQueue.php on line 18

@@ -2,7 +2,7 @@ import AppLayout from '@/layouts/app-layout';
 import InvoicesLayout from '@/layouts/invoices/layout';
 import { BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // UI Components
 import Heading from '@/components/heading';
@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Trash2 } from 'lucide-react';
+import { RotateCcw, Trash2 } from 'lucide-react';
 
 // Types
 interface FlashProps {
@@ -42,6 +42,8 @@ interface Invoice {
     created_at: string;
     items_count: number; // jumlah kontainer (tetap)
     additional_qty_total?: number; // <-- NEW: total qty additional (dari backend)
+    deleted_reason?: string | null; // alasan penghapusan
+    deleted_at?: string | null; // tanggal penghapusan
 }
 
 interface InvoicesData {
@@ -58,21 +60,42 @@ interface PageProps {
     invoices: InvoicesData;
     filters: {
         search?: string;
+        trashed?: string;
     };
     flash?: FlashProps;
+    auth: {
+        user: {
+            id: number;
+            name: string;
+            email: string;
+            role_id: number;
+        };
+    };
 }
 
 export default function InvoicesIndex() {
     const page = usePage<PageProps>();
     const { invoices, filters, flash } = page.props;
+    const roleId = page.props.auth?.user?.role_id;
+
+    // Check if user is admin (role_id = 2) or super admin (role_id = 1)
+    const canDeleteRestore = roleId === 1 || roleId === 2;
+
     const [search, setSearch] = useState(filters?.search || '');
+    const [isTrashed, setIsTrashed] = useState(!!filters?.trashed);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [invoiceIdToDelete, setInvoiceIdToDelete] = useState<number | null>(null);
+    const [deleteReason, setDeleteReason] = useState('');
+
+    // Sync isTrashed with filters.trashed from server
+    useEffect(() => {
+        setIsTrashed(!!filters?.trashed);
+    }, [filters?.trashed]);
 
     const handleSearch = () => {
         router.get(
             '/invoices',
-            { search },
+            { search, trashed: isTrashed ? '1' : undefined },
             {
                 preserveState: true,
                 replace: true,
@@ -81,15 +104,51 @@ export default function InvoicesIndex() {
     };
 
     const handleDeleteClick = (id: number) => {
+        if (!canDeleteRestore) {
+            alert('Anda tidak memiliki izin untuk menghapus invoice.');
+            return;
+        }
         setInvoiceIdToDelete(id);
+        setDeleteReason('');
         setDeleteModalOpen(true);
     };
 
     const confirmDelete = () => {
-        if (invoiceIdToDelete !== null) {
-            router.delete(`/invoices/${invoiceIdToDelete}`);
+        if (invoiceIdToDelete !== null && deleteReason.trim()) {
+            router.delete(`/invoices/${invoiceIdToDelete}`, {
+                data: { delete_reason: deleteReason },
+                onSuccess: () => {
+                    setDeleteModalOpen(false);
+                    setInvoiceIdToDelete(null);
+                    setDeleteReason('');
+                    router.reload({ only: ['invoices'] });
+                },
+            });
+        } else if (invoiceIdToDelete !== null) {
+            alert('Mohon masukkan alasan penghapusan.');
         }
-        setDeleteModalOpen(false);
+    };
+
+    const handleRestore = (id: number) => {
+        if (!canDeleteRestore) {
+            alert('Anda tidak memiliki izin untuk memulihkan invoice.');
+            return;
+        }
+        if (confirm('Apakah Anda yakin ingin memulihkan invoice ini?')) {
+            router.post(`/invoices/${id}/restore`, {}, {
+                onSuccess: () => {
+                    router.reload({ only: ['invoices'] });
+                },
+            });
+        }
+    };
+
+    const toggleTrashed = () => {
+        const newTrashed = !isTrashed;
+        setIsTrashed(newTrashed);
+        router.get('/invoices', { trashed: newTrashed ? '1' : undefined, search }, {
+            preserveState: true,
+        });
     };
 
     return (
@@ -103,6 +162,15 @@ export default function InvoicesIndex() {
 
                     {/* Judul Halaman */}
                     <Heading title="Daftar Invoice" description="Kelola semua invoice yang telah dibuat dan detailnya." />
+
+                    {/* Toggle Trashed */}
+                    {canDeleteRestore && (
+                        <div className="flex items-center justify-between">
+                            <Button variant="outline" onClick={toggleTrashed}>
+                                {isTrashed ? 'Sembunyikan Invoice Dihapus' : 'Tampilkan Invoice Dihapus'}
+                            </Button>
+                        </div>
+                    )}
 
                     {/* Search Bar */}
                     <div className="space-y-2">
@@ -123,11 +191,13 @@ export default function InvoicesIndex() {
                     </div>
 
                     {/* Tombol Buat Invoice */}
-                    <div className="flex justify-end">
-                        <Button asChild className="mb-2">
-                            <Link href="/invoices/create">+ Buat Invoice</Link>
-                        </Button>
-                    </div>
+                    {!isTrashed && (
+                        <div className="flex justify-end">
+                            <Button asChild className="mb-2">
+                                <Link href="/invoices/create">+ Buat Invoice</Link>
+                            </Button>
+                        </div>
+                    )}
 
                     {/* Tabel Daftar Invoice */}
                     <div className="overflow-x-auto rounded-md border">
@@ -138,10 +208,10 @@ export default function InvoicesIndex() {
                                     <TableHead>Customer</TableHead>
                                     <TableHead>Periode</TableHead>
                                     <TableHead>Jumlah Kontainer</TableHead>
-                                    {/* <TableHead>Qty Additional</TableHead> */}
                                     <TableHead>Total</TableHead>
                                     <TableHead>Status</TableHead>
                                     <TableHead>Dibuat Pada</TableHead>
+                                    {isTrashed && <TableHead>Alasan Dihapus</TableHead>}
                                     <TableHead className="text-right">Aksi</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -162,7 +232,6 @@ export default function InvoicesIndex() {
                                                 </TableCell>
 
                                                 <TableCell className="py-3">{invoice.items_count}</TableCell>
-                                                {/* <TableCell className="py-3">{invoice.additional_qty_total ?? 0}</TableCell> */}
 
                                                 <TableCell className="py-3">Rp {Number(invoice.grand_total ?? 0).toLocaleString('id-ID')}</TableCell>
 
@@ -176,51 +245,83 @@ export default function InvoicesIndex() {
                                                     </span>
                                                 </TableCell>
 
-                                                <TableCell className="py-3">{new Date(invoice.created_at).toLocaleDateString('id-ID')}</TableCell>
+                                                <TableCell className="py-3">
+                                                    {isTrashed
+                                                        ? (invoice.deleted_at ? new Date(invoice.deleted_at).toLocaleDateString('id-ID') : '-')
+                                                        : new Date(invoice.created_at).toLocaleDateString('id-ID')
+                                                    }
+                                                </TableCell>
+
+                                                {isTrashed && (
+                                                    <TableCell className="py-3">
+                                                        {invoice.deleted_reason || '-'}
+                                                    </TableCell>
+                                                )}
 
                                                 <TableCell className="py-3 text-right">
-                                                    {/* Toggle status */}
-                                                    {st === 'unpaid' && (
-                                                        <Button
-                                                            size="sm"
-                                                            onClick={() => router.put(`/invoices/${invoice.id}/pay`)}
-                                                            className="mr-2 bg-green-600 text-white hover:bg-green-700"
-                                                        >
-                                                            Lunas
-                                                        </Button>
+                                                    {isTrashed ? (
+                                                        // Mode Recycle Bin - Tampilkan tombol restore
+                                                        canDeleteRestore && (
+                                                            <Button
+                                                                size="sm"
+                                                                variant="outline"
+                                                                onClick={() => handleRestore(invoice.id)}
+                                                                className="inline-flex items-center gap-1"
+                                                                title="Pulihkan Invoice"
+                                                            >
+                                                                <RotateCcw className="h-4 w-4" />
+                                                                Pulihkan
+                                                            </Button>
+                                                        )
+                                                    ) : (
+                                                        // Mode Normal - Tampilkan tombol aksi
+                                                        <>
+                                                            {/* Toggle status */}
+                                                            {st === 'unpaid' && (
+                                                                <Button
+                                                                    size="sm"
+                                                                    onClick={() => router.put(`/invoices/${invoice.id}/pay`)}
+                                                                    className="mr-2 bg-green-600 text-white hover:bg-green-700"
+                                                                >
+                                                                    Lunas
+                                                                </Button>
+                                                            )}
+
+                                                            {st === 'paid' && (
+                                                                <Button
+                                                                    size="sm"
+                                                                    onClick={() => router.put(`/invoices/${invoice.id}/unpay`)}
+                                                                    className="mr-2 bg-amber-600 text-white hover:bg-amber-700"
+                                                                >
+                                                                    Belum Lunas
+                                                                </Button>
+                                                            )}
+
+                                                            {/* Show */}
+                                                            <Button size="sm" variant="outline" asChild className="mr-2">
+                                                                <Link href={`/invoices/${invoice.id}`}>Show</Link>
+                                                            </Button>
+
+                                                            {/* Delete - Hanya untuk admin dan super admin */}
+                                                            {canDeleteRestore && (
+                                                                <button
+                                                                    type="button"
+                                                                    className="inline-flex h-8 w-8 items-center justify-center rounded-md text-sm text-red-500 hover:bg-red-100 disabled:pointer-events-none disabled:opacity-50"
+                                                                    onClick={() => handleDeleteClick(invoice.id)}
+                                                                    aria-label="Hapus"
+                                                                >
+                                                                    <Trash2 className="h-4 w-4" />
+                                                                </button>
+                                                            )}
+                                                        </>
                                                     )}
-
-                                                    {st === 'paid' && (
-                                                        <Button
-                                                            size="sm"
-                                                            onClick={() => router.put(`/invoices/${invoice.id}/unpay`)}
-                                                            className="mr-2 bg-amber-600 text-white hover:bg-amber-700"
-                                                        >
-                                                            Belum Lunas
-                                                        </Button>
-                                                    )}
-
-                                                    {/* Show */}
-                                                    <Button size="sm" variant="outline" asChild className="mr-2">
-                                                        <Link href={`/invoices/${invoice.id}`}>Show</Link>
-                                                    </Button>
-
-                                                    {/* Delete */}
-                                                    <button
-                                                        type="button"
-                                                        className="inline-flex h-8 w-8 items-center justify-center rounded-md text-sm text-red-500 hover:bg-red-100 disabled:pointer-events-none disabled:opacity-50"
-                                                        onClick={() => handleDeleteClick(invoice.id)}
-                                                        aria-label="Hapus"
-                                                    >
-                                                        <Trash2 className="h-4 w-4" />
-                                                    </button>
                                                 </TableCell>
                                             </TableRow>
                                         );
                                     })
                                 ) : (
                                     <TableRow>
-                                        <TableCell colSpan={10} className="py-8 text-center text-sm text-gray-500">
+                                        <TableCell colSpan={isTrashed ? 9 : 8} className="py-8 text-center text-sm text-gray-500">
                                             Belum ada invoice.
                                         </TableCell>
                                     </TableRow>
@@ -236,7 +337,7 @@ export default function InvoicesIndex() {
                                 <Button
                                     key={i}
                                     variant={link.active ? 'default' : 'outline'}
-                                    onClick={() => router.get(link.url!)} // URL sudah mengandung `?search=...`
+                                    onClick={() => router.get(link.url!)} // URL sudah mengandung `?search=...&trashed=...`
                                     className="px-3 py-1 whitespace-nowrap"
                                 >
                                     {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
@@ -254,19 +355,31 @@ export default function InvoicesIndex() {
                     </div>
                 </div>
 
-                {/* Modal Hapus */}
+                {/* Modal Hapus dengan input alasan */}
                 <AlertDialog open={deleteModalOpen} onOpenChange={setDeleteModalOpen}>
                     <AlertDialogContent>
                         <AlertDialogHeader>
                             <AlertDialogTitle>Hapus Invoice</AlertDialogTitle>
                             <AlertDialogDescription>
-                                Anda yakin ingin menghapus invoice ini? Tindakan ini tidak dapat dibatalkan.
+                                Masukkan alasan penghapusan invoice ini:
                             </AlertDialogDescription>
                         </AlertDialogHeader>
+                        <div className="space-y-4">
+                            <Input
+                                placeholder="Alasan penghapusan"
+                                value={deleteReason}
+                                onChange={(e) => setDeleteReason(e.target.value)}
+                                required
+                            />
+                        </div>
                         <AlertDialogFooter>
                             <AlertDialogCancel onClick={() => setDeleteModalOpen(false)}>Batal</AlertDialogCancel>
-                            <AlertDialogAction onClick={confirmDelete} className="bg-red-600 hover:bg-red-700">
-                                Hapus
+                            <AlertDialogAction
+                                disabled={!deleteReason.trim()}
+                                onClick={confirmDelete}
+                                className="bg-red-600 hover:bg-red-700"
+                            >
+                                Hapus Invoice
                             </AlertDialogAction>
                         </AlertDialogFooter>
                     </AlertDialogContent>

@@ -8,6 +8,7 @@ use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Order;   // <-- tambahkan baris ini
+use App\Models\ActivityLog;
 
 use NumberToWords\NumberToWords;
 use Illuminate\Support\Facades\Redirect;
@@ -20,11 +21,15 @@ class InvoiceController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search', '');
+        $trashed = $request->input('trashed', false);
 
         $invoices = Invoice::with([
                 'customer:id,name'  // hanya ambil id dan name
             ])
             ->withCount('items as items_count')
+            ->when($trashed, function ($query) {
+                $query->onlyTrashed();
+            })
             ->when($search, function ($query) use ($search) {
                 $query->where(function ($q) use ($search) {
                     $lowerSearch = strtolower($search);
@@ -40,7 +45,7 @@ class InvoiceController extends Controller
             })
             ->orderByDesc('created_at')
             ->paginate(20)
-            ->appends(['search' => $search]);
+            ->appends(['search' => $search, 'trashed' => $trashed]);
 
         // Hitung additional_qty_total
         $invoices->getCollection()->transform(function ($inv) {
@@ -321,17 +326,79 @@ class InvoiceController extends Controller
         return redirect()->route('invoices.index')->with('flash', ['success' => 'Invoice berhasil diperbarui!']);
     }
 
-    public function destroy(Invoice $invoice)
+    public function destroy(Request $request, Invoice $invoice)
     {
-        // Hapus semua invoice_items terlebih dahulu
-        $invoice->items()->delete();
+        // Permission check: hanya admin dan super admin yang bisa hapus
+        $user = auth()->user();
+        if (!$user || !in_array($user->role_id, [1, 2])) {
+            return back()->with('error', 'Anda tidak memiliki izin untuk menghapus invoice.');
+        }
 
-        // Baru hapus invoice
-        $invoice->delete();
+        $deleteReason = $request->input('delete_reason');
 
-        return redirect()
-            ->route('invoices.index')
-            ->with('success', 'Invoice berhasil dihapus!');
+        DB::beginTransaction();
+        try {
+            // Simpan data invoice sebelum dihapus untuk log
+            $oldValues = $invoice->toArray();
+
+            // Soft delete invoice dengan alasan
+            $invoice->update(['deleted_reason' => $deleteReason]);
+            $invoice->delete();
+
+            // Log activity
+            ActivityLog::log(
+                'delete_invoice',
+                'Invoice',
+                $invoice->id,
+                $oldValues,
+                ['deleted_reason' => $deleteReason, 'deleted_by' => $user->name]
+            );
+
+            DB::commit();
+            return redirect()
+                ->route('invoices.index')
+                ->with('success', 'Invoice berhasil dihapus.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'Gagal menghapus invoice: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Restore invoice yang dihapus
+     */
+    public function restore($id)
+    {
+        // Permission check: hanya admin dan super admin yang bisa restore
+        $user = auth()->user();
+        if (!$user || !in_array($user->role_id, [1, 2])) {
+            return back()->with('error', 'Anda tidak memiliki izin untuk memulihkan invoice.');
+        }
+
+        $invoice = Invoice::onlyTrashed()->findOrFail($id);
+
+        DB::beginTransaction();
+        try {
+            // Restore invoice
+            $invoice->restore();
+
+            // Log activity
+            ActivityLog::log(
+                'restore_invoice',
+                'Invoice',
+                $invoice->id,
+                null,
+                ['restored_by' => $user->name, 'invoice_number' => $invoice->invoice_number]
+            );
+
+            DB::commit();
+            return redirect()
+                ->route('invoices.index', ['trashed' => '1'])
+                ->with('success', 'Invoice berhasil dipulihkan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'Gagal memulihkan invoice: ' . $e->getMessage());
+        }
     }
 
     

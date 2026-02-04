@@ -6,10 +6,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Invoice extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'invoice_number',
@@ -17,11 +18,14 @@ class Invoice extends Model
         'period_start',
         'period_end',
         'subtotal',
+        'discount',
         'ppn',
         'materai',
         'grand_total',
         'terbilang',
         'status',
+        'show_period',
+        'deleted_reason',
     ];
 
     public function customer()

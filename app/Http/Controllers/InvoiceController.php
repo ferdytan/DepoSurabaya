@@ -307,23 +307,213 @@ class InvoiceController extends Controller
         ]);
     }
 
+    /**
+     * Show form for editing invoice
+     */
     public function edit(Invoice $invoice)
     {
-        $customers = Customer::select('id', 'name')->get();
-        return Inertia::render('invoices/edit', ['invoice' => $invoice, 'customers' => $customers]);
+        // Load invoice with items and relations
+        $invoice = Invoice::with([
+            'customer:id,name',
+            'items.orderItem.order',
+            'items.orderItem.product:id,service_type',
+            'items.orderItem.additionalProducts' => function ($q) {
+                $q->withPivot(['price_value']);
+            },
+        ])->findOrFail($invoice->id);
+
+        // Get order from first item to load available order items
+        $firstItem = $invoice->items->first();
+        $order = null;
+        $availableOrderItems = collect();
+
+        if ($firstItem && $firstItem->orderItem) {
+            $order = Order::with([
+                'order_items.product:id,service_type',
+                'order_items.additionalProducts' => function ($q) {
+                    $q->withPivot(['price_value']);
+                },
+            ])->find($firstItem->orderItem->order_id);
+
+            if ($order) {
+                // Get order items that are NOT already in this invoice
+                $existingItemIds = $invoice->items->pluck('order_item_id')->toArray();
+                $availableOrderItems = $order->order_items->whereNotIn('id', $existingItemIds);
+            }
+        }
+
+        return Inertia::render('invoices/edit', [
+            'invoice' => $invoice,
+            'order' => $order,
+            'availableOrderItems' => $availableOrderItems,
+        ]);
     }
 
+    /**
+     * Update invoice in storage
+     */
     public function update(Request $request, Invoice $invoice)
     {
         $validated = $request->validate([
-            'customer_id' => 'required|exists:customers,id',
-            'invoice_number' => "required|string|max:255|unique:invoices,invoice_number,{$invoice->id}",
-            'total_amount' => 'required|numeric|min:0',
+            'period_start' => ['required', 'date'],
+            'period_end' => ['required', 'date', 'after_or_equal:period_start'],
+            'discount' => ['nullable', 'integer', 'min:0'],
+            'ppn' => ['required', 'integer', 'min:0'],
+            'materai' => ['required', 'integer', 'min:0'],
+            'grand_total' => ['required', 'integer', 'min:0'],
+            'show_period' => ['boolean'],
+            // 'order_item_ids' - existing items to keep
+            // 'new_order_item_ids' - new items to add
+            // 'additional_product_quantities' - additional product quantities
+            // 'removed_item_ids' - items to remove
         ]);
 
-        $invoice->update($validated);
+        return DB::transaction(function () use ($request, $invoice, $validated) {
+            // Get order from first item for fetching additional products
+            $firstItem = $invoice->items()->first();
+            if (!$firstItem) {
+                throw ValidationException::withMessages([
+                    'items' => ['Invoice harus memiliki minimal satu item.']
+                ]);
+            }
 
-        return redirect()->route('invoices.index')->with('flash', ['success' => 'Invoice berhasil diperbarui!']);
+            $order = Order::with([
+                'order_items.product:id,service_type',
+                'order_items.additionalProducts' => fn($q) => $q->withPivot(['price_value']),
+            ])->find($firstItem->orderItem->order_id);
+
+            if (!$order) {
+                throw ValidationException::withMessages([
+                    'order' => ['Order tidak ditemukan.']
+                ]);
+            }
+
+            // Handle removed items
+            $removedItemIds = $request->input('removed_item_ids', []);
+            if (!empty($removedItemIds)) {
+                $invoice->items()->whereIn('id', $removedItemIds)->delete();
+            }
+
+            // Get current item IDs
+            $currentItemIds = $invoice->items->pluck('id')->toArray();
+
+            // Process additional product quantities
+            $qtyMap = [];
+            foreach (($request->input('additional_product_quantities', [])) as $row) {
+                $qtyMap[$row['order_item_id'] . ':' . $row['additional_product_id']] = (int)$row['quantity'];
+            }
+
+            // Update existing items
+            foreach ($invoice->items as $item) {
+                $adds = [];
+                $orderItem = $order->order_items->first(fn($oi) => $oi->id === $item->order_item_id);
+
+                if ($orderItem) {
+                    foreach ($orderItem->additionalProducts as $ap) {
+                        $key = $orderItem->id . ':' . $ap->id;
+                        $qty = (int)($qtyMap[$key] ?? 1);
+                        $adds[] = [
+                            'id' => $ap->id,
+                            'service_type' => $ap->service_type,
+                            'pivot' => [
+                                'price_value' => (int)($ap->pivot->price_value ?? 0),
+                                'quantity' => $qty,
+                            ],
+                        ];
+                    }
+                    $item->additional_products = $adds;
+                    $item->save();
+                }
+            }
+
+            // Add new items
+            $newOrderItemIds = $request->input('new_order_item_ids', []);
+            foreach ($newOrderItemIds as $orderItemId) {
+                $orderItem = $order->order_items->first(fn($oi) => $oi->id === $orderItemId);
+
+                if ($orderItem) {
+                    $invItem = $invoice->items()->create([
+                        'order_item_id' => $orderItem->id,
+                        'product_id' => $orderItem->product_id,
+                        'container_number' => $orderItem->container_number,
+                        'price_type' => $orderItem->price_type,
+                        'price_value' => $orderItem->price_value,
+                        'quantity' => 1,
+                    ]);
+
+                    $adds = [];
+                    foreach ($orderItem->additionalProducts as $ap) {
+                        $key = $orderItem->id . ':' . $ap->id;
+                        $qty = (int)($qtyMap[$key] ?? 1);
+                        $adds[] = [
+                            'id' => $ap->id,
+                            'service_type' => $ap->service_type,
+                            'pivot' => [
+                                'price_value' => (int)($ap->pivot->price_value ?? 0),
+                                'quantity' => $qty,
+                            ],
+                        ];
+                    }
+                    $invItem->additional_products = $adds;
+                    $invItem->save();
+                }
+            }
+
+            // Recalculate totals
+            $subtotal = 0;
+            $invoice->load('items');
+            foreach ($invoice->items as $item) {
+                $subtotal += (int)($item->price_value ?? 0);
+                $adds = $item->additional_products ?? [];
+                foreach ($adds as $ap) {
+                    $subtotal += (int)($ap['pivot']['price_value'] ?? 0) * (int)($ap['pivot']['quantity'] ?? 1);
+                }
+            }
+
+            $discount = (int)($validated['discount'] ?? 0);
+            $materai = (int)($validated['materai'] ?? 0);
+            $afterDiscount = $subtotal - $discount;
+            $ppn = (int)round($afterDiscount * 0.11);
+            $grand = $afterDiscount + $ppn + $materai;
+
+            // Validate grand_total
+            if ($grand !== (int)$validated['grand_total']) {
+                throw ValidationException::withMessages([
+                    'grand_total' => ['Grand total tidak valid. Terjadi manipulasi data.']
+                ]);
+            }
+
+            // Generate terbilang
+            $terbilang = $this->numberToWords($grand);
+
+            // Update invoice
+            $invoice->update([
+                'period_start' => $validated['period_start'],
+                'period_end' => $validated['period_end'],
+                'subtotal' => $subtotal,
+                'discount' => $discount,
+                'ppn' => $ppn,
+                'materai' => $materai,
+                'grand_total' => $grand,
+                'terbilang' => $terbilang,
+                'show_period' => (bool)($validated['show_period'] ?? true),
+            ]);
+
+            // Log activity
+            ActivityLog::log(
+                'update_invoice',
+                'Invoice',
+                $invoice->id,
+                null,
+                ['updated_by' => auth()->user()->name, 'invoice_number' => $invoice->invoice_number]
+            );
+
+            DB::commit();
+
+            return redirect()
+                ->route('invoices.show', $invoice->id)
+                ->with('success', "Invoice {$invoice->invoice_number} berhasil diperbarui.");
+        });
     }
 
     public function destroy(Request $request, Invoice $invoice)

@@ -157,6 +157,8 @@ Route::middleware(['auth'])->group(function () {
         // Route::post('/preview', [InvoiceController::class, 'preview'])->name('preview');
         Route::post('/store', [InvoiceController::class, 'store'])->name('store');
         Route::get('/', [InvoiceController::class, 'index'])->name('index');
+        Route::get('/{invoice}/edit', [InvoiceController::class, 'edit'])->name('edit');
+        Route::put('/{invoice}', [InvoiceController::class, 'update'])->name('update');
         Route::get('/{invoice}', [InvoiceController::class, 'show'])->name('show');
         Route::post('/{invoice}/restore', [InvoiceController::class, 'restore'])->name('restore');
     });

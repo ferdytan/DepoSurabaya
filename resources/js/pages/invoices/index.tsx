@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { RotateCcw, Trash2 } from 'lucide-react';
+import { RotateCcw, Trash2, Pencil } from 'lucide-react';
 
 // Types
 interface FlashProps {
@@ -300,6 +300,11 @@ export default function InvoicesIndex() {
                                                             {/* Show */}
                                                             <Button size="sm" variant="outline" asChild className="mr-2">
                                                                 <Link href={`/invoices/${invoice.id}`}>Show</Link>
+                                                            </Button>
+
+                                                            {/* Edit */}
+                                                            <Button size="sm" variant="outline" asChild className="mr-2">
+                                                                <Link href={`/invoices/${invoice.id}/edit`}>Edit</Link>
                                                             </Button>
 
                                                             {/* Delete - Hanya untuk admin dan super admin */}

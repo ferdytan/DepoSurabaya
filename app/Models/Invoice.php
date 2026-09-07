@@ -38,6 +38,14 @@ class Invoice extends Model
         return $this->hasMany(InvoiceItem::class);
     }
 
+    public function activityLogs()
+    {
+        return $this->hasMany(ActivityLog::class, 'model_id')
+                    ->where('model_type', 'Invoice')
+                    ->with('user:id,name,email')
+                    ->latest();
+    }
+
 
 
 

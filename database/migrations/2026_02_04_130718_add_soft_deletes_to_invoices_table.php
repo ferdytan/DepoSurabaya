@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('invoices', function (Blueprint $table) {
-            // Add soft deletes column
-            $table->softDeletes();
-            // Add deleted_reason column
-            $table->string('deleted_reason')->nullable()->after('deleted_at');
+            if (!Schema::hasColumn('invoices', 'deleted_at')) {
+                $table->softDeletes();
+            }
+            if (!Schema::hasColumn('invoices', 'deleted_reason')) {
+                $table->string('deleted_reason')->nullable()->after('deleted_at');
+            }
         });
     }
 

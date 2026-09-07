@@ -1,4 +1,7 @@
 .env
+.env.*
 .zip
 /public/hot
 /hot
+.claude/
+node_modules/

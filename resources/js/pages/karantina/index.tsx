@@ -89,7 +89,7 @@ type Order = {
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Order Management',
+        title: 'Karantina',
         href: '/karantina',
     },
 ];
@@ -118,6 +118,14 @@ interface SortButtonProps {
     currentSort?: string;
     currentDir?: string;
     routeName?: string; // 👈 Tambahkan prop ini
+}
+
+function formatContainerSize(priceType?: string | null, fallback?: string): string {
+    if (!priceType) return fallback || '-';
+    const val = String(priceType).trim();
+    if (val.toLowerCase().endsWith('ft')) return val;
+    if (val === '20' || val === '40') return `${val}ft`;
+    return val || fallback || '-';
 }
 
 export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
@@ -346,7 +354,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             <tr>
                                 <td>${order.container_number}</td>
                                 <td>${order.order?.shipper?.name ?? '-'}</td>
-                                <td>${order.price_type ?? '-'}</td>
+                                <td>${formatContainerSize(order.price_type)}</td>
                                 <td>${order.entry_date ? new Date(order.entry_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${order.eir_date ? new Date(order.eir_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${order.exit_date ? new Date(order.exit_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
@@ -438,77 +446,138 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Order Management" />
-            <OrdersLayout>
-                <div className="space-y-6">
-                    {/* Flash Message */}
-                    {props.flash?.success && <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">{props.flash.success}</div>}
+            <Head title="Karantina & Fumigasi - Depo Surabaya" />
 
-                    <Heading title="Order List" description="Manage all registered orders and their statuses." />
+            <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
+                {/* Flash Message */}
+                {props.flash?.success && (
+                    <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800 shadow-sm">
+                        {props.flash.success}
+                    </div>
+                )}
+                {props.flash?.error && (
+                    <div className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800 shadow-sm">
+                        {props.flash.error}
+                    </div>
+                )}
 
-                    {/* Filter Section */}
-                    <div className="space-y-4 rounded-lg border p-4">
-                        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                            {/* Search Input */}
-                            <div className="space-y-2">
-                                <Label htmlFor="search">Cari (Fumigator, Shipper, Kontainer)</Label>
-                                <Input
-                                    id="search"
-                                    type="text"
-                                    value={search}
-                                    onChange={(e) => setSearch(e.target.value)}
-                                    placeholder="Cari fumigator, shipper, atau nomor kontainer"
-                                    className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                                />
-                            </div>
-
-                            {/* Filter Start Date */}
-                            <div className="space-y-2">
-                                <Label htmlFor="start-date">Tanggal Mulai</Label>
-                                <Input
-                                    id="start-date"
-                                    type="date"
-                                    value={startDate}
-                                    onChange={(e) => setStartDate(e.target.value)}
-                                    className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                                />
-                            </div>
-
-                            {/* Filter End Date */}
-                            <div className="space-y-2">
-                                <Label htmlFor="end-date">Tanggal Selesai</Label>
-                                <Input
-                                    id="end-date"
-                                    type="date"
-                                    value={endDate}
-                                    onChange={(e) => setEndDate(e.target.value)}
-                                    className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                                />
-                            </div>
+                {/* Header Karantina */}
+                <div className="flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <div className="flex items-center gap-2.5">
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-800">
+                                Karantina & Fumigasi
+                            </h1>
+                            <span className="inline-flex items-center rounded-full bg-rose-50 px-3 py-0.5 text-xs font-semibold text-rose-700 border border-rose-200">
+                                Petugas Karantina
+                            </span>
                         </div>
-
-                        {/* Tombol Cari */}
-                        <div className="flex justify-end">
-                            <Button onClick={handleSearch} className="w-full sm:w-auto">
-                                Cari
-                            </Button>
-                        </div>
+                        <p className="mt-1 text-sm text-gray-500">
+                            Kelola data kontainer karantina, filter pencarian per periode, dan cetak billing statement resmi.
+                        </p>
                     </div>
 
-                    <div className="space-y-2">
-                        <Button onClick={handlePrint} className="mb-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                        <Button
+                            type="button"
+                            onClick={handlePrint}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm"
+                        >
                             <PrinterIcon className="mr-2 h-4 w-4" />
                             Cetak Billing Statement
                         </Button>
                     </div>
+                </div>
 
-                    {/* Data Table */}
-                    <div className="w-full rounded-md border">
-                        <div className="overflow-x-auto" style={{ maxWidth: '100vw' }}></div>
+                {/* Filter Section Card */}
+                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                    <div className="mb-3 flex items-center justify-between">
+                        <h2 className="text-sm font-bold text-gray-800 uppercase tracking-wide">
+                            Filter & Pencarian Kontainer
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                        {/* Search Input */}
+                        <div className="md:col-span-2 space-y-1">
+                            <Label htmlFor="search" className="text-xs font-medium text-gray-600">
+                                Cari (Fumigator, Shipper, Kontainer)
+                            </Label>
+                            <Input
+                                id="search"
+                                type="text"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                placeholder="Cari fumigator, shipper, atau nomor kontainer..."
+                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
+                            />
+                        </div>
+
+                        {/* Filter Start Date */}
+                        <div className="space-y-1">
+                            <Label htmlFor="start-date" className="text-xs font-medium text-gray-600">
+                                Tanggal Mulai
+                            </Label>
+                            <Input
+                                id="start-date"
+                                type="date"
+                                value={startDate}
+                                onChange={(e) => setStartDate(e.target.value)}
+                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
+                            />
+                        </div>
+
+                        {/* Filter End Date */}
+                        <div className="space-y-1">
+                            <Label htmlFor="end-date" className="text-xs font-medium text-gray-600">
+                                Tanggal Selesai
+                            </Label>
+                            <Input
+                                id="end-date"
+                                type="date"
+                                value={endDate}
+                                onChange={(e) => setEndDate(e.target.value)}
+                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Action buttons for search */}
+                    <div className="mt-4 flex items-center justify-end gap-2 border-t border-gray-100 pt-3">
+                        <Button
+                            variant="outline"
+                            onClick={() => {
+                                setSearch('');
+                                setStartDate('');
+                                setEndDate('');
+                                router.get('/karantina');
+                            }}
+                            className="text-xs font-medium"
+                        >
+                            Reset
+                        </Button>
+                        <Button onClick={handleSearch} className="text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white">
+                            Terapkan Filter
+                        </Button>
+                    </div>
+                </div>
+
+                {/* Data Table Card */}
+                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-5">
+                    <div className="mb-4">
+                        <h2 className="text-lg font-bold text-gray-800">
+                            Daftar Kontainer Karantina & Fumigasi
+                        </h2>
+                        <p className="text-xs text-gray-500">
+                            Menampilkan <span className="font-semibold text-gray-700">{filteredOrders.length}</span> kontainer sesuai kriteria filter.
+                        </p>
+                    </div>
+
+                    <div className="overflow-x-auto rounded-lg border border-gray-200">
                         <Table>
-                            <TableHeader>
+                            <TableHeader className="bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-600 border-b border-gray-200">
                                 <TableRow>
-                                    <TableHead>
+                                    <TableHead className="px-4 py-3">
                                         <SortButton
                                             label="Nomor Kontainer"
                                             field="container_number"
@@ -516,7 +585,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                             currentDir={filters.sort_dir}
                                         />
                                     </TableHead>
-                                    <TableHead>
+                                    <TableHead className="px-4 py-3">
                                         <SortButton
                                             label="Nama Shipper"
                                             field="shippers.name"
@@ -524,45 +593,53 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                             currentDir={filters.sort_dir}
                                         />
                                     </TableHead>
-                                    <TableHead>Size</TableHead>
-                                    <TableHead>Tanggal Masuk</TableHead>
-                                    <TableHead>Tanggal EIR</TableHead>
-                                    <TableHead>Tanggal Keluar</TableHead>
-                                    <TableHead>Komoditi</TableHead>
-                                    <TableHead>
+                                    <TableHead className="px-4 py-3">Size</TableHead>
+                                    <TableHead className="px-4 py-3">Tanggal Masuk</TableHead>
+                                    <TableHead className="px-4 py-3">Tanggal EIR</TableHead>
+                                    <TableHead className="px-4 py-3">Tanggal Keluar</TableHead>
+                                    <TableHead className="px-4 py-3">Komoditi</TableHead>
+                                    <TableHead className="px-4 py-3">
                                         <SortButton label="Fumigasi" field="fumigasi" currentSort={filters.sort_by} currentDir={filters.sort_dir} />
                                     </TableHead>
                                 </TableRow>
                             </TableHeader>
-                            <TableBody>
+                            <TableBody className="divide-y divide-gray-100 bg-white">
                                 {filteredOrders.length === 0 ? (
                                     <TableRow>
-                                        <TableCell className="py-8 text-center text-sm text-muted-foreground">
+                                        <TableCell colSpan={8} className="py-10 text-center text-sm text-gray-400">
                                             Tidak ada data yang sesuai filter.
                                         </TableCell>
                                     </TableRow>
                                 ) : (
                                     filteredOrders.map((order) => (
-                                        <TableRow key={order.id} className="group">
-                                            <TableCell className="py-3">{order.container_number}</TableCell>
-                                            <TableCell className="py-3">{order.order?.shipper?.name ?? '-'}</TableCell>
-                                            <TableCell className="py-3">{order.price_type ?? '-'}</TableCell>
-                                            <TableCell className="py-3">
-                                                {order.entry_date ? new Date(order.entry_date).toLocaleString() : <span>-</span>}
+                                        <TableRow key={order.id} className="hover:bg-slate-50/80 transition-colors">
+                                            <TableCell className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                                {order.container_number}
                                             </TableCell>
-                                            <TableCell className="py-3">
-                                                {order.eir_date ? new Date(order.eir_date).toLocaleString() : <span>-</span>}
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.order?.shipper?.name ?? '-'}
                                             </TableCell>
-                                            <TableCell className="py-3">
-                                                {order.exit_date ? new Date(order.exit_date).toLocaleString() : <span>-</span>}
+                                            <TableCell className="px-4 py-3 text-sm">
+                                                <span className="inline-flex rounded bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-700 border border-slate-200">
+                                                    {formatContainerSize(order.price_type)}
+                                                </span>
                                             </TableCell>
-                                            <TableCell className="py-3">{order.commodity ?? '-'}</TableCell>
-                                            <TableCell className="py-3">
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.entry_date ? new Date(order.entry_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                            </TableCell>
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.eir_date ? new Date(order.eir_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                            </TableCell>
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.exit_date ? new Date(order.exit_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                            </TableCell>
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.commodity ?? '-'}
+                                            </TableCell>
+                                            <TableCell className="px-4 py-3 text-sm">
                                                 {order.order?.fumigasi ? (
-                                                    <span className="rounded bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-800">
-                                                        {order.order.fumigasi.length > 50
-                                                            ? `${order.order.fumigasi.substring(0, 50)}...`
-                                                            : order.order.fumigasi}
+                                                    <span className="inline-flex items-center rounded-md bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800 border border-amber-200">
+                                                        {order.order.fumigasi}
                                                     </span>
                                                 ) : (
                                                     <span className="text-gray-400">–</span>
@@ -574,31 +651,31 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             </TableBody>
                         </Table>
                     </div>
-                </div>
 
-                {/* Pagination */}
-                <div className="flex flex-wrap justify-center gap-1">
-                    {orders.links.map((link, i) =>
-                        link.url ? (
-                            <Button
-                                key={i}
-                                variant={link.active ? 'default' : 'outline'}
-                                disabled={!link.url}
-                                onClick={() => router.get(link.url!)}
-                                className="px-3 py-1 whitespace-nowrap"
-                            >
-                                {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
-                                    if (match.includes('Previous')) return '← Prev';
-                                    if (match.includes('Next')) return 'Next →';
-                                    return match;
-                                })}
-                            </Button>
-                        ) : (
-                            <span key={i} className="px-3 py-1">
-                                ...
-                            </span>
-                        ),
-                    )}
+                    {/* Pagination */}
+                    <div className="mt-4 flex flex-wrap justify-center gap-1">
+                        {orders.links.map((link, i) =>
+                            link.url ? (
+                                <Button
+                                    key={i}
+                                    variant={link.active ? 'default' : 'outline'}
+                                    disabled={!link.url}
+                                    onClick={() => router.get(link.url!)}
+                                    className="px-3 py-1 whitespace-nowrap text-xs font-medium"
+                                >
+                                    {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
+                                        if (match.includes('Previous')) return '← Prev';
+                                        if (match.includes('Next')) return 'Next →';
+                                        return match;
+                                    })}
+                                </Button>
+                            ) : (
+                                <span key={i} className="px-3 py-1 text-xs text-gray-400">
+                                    ...
+                                </span>
+                            ),
+                        )}
+                    </div>
                 </div>
 
                 <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
@@ -662,7 +739,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
-            </OrdersLayout>
+            </div>
         </AppLayout>
     );
 }

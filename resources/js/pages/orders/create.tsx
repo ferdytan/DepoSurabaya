@@ -1,16 +1,35 @@
+import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { SearchableSelect } from '@/components/ui/searchable-select';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
 import AppLayout from '@/layouts/app-layout';
 import OrdersLayout from '@/layouts/orders/layout';
-import { Head, useForm } from '@inertiajs/react';
+import { BreadcrumbItem } from '@/types';
+import { Head, Link, useForm } from '@inertiajs/react';
 import axios from 'axios';
-import { PlusCircle, Trash2, X } from 'lucide-react';
-import { Dropdown } from 'primereact/dropdown';
-import { useEffect, useState } from 'react';
+import {
+    AlertCircle,
+    Calendar,
+    Check,
+    CheckCircle2,
+    FileText,
+    Layers,
+    Plus,
+    PlusCircle,
+    Ship,
+    Thermometer,
+    Trash2,
+    X,
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    { title: 'Orders', href: '/orders' },
+    { title: 'Buat Order Baru', href: '/orders/create' },
+];
 
 // =====================
 //  Tipe Data
@@ -383,152 +402,203 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
     //  Render
     // ==================================
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Buat Order Baru" />
             <OrdersLayout>
-                <div className="space-y-6">
-                    <h2 className="text-xl font-semibold">Buat Order Baru</h2>
+                <div className="mx-auto max-w-5xl space-y-6 pb-12">
+                    {/* Header */}
+                    <div>
+                        <Heading
+                            title="Buat Order Baru"
+                            description="Pilih nomor order/AJU, tentukan customer & shipper pengirim, dan tambahkan rincian layanan kontainer."
+                        />
+                    </div>
 
-                    {/* Tampilkan semua error sebagai list */}
+                    {/* Alert Error Umum */}
+                    {data.error && (
+                        <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 mt-0.5" />
+                            <div className="flex-1">
+                                <strong className="font-semibold">Perhatian:</strong>
+                                <p className="mt-0.5 text-xs text-red-700">{data.error}</p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setData('error', undefined)}
+                                className="text-red-400 hover:text-red-600"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Alert Validation Errors */}
                     {Object.keys(errors).length > 0 && (
-                        <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-                            <h3 className="mb-2 text-sm font-semibold text-red-800">Terdapat kesalahan:</h3>
-                            <ul className="list-inside list-disc space-y-1 text-sm text-red-700">
+                        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <div className="flex items-center gap-2 font-semibold">
+                                <AlertCircle className="h-4 w-4 text-red-600" />
+                                <span>Terdapat kesalahan pada input berikut:</span>
+                            </div>
+                            <ul className="mt-2 list-disc pl-6 space-y-1 text-xs text-red-700">
                                 {Object.entries(errors).map(([key, message]) => (
-                                    <li key={key}>
-                                        {/* Ubah key jadi label yang lebih user-friendly */}
-                                        {formatErrorMessage(key, message)}
-                                    </li>
+                                    <li key={key}>{formatErrorMessage(key, message)}</li>
                                 ))}
                             </ul>
                         </div>
                     )}
 
-                    {/* Error Umum */}
-                    {data.error && (
-                        <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-                            <p className="text-sm text-red-700">{data.error}</p>
-                        </div>
-                    )}
-
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* Jenis Nomor Order */}
-                        <div className="grid grid-cols-1 gap-6">
-                            {' '}
-                            {/* Diubah ke grid-cols-1 */}
+                        {/* Section 1: Informasi Order & Pengirim */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
+                            <div className="flex items-center gap-2 border-b pb-3">
+                                <FileText className="h-5 w-5 text-blue-600" />
+                                <h2 className="text-base font-bold text-gray-900">Informasi Order & Pengirim</h2>
+                            </div>
+
+                            {/* Jenis Nomor Order & Input */}
                             <div className="space-y-4">
-                                <Label>Jenis Nomor Order</Label>
-                                <div className="mt-5 flex flex-row gap-4">
-                                    {' '}
-                                    {/* Mengurangi gap sedikit */}
-                                    {/* Tombol Nomor Order Otomatis */}
-                                    <Button
-                                        type="button" // Penting: type="button" agar tidak mensubmit form
-                                        variant={useOrderId ? 'default' : 'outline'} // Tombol aktif/non-aktif
-                                        onClick={() => {
-                                            setUseOrderId(true);
-                                            setData('no_aju', ''); // Kosongkan no_aju jika beralih ke otomatis
-                                        }}
-                                        className="px-4 py-2" // Menyesuaikan padding jika perlu
-                                    >
-                                        Nomor Order Otomatis
-                                    </Button>
-                                    {/* Tombol Nomor AJU */}
-                                    <Button
-                                        type="button" // Penting: type="button" agar tidak mensubmit form
-                                        variant={!useOrderId ? 'default' : 'outline'} // Tombol aktif/non-aktif
-                                        onClick={() => setUseOrderId(false)}
-                                        className="px-4 py-2" // Menyesuaikan padding jika perlu
-                                    >
-                                        Nomor AJU
-                                    </Button>
+                                <div>
+                                    <Label className="text-xs font-semibold text-gray-700">Jenis Nomor Order</Label>
+                                    <div className="mt-1.5 inline-flex rounded-lg bg-gray-100 p-1 border border-gray-200">
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                setUseOrderId(true);
+                                                setData('no_aju', '');
+                                            }}
+                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                                                useOrderId
+                                                    ? 'bg-white text-gray-900 shadow-xs'
+                                                    : 'text-gray-600 hover:text-gray-900'
+                                            }`}
+                                        >
+                                            Nomor Order Otomatis
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setUseOrderId(false)}
+                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                                                !useOrderId
+                                                    ? 'bg-white text-gray-900 shadow-xs'
+                                                    : 'text-gray-600 hover:text-gray-900'
+                                            }`}
+                                        >
+                                            Nomor AJU
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    {useOrderId ? (
+                                        <div className="space-y-1.5 max-w-md">
+                                            <Label htmlFor="order_id_display" className="text-xs font-semibold text-gray-700">
+                                                Nomor Order (Otomatis)
+                                            </Label>
+                                            <Input
+                                                id="order_id_display"
+                                                value={currentOrderId}
+                                                readOnly
+                                                className="bg-gray-50/80 font-mono text-xs font-medium text-gray-600 cursor-not-allowed"
+                                            />
+                                            <p className="text-[11px] text-gray-400">
+                                                Nomor order otomatis digenerate oleh sistem.
+                                            </p>
+                                        </div>
+                                    ) : (
+                                        <div className="space-y-1.5 max-w-md">
+                                            <Label htmlFor="no_aju" className="text-xs font-semibold text-gray-700">
+                                                Nomor AJU <span className="text-red-500">*</span>
+                                            </Label>
+                                            <Input
+                                                id="no_aju"
+                                                value={data.no_aju}
+                                                onChange={(e) => setData('no_aju', e.target.value)}
+                                                placeholder="Contoh: 000000-000000-00000000-000000"
+                                                required
+                                            />
+                                            {errors.no_aju && <p className="text-xs text-red-500">{errors.no_aju}</p>}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
-                            {/* Input Nomor Order atau Nomor AJU */}
-                            {useOrderId ? (
-                                <div className="space-y-2">
-                                    <Label>Nomor Order</Label>
-                                    {/* Tampilkan kode Order (read-only) */}
-                                    <Input value={currentOrderId} readOnly className="w-full cursor-not-allowed bg-gray-100" />{' '}
-                                    {/* Tambahkan w-full */}
-                                </div>
-                            ) : (
-                                <div className="space-y-2">
-                                    <Label>Nomor AJU</Label>
-                                    <Input
-                                        value={data.no_aju}
-                                        onChange={(e) => setData('no_aju', e.target.value)}
-                                        placeholder="Masukkan Nomor AJU"
-                                        required
-                                        className="w-full" // Tambahkan w-full di sini
+
+                            {/* Customer & Shipper */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-gray-100">
+                                {/* Customer */}
+                                <div className="space-y-1.5">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Customer <span className="text-red-500">*</span>
+                                    </Label>
+                                    <SearchableSelect
+                                        options={customers.map((c) => ({
+                                            value: c.id.toString(),
+                                            label: c.name,
+                                        }))}
+                                        value={data.customer_id}
+                                        onChange={(val) => setData('customer_id', val)}
+                                        placeholder="Pilih atau cari Customer..."
+                                        searchPlaceholder="Ketik nama customer..."
+                                        showClear
                                     />
-                                    {errors.no_aju && <p className="text-sm text-red-500">{errors.no_aju}</p>}
+                                    {errors.customer_id && (
+                                        <p className="text-xs text-red-500">{errors.customer_id}</p>
+                                    )}
                                 </div>
-                            )}
-                        </div>
 
-                        {/* Customer & Shipper */}
-                        {/* Customer & Shipper */}
-                        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                            {/* Customer */}
-                            <div className="space-y-2">
-                                <Label>Pilih Customer</Label>
-                                <Dropdown
-                                    value={data.customer_id}
-                                    options={customers.map((c) => ({
-                                        label: c.name,
-                                        value: c.id.toString(),
-                                    }))}
-                                    optionLabel="label"
-                                    optionValue="value"
-                                    placeholder="Pilih atau cari Customer"
-                                    filter
-                                    filterPlaceholder="Cari customer..."
-                                    showClear
-                                    onChange={(e) => setData('customer_id', e.value)}
-                                    className="w-full"
-                                />
-                                {errors.customer_id && <p className="mt-1 text-sm text-red-500">{errors.customer_id}</p>}
+                                {/* Shipper */}
+                                <div className="space-y-1.5">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Shipper{' '}
+                                        {data.fumigasi && data.fumigasi.trim() !== '' && (
+                                            <span className="text-red-500">* (Wajib karena ada catatan Fumigator)</span>
+                                        )}
+                                    </Label>
+                                    <SearchableSelect
+                                        options={shippers.map((s) => ({
+                                            value: s.id.toString(),
+                                            label: s.name,
+                                        }))}
+                                        value={data.shipper_id}
+                                        onChange={(val) => setData('shipper_id', val)}
+                                        placeholder="Pilih atau cari Shipper..."
+                                        searchPlaceholder="Ketik nama shipper..."
+                                        showClear
+                                    />
+                                    {errors.shipper_id && (
+                                        <p className="text-xs text-red-500">{errors.shipper_id}</p>
+                                    )}
+                                </div>
                             </div>
 
-                            {/* Shipper */}
-                            <div className="space-y-2">
-                                <Label>Pilih Shipper</Label>
-                                <Dropdown
-                                    value={data.shipper_id}
-                                    options={shippers.map((s) => ({
-                                        label: s.name,
-                                        value: s.id.toString(),
-                                    }))}
-                                    optionLabel="label"
-                                    optionValue="value"
-                                    placeholder="Pilih atau cari Shipper"
-                                    filter
-                                    filterPlaceholder="Cari shipper..."
-                                    showClear
-                                    onChange={(e) => setData('shipper_id', e.value)}
-                                    className="w-full"
-                                />
-                                {errors.shipper_id && <p className="mt-1 text-sm text-red-500">{errors.shipper_id}</p>}
-                            </div>
-
-                            {/* Fumigator */}
-                            <div className="space-y-2">
-                                <Label>Fumigator (Catatan)</Label>
+                            {/* Fumigator Catatan */}
+                            <div className="space-y-1.5 pt-2">
+                                <Label htmlFor="fumigasi" className="text-xs font-semibold text-gray-700">
+                                    Fumigator (Catatan Opsional)
+                                </Label>
                                 <textarea
+                                    id="fumigasi"
                                     value={data.fumigasi ?? ''}
                                     onChange={(e) => setData('fumigasi', e.target.value)}
-                                    placeholder="Masukkan catatan Fumigator (opsional)..."
-                                    className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                    rows={3}
+                                    placeholder="Masukkan catatan Fumigator jika ada (opsional)... Bila diisi, kolom Shipper wajib dipilih."
+                                    rows={2}
+                                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-xs transition-colors hover:border-gray-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
                                 />
-                                {errors.fumigasi && <p className="mt-1 text-sm text-red-500">{errors.fumigasi}</p>}
+                                {errors.fumigasi && <p className="text-xs text-red-500">{errors.fumigasi}</p>}
                             </div>
                         </div>
 
-                        {/* Dynamic Order Items */}
+                        {/* Section 2: Layanan & Nomor Kontainer */}
                         <div className="space-y-4">
-                            <Label>Layanan & Nomor Kontainer</Label>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <Layers className="h-5 w-5 text-blue-600" />
+                                    <h2 className="text-base font-bold text-gray-900">Layanan & Nomor Kontainer</h2>
+                                </div>
+                                <span className="text-xs text-gray-500 font-medium">
+                                    Total: {data.order_items.length} Kontainer
+                                </span>
+                            </div>
+
                             {data.order_items.map((item, idx) => {
                                 const product = getSelectedProduct(item.product_id);
                                 const requiresTemp = product?.requires_temperature || false;
@@ -551,188 +621,314 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                 ].filter((o) => o.price !== undefined && o.price !== null);
 
                                 return (
-                                    <div>
-                                        <Separator className="my-5" />
-                                        <div className="mb-2 flex items-center gap-2">
-                                            <span className="text-sm font-medium text-gray-700">Layanan #{idx + 1}</span>
-                                        </div>
-                                        <div key={idx} className="space-y-4 rounded-lg border p-4">
-                                            <div className="flex flex-wrap gap-4">
-                                                {/* Produk */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Produk</Label>
-                                                    <Dropdown
-                                                        value={item.product_id}
-                                                        options={customerProducts.map((p) => ({
-                                                            label: p.service_type,
-                                                            value: p.id.toString(),
-                                                        }))}
-                                                        optionLabel="label"
-                                                        optionValue="value"
-                                                        placeholder={productsLoading ? 'Memuat...' : 'Pilih Layanan'}
-                                                        filter
-                                                        filterPlaceholder="Cari layanan..."
-                                                        showClear={true}
-                                                        onChange={(e) => {
-                                                            updateOrderItem(idx, 'product_id', e.value);
-                                                            updateOrderItem(idx, 'price_type', undefined);
-                                                        }}
-                                                        disabled={!data.customer_id || productsLoading}
-                                                        className="w-full"
-                                                    />
-                                                </div>
-                                                {/* Harga */}
-                                                <div className="min-w-[160px] flex-1">
-                                                    <Label>Pilih Harga</Label>
-                                                    <Select
-                                                        value={item.price_type}
-                                                        onValueChange={(val) => updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | 'global')}
-                                                        disabled={!item.product_id || priceOptions.length === 0}
-                                                    >
-                                                        <SelectTrigger>
-                                                            <SelectValue placeholder="Pilih Harga" />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            {priceOptions.map((o) => (
-                                                                <SelectItem key={o.value} value={o.value}>
-                                                                    {o.label} {o.price ? `: Rp${Number(o.price).toLocaleString()}` : ''}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </SelectContent>
-                                                    </Select>
-                                                    {priceOptions.length === 0 && (
-                                                        <div className="mt-1 text-sm text-red-500">Tidak ada harga untuk produk ini</div>
-                                                    )}
-                                                </div>
-                                                {/* Additional Product Multi‑Select */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Additional Produk</Label>
-                                                    <div className="max-h-32 overflow-y-auto rounded border px-2 py-1">
-                                                        {customerProducts.map((p) => (
-                                                            <div key={p.id} className="flex items-center gap-2">
-                                                                <input
-                                                                    type="checkbox"
-                                                                    checked={item.additional_product_ids?.includes(p.id.toString())}
-                                                                    onChange={(e) => {
-                                                                        const checked = e.target.checked;
-                                                                        const val = p.id.toString();
-                                                                        let next = item.additional_product_ids?.slice() || [];
-
-                                                                        if (checked) {
-                                                                            if (!next.includes(val)) next.push(val);
-                                                                        } else {
-                                                                            next = next.filter((v) => v !== val);
-                                                                        }
-
-                                                                        updateOrderItem(idx, 'additional_product_ids', next);
-
-                                                                        // Generate harga tambahan
-                                                                        const additionalPrices = getAdditionalProductPrices(next, item.price_type);
-                                                                        updateOrderItem(idx, 'additional_product_prices', additionalPrices);
-                                                                    }}
-                                                                    disabled={
-                                                                        productsLoading || !data.customer_id || p.id.toString() === item.product_id // ⬅️ disable kalau sama dengan produk utama
-                                                                    }
-                                                                />
-                                                                <label>{p.service_type}</label>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                                {/* Container */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Nomor Kontainer</Label>
-                                                    <Input
-                                                        value={item.container_number}
-                                                        onChange={(e) => updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())}
-                                                        placeholder="EMCU1234567"
-                                                        maxLength={11}
-                                                    />
-                                                    {hasDuplicateContainer(idx) && (
-                                                        <p className="text-sm text-red-500">Nomor kontainer sudah dipakai</p>
-                                                    )}
-                                                </div>
-                                                {/* Rekam Suhu */}
-                                                {requiresTemp && (
-                                                    <div className="flex items-end">
-                                                        <Button type="button" variant="outline" onClick={() => openTempModal(idx)}>
-                                                            Rekam Suhu
-                                                        </Button>
-                                                    </div>
+                                    <div
+                                        key={idx}
+                                        className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4 transition-all hover:border-gray-300"
+                                    >
+                                        {/* Card Header */}
+                                        <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                                            <div className="flex items-center gap-2.5">
+                                                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                                                    {idx + 1}
+                                                </span>
+                                                <h3 className="text-sm font-bold text-gray-900">
+                                                    Layanan #{idx + 1}
+                                                </h3>
+                                                {item.container_number && (
+                                                    <span className="font-mono text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded border border-blue-200">
+                                                        {item.container_number}
+                                                    </span>
+                                                )}
+                                                {product && (
+                                                    <span className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded border border-gray-200">
+                                                        {product.service_type}
+                                                    </span>
                                                 )}
                                             </div>
 
-                                            {/* Date, Entry, EIR, Exit, Commodity, Country */}
-                                            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                                                <div>
-                                                    <Label>Negara</Label>
-                                                    <Input
-                                                        value={item.country}
-                                                        onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
-                                                        placeholder="Negara Asal / tujuan"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Nama Kapal (Vessel)</Label>
-                                                    <Input
-                                                        value={item.vessel || ''}
-                                                        onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
-                                                        placeholder="Nama Kapal"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal Masuk</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.entry_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'entry_date', e.target.value)}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal EIR</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.eir_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'eir_date', e.target.value)}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal Keluar</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.exit_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'exit_date', e.target.value)}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Komoditi</Label>
-                                                    <Input
-                                                        value={item.commodity}
-                                                        onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
-                                                        placeholder="Contoh: Barang Elektronik"
-                                                    />
-                                                </div>
-                                            </div>
-                                            {/* Remove Item */}
                                             {data.order_items.length > 1 && (
-                                                <div className="flex justify-end">
-                                                    <Button type="button" variant="destructive" size="icon" onClick={() => removeOrderItem(idx)}>
-                                                        <Trash2 className="h-4 w-4" />
-                                                    </Button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => removeOrderItem(idx)}
+                                                    className="inline-flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors cursor-pointer"
+                                                >
+                                                    <Trash2 className="h-3.5 w-3.5" />
+                                                    Hapus
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        {/* Row 1: Produk, Harga, Nomor Kontainer */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            {/* Produk */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Produk / Layanan <span className="text-red-500">*</span>
+                                                </Label>
+                                                <SearchableSelect
+                                                    options={customerProducts.map((p) => ({
+                                                        value: p.id.toString(),
+                                                        label: p.service_type,
+                                                        subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
+                                                    }))}
+                                                    value={item.product_id}
+                                                    onChange={(val) => {
+                                                        updateOrderItem(idx, 'product_id', val);
+                                                        updateOrderItem(idx, 'price_type', undefined);
+                                                    }}
+                                                    placeholder={
+                                                        productsLoading
+                                                            ? 'Memuat layanan...'
+                                                            : data.customer_id
+                                                              ? 'Pilih Layanan Utama'
+                                                              : 'Pilih Customer terlebih dahulu'
+                                                    }
+                                                    searchPlaceholder="Cari layanan..."
+                                                    disabled={!data.customer_id || productsLoading}
+                                                    showClear
+                                                />
+                                            </div>
+
+                                            {/* Pilih Harga */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Pilih Harga <span className="text-red-500">*</span>
+                                                </Label>
+                                                <Select
+                                                    value={item.price_type}
+                                                    onValueChange={(val) =>
+                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | 'global')
+                                                    }
+                                                    disabled={!item.product_id || priceOptions.length === 0}
+                                                >
+                                                    <SelectTrigger className="h-10">
+                                                        <SelectValue placeholder="Pilih Tipe Harga" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {priceOptions.map((o) => (
+                                                            <SelectItem key={o.value} value={o.value}>
+                                                                {o.label}{' '}
+                                                                {o.price
+                                                                    ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
+                                                                    : ''}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
+                                                {item.product_id && priceOptions.length === 0 && (
+                                                    <p className="text-[11px] text-red-500">
+                                                        Tidak ada harga terdaftar untuk produk ini
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            {/* Nomor Kontainer */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Nomor Kontainer <span className="text-red-500">*</span>
+                                                </Label>
+                                                <Input
+                                                    value={item.container_number}
+                                                    onChange={(e) =>
+                                                        updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
+                                                    }
+                                                    placeholder="Contoh: EMCU1234567"
+                                                    maxLength={11}
+                                                    className="h-10 font-mono text-sm tracking-wider"
+                                                />
+                                                {hasDuplicateContainer(idx) && (
+                                                    <p className="text-[11px] text-red-500 font-medium">
+                                                        Nomor kontainer sudah dipakai pada layanan lain
+                                                    </p>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        {/* Row 2: Additional Products */}
+                                        <div className="space-y-2 pt-2 border-t border-gray-100">
+                                            <div className="flex items-center justify-between">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Additional Produk (Produk Tambahan)
+                                                </Label>
+                                                <span className="text-[11px] text-gray-400">
+                                                    {item.additional_product_ids?.length || 0} dipilih
+                                                </span>
+                                            </div>
+
+                                            {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 ? (
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-40 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
+                                                    {customerProducts
+                                                        .filter((p) => p.id.toString() !== item.product_id)
+                                                        .map((p) => {
+                                                            const isChecked = item.additional_product_ids?.includes(p.id.toString());
+                                                            return (
+                                                                <label
+                                                                    key={p.id}
+                                                                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border text-xs font-medium cursor-pointer transition-all ${
+                                                                        isChecked
+                                                                            ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold'
+                                                                            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+                                                                    }`}
+                                                                >
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        checked={isChecked}
+                                                                        onChange={(e) => {
+                                                                            const checked = e.target.checked;
+                                                                            const val = p.id.toString();
+                                                                            let next = item.additional_product_ids?.slice() || [];
+
+                                                                            if (checked) {
+                                                                                if (!next.includes(val)) next.push(val);
+                                                                            } else {
+                                                                                next = next.filter((v) => v !== val);
+                                                                            }
+
+                                                                            updateOrderItem(idx, 'additional_product_ids', next);
+                                                                            const additionalPrices = getAdditionalProductPrices(next, item.price_type);
+                                                                            updateOrderItem(idx, 'additional_product_prices', additionalPrices);
+                                                                        }}
+                                                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                                                    />
+                                                                    <span className="truncate">{p.service_type}</span>
+                                                                </label>
+                                                            );
+                                                        })}
+                                                </div>
+                                            ) : (
+                                                <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                    {data.customer_id
+                                                        ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
+                                                        : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
                                                 </div>
                                             )}
                                         </div>
+
+                                        {/* Row 3: Pengiriman & Muatan */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-gray-100">
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Negara Asal / Tujuan</Label>
+                                                <Input
+                                                    value={item.country}
+                                                    onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
+                                                    placeholder="Contoh: Indonesia, China"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Nama Kapal (Vessel)</Label>
+                                                <Input
+                                                    value={item.vessel || ''}
+                                                    onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
+                                                    placeholder="Contoh: KMTC Jakarta"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Komoditi</Label>
+                                                <Input
+                                                    value={item.commodity}
+                                                    onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
+                                                    placeholder="Contoh: Barang Elektronik"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Row 4: Jadwal Tanggal & Waktu */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Masuk</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.entry_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'entry_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam EIR</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.eir_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'eir_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Keluar</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.exit_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'exit_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Row 5: Rekam Suhu Banner (Jika produk memerlukan rekam suhu) */}
+                                        {requiresTemp && (
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-lg border border-cyan-200 bg-cyan-50/70 text-cyan-900 mt-2">
+                                                <div className="flex items-center gap-2.5">
+                                                    <Thermometer className="h-5 w-5 text-cyan-600 shrink-0" />
+                                                    <div>
+                                                        <p className="text-xs font-bold text-cyan-950">
+                                                            Layanan ini memerlukan pencatatan suhu kontainer
+                                                        </p>
+                                                        <p className="text-[11px] text-cyan-700">
+                                                            {Object.keys(item.temperature || {}).length > 0
+                                                                ? `${Object.keys(item.temperature || {}).length} tanggal suhu telah dicatat`
+                                                                : 'Belum ada data suhu yang direkam untuk kontainer ini.'}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <Button
+                                                    type="button"
+                                                    variant="outline"
+                                                    size="sm"
+                                                    onClick={() => openTempModal(idx)}
+                                                    className="border-cyan-300 bg-white text-cyan-800 hover:bg-cyan-100 text-xs font-semibold gap-1.5 self-start sm:self-center"
+                                                >
+                                                    <Thermometer className="h-3.5 w-3.5 text-cyan-600" />
+                                                    Rekam Suhu
+                                                </Button>
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })}
-                            <Button type="button" variant="outline" size="sm" onClick={addOrderItem}>
-                                + Tambah Layanan
-                            </Button>
+
+                            {/* Tombol Tambah Layanan */}
+                            <button
+                                type="button"
+                                onClick={addOrderItem}
+                                className="w-full py-4 border-2 border-dashed border-gray-300 hover:border-blue-500 hover:bg-blue-50/50 hover:text-blue-700 text-gray-600 font-semibold text-xs flex items-center justify-center gap-2 rounded-xl transition-all cursor-pointer"
+                            >
+                                <Plus className="h-4 w-4" />
+                                Tambah Layanan / Kontainer Baru
+                            </button>
                         </div>
 
                         {/* Hidden Inputs */}
                         {useOrderId && <input type="hidden" name="order_id" value={currentOrderId} />}
                         <input type="hidden" name="order_items" value={JSON.stringify(data.order_items)} />
+
+                        {/* Submit Button & Actions */}
+                        <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
+                            <Button variant="outline" asChild>
+                                <Link href="/orders" className="text-xs font-semibold">
+                                    Batal
+                                </Link>
+                            </Button>
+                            <Button
+                                type="submit"
+                                disabled={processing}
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 text-xs shadow-sm flex items-center gap-2"
+                            >
+                                {processing && <span className="mr-1 animate-spin">●</span>}
+                                {processing ? 'Memproses Order...' : 'Simpan & Buat Order'}
+                            </Button>
+                        </div>
 
                         {/* Temperature Dialog */}
                         <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
@@ -740,65 +936,82 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                 <DialogHeader>
                                     <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
                                 </DialogHeader>
-                                <div className="max-h-[60vh] space-y-6 overflow-y-auto pr-2">
+                                <div className="max-h-[60vh] space-y-5 overflow-y-auto pr-2">
                                     {tempRecords.map((rec, rIdx) => (
-                                        <div key={rIdx} className="space-y-2 rounded border p-4">
-                                            <div className="flex items-center gap-2">
-                                                <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
-                                                <Input
-                                                    id={`date_${rIdx}`}
-                                                    type="date"
-                                                    value={rec.date}
-                                                    onChange={(e) => updateDate(rIdx, e.target.value)}
-                                                    className="max-w-[180px]"
-                                                />
+                                        <div key={rIdx} className="space-y-3 rounded-xl border border-gray-200 bg-white p-4 shadow-xs">
+                                            <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+                                                <div className="flex items-center gap-2">
+                                                    <Label htmlFor={`date_${rIdx}`} className="text-xs font-semibold text-gray-700">
+                                                        Tanggal:
+                                                    </Label>
+                                                    <Input
+                                                        id={`date_${rIdx}`}
+                                                        type="date"
+                                                        value={rec.date}
+                                                        onChange={(e) => updateDate(rIdx, e.target.value)}
+                                                        className="w-44 h-9 text-xs"
+                                                    />
+                                                </div>
                                                 {tempRecords.length > 1 && (
-                                                    <Button
+                                                    <button
                                                         type="button"
-                                                        size="icon"
-                                                        variant="destructive"
-                                                        className="ml-auto"
                                                         onClick={() => removeDateRecord(rIdx)}
+                                                        className="text-red-500 hover:text-red-700 p-1.5 rounded-lg hover:bg-red-50 transition-colors"
+                                                        title="Hapus Tanggal"
                                                     >
-                                                        <X className="h-4 w-4" />
-                                                    </Button>
+                                                        <Trash2 className="h-4 w-4" />
+                                                    </button>
                                                 )}
                                             </div>
-                                            <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto">
-                                                {[...Array(24)].map((_, h) => (
-                                                    <div key={h} className="flex items-center gap-2">
-                                                        <Label htmlFor={`temp_${rIdx}_${h}`}>{h.toString().padStart(2, '0')}:00</Label>
-                                                        <Input
-                                                            id={`temp_${rIdx}_${h}`}
-                                                            type="number"
-                                                            step="0.1"
-                                                            value={rec.temps[h.toString().padStart(2, '0')] || ''}
-                                                            onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                            className="w-24"
-                                                        />
-                                                    </div>
-                                                ))}
+
+                                            {/* 24 Jam Input Grid */}
+                                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                                                {[...Array(24)].map((_, h) => {
+                                                    const hourStr = h.toString().padStart(2, '0');
+                                                    return (
+                                                        <div
+                                                            key={h}
+                                                            className="flex flex-col gap-1 p-1.5 rounded-lg border border-gray-100 bg-gray-50/50"
+                                                        >
+                                                            <span className="text-[10px] font-semibold text-gray-500">
+                                                                {hourStr}:00
+                                                            </span>
+                                                            <Input
+                                                                type="number"
+                                                                step="0.1"
+                                                                placeholder="°C"
+                                                                value={rec.temps[hourStr] || ''}
+                                                                onChange={(e) => updateTemp(rIdx, h, e.target.value)}
+                                                                className="h-8 text-xs bg-white text-center font-mono"
+                                                            />
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
                                     ))}
-                                    <Button type="button" variant="outline" onClick={addDateRecord} className="flex items-center gap-2">
-                                        <PlusCircle className="h-4 w-4" /> Tambah Tanggal
+
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={addDateRecord}
+                                        className="gap-1.5 text-xs font-semibold"
+                                    >
+                                        <PlusCircle className="h-4 w-4 text-blue-600" />
+                                        Tambah Tanggal Lain
                                     </Button>
                                 </div>
                                 <DialogFooter className="gap-2">
                                     <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
                                         Batal
                                     </Button>
-                                    <Button onClick={submitTempRecords}>Simpan</Button>
+                                    <Button onClick={submitTempRecords} className="bg-blue-600 hover:bg-blue-700 text-white">
+                                        Simpan Rekam Suhu
+                                    </Button>
                                 </DialogFooter>
                             </DialogContent>
                         </Dialog>
-
-                        {/* Submit */}
-                        <Button type="submit" disabled={processing} className="w-full sm:w-auto">
-                            {processing && <span className="mr-2 animate-spin">●</span>}
-                            {processing ? 'Memproses...' : 'Buat Order'}
-                        </Button>
                     </form>
                 </div>
             </OrdersLayout>

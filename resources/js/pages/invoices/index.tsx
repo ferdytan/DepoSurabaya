@@ -44,6 +44,10 @@ interface Invoice {
     additional_qty_total?: number; // <-- NEW: total qty additional (dari backend)
     deleted_reason?: string | null; // alasan penghapusan
     deleted_at?: string | null; // tanggal penghapusan
+    deleted_by?: string | null; // siapa yang menghapus
+    is_reused?: boolean;
+    reused_by?: string | null;
+    reused_at?: string | null;
 }
 
 interface InvoicesData {
@@ -69,6 +73,10 @@ interface PageProps {
             name: string;
             email: string;
             role_id: number;
+            role?: {
+                id: number;
+                name: string;
+            };
         };
     };
 }
@@ -76,16 +84,22 @@ interface PageProps {
 export default function InvoicesIndex() {
     const page = usePage<PageProps>();
     const { invoices, filters, flash } = page.props;
-    const roleId = page.props.auth?.user?.role_id;
+    const user = page.props.auth?.user;
+    const roleId = user?.role_id;
+    const roleName = user?.role?.name;
 
     // Check if user is admin (role_id = 2) or super admin (role_id = 1)
-    const canDeleteRestore = roleId === 1 || roleId === 2;
+    const canDeleteRestore = roleId === 1 || roleId === 2 || roleName === 'Super User' || roleName === 'Admin';
 
     const [search, setSearch] = useState(filters?.search || '');
     const [isTrashed, setIsTrashed] = useState(!!filters?.trashed);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [invoiceIdToDelete, setInvoiceIdToDelete] = useState<number | null>(null);
     const [deleteReason, setDeleteReason] = useState('');
+
+    // Reuse modal state
+    const [reuseModalOpen, setReuseModalOpen] = useState(false);
+    const [invoiceToReuse, setInvoiceToReuse] = useState<Invoice | null>(null);
 
     // Sync isTrashed with filters.trashed from server
     useEffect(() => {
@@ -129,15 +143,21 @@ export default function InvoicesIndex() {
         }
     };
 
-    const handleRestore = (id: number) => {
+    const handleReuseClick = (inv: Invoice) => {
         if (!canDeleteRestore) {
-            alert('Anda tidak memiliki izin untuk memulihkan invoice.');
+            alert('Anda tidak memiliki izin untuk me-reuse invoice.');
             return;
         }
-        if (confirm('Apakah Anda yakin ingin memulihkan invoice ini?')) {
-            router.post(`/invoices/${id}/restore`, {}, {
+        setInvoiceToReuse(inv);
+        setReuseModalOpen(true);
+    };
+
+    const confirmReuse = () => {
+        if (invoiceToReuse) {
+            router.post(`/invoices/${invoiceToReuse.id}/reuse`, {}, {
                 onSuccess: () => {
-                    router.reload({ only: ['invoices'] });
+                    setReuseModalOpen(false);
+                    setInvoiceToReuse(null);
                 },
             });
         }
@@ -166,8 +186,13 @@ export default function InvoicesIndex() {
                     {/* Toggle Trashed */}
                     {canDeleteRestore && (
                         <div className="flex items-center justify-between">
-                            <Button variant="outline" onClick={toggleTrashed}>
-                                {isTrashed ? 'Sembunyikan Invoice Dihapus' : 'Tampilkan Invoice Dihapus'}
+                            <Button
+                                variant={isTrashed ? 'secondary' : 'outline'}
+                                onClick={toggleTrashed}
+                                className="inline-flex items-center gap-2"
+                            >
+                                <RotateCcw className="h-4 w-4" />
+                                {isTrashed ? '← Kembali ke Invoice Aktif' : 'Tampilkan Invoice yang Dihapus'}
                             </Button>
                         </div>
                     )}
@@ -210,7 +235,8 @@ export default function InvoicesIndex() {
                                     <TableHead>Jumlah Kontainer</TableHead>
                                     <TableHead>Total</TableHead>
                                     <TableHead>Status</TableHead>
-                                    <TableHead>Dibuat Pada</TableHead>
+                                    <TableHead>{isTrashed ? 'Dihapus Pada' : 'Dibuat Pada'}</TableHead>
+                                    {isTrashed && <TableHead>Dihapus Oleh</TableHead>}
                                     {isTrashed && <TableHead>Alasan Dihapus</TableHead>}
                                     <TableHead className="text-right">Aksi</TableHead>
                                 </TableRow>
@@ -223,7 +249,19 @@ export default function InvoicesIndex() {
 
                                         return (
                                             <TableRow key={invoice.id} className="group">
-                                                <TableCell className="py-3 font-medium">{invoice.invoice_number}</TableCell>
+                                                <TableCell className="py-3 font-medium">
+                                                    <div className="flex items-center gap-1.5">
+                                                        <span>{invoice.invoice_number}</span>
+                                                        {invoice.is_reused && !isTrashed && (
+                                                            <span
+                                                                className="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10"
+                                                                title={`Di-reuse oleh ${invoice.reused_by || 'Admin'}`}
+                                                            >
+                                                                Reused
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </TableCell>
                                                 <TableCell className="py-3">{invoice.customer.name}</TableCell>
 
                                                 <TableCell className="py-3">
@@ -253,24 +291,29 @@ export default function InvoicesIndex() {
                                                 </TableCell>
 
                                                 {isTrashed && (
-                                                    <TableCell className="py-3">
+                                                    <TableCell className="py-3 font-medium text-gray-700">
+                                                        {invoice.deleted_by || 'Admin'}
+                                                    </TableCell>
+                                                )}
+
+                                                {isTrashed && (
+                                                    <TableCell className="py-3 text-red-600">
                                                         {invoice.deleted_reason || '-'}
                                                     </TableCell>
                                                 )}
 
                                                 <TableCell className="py-3 text-right">
                                                     {isTrashed ? (
-                                                        // Mode Recycle Bin - Tampilkan tombol restore
+                                                        // Mode Recycle Bin - Tampilkan tombol Reuse
                                                         canDeleteRestore && (
                                                             <Button
                                                                 size="sm"
-                                                                variant="outline"
-                                                                onClick={() => handleRestore(invoice.id)}
-                                                                className="inline-flex items-center gap-1"
-                                                                title="Pulihkan Invoice"
+                                                                onClick={() => handleReuseClick(invoice)}
+                                                                className="inline-flex items-center gap-1 bg-emerald-600 text-white hover:bg-emerald-700"
+                                                                title="Reuse Nomor Invoice"
                                                             >
                                                                 <RotateCcw className="h-4 w-4" />
-                                                                Pulihkan
+                                                                Reuse
                                                             </Button>
                                                         )
                                                     ) : (
@@ -326,8 +369,8 @@ export default function InvoicesIndex() {
                                     })
                                 ) : (
                                     <TableRow>
-                                        <TableCell colSpan={isTrashed ? 9 : 8} className="py-8 text-center text-sm text-gray-500">
-                                            Belum ada invoice.
+                                        <TableCell colSpan={isTrashed ? 10 : 8} className="py-8 text-center text-sm text-gray-500">
+                                            {isTrashed ? 'Tidak ada invoice yang dihapus.' : 'Belum ada invoice.'}
                                         </TableCell>
                                     </TableRow>
                                 )}
@@ -385,6 +428,30 @@ export default function InvoicesIndex() {
                                 className="bg-red-600 hover:bg-red-700"
                             >
                                 Hapus Invoice
+                            </AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
+
+                {/* Modal Konfirmasi Reuse */}
+                <AlertDialog open={reuseModalOpen} onOpenChange={setReuseModalOpen}>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Reuse Nomor Invoice</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                Apakah Anda yakin ingin menggunakan kembali (reuse) nomor invoice{' '}
+                                <strong className="text-gray-900">{invoiceToReuse?.invoice_number}</strong>?
+                                <br /><br />
+                                Nomor invoice ini akan digunakan kembali. Anda akan diarahkan ke form pembuatan invoice di mana Anda dapat bebas <strong>mengganti Customer</strong>, <strong>memilih Nomor Order / AJU</strong> yang baru, serta menyesuaikan seluruh rincian kontainer dan layanan.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogCancel onClick={() => setReuseModalOpen(false)}>Batal</AlertDialogCancel>
+                            <AlertDialogAction
+                                onClick={confirmReuse}
+                                className="bg-emerald-600 text-white hover:bg-emerald-700"
+                            >
+                                Ya, Reuse Nomor Invoice
                             </AlertDialogAction>
                         </AlertDialogFooter>
                     </AlertDialogContent>

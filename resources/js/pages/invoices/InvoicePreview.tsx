@@ -1,10 +1,12 @@
 import { Button } from '@/components/ui/button';
 import AppLayout from '@/layouts/app-layout';
 import InvoicesLayout from '@/layouts/invoices/layout';
+import { terbilang as toTerbilangWords } from '@/lib/terbilang';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { ArrowLeft, CheckCircle2, Printer } from 'lucide-react';
+import React, { useState } from 'react';
 
-// ==== Types (sama seperti ShowInvoice) ====
+// ==== Types ====
 interface AdditionalProduct {
     id: number;
     service_type?: string;
@@ -17,6 +19,8 @@ interface Product {
 interface OrderItem {
     id: number;
     container_number: string;
+    entry_date?: string | null;
+    exit_date?: string | null;
     price_value: number | string;
     price_type?: string;
     product?: Product;
@@ -43,6 +47,7 @@ interface Company {
 }
 
 interface InvoicePreviewProps {
+    reuse_id?: number | null;
     customer: Customer;
     invoice_number: string;
     order: Order;
@@ -63,132 +68,79 @@ type PageProps = { preview: InvoicePreviewProps; company?: Company };
 export default function InvoicePreview() {
     const page = usePage<PageProps>();
     const { preview, company } = page.props;
-    const { customer, invoice_number, order, period_start, period_end, status, terbilang, show_period = true, discount = 0 } = preview;
+    const {
+        customer,
+        invoice_number,
+        order,
+        period_start,
+        period_end,
+        show_period = true,
+        discount = 0,
+    } = preview;
 
     const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
     const rupiah = (n: number) => Number(n || 0).toLocaleString('id-ID');
+
+    // Format Tanggal / Jam: "8 Sep 2026 ; 23.41"
+    const formatDateTimeSample = (d?: string | null) => {
+        if (!d) return '-';
+        try {
+            const date = new Date(d);
+            if (isNaN(date.getTime())) return '-';
+            const day = date.getDate();
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            const hours = pad(date.getHours());
+            const minutes = pad(date.getMinutes());
+            return `${day} ${month} ${year} ; ${hours}.${minutes}`;
+        } catch {
+            return '-';
+        }
+    };
+
+    // Format tanggal kota Surabaya: "22 - 05 -2025"
+    const formatSurabayaDate = (d?: string | null) => {
+        const date = d ? new Date(d) : new Date();
+        if (isNaN(date.getTime())) return new Date().toLocaleDateString('id-ID');
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        return `${pad(date.getDate())} - ${pad(date.getMonth() + 1)} - ${date.getFullYear()}`;
+    };
+
+    const formatPhone = (phone?: string) => {
+        if (!phone) return 'Telp. 031-353 9484, 031-3539485';
+        const clean = phone.trim();
+        return /^telp\.?/i.test(clean) ? clean : `Telp. ${clean}`;
+    };
+
+    const formatFax = (fax?: string) => {
+        if (!fax) return 'Fax. 031-3539482';
+        const clean = fax.trim();
+        return /^fax\.?/i.test(clean) ? clean : `Fax. ${clean}`;
+    };
 
     // --- State Qty untuk Additional Products ---
     const [addQty, setAddQty] = useState<Record<string, number>>(() => {
         const m: Record<string, number> = {};
         for (const item of order.order_items) {
             for (const ap of item.additional_products ?? []) {
-                // Gunakan quantity default 0 jika tidak ada
-                m[`${item.id}:${ap.id}`] = Number(ap.pivot?.quantity ?? 0);
+                m[`${item.id}:${ap.id}`] = Number(ap.pivot?.quantity ?? 1);
             }
         }
         return m;
     });
 
-    const printInvoice = () => {
-        const printContent = document.getElementById('invoice-content');
-        if (!printContent) return;
-
-        const printWindow = window.open('', '_blank', 'width=800,height=600');
-        if (!printWindow) {
-            alert('Pop-up diblokir. Mohon izinkan pop-up untuk fitur print.');
-            return;
-        }
-
-        // Salin style dari halaman asli (opsional, bisa diskip jika tidak perlu)
-        const styles = Array.from(document.styleSheets).reduce((acc, sheet) => {
-            try {
-                const rules = sheet.cssRules
-                    ? Array.from(sheet.cssRules)
-                          .map((r) => r.cssText)
-                          .join('')
-                    : '';
-                return acc + `<style>${rules}</style>`;
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            } catch (e) {
-                return acc + `<link rel="stylesheet" href="${sheet.href}">`;
-            }
-        }, '');
-
-        const content = printContent.outerHTML;
-
-        printWindow.document.write(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Invoice ${invoice_number}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        ${styles}
-        <style>
-          /* Reset untuk cetakan */
-          body {
-            margin: 0;
-            padding: 1cm;
-            font-size: 10pt;
-            color: black;
-            font-family: Arial, sans-serif;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-
-          @page {
-            margin: 1.5cm;
-            size: A4 portrait;
-          }
-
-          /* Hilangkan border, shadow, dan tambahan visual yang tidak perlu */
-          #invoice-content {
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            background: white !important;
-            margin: 0 auto !important;
-            max-width: 100% !important;
-            width: 100% !important;
-            padding: 0 !important;
-          }
-
-          #invoice-content * {
-            box-shadow: none !important;
-            background: transparent !important;
-          }
-
-          /* Border tabel untuk cetakan */
-          #invoice-content table,
-          #invoice-content th,
-          #invoice-content td {
-            border: 1px solid #000 !important;
-            border-collapse: collapse;
-          }
-          #invoice-content th,
-          #invoice-content td {
-            padding: 4px;
-            vertical-align: top;
-          }
-          #invoice-content thead {
-            background-color: #f3f4f6 !important;
-          }
-        </style>
-      </head>
-      <body>
-        ${content}
-      </body>
-    </html>
-  `);
-
-        printWindow.document.close();
-
-        printWindow.onload = () => {
-            printWindow.print();
-            // printWindow.close(); // opsional: uncomment jika ingin otomatis tutup
-        };
-    };
-
-    const getQty = (itemId: number, prodId: number) => addQty[`${itemId}:${prodId}`] ?? 0; // Diubah dari 1 ke 0
+    const getQty = (itemId: number, prodId: number) => addQty[`${itemId}:${prodId}`] ?? 0;
     const setQty = (itemId: number, prodId: number, val: number) => {
-        // Diubah untuk memungkinkan 0
         const v = Number.isFinite(val) && val >= 0 ? Math.floor(val) : 0;
         setAddQty((prev) => ({ ...prev, [`${itemId}:${prodId}`]: v }));
     };
 
     // --- Hitung ulang total berdasarkan qty terbaru ---
     const materai = Number(preview.materai ?? 0);
+    const safeDiscount = Number(discount || 0);
+
     const calc = () => {
         let subtotal = 0;
         for (const item of order.order_items) {
@@ -199,11 +151,14 @@ export default function InvoicePreview() {
                 subtotal += price * qty;
             }
         }
-        const ppn = Math.round(subtotal * 0.11);
-        const grand_total = subtotal + ppn + materai;
-        return { subtotal, ppn, grand_total };
+        const afterDiscount = Math.max(0, subtotal - safeDiscount);
+        const ppn = Math.round(afterDiscount * 0.11);
+        const grand_total = afterDiscount + ppn + materai;
+        return { subtotal, afterDiscount, ppn, grand_total };
     };
+
     const totals = calc();
+    const liveTerbilang = toTerbilangWords(totals.grand_total);
 
     const [isSaving, setIsSaving] = useState(false);
 
@@ -216,18 +171,21 @@ export default function InvoicePreview() {
     );
 
     const formData = {
+        reuse_id: preview.reuse_id || null,
         invoice_number,
         customer_id: customer.id,
         order_id: order.id,
         period_start,
         period_end,
         subtotal: totals.subtotal,
+        discount: safeDiscount,
         ppn: totals.ppn,
         materai,
         grand_total: totals.grand_total,
-        terbilang,
+        terbilang: liveTerbilang,
         order_item_ids: order.order_items.map((item) => item.id),
         additional_product_quantities: additionalSelections,
+        show_period,
     };
 
     const handleSaveInvoice = (e: React.FormEvent) => {
@@ -239,242 +197,431 @@ export default function InvoicePreview() {
         });
     };
 
+    // Fungsi cetak A4 (mencetak tampilan asli yang rapi dan presisi)
+    const printInvoice = () => {
+        window.print();
+    };
+
+    // Struktur urutan baris
+    let runningNo = 1;
+
     return (
         <AppLayout>
-            <Head title="Preview Invoice" />
+            <Head title={`Preview Invoice - Order #${order.id}`} />
 
             <style>{`
                 @media print {
-                    body { font-size: 10pt; color: black; }
-                    .print\\:hidden { display: none !important; }
-                    .no-break-inside { break-inside: avoid; }
-                    table { width: 100% !important; table-layout: auto; page-break-inside: avoid; }
-                    th, td { white-space: normal; word-wrap: break-word; padding: 4px; }
-                    .bg-gray-50, .bg-gray-100 { background-color: transparent !important; }
+                    @page {
+                        size: A4 portrait;
+                        margin: 8mm 10mm;
+                    }
+                    html, body {
+                        background: #fff !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        -webkit-print-color-adjust: exact !important;
+                        print-color-adjust: exact !important;
+                    }
+                    aside, header, nav, [data-sidebar], .print\\:hidden, button, [role="navigation"] {
+                        display: none !important;
+                    }
+                    .screen-only {
+                        display: none !important;
+                    }
+                    .print-only {
+                        display: inline !important;
+                    }
+                    .overflow-x-hidden {
+                        overflow: visible !important;
+                    }
+                    main, section {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                    }
+                    .px-4, .py-6, .pb-12, .space-y-4, .space-y-8, .space-y-12 {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                    }
+                    #invoice-content {
+                        display: block !important;
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        margin: 0 auto !important;
+                        padding: 16px 20px !important;
+                        border: 1.5px solid #000 !important;
+                        box-sizing: border-box !important;
+                        background: #fff !important;
+                        box-shadow: none !important;
+                    }
+                    img.company-logo {
+                        height: 46px !important;
+                        max-height: 46px !important;
+                        width: auto !important;
+                        object-fit: contain !important;
+                    }
+                    table {
+                        width: 100% !important;
+                        border-collapse: collapse !important;
+                    }
                     .border { border: 1px solid #000 !important; }
-                    .h-16 { height: 3rem; }
-                    .text-sm { font-size: 9pt; }
-                    .text-xs { font-size: 8pt; }
-                    .tracking-wide { letter-spacing: normal; }
-                    .mt-6, .mb-4, .py-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+                    .border-t { border-top: 1px solid #000 !important; }
+                    .border-b { border-bottom: 1px solid #000 !important; }
+                    .border-l { border-left: 1px solid #000 !important; }
+                    .border-r { border-right: 1px solid #000 !important; }
+                    .border-0 { border: none !important; }
                 }
-
-                @media screen {
-                    .print\\:hidden { display: inherit; }
-                }
-
-                .md\\:flex-row { display: flex !important; flex-direction: row !important; }
-                .md\\:justify-between { justify-content: space-between !important; }
-                .md\\:items-end { align-items: flex-end !important; }
-                .w-full { width: 100% !important; }
-                .md\\:w-1\\/2 { width: 48% !important; display: inline-block; vertical-align: top; }
-                .no-break-inside { break-inside: avoid; page-break-inside: avoid; }
-                .payment-and-signature { break-inside: avoid; page-break-inside: avoid; }
             `}</style>
 
             <InvoicesLayout>
-                <form onSubmit={handleSaveInvoice}>
-                    <div id="invoice-content" className="mx-auto max-w-5xl space-y-6 rounded-xl border bg-white p-8 shadow">
-                        {/* Header Perusahaan */}
-                        <div className="flex items-start justify-between">
-                            <div className="flex items-center gap-4">
-                                <img
-                                    src="/logo.png"
-                                    alt="Company Logo"
-                                    className="h-16 w-auto object-contain"
-                                />
-                                <div>
-                                    <h2 className="mb-1 text-2xl font-semibold">{company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}</h2>
-                                    <div>{company?.address ?? 'Jl. Tanjung Sadari No. 90'}</div>
-                                    <div>{company?.phone ?? '031-353 9484, 031-3539485'}</div>
+                <div className="mx-auto max-w-4xl space-y-4 pb-12">
+                    {/* Invoice Printable Frame Container */}
+                    <div
+                        id="invoice-content"
+                        className="mx-auto w-full border-[1.5px] border-black bg-white p-5 text-black shadow-xs print:m-0 print:w-full print:border-[1.5px] print:border-black print:p-5"
+                    >
+                        {/* 1. Header Perusahaan */}
+                        <div className="flex items-center gap-3.5 pb-1.5">
+                            <img
+                                src={company?.logo || '/logo.png'}
+                                alt="DSS Logo"
+                                style={{ height: '46px', maxHeight: '46px', width: 'auto', objectFit: 'contain' }}
+                                className="company-logo h-11 w-auto object-contain shrink-0"
+                            />
+                            <div>
+                                <h1 className="text-xl font-bold tracking-tight text-black leading-tight">
+                                    {company?.name ?? 'PT. DEPO SURABAYA SEJAHTERA'}
+                                </h1>
+                                <div className="text-xs text-black font-medium leading-relaxed">
+                                    {company?.address ?? 'Jl. Tanjung Sadari No. 90'}
+                                </div>
+                                <div className="text-xs text-black font-medium leading-relaxed">
+                                    <span>{formatPhone(company?.phone)}</span>
+                                    <span className="ml-4">{formatFax(company?.fax)}</span>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                {show_period && (
-                                    <div className="font-semibold">
-                                        Periode:{' '}
-                                        <span className="font-normal">
-                                            {dateID(period_start)} – {dateID(period_end)}
+                        </div>
+
+                        {/* Garis Pembatas Header */}
+                        <div className="border-t-[1.5px] border-black my-1.5" />
+
+                        {/* 2. Customer & Informasi Invoice */}
+                        <div className="flex justify-between items-start text-xs font-medium pb-1.5 pt-0.5">
+                            <div className="space-y-0.5">
+                                <div className="flex">
+                                    <span className="w-24 font-bold text-gray-900">Customer</span>
+                                    <span>: {customer.name ?? '-'}</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <span className="w-24 font-bold text-gray-900">Invoice No</span>
+                                    <span>: {invoice_number || '(Draft Otomatis)'}</span>
+                                    {preview.reuse_id && (
+                                        <span className="ml-2 inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800 border border-amber-300 print:hidden">
+                                            REUSE
                                         </span>
+                                    )}
+                                </div>
+                                {order?.order_id && (
+                                    <div className="flex">
+                                        <span className="w-24 font-bold text-gray-900">No Order/AJU</span>
+                                        <span>: {order.order_id}</span>
                                     </div>
                                 )}
-                                <div className="font-semibold print:hidden">
-                                    Status: <span className="text-yellow-500">{status}</span>
+                            </div>
+
+                            {show_period && (
+                                <div className="text-right text-xs">
+                                    <span className="font-bold">Periode:</span>{' '}
+                                    <span>
+                                        {dateID(period_start)} – {dateID(period_end)}
+                                    </span>
                                 </div>
-                            </div>
+                            )}
                         </div>
 
-                        {/* Informasi Invoice */}
-                        <div className="mt-6">
-                            <div className="mb-1">
-                                <span className="font-bold">Customer:</span> {customer.name}
-                            </div>
-                            <div className="mb-1">
-                                <span className="font-bold">Invoice No:</span> {invoice_number}
-                            </div>
-                            <div className="mb-3">
-                                <span className="font-bold">No Order/AJU:</span> {order.order_id}
-                            </div>
-                        </div>
-
-                        {/* Tabel Item */}
-                        <table className="mt-2 mb-4 w-full table-fixed border text-sm">
-                            <thead className="bg-gray-100">
-                                <tr>
-                                    <th className="border px-2 py-1">No</th>
-                                    <th className="border px-2 py-1">Container</th>
-                                    <th className="border px-2 py-1">Service</th>
-                                    <th className="border px-2 py-1">Harga</th>
-                                    <th className="border px-2 py-1">Additional Product</th>
-                                    <th className="border px-2 py-1">Total</th>
-                                </tr>
-                            </thead>
+                        {/* 3. Tabel Layanan & Kontainer (Langsung di bawah AJU tanpa HR line pemisah) */}
+                        <table className="w-full border-collapse border border-black text-xs">
+                            <colgroup>
+                                <col className="w-[6%]" />
+                                <col className="w-[46%]" />
+                                <col className="w-[16%]" />
+                                <col className="w-[10%]" />
+                                <col className="w-[22%]" />
+                            </colgroup>
                             <tbody>
-                                {order.order_items.map((item, idx) => {
-                                    const main = Number(item.price_value ?? 0);
-                                    const addTotal = (item.additional_products ?? []).reduce((sum, ap) => {
-                                        const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
-                                        const qty = getQty(item.id, ap.id);
-                                        return sum + price * qty;
-                                    }, 0);
+                                {order.order_items.map((item, itemIdx) => {
+                                    const mainPrice = Number(item.price_value || 0);
+                                    const itemNo = runningNo++;
+
                                     return (
-                                        <tr key={item.id}>
-                                            <td className="border px-2 py-1 text-center">{idx + 1}</td>
-                                            <td className="border px-2 py-1 text-center">{item.container_number}</td>
-                                            <td className="border px-2 py-1 text-center">
-                                                {item.product?.service_type
-                                                    ? `${item.product.service_type} (${item.price_type ?? '-'})`
-                                                    : (item.price_type ?? '-')}
-                                            </td>
-                                            <td className="border px-2 py-1 text-right">Rp {rupiah(main)}</td>
-                                            <td className="border px-2 py-1">
-                                                {item.additional_products && item.additional_products.length > 0 ? (
-                                                    <ul className="space-y-1">
-                                                        {item.additional_products
-                                                            .filter((ap) => getQty(item.id, ap.id) > 0) // Filter produk dengan qty > 0
-                                                            .map((ap) => {
-                                                                const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
-                                                                const qty = getQty(item.id, ap.id);
-                                                                const lineTotal = price * qty;
+                                        <React.Fragment key={item.id || itemIdx}>
+                                            {/* Bar Informasi Kontainer & Waktu Gate In / Gate Out MERGED (TANPA PEMBATAS DI TENGAH) */}
+                                            <tr className="bg-gray-50/50 print:bg-transparent">
+                                                <td colSpan={5} className="border border-black px-2.5 py-1 align-top text-xs">
+                                                    <div className="flex justify-between items-start gap-4">
+                                                        <div className="font-bold text-xs pt-0.5">
+                                                            No. Kontainer : <span className="tracking-wide">{item.container_number}</span>
+                                                        </div>
+                                                        <div className="text-xs space-y-0.5">
+                                                            <div className="flex justify-end gap-3">
+                                                                <span className="font-semibold text-gray-800">Tanggal / Jam Masuk :</span>
+                                                                <span className="font-semibold">{formatDateTimeSample(item.entry_date)}</span>
+                                                            </div>
+                                                            <div className="flex justify-end gap-3">
+                                                                <span className="font-semibold text-gray-800">Tanggal / Jam Keluar :</span>
+                                                                <span className="font-semibold">{formatDateTimeSample(item.exit_date)}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
 
-                                                                return (
-                                                                    <li key={ap.id} className="text-xs leading-tight">
-                                                                        {/* Tampilan untuk layar (bisa edit) */}
-                                                                        <span className="hidden print:hidden">
-                                                                            {ap.service_type} (
-                                                                            <input
-                                                                                type="number"
-                                                                                min="0"
-                                                                                step="1"
-                                                                                value={qty}
-                                                                                onChange={(e) => setQty(item.id, ap.id, Number(e.target.value))}
-                                                                                className="inline w-12 rounded border px-1 py-0.5 text-center text-xs"
-                                                                            />{' '}
-                                                                            × Rp {rupiah(price)} = <strong>Rp {rupiah(lineTotal)}</strong>)
-                                                                        </span>
+                                            {/* Header Kolom Tabel */}
+                                            <tr className="bg-gray-100/60 print:bg-transparent font-bold text-center">
+                                                <td className="border border-black px-2 py-1 text-center">No</td>
+                                                <td className="border border-black px-2 py-1 text-left">Jasa</td>
+                                                <td className="border border-black px-2 py-1 text-right">Price</td>
+                                                <td className="border border-black px-2 py-1 text-center">Qty</td>
+                                                <td className="border border-black px-2.5 py-1 text-right">Subtotal</td>
+                                            </tr>
 
-                                                                        {/* Tampilan untuk print (hanya teks) */}
-                                                                        <span className="screen:block hidden print:inline">
-                                                                            {ap.service_type} ({qty} × Rp {rupiah(price)} ={' '}
-                                                                            <strong>Rp {rupiah(lineTotal)}</strong>)
-                                                                        </span>
-                                                                    </li>
-                                                                );
-                                                            })}
-                                                    </ul>
-                                                ) : (
-                                                    '-'
-                                                )}
-                                            </td>
-                                            <td className="border px-2 py-1 text-right">Rp {rupiah(main + addTotal)}</td>
-                                        </tr>
+                                            {/* Baris Jasa Utama */}
+                                            <tr>
+                                                <td className="border border-black px-2 py-1 text-center align-top">{itemNo}</td>
+                                                <td className="border border-black px-2 py-1 align-top">
+                                                    {item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer')}
+                                                </td>
+                                                <td className="border border-black px-2 py-1 text-right align-top">
+                                                    <div className="flex justify-between">
+                                                        <span>Rp</span>
+                                                        <span>{rupiah(mainPrice)}</span>
+                                                    </div>
+                                                </td>
+                                                <td className="border border-black px-2 py-1 text-center align-top">1</td>
+                                                <td className="border border-black px-2.5 py-1 text-right align-top">
+                                                    <div className="flex justify-between">
+                                                        <span>Rp</span>
+                                                        <span>{rupiah(mainPrice)}</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            {/* Baris Produk Tambahan (jika ada) */}
+                                            {(item.additional_products ?? [])
+                                                .filter((ap) => getQty(item.id, ap.id) > 0)
+                                                .map((ap) => {
+                                                    const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
+                                                    const qty = getQty(item.id, ap.id);
+                                                    const lineTotal = price * qty;
+                                                    const addNo = runningNo++;
+
+                                                    return (
+                                                        <tr key={ap.id}>
+                                                            <td className="border border-black px-2 py-1 text-center align-top">{addNo}</td>
+                                                            <td className="border border-black px-2 py-1 align-top">
+                                                                {ap.service_type || 'Layanan Tambahan'}
+                                                            </td>
+                                                            <td className="border border-black px-2 py-1 text-right align-top">
+                                                                <div className="flex justify-between">
+                                                                    <span>Rp</span>
+                                                                    <span>{rupiah(price)}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td className="border border-black px-2 py-1 text-center align-top">
+                                                                {/* Tampilan layar (bisa input) */}
+                                                                <span className="screen-only inline-block">
+                                                                    <input
+                                                                        type="number"
+                                                                        min="0"
+                                                                        step="1"
+                                                                        value={qty}
+                                                                        onChange={(e) => setQty(item.id, ap.id, Number(e.target.value))}
+                                                                        className="w-12 rounded border border-gray-300 px-1 py-0.5 text-center text-xs font-semibold"
+                                                                    />
+                                                                </span>
+                                                                {/* Tampilan print (teks saja) */}
+                                                                <span className="print-only hidden">{qty}</span>
+                                                            </td>
+                                                            <td className="border border-black px-2.5 py-1 text-right align-top">
+                                                                <div className="flex justify-between">
+                                                                    <span>Rp</span>
+                                                                    <span>{rupiah(lineTotal)}</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    );
+                                                })}
+                                        </React.Fragment>
                                     );
                                 })}
+
+                                {/* Baris Total (Subtotal) */}
+                                <tr>
+                                    <td colSpan={4} className="border-t border-black px-2.5 py-1 text-right font-bold">
+                                        Total :
+                                    </td>
+                                    <td className="border-t border-l border-black px-2.5 py-1 text-right font-bold">
+                                        <div className="flex justify-between">
+                                            <span>Rp</span>
+                                            <span>{rupiah(totals.subtotal)}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                {/* Baris Terbilang (Kiri: Cols 1-2) & Rincian Grand Total (Kanan: Cols 3-4 dan Col 5) */}
+                                {safeDiscount > 0 ? (
+                                    <>
+                                        <tr>
+                                            <td
+                                                colSpan={2}
+                                                rowSpan={5}
+                                                className="border-t border-black px-3 py-2 align-top text-xs"
+                                            >
+                                                <div className="font-bold mb-1">Terbilang :</div>
+                                                <div className="italic text-gray-900 leading-relaxed">
+                                                    {liveTerbilang}
+                                                </div>
+                                            </td>
+                                            <td colSpan={2} className="border-t border-black px-2.5 py-1 text-right font-medium">
+                                                Diskon :
+                                            </td>
+                                            <td className="border-t border-l border-black px-2.5 py-1 text-right font-medium">
+                                                <div className="flex justify-between">
+                                                    <span>Rp</span>
+                                                    <span>-{rupiah(safeDiscount)}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan={2} className="px-2.5 py-1 text-right font-semibold">
+                                                Grand Total :
+                                            </td>
+                                            <td className="border-l border-black px-2.5 py-1 text-right font-semibold">
+                                                <div className="flex justify-between">
+                                                    <span>Rp</span>
+                                                    <span>{rupiah(totals.afterDiscount)}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </>
+                                ) : (
+                                    <tr>
+                                        <td
+                                            colSpan={2}
+                                            rowSpan={4}
+                                            className="border-t border-black px-3 py-2 align-top text-xs"
+                                        >
+                                            <div className="font-bold mb-1">Terbilang :</div>
+                                            <div className="italic text-gray-900 leading-relaxed">
+                                                {liveTerbilang}
+                                            </div>
+                                        </td>
+                                        <td colSpan={2} className="border-t border-black px-2.5 py-1 text-right font-semibold">
+                                            Grand Total :
+                                        </td>
+                                        <td className="border-t border-l border-black px-2.5 py-1 text-right font-semibold">
+                                            <div className="flex justify-between">
+                                                <span>Rp</span>
+                                                <span>{rupiah(totals.afterDiscount)}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )}
+
+                                <tr>
+                                    <td colSpan={2} className="px-2.5 py-1 text-right">
+                                        PPN 11 % :
+                                    </td>
+                                    <td className="border-l border-black px-2.5 py-1 text-right">
+                                        <div className="flex justify-between">
+                                            <span>Rp</span>
+                                            <span>{rupiah(totals.ppn)}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colSpan={2} className="px-2.5 py-1 text-right">
+                                        Materai :
+                                    </td>
+                                    <td className="border-l border-black px-2.5 py-1 text-right">
+                                        {materai > 0 ? (
+                                            <div className="flex justify-between">
+                                                <span>Rp</span>
+                                                <span>{rupiah(materai)}</span>
+                                            </div>
+                                        ) : (
+                                            <span></span>
+                                        )}
+                                    </td>
+                                </tr>
+
+                                <tr className="font-bold text-sm">
+                                    <td colSpan={2} className="px-2.5 py-1.5 text-right">
+                                        Grand Total :
+                                    </td>
+                                    <td className="border-l border-black px-2.5 py-1.5 text-right">
+                                        <div className="flex justify-between">
+                                            <span>Rp</span>
+                                            <span>{rupiah(totals.grand_total)}</span>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
 
-                        {/* Ringkasan Total (kanan) */}
-                        <div className="flex justify-end">
-                            <table className="text-sm">
-                                <tbody>
-                                    <tr>
-                                        <td className="py-1 pr-4 text-gray-700">Total sebelum PPN</td>
-                                        <td className="text-right">Rp {rupiah(preview.subtotal)}</td>
-                                    </tr>
-                                    {discount > 0 && (
-                                        <tr>
-                                            <td className="py-1 pr-4 text-orange-600">Diskon</td>
-                                            <td className="text-right text-orange-600">- Rp {rupiah(discount)}</td>
-                                        </tr>
-                                    )}
-                                    <tr>
-                                        <td className="py-1 pr-4 text-gray-700">PPN</td>
-                                        <td className="text-right">Rp {rupiah(preview.ppn)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-1 pr-4 text-gray-700">Materai</td>
-                                        <td className="text-right">Rp {rupiah(materai)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="py-1 pr-4 font-bold">Grand Total</td>
-                                        <td className="text-right font-bold">Rp {rupiah(preview.grand_total)}</td>
-                                    </tr>
-                                    {terbilang && (
-                                        <tr>
-                                            <td colSpan={2} className="pt-2 text-xs text-gray-500 italic">
-                                                *** {terbilang} ***
-                                            </td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        {/* Pembayaran & Tanda Tangan */}
-                        <div className="no-break-inside mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-                            {/* Kiri: Pembayaran */}
-                            <div className="w-full rounded-md bg-gray-50 p-4 text-xs md:w-1/2">
-                                <div className="font-semibold">Pembayaran ke Rekening {company?.bank_name ?? 'BCA'}:</div>
-                                <div className="text-base tracking-wide">{company?.bank_account ?? '463 521 9999'}</div>
-                                <div className="mt-1 text-gray-700">{company?.bank_holder ?? 'Depo Surabaya Sejahtera'}</div>
-                            </div>
-
-                            {/* Kanan: Tanda Tangan */}
-                            <div className="w-full text-center text-xs md:w-1/2 md:text-right">
-                                <div>
-                                    Surabaya,&nbsp;
-                                    {new Intl.DateTimeFormat('id-ID', {
-                                        day: '2-digit',
-                                        month: 'long',
-                                        year: 'numeric',
-                                    }).format(new Date(period_end))}
+                        {/* 4. Footer: Pembayaran & Tanda Tangan */}
+                        <div className="mt-3 pt-1 text-xs">
+                            <div className="flex justify-between items-start">
+                                {/* Kiri: Rekening Pembayaran */}
+                                <div className="space-y-0.5 pt-1">
+                                    <div className="font-semibold">Pembayaran ke Rekening {company?.bank_name ?? 'BCA'}:</div>
+                                    <div className="text-sm font-bold tracking-wider">{company?.bank_account ?? '463 521 9999'}</div>
+                                    <div className="text-gray-800">{company?.bank_holder ?? 'Depo Surabaya Sejahtera'}</div>
                                 </div>
-                                {/* Space untuk tanda tangan dan materai */}
-                                <div
-                                    className="mt-4"
-                                    style={{
-                                        minHeight: '5rem', // Ruang untuk tanda tangan + materai
-                                        marginTop: '0.5rem',
-                                    }}
-                                ></div>
-                                <div className="font-semibold">(PT. Depo Surabaya Sejahtera)</div>
-                            </div>
-                        </div>
 
-                        {/* Tombol Aksi */}
-                        <div className="mt-6 flex justify-end gap-3 print:hidden">
-                            <Button asChild variant="outline">
-                                <Link href="/invoices/create">Kembali</Link>
-                            </Button>
-                            <Button type="button" variant="outline" onClick={printInvoice}>
-                                Print
-                            </Button>
-                            <Button type="submit" disabled={isSaving}>
-                                {isSaving ? 'Menyimpan...' : 'Simpan Invoice'}
-                            </Button>
+                                {/* Kanan: Tanggal Surabaya & Tanda Tangan (Rata Kanan Rapi & Pas di Tepi) */}
+                                <div className="space-y-1 text-right">
+                                    <div className="font-medium whitespace-nowrap">
+                                        Surabaya, {formatSurabayaDate(period_end)}
+                                    </div>
+                                    <div className="h-20" />
+                                    <div className="font-semibold whitespace-nowrap">
+                                        (PT. Depo Surabaya Sejahtera)
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </form>
+
+                    {/* Tombol Aksi */}
+                    <div className="flex flex-wrap items-center justify-end gap-3 pt-2 print:hidden">
+                        <Button variant="outline" asChild>
+                            <Link
+                                href={preview.reuse_id ? `/invoices/create?reuse_id=${preview.reuse_id}` : '/invoices/create'}
+                                className="inline-flex items-center gap-1.5 text-xs"
+                            >
+                                <ArrowLeft className="h-4 w-4" />
+                                Kembali ke Form
+                            </Link>
+                        </Button>
+                        <button
+                            type="button"
+                            onClick={printInvoice}
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 shadow-xs hover:bg-gray-50"
+                        >
+                            <Printer className="h-4 w-4" />
+                            Cetak A4
+                        </button>
+                        <Button
+                            onClick={handleSaveInvoice}
+                            disabled={isSaving}
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-sm inline-flex items-center gap-2"
+                        >
+                            <CheckCircle2 className="h-4 w-4" />
+                            {isSaving ? 'Menyimpan...' : (preview.reuse_id ? 'Simpan Invoice (Reuse)' : 'Simpan Invoice')}
+                        </Button>
+                    </div>
+                </div>
             </InvoicesLayout>
         </AppLayout>
     );

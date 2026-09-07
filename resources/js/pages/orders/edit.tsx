@@ -1,16 +1,32 @@
+import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { SearchableSelect } from '@/components/ui/searchable-select';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import AppLayout from '@/layouts/app-layout';
 import OrdersLayout from '@/layouts/orders/layout';
-import { Head, useForm } from '@inertiajs/react';
-import { Separator } from '@radix-ui/react-select';
+import { BreadcrumbItem } from '@/types';
+import { Head, Link, useForm } from '@inertiajs/react';
 import axios from 'axios';
-import { PlusCircle, Trash2, X } from 'lucide-react';
-import { Dropdown } from 'primereact/dropdown';
-import { useEffect, useRef, useState } from 'react';
+import {
+    AlertCircle,
+    FileText,
+    Layers,
+    Plus,
+    PlusCircle,
+    Thermometer,
+    Trash2,
+    X,
+} from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    { title: 'Orders', href: '/orders' },
+    { title: 'Edit Order', href: '#' },
+];
+
 // =====================
 //  Tipe Data
 // =====================
@@ -18,6 +34,7 @@ interface Customer {
     id: number;
     name: string;
 }
+
 interface Product {
     id: number;
     service_type: string;
@@ -26,16 +43,18 @@ interface Product {
     custom_price_40ft?: string;
     custom_global_price?: string;
 }
+
 interface Shipper {
     id: number;
     name: string;
 }
+
 interface TemperatureRecord {
     date: string; // YYYY-MM-DD
     temps: { [hour: string]: string };
 }
+
 interface OrderItemData {
-    // Struktur data yang dikirim/diterima dari server untuk tiap order item
     id: number;
     product_id: number;
     container_number: string;
@@ -47,8 +66,7 @@ interface OrderItemData {
     vessel?: string;
     price_type?: '20ft' | '40ft' | 'global';
     price_value?: string | number;
-    // Relasi tambahan:
-    additional_products: { id: number }[]; // daftar produk tambahan (hanya id relevan)
+    additional_products: { id: number }[];
     rekam_suhu: { tanggal: string; jam_data: { [hour: string]: string } }[];
 }
 
@@ -58,7 +76,7 @@ interface OrderProps {
     customer_id: number;
     shipper_id: number;
     no_aju: string | null;
-    fumigasi: string | null; // ✅ Tambahkan
+    fumigasi: string | null;
     items: OrderItemData[];
 }
 
@@ -74,18 +92,16 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
     // ======================
     //  Inertia Form State
     // ======================
-    // Siapkan data awal form dari prop `order`
     const initialOrderItems = order.items.map((item) => {
-        // Bentuk struktur OrderItem sesuai kebutuhan form
         const temperatureObj: { [date: string]: { [hour: string]: string } } = {};
         item.rekam_suhu.forEach((rec) => {
             temperatureObj[rec.tanggal] = rec.jam_data;
         });
         return {
             id: item.id,
-            product_id: item.product_id.toString(),
+            product_id: item.product_id ? item.product_id.toString() : '',
             additional_product_ids: item.additional_products.map((p) => p.id.toString()),
-            container_number: item.container_number,
+            container_number: item.container_number || '',
             entry_date: item.entry_date ?? '',
             eir_date: item.eir_date ?? '',
             exit_date: item.exit_date ?? '',
@@ -98,9 +114,9 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         };
     });
 
-    const getAdditionalProductPrices = (product_ids: string[], price_type: PriceType, customerProducts: Product[]): string[] => {
+    const getAdditionalProductPrices = (product_ids: string[], price_type: PriceType, productsList: Product[]): string[] => {
         return product_ids.map((id) => {
-            const p = customerProducts.find((x) => x.id.toString() === id);
+            const p = productsList.find((x) => x.id.toString() === id);
             let price = '0';
             if (p) {
                 if (price_type === '20ft') price = p.custom_price_20ft ?? '0';
@@ -115,7 +131,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         customer_id: string;
         shipper_id: string;
         no_aju: string;
-        fumigasi: string | null; // ✅ Tambahkan baris ini
+        fumigasi: string | null;
         error?: string;
         order_items: {
             id?: number;
@@ -134,30 +150,73 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             additional_product_prices?: string[];
         }[];
     }>({
-        customer_id: order.customer_id.toString(),
+        customer_id: order.customer_id ? order.customer_id.toString() : '',
         shipper_id: order.shipper_id ? order.shipper_id.toString() : '',
         no_aju: order.no_aju ?? '',
-        fumigasi: order.fumigasi ?? null, // ✅ Ambil dari prop `order.Fumigator`
+        fumigasi: order.fumigasi ?? null,
         order_items: initialOrderItems,
     });
 
     // ==================================
     //  Nomor Order vs Nomor AJU
     // ==================================
-    // Tentukan mode awal: jika order punya no_aju (manual), maka useOrderId = false.
     const [useOrderId, setUseOrderId] = useState<boolean>(!order.no_aju);
-    // currentOrderId menampung kode Order internal (selalu tersedia dari order.order_id)
     const [currentOrderId] = useState<string>(order.order_id);
 
-    // Jika user beralih ke Nomor Order Otomatis, kosongkan no_aju (supaya tidak terkirim)
     const handleSwitchToOrderId = () => {
         setUseOrderId(true);
-        setData('no_aju', ''); // hapus input no_aju jika sebelumnya terisi
+        setData('no_aju', '');
     };
     const handleSwitchToNoAju = () => {
         setUseOrderId(false);
-        // (tidak perlu mengubah currentOrderId, dan no_aju bisa diisi user)
     };
+
+    // ==================================
+    //  Fetch Products per Customer
+    // ==================================
+    const [customerProducts, setCustomerProducts] = useState<Product[]>([]);
+    const [productsLoading, setProductsLoading] = useState(false);
+    const initialLoad = useRef(true);
+
+    useEffect(() => {
+        if (data.customer_id) {
+            setProductsLoading(true);
+            axios
+                .get(`/api/customers/${data.customer_id}/products`)
+                .then((res) => {
+                    setCustomerProducts(res.data);
+                    if (!initialLoad.current) {
+                        setData(
+                            'order_items',
+                            data.order_items.map((item) => ({
+                                ...item,
+                                product_id: '',
+                                additional_product_ids: [],
+                                price_type: undefined,
+                                price_value: undefined,
+                            })),
+                        );
+                    }
+                    initialLoad.current = false;
+                })
+                .finally(() => setProductsLoading(false));
+        } else {
+            setCustomerProducts([]);
+            setData(
+                'order_items',
+                data.order_items.map((item) => ({
+                    ...item,
+                    product_id: '',
+                    additional_product_ids: [],
+                    price_type: undefined,
+                    price_value: undefined,
+                })),
+            );
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [data.customer_id]);
+
+    const getSelectedProduct = (productId: string) => customerProducts.find((p) => p.id === Number(productId));
 
     // ==================================
     //  Dynamic Order Item Helpers
@@ -166,7 +225,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         setData('order_items', [
             ...data.order_items,
             {
-                id: undefined, // id undefined menandakan item baru
+                id: undefined,
                 product_id: '',
                 additional_product_ids: [],
                 container_number: '',
@@ -193,10 +252,9 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updateOrderItem = (index: number, field: keyof (typeof data.order_items)[number], value: any) => {
         const newItems = [...data.order_items];
-        // @ts-expect-error – dynamic field assignment, may cause type conflict
+        // @ts-expect-error – dynamic field assignment
         newItems[index][field] = value;
 
-        // Jika field yang diubah adalah price_type, otomatis atur price_value sesuai produk terpilih
         if (field === 'price_type') {
             const selectedProduct = getSelectedProduct(newItems[index].product_id);
             let price_value;
@@ -207,7 +265,6 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             }
             newItems[index]['price_value'] = price_value;
 
-            // ⬇️ recompute additional prices mengikuti price_type baru
             const addIds = (newItems[index].additional_product_ids || []) as string[];
             newItems[index]['additional_product_prices'] = getAdditionalProductPrices(
                 addIds,
@@ -226,17 +283,13 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Reset error sebelumnya
         setData('error', undefined);
 
-        // Validasi: Jika fumigasi diisi, maka shipper_id wajib diisi
         if (data.fumigasi && data.fumigasi.trim() !== '' && !data.shipper_id) {
             setData('error', 'Shipper wajib diisi karena catatan Fumigator diisi.');
             return;
         }
 
-        // Submit jika lolos validasi
         put(route('orders.update', order.id));
     };
 
@@ -251,11 +304,9 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         setTempOrderIndex(index);
         const prev = data.order_items[index]?.temperature;
         if (prev && Object.keys(prev).length > 0) {
-            // convert nested object to TemperatureRecord[]
             const records: TemperatureRecord[] = Object.entries(prev).map(([date, temps]) => ({ date, temps }));
             setTempRecords(records);
         } else {
-            // default: one empty record (today's date)
             setTempRecords([
                 {
                     date: new Date().toISOString().slice(0, 10),
@@ -307,197 +358,247 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             temperature: formatted,
         };
         setData('order_items', newItems);
-        // Reset modal state
         setIsTempDialogOpen(false);
         setTempOrderIndex(null);
         setTempRecords([]);
     };
 
-    // ==================================
-    //  Fetch Products per Customer
-    // ==================================
-    const [customerProducts, setCustomerProducts] = useState<Product[]>([]);
-    const [productsLoading, setProductsLoading] = useState(false);
-    const initialLoad = useRef(true);
+    const formatErrorMessage = (key: string, message: string) => {
+        const cleanKey = key.replace(/^order_items\.\d+\./, '');
+        const labelMap: Record<string, string> = {
+            customer_id: 'Customer',
+            shipper_id: 'Shipper',
+            no_aju: 'Nomor AJU',
+            product_id: 'Produk',
+            container_number: 'Nomor Kontainer',
+            entry_date: 'Tanggal Masuk',
+            eir_date: 'Tanggal EIR',
+            exit_date: 'Tanggal Keluar',
+            commodity: 'Komoditi',
+            country: 'Negara',
+            vessel: 'Nama Kapal',
+            price_type: 'Tipe Harga',
+            additional_product_ids: 'Produk Tambahan',
+            temperature: 'Rekam Suhu',
+            order_items: 'Item order',
+        };
 
-    useEffect(() => {
-        if (data.customer_id) {
-            setProductsLoading(true);
-            axios
-                .get(`/api/customers/${data.customer_id}/products`)
-                .then((res) => {
-                    setCustomerProducts(res.data);
-                    // Reset field produk jika ganti customer (tidak pada load awal)
-                    if (!initialLoad.current) {
-                        setData(
-                            'order_items',
-                            data.order_items.map((item) => ({
-                                ...item,
-                                product_id: '',
-                                additional_product_ids: [],
-                                price_type: undefined,
-                                price_value: undefined,
-                            })),
-                        );
-                    }
-                    initialLoad.current = false;
-                })
-                .finally(() => setProductsLoading(false));
-        } else {
-            setCustomerProducts([]);
-            setData(
-                'order_items',
-                data.order_items.map((item) => ({
-                    ...item,
-                    product_id: '',
-                    additional_product_ids: [],
-                    price_type: undefined,
-                    price_value: undefined,
-                })),
-            );
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [data.customer_id]);
+        const fieldLabel =
+            labelMap[cleanKey] ||
+            cleanKey
+                .split('_')
+                .join(' ')
+                .replace(/\b\w/g, (l) => l.toUpperCase());
 
-    const getSelectedProduct = (productId: string) => customerProducts.find((p) => p.id === Number(productId));
+        const cleanMessage = message
+            .replace(/^The /, '')
+            .replace(/ for order items \d+$/, '')
+            .replace(/ in order items \d+$/, '')
+            .replace(/order_items\.\d+\./g, '')
+            .replace(/\.$/, '')
+            .trim();
+
+        return `${fieldLabel} ${cleanMessage}`;
+    };
 
     // ==================================
     //  Render JSX
     // ==================================
     return (
-        <AppLayout>
-            <Head title="Edit Order" />
+        <AppLayout breadcrumbs={breadcrumbs}>
+            <Head title={`Edit Order: ${order.order_id}`} />
             <OrdersLayout>
-                <div className="space-y-6">
-                    <h2 className="text-xl font-semibold">Edit Order</h2>
+                <div className="mx-auto max-w-5xl space-y-6 pb-12">
+                    {/* Header */}
+                    <div>
+                        <Heading
+                            title={`Edit Order: ${order.order_id}`}
+                            description="Ubah informasi order, customer, shipper, serta rincian layanan kontainer yang terkait."
+                        />
+                    </div>
 
-                    {errors.error && <div className="mb-2 rounded bg-red-100 px-4 py-2 text-sm text-red-700">{errors.error}</div>}
+                    {/* Alert Error Umum */}
+                    {data.error && (
+                        <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 mt-0.5" />
+                            <div className="flex-1">
+                                <strong className="font-semibold">Perhatian:</strong>
+                                <p className="mt-0.5 text-xs text-red-700">{data.error}</p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setData('error', undefined)}
+                                className="text-red-400 hover:text-red-600"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Alert Validation Errors */}
+                    {Object.keys(errors).length > 0 && (
+                        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <div className="flex items-center gap-2 font-semibold">
+                                <AlertCircle className="h-4 w-4 text-red-600" />
+                                <span>Terdapat kesalahan pada input berikut:</span>
+                            </div>
+                            <ul className="mt-2 list-disc pl-6 space-y-1 text-xs text-red-700">
+                                {Object.entries(errors).map(([key, message]) => (
+                                    <li key={key}>{formatErrorMessage(key, message as string)}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* Jenis Nomor Order (Order ID vs No AJU) */}
-                        <div className="grid grid-cols-1 gap-6">
-                            {' '}
-                            {/* Diubah ke grid-cols-1 */}
+                        {/* Section 1: Informasi Order & Pengirim */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
+                            <div className="flex items-center gap-2 border-b pb-3">
+                                <FileText className="h-5 w-5 text-blue-600" />
+                                <h2 className="text-base font-bold text-gray-900">Informasi Order & Pengirim</h2>
+                            </div>
+
+                            {/* Jenis Nomor Order & Input */}
                             <div className="space-y-4">
-                                <Label>Jenis Nomor Order</Label>
-                                <div className="mt-5 flex flex-row gap-4">
-                                    {/* Tombol Nomor Order Otomatis */}
-                                    <Button
-                                        type="button"
-                                        variant={useOrderId ? 'default' : 'outline'}
-                                        onClick={handleSwitchToOrderId}
-                                        className="px-4 py-2"
-                                    >
-                                        Nomor Order Otomatis
-                                    </Button>
+                                <div>
+                                    <Label className="text-xs font-semibold text-gray-700">Jenis Nomor Order</Label>
+                                    <div className="mt-1.5 inline-flex rounded-lg bg-gray-100 p-1 border border-gray-200">
+                                        <button
+                                            type="button"
+                                            onClick={handleSwitchToOrderId}
+                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                                                useOrderId
+                                                    ? 'bg-white text-gray-900 shadow-xs'
+                                                    : 'text-gray-600 hover:text-gray-900'
+                                            }`}
+                                        >
+                                            Nomor Order Otomatis
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={handleSwitchToNoAju}
+                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                                                !useOrderId
+                                                    ? 'bg-white text-gray-900 shadow-xs'
+                                                    : 'text-gray-600 hover:text-gray-900'
+                                            }`}
+                                        >
+                                            Nomor AJU
+                                        </button>
+                                    </div>
+                                </div>
 
-                                    {/* Tombol Nomor AJU */}
-                                    <Button
-                                        type="button"
-                                        variant={!useOrderId ? 'default' : 'outline'}
-                                        onClick={handleSwitchToNoAju}
-                                        className="px-4 py-2"
-                                    >
-                                        Nomor AJU
-                                    </Button>
+                                <div>
+                                    {useOrderId ? (
+                                        <div className="space-y-1.5 max-w-md">
+                                            <Label htmlFor="order_id_display" className="text-xs font-semibold text-gray-700">
+                                                Nomor Order (Otomatis)
+                                            </Label>
+                                            <Input
+                                                id="order_id_display"
+                                                value={currentOrderId}
+                                                readOnly
+                                                className="bg-gray-50/80 font-mono text-xs font-medium text-gray-600 cursor-not-allowed"
+                                            />
+                                            <p className="text-[11px] text-gray-400">
+                                                Nomor order terdaftar dalam sistem.
+                                            </p>
+                                        </div>
+                                    ) : (
+                                        <div className="space-y-1.5 max-w-md">
+                                            <Label htmlFor="no_aju" className="text-xs font-semibold text-gray-700">
+                                                Nomor AJU <span className="text-red-500">*</span>
+                                            </Label>
+                                            <Input
+                                                id="no_aju"
+                                                value={data.no_aju}
+                                                onChange={(e) => setData('no_aju', e.target.value)}
+                                                placeholder="Contoh: 000000-000000-00000000-000000"
+                                                required
+                                            />
+                                            {errors.no_aju && <p className="text-xs text-red-500">{errors.no_aju}</p>}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
-                            {/* Input Nomor Order (Read-only jika useOrderId true) atau Input Nomor AJU (Full Width jika useOrderId false) */}
-                            {useOrderId ? (
-                                <div className="space-y-2">
-                                    <Label>Nomor Order</Label>
-                                    <Input value={currentOrderId} readOnly className="w-full cursor-not-allowed bg-gray-100" />{' '}
-                                    {/* Tambahkan w-full */}
-                                </div>
-                            ) : (
-                                <div className="space-y-2">
-                                    <Label>Nomor AJU</Label>
-                                    <Input
-                                        value={data.no_aju}
-                                        onChange={(e) => setData('no_aju', e.target.value)}
-                                        placeholder="Masukkan Nomor AJU"
-                                        required
-                                        className="w-full" // Tambahkan w-full di sini
+
+                            {/* Customer & Shipper */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-gray-100">
+                                {/* Customer */}
+                                <div className="space-y-1.5">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Customer <span className="text-red-500">*</span>
+                                    </Label>
+                                    <SearchableSelect
+                                        options={customers.map((c) => ({
+                                            value: c.id.toString(),
+                                            label: c.name,
+                                        }))}
+                                        value={data.customer_id}
+                                        onChange={(val) => setData('customer_id', val)}
+                                        placeholder="Pilih atau cari Customer..."
+                                        searchPlaceholder="Ketik nama customer..."
+                                        showClear
                                     />
-                                    {errors.no_aju && <p className="text-sm text-red-500">{errors.no_aju}</p>}
+                                    {errors.customer_id && (
+                                        <p className="text-xs text-red-500">{errors.customer_id}</p>
+                                    )}
                                 </div>
-                            )}
-                        </div>
 
-                        {/* Customer & Shipper */}
-                        {/* Customer & Shipper */}
-                        {/* Customer, Shipper, Fumigator */}
-                        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                            {/* Customer */}
-                            <div className="space-y-1.5">
-                                <Label className="text-sm">Pilih Customer</Label>
-                                <Dropdown
-                                    value={data.customer_id}
-                                    options={customers.map((c) => ({
-                                        label: c.name,
-                                        value: c.id.toString(),
-                                    }))}
-                                    optionLabel="label"
-                                    optionValue="value"
-                                    placeholder="Pilih atau cari Customer"
-                                    filter
-                                    filterPlaceholder="Cari customer..."
-                                    showClear
-                                    onChange={(e) => setData('customer_id', e.value)}
-                                    className="w-full text-sm" // h-9 untuk tinggi input lebih kecil
-                                    disabled={processing}
-                                    pt={{
-                                        input: { className: 'py-1.5 px-3 text-sm' }, // Padding dalam input lebih kecil
-                                        filterInput: { className: 'py-1 px-2 text-sm' }, // Padding filter input lebih kecil
-                                    }}
-                                />
-                                {errors.customer_id && <p className="text-xs text-red-500">{errors.customer_id}</p>}
+                                {/* Shipper */}
+                                <div className="space-y-1.5">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Shipper{' '}
+                                        {data.fumigasi && data.fumigasi.trim() !== '' && (
+                                            <span className="text-red-500">* (Wajib karena ada catatan Fumigator)</span>
+                                        )}
+                                    </Label>
+                                    <SearchableSelect
+                                        options={shippers.map((s) => ({
+                                            value: s.id.toString(),
+                                            label: s.name,
+                                        }))}
+                                        value={data.shipper_id}
+                                        onChange={(val) => setData('shipper_id', val)}
+                                        placeholder="Pilih atau cari Shipper..."
+                                        searchPlaceholder="Ketik nama shipper..."
+                                        showClear
+                                    />
+                                    {errors.shipper_id && (
+                                        <p className="text-xs text-red-500">{errors.shipper_id}</p>
+                                    )}
+                                </div>
                             </div>
 
-                            {/* Shipper */}
-                            <div className="space-y-1.5">
-                                <Label className="text-sm">Pilih Shipper</Label>
-                                <Dropdown
-                                    value={data.shipper_id}
-                                    options={shippers.map((s) => ({
-                                        label: s.name,
-                                        value: s.id.toString(),
-                                    }))}
-                                    optionLabel="label"
-                                    optionValue="value"
-                                    placeholder="Pilih atau cari Shipper"
-                                    filter
-                                    filterPlaceholder="Cari shipper..."
-                                    showClear
-                                    onChange={(e) => setData('shipper_id', e.value)}
-                                    className="w-full text-xs"
-                                    disabled={processing}
-                                    pt={{
-                                        input: { className: 'py-1.5 px-3 text-xs' },
-                                        filterInput: { className: 'py-1 px-2 text-xs' },
-                                    }}
-                                />
-                                {errors.shipper_id && <p className="text-xs text-red-500">{errors.shipper_id}</p>}
-                            </div>
-
-                            {/* Fumigator */}
-                            <div className="space-y-1.5">
-                                <Label className="text-sm">Fumigator (Catatan)</Label>
+                            {/* Fumigator Catatan */}
+                            <div className="space-y-1.5 pt-2">
+                                <Label htmlFor="fumigasi" className="text-xs font-semibold text-gray-700">
+                                    Fumigator (Catatan Opsional)
+                                </Label>
                                 <textarea
+                                    id="fumigasi"
                                     value={data.fumigasi ?? ''}
                                     onChange={(e) => setData('fumigasi', e.target.value)}
-                                    placeholder="Masukkan catatan Fumigator (opsional)..."
-                                    className="w-full rounded-md border border-gray-300 px-2.5 py-1.5 text-sm focus:ring-1 focus:ring-blue-500 focus:outline-none" // py-1.5 untuk padding vertikal lebih kecil
-                                    rows={2} // Kurangi dari 3 ke 2 baris
-                                    disabled={processing}
+                                    placeholder="Masukkan catatan Fumigator jika ada (opsional)... Bila diisi, kolom Shipper wajib dipilih."
+                                    rows={2}
+                                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-xs transition-colors hover:border-gray-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
                                 />
                                 {errors.fumigasi && <p className="text-xs text-red-500">{errors.fumigasi}</p>}
                             </div>
                         </div>
 
-                        {/* Daftar Order Items */}
+                        {/* Section 2: Layanan & Nomor Kontainer */}
                         <div className="space-y-4">
-                            <Label>Layanan & Nomor Kontainer</Label>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <Layers className="h-5 w-5 text-blue-600" />
+                                    <h2 className="text-base font-bold text-gray-900">Layanan & Nomor Kontainer</h2>
+                                </div>
+                                <span className="text-xs text-gray-500 font-medium">
+                                    Total: {data.order_items.length} Kontainer
+                                </span>
+                            </div>
+
                             {data.order_items.map((item, idx) => {
                                 const product = getSelectedProduct(item.product_id);
                                 const requiresTemp = product?.requires_temperature || false;
@@ -518,306 +619,399 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                                         price: product?.custom_global_price,
                                     },
                                 ].filter((o) => o.price !== undefined && o.price !== null);
-                                // const isExistingItem = item.id !== undefined && item.id !== null;
-                                const hasTempData = Object.keys(item.temperature ?? {}).length > 0;
 
                                 return (
-                                    <div>
-                                        <Separator className="my-5" />
-                                        <div className="mb-2 flex items-center gap-2">
-                                            <span className="text-sm font-medium text-gray-700">Layanan #{idx + 1}</span>
-                                        </div>
-                                        <div key={idx} className="space-y-4 rounded-lg border p-4">
-                                            <div className="flex flex-wrap gap-4">
-                                                {/* Produk */}
-                                                {/* Produk */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Produk</Label>
-                                                    <Dropdown
-                                                        value={item.product_id}
-                                                        options={customerProducts.map((p) => ({
-                                                            label: p.service_type,
-                                                            value: p.id.toString(),
-                                                        }))}
-                                                        optionLabel="label"
-                                                        optionValue="value"
-                                                        placeholder={productsLoading ? 'Memuat...' : 'Pilih Layanan'}
-                                                        filter
-                                                        filterPlaceholder="Cari layanan..."
-                                                        showClear
-                                                        onChange={(e) => {
-                                                            updateOrderItem(idx, 'product_id', e.value);
-                                                            updateOrderItem(idx, 'price_type', undefined);
-                                                        }}
-                                                        disabled={!data.customer_id || productsLoading}
-                                                        className="w-full"
-                                                    />
-                                                </div>
-                                                {/* Harga */}
-                                                <div className="min-w-[160px] flex-1">
-                                                    <Label>Pilih Harga</Label>
-                                                    <Select
-                                                        value={item.price_type}
-                                                        disabled={
-                                                            !item.product_id || priceOptions.length === 0
-                                                            // || isExistingItem
-                                                        }
-                                                        onValueChange={(val) => updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | 'global')}
-                                                    >
-                                                        <SelectTrigger>
-                                                            <SelectValue placeholder="Pilih Harga" />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            {priceOptions.map((o) => (
-                                                                <SelectItem key={o.value} value={o.value}>
-                                                                    {o.label} {o.price ? `: Rp${Number(o.price).toLocaleString()}` : ''}
-                                                                </SelectItem>
-                                                            ))}
-                                                        </SelectContent>
-                                                    </Select>
-                                                    {item.price_type && item.price_value && (
-                                                        <div className="mt-1 text-sm text-gray-700">
-                                                            Harga dipilih: Rp{Number(item.price_value).toLocaleString()}
-                                                        </div>
-                                                    )}
-                                                    {priceOptions.length === 0 && (
-                                                        <div className="mt-1 text-sm text-red-500">Tidak ada harga untuk produk ini</div>
-                                                    )}
-                                                </div>
-                                                {/* Additional Products (Checkbox List) */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Additional Produk</Label>
-                                                    <div className="max-h-32 overflow-y-auto rounded border px-2 py-1">
-                                                        {customerProducts.map((p) => (
-                                                            <div key={p.id} className="flex items-center gap-2">
-                                                                <input
-                                                                    type="checkbox"
-                                                                    checked={item.additional_product_ids?.includes(p.id.toString()) || false}
-                                                                    onChange={(e) => {
-                                                                        const checked = e.target.checked;
-                                                                        const val = p.id.toString();
-                                                                        let next = item.additional_product_ids?.slice() || [];
-
-                                                                        if (checked) {
-                                                                            if (!next.includes(val)) next.push(val);
-                                                                        } else {
-                                                                            next = next.filter((v) => v !== val);
-                                                                        }
-
-                                                                        updateOrderItem(idx, 'additional_product_ids', next);
-                                                                        updateOrderItem(
-                                                                            idx,
-                                                                            'additional_product_prices',
-                                                                            getAdditionalProductPrices(
-                                                                                next,
-                                                                                data.order_items[idx].price_type,
-                                                                                customerProducts,
-                                                                            ),
-                                                                        );
-                                                                    }}
-                                                                    disabled={
-                                                                        productsLoading || !data.customer_id || p.id.toString() === item.product_id // ⬅️ sama di sini
-                                                                    }
-                                                                />
-
-                                                                <label>{p.service_type}</label>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                                {/* Nomor Kontainer */}
-                                                <div className="min-w-[200px] flex-1">
-                                                    <Label>Nomor Kontainer</Label>
-                                                    <Input
-                                                        value={item.container_number}
-                                                        onChange={(e) => updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())}
-                                                        placeholder="EMCU1234567"
-                                                        maxLength={11}
-                                                        // disabled={isExistingItem} // kontainer tidak dapat diubah untuk item lama
-                                                    />
-                                                    {hasDuplicateContainer(idx) && (
-                                                        <p className="text-sm text-red-500">Nomor kontainer sudah dipakai</p>
-                                                    )}
-                                                </div>
-                                                {/* Rekam Suhu */}
-                                                {requiresTemp && (
-                                                    <div className="flex items-end">
-                                                        <div>
-                                                            <Button type="button" variant="outline" onClick={() => openTempModal(idx)}>
-                                                                Rekam Suhu
-                                                            </Button>
-                                                            {hasTempData ? (
-                                                                <p className="mt-1 text-xs text-green-600">Data suhu telah tercatat.</p>
-                                                            ) : (
-                                                                <p className="mt-1 text-xs text-gray-600">Produk ini memerlukan rekaman suhu.</p>
-                                                            )}
-                                                        </div>
-                                                    </div>
+                                    <div
+                                        key={idx}
+                                        className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4 transition-all hover:border-gray-300"
+                                    >
+                                        {/* Card Header */}
+                                        <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                                            <div className="flex items-center gap-2.5">
+                                                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                                                    {idx + 1}
+                                                </span>
+                                                <h3 className="text-sm font-bold text-gray-900">
+                                                    Layanan #{idx + 1}
+                                                </h3>
+                                                {item.container_number && (
+                                                    <span className="font-mono text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded border border-blue-200">
+                                                        {item.container_number}
+                                                    </span>
+                                                )}
+                                                {product && (
+                                                    <span className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded border border-gray-200">
+                                                        {product.service_type}
+                                                    </span>
                                                 )}
                                             </div>
 
-                                            {/* Detail Tambahan: Entry, EIR, Exit, Commodity, Country, Vessel */}
-                                            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                                                <div>
-                                                    <Label>Country</Label>
-                                                    <Input
-                                                        value={item.country}
-                                                        onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
-                                                        placeholder="Negara tujuan"
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Nama Kapal (Vessel)</Label>
-                                                    <Input
-                                                        value={item.vessel || ''}
-                                                        onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
-                                                        placeholder="Nama Kapal"
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal Masuk</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.entry_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'entry_date', e.target.value)}
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal EIR</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.eir_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'eir_date', e.target.value)}
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Tanggal Keluar</Label>
-                                                    <Input
-                                                        type="datetime-local"
-                                                        value={item.exit_date}
-                                                        onChange={(e) => updateOrderItem(idx, 'exit_date', e.target.value)}
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <Label>Komoditi</Label>
-                                                    <Input
-                                                        value={item.commodity}
-                                                        onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
-                                                        placeholder="Contoh: Barang Elektronik"
-                                                        // disabled={isExistingItem}
-                                                    />
-                                                </div>
+                                            {data.order_items.length > 1 && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => removeOrderItem(idx)}
+                                                    className="inline-flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors cursor-pointer"
+                                                >
+                                                    <Trash2 className="h-3.5 w-3.5" />
+                                                    Hapus
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        {/* Row 1: Produk, Harga, Nomor Kontainer */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            {/* Produk */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Produk / Layanan <span className="text-red-500">*</span>
+                                                </Label>
+                                                <SearchableSelect
+                                                    options={customerProducts.map((p) => ({
+                                                        value: p.id.toString(),
+                                                        label: p.service_type,
+                                                        subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
+                                                    }))}
+                                                    value={item.product_id}
+                                                    onChange={(val) => {
+                                                        updateOrderItem(idx, 'product_id', val);
+                                                        updateOrderItem(idx, 'price_type', undefined);
+                                                    }}
+                                                    placeholder={
+                                                        productsLoading
+                                                            ? 'Memuat layanan...'
+                                                            : data.customer_id
+                                                            ? 'Pilih Layanan Utama'
+                                                            : 'Pilih Customer terlebih dahulu'
+                                                    }
+                                                    searchPlaceholder="Cari layanan..."
+                                                    disabled={!data.customer_id || productsLoading}
+                                                    showClear
+                                                />
                                             </div>
 
-                                            {/* Tombol Remove Item (hanya tampil jika lebih dari 1 item atau item baru) */}
-                                            <div className="flex justify-end">
-                                                <Button type="button" variant="destructive" size="icon" onClick={() => removeOrderItem(idx)}>
-                                                    <Trash2 className="h-4 w-4" />
-                                                </Button>
+                                            {/* Pilih Harga */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Pilih Harga <span className="text-red-500">*</span>
+                                                </Label>
+                                                <Select
+                                                    value={item.price_type}
+                                                    onValueChange={(val) =>
+                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | 'global')
+                                                    }
+                                                    disabled={!item.product_id || priceOptions.length === 0}
+                                                >
+                                                    <SelectTrigger className="h-10">
+                                                        <SelectValue placeholder="Pilih Tipe Harga" />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {priceOptions.map((o) => (
+                                                            <SelectItem key={o.value} value={o.value}>
+                                                                {o.label}{' '}
+                                                                {o.price
+                                                                    ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
+                                                                    : ''}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
+                                                {item.product_id && priceOptions.length === 0 && (
+                                                    <p className="text-[11px] text-red-500">
+                                                        Tidak ada harga terdaftar untuk produk ini
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            {/* Nomor Kontainer */}
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Nomor Kontainer <span className="text-red-500">*</span>
+                                                </Label>
+                                                <Input
+                                                    value={item.container_number}
+                                                    onChange={(e) =>
+                                                        updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
+                                                    }
+                                                    placeholder="Contoh: EMCU1234567"
+                                                    maxLength={11}
+                                                    className="h-10 font-mono text-sm tracking-wider"
+                                                />
+                                                {hasDuplicateContainer(idx) && (
+                                                    <p className="text-[11px] text-red-500 font-medium">
+                                                        Nomor kontainer sudah dipakai pada layanan lain
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
 
-                                        <Separator className="mt-5" />
+                                        {/* Row 2: Additional Products */}
+                                        <div className="space-y-2 pt-2 border-t border-gray-100">
+                                            <div className="flex items-center justify-between">
+                                                <Label className="text-xs font-semibold text-gray-700">
+                                                    Additional Produk (Produk Tambahan)
+                                                </Label>
+                                                <span className="text-[11px] text-gray-400">
+                                                    {item.additional_product_ids?.length || 0} dipilih
+                                                </span>
+                                            </div>
+
+                                            {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 ? (
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-40 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
+                                                    {customerProducts
+                                                        .filter((p) => p.id.toString() !== item.product_id)
+                                                        .map((p) => {
+                                                            const isChecked = item.additional_product_ids?.includes(p.id.toString());
+                                                            return (
+                                                                <label
+                                                                    key={p.id}
+                                                                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border text-xs font-medium cursor-pointer transition-all ${
+                                                                        isChecked
+                                                                            ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold'
+                                                                            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+                                                                    }`}
+                                                                >
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        checked={isChecked}
+                                                                        onChange={(e) => {
+                                                                            const checked = e.target.checked;
+                                                                            const val = p.id.toString();
+                                                                            let next = item.additional_product_ids?.slice() || [];
+
+                                                                            if (checked) {
+                                                                                if (!next.includes(val)) next.push(val);
+                                                                            } else {
+                                                                                next = next.filter((v) => v !== val);
+                                                                            }
+
+                                                                            updateOrderItem(idx, 'additional_product_ids', next);
+                                                                            const additionalPrices = getAdditionalProductPrices(next, item.price_type, customerProducts);
+                                                                            updateOrderItem(idx, 'additional_product_prices', additionalPrices);
+                                                                        }}
+                                                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                                                    />
+                                                                    <span className="truncate">{p.service_type}</span>
+                                                                </label>
+                                                            );
+                                                        })}
+                                                </div>
+                                            ) : (
+                                                <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                    {data.customer_id
+                                                        ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
+                                                        : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Row 3: Pengiriman & Muatan */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-gray-100">
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Negara Asal / Tujuan</Label>
+                                                <Input
+                                                    value={item.country}
+                                                    onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
+                                                    placeholder="Contoh: Indonesia, China"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Nama Kapal (Vessel)</Label>
+                                                <Input
+                                                    value={item.vessel || ''}
+                                                    onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
+                                                    placeholder="Contoh: KMTC Jakarta"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Komoditi</Label>
+                                                <Input
+                                                    value={item.commodity}
+                                                    onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
+                                                    placeholder="Contoh: Barang Elektronik"
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Row 4: Jadwal Tanggal & Waktu */}
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Masuk</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.entry_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'entry_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam EIR</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.eir_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'eir_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Keluar</Label>
+                                                <Input
+                                                    type="datetime-local"
+                                                    value={item.exit_date}
+                                                    onChange={(e) => updateOrderItem(idx, 'exit_date', e.target.value)}
+                                                    className="h-10"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Row 5: Rekam Suhu Banner */}
+                                        {requiresTemp && (
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-lg border border-cyan-200 bg-cyan-50/70 text-cyan-900 mt-2">
+                                                <div className="flex items-center gap-2.5">
+                                                    <Thermometer className="h-5 w-5 text-cyan-600 shrink-0" />
+                                                    <div>
+                                                        <p className="text-xs font-bold text-cyan-950">
+                                                            Layanan ini memerlukan pencatatan suhu kontainer
+                                                        </p>
+                                                        <p className="text-[11px] text-cyan-700">
+                                                            {Object.keys(item.temperature || {}).length > 0
+                                                                ? `${Object.keys(item.temperature || {}).length} tanggal suhu telah dicatat`
+                                                                : 'Belum ada data suhu yang direkam untuk kontainer ini.'}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <Button
+                                                    type="button"
+                                                    variant="outline"
+                                                    size="sm"
+                                                    onClick={() => openTempModal(idx)}
+                                                    className="border-cyan-300 bg-white text-cyan-800 hover:bg-cyan-100 text-xs font-semibold gap-1.5 self-start sm:self-center"
+                                                >
+                                                    <Thermometer className="h-3.5 w-3.5 text-cyan-600" />
+                                                    Rekam Suhu
+                                                </Button>
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })}
-                            <Button type="button" variant="outline" size="sm" onClick={addOrderItem}>
-                                <PlusCircle className="mr-1 h-4 w-4" /> Tambah Layanan
-                            </Button>
+
+                            {/* Tombol Tambah Layanan */}
+                            <button
+                                type="button"
+                                onClick={addOrderItem}
+                                className="w-full py-4 border-2 border-dashed border-gray-300 hover:border-blue-500 hover:bg-blue-50/50 hover:text-blue-700 text-gray-600 font-semibold text-xs flex items-center justify-center gap-2 rounded-xl transition-all cursor-pointer"
+                            >
+                                <Plus className="h-4 w-4" />
+                                Tambah Layanan / Kontainer Baru
+                            </button>
                         </div>
 
-                        {/* Hidden Inputs (untuk mengirim data kompleks) */}
+                        {/* Hidden Inputs */}
                         {useOrderId && <input type="hidden" name="order_id" value={currentOrderId} />}
                         <input type="hidden" name="order_items" value={JSON.stringify(data.order_items)} />
 
-                        {/* Dialog Rekam Suhu */}
+                        {/* Submit Button & Actions */}
+                        <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
+                            <Button variant="outline" asChild>
+                                <Link href="/orders" className="text-xs font-semibold">
+                                    Batal
+                                </Link>
+                            </Button>
+                            <Button
+                                type="submit"
+                                disabled={processing}
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 text-xs shadow-sm flex items-center gap-2"
+                            >
+                                {processing && <span className="mr-1 animate-spin">●</span>}
+                                {processing ? 'Menyimpan Perubahan...' : 'Simpan Perubahan'}
+                            </Button>
+                        </div>
+
+                        {/* Temperature Dialog */}
                         <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
                             <DialogContent className="max-w-3xl">
                                 <DialogHeader>
                                     <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
                                 </DialogHeader>
-                                <div className="max-h-[60vh] space-y-6 overflow-y-auto pr-2">
+                                <div className="max-h-[60vh] space-y-5 overflow-y-auto pr-2">
                                     {tempRecords.map((rec, rIdx) => (
-                                        <div key={rIdx} className="space-y-2 rounded border p-4">
-                                            <div className="flex items-center gap-2">
-                                                <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
-                                                <Input
-                                                    id={`date_${rIdx}`}
-                                                    type="date"
-                                                    value={rec.date}
-                                                    onChange={(e) => updateDate(rIdx, e.target.value)}
-                                                    className="max-w-[180px]"
-                                                />
+                                        <div key={rIdx} className="space-y-3 rounded-xl border border-gray-200 bg-white p-4 shadow-xs">
+                                            <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+                                                <div className="flex items-center gap-2">
+                                                    <Label htmlFor={`date_${rIdx}`} className="text-xs font-semibold text-gray-700">
+                                                        Tanggal:
+                                                    </Label>
+                                                    <Input
+                                                        id={`date_${rIdx}`}
+                                                        type="date"
+                                                        value={rec.date}
+                                                        onChange={(e) => updateDate(rIdx, e.target.value)}
+                                                        className="w-44 h-9 text-xs"
+                                                    />
+                                                </div>
                                                 {tempRecords.length > 1 && (
-                                                    <Button
+                                                    <button
                                                         type="button"
-                                                        size="icon"
-                                                        variant="destructive"
-                                                        className="ml-auto"
                                                         onClick={() => removeDateRecord(rIdx)}
+                                                        className="text-red-500 hover:text-red-700 p-1.5 rounded-lg hover:bg-red-50 transition-colors"
+                                                        title="Hapus Tanggal"
                                                     >
-                                                        <X className="h-4 w-4" />
-                                                    </Button>
+                                                        <Trash2 className="h-4 w-4" />
+                                                    </button>
                                                 )}
                                             </div>
-                                            <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto">
-                                                {[...Array(24)].map((_, h) => (
-                                                    <div key={h} className="flex items-center gap-2">
-                                                        <Label htmlFor={`temp_${rIdx}_${h}`}>
-                                                            {h.toString().padStart(2, '0')}
-                                                            :00
-                                                        </Label>
-                                                        <Input
-                                                            id={`temp_${rIdx}_${h}`}
-                                                            type="number"
-                                                            step="0.1"
-                                                            value={rec.temps[h.toString().padStart(2, '0')] || ''}
-                                                            onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                            className="w-24"
-                                                        />
-                                                    </div>
-                                                ))}
+
+                                            {/* 24 Jam Input Grid */}
+                                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                                                {[...Array(24)].map((_, h) => {
+                                                    const hourStr = h.toString().padStart(2, '0');
+                                                    return (
+                                                        <div
+                                                            key={h}
+                                                            className="flex flex-col gap-1 p-1.5 rounded-lg border border-gray-100 bg-gray-50/50"
+                                                        >
+                                                            <span className="text-[10px] font-semibold text-gray-500">
+                                                                {hourStr}:00
+                                                            </span>
+                                                            <Input
+                                                                type="number"
+                                                                step="0.1"
+                                                                placeholder="°C"
+                                                                value={rec.temps[hourStr] || ''}
+                                                                onChange={(e) => updateTemp(rIdx, h, e.target.value)}
+                                                                className="h-8 text-xs bg-white text-center font-mono"
+                                                            />
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
                                     ))}
-                                    <Button type="button" variant="outline" onClick={addDateRecord} className="flex items-center gap-2">
-                                        <PlusCircle className="h-4 w-4" /> Tambah Tanggal
+
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={addDateRecord}
+                                        className="gap-1.5 text-xs font-semibold"
+                                    >
+                                        <PlusCircle className="h-4 w-4 text-blue-600" />
+                                        Tambah Tanggal Lain
                                     </Button>
                                 </div>
                                 <DialogFooter className="gap-2">
                                     <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
                                         Batal
                                     </Button>
-                                    <Button onClick={submitTempRecords}>Simpan</Button>
+                                    <Button onClick={submitTempRecords} className="bg-blue-600 hover:bg-blue-700 text-white">
+                                        Simpan Rekam Suhu
+                                    </Button>
                                 </DialogFooter>
                             </DialogContent>
                         </Dialog>
-
-                        {/* Tombol Submit */}
-                        <div className="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
-                            {/* Tombol Hapus Order */}
-                            {/* <Button
-                                type="button"
-                                variant="destructive"
-                                onClick={() => {
-                                    if (confirm('Apakah Anda yakin ingin menghapus order ini?')) {
-                                        router.delete(route('orders.destroy', order.id));
-                                    }
-                                }}
-                            >
-                                Hapus Order
-                            </Button> */}
-                            {/* Tombol Simpan Perubahan */}
-                            <Button type="submit" disabled={processing} className="w-full sm:w-auto">
-                                {processing && <span className="mr-2 animate-spin">●</span>}
-                                {processing ? 'Memproses...' : 'Simpan Perubahan'}
-                            </Button>
-                        </div>
                     </form>
                 </div>
             </OrdersLayout>

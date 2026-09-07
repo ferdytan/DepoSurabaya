@@ -10,7 +10,7 @@ import AppLogo from './app-logo';
 // Definisikan item menu utama TANPA menu Karantina
 const baseNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Overview',
         href: '/dashboard',
         icon: LayoutGrid,
     },
@@ -89,8 +89,14 @@ export function AppSidebar() {
         // Checker: hanya Dashboard dan Orders
         filteredNavItems = baseNavItems.filter((item) => item.href == '/dashboard' || item.href == '/orders');
     } else if (roleId == 4) {
-        // Karantina: hanya menu Karantina
-        filteredNavItems = [karantinaNavItem];
+        // Karantina: hanya menu Overview (menu Karantina di-hide sementara)
+        filteredNavItems = [
+            {
+                title: 'Overview',
+                href: '/dashboard',
+                icon: LayoutGrid,
+            },
+        ];
     }
     // Role lain tidak mendapatkan menu apapun (atau bisa ditampilkan halaman kosong / error)
 

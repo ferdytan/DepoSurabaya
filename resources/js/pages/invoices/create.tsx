@@ -1,44 +1,41 @@
-import AppLayout from '@/layouts/app-layout';
-import InvoicesLayout from '@/layouts/invoices/layout';
-import { BreadcrumbItem } from '@/types';
-import { Head, Link, router, usePage } from '@inertiajs/react';
-import { Dropdown } from 'primereact/dropdown';
-import { useEffect, useState } from 'react';
-// UI Components
 import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { SearchableSelect } from '@/components/ui/searchable-select';
+import AppLayout from '@/layouts/app-layout';
+import InvoicesLayout from '@/layouts/invoices/layout';
+import { terbilang } from '@/lib/terbilang';
+import { BreadcrumbItem } from '@/types';
+import { Head, Link, router, usePage } from '@inertiajs/react';
+import {
+    AlertCircle,
+    Calendar,
+    CheckCircle2,
+    Clock,
+    FileText,
+    Layers,
+    Percent,
+    Plus,
+    Tag,
+    User,
+    X,
+    RotateCcw,
+} from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-// Types
-interface Order {
-    id: number;
-    order_id: string; // <-- tambahkan baris ini!
-    container_number: string;
-    price_value: number;
-    entry_date: string | null;
-
-    exit_date: string | null;
-    additionalProducts: Array<{
-        id: number;
-        product_id: number;
-        price_value: number;
-    }>;
-    order_items: OrderItem[]; // <-- TAMBAHKAN INI!
-}
-type AxiosErrorResponse = {
-    response?: {
-        status?: number;
-        data?: {
-            errors?: Record<string, string[]>;
-        };
-    };
-};
+// ==== Types ====
 interface Product {
     id: number;
-    // name: string;
     service_type: string;
-    // Tambahkan property lain sesuai dengan tabel products jika perlu
+}
+
+interface AdditionalProductPivot {
+    id: number;
+    service_type: string;
+    pivot: {
+        price_value: number;
+    };
 }
 
 interface OrderItem {
@@ -47,643 +44,902 @@ interface OrderItem {
     price_value: number;
     entry_date?: string | null;
     exit_date?: string | null;
-    // ...property lain
     product_id: number;
-    product?: Product; // <-- Tambahkan ini!
-    additional_products: Array<{
-        id: number;
-        service_type: string;
-        pivot: {
-            price_value: number;
-        };
-    }>;
+    product?: Product;
+    additional_products?: AdditionalProductPivot[];
+}
+
+interface Order {
+    id: number;
+    order_id: string;
+    container_number?: string;
+    price_value?: number;
+    entry_date?: string | null;
+    exit_date?: string | null;
+    order_items: OrderItem[];
 }
 
 interface Customer {
     id: number;
     name: string;
-    orders: Order[]; // Orders sudah termasuk dalam customer
+    orders: Order[];
+}
+
+interface ReuseInvoiceInfo {
+    id: number;
+    invoice_number: string;
+    customer_id?: number;
+    customer_name?: string;
+    order_id?: number;
+    period_start?: string;
+    period_end?: string;
 }
 
 interface PageProps {
     [k: string]: unknown;
     customers: Customer[];
     invoice_number?: string;
+    reuse_invoice?: ReuseInvoiceInfo | null;
 }
 
+type AxiosErrorResponse = {
+    response?: {
+        status?: number;
+        data?: {
+            errors?: Record<string, string[]>;
+        };
+    };
+};
+
 export default function CreateInvoice() {
-    const [disabledOrders, setDisabledOrders] = useState<Set<number>>(new Set());
-
-    const [errors, setErrors] = useState<Record<string, string[]>>({});
-
-    // --- state baru untuk quantity additional product ---
-    // di dekat state lain
-    const [addQty, setAddQty] = useState<Record<string, number>>({}); // NEW
-    const qtyKey = (itemId: number, prodId: number) => `${itemId}:${prodId}`; // NEW
-    const getQty = (itemId: number, prodId: number) => addQty[qtyKey(itemId, prodId)] ?? 0; // NEW
-    const setQty = (itemId: number, prodId: number, val: number) => {
-        // Diubah untuk memungkinkan 0
-        const v = Number.isFinite(val) && val >= 0 ? Math.floor(val) : 0;
-        setAddQty((prev) => ({ ...prev, [qtyKey(itemId, prodId)]: v }));
-    }; // NEW
-
-    const [generalError, setGeneralError] = useState<string | null>(null);
-
     const page = usePage<PageProps>();
-    const { customers, invoice_number } = page.props;
+    const { customers = [], invoice_number, reuse_invoice } = page.props;
 
-    // Helper format rupiah - tampilkan kosong jika 0
-    const formatRupiah = (n: number) => {
-        const num = Number(n) || 0;
-        return num > 0 ? `Rp ${num.toLocaleString('id-ID')}` : '';
-    };
-
-    // Helper format datetime - hanya jam
-    const formatTime = (d?: string | null) => {
-        if (!d) return '-';
-        try {
-            const date = new Date(d);
-            return date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-        } catch {
-            return '-';
-        }
-    };
-
-    // Helper format date - hanya tanggal
-    const formatDate = (d?: string | null) => {
-        if (!d) return '-';
-        try {
-            const date = new Date(d);
-            return date.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: '2-digit' });
-        } catch {
-            return '-';
-        }
-    };
-
+    // State form dasar
     const today = new Date();
     const nextWeek = new Date(today);
     nextWeek.setDate(today.getDate() + 7);
 
-    // const [selectedOrderDetails, setSelectedOrderDetails] = useState<Record<number, Order>>({});
-
-    const [form, setForm] = useState({
-        customer_id: '',
-        invoice_number: invoice_number || '',
-        period_start: today.toISOString().split('T')[0],
-        period_end: nextWeek.toISOString().split('T')[0],
-        subtotal: 0,
-        discount: 0, // Diskon
-        ppn: 0,
-        grand_total: 0,
-        terbilang: '',
-        applyMaterai: true, // Default materai aktif
-        materai: 10000, // Default nilai materai
-        showPeriod: true, // Default tampilkan periode
+    const [periodStart, setPeriodStart] = useState(() => {
+        return reuse_invoice?.period_start || today.toISOString().split('T')[0];
     });
+    const [periodEnd, setPeriodEnd] = useState(() => {
+        return reuse_invoice?.period_end || nextWeek.toISOString().split('T')[0];
+    });
+    const [showPeriod, setShowPeriod] = useState(true);
 
-    const [showDiscountInput, setShowDiscountInput] = useState(false);
-
-    const [selectedCustomerId, setSelectedCustomerId] = useState<string>('');
-    const [orders, setOrders] = useState<Order[]>([]);
+    const [selectedCustomerId, setSelectedCustomerId] = useState<string>(() => {
+        return reuse_invoice?.customer_id ? reuse_invoice.customer_id.toString() : '';
+    });
+    const [selectedOrderId, setSelectedOrderId] = useState<string>(() => {
+        return reuse_invoice?.order_id ? reuse_invoice.order_id.toString() : '';
+    });
     const [selectedContainers, setSelectedContainers] = useState<Set<number>>(new Set());
+    const [disabledOrders, setDisabledOrders] = useState<Set<number>>(new Set());
 
-    const [selectedOrderId, setSelectedOrderId] = useState<string>('');
+    // Diskon & Materai
+    const [showDiscountInput, setShowDiscountInput] = useState(false);
+    const [discount, setDiscount] = useState<number>(0);
+    const [applyMaterai, setApplyMaterai] = useState(true);
 
-    useEffect(() => {
-        console.log('DATA ORDERS', orders);
+    // Quantity Additional Products: key `${order_item_id}:${additional_product_id}`
+    const [addQty, setAddQty] = useState<Record<string, number>>({});
+
+    const [errors, setErrors] = useState<Record<string, string[]>>({});
+    const [generalError, setGeneralError] = useState<string | null>(null);
+
+    // Helper Rupiah
+    const formatRupiah = (n: number) => {
+        const num = Number(n) || 0;
+        return `Rp ${num.toLocaleString('id-ID')}`;
+    };
+
+    // Helper format datetime
+    const formatDateTime = (d?: string | null) => {
+        if (!d) return '-';
+        try {
+            const date = new Date(d);
+            return `${date.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })} ${date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}`;
+        } catch {
+            return '-';
+        }
+    };
+
+    // Customer yang sedang dipilih
+    const selectedCustomer = useMemo(() => {
+        return customers.find((c) => c.id.toString() === selectedCustomerId);
+    }, [customers, selectedCustomerId]);
+
+    // Daftar order dari customer yang dipilih
+    const orders = useMemo(() => {
+        return selectedCustomer?.orders || [];
+    }, [selectedCustomer]);
+
+    // Order yang sedang dipilih
+    const selectedOrder = useMemo(() => {
+        return orders.find((o) => o.id.toString() === selectedOrderId);
+    }, [orders, selectedOrderId]);
+
+    // Opsi dropdown Customer
+    const customerOptions = useMemo(() => {
+        return customers.map((c) => ({
+            value: c.id.toString(),
+            label: c.name,
+            subLabel: `${c.orders?.length || 0} order`,
+        }));
+    }, [customers]);
+
+    // Opsi dropdown Order
+    const orderOptions = useMemo(() => {
+        return orders.map((o) => {
+            const containers = o.order_items?.map((it) => it.container_number).filter(Boolean).join(', ');
+            return {
+                value: o.id.toString(),
+                label: `Order #${o.order_id}`,
+                subLabel: containers ? `Kontainer: ${containers}` : `${o.order_items?.length || 0} item`,
+            };
+        });
     }, [orders]);
 
-    // Ambil orders berdasarkan customer_id (dari data yang sudah dikirim via Inertia)
-    useEffect(() => {
-        if (selectedCustomerId) {
-            const customer = customers.find((c) => c.id.toString() === selectedCustomerId);
-            if (customer) {
-                setOrders(customer.orders || []);
-            }
+    // Handle Customer Change
+    const handleCustomerChange = (val: string) => {
+        setSelectedCustomerId(val);
+        setSelectedOrderId('');
+        setSelectedContainers(new Set());
+        setAddQty({});
+        setErrors({});
+    };
+
+    // Handle Order Change
+    const handleOrderChange = (val: string) => {
+        setSelectedOrderId(val);
+        const order = orders.find((o) => o.id.toString() === val);
+        if (order) {
+            // Pilih semua kontainer yang tidak disabled
+            const validIds = new Set<number>();
+            const initialQtys: Record<string, number> = {};
+
+            order.order_items?.forEach((item) => {
+                if (!disabledOrders.has(item.id)) {
+                    validIds.add(item.id);
+                }
+                item.additional_products?.forEach((ap) => {
+                    initialQtys[`${item.id}:${ap.id}`] = 1;
+                });
+            });
+
+            setSelectedContainers(validIds);
+            setAddQty((prev) => ({ ...initialQtys, ...prev }));
         } else {
-            setOrders([]);
+            setSelectedContainers(new Set());
         }
-    }, [selectedCustomerId, customers]);
+        setErrors({});
+    };
 
+    // Inisialisasi awal kontainer jika mode reuse memiliki order_id
     useEffect(() => {
-        if (orders.length > 0) {
-            console.log('[DEBUG] Orders Loaded:', orders);
+        if (reuse_invoice?.order_id && selectedOrderId === reuse_invoice.order_id.toString()) {
+            const customer = customers.find((c) => c.id.toString() === selectedCustomerId);
+            const order = customer?.orders?.find((o) => o.id.toString() === selectedOrderId);
+            if (order) {
+                const validIds = new Set<number>();
+                const initialQtys: Record<string, number> = {};
+
+                order.order_items?.forEach((item) => {
+                    validIds.add(item.id);
+                    item.additional_products?.forEach((ap) => {
+                        initialQtys[`${item.id}:${ap.id}`] = 1;
+                    });
+                });
+
+                setSelectedContainers(validIds);
+                setAddQty((prev) => ({ ...initialQtys, ...prev }));
+            }
         }
-    }, [orders]);
+    }, [reuse_invoice?.order_id]);
 
+    // Check Unavailable Order Items saat customer atau periode berubah
     useEffect(() => {
-        if (!selectedCustomerId) {
+        if (!selectedCustomerId || !periodStart || !periodEnd) {
             setDisabledOrders(new Set());
             return;
         }
 
-        const url = `/orders/unavailable?customer_id=${selectedCustomerId}&period_start=${form.period_start}&period_end=${form.period_end}`;
+        const url = `/orders/unavailable?customer_id=${selectedCustomerId}&period_start=${periodStart}&period_end=${periodEnd}`;
 
         fetch(url)
             .then((r) => r.json())
             .then((ids: number[]) => {
-                setDisabledOrders(new Set(ids));
-                // Hapus pilihan jika kontainer jadi disabled
+                const disabledSet = new Set(ids);
+                setDisabledOrders(disabledSet);
+                // Lepas pilihan jika kontainer ternyata disabled
                 setSelectedContainers((prev) => {
-                    const copy = new Set([...prev].filter((id) => !ids.includes(id)));
+                    const copy = new Set([...prev].filter((id) => !disabledSet.has(id)));
                     return copy;
                 });
             })
             .catch(console.error);
-    }, [selectedCustomerId, form.period_start, form.period_end]);
+    }, [selectedCustomerId, periodStart, periodEnd]);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const numberToWords = (num: number): string => {
-        // Gunakan library atau fungsi dummy
-        return 'Sepuluh Juta Tujuh Ratus Sembilan Puluh Sembilan Ribu Dua Ratus Rupiah';
+    // Toggle container check
+    const toggleContainer = (itemId: number) => {
+        if (disabledOrders.has(itemId)) return;
+        setSelectedContainers((prev) => {
+            const next = new Set(prev);
+            if (next.has(itemId)) {
+                next.delete(itemId);
+            } else {
+                next.add(itemId);
+            }
+            return next;
+        });
     };
 
-    useEffect(() => {
-        if (orders.length > 0 && selectedContainers.size > 0 && selectedOrderId) {
-            const { subtotal, ppn, grandTotal, terbilang } = calculateInvoiceTotals(
-                orders,
-                selectedOrderId,
-                selectedContainers,
-                form.materai,
-                form.discount,
-                numberToWords,
-                addQty, // NEW
-            );
-
-            setForm((prev) => ({
-                ...prev,
-                subtotal,
-                ppn,
-                grand_total: grandTotal,
-                terbilang,
-            }));
+    // Pilih / Lepas Semua Kontainer
+    const toggleSelectAllContainers = () => {
+        if (!selectedOrder) return;
+        const availableItems = (selectedOrder.order_items || []).filter((it) => !disabledOrders.has(it.id));
+        if (selectedContainers.size === availableItems.length) {
+            setSelectedContainers(new Set());
         } else {
-            setForm((prev) => ({
-                ...prev,
-                subtotal: 0,
-                ppn: 0,
-                grand_total: 0,
-                terbilang: '',
-            }));
+            setSelectedContainers(new Set(availableItems.map((it) => it.id)));
         }
-    }, [selectedContainers, orders, form.materai, form.discount, selectedOrderId, addQty]);
+    };
 
-    // tambahkan parameter addQty pada calculateInvoiceTotals
-    function calculateInvoiceTotals(
-        orders: Order[],
-        selectedOrderId: string,
-        selectedContainers: Set<number>,
-        materai: number,
-        discount: number,
-        numberToWords: (num: number) => string,
-        addQty: Record<string, number>, // NEW
-    ) {
+    // Manage qty
+    const getQty = (itemId: number, prodId: number) => addQty[`${itemId}:${prodId}`] ?? 1;
+    const updateQty = (itemId: number, prodId: number, val: number) => {
+        const v = Math.max(0, Math.floor(val || 0));
+        setAddQty((prev) => ({ ...prev, [`${itemId}:${prodId}`]: v }));
+    };
+
+    // Hitung Finansial (Realtime)
+    const calculations = useMemo(() => {
         let subtotal = 0;
-        const selectedOrder = orders.find((order) => order.id.toString() === selectedOrderId);
 
         if (selectedOrder) {
-            selectedOrder.order_items.forEach((item) => {
+            selectedOrder.order_items?.forEach((item) => {
                 if (selectedContainers.has(item.id)) {
-                    // harga produk utama TIDAK dikali qty
+                    // Harga pokok kontainer
                     subtotal += Number(item.price_value || 0);
 
-                    // additional product DIKALI qty
-                    item.additional_products?.forEach((prod) => {
-                        const qty = addQty[`${item.id}:${prod.id}`] ?? 1;
-                        subtotal += Number(prod.pivot?.price_value || 0) * qty;
+                    // Layanan tambahan
+                    item.additional_products?.forEach((ap) => {
+                        const price = Number(ap.pivot?.price_value || 0);
+                        const qty = getQty(item.id, ap.id);
+                        subtotal += price * qty;
                     });
                 }
             });
         }
 
-        // Hitung: (Subtotal - Diskon) + PPN + Materai
-        const afterDiscount = subtotal - discount;
+        const materaiVal = applyMaterai ? 10000 : 0;
+        const safeDiscount = Math.min(subtotal, Math.max(0, Number(discount) || 0));
+        const afterDiscount = Math.max(0, subtotal - safeDiscount);
         const ppn = Math.round(afterDiscount * 0.11);
-        const grandTotal = afterDiscount + ppn + materai;
-        const terbilang = numberToWords(grandTotal);
+        const grandTotal = afterDiscount + ppn + materaiVal;
+        const liveTerbilang = terbilang(grandTotal);
 
-        return { subtotal, ppn, grandTotal, terbilang };
-    }
+        return {
+            subtotal,
+            discount: safeDiscount,
+            afterDiscount,
+            ppn,
+            materai: materaiVal,
+            grandTotal,
+            terbilang: liveTerbilang,
+        };
+    }, [selectedOrder, selectedContainers, discount, applyMaterai, addQty]);
 
-    const handleCustomerChange = (value: string) => {
-        setSelectedCustomerId(value);
-        setSelectedOrderId(''); // reset pilihan order saat customer berubah
-        setSelectedContainers(new Set());
-        // setSelectedOrderDetails({});
-    };
-
-    const handleOrderChange = (value: string) => {
-        setSelectedOrderId(value);
-        setSelectedContainers(new Set());
-
-        const selected = orders.find((o) => o.id.toString() === value);
-        console.log('[DEBUG] Selected Order:', selected);
-    };
-
-    const handleContainerCheck = (itemId: number, checked: boolean) => {
-        const newSelected = new Set(selectedContainers);
-
-        if (checked) {
-            newSelected.add(itemId);
-        } else {
-            newSelected.delete(itemId);
-        }
-
-        setSelectedContainers(newSelected);
-    };
-
-    // const handleSubmit = (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     router.post('/invoices', {
-    //         ...form,
-    //         customer_id: selectedCustomerId,
-    //         order_ids: Array.from(selectedContainers),
-    //     });
-    // };
-
+    // Handle Submit / Preview
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!form.terbilang) {
-            setErrors({ terbilang: ['Terbilang harus diisi'] });
-            alert('Terbilang harus diisi');
+        if (!selectedCustomerId) {
+            setErrors({ customer_id: ['Pilih customer terlebih dahulu.'] });
             return;
         }
 
-        // susun daftar qty additional untuk order_item yang dipilih
-        const selected = orders.find((o) => o.id.toString() === selectedOrderId);
+        if (!selectedOrderId) {
+            setErrors({ order_id: ['Pilih nomor order/AJU terlebih dahulu.'] });
+            return;
+        }
+
+        if (selectedContainers.size === 0) {
+            setGeneralError('Pilih minimal satu kontainer untuk membuat invoice.');
+            return;
+        }
+
+        // Susun daftar additional products
         const additionalSelections =
-            selected?.order_items
-                .filter((it) => selectedContainers.has(it.id))
+            selectedOrder?.order_items
+                ?.filter((it) => selectedContainers.has(it.id))
                 .flatMap((it) =>
                     (it.additional_products ?? []).map((ap) => ({
                         order_item_id: it.id,
                         additional_product_id: ap.id,
-                        quantity: addQty[`${it.id}:${ap.id}`] ?? 1,
+                        quantity: getQty(it.id, ap.id),
                     })),
                 ) ?? [];
 
-        try {
-            await router.post('/invoices/preview', {
-                ...form,
-                customer_id: selectedCustomerId,
-                order_id: selectedOrderId,
-                order_ids: [selectedOrderId],
-                order_item_ids: Array.from(selectedContainers),
-                additional_product_quantities: additionalSelections, // NEW
-                applyMaterai: form.applyMaterai,
-                show_period: form.showPeriod, // Kirim flag show period
-            });
-        } catch (err: unknown) {
-            const error = err as AxiosErrorResponse; // casting aman karena kita punya tipe
+        const payload = {
+            reuse_id: reuse_invoice?.id || null,
+            customer_id: selectedCustomerId,
+            invoice_number: invoice_number || '',
+            order_id: selectedOrderId,
+            order_ids: [selectedOrderId],
+            order_item_ids: Array.from(selectedContainers),
+            period_start: periodStart,
+            period_end: periodEnd,
+            show_period: showPeriod,
+            subtotal: calculations.subtotal,
+            discount: calculations.discount,
+            ppn: calculations.ppn,
+            materai: calculations.materai,
+            grand_total: calculations.grandTotal,
+            terbilang: calculations.terbilang,
+            applyMaterai,
+            additional_product_quantities: additionalSelections,
+        };
 
+        try {
+            await router.post('/invoices/preview', payload);
+        } catch (err: unknown) {
+            const error = err as AxiosErrorResponse;
             if (error.response?.status === 422) {
                 setErrors(error.response.data?.errors ?? {});
-                setGeneralError('Terjadi kesalahan saat menyimpan invoice. Silakan coba lagi nanti.');
+                setGeneralError('Validasi gagal. Mohon periksa kembali data yang dimasukkan.');
             } else {
-                alert('Terjadi kesalahan saat menyimpan invoice.');
+                setGeneralError('Terjadi kesalahan sistem saat memproses invoice. Silakan coba kembali.');
             }
         }
     };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Create Invoice" />
+            <Head title={reuse_invoice ? `Reuse Invoice - ${reuse_invoice.invoice_number}` : 'Buat Invoice Baru'} />
             <InvoicesLayout>
-                <div className="mx-auto max-w-4xl space-y-6">
-                    <Heading title="Create Invoice" description="Pilih customer dan kontainer untuk membuat invoice." />
+                <div className="mx-auto max-w-5xl space-y-6 pb-12">
+                    {/* Header */}
+                    <div>
+                        <Heading
+                            title={reuse_invoice ? `Reuse Invoice: ${reuse_invoice.invoice_number}` : 'Buat Invoice Baru'}
+                            description={
+                                reuse_invoice
+                                    ? 'Gunakan kembali nomor invoice yang telah dihapus dengan memilih Customer, Order/AJU baru, dan rincian produk yang disesuaikan.'
+                                    : 'Pilih customer, nomor order/AJU, dan kontainer untuk menerbitkan invoice baru.'
+                            }
+                        />
+                    </div>
 
-                    {generalError && (
-                        <div className="relative mb-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700">
-                            <strong className="font-bold">Error:</strong>
-                            <span className="mt-1 block text-sm">{generalError}</span>
+                    {/* Banner Pemberitahuan Mode Reuse */}
+                    {reuse_invoice && (
+                        <div className="flex items-start justify-between gap-4 rounded-xl border border-amber-200 bg-amber-50/90 p-4 text-amber-900 shadow-xs">
+                            <div className="flex items-start gap-3">
+                                <RotateCcw className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
+                                <div className="text-sm">
+                                    <div className="flex items-center gap-2">
+                                        <strong className="font-semibold text-amber-950">
+                                            Mode Reuse Nomor Invoice: {reuse_invoice.invoice_number}
+                                        </strong>
+                                        <span className="rounded bg-amber-200/80 px-2 py-0.5 text-xs font-bold text-amber-900 border border-amber-300">
+                                            REUSE
+                                        </span>
+                                    </div>
+                                    <p className="mt-1 text-xs text-amber-800 leading-relaxed">
+                                        Nomor invoice ini akan digunakan kembali dari invoice yang dihapus. Anda dapat bebas{' '}
+                                        <strong>mengganti Customer</strong>, <strong>memilih Nomor Order / AJU</strong> yang
+                                        baru, serta menyesuaikan kontainer, produk tambahan, dan diskon. Seluruh isian
+                                        dapat berbeda kecuali nomor invoice-nya.
+                                    </p>
+                                </div>
+                            </div>
+                            <Link
+                                href="/invoices/create"
+                                className="shrink-0 text-xs font-semibold text-amber-800 underline hover:text-amber-950 px-2.5 py-1.5 rounded hover:bg-amber-100 transition-colors"
+                            >
+                                Batal Reuse
+                            </Link>
                         </div>
                     )}
 
-                    {/* Error Messages */}
+                    {/* Alert Errors */}
+                    {generalError && (
+                        <div className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <AlertCircle className="h-5 w-5 shrink-0 text-red-600 mt-0.5" />
+                            <div className="flex-1">
+                                <strong className="font-semibold">Perhatian:</strong>
+                                <p className="mt-0.5 text-xs text-red-700">{generalError}</p>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setGeneralError(null)}
+                                className="text-red-400 hover:text-red-600"
+                            >
+                                <X className="h-4 w-4" />
+                            </button>
+                        </div>
+                    )}
+
                     {Object.keys(errors).length > 0 && (
-                        <div className="relative mb-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700">
-                            <strong className="font-bold">Terjadi Kesalahan:</strong>
-                            <ul className="mt-2 list-disc pl-5">
-                                {Object.entries(errors).map(([field, messages]) =>
-                                    messages.map((message: string, index: number) => (
-                                        <li key={`${field}-${index}`} className="text-sm">
-                                            {message}
-                                        </li>
-                                    )),
+                        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800 shadow-xs">
+                            <div className="flex items-center gap-2 font-semibold">
+                                <AlertCircle className="h-4 w-4 text-red-600" />
+                                <span>Periksa kembali form berikut:</span>
+                            </div>
+                            <ul className="mt-2 list-disc pl-6 space-y-1 text-xs text-red-700">
+                                {Object.entries(errors).map(([field, msgs]) =>
+                                    msgs.map((m, i) => <li key={`${field}-${i}`}>{m}</li>),
                                 )}
                             </ul>
                         </div>
                     )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* Invoice Number */}
-                        <div className="space-y-2">
-                            <Label htmlFor="invoice_number">Nomor Invoice</Label>
-                            <Input name="invoice_number" value={form.invoice_number} readOnly className="bg-gray-100" />
-                        </div>
-
-                        {/* Customer Selection */}
-                        <div className="space-y-2">
-                            <Label htmlFor="customer">Customer</Label>
-                            <Dropdown
-                                value={selectedCustomerId}
-                                options={customers.map((c) => ({
-                                    label: c.name,
-                                    value: c.id.toString(),
-                                }))}
-                                onChange={(e) => handleCustomerChange(e.value)}
-                                placeholder="Pilih atau cari customer..."
-                                filter
-                                filterPlaceholder="Cari customer..."
-                                showClear
-                                className="w-full"
-                                emptyMessage="Tidak ada customer ditemukan."
-                            />
-                        </div>
-
-                        {/* Pilih Order/AJU setelah customer dipilih */}
-                        {selectedCustomerId && (
-                            <div className="space-y-2">
-                                <Label htmlFor="order">Nomor Order/AJU</Label>
-                                <Dropdown
-                                    value={selectedOrderId}
-                                    options={orders.map((o) => ({
-                                        label: `Order #${o.order_id} (${o.container_number})`,
-                                        value: o.id.toString(),
-                                    }))}
-                                    onChange={(e) => handleOrderChange(e.value)}
-                                    placeholder="Pilih atau cari nomor order/AJU..."
-                                    filter
-                                    filterPlaceholder="Cari order..."
-                                    showClear
-                                    className="w-full"
-                                    emptyMessage="Tidak ada order tersedia."
-                                    disabled={!selectedCustomerId}
-                                />
+                        {/* Section 1: Informasi Header & Pemilihan Customer/Order */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
+                            <div className="flex items-center gap-2 border-b pb-3">
+                                <FileText className="h-5 w-5 text-blue-600" />
+                                <h2 className="text-base font-bold text-gray-900">Informasi Pelanggan & Order</h2>
                             </div>
-                        )}
 
-                        {/* Daftar Kontainer muncul setelah order dipilih */}
-                        {selectedOrderId && (
-                            <div className="space-y-2">
-                                <Label>Nomor Kontainer</Label>
-                                <div className="space-y-3 rounded-md border p-4">
-                                    {orders
-                                        .filter((order) => order.id.toString() === selectedOrderId)
-                                        .flatMap(
-                                            (order) =>
-                                                order.order_items?.map((item) => {
-                                                    console.log('[DEBUG] Additional Products:', item.additional_products);
-                                                    const priceValue = Number(item.price_value || 0);
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                {/* Nomor Invoice */}
+                                <div className="space-y-1.5">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="invoice_number" className="text-xs font-semibold text-gray-700">
+                                            Nomor Invoice (Preview)
+                                        </Label>
+                                        {reuse_invoice && (
+                                            <span className="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800 border border-amber-300">
+                                                REUSE
+                                            </span>
+                                        )}
+                                    </div>
+                                    <Input
+                                        id="invoice_number"
+                                        value={invoice_number || 'Otomatis di-generate saat simpan'}
+                                        readOnly
+                                        className={`font-mono text-xs font-medium ${
+                                            reuse_invoice
+                                                ? 'bg-amber-50/70 border-amber-300 text-amber-950 font-bold'
+                                                : 'bg-gray-50/80 text-gray-600'
+                                        }`}
+                                    />
+                                    <p className="text-[11px] text-gray-400">
+                                        {reuse_invoice
+                                            ? `Menggunakan kembali nomor invoice ${reuse_invoice.invoice_number} dari invoice yang dihapus.`
+                                            : 'Nomor invoice otomatis tersusun saat disimpan ke database.'}
+                                    </p>
+                                </div>
 
-                                                    return (
-                                                        <div key={item.id} className="mb-2 space-y-2 border-b pb-2">
-                                                            <div className="flex items-center gap-4">
-                                                                <input
-                                                                    type="checkbox"
-                                                                    disabled={disabledOrders.has(item.id)}
-                                                                    onChange={(e) => handleContainerCheck(item.id, e.target.checked)}
-                                                                    checked={selectedContainers.has(item.id)}
-                                                                />
+                                {/* Pilih Customer */}
+                                <div className="space-y-1.5">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Customer <span className="text-red-500">*</span>
+                                    </Label>
+                                    <SearchableSelect
+                                        options={customerOptions}
+                                        value={selectedCustomerId}
+                                        onChange={handleCustomerChange}
+                                        placeholder="Pilih atau cari Customer..."
+                                        searchPlaceholder="Ketik nama customer..."
+                                        showClear
+                                    />
+                                </div>
+                            </div>
 
-                                                                <label htmlFor={`orderitem-${item.id}`} className="flex-1">
-                                                                    <div className="font-medium">{item.container_number}</div>
+                            {/* Nomor Order / AJU */}
+                            <div className="space-y-1.5 pt-2">
+                                <Label className="text-xs font-semibold text-gray-700">
+                                    Nomor Order / AJU <span className="text-red-500">*</span>
+                                </Label>
+                                {selectedCustomerId ? (
+                                    orders.length > 0 ? (
+                                        <SearchableSelect
+                                            options={orderOptions}
+                                            value={selectedOrderId}
+                                            onChange={handleOrderChange}
+                                            placeholder="Pilih Nomor Order / AJU..."
+                                            searchPlaceholder="Cari nomor order atau kontainer..."
+                                            showClear
+                                        />
+                                    ) : (
+                                        <div className="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-xs text-amber-800">
+                                            <AlertCircle className="h-4 w-4 shrink-0 text-amber-600" />
+                                            <span>Belum ada order aktif untuk customer ini.</span>
+                                        </div>
+                                    )
+                                ) : (
+                                    <div className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-xs text-gray-400">
+                                        <User className="h-4 w-4 shrink-0 text-gray-300" />
+                                        <span>Pilih customer terlebih dahulu untuk memuat daftar order.</span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
 
-                                                                    {/* Tampilkan "Sudah pernah dibuat" jika disabled */}
-                                                                    {disabledOrders.has(item.id) && (
-                                                                        <span className="ml-1 inline-block rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800">
-                                                                            Sudah pernah dibuat
+                        {/* Section 2: Pengaturan Periode Layanan */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-4">
+                            <div className="flex items-center justify-between border-b pb-3">
+                                <div className="flex items-center gap-2">
+                                    <Calendar className="h-5 w-5 text-blue-600" />
+                                    <h2 className="text-base font-bold text-gray-900">Periode Layanan</h2>
+                                </div>
+
+                                <label className="flex items-center gap-2 text-xs font-medium text-gray-700 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        checked={showPeriod}
+                                        onChange={(e) => setShowPeriod(e.target.checked)}
+                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                    />
+                                    <span>Tampilkan Periode pada Cetakan Invoice</span>
+                                </label>
+                            </div>
+
+                            {showPeriod && (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="period_start" className="text-xs font-semibold text-gray-600">
+                                            Periode Mulai <span className="text-red-500">*</span>
+                                        </Label>
+                                        <Input
+                                            id="period_start"
+                                            type="date"
+                                            value={periodStart}
+                                            onChange={(e) => setPeriodStart(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="period_end" className="text-xs font-semibold text-gray-600">
+                                            Periode Selesai <span className="text-red-500">*</span>
+                                        </Label>
+                                        <Input
+                                            id="period_end"
+                                            type="date"
+                                            value={periodEnd}
+                                            onChange={(e) => setPeriodEnd(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Section 3: Daftar Kontainer & Layanan */}
+                        {selectedOrderId && selectedOrder && (
+                            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-4">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-3 gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <Layers className="h-5 w-5 text-blue-600" />
+                                        <h2 className="text-base font-bold text-gray-900">
+                                            Daftar Kontainer & Produk ({selectedContainers.size} dipilih dari{' '}
+                                            {selectedOrder.order_items?.length || 0} kontainer)
+                                        </h2>
+                                    </div>
+
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={toggleSelectAllContainers}
+                                        className="h-8 text-xs font-medium"
+                                    >
+                                        {selectedContainers.size ===
+                                        (selectedOrder.order_items || []).filter((it) => !disabledOrders.has(it.id)).length
+                                            ? 'Batal Pilih Semua'
+                                            : 'Pilih Semua'}
+                                    </Button>
+                                </div>
+
+                                <div className="space-y-3 pt-1">
+                                    {selectedOrder.order_items && selectedOrder.order_items.length > 0 ? (
+                                        selectedOrder.order_items.map((item) => {
+                                            const isSelected = selectedContainers.has(item.id);
+                                            const isDisabled = disabledOrders.has(item.id);
+                                            const priceValue = Number(item.price_value || 0);
+
+                                            // Subtotal item
+                                            const addSum = (item.additional_products || []).reduce((acc, ap) => {
+                                                const p = Number(ap.pivot?.price_value || 0);
+                                                const q = getQty(item.id, ap.id);
+                                                return acc + p * q;
+                                            }, 0);
+                                            const itemSubtotal = priceValue + addSum;
+
+                                            return (
+                                                <div
+                                                    key={item.id}
+                                                    className={`rounded-xl border p-4 transition-all ${
+                                                        isDisabled
+                                                            ? 'border-gray-200 bg-gray-50/60 opacity-60'
+                                                            : isSelected
+                                                              ? 'border-blue-300 bg-blue-50/20 shadow-xs'
+                                                              : 'border-gray-200 bg-white hover:border-gray-300'
+                                                    }`}
+                                                >
+                                                    {/* Header Item */}
+                                                    <div className="flex items-start justify-between gap-3">
+                                                        <div className="flex items-start gap-3">
+                                                            <input
+                                                                type="checkbox"
+                                                                id={`container-${item.id}`}
+                                                                checked={isSelected}
+                                                                disabled={isDisabled}
+                                                                onChange={() => toggleContainer(item.id)}
+                                                                className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer disabled:cursor-not-allowed"
+                                                            />
+                                                            <div>
+                                                                <div className="flex flex-wrap items-center gap-2">
+                                                                    <label
+                                                                        htmlFor={`container-${item.id}`}
+                                                                        className={`text-base font-bold tracking-wide cursor-pointer ${
+                                                                            isSelected ? 'text-blue-900' : 'text-gray-900'
+                                                                        }`}
+                                                                    >
+                                                                        {item.container_number}
+                                                                    </label>
+
+                                                                    {item.product?.service_type && (
+                                                                        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                                            {item.product.service_type}
                                                                         </span>
                                                                     )}
 
-                                                                    <div className="text-sm text-gray-500">
-                                                                        {/* Nama produk utama */}
-                                                                        {item.product?.service_type ?? '-'}
-                                                                    </div>
+                                                                    {isDisabled && (
+                                                                        <span className="inline-flex items-center rounded-md bg-red-100 px-2 py-0.5 text-[11px] font-medium text-red-800">
+                                                                            Sudah Terbit Invoice
+                                                                        </span>
+                                                                    )}
+                                                                </div>
 
-                                                                    {/* Waktu Kontainer */}
-                                                                    <div className="flex gap-4 text-xs text-gray-600">
-                                                                        <span>Gate In: {formatDate(item.entry_date)} {formatTime(item.entry_date)}</span>
-                                                                        {item.exit_date && <span>Gate Out: {formatDate(item.exit_date)} {formatTime(item.exit_date)}</span>}
-                                                                    </div>
-                                                                </label>
-                                                                <div className="w-32 text-right">Rp {priceValue.toLocaleString('id-ID')}</div>
+                                                                {/* Waktu Gate In / Gate Out */}
+                                                                <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                                                                    <span className="flex items-center gap-1">
+                                                                        <Clock className="h-3.5 w-3.5 text-gray-400" />
+                                                                        Gate In: {formatDateTime(item.entry_date)}
+                                                                    </span>
+                                                                    {item.exit_date && (
+                                                                        <span className="flex items-center gap-1">
+                                                                            <Clock className="h-3.5 w-3.5 text-gray-400" />
+                                                                            Gate Out: {formatDateTime(item.exit_date)}
+                                                                        </span>
+                                                                    )}
+                                                                </div>
                                                             </div>
+                                                        </div>
 
-                                                            {/* Additional Products */}
-                                                            {item.additional_products && item.additional_products.length > 0 && (
-                                                                <div className="ml-6 gap-5 space-y-1 pt-3 text-xs text-gray-500 italic">
-                                                                    <span className="mt-3">Additional Product:</span>
+                                                        {/* Harga Pokok & Subtotal Kontainer */}
+                                                        <div className="text-right shrink-0">
+                                                            <div className="text-xs text-gray-500">
+                                                                Pokok: {formatRupiah(priceValue)}
+                                                            </div>
+                                                            <div className="text-sm font-bold text-gray-900 mt-0.5">
+                                                                Total: {formatRupiah(itemSubtotal)}
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                                                    {item.additional_products.map((prod) => {
-                                                                        const price = Number(prod.pivot?.price_value || 0);
-                                                                        const qty = getQty(item.id, prod.id); // NEW
-                                                                        const lineTotal = price * qty; // NEW
-                                                                        return (
-                                                                            <div
-                                                                                key={prod.id}
-                                                                                className="mt-2 flex items-center justify-between gap-3"
-                                                                            >
-                                                                                <div className="flex items-center gap-2">
-                                                                                    <span>
-                                                                                        • {prod.service_type || `Produk Tambahan #${prod.id}`}
-                                                                                    </span>
+                                                    {/* Additional Products List */}
+                                                    {item.additional_products && item.additional_products.length > 0 && (
+                                                        <div className="mt-3.5 border-t border-gray-100 pt-3 pl-7 space-y-2">
+                                                            <div className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                                                Produk / Layanan Tambahan:
+                                                            </div>
+                                                            <div className="space-y-1.5">
+                                                                {item.additional_products.map((prod) => {
+                                                                    const price = Number(prod.pivot?.price_value || 0);
+                                                                    const qty = getQty(item.id, prod.id);
+                                                                    const lineTotal = price * qty;
 
-                                                                                    {/* Input Qty */}
-                                                                                    <div className="flex items-center gap-1 not-italic">
-                                                                                        <label className="text-[11px] text-gray-600">Qty</label>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            min={0} // Diubah dari 1 ke 0
-                                                                                            step={1}
-                                                                                            value={qty}
-                                                                                            onChange={(e) =>
-                                                                                                setQty(item.id, prod.id, Number(e.target.value))
-                                                                                            }
-                                                                                            className="h-7 w-16 rounded border px-2 text-xs"
-                                                                                            disabled={!selectedContainers.has(item.id)}
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                {/* Harga x Qty = Line Total */}
-                                                                                <div className="text-right">
-                                                                                    <div>Rp {price.toLocaleString('id-ID')}</div>
-                                                                                    <div className="text-[11px] text-gray-600">
-                                                                                        × {qty} ={' '}
-                                                                                        <span className="font-medium">
-                                                                                            Rp {lineTotal.toLocaleString('id-ID')}
-                                                                                        </span>
-                                                                                    </div>
+                                                                    return (
+                                                                        <div
+                                                                            key={prod.id}
+                                                                            className="flex flex-col sm:flex-row sm:items-center justify-between rounded-lg bg-gray-50/70 px-3 py-2 text-xs gap-2"
+                                                                        >
+                                                                            <div className="flex items-center gap-3">
+                                                                                <span className="font-medium text-gray-800">
+                                                                                    {prod.service_type || `Layanan Tambahan #${prod.id}`}
+                                                                                </span>
+                                                                                <div className="flex items-center gap-1">
+                                                                                    <span className="text-gray-400">Qty:</span>
+                                                                                    <input
+                                                                                        type="number"
+                                                                                        min={0}
+                                                                                        step={1}
+                                                                                        value={qty}
+                                                                                        disabled={!isSelected || isDisabled}
+                                                                                        onChange={(e) =>
+                                                                                            updateQty(
+                                                                                                item.id,
+                                                                                                prod.id,
+                                                                                                Number(e.target.value),
+                                                                                            )
+                                                                                        }
+                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-blue-500 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                    />
                                                                                 </div>
                                                                             </div>
-                                                                        );
-                                                                    })}
-                                                                </div>
-                                                            )}
+
+                                                                            <div className="text-right text-xs">
+                                                                                <span className="text-gray-500">
+                                                                                    {formatRupiah(price)} × {qty} ={' '}
+                                                                                </span>
+                                                                                <span className="font-semibold text-gray-900">
+                                                                                    {formatRupiah(lineTotal)}
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    );
+                                                                })}
+                                                            </div>
                                                         </div>
-                                                    );
-                                                }) ?? [],
+                                                    )}
+                                                </div>
+                                            );
+                                        })
+                                    ) : (
+                                        <div className="py-6 text-center text-xs text-gray-400">
+                                            Order ini tidak memiliki kontainer.
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Section 4: Ringkasan Total & Keuangan */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
+                            <div className="flex items-center gap-2 border-b pb-3">
+                                <Tag className="h-5 w-5 text-blue-600" />
+                                <h2 className="text-base font-bold text-gray-900">Rincian Pembayaran</h2>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {/* Pengaturan Diskon & Materai */}
+                                <div className="space-y-4">
+                                    {/* Diskon */}
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <Label className="text-xs font-semibold text-gray-700">Diskon Khusus</Label>
+                                            {!showDiscountInput && discount === 0 && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setShowDiscountInput(true)}
+                                                    className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800"
+                                                >
+                                                    <Plus className="h-3.5 w-3.5" />
+                                                    Tambah Diskon
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        {showDiscountInput || discount > 0 ? (
+                                            <div className="rounded-lg border border-orange-200 bg-orange-50/50 p-3 space-y-2">
+                                                <div className="flex items-center justify-between">
+                                                    <span className="text-xs font-medium text-orange-800">
+                                                        Nominal Diskon (Rp)
+                                                    </span>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            setShowDiscountInput(false);
+                                                            setDiscount(0);
+                                                        }}
+                                                        className="text-xs text-red-600 hover:text-red-800"
+                                                    >
+                                                        Batal
+                                                    </button>
+                                                </div>
+                                                <Input
+                                                    type="number"
+                                                    min="0"
+                                                    value={discount || ''}
+                                                    onChange={(e) => setDiscount(Math.max(0, Number(e.target.value) || 0))}
+                                                    placeholder="Contoh: 50000"
+                                                    className="bg-white text-sm"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div className="rounded-lg border border-dashed border-gray-200 p-3 text-center text-xs text-gray-400">
+                                                Tidak ada diskon yang diterapkan.
+                                            </div>
                                         )}
+                                    </div>
+
+                                    {/* Materai Toggle */}
+                                    <div className="rounded-lg border border-gray-200 p-3">
+                                        <label className="flex items-center gap-2.5 text-xs font-medium text-gray-700 cursor-pointer">
+                                            <input
+                                                type="checkbox"
+                                                checked={applyMaterai}
+                                                onChange={(e) => setApplyMaterai(e.target.checked)}
+                                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                            />
+                                            <span>Terapkan Bea Materai (Rp 10.000)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                {/* Ringkasan Angka Finansial */}
+                                <div className="rounded-xl bg-gray-50/80 p-5 space-y-3">
+                                    <div className="flex items-center justify-between text-xs text-gray-600">
+                                        <span>Subtotal Kontainer & Layanan</span>
+                                        <span className="font-semibold text-gray-900">
+                                            {formatRupiah(calculations.subtotal)}
+                                        </span>
+                                    </div>
+
+                                    {calculations.discount > 0 && (
+                                        <div className="flex items-center justify-between text-xs text-orange-600">
+                                            <span>Diskon</span>
+                                            <span className="font-semibold">
+                                                - {formatRupiah(calculations.discount)}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    {calculations.discount > 0 && (
+                                        <div className="flex items-center justify-between text-xs text-gray-600">
+                                            <span>Subtotal Setelah Diskon</span>
+                                            <span className="font-semibold text-gray-800">
+                                                {formatRupiah(calculations.afterDiscount)}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    <div className="flex items-center justify-between text-xs text-gray-600">
+                                        <span className="flex items-center gap-1">
+                                            <Percent className="h-3 w-3 text-gray-400" />
+                                            PPN (11%)
+                                        </span>
+                                        <span className="font-semibold text-gray-900">
+                                            {formatRupiah(calculations.ppn)}
+                                        </span>
+                                    </div>
+
+                                    <div className="flex items-center justify-between text-xs text-gray-600">
+                                        <span>Biaya Materai</span>
+                                        <span className="font-semibold text-gray-900">
+                                            {formatRupiah(calculations.materai)}
+                                        </span>
+                                    </div>
+
+                                    <div className="border-t border-gray-200 pt-3">
+                                        <div className="flex items-baseline justify-between">
+                                            <span className="text-sm font-bold text-gray-900">Grand Total</span>
+                                            <span className="text-xl font-black text-blue-700">
+                                                {formatRupiah(calculations.grandTotal)}
+                                            </span>
+                                        </div>
+
+                                        {calculations.grandTotal > 0 && (
+                                            <p className="mt-2 text-[11px] text-gray-500 italic bg-white/60 p-2 rounded-md border border-gray-200/50">
+                                                *** {calculations.terbilang} ***
+                                            </p>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        )}
-
-                        {/* Show/Hide Periode Toggle */}
-                        <div className="flex items-center space-x-2 rounded-md border p-3">
-                            <input
-                                type="checkbox"
-                                id="showPeriod"
-                                checked={form.showPeriod}
-                                onChange={(e) => setForm({ ...form, showPeriod: e.target.checked })}
-                                className="h-4 w-4"
-                            />
-                            <label htmlFor="showPeriod" className="text-sm font-medium">
-                                Tampilkan Periode pada Invoice
-                            </label>
                         </div>
 
-                        {/* Periode Layanan - Hanya tampil jika showPeriod = true */}
-                        {form.showPeriod && (
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="period_start">Periode Mulai</Label>
-                                    <Input
-                                        id="period_start"
-                                        name="period_start"
-                                        type="date"
-                                        value={form.period_start}
-                                        onChange={(e) => setForm({ ...form, period_start: e.target.value })}
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="period_end">Periode Akhir</Label>
-                                    <Input
-                                        id="period_end"
-                                        name="period_end"
-                                        type="date"
-                                        value={form.period_end}
-                                        onChange={(e) => setForm({ ...form, period_end: e.target.value })}
-                                    />
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Hidden Input untuk terbilang */}
-                        <Input name="terbilang" value={form.terbilang} type="hidden" />
-
-                        {/* Total */}
-                        <div className="space-y-2">
-                            <Label>Subtotal</Label>
-                            <Input
-                                name="subtotal"
-                                value={formatRupiah(form.subtotal)}
-                                readOnly
-                                className="bg-gray-100"
-                            />
-                        </div>
-
-                        {/* Diskon - Kondisional */}
-                        {showDiscountInput ? (
-                            <div className="space-y-2 rounded-md border border-orange-200 bg-orange-50 p-3">
-                                <div className="flex items-center justify-between">
-                                    <Label htmlFor="discount" className="text-orange-800">Diskon</Label>
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setShowDiscountInput(false);
-                                            setForm((prev) => ({ ...prev, discount: 0 }));
-                                        }}
-                                        className="text-xs text-red-600 hover:text-red-800"
-                                    >
-                                        × Batal
-                                    </button>
-                                </div>
-                                <Input
-                                    id="discount"
-                                    name="discount"
-                                    type="number"
-                                    min="0"
-                                    value={form.discount || ''}
-                                    onChange={(e) => setForm({ ...form, discount: Number(e.target.value) || 0 })}
-                                    className="bg-white"
-                                    placeholder="Masukkan nominal diskon"
-                                />
-                            </div>
-                        ) : (
-                            <button
-                                type="button"
-                                onClick={() => setShowDiscountInput(true)}
-                                className="flex w-full items-center justify-center rounded-md border border-dashed border-gray-300 py-2 text-sm text-gray-500 hover:border-orange-400 hover:text-orange-600"
-                            >
-                                + Tambah Diskon
-                            </button>
-                        )}
-
-                        {/* Tampilkan Diskon hanya jika > 0 */}
-                        {form.discount > 0 && (
-                            <div className="space-y-2">
-                                <Label className="text-orange-600">Diskon</Label>
-                                <Input
-                                    name="discount_display"
-                                    value={formatRupiah(form.discount)}
-                                    readOnly
-                                    className="bg-orange-50 border-orange-200"
-                                />
-                            </div>
-                        )}
-
-                        <div className="space-y-2">
-                            <Label>PPN (11%)</Label>
-                            <Input name="ppn" value={formatRupiah(form.ppn)} readOnly className="bg-gray-100" />
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label>Materai</Label>
-                                <Input
-                                    name="materai"
-                                    value={formatRupiah(form.materai)}
-                                    readOnly
-                                    disabled={!form.applyMaterai}
-                                    className={`bg-gray-100 ${!form.applyMaterai ? 'opacity-50' : ''}`}
-                                />
-                            </div>
-
-                            {/* Opsi Materai */}
-                            <div className="mt-4 flex items-center space-x-2">
-                                <input
-                                    type="checkbox"
-                                    id="applyMaterai"
-                                    checked={form.applyMaterai}
-                                    onChange={(e) => {
-                                        const isChecked = e.target.checked;
-                                        setForm((prev) => ({
-                                            ...prev,
-                                            applyMaterai: isChecked,
-                                            materai: isChecked ? 10000 : 0,
-                                        }));
-                                    }}
-                                />
-                                <label htmlFor="applyMaterai" className="text-sm font-medium">
-                                    Terapkan Materai (Rp 10.000)
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <Label>Grand Total</Label>
-                            <Input name="grand_total" value={formatRupiah(form.grand_total)} readOnly className="bg-gray-100" />
-                        </div>
-
-                        {/* Submit Button */}
-                        <div className="flex justify-end gap-2 pt-4">
+                        {/* Action Buttons */}
+                        <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild>
                                 <Link href="/invoices">Batal</Link>
                             </Button>
-                            <Button type="submit" disabled={!selectedCustomerId || !selectedOrderId || selectedContainers.size === 0}>
-                                Simpan Invoice
+                            <Button
+                                type="submit"
+                                disabled={
+                                    !selectedCustomerId ||
+                                    !selectedOrderId ||
+                                    selectedContainers.size === 0
+                                }
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-sm"
+                            >
+                                <CheckCircle2 className="h-4 w-4 mr-2" />
+                                Lanjut ke Preview Invoice
                             </Button>
                         </div>
                     </form>

@@ -20,6 +20,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { ArrowDown, ArrowUp, ArrowUpDown, Eye, Pencil, Plus, RotateCcw, Trash2 } from 'lucide-react';
 // Types
@@ -35,6 +36,12 @@ type Props = {
             label: string;
             active: boolean;
         }>;
+        current_page?: number;
+        last_page?: number;
+        per_page?: number;
+        total?: number;
+        from?: number;
+        to?: number;
     };
     filters: {
         search?: string;
@@ -43,6 +50,7 @@ type Props = {
         sort_dir?: string;
         date_from?: string;
         date_to?: string;
+        per_page?: number;
     };
 };
 type Customer = {
@@ -130,6 +138,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const [isTrashed, setIsTrashed] = useState(!!filters.trashed);
     const [dateFrom, setDateFrom] = useState(filters?.date_from ?? '');
     const [dateTo, setDateTo] = useState(filters?.date_to ?? '');
+    const [perPage, setPerPage] = useState<string>(String(filters?.per_page || orders?.per_page || 25));
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
@@ -215,11 +224,29 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     const handleSearch = () => {
         router.get('/orders', {
-            search,
+            search: search || undefined,
             trashed: filters.trashed,
             date_from: dateFrom || undefined,
             date_to: dateTo || undefined,
+            per_page: perPage,
         });
+    };
+
+    const handlePerPageChange = (val: string) => {
+        setPerPage(val);
+        router.get(
+            '/orders',
+            {
+                search: search || undefined,
+                trashed: filters.trashed,
+                date_from: dateFrom || undefined,
+                date_to: dateTo || undefined,
+                per_page: val,
+            },
+            {
+                preserveState: true,
+            },
+        );
     };
 
     const [isEntryDialogOpen, setIsEntryDialogOpen] = useState(false);
@@ -361,6 +388,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     search: filters.search,
                     date_from: filters.date_from,
                     date_to: filters.date_to,
+                    per_page: perPage,
                 })}
                 className="flex items-center gap-1 font-semibold text-gray-700 hover:text-black"
             >
@@ -381,7 +409,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const toggleTrashed = () => {
         const newTrashed = !isTrashed;
         setIsTrashed(newTrashed);
-        router.get('/orders', { trashed: newTrashed ? '1' : undefined });
+        router.get('/orders', {
+            trashed: newTrashed ? '1' : undefined,
+            search: search || undefined,
+            date_from: dateFrom || undefined,
+            date_to: dateTo || undefined,
+            per_page: perPage,
+        });
     };
 
     // Kelompokkan data orders berdasarkan `no_aju` jika ada, jika tidak gunakan `order_id`
@@ -406,11 +440,34 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     {props.flash?.error && <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">{props.flash.error}</div>}
                     <Heading title="Order List" description="Manage all registered orders and their statuses." />
 
-                    {/* Toggle Trashed */}
-                    <div className="flex items-center justify-between">
-                        <Button variant="outline" onClick={toggleTrashed}>
-                            {isTrashed ? 'Sembunyikan Order Dihapus' : 'Tampilkan Order Dihapus'}
-                        </Button>
+                    {/* Actions Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div className="flex flex-wrap items-center gap-3">
+                            <Button variant="outline" onClick={toggleTrashed}>
+                                {isTrashed ? 'Sembunyikan Order Dihapus' : 'Tampilkan Order Dihapus'}
+                            </Button>
+
+                            <div className="flex items-center gap-2 text-xs text-gray-500 font-medium pl-2 border-l border-gray-200">
+                                <span>Tampilkan:</span>
+                                <Select value={perPage} onValueChange={handlePerPageChange}>
+                                    <SelectTrigger className="h-9 w-[85px] text-xs font-semibold">
+                                        <SelectValue placeholder="25" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="10">10</SelectItem>
+                                        <SelectItem value="25">25</SelectItem>
+                                        <SelectItem value="50">50</SelectItem>
+                                        <SelectItem value="100">100</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+
+                        {roleId != 3 && (
+                            <Button asChild>
+                                <Link href="/orders/create">+ Create Orders</Link>
+                            </Button>
+                        )}
                     </div>
 
                     {/* Search Bar */}
@@ -463,22 +520,17 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 onClick={() => {
                                     setDateFrom('');
                                     setDateTo('');
-                                    router.get('/orders', { search, trashed: filters.trashed });
+                                    setSearch('');
+                                    router.get('/orders', {
+                                        trashed: filters.trashed,
+                                        per_page: perPage,
+                                    });
                                 }}
                                 className="sm:w-auto"
                             >
                                 Reset
                             </Button>
                         </div>
-                    </div>
-
-                    {/* Tombol Create Order */}
-                    <div className="flex justify-end">
-                        {roleId != 3 && (
-                            <Button asChild className="mb-2">
-                                <Link href="/orders/create">+ Create Orders</Link>
-                            </Button>
-                        )}
                     </div>
 
                     {/* Data Table */}
@@ -734,28 +786,36 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     </div>
 
                     {/* Pagination */}
-                    <div className="flex flex-wrap justify-center gap-1">
-                        {orders.links.map((link, i) =>
-                            link.url ? (
-                                <Button
-                                    key={i}
-                                    variant={link.active ? 'default' : 'outline'}
-                                    disabled={!link.url}
-                                    onClick={() => router.get(link.url!)}
-                                    className="px-3 py-1 whitespace-nowrap"
-                                >
-                                    {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
-                                        if (match.includes('Previous')) return '← Prev';
-                                        if (match.includes('Next')) return 'Next →';
-                                        return match;
-                                    })}
-                                </Button>
-                            ) : (
-                                <span key={i} className="px-3 py-1">
-                                    ...
-                                </span>
-                            ),
-                        )}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-gray-100">
+                        <div className="text-xs text-gray-500 font-medium">
+                            Menampilkan <span className="font-semibold text-gray-800">{orders.from || 0}</span> -{' '}
+                            <span className="font-semibold text-gray-800">{orders.to || 0}</span> dari{' '}
+                            <span className="font-semibold text-gray-800">{orders.total || orders.data.length}</span> order
+                        </div>
+
+                        <div className="flex flex-wrap items-center justify-center gap-1">
+                            {orders.links.map((link, i) =>
+                                link.url ? (
+                                    <Button
+                                        key={i}
+                                        variant={link.active ? 'default' : 'outline'}
+                                        disabled={!link.url}
+                                        onClick={() => router.get(link.url!)}
+                                        className="px-3 py-1 text-xs whitespace-nowrap"
+                                    >
+                                        {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
+                                            if (match.includes('Previous')) return '← Prev';
+                                            if (match.includes('Next')) return 'Next →';
+                                            return match;
+                                        })}
+                                    </Button>
+                                ) : (
+                                    <span key={i} className="px-3 py-1 text-xs text-gray-400">
+                                        ...
+                                    </span>
+                                ),
+                            )}
+                        </div>
                     </div>
                 </div>
 

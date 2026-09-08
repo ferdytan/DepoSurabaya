@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use App\Models\OrderItem;
+use App\Models\Setting;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,12 @@ class OrderController extends Controller
     $search = $request->input('search');
     $dateFrom = $request->input('date_from');
     $dateTo = $request->input('date_to');
+
+    $defaultPagination = (int) Setting::get('default_pagination', 25);
+    $perPage = (int) $request->input('per_page', $defaultPagination);
+    if (!in_array($perPage, [10, 25, 50, 100])) {
+        $perPage = $defaultPagination;
+    }
 
     $query = OrderItem::with([
         'order.customer',
@@ -62,7 +69,7 @@ class OrderController extends Controller
     }
 
     // Urutkan
-    $orders = $query->latest()->paginate(10);
+    $orders = $query->latest()->paginate($perPage)->withQueryString();
 
     // Transform untuk tambahkan temperature
     $orders->getCollection()->transform(function ($item) {
@@ -81,6 +88,7 @@ class OrderController extends Controller
             'trashed' => $trashed,
             'date_from' => $dateFrom,
             'date_to' => $dateTo,
+            'per_page' => $perPage,
         ],
         'flash' => [
             'success' => session('success'),
@@ -264,8 +272,8 @@ class OrderController extends Controller
         'order_items.*.commodity'             => 'nullable|string|max:255',
         'order_items.*.country'               => 'nullable|string|max:100',
         'order_items.*.vessel'                => 'nullable|string|max:255',
-        // 'order_items.*.price_type'            => 'nullable|in:20ft,40ft,global',
-        'order_items.*.price_type'            => 'required_with:order_items.*.product_id|in:20ft,40ft,global',
+        // 'order_items.*.price_type'            => 'nullable|in:20ft,40ft,45ft,global',
+        'order_items.*.price_type'            => 'required_with:order_items.*.product_id|in:20ft,40ft,45ft,global',
         'order_items.*.price_value'           => 'nullable|numeric',
         'order_items.*.additional_product_ids'=> 'nullable|array',
         'order_items.*.additional_product_ids.*' => 'exists:products,id',
@@ -521,7 +529,7 @@ public function update(Request $request, Order $order)
         'order_items.*.commodity'             => 'nullable|string|max:255',
         'order_items.*.country'               => 'nullable|string|max:100',
         'order_items.*.vessel'                => 'nullable|string|max:255',
-        'order_items.*.price_type'            => 'nullable|in:20ft,40ft,global',
+        'order_items.*.price_type'            => 'nullable|in:20ft,40ft,45ft,global',
         'order_items.*.price_value'           => 'nullable|numeric',
         'order_items.*.additional_product_ids'=> 'nullable|array',
         'order_items.*.additional_product_ids.*' => 'exists:products,id',
@@ -975,9 +983,19 @@ private function getPriceForType($product, $priceType, $order)
         ->where('product_id', $product->id)
         ->first();
 
-    // Jika ada harga khusus, gunakan custom_global_price
-    if ($customerProduct && isset($customerProduct->custom_global_price)) {
-        return (float)$customerProduct->custom_global_price;
+    if ($customerProduct) {
+        if ($priceType === '20ft' && isset($customerProduct->custom_price_20ft) && $customerProduct->custom_price_20ft > 0) {
+            return (float)$customerProduct->custom_price_20ft;
+        }
+        if ($priceType === '40ft' && isset($customerProduct->custom_price_40ft) && $customerProduct->custom_price_40ft > 0) {
+            return (float)$customerProduct->custom_price_40ft;
+        }
+        if ($priceType === '45ft' && isset($customerProduct->custom_price_45ft) && $customerProduct->custom_price_45ft > 0) {
+            return (float)$customerProduct->custom_price_45ft;
+        }
+        if (isset($customerProduct->custom_global_price) && $customerProduct->custom_global_price > 0) {
+            return (float)$customerProduct->custom_global_price;
+        }
     }
 
     // Jika tidak ada harga khusus, gunakan harga global dari produk

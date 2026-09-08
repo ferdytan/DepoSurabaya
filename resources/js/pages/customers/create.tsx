@@ -25,6 +25,7 @@ export default function CreateCustomer() {
             product_id: number;
             price_20ft: string;
             price_40ft: string;
+            price_45ft: string;
             price_global: string;
         }>,
     });
@@ -64,6 +65,7 @@ export default function CreateCustomer() {
                 product_id: product.id,
                 price_20ft: '',
                 price_40ft: '',
+                price_45ft: '',
                 price_global: '',
             },
         ]);
@@ -78,7 +80,7 @@ export default function CreateCustomer() {
         );
     };
 
-    const handlePriceChange = (index: number, field: 'price_20ft' | 'price_40ft', value: string) => {
+    const handlePriceChange = (index: number, field: 'price_20ft' | 'price_40ft' | 'price_45ft' | 'price_global', value: string) => {
         const updated = [...data.product_prices];
         updated[index][field] = value;
         setData('product_prices', updated);
@@ -102,7 +104,7 @@ export default function CreateCustomer() {
                 <div className="max-w-3xl space-y-6 p-4 sm:p-6">
                     <HeadingSmall
                         title="Create New Customer"
-                        description="Hanya nama yang wajib diisi. Harga custom produk opsional (20' dan 40')."
+                        description="Hanya nama yang wajib diisi. Harga custom produk opsional (20', 40', 45', dan Global Flat)."
                     />
 
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -191,8 +193,8 @@ export default function CreateCustomer() {
 
                         {/* Custom Product Pricing */}
                         <div className="space-y-4 rounded-md border border-gray-200 bg-white p-4">
-                            <h3 className="font-medium text-gray-800">Custom Container Pricing (20' & 40')</h3>
-                            <p className="text-sm text-gray-500">Atur harga khusus per produk. Hanya 20' dan 40' yang digunakan.</p>
+                            <h3 className="font-medium text-gray-800">Custom Pricing (20', 40', 45' & Global Flat)</h3>
+                            <p className="text-sm text-gray-500">Atur tarif kustom per produk. Kolom 20', 40', dan 45' untuk layanan berbasis kontainer; kolom Global (Flat) untuk layanan non-kontainer / tarif flat.</p>
 
                             {/* Search */}
                             <div className="space-y-2">
@@ -235,20 +237,21 @@ export default function CreateCustomer() {
                                     <table className="min-w-full divide-y divide-gray-200">
                                         <thead className="bg-gray-50">
                                             <tr>
-                                                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">20'</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">40'</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">LCL</th>
+                                                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">20'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">40'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">45'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">Global (Flat)</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-gray-200">
                                             {data.product_prices.map((item, index) => (
                                                 <tr key={item.product_id}>
-                                                    <td className="px-4 py-2 text-sm whitespace-nowrap text-gray-800">
+                                                    <td className="px-3 py-2 text-sm whitespace-nowrap text-gray-800">
                                                         {availableProducts.find((p) => p.id === item.product_id)?.name ||
                                                             `Product ID ${item.product_id}`}
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"
@@ -258,7 +261,7 @@ export default function CreateCustomer() {
                                                             className="w-full text-right"
                                                         />
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"
@@ -268,7 +271,17 @@ export default function CreateCustomer() {
                                                             className="w-full text-right"
                                                         />
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
+                                                        <Input
+                                                            type="text"
+                                                            inputMode="numeric"
+                                                            value={formatNumber(item.price_45ft)}
+                                                            onChange={(e) => handlePriceChange(index, 'price_45ft', parseNumber(e.target.value))}
+                                                            placeholder="0"
+                                                            className="w-full text-right"
+                                                        />
+                                                    </td>
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"

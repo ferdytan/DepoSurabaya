@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 // Breadcrumb
-const breadcrumbs: BreadcrumbItem[] = [{ title: 'Overview', href: '/dashboard' }];
+const breadcrumbs: BreadcrumbItem[] = [{ title: 'Dashboard', href: '/dashboard' }];
 
 // Types
 interface ContainerItem {
@@ -67,6 +67,7 @@ interface KpiData {
     container_aktif: number;
     container_20ft: number;
     container_40ft: number;
+    container_45ft?: number;
     container_other_size: number;
     container_belum_masuk: number;
     gate_in_hari_ini: number;
@@ -128,7 +129,7 @@ function formatContainerSize(priceType?: string | null, fallback?: string): stri
     if (!priceType) return fallback || '-';
     const val = String(priceType).trim();
     if (val.toLowerCase().endsWith('ft')) return val;
-    if (val === '20' || val === '40') return `${val}ft`;
+    if (val === '20' || val === '40' || val === '45') return `${val}ft`;
     return val || fallback || '-';
 }
 
@@ -172,6 +173,7 @@ export default function DashboardPage() {
         container_aktif: props.jumlahContainerBelumKeluar ?? 0,
         container_20ft: 0,
         container_40ft: 0,
+        container_45ft: 0,
         container_other_size: 0,
         container_belum_masuk: props.jumlahContainerBelumMasuk ?? 0,
         gate_in_hari_ini: 0,
@@ -266,7 +268,7 @@ function AdminOverviewDashboard({
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Overview - Depo Surabaya" />
+            <Head title="Dashboard - Depo Surabaya" />
 
             <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
                 {/* Header: Sapaan & Quick Action Buttons */}
@@ -274,7 +276,7 @@ function AdminOverviewDashboard({
                     <div>
                         <div className="flex items-center gap-2.5">
                             <h1 className="text-2xl font-bold tracking-tight text-gray-800">
-                                Overview Depo Surabaya
+                                Dashboard Depo Surabaya
                             </h1>
                             <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-0.5 text-xs font-semibold text-blue-700 border border-blue-200">
                                 {roleName}
@@ -329,13 +331,18 @@ function AdminOverviewDashboard({
                             </span>
                             <span className="text-xs font-medium text-gray-500">Container</span>
                         </div>
-                        <div className="mt-3 flex items-center gap-2 border-t border-gray-100 pt-3 text-xs text-gray-600">
+                        <div className="mt-3 flex items-center gap-2 border-t border-gray-100 pt-3 text-xs text-gray-600 flex-wrap">
                             <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 font-medium text-gray-700 border border-gray-200">
                                 20ft: {kpi.container_20ft}
                             </span>
                             <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 font-medium text-gray-700 border border-gray-200">
                                 40ft: {kpi.container_40ft}
                             </span>
+                            {(kpi.container_45ft ?? 0) > 0 && (
+                                <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 font-medium text-blue-700 border border-blue-200">
+                                    45ft: {kpi.container_45ft}
+                                </span>
+                            )}
                             {kpi.container_other_size > 0 && (
                                 <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 font-medium text-gray-700 border border-gray-200">
                                     Lainnya: {kpi.container_other_size}
@@ -716,7 +723,7 @@ function CheckerSimpleDashboard({
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Overview - Checker" />
+            <Head title="Dashboard - Checker" />
 
             <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
                 {/* Header Checker */}
@@ -724,7 +731,7 @@ function CheckerSimpleDashboard({
                     <div>
                         <div className="flex items-center gap-2.5">
                             <h1 className="text-2xl font-bold tracking-tight text-gray-800">
-                                Overview Gate Lapangan
+                                Dashboard Gate Lapangan
                             </h1>
                             <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-700 border border-emerald-200">
                                 Checker
@@ -1170,7 +1177,7 @@ function KarantinaSimpleDashboard({
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Overview - Karantina" />
+            <Head title="Dashboard - Karantina" />
 
             <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
                 {/* Header Karantina */}
@@ -1178,7 +1185,7 @@ function KarantinaSimpleDashboard({
                     <div>
                         <div className="flex items-center gap-2.5">
                             <h1 className="text-2xl font-bold tracking-tight text-gray-800">
-                                Overview Karantina & Fumigasi
+                                Dashboard Karantina & Fumigasi
                             </h1>
                             <span className="inline-flex items-center rounded-full bg-rose-50 px-3 py-0.5 text-xs font-semibold text-rose-700 border border-rose-200">
                                 Petugas Karantina

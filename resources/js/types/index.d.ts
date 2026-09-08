@@ -20,6 +20,7 @@ export interface NavItem {
     href: string;
     icon?: LucideIcon | null;
     isActive?: boolean;
+    shortcut?: string;
 }
 
 export interface SharedData {
@@ -28,6 +29,11 @@ export interface SharedData {
     auth: Auth;
     ziggy: Config & { location: string };
     sidebarOpen: boolean;
+    settings?: {
+        default_pagination: number;
+        login_image_url: string;
+        default_sidebar_state?: 'expanded' | 'collapsed';
+    };
     [key: string]: unknown;
 }
 

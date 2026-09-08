@@ -4,13 +4,20 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import ReactDOMServer from 'react-dom/server';
 import { type RouteName, route } from 'ziggy-js';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const rawAppName = import.meta.env.VITE_APP_NAME || '';
+const appName = rawAppName && rawAppName !== 'Laravel' ? rawAppName : 'Depo Surabaya';
 
 createServer((page) =>
     createInertiaApp({
         page,
         render: ReactDOMServer.renderToString,
-        title: (title) => `${title} - ${appName}`,
+        title: (title) => {
+            if (!title) return appName;
+            if (title.includes(appName) || title.includes('Depo Surabaya')) {
+                return title.replace(/\s*-\s*Laravel\s*$/i, '');
+            }
+            return `${title} - ${appName}`;
+        },
         resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
         setup: ({ App, props }) => {
             /* eslint-disable */

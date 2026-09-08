@@ -498,6 +498,7 @@ class InvoiceController extends Controller
                     'description' => $p->description,
                     'custom_price_20ft' => $custP ? (int) $custP->pivot->custom_price_20ft : null,
                     'custom_price_40ft' => $custP ? (int) $custP->pivot->custom_price_40ft : null,
+                    'custom_price_45ft' => $custP ? (int) $custP->pivot->custom_price_45ft : null,
                     'custom_global_price' => $custP ? (int) $custP->pivot->custom_global_price : null,
                 ];
             });

@@ -19,7 +19,8 @@ type ProductPrice = {
     product_id: number;
     price_20ft: string;
     price_40ft: string;
-    price_global: string; // ✅ Kembalikan field global
+    price_45ft: string;
+    price_global: string;
 };
 
 interface PageProps {
@@ -87,7 +88,8 @@ export default function EditCustomer() {
                 product_id: product.id,
                 price_20ft: '',
                 price_40ft: '',
-                price_global: '', // ✅ Tambahkan field global
+                price_45ft: '',
+                price_global: '',
             },
         ]);
     };
@@ -101,8 +103,7 @@ export default function EditCustomer() {
         );
     };
 
-    // ✅ Update handler untuk menangani field global
-    const handlePriceChange = (index: number, field: 'price_20ft' | 'price_40ft' | 'price_global', value: string) => {
+    const handlePriceChange = (index: number, field: 'price_20ft' | 'price_40ft' | 'price_45ft' | 'price_global', value: string) => {
         const updated = [...data.product_prices];
         updated[index][field] = value;
         setData('product_prices', updated);
@@ -129,7 +130,7 @@ export default function EditCustomer() {
             <Head title={`Edit ${customer.name}`} />
             <CustomersLayout>
                 <div className="max-w-3xl space-y-6 p-4 sm:p-6">
-                    <HeadingSmall title={`Edit Customer: ${customer.name}`} description="Harga khusus untuk 20', 40', dan Global." />
+                    <HeadingSmall title={`Edit Customer: ${customer.name}`} description="Harga khusus per produk untuk 20', 40', 45', dan Global Flat." />
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Nama & Email */}
@@ -261,19 +262,20 @@ export default function EditCustomer() {
                                     <table className="min-w-full divide-y divide-gray-200">
                                         <thead className="bg-gray-50">
                                             <tr>
-                                                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">20'</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">40'</th>
-                                                <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">LCL</th>
+                                                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">20'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">40'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">45'</th>
+                                                <th className="px-3 py-2 text-right text-xs font-medium text-gray-500 uppercase">Global (Flat)</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-gray-200">
                                             {data.product_prices.map((item, index) => (
                                                 <tr key={item.product_id}>
-                                                    <td className="px-4 py-2 text-sm whitespace-nowrap text-gray-800">
+                                                    <td className="px-3 py-2 text-sm whitespace-nowrap text-gray-800">
                                                         {products.find((p) => p.id === item.product_id)?.name || `Product ID ${item.product_id}`}
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"
@@ -283,7 +285,7 @@ export default function EditCustomer() {
                                                             className="w-full text-right"
                                                         />
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"
@@ -293,7 +295,17 @@ export default function EditCustomer() {
                                                             className="w-full text-right"
                                                         />
                                                     </td>
-                                                    <td className="px-4 py-2 text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
+                                                        <Input
+                                                            type="text"
+                                                            inputMode="numeric"
+                                                            value={formatNumber(item.price_45ft)}
+                                                            onChange={(e) => handlePriceChange(index, 'price_45ft', parseNumber(e.target.value))}
+                                                            placeholder="0"
+                                                            className="w-full text-right"
+                                                        />
+                                                    </td>
+                                                    <td className="px-3 py-2 text-right whitespace-nowrap">
                                                         <Input
                                                             type="text"
                                                             inputMode="numeric"

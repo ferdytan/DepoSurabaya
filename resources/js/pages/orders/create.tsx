@@ -15,7 +15,9 @@ import {
     Calendar,
     Check,
     CheckCircle2,
+    FileCheck,
     FileText,
+    Hash,
     Layers,
     Plus,
     PlusCircle,
@@ -45,6 +47,7 @@ interface Product {
     requires_temperature: boolean;
     custom_price_20ft?: string;
     custom_price_40ft?: string;
+    custom_price_45ft?: string;
     custom_global_price?: string;
 }
 
@@ -76,7 +79,7 @@ interface OrderItem {
      * }
      */
     temperature?: { [date: string]: { [hour: string]: string } };
-    price_type?: '20ft' | '40ft' | 'global';
+    price_type?: '20ft' | '40ft' | '45ft' | 'global';
     price_value?: string | number | undefined;
     [key: string]: string | string[] | { [date: string]: { [hour: string]: string } } | number | undefined;
     additional_product_prices?: string[]; // Format: ["3:150000", "5:220000"]
@@ -178,13 +181,14 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
             if (selectedProduct) {
                 if (value === '20ft') price_value = selectedProduct.custom_price_20ft;
                 else if (value === '40ft') price_value = selectedProduct.custom_price_40ft;
+                else if (value === '45ft') price_value = selectedProduct.custom_price_45ft;
                 else if (value === 'global') price_value = selectedProduct.custom_global_price;
             }
             newItems[index]['price_value'] = price_value;
 
             // ⬇️ recompute harga additional sesuai price_type baru
             const addIds = (newItems[index].additional_product_ids as string[]) || [];
-            newItems[index]['additional_product_prices'] = getAdditionalProductPrices(addIds, value as '20ft' | '40ft' | 'global' | undefined);
+            newItems[index]['additional_product_prices'] = getAdditionalProductPrices(addIds, value as '20ft' | '40ft' | '45ft' | 'global' | undefined);
         }
 
         setData('order_items', newItems);
@@ -385,13 +389,14 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
     };
 
     // ganti fungsi lama dengan ini
-    const getAdditionalProductPrices = (product_ids: string[], price_type?: '20ft' | '40ft' | 'global'): string[] => {
+    const getAdditionalProductPrices = (product_ids: string[], price_type?: '20ft' | '40ft' | '45ft' | 'global'): string[] => {
         return product_ids.map((id) => {
             const product = customerProducts.find((p) => p.id.toString() === id);
             let price = '0';
             if (product) {
                 if (price_type === '20ft') price = product.custom_price_20ft ?? '0';
                 else if (price_type === '40ft') price = product.custom_price_40ft ?? '0';
+                else if (price_type === '45ft') price = product.custom_price_45ft ?? '0';
                 else price = product.custom_global_price ?? '0';
             }
             return `${id}:${price}`;
@@ -455,53 +460,94 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                 <h2 className="text-base font-bold text-gray-900">Informasi Order & Pengirim</h2>
                             </div>
 
-                            {/* Jenis Nomor Order & Input */}
+                            {/* Pilihan Format Identifikasi Order */}
                             <div className="space-y-4">
                                 <div>
-                                    <Label className="text-xs font-semibold text-gray-700">Jenis Nomor Order</Label>
-                                    <div className="mt-1.5 inline-flex rounded-lg bg-gray-100 p-1 border border-gray-200">
-                                        <button
-                                            type="button"
-                                            onClick={() => {
-                                                setUseOrderId(true);
-                                                setData('no_aju', '');
-                                            }}
-                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-                                                useOrderId
-                                                    ? 'bg-white text-gray-900 shadow-xs'
-                                                    : 'text-gray-600 hover:text-gray-900'
-                                            }`}
-                                        >
-                                            Nomor Order Otomatis
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setUseOrderId(false)}
-                                            className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-                                                !useOrderId
-                                                    ? 'bg-white text-gray-900 shadow-xs'
-                                                    : 'text-gray-600 hover:text-gray-900'
-                                            }`}
-                                        >
-                                            Nomor AJU
-                                        </button>
-                                    </div>
+                                    <Label className="text-xs font-bold text-gray-800">
+                                        Format Identifikasi Order
+                                    </Label>
+                                    <p className="text-[11px] text-gray-500 mt-0.5">
+                                        Pilih apakah order menggunakan nomor otomatis yang digenerate oleh sistem atau nomor dokumen Bea Cukai (AJU).
+                                    </p>
                                 </div>
 
-                                <div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setUseOrderId(true);
+                                            setData('no_aju', '');
+                                        }}
+                                        className={`flex items-start gap-3.5 p-4 rounded-xl border text-left transition-all cursor-pointer ${
+                                            useOrderId
+                                                ? 'border-blue-500 bg-blue-50/70 shadow-xs ring-2 ring-blue-500/20'
+                                                : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                                        }`}
+                                    >
+                                        <div className={`p-2.5 rounded-lg shrink-0 ${
+                                            useOrderId ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
+                                        }`}>
+                                            <Hash className="h-4 w-4" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-xs font-bold text-gray-900">Nomor Order Otomatis</span>
+                                                {useOrderId && (
+                                                    <span className="text-[10px] font-extrabold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Aktif</span>
+                                                )}
+                                            </div>
+                                            <p className="text-[11px] text-gray-500 leading-relaxed">
+                                                Sistem mengenerate ID unik otomatis (ORD-YYYYMMDD-XXXX).
+                                            </p>
+                                        </div>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => setUseOrderId(false)}
+                                        className={`flex items-start gap-3.5 p-4 rounded-xl border text-left transition-all cursor-pointer ${
+                                            !useOrderId
+                                                ? 'border-blue-500 bg-blue-50/70 shadow-xs ring-2 ring-blue-500/20'
+                                                : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                                        }`}
+                                    >
+                                        <div className={`p-2.5 rounded-lg shrink-0 ${
+                                            !useOrderId ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
+                                        }`}>
+                                            <FileCheck className="h-4 w-4" />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-xs font-bold text-gray-900">Nomor AJU</span>
+                                                {!useOrderId && (
+                                                    <span className="text-[10px] font-extrabold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Aktif</span>
+                                                )}
+                                            </div>
+                                            <p className="text-[11px] text-gray-500 leading-relaxed">
+                                                Input manual nomor dokumen pengajuan pabean / Bea Cukai.
+                                            </p>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                {/* Active Input Field with generous spacing */}
+                                <div className="pt-1">
                                     {useOrderId ? (
                                         <div className="space-y-1.5 max-w-md">
                                             <Label htmlFor="order_id_display" className="text-xs font-semibold text-gray-700">
-                                                Nomor Order (Otomatis)
+                                                Nomor Order yang Digenerate
                                             </Label>
-                                            <Input
-                                                id="order_id_display"
-                                                value={currentOrderId}
-                                                readOnly
-                                                className="bg-gray-50/80 font-mono text-xs font-medium text-gray-600 cursor-not-allowed"
-                                            />
+                                            <div className="relative">
+                                                <Input
+                                                    id="order_id_display"
+                                                    value={currentOrderId}
+                                                    readOnly
+                                                    className="bg-gray-50/90 font-mono text-xs font-bold text-gray-800 cursor-not-allowed pl-9 h-10 border-gray-200"
+                                                />
+                                                <Hash className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                                            </div>
                                             <p className="text-[11px] text-gray-400">
-                                                Nomor order otomatis digenerate oleh sistem.
+                                                Nomor order ini dibuat otomatis oleh sistem saat dokumen disimpan.
                                             </p>
                                         </div>
                                     ) : (
@@ -509,14 +555,21 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                             <Label htmlFor="no_aju" className="text-xs font-semibold text-gray-700">
                                                 Nomor AJU <span className="text-red-500">*</span>
                                             </Label>
-                                            <Input
-                                                id="no_aju"
-                                                value={data.no_aju}
-                                                onChange={(e) => setData('no_aju', e.target.value)}
-                                                placeholder="Contoh: 000000-000000-00000000-000000"
-                                                required
-                                            />
+                                            <div className="relative">
+                                                <Input
+                                                    id="no_aju"
+                                                    value={data.no_aju}
+                                                    onChange={(e) => setData('no_aju', e.target.value)}
+                                                    placeholder="Contoh: 000000-000000-20260908-000001"
+                                                    required
+                                                    className="text-xs font-mono pl-9 h-10 border-gray-300 focus:border-blue-500"
+                                                />
+                                                <FileCheck className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                                            </div>
                                             {errors.no_aju && <p className="text-xs text-red-500">{errors.no_aju}</p>}
+                                            <p className="text-[11px] text-gray-400">
+                                                Pastikan nomor AJU sesuai dengan dokumen pabean yang berlaku.
+                                            </p>
                                         </div>
                                     )}
                                 </div>
@@ -614,11 +667,16 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                         price: product?.custom_price_40ft,
                                     },
                                     {
+                                        label: 'Harga 45ft',
+                                        value: '45ft',
+                                        price: product?.custom_price_45ft,
+                                    },
+                                    {
                                         label: 'Harga Global',
                                         value: 'global',
                                         price: product?.custom_global_price,
                                     },
-                                ].filter((o) => o.price !== undefined && o.price !== null);
+                                ].filter((o) => o.price !== undefined && o.price !== null && o.price !== '');
 
                                 return (
                                     <div
@@ -697,7 +755,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                 <Select
                                                     value={item.price_type}
                                                     onValueChange={(val) =>
-                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | 'global')
+                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
                                                     }
                                                     disabled={!item.product_id || priceOptions.length === 0}
                                                 >

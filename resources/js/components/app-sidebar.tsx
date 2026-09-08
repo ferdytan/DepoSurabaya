@@ -10,44 +10,52 @@ import AppLogo from './app-logo';
 // Definisikan item menu utama TANPA menu Karantina
 const baseNavItems: NavItem[] = [
     {
-        title: 'Overview',
+        title: 'Dashboard',
         href: '/dashboard',
         icon: LayoutGrid,
+        shortcut: 'D',
     },
     {
         title: 'User',
         href: '/users',
         icon: User,
+        shortcut: 'U',
     },
     {
         title: 'Customers',
         href: '/customers',
         icon: SquareUserRound,
+        shortcut: 'C',
     },
     {
         title: 'Shippers',
         href: '/shippers',
         icon: Truck,
+        shortcut: 'S',
     },
     {
         title: 'Products',
         href: '/products',
         icon: Package,
+        shortcut: 'P',
     },
     {
         title: 'Orders',
         href: '/orders',
         icon: Book,
+        shortcut: 'O',
     },
     {
         title: 'Temperature',
         href: '/temperature-records',
         icon: Thermometer,
+        shortcut: 'T',
     },
     {
         title: 'Invoices',
         href: '/invoices',
         icon: Paperclip,
+        shortcut: 'I',
     },
 ];
 
@@ -56,6 +64,7 @@ const karantinaNavItem: NavItem = {
     title: 'Karantina',
     href: '/karantina',
     icon: User, // Ganti dengan ikon yang sesuai jika perlu
+    shortcut: 'K',
 };
 
 // Footer tetap sama
@@ -89,12 +98,13 @@ export function AppSidebar() {
         // Checker: hanya Dashboard dan Orders
         filteredNavItems = baseNavItems.filter((item) => item.href == '/dashboard' || item.href == '/orders');
     } else if (roleId == 4) {
-        // Karantina: hanya menu Overview (menu Karantina di-hide sementara)
+        // Karantina: hanya menu Dashboard (menu Karantina di-hide sementara)
         filteredNavItems = [
             {
-                title: 'Overview',
+                title: 'Dashboard',
                 href: '/dashboard',
                 icon: LayoutGrid,
+                shortcut: 'D',
             },
         ];
     }

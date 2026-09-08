@@ -25,7 +25,8 @@ class DashboardController extends Controller
         // Breakdown ukuran kontainer aktif di depo
         $count20ft = (clone $queryAktif)->where('price_type', '20ft')->count();
         $count40ft = (clone $queryAktif)->where('price_type', '40ft')->count();
-        $countOtherSize = max(0, $jumlahContainerAktif - ($count20ft + $count40ft));
+        $count45ft = (clone $queryAktif)->where('price_type', '45ft')->count();
+        $countOtherSize = max(0, $jumlahContainerAktif - ($count20ft + $count40ft + $count45ft));
 
         // Kontainer belum masuk (terdaftar di order tapi entry_date masih null)
         $jumlahContainerBelumMasuk = OrderItem::whereNull('entry_date')->count();
@@ -195,6 +196,7 @@ class DashboardController extends Controller
                 'container_aktif' => $jumlahContainerAktif,
                 'container_20ft' => $count20ft,
                 'container_40ft' => $count40ft,
+                'container_45ft' => $count45ft,
                 'container_other_size' => $countOtherSize,
                 'container_belum_masuk' => $jumlahContainerBelumMasuk,
                 'gate_in_hari_ini' => $gateInHariIni,

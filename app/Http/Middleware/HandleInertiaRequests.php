@@ -58,7 +58,17 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
-            'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
+            'sidebarOpen' => $request->hasCookie('sidebar_state')
+                ? $request->cookie('sidebar_state') === 'true'
+                : ((string) \App\Models\Setting::get('default_sidebar_state', 'expanded') === 'expanded'),
+            'settings' => [
+                'default_pagination' => (int) \App\Models\Setting::get('default_pagination', 25),
+                'login_image_url' => (string) \App\Models\Setting::get(
+                    'login_image_url',
+                    'https://images.unsplash.com/photo-1634646809203-f3b4adff9127?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                ),
+                'default_sidebar_state' => (string) \App\Models\Setting::get('default_sidebar_state', 'expanded'),
+            ],
         ];
     }
 }

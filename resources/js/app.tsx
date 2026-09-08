@@ -8,10 +8,17 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/lara-light-blue/theme.css';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const rawAppName = import.meta.env.VITE_APP_NAME || '';
+const appName = rawAppName && rawAppName !== 'Laravel' ? rawAppName : 'Depo Surabaya';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => {
+        if (!title) return appName;
+        if (title.includes(appName) || title.includes('Depo Surabaya')) {
+            return title.replace(/\s*-\s*Laravel\s*$/i, '');
+        }
+        return `${title} - ${appName}`;
+    },
     resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     setup({ el, App, props }) {
         const root = createRoot(el);

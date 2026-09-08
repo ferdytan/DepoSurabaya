@@ -19,6 +19,7 @@ class Customer extends Model
                     ->withPivot([
                         'custom_price_20ft',
                         'custom_price_40ft',
+                        'custom_price_45ft',
                         'custom_global_price'
                     ])
                     ->withTimestamps();

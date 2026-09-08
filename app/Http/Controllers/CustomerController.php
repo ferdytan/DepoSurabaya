@@ -44,6 +44,7 @@ class CustomerController extends Controller
             'product_prices.*.product_id' => 'exists:products,id',
             'product_prices.*.price_20ft' => 'numeric|nullable',
             'product_prices.*.price_40ft' => 'numeric|nullable',
+            'product_prices.*.price_45ft' => 'numeric|nullable',
             'product_prices.*.price_global' => 'numeric|nullable',
         ]);
 
@@ -61,6 +62,7 @@ class CustomerController extends Controller
                 $customer->products()->attach($item['product_id'], [
                     'custom_price_20ft' => $item['price_20ft'] ?? null,
                     'custom_price_40ft' => $item['price_40ft'] ?? null,
+                    'custom_price_45ft' => $item['price_45ft'] ?? null,
                     'custom_global_price' => $item['price_global'] ?? null,
                 ]);
             }
@@ -76,13 +78,14 @@ class CustomerController extends Controller
 
         // Ambil harga custom per produk untuk customer ini
         $productPrices = $customer->products()
-            ->withPivot('custom_price_20ft', 'custom_price_40ft', 'custom_global_price')
+            ->withPivot('custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price')
             ->get()
             ->map(function ($product) {
                 return [
                     'product_id' => $product->id,
                     'price_20ft' => $product->pivot->custom_price_20ft,
                     'price_40ft' => $product->pivot->custom_price_40ft,
+                    'price_45ft' => $product->pivot->custom_price_45ft,
                     'price_global' => $product->pivot->custom_global_price,
                 ];
             });
@@ -109,6 +112,7 @@ class CustomerController extends Controller
             'product_prices.*.product_id' => 'exists:products,id',
             'product_prices.*.price_20ft' => 'numeric|nullable',
             'product_prices.*.price_40ft' => 'numeric|nullable',
+            'product_prices.*.price_45ft' => 'numeric|nullable',
             'product_prices.*.price_global' => 'numeric|nullable',
         ]);
 
@@ -129,6 +133,7 @@ class CustomerController extends Controller
                 $customer->products()->attach($item['product_id'], [
                     'custom_price_20ft' => $item['price_20ft'] ?? null,
                     'custom_price_40ft' => $item['price_40ft'] ?? null,
+                    'custom_price_45ft' => $item['price_45ft'] ?? null,
                     'custom_global_price' => $item['price_global'] ?? null,
                 ]);
             }
@@ -149,7 +154,7 @@ class CustomerController extends Controller
         // Ambil produk yang sudah di-assign ke customer (relasi many-to-many)
         $products = $customer->products()
             ->select('products.id', 'products.service_type', 'products.requires_temperature',
-                'customer_product.custom_price_20ft', 'customer_product.custom_price_40ft', 'customer_product.custom_global_price'
+                'customer_product.custom_price_20ft', 'customer_product.custom_price_40ft', 'customer_product.custom_price_45ft', 'customer_product.custom_global_price'
             )
             ->get();
 

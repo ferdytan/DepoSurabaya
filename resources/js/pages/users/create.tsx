@@ -1,4 +1,5 @@
-import HeadingSmall from '@/components/heading-small';
+import Heading from '@/components/heading';
+import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -6,8 +7,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import AppLayout from '@/layouts/app-layout';
 import UsersLayout from '@/layouts/users/layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head, router } from '@inertiajs/react';
-import { useState } from 'react';
+import { Head, Link, useForm } from '@inertiajs/react';
+import { Eye, EyeOff, Lock, Mail, Shield, User, UserPlus } from 'lucide-react';
+import React, { useState } from 'react';
 
 type Role = {
     id: number;
@@ -24,13 +26,15 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: '/users',
     },
     {
-        title: 'Create User',
+        title: 'Tambah User Baru',
         href: '/users/create',
     },
 ];
 
 export default function CreateUser({ roles }: Props) {
-    const [form, setForm] = useState({
+    const [showPassword, setShowPassword] = useState(false);
+
+    const { data, setData, post, processing, errors } = useForm({
         name: '',
         username: '',
         email: '',
@@ -39,126 +43,200 @@ export default function CreateUser({ roles }: Props) {
         role_id: '',
     });
 
-    const [errors, setErrors] = useState<Record<string, string>>({});
-    const [processing, setProcessing] = useState(false);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
-    };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setProcessing(true);
-        setErrors({});
-
-        router.post('/users', form, {
-            onFinish: () => setProcessing(false),
-            onError: (err) => setErrors(err),
-        });
+        post(route('users.store'));
     };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Create User" />
+            <Head title="Tambah User Baru" />
 
             <UsersLayout>
-                <div className="space-y-6">
-                    <HeadingSmall title="Create New User" description="Fill in the details below to create a new user." />
+                <div className="mx-auto max-w-4xl space-y-6 pb-12">
+                    {/* Header */}
+                    <div>
+                        <Heading
+                            title="Tambah Pengguna / Admin Baru"
+                            description="Daftarkan akun staf baru dan tentukan peran wewenang akses dalam sistem operasional Depo."
+                        />
+                    </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* Name */}
-                        <div className="space-y-2">
-                            <Label htmlFor="name">Name</Label>
-                            <Input id="name" name="name" value={form.name} onChange={handleChange} placeholder="Full name" disabled={processing} />
-                            {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
+                    {/* Form Card */}
+                    <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-xs">
+                        <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100 mb-6">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                                <UserPlus className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-bold text-gray-900">Informasi Akun Pengguna</h3>
+                                <p className="text-xs text-gray-500">Lengkapi seluruh kolom yang ditandai dengan tanda bintang (*)</p>
+                            </div>
                         </div>
 
-                        {/* Username */}
-                        <div className="space-y-2">
-                            <Label htmlFor="username">Username</Label>
-                            <Input
-                                id="username"
-                                name="username"
-                                value={form.username}
-                                onChange={handleChange}
-                                placeholder="Username"
-                                disabled={processing}
-                            />
-                            {errors.username && <p className="text-sm text-destructive">{errors.username}</p>}
-                        </div>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Row 1: Nama Lengkap & Username */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                {/* Nama Lengkap */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="name" className="text-xs font-semibold text-gray-700">
+                                        Nama Lengkap <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <User className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                        <Input
+                                            id="name"
+                                            value={data.name}
+                                            onChange={(e) => setData('name', e.target.value)}
+                                            placeholder="Contoh: Budi Santoso"
+                                            className="h-10 pl-9 text-xs"
+                                            required
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <InputError message={errors.name} />
+                                </div>
 
-                        {/* Email */}
-                        <div className="space-y-2">
-                            <Label htmlFor="email">Email Address</Label>
-                            <Input
-                                id="email"
-                                name="email"
-                                type="email"
-                                value={form.email}
-                                onChange={handleChange}
-                                placeholder="Email address"
-                                disabled={processing}
-                            />
-                            {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
-                        </div>
+                                {/* Username */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="username" className="text-xs font-semibold text-gray-700">
+                                        Username <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400">@</span>
+                                        <Input
+                                            id="username"
+                                            value={data.username}
+                                            onChange={(e) => setData('username', e.target.value.toLowerCase().replace(/\s+/g, ''))}
+                                            placeholder="budisantoso"
+                                            className="h-10 pl-8 text-xs font-mono"
+                                            required
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <InputError message={errors.username} />
+                                </div>
+                            </div>
 
-                        {/* Password */}
-                        <div className="space-y-2">
-                            <Label htmlFor="password">Password</Label>
-                            <Input
-                                id="password"
-                                name="password"
-                                type="password"
-                                value={form.password}
-                                onChange={handleChange}
-                                placeholder="Password"
-                                disabled={processing}
-                            />
-                            {errors.password && <p className="text-sm text-destructive">{errors.password}</p>}
-                        </div>
+                            {/* Row 2: Email & Role */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                {/* Email */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="email" className="text-xs font-semibold text-gray-700">
+                                        Alamat Email <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <Mail className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            value={data.email}
+                                            onChange={(e) => setData('email', e.target.value)}
+                                            placeholder="budi@deposurabaya.com"
+                                            className="h-10 pl-9 text-xs"
+                                            required
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <InputError message={errors.email} />
+                                </div>
 
-                        {/* Confirm Password */}
-                        <div className="space-y-2">
-                            <Label htmlFor="password_confirmation">Confirm Password</Label>
-                            <Input
-                                id="password_confirmation"
-                                name="password_confirmation"
-                                type="password"
-                                value={form.password_confirmation}
-                                onChange={handleChange}
-                                placeholder="Confirm password"
-                                disabled={processing}
-                            />
-                            {errors.password_confirmation && <p className="text-sm text-destructive">{errors.password_confirmation}</p>}
-                        </div>
+                                {/* Role */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="role_id" className="text-xs font-semibold text-gray-700">
+                                        Peran / Hak Akses (Role) <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <Select
+                                            value={data.role_id}
+                                            onValueChange={(val) => setData('role_id', val)}
+                                            disabled={processing}
+                                        >
+                                            <SelectTrigger id="role_id" className="h-10 text-xs">
+                                                <SelectValue placeholder="Pilih Role Pengguna" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                {roles.map((role) => (
+                                                    <SelectItem key={role.id} value={role.id.toString()}>
+                                                        <span className="font-semibold">{role.name}</span>
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+                                    <InputError message={errors.role_id} />
+                                </div>
+                            </div>
 
-                        {/* Role */}
-                        <div className="space-y-2">
-                            <Label htmlFor="role_id">Role</Label>
-                            <Select onValueChange={(value) => setForm((prev) => ({ ...prev, role_id: value }))}>
-                                <SelectTrigger id="role_id" disabled={processing}>
-                                    <SelectValue placeholder="Select role" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {roles.map((role) => (
-                                        <SelectItem key={role.id} value={role.id.toString()}>
-                                            {role.name}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                            {errors.role_id && <p className="text-sm text-destructive">{errors.role_id}</p>}
-                        </div>
+                            {/* Row 3: Password & Confirm Password */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2 border-t border-gray-100">
+                                {/* Password */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="password" className="text-xs font-semibold text-gray-700">
+                                        Kata Sandi <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <Lock className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                        <Input
+                                            id="password"
+                                            type={showPassword ? 'text' : 'password'}
+                                            value={data.password}
+                                            onChange={(e) => setData('password', e.target.value)}
+                                            placeholder="Minimal 6 karakter"
+                                            className="h-10 pl-9 pr-10 text-xs"
+                                            required
+                                            disabled={processing}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600 focus:outline-none"
+                                            tabIndex={-1}
+                                        >
+                                            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                                        </button>
+                                    </div>
+                                    <InputError message={errors.password} />
+                                </div>
 
-                        {/* Submit Button */}
-                        <div className="pt-2">
-                            <Button type="submit" className="w-full sm:w-auto" disabled={processing}>
-                                {processing && <span className="mr-2 animate-spin">●</span>}
-                                Create User
-                            </Button>
-                        </div>
-                    </form>
+                                {/* Confirm Password */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="password_confirmation" className="text-xs font-semibold text-gray-700">
+                                        Konfirmasi Kata Sandi <span className="text-red-500">*</span>
+                                    </Label>
+                                    <div className="relative">
+                                        <Lock className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                        <Input
+                                            id="password_confirmation"
+                                            type={showPassword ? 'text' : 'password'}
+                                            value={data.password_confirmation}
+                                            onChange={(e) => setData('password_confirmation', e.target.value)}
+                                            placeholder="Ulangi kata sandi"
+                                            className="h-10 pl-9 pr-10 text-xs"
+                                            required
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <InputError message={errors.password_confirmation} />
+                                </div>
+                            </div>
+
+                            {/* Actions */}
+                            <div className="flex items-center justify-end gap-3 pt-6 border-t border-gray-100">
+                                <Button variant="outline" asChild className="h-9 text-xs font-semibold">
+                                    <Link href="/users">Batal</Link>
+                                </Button>
+                                <Button
+                                    type="submit"
+                                    disabled={processing}
+                                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs px-6 h-9"
+                                >
+                                    {processing && <span className="mr-2 animate-spin">●</span>}
+                                    {processing ? 'Menyimpan User...' : 'Simpan User Baru'}
+                                </Button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </UsersLayout>
         </AppLayout>

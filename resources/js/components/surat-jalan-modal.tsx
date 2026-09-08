@@ -1,0 +1,522 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Printer, X } from 'lucide-react';
+
+export interface SuratJalanData {
+    container_number: string;
+    size?: string | null; // 20ft, 40ft, 45ft, etc.
+    customer_name?: string | null;
+    shipper_name?: string | null;
+    service_type?: string | null;
+    commodity?: string | null;
+    no_aju?: string | null;
+    order_id?: string | null;
+    date?: string | null;
+    seal_number?: string | null;
+    police_number?: string | null;
+    destination?: string | null;
+    exit_time?: string | null;
+    notes?: string | null;
+}
+
+interface SuratJalanModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    data: SuratJalanData | null;
+}
+
+export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanModalProps) {
+    const printRef = useRef<HTMLDivElement>(null);
+
+    // Dynamic state that can be fine-tuned before printing
+    const [tanggal, setTanggal] = useState('');
+    const [jamKeluar, setJamKeluar] = useState('');
+    const [noPol, setNoPol] = useState('');
+    const [tujuan, setTujuan] = useState('');
+    const [noSegel, setNoSegel] = useState('');
+    const [isi, setIsi] = useState('FULL CONT(ON-CHASIS)');
+    const [keterangan, setKeterangan] = useState('');
+
+    useEffect(() => {
+        if (data) {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const mins = String(now.getMinutes()).padStart(2, '0');
+
+            setTanggal(data.date ? formatDateIndo(data.date) : `${day} - ${month} - ${year}`);
+            setJamKeluar(data.exit_time || `${hours}:${mins}`);
+            setNoPol(data.police_number || '');
+            setTujuan(data.destination || '');
+            setNoSegel(data.seal_number || '-');
+            setIsi(data.commodity ? data.commodity.toUpperCase() : 'FULL CONT(ON-CHASIS)');
+            setKeterangan(data.notes || '');
+        }
+    }, [data, isOpen]);
+
+    function formatDateIndo(dateStr: string) {
+        try {
+            const d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const year = d.getFullYear();
+            return `${day} - ${month} - ${year}`;
+        } catch {
+            return dateStr;
+        }
+    }
+
+    const formatContainerSize = (sz?: string | null) => {
+        if (!sz) return '1 X 20"';
+        const clean = sz.toLowerCase();
+        if (clean.includes('45')) return '1 X 45"';
+        if (clean.includes('40')) return '1 X 40"';
+        if (clean.includes('20')) return '1 X 20"';
+        return `1 X ${sz}`;
+    };
+
+    const handlePrint = () => {
+        const printContent = printRef.current;
+        if (!printContent) return;
+
+        const printWindow = window.open('', '_blank', 'width=900,height=650');
+        if (!printWindow) {
+            alert('Popup terblokir oleh browser. Izinkan popup untuk mencetak Surat Jalan.');
+            return;
+        }
+
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Surat Jalan - ${data?.container_number || 'Depo Surabaya'}</title>
+                <style>
+                    @page {
+                        size: 210mm 140mm; /* Ukuran 21 x 14 cm */
+                        margin: 0;
+                    }
+                    * {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                        color: #111;
+                    }
+                    body {
+                        width: 210mm;
+                        height: 140mm;
+                        padding: 8mm 10mm 6mm 10mm;
+                        background: #fff;
+                    }
+                    .sj-container {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .header-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        margin-bottom: 2mm;
+                    }
+                    .company-info {
+                        flex: 1;
+                        padding-right: 4mm;
+                    }
+                    .company-title {
+                        font-size: 15pt;
+                        font-weight: 800;
+                        letter-spacing: 0.5px;
+                        line-height: 1.15;
+                    }
+                    .company-address {
+                        font-size: 8.5pt;
+                        font-weight: 600;
+                        margin-top: 1px;
+                        line-height: 1.2;
+                    }
+                    .company-telp {
+                        font-size: 8pt;
+                        margin-top: 1px;
+                        line-height: 1.2;
+                    }
+                    .customer-row {
+                        margin-top: 3mm;
+                        font-size: 9pt;
+                        font-weight: 700;
+                        line-height: 1.25;
+                    }
+                    .customer-row .shipper {
+                        font-weight: 600;
+                        padding-left: 18mm;
+                    }
+                    .meta-box {
+                        width: 58mm;
+                        border: 1.5px solid #000;
+                        font-size: 8pt;
+                    }
+                    .meta-row {
+                        display: flex;
+                        border-bottom: 1px solid #000;
+                        min-height: 5.5mm;
+                        align-items: center;
+                    }
+                    .meta-row:last-child {
+                        border-bottom: none;
+                    }
+                    .meta-label {
+                        width: 20mm;
+                        padding-left: 2mm;
+                        font-weight: 600;
+                    }
+                    .meta-colon {
+                        width: 3mm;
+                    }
+                    .meta-val {
+                        flex: 1;
+                        padding-right: 2mm;
+                        font-weight: 700;
+                    }
+                    
+                    /* Grid Data Utama */
+                    .main-grid {
+                        width: 100%;
+                        border: 1.5px solid #000;
+                        border-collapse: collapse;
+                        margin-top: 1.5mm;
+                    }
+                    .main-grid td {
+                        border: 1px solid #000;
+                        padding: 1.8mm 2.5mm;
+                        vertical-align: middle;
+                    }
+                    .col-lbl {
+                        width: 30mm;
+                        font-size: 8.5pt;
+                        font-weight: 700;
+                        text-align: center;
+                        line-height: 1.15;
+                    }
+                    .col-val {
+                        width: 95mm;
+                        font-size: 9pt;
+                        font-weight: 600;
+                    }
+                    .col-cont-num {
+                        font-size: 16pt;
+                        font-weight: 900;
+                        letter-spacing: 1.5px;
+                        text-align: center;
+                        font-family: 'Arial Black', Arial, sans-serif;
+                    }
+                    .col-service {
+                        width: 55mm;
+                        text-align: center;
+                        vertical-align: middle;
+                        padding: 0;
+                    }
+                    .service-size {
+                        font-size: 10.5pt;
+                        font-weight: 800;
+                        padding: 2.5mm 0;
+                        border-bottom: 1.5px solid #000;
+                    }
+                    .service-title {
+                        font-size: 12.5pt;
+                        font-weight: 900;
+                        font-style: italic;
+                        padding: 4mm 2mm;
+                        line-height: 1.2;
+                        text-transform: uppercase;
+                    }
+
+                    /* Footer */
+                    .footer-grid {
+                        width: 100%;
+                        border: 1.5px solid #000;
+                        border-top: none;
+                        border-collapse: collapse;
+                        margin-top: -0.5px;
+                        flex: 1;
+                    }
+                    .footer-grid td {
+                        border: 1px solid #000;
+                        vertical-align: top;
+                    }
+                    .footer-notice {
+                        width: 42mm;
+                        padding: 2mm;
+                        font-size: 7.5pt;
+                        line-height: 1.25;
+                    }
+                    .footer-notice u {
+                        font-weight: 600;
+                    }
+                    .sig-col {
+                        width: 32mm;
+                        text-align: center;
+                        font-size: 8pt;
+                        padding-top: 1.5mm;
+                        height: 20mm;
+                    }
+                    .sig-col-empty {
+                        flex: 1;
+                    }
+                </style>
+            </head>
+            <body>
+                ${printContent.innerHTML}
+                <script>
+                    window.onload = function() {
+                        window.print();
+                        setTimeout(function() {
+                            window.close();
+                        }, 500);
+                    };
+                </script>
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+    };
+
+    if (!data) return null;
+
+    return (
+        <Dialog open={isOpen} onOpenChange={onClose}>
+            <DialogContent className="max-w-4xl max-h-[92vh] overflow-y-auto p-6">
+                <DialogHeader className="border-b pb-3">
+                    <DialogTitle className="text-lg font-bold flex items-center justify-between">
+                        <span>Cetak Surat Jalan (Ukuran 21 x 14 cm)</span>
+                    </DialogTitle>
+                </DialogHeader>
+
+                {/* Form Pengaturan Cepat Data Dinamis */}
+                <div className="bg-blue-50/60 border border-blue-200 rounded-lg p-3 text-xs space-y-2">
+                    <div className="font-semibold text-blue-900">Sesuaikan Data Pengiriman (Opsional Sebelum Cetak):</div>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <div>
+                            <Label className="text-[11px] text-gray-700">Tanggal</Label>
+                            <Input
+                                value={tanggal}
+                                onChange={(e) => setTanggal(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="DD - MM - YYYY"
+                            />
+                        </div>
+                        <div>
+                            <Label className="text-[11px] text-gray-700">Jam Keluar</Label>
+                            <Input
+                                value={jamKeluar}
+                                onChange={(e) => setJamKeluar(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="HH:MM"
+                            />
+                        </div>
+                        <div>
+                            <Label className="text-[11px] text-gray-700">No. Polisi Truk</Label>
+                            <Input
+                                value={noPol}
+                                onChange={(e) => setNoPol(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="Contoh: L 1234 AB"
+                            />
+                        </div>
+                        <div>
+                            <Label className="text-[11px] text-gray-700">Tujuan</Label>
+                            <Input
+                                value={tujuan}
+                                onChange={(e) => setTujuan(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="Contoh: Pelabuhan / Depo"
+                            />
+                        </div>
+                        <div>
+                            <Label className="text-[11px] text-gray-700">No. Segel</Label>
+                            <Input
+                                value={noSegel}
+                                onChange={(e) => setNoSegel(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="Nomor Segel"
+                            />
+                        </div>
+                        <div>
+                            <Label className="text-[11px] text-gray-700">Isi Kontainer</Label>
+                            <Input
+                                value={isi}
+                                onChange={(e) => setIsi(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="FULL CONT(ON-CHASIS)"
+                            />
+                        </div>
+                        <div className="sm:col-span-2">
+                            <Label className="text-[11px] text-gray-700">Keterangan</Label>
+                            <Input
+                                value={keterangan}
+                                onChange={(e) => setKeterangan(e.target.value)}
+                                className="h-8 text-xs bg-white"
+                                placeholder="Catatan tambahan..."
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* AREA PREVIEW SURAT JALAN (21 x 14 cm) */}
+                <div className="flex justify-center p-2 bg-gray-100 rounded-xl overflow-x-auto">
+                    {/* Wadah Simulasi Kertas Continuous Form dengan Lubang Sprocket */}
+                    <div className="relative bg-white shadow-md border border-gray-300 p-6 w-[794px] min-w-[794px] min-h-[530px] rounded flex flex-col justify-between select-none">
+                        {/* Sprocket Holes Indicator (Kiri & Kanan) */}
+                        <div className="absolute left-1.5 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-20">
+                            {Array.from({ length: 16 }).map((_, i) => (
+                                <div key={i} className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                            ))}
+                        </div>
+                        <div className="absolute right-1.5 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-20">
+                            {Array.from({ length: 16 }).map((_, i) => (
+                                <div key={i} className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                            ))}
+                        </div>
+
+                        {/* Hidden Printable Container ref */}
+                        <div ref={printRef} className="w-full h-full flex flex-col justify-between px-3">
+                            {/* Header */}
+                            <div className="header-row flex justify-between items-start mb-2">
+                                <div className="company-info flex-1 pr-4">
+                                    <div className="company-title font-extrabold text-[17px] tracking-wide text-gray-900 leading-tight">
+                                        PT. DEPO SURABAYA SEJAHTERA
+                                    </div>
+                                    <div className="company-address font-semibold text-[11.5px] text-gray-800 leading-snug">
+                                        Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1)
+                                    </div>
+                                    <div className="company-telp text-[11px] text-gray-800 leading-snug">
+                                        Telp. 031-353 9484, 031-3539485 &nbsp;&nbsp; Fax. 031-3539482
+                                    </div>
+                                    <div className="customer-row mt-3 text-[12.5px] font-bold text-gray-900 leading-tight">
+                                        Customer : {data.customer_name || '-'}
+                                        {data.shipper_name && (
+                                            <div className="shipper font-semibold text-gray-800 pl-8">
+                                                ({data.shipper_name})
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Meta Box Kanan Atas */}
+                                <div className="meta-box w-[220px] border-[1.5px] border-black text-[11px]">
+                                    <div className="meta-row flex border-b border-black py-0.5 items-center">
+                                        <div className="meta-label w-[75px] pl-2 font-semibold">Tanggal</div>
+                                        <div className="meta-colon w-3">:</div>
+                                        <div className="meta-val flex-1 pr-2 font-bold">{tanggal || '-'}</div>
+                                    </div>
+                                    <div className="meta-row flex border-b border-black py-0.5 items-center">
+                                        <div className="meta-label w-[75px] pl-2 font-semibold">Jam Keluar</div>
+                                        <div className="meta-colon w-3">:</div>
+                                        <div className="meta-val flex-1 pr-2 font-bold">{jamKeluar || '-'}</div>
+                                    </div>
+                                    <div className="meta-row flex border-b border-black py-0.5 items-center">
+                                        <div className="meta-label w-[75px] pl-2 font-semibold">No. Pol</div>
+                                        <div className="meta-colon w-3">:</div>
+                                        <div className="meta-val flex-1 pr-2 font-bold">{noPol || '-'}</div>
+                                    </div>
+                                    <div className="meta-row flex py-0.5 items-center">
+                                        <div className="meta-label w-[75px] pl-2 font-semibold">Tujuan</div>
+                                        <div className="meta-colon w-3">:</div>
+                                        <div className="meta-val flex-1 pr-2 font-bold">{tujuan || '-'}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Main Table Grid */}
+                            <table className="main-grid w-full border-[1.5px] border-black border-collapse mt-2">
+                                <tbody>
+                                    <tr>
+                                        <td className="col-lbl w-[130px] border border-black p-2 font-bold text-center text-xs">
+                                            NO<br />CONTAINER
+                                        </td>
+                                        <td className="col-val col-cont-num border border-black p-2 font-black text-xl text-center tracking-wider font-mono">
+                                            {data.container_number}
+                                        </td>
+                                        <td rowSpan={4} className="col-service w-[220px] border border-black p-0 text-center align-middle bg-gray-50/20">
+                                            <div className="service-size text-sm font-bold py-2 border-b-[1.5px] border-black">
+                                                {formatContainerSize(data.size)}
+                                            </div>
+                                            <div className="service-title text-base font-black italic py-4 px-2 tracking-wide uppercase">
+                                                {data.service_type || 'PEMERIKSAAN KARANTINA'}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="col-lbl border border-black p-1.5 font-bold text-center text-xs">
+                                            ISI
+                                        </td>
+                                        <td className="col-val border border-black p-1.5 px-3 font-semibold text-xs text-center">
+                                            {isi || 'FULL CONT(ON-CHASIS)'}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="col-lbl border border-black p-1.5 font-bold text-center text-xs">
+                                            NO SEGEL
+                                        </td>
+                                        <td className="col-val border border-black p-1.5 px-3 font-semibold text-xs text-center">
+                                            {noSegel || '-'}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="col-lbl border border-black p-1.5 font-bold text-center text-xs">
+                                            KETERANGAN
+                                        </td>
+                                        <td className="col-val border border-black p-1.5 px-3 font-semibold text-xs text-center">
+                                            {keterangan || '-'}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            {/* Footer Grid */}
+                            <table className="footer-grid w-full border-[1.5px] border-black border-t-0 border-collapse">
+                                <tbody>
+                                    <tr>
+                                        <td className="footer-notice w-[200px] border border-black p-2 text-[10px] leading-tight text-gray-800">
+                                            <strong><u>PERHATIAN :</u></strong> Mohon container dicek terlebih dahulu, komplain setelah keluar depo bukan tanggung jawab kami.
+                                        </td>
+                                        <td className="sig-col w-[150px] border border-black text-center text-xs p-1.5 h-20 flex-col justify-between">
+                                            <div className="font-medium">Diserahkan oleh</div>
+                                        </td>
+                                        <td className="sig-col w-[150px] border border-black text-center text-xs p-1.5 h-20 flex-col justify-between">
+                                            <div className="font-medium">Sopir</div>
+                                        </td>
+                                        <td className="border border-black flex-1"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Footer Tombol Aksi */}
+                <div className="flex justify-between items-center pt-2 border-t mt-2">
+                    <div className="text-xs text-gray-500">
+                        Format Cetak: <strong>21 cm x 14 cm (Continuous Form)</strong>
+                    </div>
+                    <div className="flex gap-2">
+                        <Button variant="outline" size="sm" onClick={onClose}>
+                            Tutup
+                        </Button>
+                        <Button size="sm" onClick={handlePrint} className="bg-blue-600 hover:bg-blue-700 text-white gap-1.5">
+                            <Printer className="h-4 w-4" />
+                            Cetak Surat Jalan
+                        </Button>
+                    </div>
+                </div>
+            </DialogContent>
+        </Dialog>
+    );
+}

@@ -10,6 +10,7 @@ export const MENU_SHORTCUTS: Record<string, { title: string; href: string }> = {
     o: { title: 'Orders', href: '/orders' },
     t: { title: 'Temperature', href: '/temperature-records' },
     i: { title: 'Invoices', href: '/invoices' },
+    r: { title: 'Report', href: '/reports' },
     k: { title: 'Karantina', href: '/karantina' },
 };
 

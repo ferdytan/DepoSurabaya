@@ -25,6 +25,7 @@ class Order extends Model
         'no_aju',
         'deleted_reason',
         'fumigasi', // Tambahkan field fumigasi di sini
+        'is_excluded_from_report',
     ];  
 
     protected $dates = ['deleted_at', 'entry_date', 'eir_date', 'exit_date'];
@@ -46,6 +47,7 @@ class Order extends Model
         'entry_date' => 'datetime',
         'eir_date' => 'datetime',
         'exit_date' => 'datetime',
+        'is_excluded_from_report' => 'boolean',
     ];
     // public function customer()
     // {

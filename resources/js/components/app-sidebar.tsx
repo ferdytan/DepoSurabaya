@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Book, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
+import { Book, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
 import AppLogo from './app-logo';
 
 // Definisikan item menu utama TANPA menu Karantina
@@ -56,6 +56,12 @@ const baseNavItems: NavItem[] = [
         href: '/invoices',
         icon: Paperclip,
         shortcut: 'I',
+    },
+    {
+        title: 'Report',
+        href: '/reports',
+        icon: FileSpreadsheet,
+        shortcut: 'R',
     },
 ];
 

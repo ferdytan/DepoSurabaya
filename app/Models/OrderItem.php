@@ -17,7 +17,12 @@ class OrderItem extends Model
         'order_id', 'product_id', 'container_number',
         'entry_date', 'eir_date', 'exit_date',
         'commodity', 'country', 'vessel',
-        'price_type', 'price_value', 'delete_reason'
+        'price_type', 'price_value', 'delete_reason',
+        'is_excluded_from_report',
+    ];
+
+    protected $casts = [
+        'is_excluded_from_report' => 'boolean',
     ];
 
      protected $dates = [

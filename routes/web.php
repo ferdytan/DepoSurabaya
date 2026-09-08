@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     OrderController,
     InvoiceController,
     TemperatureRecordController,
-    DashboardController
+    DashboardController,
+    ReportController
 };
 
 
@@ -117,6 +118,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Order actions
         Route::post('/{order}/restore', [OrderController::class, 'restore'])->name('restore')->whereNumber('order');
+        Route::post('/{order}/toggle-exclude-report', [OrderController::class, 'toggleExcludeReport'])->name('toggle-exclude-report')->whereNumber('order');
         Route::get('/{order}/edit', [OrderController::class, 'edit'])->name('edit')->whereNumber('order');
         Route::put('/{order}', [OrderController::class, 'update'])->name('update')->whereNumber('order');
         Route::delete('/{order}', [OrderController::class, 'destroy'])->name('destroy')->whereNumber('order');
@@ -137,6 +139,9 @@ Route::middleware(['auth'])->group(function () {
     /* ---------- TEMPERATURE RECORDS ---------- */
     Route::get('/temperature-records', [TemperatureRecordController::class, 'index'])
         ->name('temperature-records.index');
+
+    /* ---------- REPORTS ---------- */
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
 
     /* ---------- INVOICES ---------- */
     // Route::prefix('invoices')->name('invoices.')->group(function () {

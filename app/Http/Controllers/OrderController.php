@@ -1002,4 +1002,18 @@ private function getPriceForType($product, $priceType, $order)
     return (float)($product->price_global ?? 0);
 }
 
+    public function toggleExcludeReport(\App\Models\Order $order)
+    {
+        $newState = !$order->is_excluded_from_report;
+        $order->is_excluded_from_report = $newState;
+        $order->save();
+
+        // Sinkronisasi ke semua order_items terkait
+        $order->items()->update(['is_excluded_from_report' => $newState]);
+
+        $statusText = $newState ? 'di-exclude dari Report' : 'kembali diikutsertakan dalam Report';
+        return back()->with('success', "Order #{$order->order_id} berhasil {$statusText}.");
+    }
+
 }
+

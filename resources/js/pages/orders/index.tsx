@@ -22,7 +22,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowDown, ArrowUp, ArrowUpDown, Eye, Pencil, Plus, RotateCcw, Trash2 } from 'lucide-react';
+import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Trash2 } from 'lucide-react';
+import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
 // Types
 interface FlashProps {
     success?: string;
@@ -73,6 +74,7 @@ type OrderParent = {
     customer: Customer;
     shipper: { id: number; name: string };
     fumigasi: string | null;
+    is_excluded_from_report?: boolean;
 };
 type Order = {
     id: number;
@@ -90,6 +92,7 @@ type Order = {
     no_aju: string | null;
     deleted_reason: string | null;
     deleted_at: string | null;
+    is_excluded_from_report?: boolean;
     customer: Customer;
     product: Product;
     shipper: Shipper;
@@ -150,6 +153,25 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const [deleteOrderModalOpen, setDeleteOrderModalOpen] = useState(false);
     const [deleteOrderReason, setDeleteOrderReason] = useState('');
     const [orderIdToDelete, setOrderIdToDelete] = useState<number | null>(null);
+
+    // State untuk dialog cetak Surat Jalan (21 x 14 cm)
+    const [suratJalanModalOpen, setSuratJalanModalOpen] = useState(false);
+    const [selectedSuratJalan, setSelectedSuratJalan] = useState<SuratJalanData | null>(null);
+
+    const openSuratJalanModal = (orderItem: Order) => {
+        setSelectedSuratJalan({
+            container_number: orderItem.container_number,
+            size: orderItem.price_type || '20ft',
+            customer_name: orderItem.order?.customer?.name || orderItem.customer?.name || '-',
+            shipper_name: orderItem.order?.shipper?.name || orderItem.shipper?.name || null,
+            service_type: orderItem.product?.service_type || 'PEMERIKSAAN KARANTINA',
+            commodity: orderItem.commodity || null,
+            no_aju: orderItem.no_aju || orderItem.order?.no_aju || null,
+            order_id: orderItem.order?.order_id || orderItem.order_id,
+            date: orderItem.exit_date || orderItem.entry_date || null,
+        });
+        setSuratJalanModalOpen(true);
+    };
 
     const handleOpenTempModal = (order: Order) => {
         console.log('DATA ORDER:', order);
@@ -600,16 +622,23 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                         colSpan={isTrashed ? 11 : 10}
                                                         className="flex items-center justify-between py-3 font-semibold"
                                                     >
-                                                        <div className="mr-3">
-                                                            Nomor Order: {firstOrder.order?.order_id ?? firstOrder.order_id} / No. AJU:{' '}
-                                                            {firstOrder.no_aju ?? '-'}
+                                                        <div className="mr-3 flex items-center flex-wrap gap-2">
+                                                            <span>
+                                                                Nomor Order: {firstOrder.order?.order_id ?? firstOrder.order_id} / No. AJU:{' '}
+                                                                {firstOrder.no_aju ?? '-'}
+                                                            </span>
+                                                            {firstOrder.order?.is_excluded_from_report && (
+                                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
+                                                                    Excluded dari Report
+                                                                </span>
+                                                            )}
                                                             {isCollapsed ? (
-                                                                <ArrowDown className="ml-2 inline h-4 w-4" />
+                                                                <ArrowDown className="ml-1 inline h-4 w-4" />
                                                             ) : (
-                                                                <ArrowUp className="ml-2 inline h-4 w-4" />
+                                                                <ArrowUp className="ml-1 inline h-4 w-4" />
                                                             )}
                                                         </div>
-                                                        <div className="flex gap-3">
+                                                        <div className="flex items-center gap-2.5">
                                                             {isTrashed ? (
                                                                 <Button
                                                                     size="sm"
@@ -638,22 +667,76 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                             ) : (
                                                                 <>
                                                                     {roleId != 3 && (
-                                                                        <Link
-                                                                            href={route('orders.show', firstOrder.order.id)}
-                                                                            title="Lihat Detail Order"
-                                                                            onClick={(e) => e.stopPropagation()}
-                                                                        >
-                                                                            <Eye className="h-4 w-4 text-gray-500 hover:text-gray-700" />
-                                                                        </Link>
-                                                                    )}
-                                                                    {roleId != 3 && (
-                                                                        <Link
-                                                                            href={route('orders.edit', firstOrder.order.id)}
-                                                                            title="Edit Order"
-                                                                            onClick={(e) => e.stopPropagation()}
-                                                                        >
-                                                                            <Pencil className="h-4 w-4 text-blue-500 hover:text-blue-700" />
-                                                                        </Link>
+                                                                        <>
+                                                                            {/* Action 1: Shortcut Buat Invoice */}
+                                                                            <Link
+                                                                                href={route('invoices.create', {
+                                                                                    customer_id: firstOrder.order?.customer?.id ?? firstOrder.customer_id,
+                                                                                    order_id: firstOrder.order?.id ?? firstOrder.id,
+                                                                                })}
+                                                                                title="Buat Invoice untuk Order ini"
+                                                                                onClick={(e) => e.stopPropagation()}
+                                                                                className="text-emerald-600 hover:text-emerald-800 p-1 rounded hover:bg-emerald-50 transition-colors"
+                                                                            >
+                                                                                <Receipt className="h-4 w-4" />
+                                                                            </Link>
+
+                                                                            {/* Action 2: Exclude dari Report */}
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={(e) => {
+                                                                                    e.stopPropagation();
+                                                                                    router.post(
+                                                                                        route('orders.toggle-exclude-report', firstOrder.order?.id ?? firstOrder.id),
+                                                                                        {},
+                                                                                        { preserveScroll: true }
+                                                                                    );
+                                                                                }}
+                                                                                title={
+                                                                                    firstOrder.order?.is_excluded_from_report
+                                                                                        ? 'Order ini di-exclude dari Report. Klik untuk include kembali'
+                                                                                        : 'Klik untuk exclude order ini dari Report'
+                                                                                }
+                                                                                className={`p-1 rounded transition-colors ${
+                                                                                    firstOrder.order?.is_excluded_from_report
+                                                                                        ? 'text-amber-600 hover:text-amber-800 bg-amber-50'
+                                                                                        : 'text-gray-400 hover:text-amber-600 hover:bg-gray-100'
+                                                                                }`}
+                                                                            >
+                                                                                <EyeOff className="h-4 w-4" />
+                                                                            </button>
+
+                                                                            {/* Action 3: Cetak Surat Jalan */}
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={(e) => {
+                                                                                    e.stopPropagation();
+                                                                                    openSuratJalanModal(firstOrder);
+                                                                                }}
+                                                                                title="Cetak Surat Jalan (21 x 14 cm)"
+                                                                                className="text-indigo-600 hover:text-indigo-800 p-1 rounded hover:bg-indigo-50 transition-colors"
+                                                                            >
+                                                                                <Printer className="h-4 w-4" />
+                                                                            </button>
+
+                                                                            <Link
+                                                                                href={route('orders.show', firstOrder.order.id)}
+                                                                                title="Lihat Detail Order"
+                                                                                onClick={(e) => e.stopPropagation()}
+                                                                                className="text-gray-500 hover:text-gray-700 p-1 rounded hover:bg-gray-100"
+                                                                            >
+                                                                                <Eye className="h-4 w-4" />
+                                                                            </Link>
+
+                                                                            <Link
+                                                                                href={route('orders.edit', firstOrder.order.id)}
+                                                                                title="Edit Order"
+                                                                                onClick={(e) => e.stopPropagation()}
+                                                                                className="text-blue-500 hover:text-blue-700 p-1 rounded hover:bg-blue-50"
+                                                                            >
+                                                                                <Pencil className="h-4 w-4" />
+                                                                            </Link>
+                                                                        </>
                                                                     )}
                                                                     {!isTrashed && roleId != 3 && (
                                                                         <button
@@ -663,8 +746,9 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                                                 openDeleteOrderModal(firstOrder.order.id);
                                                                             }}
                                                                             title="Hapus Order"
+                                                                            className="text-red-500 hover:text-red-700 p-1 rounded hover:bg-red-50"
                                                                         >
-                                                                            <Trash2 className="h-4 w-4 text-red-500 hover:text-red-700" />
+                                                                            <Trash2 className="h-4 w-4" />
                                                                         </button>
                                                                     )}
                                                                 </>
@@ -763,7 +847,20 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                             </TableCell>
                                                             <TableCell className="text-right">
                                                                 {!isTrashed && roleId != 3 && (
-                                                                    <div className="flex items-center justify-end gap-2">
+                                                                    <div className="flex items-center justify-end gap-1.5">
+                                                                        <Button
+                                                                            size="icon"
+                                                                            variant="ghost"
+                                                                            type="button"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                openSuratJalanModal(order);
+                                                                            }}
+                                                                            title="Cetak Surat Jalan Kontainer (21 x 14 cm)"
+                                                                            className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50"
+                                                                        >
+                                                                            <Printer className="h-4 w-4" />
+                                                                        </Button>
                                                                         <Button size="icon" variant="ghost" asChild title="Lihat Detail Item">
                                                                             <Link
                                                                                 href={route('orders.items.simple.show', order.id)}
@@ -978,6 +1075,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
+
+                {/* Modal Cetak Surat Jalan (21 x 14 cm) */}
+                <SuratJalanModal
+                    isOpen={suratJalanModalOpen}
+                    onClose={() => setSuratJalanModalOpen(false)}
+                    data={selectedSuratJalan}
+                />
             </OrdersLayout>
         </AppLayout>
     );

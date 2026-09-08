@@ -956,6 +956,11 @@ export default function EditInvoice() {
                                         onChange={(e) => setForm({ ...form, materai: Number(e.target.value) || 0 })}
                                         className="bg-white font-semibold text-gray-800 mt-1"
                                     />
+                                    {totals.afterDiscount < 5000000 && totals.afterDiscount > 0 && (
+                                        <p className="text-[11px] text-amber-700 font-medium mt-1">
+                                            * Tagihan di bawah Rp 5.000.000,- tidak wajib bea materai.
+                                        </p>
+                                    )}
                                 </div>
                             </div>
 

@@ -108,11 +108,15 @@ export default function CreateInvoice() {
     });
     const [showPeriod, setShowPeriod] = useState(true);
 
+    const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+    const urlCustomerId = urlParams?.get('customer_id');
+    const urlOrderId = urlParams?.get('order_id');
+
     const [selectedCustomerId, setSelectedCustomerId] = useState<string>(() => {
-        return reuse_invoice?.customer_id ? reuse_invoice.customer_id.toString() : '';
+        return reuse_invoice?.customer_id ? reuse_invoice.customer_id.toString() : (urlCustomerId || '');
     });
     const [selectedOrderId, setSelectedOrderId] = useState<string>(() => {
-        return reuse_invoice?.order_id ? reuse_invoice.order_id.toString() : '';
+        return reuse_invoice?.order_id ? reuse_invoice.order_id.toString() : (urlOrderId || '');
     });
     const [selectedContainers, setSelectedContainers] = useState<Set<number>>(new Set());
     const [disabledOrders, setDisabledOrders] = useState<Set<number>>(new Set());
@@ -120,7 +124,7 @@ export default function CreateInvoice() {
     // Diskon & Materai
     const [showDiscountInput, setShowDiscountInput] = useState(false);
     const [discount, setDiscount] = useState<number>(0);
-    const [applyMaterai, setApplyMaterai] = useState(true);
+    const [applyMaterai, setApplyMaterai] = useState(false);
 
     // Quantity Additional Products: key `${order_item_id}:${additional_product_id}`
     const [addQty, setAddQty] = useState<Record<string, number>>({});
@@ -216,9 +220,9 @@ export default function CreateInvoice() {
         setErrors({});
     };
 
-    // Inisialisasi awal kontainer jika mode reuse memiliki order_id
+    // Inisialisasi awal kontainer jika selectedOrderId terisi (dari reuse atau shortcut URL)
     useEffect(() => {
-        if (reuse_invoice?.order_id && selectedOrderId === reuse_invoice.order_id.toString()) {
+        if (selectedOrderId && selectedCustomerId) {
             const customer = customers.find((c) => c.id.toString() === selectedCustomerId);
             const order = customer?.orders?.find((o) => o.id.toString() === selectedOrderId);
             if (order) {
@@ -236,7 +240,7 @@ export default function CreateInvoice() {
                 setAddQty((prev) => ({ ...initialQtys, ...prev }));
             }
         }
-    }, [reuse_invoice?.order_id]);
+    }, [selectedOrderId, selectedCustomerId, customers]);
 
     // Check Unavailable Order Items saat customer atau periode berubah
     useEffect(() => {
@@ -313,9 +317,11 @@ export default function CreateInvoice() {
             });
         }
 
-        const materaiVal = applyMaterai ? 10000 : 0;
         const safeDiscount = Math.min(subtotal, Math.max(0, Number(discount) || 0));
         const afterDiscount = Math.max(0, subtotal - safeDiscount);
+        const isUnder5Juta = afterDiscount < 5000000;
+        const effectiveMaterai = isUnder5Juta ? false : applyMaterai;
+        const materaiVal = effectiveMaterai ? 10000 : 0;
         const ppn = Math.round(afterDiscount * 0.11);
         const grandTotal = afterDiscount + ppn + materaiVal;
         const liveTerbilang = terbilang(grandTotal);
@@ -328,8 +334,18 @@ export default function CreateInvoice() {
             materai: materaiVal,
             grandTotal,
             terbilang: liveTerbilang,
+            isUnder5Juta,
         };
     }, [selectedOrder, selectedContainers, discount, applyMaterai, addQty]);
+
+    // Otomatis uncheck materai jika tagihan under 5jt
+    useEffect(() => {
+        if (calculations.isUnder5Juta) {
+            setApplyMaterai(false);
+        } else if (!calculations.isUnder5Juta && calculations.subtotal > 0) {
+            setApplyMaterai(true);
+        }
+    }, [calculations.isUnder5Juta]);
 
     // Handle Submit / Preview
     const handleSubmit = async (e: React.FormEvent) => {
@@ -859,6 +875,11 @@ export default function CreateInvoice() {
                                             />
                                             <span>Terapkan Bea Materai (Rp 10.000)</span>
                                         </label>
+                                        {calculations.isUnder5Juta && calculations.subtotal > 0 && (
+                                            <p className="text-[11px] text-amber-700 font-medium mt-1.5 pl-6">
+                                                * Otomatis tidak dicentang karena total tagihan di bawah Rp 5.000.000,-
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
 

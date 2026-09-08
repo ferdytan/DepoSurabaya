@@ -151,11 +151,42 @@ class InvoiceController extends Controller
             }
         }
 
-        // Ambil semua customer dengan order dan order_items serta relasi terkait
+        // Ambil semua order_item_id yang SUDAH terikat pada invoice aktif (non-deleted)
+        $invoicedOrderItemIds = DB::table('invoice_items')
+            ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')
+            ->whereNull('invoices.deleted_at')
+            ->pluck('invoice_items.order_item_id')
+            ->toArray();
+
+        // Jika mode reuse, kecualikan item milik invoice yang sedang di-reuse agar tetap bisa dipilih
+        if ($reuseInvoice && !empty($reuseId)) {
+            $reuseItemIds = DB::table('invoice_items')
+                ->where('invoice_id', $reuseId)
+                ->pluck('order_item_id')
+                ->toArray();
+            $invoicedOrderItemIds = array_diff($invoicedOrderItemIds, $reuseItemIds);
+        }
+
+        // Ambil semua customer dengan order dan order_items yang BELUM dibuatkan invoice
         $customers = Customer::with([
-            'orders.order_items.product', // Muat produk untuk setiap order_item
-            'orders.order_items.additionalProducts' // Muat produk tambahan untuk setiap order_item
+            'orders' => function ($q) {
+                $q->latest();
+            },
+            'orders.order_items' => function ($q) use ($invoicedOrderItemIds) {
+                if (!empty($invoicedOrderItemIds)) {
+                    $q->whereNotIn('id', $invoicedOrderItemIds);
+                }
+            },
+            'orders.order_items.product',
+            'orders.order_items.additionalProducts'
         ])->get();
+
+        // Filter agar order yang semua kontainernya sudah di-invoice tidak muncul di dropdown
+        $customers->each(function ($customer) {
+            $customer->setRelation('orders', $customer->orders->filter(function ($order) {
+                return $order->order_items->isNotEmpty();
+            })->values());
+        });
 
         // Modifikasi data $customers untuk menambahkan container_number ke level order
         // agar sesuai dengan ekspektasi frontend (CreateInvoice.tsx)
@@ -164,7 +195,7 @@ class InvoiceController extends Controller
                 // Tambahkan properti container_number ke objek order
                 // berdasarkan container_number dari order_items-nya.
                 if ($order->order_items->isNotEmpty()) {
-                    // Contoh: ambil container_number dari item pertama
+                    // Ambil container_number dari item pertama
                     $order->container_number = $order->order_items->first()->container_number ?? '-';
                 } else {
                     $order->container_number = 'Tidak ada kontainer';

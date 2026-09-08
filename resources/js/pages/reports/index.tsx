@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
+import DateRangePicker from '@/components/date-range-picker';
 import {
     FileSpreadsheet,
     Printer,
@@ -650,36 +651,33 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                 </Select>
                             </div>
 
-                            {/* Date Range: Tanggal Mulai */}
-                            <div className="space-y-1.5">
+                            {/* Date Range Picker */}
+                            <div className="space-y-1.5 sm:col-span-2 lg:col-span-2">
                                 <div className="flex items-center justify-between">
-                                    <Label className="text-xs font-semibold text-gray-700">Tanggal Mulai</Label>
-                                    <select
-                                        value={dateType}
-                                        onChange={(e) => setDateType(e.target.value)}
-                                        className="text-[11px] text-blue-600 bg-transparent border-none p-0 cursor-pointer focus:ring-0"
-                                    >
-                                        <option value="entry_date">Tgl Masuk</option>
-                                        <option value="exit_date">Tgl Keluar</option>
-                                        <option value="order_date">Tgl Order</option>
-                                    </select>
+                                    <Label className="text-xs font-semibold text-gray-700">Rentang Tanggal</Label>
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="text-[11px] text-gray-500">Berdasarkan:</span>
+                                        <select
+                                            value={dateType}
+                                            onChange={(e) => setDateType(e.target.value)}
+                                            className="text-[11px] font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded px-1.5 py-0.5 cursor-pointer focus:ring-0"
+                                        >
+                                            <option value="entry_date">Tgl Masuk</option>
+                                            <option value="exit_date">Tgl Keluar</option>
+                                            <option value="order_date">Tgl Order</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <Input
-                                    type="date"
-                                    value={dateFrom}
-                                    onChange={(e) => setDateFrom(e.target.value)}
-                                    className="h-9 text-xs"
-                                />
-                            </div>
-
-                            {/* Date Range: Tanggal Selesai */}
-                            <div className="space-y-1.5">
-                                <Label className="text-xs font-semibold text-gray-700">Tanggal Selesai</Label>
-                                <Input
-                                    type="date"
-                                    value={dateTo}
-                                    onChange={(e) => setDateTo(e.target.value)}
-                                    className="h-9 text-xs"
+                                <DateRangePicker
+                                    startDate={dateFrom}
+                                    endDate={dateTo}
+                                    onChange={({ startDate, endDate }) => {
+                                        setDateFrom(startDate);
+                                        setDateTo(endDate);
+                                    }}
+                                    placeholder="Semua rentang tanggal..."
+                                    className="w-full"
+                                    align="right"
                                 />
                             </div>
                         </div>

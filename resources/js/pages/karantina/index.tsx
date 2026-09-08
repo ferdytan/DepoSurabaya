@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import DateRangePicker from '@/components/date-range-picker';
 
 // Types
 interface FlashProps {
@@ -513,31 +514,21 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             />
                         </div>
 
-                        {/* Filter Start Date */}
-                        <div className="space-y-1">
-                            <Label htmlFor="start-date" className="text-xs font-medium text-gray-600">
-                                Tanggal Mulai
+                        {/* Date Range Picker */}
+                        <div className="md:col-span-2 space-y-1">
+                            <Label className="text-xs font-medium text-gray-600">
+                                Rentang Tanggal
                             </Label>
-                            <Input
-                                id="start-date"
-                                type="date"
-                                value={startDate}
-                                onChange={(e) => setStartDate(e.target.value)}
-                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
-                            />
-                        </div>
-
-                        {/* Filter End Date */}
-                        <div className="space-y-1">
-                            <Label htmlFor="end-date" className="text-xs font-medium text-gray-600">
-                                Tanggal Selesai
-                            </Label>
-                            <Input
-                                id="end-date"
-                                type="date"
-                                value={endDate}
-                                onChange={(e) => setEndDate(e.target.value)}
-                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
+                            <DateRangePicker
+                                startDate={startDate}
+                                endDate={endDate}
+                                onChange={({ startDate: s, endDate: e }) => {
+                                    setStartDate(s);
+                                    setEndDate(e);
+                                }}
+                                placeholder="Pilih rentang tanggal filter..."
+                                className="w-full"
+                                align="right"
                             />
                         </div>
                     </div>

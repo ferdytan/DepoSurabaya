@@ -24,6 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Search, Trash2 } from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
+import DateRangePicker from '@/components/date-range-picker';
 // Types
 interface FlashProps {
     success?: string;
@@ -513,29 +514,33 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 />
                             </div>
 
-                            {/* Filter Rentang Tanggal */}
-                            <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-                                <div className="flex items-center gap-1.5">
-                                    <span className="text-xs text-gray-500 font-medium shrink-0">Dari:</span>
-                                    <Input
-                                        id="date-from"
-                                        type="date"
-                                        value={dateFrom}
-                                        onChange={(e) => setDateFrom(e.target.value)}
-                                        className="h-9 text-xs w-[138px]"
-                                    />
-                                </div>
-                                <div className="flex items-center gap-1.5">
-                                    <span className="text-xs text-gray-500 font-medium shrink-0">Sampai:</span>
-                                    <Input
-                                        id="date-to"
-                                        type="date"
-                                        value={dateTo}
-                                        onChange={(e) => setDateTo(e.target.value)}
-                                        className="h-9 text-xs w-[138px]"
-                                    />
-                                </div>
-                            </div>
+                            {/* Modern Date Range Picker */}
+                            <DateRangePicker
+                                startDate={dateFrom}
+                                endDate={dateTo}
+                                onChange={({ startDate, endDate }) => {
+                                    setDateFrom(startDate);
+                                    setDateTo(endDate);
+                                }}
+                                onApply={({ startDate, endDate }) => {
+                                    setDateFrom(startDate);
+                                    setDateTo(endDate);
+                                    router.get(
+                                        '/orders',
+                                        {
+                                            search,
+                                            date_from: startDate,
+                                            date_to: endDate,
+                                            trashed: filters.trashed,
+                                            per_page: perPage,
+                                        },
+                                        { preserveState: true, replace: true }
+                                    );
+                                }}
+                                placeholder="Filter rentang tanggal masuk..."
+                                className="w-full sm:w-[260px] shrink-0"
+                                align="right"
+                            />
 
                             {/* Tombol Aksi Filter & Reset */}
                             <div className="flex items-center gap-2 shrink-0">

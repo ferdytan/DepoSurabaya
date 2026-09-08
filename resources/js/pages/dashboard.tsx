@@ -19,6 +19,7 @@ import {
     ShieldAlert,
     Thermometer,
 } from 'lucide-react';
+import DateRangePicker from '@/components/date-range-picker';
 
 // Breadcrumb
 const breadcrumbs: BreadcrumbItem[] = [{ title: 'Dashboard', href: '/dashboard' }];
@@ -1250,31 +1251,20 @@ function KarantinaSimpleDashboard({
                             </div>
                         </div>
 
-                        {/* 2. Tanggal Mulai */}
-                        <div>
-                            <label className="mb-1 block text-xs font-medium text-gray-600">Tanggal Mulai</label>
-                            <input
-                                type="date"
-                                value={startDate}
-                                onChange={(e) => {
-                                    setStartDate(e.target.value);
+                        {/* 2. Rentang Tanggal */}
+                        <div className="md:col-span-2">
+                            <label className="mb-1 block text-xs font-medium text-gray-600">Rentang Tanggal</label>
+                            <DateRangePicker
+                                startDate={startDate}
+                                endDate={endDate}
+                                onChange={({ startDate: s, endDate: e }) => {
+                                    setStartDate(s);
+                                    setEndDate(e);
                                     setCurrentPage(1);
                                 }}
-                                className="w-full rounded-lg border border-gray-300 bg-white py-2 px-3 text-sm text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none"
-                            />
-                        </div>
-
-                        {/* 3. Tanggal Selesai */}
-                        <div>
-                            <label className="mb-1 block text-xs font-medium text-gray-600">Tanggal Selesai</label>
-                            <input
-                                type="date"
-                                value={endDate}
-                                onChange={(e) => {
-                                    setEndDate(e.target.value);
-                                    setCurrentPage(1);
-                                }}
-                                className="w-full rounded-lg border border-gray-300 bg-white py-2 px-3 text-sm text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none"
+                                placeholder="Pilih rentang tanggal filter..."
+                                className="w-full"
+                                align="right"
                             />
                         </div>
                     </div>

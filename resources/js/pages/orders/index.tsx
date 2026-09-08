@@ -444,13 +444,15 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const groupKeys: string[] = [];
     const groupedOrders: Record<string, Order[]> = {};
     for (const order of orders.data) {
-        const groupKey = order.no_aju ?? order.order_id;
+        const hasAju = Boolean(order.no_aju && order.no_aju.trim() !== '' && order.no_aju !== '-');
+        const groupKey = hasAju ? order.no_aju! : (order.order?.order_id ?? order.order_id);
         if (!groupedOrders[groupKey]) {
             groupedOrders[groupKey] = [];
             groupKeys.push(groupKey);
         }
         groupedOrders[groupKey].push(order);
     }
+
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -624,9 +626,12 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                     >
                                                         <div className="mr-3 flex items-center flex-wrap gap-2">
                                                             <span>
-                                                                Nomor Order: {firstOrder.order?.order_id ?? firstOrder.order_id} / No. AJU:{' '}
-                                                                {firstOrder.no_aju ?? '-'}
+                                                                Nomor Order: {firstOrder.order?.order_id ?? firstOrder.order_id}
+                                                                {firstOrder.no_aju && firstOrder.no_aju.trim() !== '' && firstOrder.no_aju !== '-' && (
+                                                                    <> / No. AJU: {firstOrder.no_aju}</>
+                                                                )}
                                                             </span>
+
                                                             {firstOrder.order?.is_excluded_from_report && (
                                                                 <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
                                                                     Excluded dari Report

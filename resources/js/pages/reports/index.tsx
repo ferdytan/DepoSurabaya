@@ -230,8 +230,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                 (item, idx) => `
             <tr>
                 <td style="text-align: center;">${idx + 1}</td>
-                <td><strong>${item.order_id}</strong><br><small style="color: #666;">AJU: ${item.no_aju || '-'}</small></td>
-                <td>${item.customer_name}</td>
+                <td><strong>${item.customer_name}</strong></td>
                 <td>${item.shipper_name}</td>
                 <td>${item.service_type}</td>
                 <td style="font-weight: bold; font-family: monospace;">${item.container_number}</td>
@@ -245,6 +244,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
         `
             )
             .join('');
+
 
         printWin.document.write(`
             <!DOCTYPE html>
@@ -374,7 +374,6 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                     <thead>
                         <tr>
                             <th style="width: 25px; text-align: center;">No</th>
-                            <th>No. Order / AJU</th>
                             <th>Customer</th>
                             <th>Shipper</th>
                             <th>Layanan</th>
@@ -387,6 +386,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                             <th style="text-align: center;">Exclude</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         ${rowsHtml}
                     </tbody>
@@ -690,7 +690,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                                 <Input
                                     type="text"
-                                    placeholder="Cari kontainer, order ID, AJU, atau komoditi... (Tekan Enter)"
+                                    placeholder="Cari nomor kontainer, customer, shipper, atau komoditi... (Tekan Enter)"
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                     onKeyDown={handleKeyDownSearch}
@@ -748,7 +748,6 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                             <TableHeader className="bg-gray-50">
                                 <TableRow>
                                     <TableHead className="w-12 text-center text-xs font-bold">No</TableHead>
-                                    <TableHead className="text-xs font-bold">No. Order / AJU</TableHead>
                                     <TableHead className="text-xs font-bold">Customer</TableHead>
                                     <TableHead className="text-xs font-bold">Shipper</TableHead>
                                     <TableHead className="text-xs font-bold">Layanan</TableHead>
@@ -765,7 +764,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                             <TableBody>
                                 {reports.data.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={13} className="py-8 text-center text-gray-500 text-xs">
+                                        <TableCell colSpan={12} className="py-8 text-center text-gray-500 text-xs">
                                             Tidak ada data order yang cocok dengan filter yang dipilih.
                                         </TableCell>
                                     </TableRow>
@@ -775,11 +774,8 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                             <TableCell className="text-center text-xs font-medium text-gray-500">
                                                 {(reports.from || 1) + idx}
                                             </TableCell>
-                                            <TableCell className="text-xs">
-                                                <div className="font-bold text-gray-900">{item.order_id}</div>
-                                                <div className="text-[11px] text-gray-500">AJU: {item.no_aju || '-'}</div>
-                                            </TableCell>
                                             <TableCell className="text-xs font-medium text-gray-800">
+
                                                 {item.customer_name}
                                             </TableCell>
                                             <TableCell className="text-xs text-gray-600">

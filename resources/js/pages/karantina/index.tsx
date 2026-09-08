@@ -14,6 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import DateRangePicker from '@/components/date-range-picker';
+import DateTimePicker from '@/components/date-time-picker';
 
 // Types
 interface FlashProps {
@@ -680,12 +681,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                     {/* Input Tanggal */}
                                     <div className="flex items-center gap-2">
                                         <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
-                                        <Input
+                                        <DateTimePicker
                                             id={`date_${rIdx}`}
-                                            type="date"
                                             value={rec.date}
-                                            onChange={(e) => updateDate(rIdx, e.target.value)}
-                                            className="max-w-[180px]"
+                                            onChange={(val) => updateDate(rIdx, val)}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal..."
+                                            className="w-[180px]"
                                         />
                                         {tempRecords.length > 1 && (
                                             <Button

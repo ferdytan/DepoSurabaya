@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { SearchableSelect } from '@/components/ui/searchable-select';
+import DateTimePicker from '@/components/date-time-picker';
 import AppLayout from '@/layouts/app-layout';
 import InvoicesLayout from '@/layouts/invoices/layout';
 import { terbilang } from '@/lib/terbilang';
@@ -600,24 +601,26 @@ export default function CreateInvoice() {
                                         <Label htmlFor="period_start" className="text-xs font-semibold text-gray-600">
                                             Periode Mulai <span className="text-red-500">*</span>
                                         </Label>
-                                        <Input
+                                        <DateTimePicker
                                             id="period_start"
-                                            type="date"
                                             value={periodStart}
-                                            onChange={(e) => setPeriodStart(e.target.value)}
-                                            required
+                                            onChange={(val) => setPeriodStart(val)}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal mulai..."
+                                            className="w-full"
                                         />
                                     </div>
                                     <div className="space-y-1.5">
                                         <Label htmlFor="period_end" className="text-xs font-semibold text-gray-600">
                                             Periode Selesai <span className="text-red-500">*</span>
                                         </Label>
-                                        <Input
+                                        <DateTimePicker
                                             id="period_end"
-                                            type="date"
                                             value={periodEnd}
-                                            onChange={(e) => setPeriodEnd(e.target.value)}
-                                            required
+                                            onChange={(val) => setPeriodEnd(val)}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal selesai..."
+                                            className="w-full"
                                         />
                                     </div>
                                 </div>

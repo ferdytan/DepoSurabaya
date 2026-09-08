@@ -25,6 +25,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Search, Trash2 } from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
 import DateRangePicker from '@/components/date-range-picker';
+import DateTimePicker from '@/components/date-time-picker';
 // Types
 interface FlashProps {
     success?: string;
@@ -969,12 +970,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </AlertDialogHeader>
                         <div className="space-y-4">
                             <Label htmlFor="eir-date">Tanggal EIR</Label>
-                            <Input
+                            <DateTimePicker
                                 id="eir-date"
-                                type="datetime-local"
                                 value={eirDateInput}
-                                onChange={(e) => setEirDateInput(e.target.value)}
-                                required
+                                onChange={(val) => setEirDateInput(val)}
+                                withTime={true}
+                                placeholder="Pilih tanggal & jam EIR..."
+                                className="w-full"
                             />
                         </div>
                         <AlertDialogFooter>
@@ -993,12 +995,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </AlertDialogHeader>
                         <div className="space-y-4">
                             <Label htmlFor="exit-date">Tanggal Keluar</Label>
-                            <Input
+                            <DateTimePicker
                                 id="exit-date"
-                                type="datetime-local"
                                 value={exitDateInput}
-                                onChange={(e) => setExitDateInput(e.target.value)}
-                                required
+                                onChange={(val) => setExitDateInput(val)}
+                                withTime={true}
+                                placeholder="Pilih tanggal & jam keluar..."
+                                className="w-full"
                             />
                         </div>
                         <AlertDialogFooter>
@@ -1017,12 +1020,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </AlertDialogHeader>
                         <div className="space-y-4">
                             <Label htmlFor="entry-date">Tanggal Masuk</Label>
-                            <Input
+                            <DateTimePicker
                                 id="entry-date"
-                                type="datetime-local"
                                 value={entryDateInput}
-                                onChange={(e) => setEntryDateInput(e.target.value)}
-                                required
+                                onChange={(val) => setEntryDateInput(val)}
+                                withTime={true}
+                                placeholder="Pilih tanggal & jam masuk..."
+                                className="w-full"
                             />
                         </div>
                         <AlertDialogFooter>
@@ -1044,12 +1048,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 <div key={rIdx} className="space-y-2 rounded border p-4">
                                     <div className="flex items-center gap-2">
                                         <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
-                                        <Input
+                                        <DateTimePicker
                                             id={`date_${rIdx}`}
-                                            type="date"
                                             value={rec.date}
-                                            onChange={(e) => updateDate(rIdx, e.target.value)}
-                                            className="max-w-[180px]"
+                                            onChange={(val) => updateDate(rIdx, val)}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal..."
+                                            className="w-[180px]"
                                         />
                                         {tempRecords.length > 1 && (
                                             <Button

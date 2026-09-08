@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { SearchableSelect } from '@/components/ui/searchable-select';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import DateTimePicker from '@/components/date-time-picker';
 import AppLayout from '@/layouts/app-layout';
 import OrdersLayout from '@/layouts/orders/layout';
 import { BreadcrumbItem } from '@/types';
@@ -897,29 +898,32 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                             <div className="space-y-1.5">
                                                 <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Masuk</Label>
-                                                <Input
-                                                    type="datetime-local"
+                                                <DateTimePicker
                                                     value={item.entry_date}
-                                                    onChange={(e) => updateOrderItem(idx, 'entry_date', e.target.value)}
-                                                    className="h-10"
+                                                    onChange={(val) => updateOrderItem(idx, 'entry_date', val)}
+                                                    withTime={true}
+                                                    placeholder="Pilih tgl & jam masuk..."
+                                                    className="w-full"
                                                 />
                                             </div>
                                             <div className="space-y-1.5">
                                                 <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam EIR</Label>
-                                                <Input
-                                                    type="datetime-local"
+                                                <DateTimePicker
                                                     value={item.eir_date}
-                                                    onChange={(e) => updateOrderItem(idx, 'eir_date', e.target.value)}
-                                                    className="h-10"
+                                                    onChange={(val) => updateOrderItem(idx, 'eir_date', val)}
+                                                    withTime={true}
+                                                    placeholder="Pilih tgl & jam EIR..."
+                                                    className="w-full"
                                                 />
                                             </div>
                                             <div className="space-y-1.5">
                                                 <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Keluar</Label>
-                                                <Input
-                                                    type="datetime-local"
+                                                <DateTimePicker
                                                     value={item.exit_date}
-                                                    onChange={(e) => updateOrderItem(idx, 'exit_date', e.target.value)}
-                                                    className="h-10"
+                                                    onChange={(val) => updateOrderItem(idx, 'exit_date', val)}
+                                                    withTime={true}
+                                                    placeholder="Pilih tgl & jam keluar..."
+                                                    className="w-full"
                                                 />
                                             </div>
                                         </div>
@@ -1002,12 +1006,13 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                     <Label htmlFor={`date_${rIdx}`} className="text-xs font-semibold text-gray-700">
                                                         Tanggal:
                                                     </Label>
-                                                    <Input
+                                                    <DateTimePicker
                                                         id={`date_${rIdx}`}
-                                                        type="date"
                                                         value={rec.date}
-                                                        onChange={(e) => updateDate(rIdx, e.target.value)}
-                                                        className="w-44 h-9 text-xs"
+                                                        onChange={(val) => updateDate(rIdx, val)}
+                                                        withTime={false}
+                                                        placeholder="Pilih tanggal..."
+                                                        className="w-48"
                                                     />
                                                 </div>
                                                 {tempRecords.length > 1 && (

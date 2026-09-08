@@ -8,6 +8,7 @@ import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import DateTimePicker from '@/components/date-time-picker';
 import { Trash2, Plus, RotateCcw, Info, Check, X, ShieldAlert, Clock, History } from 'lucide-react';
 
 // Types
@@ -548,24 +549,26 @@ export default function EditInvoice() {
                                         <Label htmlFor="period_start" className="text-xs font-semibold text-gray-600">
                                             Periode Mulai
                                         </Label>
-                                        <Input
+                                        <DateTimePicker
                                             id="period_start"
-                                            type="date"
                                             value={form.period_start}
-                                            onChange={(e) => setForm({ ...form, period_start: e.target.value })}
-                                            required
+                                            onChange={(val) => setForm({ ...form, period_start: val })}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal mulai..."
+                                            className="w-full"
                                         />
                                     </div>
                                     <div className="space-y-1.5">
                                         <Label htmlFor="period_end" className="text-xs font-semibold text-gray-600">
                                             Periode Selesai
                                         </Label>
-                                        <Input
+                                        <DateTimePicker
                                             id="period_end"
-                                            type="date"
                                             value={form.period_end}
-                                            onChange={(e) => setForm({ ...form, period_end: e.target.value })}
-                                            required
+                                            onChange={(val) => setForm({ ...form, period_end: val })}
+                                            withTime={false}
+                                            placeholder="Pilih tanggal selesai..."
+                                            className="w-full"
                                         />
                                     </div>
                                 </div>

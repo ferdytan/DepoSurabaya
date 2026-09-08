@@ -28,15 +28,23 @@ const MONTH_NAMES = [
 
 const DAY_NAMES = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
 
+function getNowLocalTime(): string {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+}
+
 function parseValue(val?: string, withTime = true) {
-    if (!val) return { date: '', time: '08:00' };
+    const defaultTime = getNowLocalTime();
+    if (!val) return { date: '', time: defaultTime };
     const cleaned = val.replace(' ', 'T');
     const parts = cleaned.split('T');
     const date = parts[0] || '';
-    let time = '08:00';
+    let time = defaultTime;
     if (withTime && parts[1]) {
         time = parts[1].substring(0, 5);
-        if (!time.includes(':')) time = '08:00';
+        if (!time.includes(':')) time = defaultTime;
     }
     return { date, time };
 }
@@ -386,35 +394,27 @@ export function DateTimePicker({
 
                     {/* Time Picker Section (If withTime is true) */}
                     {withTime && (
-                        <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+                        <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
                             <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
                                 <Clock className="h-3.5 w-3.5 text-blue-600" />
                                 <span>Jam (WIB):</span>
                             </div>
 
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-1.5">
                                 <input
                                     type="time"
                                     value={selectedTime}
                                     onChange={(e) => setSelectedTime(e.target.value)}
                                     className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-blue-500 focus:outline-none"
                                 />
-                                <div className="flex items-center gap-0.5">
-                                    {['08:00', '12:00', '17:00'].map((quickT) => (
-                                        <button
-                                            key={quickT}
-                                            type="button"
-                                            onClick={() => setSelectedTime(quickT)}
-                                            className={`px-1.5 py-1 text-[10px] rounded transition font-mono ${
-                                                selectedTime === quickT
-                                                    ? 'bg-blue-600 text-white font-bold'
-                                                    : 'text-gray-500 hover:bg-gray-100'
-                                            }`}
-                                        >
-                                            {quickT}
-                                        </button>
-                                    ))}
-                                </div>
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedTime(getNowLocalTime())}
+                                    className="px-2 py-1 text-[11px] font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded transition cursor-pointer"
+                                    title="Gunakan jam saat ini"
+                                >
+                                    Jam Sekarang
+                                </button>
                             </div>
                         </div>
                     )}

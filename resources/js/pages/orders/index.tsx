@@ -273,20 +273,35 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
         );
     };
 
+function toLocalISO(dateInput?: string | Date | null): string {
+    if (!dateInput) return '';
+    const d = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
+    if (isNaN(d.getTime())) return '';
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${day}T${hours}:${minutes}`;
+}
+
+function getNowLocalISO(): string {
+    return toLocalISO(new Date());
+}
+
     const [isEntryDialogOpen, setIsEntryDialogOpen] = useState(false);
     const [entryDateInput, setEntryDateInput] = useState<string>('');
     const [orderIdToEditEntry, setOrderIdToEditEntry] = useState<number | null>(null);
 
     const handleAddEntryDate = (id: number) => {
         setOrderIdToEditEntry(id);
-        setEntryDateInput('');
+        setEntryDateInput(getNowLocalISO());
         setIsEntryDialogOpen(true);
     };
 
     const handleEditEntryDate = (id: number, currentEntry: string) => {
         setOrderIdToEditEntry(id);
-        const iso = currentEntry ? new Date(currentEntry).toISOString().slice(0, 16) : '';
-        setEntryDateInput(iso);
+        setEntryDateInput(currentEntry ? toLocalISO(currentEntry) : getNowLocalISO());
         setIsEntryDialogOpen(true);
     };
 
@@ -316,14 +331,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     const handleAddExitDate = (id: number) => {
         setOrderIdToEditExit(id);
-        setExitDateInput('');
+        setExitDateInput(getNowLocalISO());
         setIsExitDialogOpen(true);
     };
 
     const handleEditExitDate = (id: number, currentExitDate: string) => {
         setOrderIdToEditExit(id);
-        const isoDate = currentExitDate ? new Date(currentExitDate).toISOString().slice(0, 16) : '';
-        setExitDateInput(isoDate);
+        setExitDateInput(currentExitDate ? toLocalISO(currentExitDate) : getNowLocalISO());
         setIsExitDialogOpen(true);
     };
 
@@ -342,14 +356,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     const handleAddEirDate = (id: number) => {
         setOrderIdToEdit(id);
-        setEirDateInput('');
+        setEirDateInput(getNowLocalISO());
         setIsEirDialogOpen(true);
     };
 
     const handleEditEirDate = (id: number, currentEirDate: string) => {
         setOrderIdToEdit(id);
-        const isoDate = currentEirDate ? new Date(currentEirDate).toISOString().slice(0, 16) : '';
-        setEirDateInput(isoDate);
+        setEirDateInput(currentEirDate ? toLocalISO(currentEirDate) : getNowLocalISO());
         setIsEirDialogOpen(true);
     };
 

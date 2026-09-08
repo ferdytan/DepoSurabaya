@@ -93,6 +93,16 @@ interface PageProps {
     order_id?: string;
 }
 
+function getNowLocalISO(): string {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${day}T${hours}:${minutes}`;
+}
+
 export default function CreateOrderWithMultiTemp({ customers, shippers, order_id }: PageProps) {
     // ==================================
     //  State Inertia Form
@@ -122,7 +132,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                 product_id: '',
                 additional_product_ids: [],
                 container_number: '',
-                entry_date: '',
+                entry_date: getNowLocalISO(),
                 eir_date: '',
                 exit_date: '',
                 commodity: '',
@@ -154,7 +164,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                 product_id: '',
                 additional_product_ids: [],
                 container_number: '',
-                entry_date: '',
+                entry_date: getNowLocalISO(),
                 eir_date: '',
                 exit_date: '',
                 commodity: '',

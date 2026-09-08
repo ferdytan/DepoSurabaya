@@ -30,6 +30,16 @@ const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Edit Order', href: '#' },
 ];
 
+function getNowLocalISO(): string {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${day}T${hours}:${minutes}`;
+}
+
 // =====================
 //  Tipe Data
 // =====================
@@ -234,7 +244,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                 product_id: '',
                 additional_product_ids: [],
                 container_number: '',
-                entry_date: '',
+                entry_date: getNowLocalISO(),
                 eir_date: '',
                 exit_date: '',
                 commodity: '',

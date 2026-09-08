@@ -22,7 +22,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Trash2 } from 'lucide-react';
+import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Search, Trash2 } from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
 // Types
 interface FlashProps {
@@ -462,19 +462,19 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     {/* Flash Message */}
                     {props.flash?.success && <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">{props.flash.success}</div>}
                     {props.flash?.error && <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">{props.flash.error}</div>}
-                    <Heading title="Order List" description="Manage all registered orders and their statuses." />
+                    {/* Header Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <Heading title="Order List" description="Manage all registered orders and their statuses." />
 
-                    {/* Actions Toolbar */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <div className="flex flex-wrap items-center gap-3">
-                            <Button variant="outline" onClick={toggleTrashed}>
+                        <div className="flex flex-wrap items-center gap-2.5">
+                            <Button variant="outline" size="sm" onClick={toggleTrashed} className="text-xs h-9">
                                 {isTrashed ? 'Sembunyikan Order Dihapus' : 'Tampilkan Order Dihapus'}
                             </Button>
 
-                            <div className="flex items-center gap-2 text-xs text-gray-500 font-medium pl-2 border-l border-gray-200">
-                                <span>Tampilkan:</span>
+                            <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium px-2 py-1 bg-white border border-gray-200 rounded-md shadow-xs h-9">
+                                <span className="shrink-0">Tampilkan:</span>
                                 <Select value={perPage} onValueChange={handlePerPageChange}>
-                                    <SelectTrigger className="h-9 w-[85px] text-xs font-semibold">
+                                    <SelectTrigger className="h-7 w-[70px] text-xs font-semibold border-0 focus:ring-0 p-1">
                                         <SelectValue placeholder="25" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -485,77 +485,85 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                     </SelectContent>
                                 </Select>
                             </div>
-                        </div>
 
-                        {roleId != 3 && (
-                            <Button asChild>
-                                <Link href="/orders/create">+ Create Orders</Link>
-                            </Button>
-                        )}
-                    </div>
-
-                    {/* Search Bar */}
-                    <div className="space-y-2">
-                        <Label htmlFor="search">Search</Label>
-                        <div className="flex flex-col gap-2 sm:flex-row">
-                            <Input
-                                id="search"
-                                placeholder="Search by customer, product, or container"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                onKeyUp={(e) => e.key === 'Enter' && handleSearch()}
-                                className="flex-1"
-                            />
-                            <Button onClick={handleSearch} className="w-full sm:w-auto">
-                                Search
-                            </Button>
+                            {roleId != 3 && (
+                                <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700 text-white gap-1.5 h-9 text-xs font-semibold">
+                                    <Link href="/orders/create">
+                                        <Plus className="h-4 w-4" />
+                                        Create Order
+                                    </Link>
+                                </Button>
+                            )}
                         </div>
                     </div>
 
-                    {/* Filter Tanggal */}
-                    <div className="space-y-2">
-                        <Label>Filter Rentang Tanggal</Label>
-                        <div className="flex flex-col gap-2 sm:flex-row">
-                            <div className="flex-1">
-                                <Label htmlFor="date-from" className="text-xs text-gray-500">Dari Tanggal</Label>
+                    {/* Unified Search & Date Filter Card */}
+                    <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-xs">
+                        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2.5">
+                            {/* Input Search */}
+                            <div className="relative flex-1 min-w-[240px]">
+                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                                 <Input
-                                    id="date-from"
-                                    type="date"
-                                    value={dateFrom}
-                                    onChange={(e) => setDateFrom(e.target.value)}
-                                    className="w-full"
+                                    id="search"
+                                    placeholder="Cari customer, produk, atau kontainer... (Enter)"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    onKeyUp={(e) => e.key === 'Enter' && handleSearch()}
+                                    className="pl-9 h-9 text-xs"
                                 />
                             </div>
-                            <div className="flex-1">
-                                <Label htmlFor="date-to" className="text-xs text-gray-500">Sampai Tanggal</Label>
-                                <Input
-                                    id="date-to"
-                                    type="date"
-                                    value={dateTo}
-                                    onChange={(e) => setDateTo(e.target.value)}
-                                    className="w-full"
-                                />
+
+                            {/* Filter Rentang Tanggal */}
+                            <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                                <div className="flex items-center gap-1.5">
+                                    <span className="text-xs text-gray-500 font-medium shrink-0">Dari:</span>
+                                    <Input
+                                        id="date-from"
+                                        type="date"
+                                        value={dateFrom}
+                                        onChange={(e) => setDateFrom(e.target.value)}
+                                        className="h-9 text-xs w-[138px]"
+                                    />
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <span className="text-xs text-gray-500 font-medium shrink-0">Sampai:</span>
+                                    <Input
+                                        id="date-to"
+                                        type="date"
+                                        value={dateTo}
+                                        onChange={(e) => setDateTo(e.target.value)}
+                                        className="h-9 text-xs w-[138px]"
+                                    />
+                                </div>
                             </div>
-                            <Button onClick={handleSearch} className="sm:w-auto">
-                                Filter
-                            </Button>
-                            <Button
-                                variant="outline"
-                                onClick={() => {
-                                    setDateFrom('');
-                                    setDateTo('');
-                                    setSearch('');
-                                    router.get('/orders', {
-                                        trashed: filters.trashed,
-                                        per_page: perPage,
-                                    });
-                                }}
-                                className="sm:w-auto"
-                            >
-                                Reset
-                            </Button>
+
+                            {/* Tombol Aksi Filter & Reset */}
+                            <div className="flex items-center gap-2 shrink-0">
+                                <Button size="sm" onClick={handleSearch} className="h-9 text-xs px-3.5 bg-blue-600 hover:bg-blue-700 text-white gap-1.5">
+                                    <Search className="h-3.5 w-3.5" />
+                                    Filter
+                                </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                        setDateFrom('');
+                                        setDateTo('');
+                                        setSearch('');
+                                        router.get('/orders', {
+                                            trashed: filters.trashed,
+                                            per_page: perPage,
+                                        });
+                                    }}
+                                    className="h-9 text-xs px-3 text-gray-600 hover:text-red-600 gap-1.5"
+                                >
+                                    <RotateCcw className="h-3.5 w-3.5" />
+                                    Reset
+                                </Button>
+                            </div>
                         </div>
                     </div>
+
 
                     {/* Data Table */}
                     <div className="w-full overflow-x-auto rounded-md border">
@@ -594,8 +602,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                     <TableHead>Temperatur</TableHead>
                                     <TableHead>Fumigator</TableHead>
                                     {isTrashed && <TableHead>Alasan Dihapus</TableHead>}
-                                    <TableHead className="text-right">Action</TableHead>
                                 </TableRow>
+
                             </TableHeader>
                             <TableBody>
                                 {orders.data.length === 0 ? (
@@ -622,144 +630,169 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                 >
                                                     <TableCell
                                                         colSpan={isTrashed ? 11 : 10}
-                                                        className="flex items-center justify-between py-3 font-semibold"
+                                                        className="py-2.5 px-3 font-semibold"
                                                     >
-                                                        <div className="mr-3 flex items-center flex-wrap gap-2">
-                                                            <span>
-                                                                Nomor Order: {firstOrder.order?.order_id ?? firstOrder.order_id}
-                                                                {firstOrder.no_aju && firstOrder.no_aju.trim() !== '' && firstOrder.no_aju !== '-' && (
-                                                                    <> / No. AJU: {firstOrder.no_aju}</>
-                                                                )}
-                                                            </span>
-
-                                                            {firstOrder.order?.is_excluded_from_report && (
-                                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
-                                                                    Excluded dari Report
-                                                                </span>
-                                                            )}
-                                                            {isCollapsed ? (
-                                                                <ArrowDown className="ml-1 inline h-4 w-4" />
-                                                            ) : (
-                                                                <ArrowUp className="ml-1 inline h-4 w-4" />
-                                                            )}
-                                                        </div>
-                                                        <div className="flex items-center gap-2.5">
-                                                            {isTrashed ? (
-                                                                <Button
-                                                                    size="sm"
-                                                                    variant="outline"
-                                                                    onClick={(e) => {
-                                                                        e.stopPropagation();
-                                                                        router.post(
-                                                                            route('orders.restore', firstOrder.order.id),
-                                                                            {},
-                                                                            {
-                                                                                onSuccess: () => {
-                                                                                    router.get(route('orders.index'), {
-                                                                                        trashed: '1',
-                                                                                    });
-                                                                                },
-                                                                                preserveScroll: true,
-                                                                            },
-                                                                        );
-                                                                    }}
-                                                                    className="inline-flex items-center gap-1"
-                                                                    title="Pulihkan Order"
+                                                        <div className="flex items-center justify-between gap-3">
+                                                            {/* Left: Order ID, AJU, Exclude badge, AND Action Buttons directly inline */}
+                                                            <div className="flex items-center flex-wrap gap-2">
+                                                                <button
+                                                                    type="button"
+                                                                    className="p-1 hover:bg-gray-300/60 rounded text-gray-600 transition-colors"
                                                                 >
-                                                                    <RotateCcw className="h-4 w-4" />
-                                                                    Pulihkan
-                                                                </Button>
-                                                            ) : (
-                                                                <>
-                                                                    {roleId != 3 && (
-                                                                        <>
-                                                                            {/* Action 1: Shortcut Buat Invoice */}
-                                                                            <Link
-                                                                                href={route('invoices.create', {
-                                                                                    customer_id: firstOrder.order?.customer?.id ?? firstOrder.customer_id,
-                                                                                    order_id: firstOrder.order?.id ?? firstOrder.id,
-                                                                                })}
-                                                                                title="Buat Invoice untuk Order ini"
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                                className="text-emerald-600 hover:text-emerald-800 p-1 rounded hover:bg-emerald-50 transition-colors"
-                                                                            >
-                                                                                <Receipt className="h-4 w-4" />
-                                                                            </Link>
-
-                                                                            {/* Action 2: Exclude dari Report */}
-                                                                            <button
-                                                                                type="button"
-                                                                                onClick={(e) => {
-                                                                                    e.stopPropagation();
-                                                                                    router.post(
-                                                                                        route('orders.toggle-exclude-report', firstOrder.order?.id ?? firstOrder.id),
-                                                                                        {},
-                                                                                        { preserveScroll: true }
-                                                                                    );
-                                                                                }}
-                                                                                title={
-                                                                                    firstOrder.order?.is_excluded_from_report
-                                                                                        ? 'Order ini di-exclude dari Report. Klik untuk include kembali'
-                                                                                        : 'Klik untuk exclude order ini dari Report'
-                                                                                }
-                                                                                className={`p-1 rounded transition-colors ${
-                                                                                    firstOrder.order?.is_excluded_from_report
-                                                                                        ? 'text-amber-600 hover:text-amber-800 bg-amber-50'
-                                                                                        : 'text-gray-400 hover:text-amber-600 hover:bg-gray-100'
-                                                                                }`}
-                                                                            >
-                                                                                <EyeOff className="h-4 w-4" />
-                                                                            </button>
-
-                                                                            {/* Action 3: Cetak Surat Jalan */}
-                                                                            <button
-                                                                                type="button"
-                                                                                onClick={(e) => {
-                                                                                    e.stopPropagation();
-                                                                                    openSuratJalanModal(firstOrder);
-                                                                                }}
-                                                                                title="Cetak Surat Jalan (21 x 14 cm)"
-                                                                                className="text-indigo-600 hover:text-indigo-800 p-1 rounded hover:bg-indigo-50 transition-colors"
-                                                                            >
-                                                                                <Printer className="h-4 w-4" />
-                                                                            </button>
-
-                                                                            <Link
-                                                                                href={route('orders.show', firstOrder.order.id)}
-                                                                                title="Lihat Detail Order"
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                                className="text-gray-500 hover:text-gray-700 p-1 rounded hover:bg-gray-100"
-                                                                            >
-                                                                                <Eye className="h-4 w-4" />
-                                                                            </Link>
-
-                                                                            <Link
-                                                                                href={route('orders.edit', firstOrder.order.id)}
-                                                                                title="Edit Order"
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                                className="text-blue-500 hover:text-blue-700 p-1 rounded hover:bg-blue-50"
-                                                                            >
-                                                                                <Pencil className="h-4 w-4" />
-                                                                            </Link>
-                                                                        </>
+                                                                    {isCollapsed ? (
+                                                                        <ArrowDown className="h-4 w-4" />
+                                                                    ) : (
+                                                                        <ArrowUp className="h-4 w-4" />
                                                                     )}
-                                                                    {!isTrashed && roleId != 3 && (
-                                                                        <button
-                                                                            type="button"
+                                                                </button>
+
+                                                                {/* Direct Order ID without redundant "Nomor Order:" text */}
+                                                                <span className="font-mono font-bold text-sm text-gray-950 tracking-wider bg-white px-2.5 py-0.5 rounded border border-gray-300 shadow-xs">
+                                                                    {firstOrder.order?.order_id ?? firstOrder.order_id}
+                                                                </span>
+
+                                                                {firstOrder.no_aju && firstOrder.no_aju.trim() !== '' && firstOrder.no_aju !== '-' && (
+                                                                    <span className="text-xs text-gray-500 font-medium">
+                                                                        AJU: {firstOrder.no_aju}
+                                                                    </span>
+                                                                )}
+
+                                                                {firstOrder.order?.is_excluded_from_report && (
+                                                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
+                                                                        Excluded dari Report
+                                                                    </span>
+                                                                )}
+
+                                                                {/* Action Icons aligned directly with ORD ID */}
+                                                                <div className="flex items-center gap-1 ml-1 pl-2 border-l border-gray-300">
+                                                                    {isTrashed ? (
+                                                                        <Button
+                                                                            size="sm"
+                                                                            variant="outline"
                                                                             onClick={(e) => {
                                                                                 e.stopPropagation();
-                                                                                openDeleteOrderModal(firstOrder.order.id);
+                                                                                router.post(
+                                                                                    route('orders.restore', firstOrder.order.id),
+                                                                                    {},
+                                                                                    {
+                                                                                        onSuccess: () => {
+                                                                                            router.get(route('orders.index'), {
+                                                                                                trashed: '1',
+                                                                                            });
+                                                                                        },
+                                                                                        preserveScroll: true,
+                                                                                    },
+                                                                                );
                                                                             }}
-                                                                            title="Hapus Order"
-                                                                            className="text-red-500 hover:text-red-700 p-1 rounded hover:bg-red-50"
+                                                                            className="inline-flex items-center gap-1 h-7 text-xs px-2"
+                                                                            title="Pulihkan Order"
                                                                         >
-                                                                            <Trash2 className="h-4 w-4" />
-                                                                        </button>
+                                                                            <RotateCcw className="h-3.5 w-3.5" />
+                                                                            Pulihkan
+                                                                        </Button>
+                                                                    ) : (
+                                                                        <>
+                                                                            {roleId != 3 && (
+                                                                                <>
+                                                                                    {/* Action 1: Shortcut Buat Invoice */}
+                                                                                    <Link
+                                                                                        href={route('invoices.create', {
+                                                                                            customer_id: firstOrder.order?.customer?.id ?? firstOrder.customer_id,
+                                                                                            order_id: firstOrder.order?.id ?? firstOrder.id,
+                                                                                        })}
+                                                                                        title="Buat Invoice untuk Order ini"
+                                                                                        onClick={(e) => e.stopPropagation()}
+                                                                                        className="text-emerald-700 hover:text-emerald-900 p-1.5 rounded hover:bg-emerald-100/80 transition-colors"
+                                                                                    >
+                                                                                        <Receipt className="h-4 w-4" />
+                                                                                    </Link>
+
+                                                                                    {/* Action 2: Exclude dari Report */}
+                                                                                    <button
+                                                                                        type="button"
+                                                                                        onClick={(e) => {
+                                                                                            e.stopPropagation();
+                                                                                            router.post(
+                                                                                                route('orders.toggle-exclude-report', firstOrder.order?.id ?? firstOrder.id),
+                                                                                                {},
+                                                                                                { preserveScroll: true }
+                                                                                            );
+                                                                                        }}
+                                                                                        title={
+                                                                                            firstOrder.order?.is_excluded_from_report
+                                                                                                ? 'Order ini di-exclude dari Report. Klik untuk include kembali'
+                                                                                                : 'Klik untuk exclude order ini dari Report'
+                                                                                        }
+                                                                                        className={`p-1.5 rounded transition-colors ${
+                                                                                            firstOrder.order?.is_excluded_from_report
+                                                                                                ? 'text-amber-600 hover:text-amber-800 bg-amber-100'
+                                                                                                : 'text-gray-400 hover:text-amber-600 hover:bg-gray-200'
+                                                                                        }`}
+                                                                                    >
+                                                                                        <EyeOff className="h-4 w-4" />
+                                                                                    </button>
+
+                                                                                    {/* Action 3: Cetak Surat Jalan */}
+                                                                                    <button
+                                                                                        type="button"
+                                                                                        onClick={(e) => {
+                                                                                            e.stopPropagation();
+                                                                                            openSuratJalanModal(firstOrder);
+                                                                                        }}
+                                                                                        title="Cetak Surat Jalan (21 x 14 cm)"
+                                                                                        className="text-indigo-600 hover:text-indigo-800 p-1.5 rounded hover:bg-indigo-100/80 transition-colors"
+                                                                                    >
+                                                                                        <Printer className="h-4 w-4" />
+                                                                                    </button>
+
+                                                                                    {/* Detail Order */}
+                                                                                    <Link
+                                                                                        href={route('orders.show', firstOrder.order.id)}
+                                                                                        title="Lihat Detail Order"
+                                                                                        onClick={(e) => e.stopPropagation()}
+                                                                                        className="text-gray-600 hover:text-gray-900 p-1.5 rounded hover:bg-gray-200 transition-colors"
+                                                                                    >
+                                                                                        <Eye className="h-4 w-4" />
+                                                                                    </Link>
+
+                                                                                    {/* Edit Order */}
+                                                                                    <Link
+                                                                                        href={route('orders.edit', firstOrder.order.id)}
+                                                                                        title="Edit Order"
+                                                                                        onClick={(e) => e.stopPropagation()}
+                                                                                        className="text-blue-600 hover:text-blue-800 p-1.5 rounded hover:bg-blue-100/80 transition-colors"
+                                                                                    >
+                                                                                        <Pencil className="h-4 w-4" />
+                                                                                    </Link>
+
+                                                                                    {/* Delete Order */}
+                                                                                    {!isTrashed && (
+                                                                                        <button
+                                                                                            type="button"
+                                                                                            onClick={(e) => {
+                                                                                                e.stopPropagation();
+                                                                                                openDeleteOrderModal(firstOrder.order.id);
+                                                                                            }}
+                                                                                            title="Hapus Order"
+                                                                                            className="text-red-600 hover:text-red-800 p-1.5 rounded hover:bg-red-100/80 transition-colors"
+                                                                                        >
+                                                                                            <Trash2 className="h-4 w-4" />
+                                                                                        </button>
+                                                                                    )}
+                                                                                </>
+                                                                            )}
+                                                                        </>
                                                                     )}
-                                                                </>
-                                                            )}
+                                                                </div>
+                                                            </div>
+
+                                                            {/* Right: Container count badge */}
+                                                            <div className="text-xs text-gray-500 font-normal shrink-0">
+                                                                {groupOrders.length} Kontainer
+                                                            </div>
                                                         </div>
                                                     </TableCell>
+
                                                 </TableRow>
                                                 {!isCollapsed &&
                                                     groupOrders.map((order) => (
@@ -850,34 +883,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                             <TableCell className="py-3">
                                                                 {order.order?.fumigasi ? order.order.fumigasi : '-'}
                                                             </TableCell>
-                                                            <TableCell className="text-right">
-                                                                {!isTrashed && roleId != 3 && (
-                                                                    <div className="flex items-center justify-end gap-1.5">
-                                                                        <Button
-                                                                            size="icon"
-                                                                            variant="ghost"
-                                                                            type="button"
-                                                                            onClick={(e) => {
-                                                                                e.stopPropagation();
-                                                                                openSuratJalanModal(order);
-                                                                            }}
-                                                                            title="Cetak Surat Jalan Kontainer (21 x 14 cm)"
-                                                                            className="text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50"
-                                                                        >
-                                                                            <Printer className="h-4 w-4" />
-                                                                        </Button>
-                                                                        <Button size="icon" variant="ghost" asChild title="Lihat Detail Item">
-                                                                            <Link
-                                                                                href={route('orders.items.simple.show', order.id)}
-                                                                                onClick={(e) => e.stopPropagation()}
-                                                                            >
-                                                                                <Eye className="h-4 w-4 text-gray-500 hover:text-gray-700" />
-                                                                            </Link>
-                                                                        </Button>
-                                                                    </div>
-                                                                )}
-                                                            </TableCell>
                                                         </TableRow>
+
                                                     ))}
                                             </Fragment>
                                         );

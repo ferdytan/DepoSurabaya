@@ -22,6 +22,7 @@ import {
     User,
     X,
     RotateCcw,
+    Trash2,
 } from 'lucide-react';
 import React, { useEffect, useMemo, useState } from 'react';
 
@@ -116,8 +117,9 @@ export default function CreateInvoice() {
     const [selectedCustomerId, setSelectedCustomerId] = useState<string>(() => {
         return reuse_invoice?.customer_id ? reuse_invoice.customer_id.toString() : (urlCustomerId || '');
     });
-    const [selectedOrderId, setSelectedOrderId] = useState<string>(() => {
-        return reuse_invoice?.order_id ? reuse_invoice.order_id.toString() : (urlOrderId || '');
+    const [selectedOrderIds, setSelectedOrderIds] = useState<string[]>(() => {
+        const initId = reuse_invoice?.order_id ? reuse_invoice.order_id.toString() : (urlOrderId || '');
+        return initId ? [initId] : [];
     });
     const [selectedContainers, setSelectedContainers] = useState<Set<number>>(new Set());
     const [disabledOrders, setDisabledOrders] = useState<Set<number>>(new Set());
@@ -160,10 +162,15 @@ export default function CreateInvoice() {
         return selectedCustomer?.orders || [];
     }, [selectedCustomer]);
 
-    // Order yang sedang dipilih
-    const selectedOrder = useMemo(() => {
-        return orders.find((o) => o.id.toString() === selectedOrderId);
-    }, [orders, selectedOrderId]);
+    // Orders yang sedang aktif / dipilih
+    const activeOrders = useMemo(() => {
+        return orders.filter((o) => selectedOrderIds.includes(o.id.toString()));
+    }, [orders, selectedOrderIds]);
+
+    // Orders yang masih tersedia untuk ditambahkan / digabungkan
+    const availableOrdersToAdd = useMemo(() => {
+        return orders.filter((o) => !selectedOrderIds.includes(o.id.toString()));
+    }, [orders, selectedOrderIds]);
 
     // Opsi dropdown Customer
     const customerOptions = useMemo(() => {
@@ -189,18 +196,18 @@ export default function CreateInvoice() {
     // Handle Customer Change
     const handleCustomerChange = (val: string) => {
         setSelectedCustomerId(val);
-        setSelectedOrderId('');
+        setSelectedOrderIds([]);
         setSelectedContainers(new Set());
         setAddQty({});
         setErrors({});
     };
 
-    // Handle Order Change
-    const handleOrderChange = (val: string) => {
-        setSelectedOrderId(val);
-        const order = orders.find((o) => o.id.toString() === val);
+    // Tambah order ke daftar order terpilih
+    const handleAddOrder = (orderIdStr: string) => {
+        if (!orderIdStr || selectedOrderIds.includes(orderIdStr)) return;
+        setSelectedOrderIds((prev) => [...prev, orderIdStr]);
+        const order = orders.find((o) => o.id.toString() === orderIdStr);
         if (order) {
-            // Pilih semua kontainer yang tidak disabled
             const validIds = new Set<number>();
             const initialQtys: Record<string, number> = {};
 
@@ -213,35 +220,47 @@ export default function CreateInvoice() {
                 });
             });
 
-            setSelectedContainers(validIds);
+            setSelectedContainers((prev) => new Set([...prev, ...validIds]));
             setAddQty((prev) => ({ ...initialQtys, ...prev }));
-        } else {
-            setSelectedContainers(new Set());
         }
         setErrors({});
     };
 
-    // Inisialisasi awal kontainer jika selectedOrderId terisi (dari reuse atau shortcut URL)
+    // Hapus order dari daftar terpilih
+    const handleRemoveOrder = (orderIdStr: string) => {
+        setSelectedOrderIds((prev) => prev.filter((id) => id !== orderIdStr));
+        const order = orders.find((o) => o.id.toString() === orderIdStr);
+        if (order) {
+            const orderItemIds = new Set(order.order_items?.map((it) => it.id) || []);
+            setSelectedContainers((prev) => new Set([...prev].filter((id) => !orderItemIds.has(id))));
+        }
+    };
+
+    // Inisialisasi awal kontainer jika selectedOrderIds terisi (dari reuse atau shortcut URL)
     useEffect(() => {
-        if (selectedOrderId && selectedCustomerId) {
+        if (selectedOrderIds.length > 0 && selectedCustomerId) {
             const customer = customers.find((c) => c.id.toString() === selectedCustomerId);
-            const order = customer?.orders?.find((o) => o.id.toString() === selectedOrderId);
-            if (order) {
+            if (customer) {
                 const validIds = new Set<number>();
                 const initialQtys: Record<string, number> = {};
 
-                order.order_items?.forEach((item) => {
-                    validIds.add(item.id);
-                    item.additional_products?.forEach((ap) => {
-                        initialQtys[`${item.id}:${ap.id}`] = 1;
-                    });
+                selectedOrderIds.forEach((orderIdStr) => {
+                    const order = customer.orders?.find((o) => o.id.toString() === orderIdStr);
+                    if (order) {
+                        order.order_items?.forEach((item) => {
+                            validIds.add(item.id);
+                            item.additional_products?.forEach((ap) => {
+                                initialQtys[`${item.id}:${ap.id}`] = 1;
+                            });
+                        });
+                    }
                 });
 
                 setSelectedContainers(validIds);
                 setAddQty((prev) => ({ ...initialQtys, ...prev }));
             }
         }
-    }, [selectedOrderId, selectedCustomerId, customers]);
+    }, [selectedCustomerId]);
 
     // Check Unavailable Order Items saat customer atau periode berubah
     useEffect(() => {
@@ -280,15 +299,40 @@ export default function CreateInvoice() {
         });
     };
 
-    // Pilih / Lepas Semua Kontainer
+    // Pilih / Lepas semua kontainer dalam satu order tertentu
+    const toggleSelectAllForOrder = (order: Order) => {
+        const availableItems = (order.order_items || []).filter((it) => !disabledOrders.has(it.id));
+        const allSelected =
+            availableItems.length > 0 && availableItems.every((it) => selectedContainers.has(it.id));
+
+        setSelectedContainers((prev) => {
+            const next = new Set(prev);
+            if (allSelected) {
+                availableItems.forEach((it) => next.delete(it.id));
+            } else {
+                availableItems.forEach((it) => next.add(it.id));
+            }
+            return next;
+        });
+    };
+
+    // Pilih / Lepas Semua Kontainer di seluruh order yang aktif
     const toggleSelectAllContainers = () => {
-        if (!selectedOrder) return;
-        const availableItems = (selectedOrder.order_items || []).filter((it) => !disabledOrders.has(it.id));
-        if (selectedContainers.size === availableItems.length) {
-            setSelectedContainers(new Set());
-        } else {
-            setSelectedContainers(new Set(availableItems.map((it) => it.id)));
-        }
+        const allAvailableItems = activeOrders.flatMap((o) =>
+            (o.order_items || []).filter((it) => !disabledOrders.has(it.id)),
+        );
+        const allSelected =
+            allAvailableItems.length > 0 && allAvailableItems.every((it) => selectedContainers.has(it.id));
+
+        setSelectedContainers((prev) => {
+            const next = new Set(prev);
+            if (allSelected) {
+                allAvailableItems.forEach((it) => next.delete(it.id));
+            } else {
+                allAvailableItems.forEach((it) => next.add(it.id));
+            }
+            return next;
+        });
     };
 
     // Manage qty
@@ -302,8 +346,8 @@ export default function CreateInvoice() {
     const calculations = useMemo(() => {
         let subtotal = 0;
 
-        if (selectedOrder) {
-            selectedOrder.order_items?.forEach((item) => {
+        activeOrders.forEach((order) => {
+            order.order_items?.forEach((item) => {
                 if (selectedContainers.has(item.id)) {
                     // Harga pokok kontainer
                     subtotal += Number(item.price_value || 0);
@@ -316,7 +360,7 @@ export default function CreateInvoice() {
                     });
                 }
             });
-        }
+        });
 
         const safeDiscount = Math.min(subtotal, Math.max(0, Number(discount) || 0));
         const afterDiscount = Math.max(0, subtotal - safeDiscount);
@@ -337,7 +381,7 @@ export default function CreateInvoice() {
             terbilang: liveTerbilang,
             isUnder5Juta,
         };
-    }, [selectedOrder, selectedContainers, discount, applyMaterai, addQty]);
+    }, [activeOrders, selectedContainers, discount, applyMaterai, addQty]);
 
     // Otomatis uncheck materai jika tagihan under 5jt
     useEffect(() => {
@@ -357,8 +401,8 @@ export default function CreateInvoice() {
             return;
         }
 
-        if (!selectedOrderId) {
-            setErrors({ order_id: ['Pilih nomor order/AJU terlebih dahulu.'] });
+        if (selectedOrderIds.length === 0) {
+            setErrors({ order_id: ['Pilih minimal satu nomor order/AJU.'] });
             return;
         }
 
@@ -367,24 +411,25 @@ export default function CreateInvoice() {
             return;
         }
 
-        // Susun daftar additional products
-        const additionalSelections =
-            selectedOrder?.order_items
-                ?.filter((it) => selectedContainers.has(it.id))
+        // Susun daftar additional products across all active orders
+        const additionalSelections = activeOrders.flatMap((order) =>
+            (order.order_items || [])
+                .filter((it) => selectedContainers.has(it.id))
                 .flatMap((it) =>
                     (it.additional_products ?? []).map((ap) => ({
                         order_item_id: it.id,
                         additional_product_id: ap.id,
                         quantity: getQty(it.id, ap.id),
                     })),
-                ) ?? [];
+                ),
+        );
 
         const payload = {
             reuse_id: reuse_invoice?.id || null,
             customer_id: selectedCustomerId,
             invoice_number: invoice_number || '',
-            order_id: selectedOrderId,
-            order_ids: [selectedOrderId],
+            order_id: selectedOrderIds[0] || null,
+            order_ids: selectedOrderIds,
             order_item_ids: Array.from(selectedContainers),
             period_start: periodStart,
             period_end: periodEnd,
@@ -547,20 +592,80 @@ export default function CreateInvoice() {
                             </div>
 
                             {/* Nomor Order / AJU */}
-                            <div className="space-y-1.5 pt-2">
-                                <Label className="text-xs font-semibold text-gray-700">
-                                    Nomor Order / AJU <span className="text-red-500">*</span>
-                                </Label>
+                            <div className="space-y-2 pt-2">
+                                <div className="flex items-center justify-between">
+                                    <Label className="text-xs font-semibold text-gray-700">
+                                        Nomor Order / AJU <span className="text-red-500">*</span>
+                                    </Label>
+                                    {selectedOrderIds.length > 0 && (
+                                        <span className="text-xs font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                                            {selectedOrderIds.length} order aktif
+                                        </span>
+                                    )}
+                                </div>
+
                                 {selectedCustomerId ? (
                                     orders.length > 0 ? (
-                                        <SearchableSelect
-                                            options={orderOptions}
-                                            value={selectedOrderId}
-                                            onChange={handleOrderChange}
-                                            placeholder="Pilih Nomor Order / AJU..."
-                                            searchPlaceholder="Cari nomor order atau kontainer..."
-                                            showClear
-                                        />
+                                        <div className="space-y-3">
+                                            {selectedOrderIds.length === 0 ? (
+                                                <SearchableSelect
+                                                    options={orderOptions}
+                                                    value=""
+                                                    onChange={handleAddOrder}
+                                                    placeholder="Pilih Nomor Order / AJU..."
+                                                    searchPlaceholder="Cari nomor order atau kontainer..."
+                                                    showClear
+                                                />
+                                            ) : (
+                                                <div className="space-y-3 rounded-lg border border-gray-200 bg-gray-50/50 p-3">
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        {activeOrders.map((o) => (
+                                                            <span
+                                                                key={o.id}
+                                                                className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-900 shadow-2xs"
+                                                            >
+                                                                <span>Order #{o.order_id}</span>
+                                                                <span className="text-[11px] font-normal text-blue-600">
+                                                                    ({o.order_items?.length || 0} kontainer)
+                                                                </span>
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={() => handleRemoveOrder(o.id.toString())}
+                                                                    className="rounded p-0.5 text-blue-500 hover:bg-blue-200 hover:text-red-600 transition-colors"
+                                                                    title="Hapus order ini"
+                                                                >
+                                                                    <X className="h-3.5 w-3.5" />
+                                                                </button>
+                                                            </span>
+                                                        ))}
+                                                    </div>
+
+                                                    {availableOrdersToAdd.length > 0 && (
+                                                        <div className="pt-1">
+                                                            <SearchableSelect
+                                                                options={availableOrdersToAdd.map((o) => {
+                                                                    const containers = o.order_items
+                                                                        ?.map((it) => it.container_number)
+                                                                        .filter(Boolean)
+                                                                        .join(', ');
+                                                                    return {
+                                                                        value: o.id.toString(),
+                                                                        label: `+ Tambah Order #${o.order_id}`,
+                                                                        subLabel: containers
+                                                                            ? `Kontainer: ${containers}`
+                                                                            : `${o.order_items?.length || 0} item`,
+                                                                    };
+                                                                })}
+                                                                value=""
+                                                                onChange={handleAddOrder}
+                                                                placeholder="+ Gabungkan Order Lain dari Customer Ini..."
+                                                                searchPlaceholder="Cari nomor order untuk ditambahkan..."
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
                                     ) : (
                                         <div className="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-xs text-amber-800">
                                             <AlertCircle className="h-4 w-4 shrink-0 text-amber-600" />
@@ -628,15 +733,19 @@ export default function CreateInvoice() {
                         </div>
 
                         {/* Section 3: Daftar Kontainer & Layanan */}
-                        {selectedOrderId && selectedOrder && (
-                            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-4">
+                        {selectedOrderIds.length > 0 && (
+                            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-3 gap-2">
                                     <div className="flex items-center gap-2">
                                         <Layers className="h-5 w-5 text-blue-600" />
-                                        <h2 className="text-base font-bold text-gray-900">
-                                            Daftar Kontainer & Produk ({selectedContainers.size} dipilih dari{' '}
-                                            {selectedOrder.order_items?.length || 0} kontainer)
-                                        </h2>
+                                        <div>
+                                            <h2 className="text-base font-bold text-gray-900">
+                                                Daftar Kontainer & Layanan
+                                            </h2>
+                                            <p className="text-xs text-gray-500">
+                                                {selectedContainers.size} kontainer dipilih dari {activeOrders.length} order
+                                            </p>
+                                        </div>
                                     </div>
 
                                     <Button
@@ -646,162 +755,270 @@ export default function CreateInvoice() {
                                         onClick={toggleSelectAllContainers}
                                         className="h-8 text-xs font-medium"
                                     >
-                                        {selectedContainers.size ===
-                                        (selectedOrder.order_items || []).filter((it) => !disabledOrders.has(it.id)).length
-                                            ? 'Batal Pilih Semua'
-                                            : 'Pilih Semua'}
+                                        {(() => {
+                                            const allAvailable = activeOrders.flatMap((o) =>
+                                                (o.order_items || []).filter((it) => !disabledOrders.has(it.id)),
+                                            );
+                                            return allAvailable.length > 0 &&
+                                                allAvailable.every((it) => selectedContainers.has(it.id))
+                                                ? 'Batal Pilih Semua'
+                                                : 'Pilih Semua Kontainer';
+                                        })()}
                                     </Button>
                                 </div>
 
-                                <div className="space-y-3 pt-1">
-                                    {selectedOrder.order_items && selectedOrder.order_items.length > 0 ? (
-                                        selectedOrder.order_items.map((item) => {
-                                            const isSelected = selectedContainers.has(item.id);
-                                            const isDisabled = disabledOrders.has(item.id);
-                                            const priceValue = Number(item.price_value || 0);
+                                <div className="space-y-6 pt-1">
+                                    {activeOrders.map((order) => {
+                                        const orderAvailable = (order.order_items || []).filter(
+                                            (it) => !disabledOrders.has(it.id),
+                                        );
+                                        const orderSelectedCount = (order.order_items || []).filter((it) =>
+                                            selectedContainers.has(it.id),
+                                        ).length;
+                                        const isAllOrderSelected =
+                                            orderAvailable.length > 0 &&
+                                            orderAvailable.every((it) => selectedContainers.has(it.id));
 
-                                            // Subtotal item
-                                            const addSum = (item.additional_products || []).reduce((acc, ap) => {
-                                                const p = Number(ap.pivot?.price_value || 0);
-                                                const q = getQty(item.id, ap.id);
-                                                return acc + p * q;
-                                            }, 0);
-                                            const itemSubtotal = priceValue + addSum;
-
-                                            return (
-                                                <div
-                                                    key={item.id}
-                                                    className={`rounded-xl border p-4 transition-all ${
-                                                        isDisabled
-                                                            ? 'border-gray-200 bg-gray-50/60 opacity-60'
-                                                            : isSelected
-                                                              ? 'border-blue-300 bg-blue-50/20 shadow-xs'
-                                                              : 'border-gray-200 bg-white hover:border-gray-300'
-                                                    }`}
-                                                >
-                                                    {/* Header Item */}
-                                                    <div className="flex items-start justify-between gap-3">
-                                                        <div className="flex items-start gap-3">
-                                                            <input
-                                                                type="checkbox"
-                                                                id={`container-${item.id}`}
-                                                                checked={isSelected}
-                                                                disabled={isDisabled}
-                                                                onChange={() => toggleContainer(item.id)}
-                                                                className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer disabled:cursor-not-allowed"
-                                                            />
-                                                            <div>
-                                                                <div className="flex flex-wrap items-center gap-2">
-                                                                    <label
-                                                                        htmlFor={`container-${item.id}`}
-                                                                        className={`text-base font-bold tracking-wide cursor-pointer ${
-                                                                            isSelected ? 'text-blue-900' : 'text-gray-900'
-                                                                        }`}
-                                                                    >
-                                                                        {item.container_number}
-                                                                    </label>
-
-                                                                    {item.product?.service_type && (
-                                                                        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                                                                            {item.product.service_type}
-                                                                        </span>
-                                                                    )}
-
-                                                                    {isDisabled && (
-                                                                        <span className="inline-flex items-center rounded-md bg-red-100 px-2 py-0.5 text-[11px] font-medium text-red-800">
-                                                                            Sudah Terbit Invoice
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-
-                                                                {/* Waktu Gate In / Gate Out */}
-                                                                <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
-                                                                    <span className="flex items-center gap-1">
-                                                                        <Clock className="h-3.5 w-3.5 text-gray-400" />
-                                                                        Gate In: {formatDateTime(item.entry_date)}
-                                                                    </span>
-                                                                    {item.exit_date && (
-                                                                        <span className="flex items-center gap-1">
-                                                                            <Clock className="h-3.5 w-3.5 text-gray-400" />
-                                                                            Gate Out: {formatDateTime(item.exit_date)}
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Harga Pokok & Subtotal Kontainer */}
-                                                        <div className="text-right shrink-0">
-                                                            <div className="text-xs text-gray-500">
-                                                                Pokok: {formatRupiah(priceValue)}
-                                                            </div>
-                                                            <div className="text-sm font-bold text-gray-900 mt-0.5">
-                                                                Total: {formatRupiah(itemSubtotal)}
-                                                            </div>
-                                                        </div>
+                                        return (
+                                            <div
+                                                key={order.id}
+                                                className="rounded-xl border border-gray-200 bg-gray-50/40 p-4 space-y-4"
+                                            >
+                                                {/* Header Order Group */}
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200/80 pb-3">
+                                                    <div className="flex items-center gap-2.5">
+                                                        <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-1 text-xs font-bold text-blue-900">
+                                                            Order #{order.order_id}
+                                                        </span>
+                                                        <span className="text-xs text-gray-500">
+                                                            ({orderSelectedCount} dari {order.order_items?.length || 0} kontainer dipilih)
+                                                        </span>
                                                     </div>
 
-                                                    {/* Additional Products List */}
-                                                    {item.additional_products && item.additional_products.length > 0 && (
-                                                        <div className="mt-3.5 border-t border-gray-100 pt-3 pl-7 space-y-2">
-                                                            <div className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-                                                                Produk / Layanan Tambahan:
-                                                            </div>
-                                                            <div className="space-y-1.5">
-                                                                {item.additional_products.map((prod) => {
-                                                                    const price = Number(prod.pivot?.price_value || 0);
-                                                                    const qty = getQty(item.id, prod.id);
-                                                                    const lineTotal = price * qty;
+                                                    <div className="flex items-center gap-2">
+                                                        <Button
+                                                            type="button"
+                                                            variant="ghost"
+                                                            size="sm"
+                                                            onClick={() => toggleSelectAllForOrder(order)}
+                                                            className="h-7 text-xs font-medium text-gray-700 hover:bg-gray-200/70"
+                                                        >
+                                                            {isAllOrderSelected
+                                                                ? 'Batal Pilih Order Ini'
+                                                                : 'Pilih Semua di Order Ini'}
+                                                        </Button>
 
-                                                                    return (
-                                                                        <div
-                                                                            key={prod.id}
-                                                                            className="flex flex-col sm:flex-row sm:items-center justify-between rounded-lg bg-gray-50/70 px-3 py-2 text-xs gap-2"
-                                                                        >
-                                                                            <div className="flex items-center gap-3">
-                                                                                <span className="font-medium text-gray-800">
-                                                                                    {prod.service_type || `Layanan Tambahan #${prod.id}`}
-                                                                                </span>
-                                                                                <div className="flex items-center gap-1">
-                                                                                    <span className="text-gray-400">Qty:</span>
-                                                                                    <input
-                                                                                        type="number"
-                                                                                        min={0}
-                                                                                        step={1}
-                                                                                        value={qty}
-                                                                                        disabled={!isSelected || isDisabled}
-                                                                                        onChange={(e) =>
-                                                                                            updateQty(
-                                                                                                item.id,
-                                                                                                prod.id,
-                                                                                                Number(e.target.value),
-                                                                                            )
-                                                                                        }
-                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-blue-500 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
-                                                                                    />
+                                                        {activeOrders.length > 1 && (
+                                                            <Button
+                                                                type="button"
+                                                                variant="ghost"
+                                                                size="sm"
+                                                                onClick={() => handleRemoveOrder(order.id.toString())}
+                                                                className="h-7 text-xs font-medium text-red-600 hover:text-red-700 hover:bg-red-50"
+                                                            >
+                                                                <Trash2 className="h-3.5 w-3.5 mr-1" />
+                                                                Hapus Order
+                                                            </Button>
+                                                        )}
+                                                    </div>
+                                                </div>
+
+                                                {/* List Containers for this Order */}
+                                                <div className="space-y-3">
+                                                    {order.order_items && order.order_items.length > 0 ? (
+                                                        order.order_items.map((item) => {
+                                                            const isSelected = selectedContainers.has(item.id);
+                                                            const isDisabled = disabledOrders.has(item.id);
+                                                            const priceValue = Number(item.price_value || 0);
+
+                                                            // Subtotal item
+                                                            const addSum = (item.additional_products || []).reduce(
+                                                                (acc, ap) => {
+                                                                    const p = Number(ap.pivot?.price_value || 0);
+                                                                    const q = getQty(item.id, ap.id);
+                                                                    return acc + p * q;
+                                                                },
+                                                                0,
+                                                            );
+                                                            const itemSubtotal = priceValue + addSum;
+
+                                                            return (
+                                                                <div
+                                                                    key={item.id}
+                                                                    className={`rounded-xl border p-4 transition-all ${
+                                                                        isDisabled
+                                                                            ? 'border-gray-200 bg-gray-50/60 opacity-60'
+                                                                            : isSelected
+                                                                              ? 'border-blue-300 bg-white shadow-xs ring-1 ring-blue-500/20'
+                                                                              : 'border-gray-200 bg-white hover:border-gray-300'
+                                                                    }`}
+                                                                >
+                                                                    {/* Header Item */}
+                                                                    <div className="flex items-start justify-between gap-3">
+                                                                        <div className="flex items-start gap-3">
+                                                                            <input
+                                                                                type="checkbox"
+                                                                                id={`container-${item.id}`}
+                                                                                checked={isSelected}
+                                                                                disabled={isDisabled}
+                                                                                onChange={() => toggleContainer(item.id)}
+                                                                                className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer disabled:cursor-not-allowed"
+                                                                            />
+                                                                            <div>
+                                                                                <div className="flex flex-wrap items-center gap-2">
+                                                                                    <label
+                                                                                        htmlFor={`container-${item.id}`}
+                                                                                        className={`text-base font-bold tracking-wide cursor-pointer ${
+                                                                                            isSelected
+                                                                                                ? 'text-blue-900'
+                                                                                                : 'text-gray-900'
+                                                                                        }`}
+                                                                                    >
+                                                                                        {item.container_number}
+                                                                                    </label>
+
+                                                                                    {item.product?.service_type && (
+                                                                                        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                                                            {item.product.service_type}
+                                                                                        </span>
+                                                                                    )}
+
+                                                                                    {isDisabled && (
+                                                                                        <span className="inline-flex items-center rounded-md bg-red-100 px-2 py-0.5 text-[11px] font-medium text-red-800">
+                                                                                            Sudah Terbit Invoice
+                                                                                        </span>
+                                                                                    )}
+                                                                                </div>
+
+                                                                                {/* Waktu Gate In / Gate Out */}
+                                                                                <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                                                                                    <span className="flex items-center gap-1">
+                                                                                        <Clock className="h-3.5 w-3.5 text-gray-400" />
+                                                                                        Gate In: {formatDateTime(item.entry_date)}
+                                                                                    </span>
+                                                                                    {item.exit_date && (
+                                                                                        <span className="flex items-center gap-1">
+                                                                                            <Clock className="h-3.5 w-3.5 text-gray-400" />
+                                                                                            Gate Out: {formatDateTime(item.exit_date)}
+                                                                                        </span>
+                                                                                    )}
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
 
-                                                                            <div className="text-right text-xs">
-                                                                                <span className="text-gray-500">
-                                                                                    {formatRupiah(price)} × {qty} ={' '}
-                                                                                </span>
-                                                                                <span className="font-semibold text-gray-900">
-                                                                                    {formatRupiah(lineTotal)}
-                                                                                </span>
+                                                                        {/* Harga Pokok & Subtotal Kontainer */}
+                                                                        <div className="text-right shrink-0">
+                                                                            <div className="text-xs text-gray-500">
+                                                                                Pokok: {formatRupiah(priceValue)}
+                                                                            </div>
+                                                                            <div className="text-sm font-bold text-gray-900 mt-0.5">
+                                                                                Total: {formatRupiah(itemSubtotal)}
                                                                             </div>
                                                                         </div>
-                                                                    );
-                                                                })}
-                                                            </div>
+                                                                    </div>
+
+                                                                    {/* Additional Products List */}
+                                                                    {item.additional_products && item.additional_products.length > 0 && (
+                                                                        <div className="mt-3.5 border-t border-gray-100 pt-3 pl-7 space-y-2">
+                                                                            <div className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                                                                Produk / Layanan Tambahan:
+                                                                            </div>
+                                                                            <div className="space-y-1.5">
+                                                                                {item.additional_products.map((prod) => {
+                                                                                    const price = Number(prod.pivot?.price_value || 0);
+                                                                                    const qty = getQty(item.id, prod.id);
+                                                                                    const lineTotal = price * qty;
+
+                                                                                    return (
+                                                                                        <div
+                                                                                            key={prod.id}
+                                                                                            className="flex flex-col sm:flex-row sm:items-center justify-between rounded-lg bg-gray-50/70 px-3 py-2 text-xs gap-2"
+                                                                                        >
+                                                                                            <div className="flex items-center gap-3">
+                                                                                                <span className="font-medium text-gray-800">
+                                                                                                    {prod.service_type || `Layanan Tambahan #${prod.id}`}
+                                                                                                </span>
+                                                                                                <div className="flex items-center gap-1">
+                                                                                                    <span className="text-gray-400">Qty:</span>
+                                                                                                    <input
+                                                                                                        type="number"
+                                                                                                        min={0}
+                                                                                                        step={1}
+                                                                                                        value={qty}
+                                                                                                        disabled={!isSelected || isDisabled}
+                                                                                                        onChange={(e) =>
+                                                                                                            updateQty(
+                                                                                                                item.id,
+                                                                                                                prod.id,
+                                                                                                                Number(e.target.value),
+                                                                                                            )
+                                                                                                        }
+                                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-blue-500 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                                    />
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div className="text-right text-xs">
+                                                                                                <span className="text-gray-500">
+                                                                                                    {formatRupiah(price)} × {qty} ={' '}
+                                                                                                </span>
+                                                                                                <span className="font-semibold text-gray-900">
+                                                                                                    {formatRupiah(lineTotal)}
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    );
+                                                                                })}
+                                                                            </div>
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        })
+                                                    ) : (
+                                                        <div className="py-6 text-center text-xs text-gray-400">
+                                                            Order ini tidak memiliki kontainer.
                                                         </div>
                                                     )}
                                                 </div>
-                                            );
-                                        })
-                                    ) : (
-                                        <div className="py-6 text-center text-xs text-gray-400">
-                                            Order ini tidak memiliki kontainer.
+                                            </div>
+                                        );
+                                    })}
+
+                                    {/* Tombol Gabungkan Order Lain di Bagian Bawah Section 3 */}
+                                    {availableOrdersToAdd.length > 0 && (
+                                        <div className="rounded-xl border border-dashed border-blue-300 bg-blue-50/50 p-4">
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                                <div>
+                                                    <span className="text-xs font-semibold text-blue-950 block">
+                                                        Mau menambah kontainer dari order lain?
+                                                    </span>
+                                                    <span className="text-[11px] text-blue-700">
+                                                        Pilih order lain milik customer ini untuk digabungkan ke dalam 1 invoice.
+                                                    </span>
+                                                </div>
+                                                <div className="w-full sm:w-80">
+                                                    <SearchableSelect
+                                                        options={availableOrdersToAdd.map((o) => {
+                                                            const containers = o.order_items
+                                                                ?.map((it) => it.container_number)
+                                                                .filter(Boolean)
+                                                                .join(', ');
+                                                            return {
+                                                                value: o.id.toString(),
+                                                                label: `+ Gabungkan Order #${o.order_id}`,
+                                                                subLabel: containers
+                                                                    ? `Kontainer: ${containers}`
+                                                                    : `${o.order_items?.length || 0} item`,
+                                                            };
+                                                        })}
+                                                        value=""
+                                                        onChange={handleAddOrder}
+                                                        placeholder="+ Tambah Order Lain..."
+                                                        searchPlaceholder="Cari nomor order..."
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
@@ -957,7 +1174,7 @@ export default function CreateInvoice() {
                                 type="submit"
                                 disabled={
                                     !selectedCustomerId ||
-                                    !selectedOrderId ||
+                                    selectedOrderIds.length === 0 ||
                                     selectedContainers.size === 0
                                 }
                                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-sm"

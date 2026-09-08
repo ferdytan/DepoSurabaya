@@ -410,12 +410,19 @@ class InvoiceController extends Controller
         // Muat ulang invoice dengan payload yang dibutuhkan UI (tanpa mengubah relasi lama)
         $invoice = Invoice::withShowPayload()->findOrFail($invoice->id);
 
-        // Ambil satu order untuk header (via helper firstOrder)
-        $order = $invoice->firstOrder();
-        $orderPayload = $order ? [
-            'id'       => $order->id,
-            'order_id' => $order->order_id,
-        ] : null;
+        // Ambil semua nomor order yang terkait invoice untuk header
+        $orderNumbers = $invoice->itemsWithOrder
+            ->map(fn($it) => $it->orderItem?->order?->order_id)
+            ->filter()
+            ->unique()
+            ->values()
+            ->implode(', ');
+
+        $firstOrder = $invoice->firstOrder();
+        $orderPayload = [
+            'id'       => $firstOrder?->id ?? 0,
+            'order_id' => !empty($orderNumbers) ? $orderNumbers : ($firstOrder?->order_id ?? '-'),
+        ];
 
         // Map invoice_items → struktur yang dibutuhkan oleh show.tsx
         $orderItems = $invoice->items->map(function ($it) {
@@ -943,8 +950,10 @@ class InvoiceController extends Controller
         $validated = $request->validate([
             'reuse_id'       => ['nullable','integer'],
             'invoice_number' => ['nullable','string','max:100'],
-            'customer_id'    => ['required','integer'],
-            'order_id'       => ['required','integer','exists:orders,id'],
+            'customer_id'    => ['required','integer','exists:customers,id'],
+            'order_id'       => ['nullable','integer'],
+            'order_ids'      => ['nullable','array'],
+            'order_ids.*'    => ['integer'],
             'order_item_ids' => ['required','array','min:1'],
             'order_item_ids.*' => ['integer'],
             'period_start'   => ['required','date'],
@@ -952,7 +961,6 @@ class InvoiceController extends Controller
             'applyMaterai'   => ['boolean'],
             'materai'        => ['nullable','integer','min:0'],
             'discount'       => ['nullable','integer','min:0'],
-            // HAPUS validasi terbilang di sini
             'additional_product_quantities' => ['array'],
             'additional_product_quantities.*.order_item_id' => ['required','integer'],
             'additional_product_quantities.*.additional_product_id' => ['required','integer'],
@@ -966,19 +974,23 @@ class InvoiceController extends Controller
             $qtyMap[$key] = (int) $row['quantity'];
         }
 
-        $order = Order::with([
-            'customer:id,name',
-            'order_items' => function ($q) use ($validated) {
-                $q->whereIn('id', $validated['order_item_ids'] ?? []);
-            },
-            'order_items.product:id,service_type',
-            'order_items.additionalProducts' => function ($q) {
+        $customer = Customer::findOrFail($validated['customer_id']);
+
+        $orderItems = OrderItem::with([
+            'order:id,order_id',
+            'product:id,service_type',
+            'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
             },
-        ])->findOrFail($validated['order_id']);
+        ])->whereIn('id', $validated['order_item_ids'])->get();
+
+        // Kumpulkan semua nomor order yang terkait dengan kontainer-kontainer yang dipilih
+        $orderIds = $orderItems->pluck('order_id')->filter()->unique()->values();
+        $orders = Order::whereIn('id', $orderIds)->get();
+        $orderIdStrings = $orders->pluck('order_id')->filter()->unique()->values()->implode(', ');
 
         $subtotal = 0;
-        foreach ($order->order_items as $item) {
+        foreach ($orderItems as $item) {
             $subtotal += (int) ($item->price_value ?? 0);
             $item->additionalProducts->transform(function ($ap) use ($item, $qtyMap, &$subtotal) {
                 $price = (int) ($ap->pivot->price_value ?? 0);
@@ -993,7 +1005,7 @@ class InvoiceController extends Controller
         $discount = (int) ($validated['discount'] ?? 0);
 
         // Hitung: (Subtotal - Diskon) + PPN + Materai
-        $afterDiscount = $subtotal - $discount;
+        $afterDiscount = max(0, $subtotal - $discount);
         $ppn     = (int) round($afterDiscount * 0.11);
         $grand   = $afterDiscount + $ppn + $materai;
 
@@ -1003,11 +1015,15 @@ class InvoiceController extends Controller
         $preview = [
             'reuse_id'       => $validated['reuse_id'] ?? null,
             'customer'       => [
-                'id'   => $order->customer->id,
-                'name' => $order->customer->name,
+                'id'   => $customer->id,
+                'name' => $customer->name,
             ],
             'invoice_number' => $validated['invoice_number'] ?? null,
-            'order'          => $order->toArray(),
+            'order'          => [
+                'id'          => $orders->first()?->id ?? ($validated['order_id'] ?? 0),
+                'order_id'    => !empty($orderIdStrings) ? $orderIdStrings : ($orders->first()?->order_id ?? '-'),
+                'order_items' => $orderItems->toArray(),
+            ],
             'period_start'   => $validated['period_start'],
             'period_end'     => $validated['period_end'],
             'status'         => 'DRAFT',

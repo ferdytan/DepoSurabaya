@@ -128,7 +128,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             margin: 0 !important;
             padding: 0 !important;
             background: #ffffff !important;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
             color: #000000 !important;
             overflow: hidden !important;
         }
@@ -274,11 +274,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
         }
         .m-cont-number {
-            font-size: 32pt;
-            font-weight: 900;
-            letter-spacing: -0.5px; /* Karakter rapat tegas */
-            font-family: "Arial Black", Impact, monospace, sans-serif;
-            line-height: 1.05;
+            font-size: 28pt;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            line-height: 1.1;
             margin-top: 0.8mm;
             color: #000000;
         }
@@ -676,11 +676,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .td-cont-num {
             height: 16mm;
-            font-size: 26pt;
-            font-weight: 900;
-            letter-spacing: -0.5px !important; /* Rapat antar karakter sesuai permintaan */
+            font-size: 24pt;
+            font-weight: 800;
+            letter-spacing: 0.5px;
             text-align: center;
-            font-family: 'Arial Black', Impact, Arial, monospace, sans-serif;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         }
         .td-val-row {
             height: 8.5mm;
@@ -697,14 +697,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .service-size-box {
             font-size: 12.5pt;
-            font-weight: 900;
+            font-weight: 800;
             padding: 2mm 0;
             border-bottom: 1.5px solid #000;
         }
         .service-title-box {
             font-size: 13pt;
-            font-weight: 900;
-            font-style: italic;
+            font-weight: 800;
             padding: 4mm 2mm;
             line-height: 1.25;
             text-transform: uppercase;
@@ -1012,7 +1011,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 <Input
                                     value={containerNumber}
                                     onChange={(e) => setContainerNumber(e.target.value)}
-                                    className="h-8 text-xs bg-white font-mono font-bold tracking-tight"
+                                    className="h-8 text-xs bg-white font-bold"
                                     placeholder="Nomor Container"
                                 />
                             </div>
@@ -1075,6 +1074,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     <div
                         ref={printContainerRef}
                         className="relative bg-white shadow-md border border-gray-400 p-6 w-[794px] min-w-[794px] h-[529px] min-h-[529px] rounded flex flex-col justify-between select-none"
+                        style={{ fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif' }}
                     >
                         {/* Sprocket Holes Indicator (Kiri & Kanan Kertas Dot Matrix) */}
                         <div className="absolute left-1.5 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-20">
@@ -1158,7 +1158,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     <div className="flex border-b-2 border-black min-h-[75px]">
                                         <div className="flex-1 border-r-2 border-black p-2.5 flex flex-col justify-center">
                                             <div className="text-[9px] uppercase font-bold text-gray-600">NO. CONTAINER</div>
-                                            <div className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-black mt-0.5 leading-none">
+                                            <div className="text-3xl sm:text-4xl font-extrabold tracking-normal text-black mt-0.5 leading-none">
                                                 {containerNumber || '-'}
                                             </div>
                                         </div>
@@ -1294,14 +1294,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                             <td className="w-[125px] border border-black p-2 font-bold text-center text-xs">
                                                 NO<br />CONTAINER
                                             </td>
-                                            <td className="border border-black p-2 font-black text-2xl sm:text-3xl text-center tracking-tight font-mono">
+                                            <td className="border border-black p-2 font-extrabold text-2xl sm:text-3xl text-center tracking-normal">
                                                 {containerNumber}
                                             </td>
                                             <td rowSpan={4} className="w-[210px] border border-black p-0 text-center align-middle bg-gray-50/30">
                                                 <div className="text-base font-black py-2.5 border-b-[1.5px] border-black">
                                                     {containerSize}
                                                 </div>
-                                                <div className="text-base font-black italic py-5 px-2 tracking-wide uppercase leading-tight">
+                                                <div className="text-base font-black py-5 px-2 tracking-wide uppercase leading-tight">
                                                     {serviceType}
                                                 </div>
                                             </td>

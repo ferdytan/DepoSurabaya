@@ -20,6 +20,7 @@ export interface SuratJalanData {
     destination?: string | null;
     exit_time?: string | null;
     notes?: string | null;
+    fuel_option?: string | null;
 }
 
 interface SuratJalanModalProps {
@@ -63,6 +64,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     const [keterangan, setKeterangan] = useState('-');
     const [containerNumber, setContainerNumber] = useState('');
     const [ukuranCont, setUkuranCont] = useState(() => formatContainerSize(data?.size));
+    const [layanan, setLayanan] = useState(() => data?.service_type || 'PLUG & MONITORING TEMPERATURE');
+    const [isBensinChecked, setIsBensinChecked] = useState(false);
+    const [isiBensin, setIsiBensin] = useState('50 Liter');
+    const [gensetOn, setGensetOn] = useState(false);
+    const [plugSuhu, setPlugSuhu] = useState(false);
+    const [cuciKontainer, setCuciKontainer] = useState(false);
+    const [opsiLain, setOpsiLain] = useState('');
     const [showLogo, setShowLogo] = useState(false); // Default false matching continuous form sample photo
     const [layoutStyle, setLayoutStyle] = useState<'standard' | 'modern'>('modern'); // Opsi pilihan layout (default modern)
 
@@ -84,11 +92,30 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             setKeterangan(data.notes || '-');
             setContainerNumber(data.container_number || '');
             setUkuranCont(formatContainerSize(data.size));
+            setLayanan(data.service_type || 'PLUG & MONITORING TEMPERATURE');
+            if (data.fuel_option) {
+                setIsBensinChecked(true);
+                setIsiBensin(data.fuel_option);
+            }
         }
     }, [data, isOpen]);
 
+    const getOperationalSummaryText = () => {
+        const list: string[] = [];
+        if (isBensinChecked) {
+            list.push(`BBM: ${isiBensin ? isiBensin.toUpperCase() : 'YA'}`);
+        }
+        if (gensetOn) list.push('GENSET AKTIF');
+        if (plugSuhu) list.push('PLUG & SUHU');
+        if (cuciKontainer) list.push('CUCI');
+        if (opsiLain.trim()) list.push(opsiLain.trim().toUpperCase());
+
+        if (list.length === 0) return '- (STANDAR)';
+        return list.join(' • ');
+    };
+
     const containerSize = ukuranCont;
-    const serviceType = data?.service_type || 'PEMERIKSAAN KARANTINA';
+    const serviceType = layanan || data?.service_type || 'PLUG & MONITORING TEMPERATURE';
     const customerName = data?.customer_name || '-';
     const shipperName = data?.shipper_name || null;
 
@@ -242,6 +269,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             margin-top: 2mm;
             background: #ffffff;
             display: flex;
+            min-height: 41mm;
         }
         .m-hero-left {
             flex: 1;
@@ -250,8 +278,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             flex-direction: column;
         }
         .m-cont-num-box {
-            padding: 1.5mm 3mm;
-            border-bottom: 1px solid #000;
+            padding: 2mm 3.5mm;
+            border-bottom: 1.5px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .m-cont-lbl {
             font-size: 6.5pt;
@@ -261,12 +292,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
         }
         .m-cont-number {
-            font-size: 26pt;
+            font-size: 34pt;
             font-weight: 900;
             letter-spacing: -0.5px; /* Karakter rapat tegas */
             font-family: "Arial Black", Impact, monospace, sans-serif;
-            line-height: 1;
-            margin-top: 0.5mm;
+            line-height: 1.05;
+            margin-top: 0.8mm;
+            color: #000000;
         }
         .m-hero-subgrid {
             display: flex;
@@ -274,12 +306,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-subcol {
             flex: 1;
-            padding: 1.5mm 3mm;
+            padding: 1.8mm 2.5mm;
             border-right: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .m-subcol:last-child {
             border-right: none;
-            flex: 1.4;
+            flex: 1.1;
         }
         .m-subcol-lbl {
             font-size: 6.5pt;
@@ -291,9 +326,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             font-size: 8.5pt;
             font-weight: 700;
             margin-top: 1px;
+            color: #000;
+            line-height: 1.2;
+        }
+        .m-subcol-val.highlight {
+            font-weight: 900;
+            color: #000;
         }
         .m-hero-right {
-            width: 58mm;
+            width: 62mm;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -320,12 +361,30 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             background: #ffffff;
         }
         .m-service-val {
-            font-size: 10.5pt;
+            font-size: 14pt;
             font-weight: 900;
-            font-style: italic;
             text-transform: uppercase;
             line-height: 1.2;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            margin-top: 0.8mm;
+            color: #000;
+        }
+        .m-opsi-box {
+            border-top: 1px solid #000;
+            padding: 1.5mm 1.5mm;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .m-opsi-val {
+            font-size: 8pt;
+            font-weight: 900;
+            color: #000;
+            text-transform: uppercase;
+            line-height: 1.2;
+            letter-spacing: 0.3px;
             margin-top: 0.5mm;
         }
 
@@ -433,6 +492,10 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                         <div class="m-subcol-val">${noSegel || '-'}</div>
                     </div>
                     <div class="m-subcol">
+                        <div class="m-subcol-lbl">Isi Bensin / BBM</div>
+                        <div class="m-subcol-val ${isBensinChecked ? 'highlight' : ''}">${isBensinChecked ? (isiBensin || 'YA') : '-'}</div>
+                    </div>
+                    <div class="m-subcol">
                         <div class="m-subcol-lbl">Keterangan / Catatan</div>
                         <div class="m-subcol-val">${keterangan || '-'}</div>
                     </div>
@@ -444,8 +507,12 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     <div class="m-size-val">${ukuranCont}</div>
                 </div>
                 <div class="m-service-box">
-                    <div class="m-cont-lbl">JENIS LAYANAN</div>
-                    <div class="m-service-val">${serviceType}</div>
+                    <div class="m-cont-lbl">NAMA PRODUK / LAYANAN</div>
+                    <div class="m-service-val">${layanan}</div>
+                </div>
+                <div class="m-opsi-box">
+                    <div class="m-cont-lbl">OPSI OPERASIONAL / BBM</div>
+                    <div class="m-opsi-val">${getOperationalSummaryText()}</div>
                 </div>
             </div>
         </div>
@@ -791,7 +858,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                 </tr>
                 <tr>
                     <td class="td-lbl">KETERANGAN</td>
-                    <td class="td-val-row">${keterangan || '-'}</td>
+                    <td class="td-val-row">${isBensinChecked && isiBensin ? `[BBM: ${isiBensin.toUpperCase()}] ` : ''}${gensetOn ? '[GENSET] ' : ''}${cuciKontainer ? '[CUCI] ' : ''}${keterangan || '-'}</td>
                 </tr>
             </tbody>
         </table>
@@ -938,87 +1005,186 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
-                        <div>
-                            <Label className="text-[11px] text-gray-700">Tanggal</Label>
-                            <Input
-                                value={tanggal}
-                                onChange={(e) => setTanggal(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="DD - MM - YYYY"
-                            />
+                    <div className="space-y-2">
+                        {/* Baris 1: Data Pengiriman Utama */}
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Tanggal</Label>
+                                <Input
+                                    value={tanggal}
+                                    onChange={(e) => setTanggal(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="DD - MM - YYYY"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Jam Keluar</Label>
+                                <Input
+                                    value={jamKeluar}
+                                    onChange={(e) => setJamKeluar(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="HH:MM"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">No. Polisi</Label>
+                                <Input
+                                    value={noPol}
+                                    onChange={(e) => setNoPol(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="Contoh: L 1234 AB"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Tujuan</Label>
+                                <Input
+                                    value={tujuan}
+                                    onChange={(e) => setTujuan(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="Contoh: Pelabuhan"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">No. Container</Label>
+                                <Input
+                                    value={containerNumber}
+                                    onChange={(e) => setContainerNumber(e.target.value)}
+                                    className="h-8 text-xs bg-white font-mono font-bold tracking-tight"
+                                    placeholder="Nomor Container"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Ukuran / Jml</Label>
+                                <Input
+                                    value={ukuranCont}
+                                    onChange={(e) => setUkuranCont(e.target.value)}
+                                    className="h-8 text-xs bg-white font-bold"
+                                    placeholder='1 X 20"'
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">Jam Keluar</Label>
-                            <Input
-                                value={jamKeluar}
-                                onChange={(e) => setJamKeluar(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="HH:MM"
-                            />
+
+                        {/* Baris 2: Nama Produk / Layanan & Detail Muatan */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                            <div>
+                                <Label className="text-[11px] text-gray-700 font-semibold">Nama Produk / Layanan</Label>
+                                <Input
+                                    value={layanan}
+                                    onChange={(e) => setLayanan(e.target.value)}
+                                    className="h-8 text-xs bg-white font-bold"
+                                    placeholder="PLUG & MONITORING TEMPERATURE"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Isi Kontainer</Label>
+                                <Input
+                                    value={isi}
+                                    onChange={(e) => setIsi(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="FULL CONT(ON-CHASIS)"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">No. Segel</Label>
+                                <Input
+                                    value={noSegel}
+                                    onChange={(e) => setNoSegel(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="Nomor Segel"
+                                />
+                            </div>
+                            <div>
+                                <Label className="text-[11px] text-gray-700">Keterangan / Catatan</Label>
+                                <Input
+                                    value={keterangan}
+                                    onChange={(e) => setKeterangan(e.target.value)}
+                                    className="h-8 text-xs bg-white"
+                                    placeholder="Catatan tambahan..."
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">No. Polisi</Label>
-                            <Input
-                                value={noPol}
-                                onChange={(e) => setNoPol(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="Contoh: L 1234 AB"
-                            />
-                        </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">Tujuan</Label>
-                            <Input
-                                value={tujuan}
-                                onChange={(e) => setTujuan(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="Contoh: Pelabuhan"
-                            />
-                        </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">No. Container</Label>
-                            <Input
-                                value={containerNumber}
-                                onChange={(e) => setContainerNumber(e.target.value)}
-                                className="h-8 text-xs bg-white font-mono font-bold tracking-tight"
-                                placeholder="Nomor Container"
-                            />
-                        </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">Ukuran / Jml</Label>
-                            <Input
-                                value={ukuranCont}
-                                onChange={(e) => setUkuranCont(e.target.value)}
-                                className="h-8 text-xs bg-white font-bold"
-                                placeholder='1 X 20"'
-                            />
-                        </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">No. Segel</Label>
-                            <Input
-                                value={noSegel}
-                                onChange={(e) => setNoSegel(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="Nomor Segel"
-                            />
-                        </div>
-                        <div>
-                            <Label className="text-[11px] text-gray-700">Isi Kontainer</Label>
-                            <Input
-                                value={isi}
-                                onChange={(e) => setIsi(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="FULL CONT(ON-CHASIS)"
-                            />
-                        </div>
-                        <div className="col-span-2 sm:col-span-4 lg:col-span-8">
-                            <Label className="text-[11px] text-gray-700">Keterangan</Label>
-                            <Input
-                                value={keterangan}
-                                onChange={(e) => setKeterangan(e.target.value)}
-                                className="h-8 text-xs bg-white"
-                                placeholder="Catatan / keterangan tambahan..."
-                            />
+
+                        {/* Baris 3: Opsi Operasional & Isi Bensin (BBM / Genset / Cuci) */}
+                        <div className="p-2.5 rounded-lg border border-amber-300 bg-amber-50/50 flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap items-center gap-3">
+                                {/* Checkbox Isi Bensin */}
+                                <label className="flex items-center gap-1.5 cursor-pointer text-xs font-bold text-gray-900 bg-white px-2.5 py-1 rounded border border-gray-300 hover:border-amber-400 select-none">
+                                    <input
+                                        type="checkbox"
+                                        checked={isBensinChecked}
+                                        onChange={(e) => {
+                                            setIsBensinChecked(e.target.checked);
+                                            if (e.target.checked && !isiBensin) {
+                                                setIsiBensin('50 Liter');
+                                            }
+                                        }}
+                                        className="h-4 w-4 text-amber-600 rounded"
+                                    />
+                                    <span>⛽ Isi Bensin / Solar</span>
+                                </label>
+
+                                {isBensinChecked && (
+                                    <div className="flex items-center gap-1.5">
+                                        <Input
+                                            value={isiBensin}
+                                            onChange={(e) => setIsiBensin(e.target.value)}
+                                            className="h-7 w-28 text-xs bg-white font-bold"
+                                            placeholder="50 Liter"
+                                        />
+                                        <div className="flex items-center gap-1">
+                                            {['25L', '50L', '100L', 'Full'].map((preset) => (
+                                                <button
+                                                    key={preset}
+                                                    type="button"
+                                                    onClick={() => setIsiBensin(preset === 'Full' ? 'Full Tank' : `${preset.replace('L', '')} Liter`)}
+                                                    className="px-1.5 py-0.5 text-[10px] font-semibold bg-white border border-amber-300 rounded hover:bg-amber-100 text-amber-900"
+                                                >
+                                                    {preset}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div className="h-4 w-[1px] bg-amber-300 hidden sm:block"></div>
+
+                                {/* Checkbox Opsi Cepat Lainnya */}
+                                <div className="flex flex-wrap items-center gap-2 text-xs">
+                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
+                                        <input
+                                            type="checkbox"
+                                            checked={gensetOn}
+                                            onChange={(e) => setGensetOn(e.target.checked)}
+                                            className="h-3.5 w-3.5 rounded text-blue-600"
+                                        />
+                                        <span>Genset Aktif</span>
+                                    </label>
+                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
+                                        <input
+                                            type="checkbox"
+                                            checked={plugSuhu}
+                                            onChange={(e) => setPlugSuhu(e.target.checked)}
+                                            className="h-3.5 w-3.5 rounded text-blue-600"
+                                        />
+                                        <span>Plug Suhu</span>
+                                    </label>
+                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
+                                        <input
+                                            type="checkbox"
+                                            checked={cuciKontainer}
+                                            onChange={(e) => setCuciKontainer(e.target.checked)}
+                                            className="h-3.5 w-3.5 rounded text-blue-600"
+                                        />
+                                        <span>Cuci</span>
+                                    </label>
+                                    <Input
+                                        value={opsiLain}
+                                        onChange={(e) => setOpsiLain(e.target.value)}
+                                        placeholder="Opsi lain (misal: PTI OK)..."
+                                        className="h-7 text-xs w-36 bg-white"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1107,38 +1273,50 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 </div>
 
                                 {/* Hero Container Box (Clean Border Grid, White BG, Dedicated 1x20" Column) */}
-                                <div className="border-2 border-black rounded-xs overflow-hidden flex bg-white mt-2">
+                                <div className="border-2 border-black rounded-xs overflow-hidden flex bg-white mt-2 min-h-[140px]">
                                     <div className="flex-1 border-r border-black flex flex-col">
                                         <div className="p-2 border-b border-black">
                                             <div className="text-[9px] uppercase font-bold text-gray-600">NO. CONTAINER</div>
-                                            <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-black mt-0.5">
+                                            <div className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-black mt-0.5 leading-none">
                                                 {containerNumber}
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-3 divide-x divide-black bg-white flex-1">
-                                            <div className="p-2">
-                                                <div className="text-[9px] uppercase font-bold text-gray-600">Isi Kontainer</div>
-                                                <div className="text-[11px] font-bold text-black">{isi || 'FULL CONT(ON-CHASIS)'}</div>
+                                        <div className="grid grid-cols-4 divide-x divide-black bg-white flex-1">
+                                            <div className="p-1.5 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Isi Kontainer</div>
+                                                <div className="text-[11px] font-bold text-black truncate">{isi || 'FULL CONT(ON-CHASIS)'}</div>
                                             </div>
-                                            <div className="p-2">
-                                                <div className="text-[9px] uppercase font-bold text-gray-600">No. Segel</div>
-                                                <div className="text-[11px] font-bold text-black">{noSegel || '-'}</div>
+                                            <div className="p-1.5 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">No. Segel</div>
+                                                <div className="text-[11px] font-bold text-black truncate">{noSegel || '-'}</div>
                                             </div>
-                                            <div className="p-2">
-                                                <div className="text-[9px] uppercase font-bold text-gray-600">Keterangan</div>
-                                                <div className="text-[11px] font-bold text-black">{keterangan || '-'}</div>
+                                            <div className="p-1.5 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Isi Bensin / BBM</div>
+                                                <div className={`text-[11px] font-black truncate ${isBensinChecked ? 'text-black' : 'text-gray-500'}`}>
+                                                    {isBensinChecked ? (isiBensin || 'YA') : '-'}
+                                                </div>
+                                            </div>
+                                            <div className="p-1.5 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Keterangan</div>
+                                                <div className="text-[11px] font-bold text-black truncate">{keterangan || '-'}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="w-[210px] sm:w-[230px] flex flex-col text-center bg-white">
+                                    <div className="w-[230px] sm:w-[250px] flex flex-col text-center bg-white">
                                         <div className="p-2 border-b border-black">
                                             <div className="text-[9px] uppercase font-bold text-gray-600">UKURAN / JUMLAH</div>
                                             <div className="text-xl font-black text-black mt-0.5">{ukuranCont}</div>
                                         </div>
                                         <div className="p-2 flex-1 flex flex-col justify-center items-center">
-                                            <div className="text-[9px] uppercase font-bold text-gray-600">JENIS LAYANAN</div>
-                                            <div className="text-xs font-black italic uppercase tracking-wide leading-tight mt-0.5 text-black">
-                                                {serviceType}
+                                            <div className="text-[9px] uppercase font-bold text-gray-600">NAMA PRODUK / LAYANAN</div>
+                                            <div className="text-base sm:text-lg font-black uppercase tracking-tight leading-tight mt-0.5 text-black">
+                                                {layanan}
+                                            </div>
+                                        </div>
+                                        <div className="p-1.5 border-t border-black bg-white flex flex-col justify-center items-center">
+                                            <div className="text-[8.5px] uppercase font-bold text-gray-600">OPSI OPERASIONAL / BBM</div>
+                                            <div className="text-[10px] font-black uppercase tracking-tight text-black mt-0.5 truncate max-w-[240px]">
+                                                {getOperationalSummaryText()}
                                             </div>
                                         </div>
                                     </div>
@@ -1276,6 +1454,9 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                                 KETERANGAN
                                             </td>
                                             <td className="border border-black p-1.5 px-3 font-semibold text-xs sm:text-sm text-center">
+                                                {isBensinChecked && isiBensin ? `[BBM: ${isiBensin.toUpperCase()}] ` : ''}
+                                                {gensetOn ? '[GENSET] ' : ''}
+                                                {cuciKontainer ? '[CUCI] ' : ''}
                                                 {keterangan || '-'}
                                             </td>
                                         </tr>

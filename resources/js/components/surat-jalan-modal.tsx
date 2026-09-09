@@ -65,12 +65,6 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     const [containerNumber, setContainerNumber] = useState('');
     const [ukuranCont, setUkuranCont] = useState(() => formatContainerSize(data?.size));
     const [layanan, setLayanan] = useState(() => data?.service_type || 'PLUG & MONITORING TEMPERATURE');
-    const [isBensinChecked, setIsBensinChecked] = useState(false);
-    const [isiBensin, setIsiBensin] = useState('50 Liter');
-    const [gensetOn, setGensetOn] = useState(false);
-    const [plugSuhu, setPlugSuhu] = useState(false);
-    const [cuciKontainer, setCuciKontainer] = useState(false);
-    const [opsiLain, setOpsiLain] = useState('');
     const [showLogo, setShowLogo] = useState(false); // Default false matching continuous form sample photo
     const [layoutStyle, setLayoutStyle] = useState<'standard' | 'modern'>('modern'); // Opsi pilihan layout (default modern)
 
@@ -93,26 +87,8 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             setContainerNumber(data.container_number || '');
             setUkuranCont(formatContainerSize(data.size));
             setLayanan(data.service_type || 'PLUG & MONITORING TEMPERATURE');
-            if (data.fuel_option) {
-                setIsBensinChecked(true);
-                setIsiBensin(data.fuel_option);
-            }
         }
     }, [data, isOpen]);
-
-    const getOperationalSummaryText = () => {
-        const list: string[] = [];
-        if (isBensinChecked) {
-            list.push(`BBM: ${isiBensin ? isiBensin.toUpperCase() : 'YA'}`);
-        }
-        if (gensetOn) list.push('GENSET AKTIF');
-        if (plugSuhu) list.push('PLUG & SUHU');
-        if (cuciKontainer) list.push('CUCI');
-        if (opsiLain.trim()) list.push(opsiLain.trim().toUpperCase());
-
-        if (list.length === 0) return '- (STANDAR)';
-        return list.join(' • ');
-    };
 
     const containerSize = ukuranCont;
     const serviceType = layanan || data?.service_type || 'PLUG & MONITORING TEMPERATURE';
@@ -263,23 +239,29 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             color: #333;
         }
 
-        /* Hero Container Display (Clean Border Grid, White BG, Dedicated 1x20" Column) */
+        /* Hero Container Display (Clean 2-Row Border Grid, Perfectly Aligned) */
         .m-container-hero {
             border: 1.5px solid #000;
             margin-top: 2mm;
             background: #ffffff;
             display: flex;
-            min-height: 41mm;
-        }
-        .m-hero-left {
-            flex: 1;
-            border-right: 1.5px solid #000;
-            display: flex;
             flex-direction: column;
         }
-        .m-cont-num-box {
-            padding: 2mm 3.5mm;
+        .m-hero-row {
+            display: flex;
+            width: 100%;
+        }
+        .m-hero-row-top {
             border-bottom: 1.5px solid #000;
+            min-height: 22mm;
+        }
+        .m-hero-row-bottom {
+            min-height: 20mm;
+        }
+        .m-cont-box {
+            flex: 1;
+            border-right: 1.5px solid #000;
+            padding: 2mm 3.5mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -292,7 +274,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
         }
         .m-cont-number {
-            font-size: 34pt;
+            font-size: 32pt;
             font-weight: 900;
             letter-spacing: -0.5px; /* Karakter rapat tegas */
             font-family: "Arial Black", Impact, monospace, sans-serif;
@@ -300,12 +282,30 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             margin-top: 0.8mm;
             color: #000000;
         }
-        .m-hero-subgrid {
+        .m-size-box {
+            width: 65mm;
+            padding: 2mm 2mm;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #ffffff;
+        }
+        .m-size-val {
+            font-size: 18pt;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            margin-top: 0.8mm;
+            color: #000;
+        }
+        .m-subgrid-box {
             flex: 1;
+            border-right: 1.5px solid #000;
+            display: flex;
         }
         .m-subcol {
-            flex: 1;
             padding: 1.8mm 2.5mm;
             border-right: 1px solid #000;
             display: flex;
@@ -314,7 +314,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-subcol:last-child {
             border-right: none;
-            flex: 1.1;
+        }
+        .m-subcol-isi {
+            flex: 1.5;
+        }
+        .m-subcol-segel {
+            flex: 1;
+        }
+        .m-subcol-ket {
+            flex: 1.3;
         }
         .m-subcol-lbl {
             font-size: 6.5pt;
@@ -324,68 +332,31 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-subcol-val {
             font-size: 8.5pt;
-            font-weight: 700;
+            font-weight: 800;
             margin-top: 1px;
             color: #000;
-            line-height: 1.2;
-        }
-        .m-subcol-val.highlight {
-            font-weight: 900;
-            color: #000;
-        }
-        .m-hero-right {
-            width: 62mm;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        .m-size-box {
-            padding: 2mm 1.5mm;
-            border-bottom: 1px solid #000;
-            background: #ffffff;
-        }
-        .m-size-val {
-            font-size: 16pt;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-            line-height: 1;
-            margin-top: 0.5mm;
+            line-height: 1.25;
+            word-break: break-word;
+            white-space: normal;
         }
         .m-service-box {
-            flex: 1;
-            padding: 2mm 1.5mm;
+            width: 65mm;
+            padding: 2mm 2mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             background: #ffffff;
         }
         .m-service-val {
-            font-size: 14pt;
+            font-size: 13.5pt;
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1.2;
             letter-spacing: 0.3px;
             margin-top: 0.8mm;
             color: #000;
-        }
-        .m-opsi-box {
-            border-top: 1px solid #000;
-            padding: 1.5mm 1.5mm;
-            background: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .m-opsi-val {
-            font-size: 8pt;
-            font-weight: 900;
-            color: #000;
-            text-transform: uppercase;
-            line-height: 1.2;
-            letter-spacing: 0.3px;
-            margin-top: 0.5mm;
         }
 
         /* Modern Signatures */
@@ -475,44 +446,36 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             </div>
         </div>
 
-        <!-- Hero Container Box -->
+        <!-- Hero Container Box (Clean 2-Row Border Grid: Top row aligned, Bottom row aligned) -->
         <div class="m-container-hero">
-            <div class="m-hero-left">
-                <div class="m-cont-num-box">
+            <div class="m-hero-row m-hero-row-top">
+                <div class="m-cont-box">
                     <div class="m-cont-lbl">NO. CONTAINER</div>
-                    <div class="m-cont-number">${containerNumber}</div>
+                    <div class="m-cont-number">${containerNumber || '-'}</div>
                 </div>
-                <div class="m-hero-subgrid">
-                    <div class="m-subcol">
+                <div class="m-size-box">
+                    <div class="m-cont-lbl">JUMLAH / UKURAN</div>
+                    <div class="m-size-val">${ukuranCont}</div>
+                </div>
+            </div>
+            <div class="m-hero-row m-hero-row-bottom">
+                <div class="m-subgrid-box">
+                    <div class="m-subcol m-subcol-isi">
                         <div class="m-subcol-lbl">Isi Kontainer</div>
                         <div class="m-subcol-val">${isi || 'FULL CONT(ON-CHASIS)'}</div>
                     </div>
-                    <div class="m-subcol">
+                    <div class="m-subcol m-subcol-segel">
                         <div class="m-subcol-lbl">No. Segel</div>
                         <div class="m-subcol-val">${noSegel || '-'}</div>
                     </div>
-                    <div class="m-subcol">
-                        <div class="m-subcol-lbl">Isi Bensin / BBM</div>
-                        <div class="m-subcol-val ${isBensinChecked ? 'highlight' : ''}">${isBensinChecked ? (isiBensin || 'YA') : '-'}</div>
-                    </div>
-                    <div class="m-subcol">
+                    <div class="m-subcol m-subcol-ket">
                         <div class="m-subcol-lbl">Keterangan / Catatan</div>
                         <div class="m-subcol-val">${keterangan || '-'}</div>
                     </div>
                 </div>
-            </div>
-            <div class="m-hero-right">
-                <div class="m-size-box">
-                    <div class="m-cont-lbl">UKURAN / JUMLAH</div>
-                    <div class="m-size-val">${ukuranCont}</div>
-                </div>
                 <div class="m-service-box">
                     <div class="m-cont-lbl">NAMA PRODUK / LAYANAN</div>
                     <div class="m-service-val">${layanan}</div>
-                </div>
-                <div class="m-opsi-box">
-                    <div class="m-cont-lbl">OPSI OPERASIONAL / BBM</div>
-                    <div class="m-opsi-val">${getOperationalSummaryText()}</div>
                 </div>
             </div>
         </div>
@@ -858,7 +821,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                 </tr>
                 <tr>
                     <td class="td-lbl">KETERANGAN</td>
-                    <td class="td-val-row">${isBensinChecked && isiBensin ? `[BBM: ${isiBensin.toUpperCase()}] ` : ''}${gensetOn ? '[GENSET] ' : ''}${cuciKontainer ? '[CUCI] ' : ''}${keterangan || '-'}</td>
+                    <td class="td-val-row">${keterangan || '-'}</td>
                 </tr>
             </tbody>
         </table>
@@ -1054,7 +1017,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 />
                             </div>
                             <div>
-                                <Label className="text-[11px] text-gray-700">Ukuran / Jml</Label>
+                                <Label className="text-[11px] text-gray-700">Jumlah / Ukuran</Label>
                                 <Input
                                     value={ukuranCont}
                                     onChange={(e) => setUkuranCont(e.target.value)}
@@ -1101,89 +1064,6 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     className="h-8 text-xs bg-white"
                                     placeholder="Catatan tambahan..."
                                 />
-                            </div>
-                        </div>
-
-                        {/* Baris 3: Opsi Operasional & Isi Bensin (BBM / Genset / Cuci) */}
-                        <div className="p-2.5 rounded-lg border border-amber-300 bg-amber-50/50 flex flex-wrap items-center justify-between gap-3">
-                            <div className="flex flex-wrap items-center gap-3">
-                                {/* Checkbox Isi Bensin */}
-                                <label className="flex items-center gap-1.5 cursor-pointer text-xs font-bold text-gray-900 bg-white px-2.5 py-1 rounded border border-gray-300 hover:border-amber-400 select-none">
-                                    <input
-                                        type="checkbox"
-                                        checked={isBensinChecked}
-                                        onChange={(e) => {
-                                            setIsBensinChecked(e.target.checked);
-                                            if (e.target.checked && !isiBensin) {
-                                                setIsiBensin('50 Liter');
-                                            }
-                                        }}
-                                        className="h-4 w-4 text-amber-600 rounded"
-                                    />
-                                    <span>⛽ Isi Bensin / Solar</span>
-                                </label>
-
-                                {isBensinChecked && (
-                                    <div className="flex items-center gap-1.5">
-                                        <Input
-                                            value={isiBensin}
-                                            onChange={(e) => setIsiBensin(e.target.value)}
-                                            className="h-7 w-28 text-xs bg-white font-bold"
-                                            placeholder="50 Liter"
-                                        />
-                                        <div className="flex items-center gap-1">
-                                            {['25L', '50L', '100L', 'Full'].map((preset) => (
-                                                <button
-                                                    key={preset}
-                                                    type="button"
-                                                    onClick={() => setIsiBensin(preset === 'Full' ? 'Full Tank' : `${preset.replace('L', '')} Liter`)}
-                                                    className="px-1.5 py-0.5 text-[10px] font-semibold bg-white border border-amber-300 rounded hover:bg-amber-100 text-amber-900"
-                                                >
-                                                    {preset}
-                                                </button>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                <div className="h-4 w-[1px] bg-amber-300 hidden sm:block"></div>
-
-                                {/* Checkbox Opsi Cepat Lainnya */}
-                                <div className="flex flex-wrap items-center gap-2 text-xs">
-                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
-                                        <input
-                                            type="checkbox"
-                                            checked={gensetOn}
-                                            onChange={(e) => setGensetOn(e.target.checked)}
-                                            className="h-3.5 w-3.5 rounded text-blue-600"
-                                        />
-                                        <span>Genset Aktif</span>
-                                    </label>
-                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
-                                        <input
-                                            type="checkbox"
-                                            checked={plugSuhu}
-                                            onChange={(e) => setPlugSuhu(e.target.checked)}
-                                            className="h-3.5 w-3.5 rounded text-blue-600"
-                                        />
-                                        <span>Plug Suhu</span>
-                                    </label>
-                                    <label className="flex items-center gap-1 cursor-pointer text-gray-700 bg-white px-2 py-1 rounded border border-gray-200 hover:bg-gray-50 select-none">
-                                        <input
-                                            type="checkbox"
-                                            checked={cuciKontainer}
-                                            onChange={(e) => setCuciKontainer(e.target.checked)}
-                                            className="h-3.5 w-3.5 rounded text-blue-600"
-                                        />
-                                        <span>Cuci</span>
-                                    </label>
-                                    <Input
-                                        value={opsiLain}
-                                        onChange={(e) => setOpsiLain(e.target.value)}
-                                        placeholder="Opsi lain (misal: PTI OK)..."
-                                        className="h-7 text-xs w-36 bg-white"
-                                    />
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1272,51 +1152,44 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     </div>
                                 </div>
 
-                                {/* Hero Container Box (Clean Border Grid, White BG, Dedicated 1x20" Column) */}
-                                <div className="border-2 border-black rounded-xs overflow-hidden flex bg-white mt-2 min-h-[140px]">
-                                    <div className="flex-1 border-r border-black flex flex-col">
-                                        <div className="p-2 border-b border-black">
+                                {/* Hero Container Box (Clean 2-Row Border Grid: Top row aligned, Bottom row aligned) */}
+                                <div className="border-2 border-black rounded-xs overflow-hidden flex flex-col bg-white mt-2 min-h-[145px]">
+                                    {/* Baris 1: No. Container & Jumlah / Ukuran (Sejajar Sempurna) */}
+                                    <div className="flex border-b-2 border-black min-h-[75px]">
+                                        <div className="flex-1 border-r-2 border-black p-2.5 flex flex-col justify-center">
                                             <div className="text-[9px] uppercase font-bold text-gray-600">NO. CONTAINER</div>
                                             <div className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-black mt-0.5 leading-none">
-                                                {containerNumber}
+                                                {containerNumber || '-'}
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-4 divide-x divide-black bg-white flex-1">
-                                            <div className="p-1.5 flex flex-col justify-center">
-                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Isi Kontainer</div>
-                                                <div className="text-[11px] font-bold text-black truncate">{isi || 'FULL CONT(ON-CHASIS)'}</div>
-                                            </div>
-                                            <div className="p-1.5 flex flex-col justify-center">
-                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">No. Segel</div>
-                                                <div className="text-[11px] font-bold text-black truncate">{noSegel || '-'}</div>
-                                            </div>
-                                            <div className="p-1.5 flex flex-col justify-center">
-                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Isi Bensin / BBM</div>
-                                                <div className={`text-[11px] font-black truncate ${isBensinChecked ? 'text-black' : 'text-gray-500'}`}>
-                                                    {isBensinChecked ? (isiBensin || 'YA') : '-'}
-                                                </div>
-                                            </div>
-                                            <div className="p-1.5 flex flex-col justify-center">
-                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Keterangan</div>
-                                                <div className="text-[11px] font-bold text-black truncate">{keterangan || '-'}</div>
-                                            </div>
+                                        <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
+                                            <div className="text-[9px] uppercase font-bold text-gray-600">JUMLAH / UKURAN</div>
+                                            <div className="text-2xl font-black text-black mt-0.5 leading-none">{ukuranCont}</div>
                                         </div>
                                     </div>
-                                    <div className="w-[230px] sm:w-[250px] flex flex-col text-center bg-white">
-                                        <div className="p-2 border-b border-black">
-                                            <div className="text-[9px] uppercase font-bold text-gray-600">UKURAN / JUMLAH</div>
-                                            <div className="text-xl font-black text-black mt-0.5">{ukuranCont}</div>
+
+                                    {/* Baris 2: Subgrid 3 Kolom & Nama Produk / Layanan */}
+                                    <div className="flex min-h-[70px]">
+                                        <div className="flex-1 border-r-2 border-black grid grid-cols-12 divide-x-2 divide-black bg-white">
+                                            <div className="col-span-5 p-2 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Isi Kontainer</div>
+                                                <div className="text-xs sm:text-[13px] font-bold text-black break-words whitespace-normal leading-tight mt-0.5">
+                                                    {isi || 'FULL CONT(ON-CHASIS)'}
+                                                </div>
+                                            </div>
+                                            <div className="col-span-3 p-2 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">No. Segel</div>
+                                                <div className="text-xs font-bold text-black break-words mt-0.5">{noSegel || '-'}</div>
+                                            </div>
+                                            <div className="col-span-4 p-2 flex flex-col justify-center">
+                                                <div className="text-[8.5px] uppercase font-bold text-gray-600">Keterangan</div>
+                                                <div className="text-xs font-bold text-black break-words mt-0.5">{keterangan || '-'}</div>
+                                            </div>
                                         </div>
-                                        <div className="p-2 flex-1 flex flex-col justify-center items-center">
+                                        <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
                                             <div className="text-[9px] uppercase font-bold text-gray-600">NAMA PRODUK / LAYANAN</div>
                                             <div className="text-base sm:text-lg font-black uppercase tracking-tight leading-tight mt-0.5 text-black">
                                                 {layanan}
-                                            </div>
-                                        </div>
-                                        <div className="p-1.5 border-t border-black bg-white flex flex-col justify-center items-center">
-                                            <div className="text-[8.5px] uppercase font-bold text-gray-600">OPSI OPERASIONAL / BBM</div>
-                                            <div className="text-[10px] font-black uppercase tracking-tight text-black mt-0.5 truncate max-w-[240px]">
-                                                {getOperationalSummaryText()}
                                             </div>
                                         </div>
                                     </div>
@@ -1454,9 +1327,6 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                                 KETERANGAN
                                             </td>
                                             <td className="border border-black p-1.5 px-3 font-semibold text-xs sm:text-sm text-center">
-                                                {isBensinChecked && isiBensin ? `[BBM: ${isiBensin.toUpperCase()}] ` : ''}
-                                                {gensetOn ? '[GENSET] ' : ''}
-                                                {cuciKontainer ? '[CUCI] ' : ''}
                                                 {keterangan || '-'}
                                             </td>
                                         </tr>

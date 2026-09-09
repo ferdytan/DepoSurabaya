@@ -42,7 +42,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
     const { data, setData, post, processing, errors, reset } = useForm<Required<LoginForm>>({
         email: '',
         password: '',
-        remember: false,
+        remember: true,
     });
 
     const submit: FormEventHandler = (e) => {
@@ -170,7 +170,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                     )}
 
                     {/* Login Form */}
-                    <form onSubmit={submit} className="space-y-5">
+                    <form onSubmit={submit} className="space-y-5" autoComplete="off">
                         {/* Email Address */}
                         <div className="space-y-1.5">
                             <Label htmlFor="email" className="text-xs font-semibold text-gray-700">
@@ -180,11 +180,19 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                                 <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                                 <Input
                                     id="email"
-                                    type="email"
+                                    name="user_login_email"
+                                    type="text"
+                                    inputMode="email"
                                     required
                                     autoFocus
                                     tabIndex={1}
-                                    autoComplete="email"
+                                    autoComplete="off"
+                                    autoCorrect="off"
+                                    autoCapitalize="off"
+                                    spellCheck={false}
+                                    data-lpignore="true"
+                                    data-form-type="other"
+                                    aria-autocomplete="none"
                                     value={data.email}
                                     onChange={(e) => setData('email', e.target.value)}
                                     placeholder="nama@deposurabaya.com"

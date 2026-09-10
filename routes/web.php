@@ -23,11 +23,14 @@ Route::patch('/orders/{orderItem}/exit', [OrderController::class, 'updateExit'])
 
 
 /* =====================================================
- |  PUBLIC ROUTES
+ |  PUBLIC ROUTES & TRACKING API (FOR LANDING PAGE)
  * =====================================================*/
 Route::get('/', function () {
     return redirect('/login');
 })->name('home');
+
+// Public Container Tracking API (CORS enabled for landing page & tools.deposs.com)
+Route::match(['get', 'options'], '/api/tracking', [OrderController::class, 'trackContainer'])->name('api.tracking');
 
 /* =====================================================
  |  AUTHENTICATED ROUTES (verified dashboard)

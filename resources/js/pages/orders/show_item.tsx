@@ -116,7 +116,7 @@ export default function ShowSingleOrderItem({ order, orderItem }: Props) {
                                             <div className="grid grid-cols-6 gap-2 text-sm">
                                                 {Object.entries(rec.jam_data).map(([jam, suhu]) => (
                                                     <div key={jam}>
-                                                        {jam}:00 → {suhu}°C
+                                                        {jam.includes(':') ? jam : `${jam}:00`} → {suhu}°C
                                                     </div>
                                                 ))}
                                             </div>

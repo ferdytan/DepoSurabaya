@@ -905,6 +905,52 @@ $orderItem->additionalProducts()->sync($syncData);
 
 public function updateTemperature(Request $request, $id)
 {
+    // Mode 1: Hapus satu entri jam tertentu
+    if ($request->has('delete_tanggal') && $request->has('delete_jam')) {
+        $rekam = \App\Models\OrderItemRekamSuhu::where('order_item_id', $id)
+            ->where('tanggal', $request->delete_tanggal)
+            ->first();
+
+        if ($rekam) {
+            $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : json_decode($rekam->jam_data ?? '[]', true) ?: [];
+            unset($jamData[$request->delete_jam]);
+            if (empty($jamData)) {
+                $rekam->delete();
+            } else {
+                $rekam->jam_data = $jamData;
+                $rekam->save();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Entri suhu berhasil dihapus');
+    }
+
+    // Mode 2: Quick single log entry
+    if ($request->has('tanggal') && $request->has('jam') && $request->has('suhu')) {
+        $request->validate([
+            'tanggal' => 'required|date',
+            'jam' => 'required|string',
+            'suhu' => 'required',
+        ]);
+
+        $rekam = \App\Models\OrderItemRekamSuhu::firstOrNew([
+            'order_item_id' => $id,
+            'tanggal' => $request->tanggal,
+        ]);
+
+        $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : json_decode($rekam->jam_data ?? '[]', true) ?: [];
+        $jamData[$request->jam] = (string) $request->suhu;
+
+        // Urutkan jam secara kronologis
+        ksort($jamData);
+
+        $rekam->jam_data = $jamData;
+        $rekam->save();
+
+        return redirect()->back()->with('success', 'Catatan suhu ' . $request->jam . ' (' . $request->suhu . '°C) berhasil disimpan');
+    }
+
+    // Mode 3: Format array penuh (existing)
     $request->validate([
         'temperature' => 'required|array',
     ]);
@@ -914,17 +960,19 @@ public function updateTemperature(Request $request, $id)
 
     // Simpan data baru dari frontend
     foreach ($request->temperature as $tanggal => $jam_data) {
-        \DB::table('order_item_rekam_suhus')->insert([
-            'order_item_id' => $id,
-            'tanggal' => $tanggal,
-            'jam_data' => json_encode($jam_data),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        if (is_array($jam_data) && !empty($jam_data)) {
+            ksort($jam_data);
+            \DB::table('order_item_rekam_suhus')->insert([
+                'order_item_id' => $id,
+                'tanggal' => $tanggal,
+                'jam_data' => json_encode($jam_data),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 
     return redirect()->back()->with('success', 'Rekam suhu berhasil disimpan');
-
 }
 
 
@@ -1013,6 +1061,105 @@ private function getPriceForType($product, $priceType, $order)
 
         $statusText = $newState ? 'di-exclude dari Report' : 'kembali diikutsertakan dalam Report';
         return back()->with('success', "Order #{$order->order_id} berhasil {$statusText}.");
+    }
+
+    /**
+     * Public Container Tracking API for Landing Page (CORS Enabled)
+     * Queries OrderItem from database with Customer & Product relations
+     */
+    public function trackContainer(Request $request)
+    {
+        // Handle pre-flight CORS OPTIONS request
+        if ($request->isMethod('options')) {
+            return response('', 204)
+                ->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+                ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-Requested-With');
+        }
+
+        $code = trim(strtoupper($request->input('code') ?? $request->input('container_number') ?? ''));
+
+        if (empty($code) || strlen($code) < 4) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Nomor kontainer tidak valid'
+            ], 400)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+            ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-Requested-With');
+        }
+
+        $item = OrderItem::with(['order.customer', 'product'])
+            ->where('container_number', $code)
+            ->latest('id')
+            ->first();
+
+        if (!$item) {
+            return response()->json([
+                'success' => false,
+                'found' => false,
+                'container_number' => $code,
+                'message' => 'Nomor kontainer tidak ditemukan'
+            ], 404)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+            ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-Requested-With');
+        }
+
+        // Customer Name
+        $customerName = '-';
+        if ($item->order && $item->order->customer && !empty($item->order->customer->name)) {
+            $customerName = $item->order->customer->name;
+        }
+
+        // Size format (20ft or 40ft)
+        $sizeType = '40ft';
+        if (!empty($item->price_type)) {
+            $sizeType = str_contains(strtolower($item->price_type), '20') ? '20ft' : '40ft';
+        } elseif ($item->product && !empty($item->product->service_type)) {
+            $sizeType = str_contains(strtolower($item->product->service_type), '20') ? '20ft' : '40ft';
+        }
+
+        // Format dates and time (e.g. 8 Sept 2026, 14:30 WIB)
+        $months = [
+            1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'Mei', 6 => 'Jun',
+            7 => 'Jul', 8 => 'Agu', 9 => 'Sept', 10 => 'Okt', 11 => 'Nov', 12 => 'Des'
+        ];
+
+        $formatDateTime = function($date) use ($months) {
+            if (empty($date)) return null;
+            try {
+                $carbon = \Carbon\Carbon::parse($date);
+                $m = $months[$carbon->month] ?? $carbon->format('M');
+                $time = $carbon->format('H:i');
+                return $carbon->day . ' ' . $m . ' ' . $carbon->year . ', ' . $time . ' WIB';
+            } catch (\Exception $e) {
+                return (string)$date;
+            }
+        };
+
+        $rawEntry = $item->entry_date ?? ($item->order ? $item->order->entry_date : null);
+        $rawExit = $item->exit_date ?? ($item->order ? $item->order->exit_date : null);
+        $entryFormatted = $formatDateTime($rawEntry) ?? '-';
+        $exitFormatted = $formatDateTime($rawExit);
+        $isOut = !empty($rawExit);
+
+        return response()->json([
+            'success' => true,
+            'found' => true,
+            'data' => [
+                'containerNumber' => $item->container_number,
+                'customer' => $customerName,
+                'sizeType' => $sizeType,
+                'entryTime' => $entryFormatted,
+                'exitTime' => $exitFormatted,
+                'status' => $isOut ? 'Sudah Keluar' : 'Masih di Depo',
+                'statusType' => $isOut ? 'out' : 'in'
+            ]
+        ])
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-Requested-With');
     }
 
 }

@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import AppLayout from '@/layouts/app-layout';
 import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
 import { Head, router } from '@inertiajs/react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 type TemperatureRecord = {
     id: number;
@@ -78,19 +78,56 @@ export default function TemperatureRecordsIndex({ records, filters }: Props) {
                                             </TableRow>
                                         </TableHeader>
                                         <TableBody>
-                                            {rec.rekam_suhu.map((suhu, idx) => (
-                                                <TableRow key={idx}>
-                                                    <TableCell>{suhu.tanggal}</TableCell>
-                                                    {Array.from({ length: 24 }).map((_, jam) => {
-                                                        const val = suhu.jam_data[jam.toString().padStart(2, '0')];
-                                                        return (
-                                                            <TableCell key={jam} className="text-center">
-                                                                {val ? `${val}°C` : ''}
-                                                            </TableCell>
-                                                        );
-                                                    })}
-                                                </TableRow>
-                                            ))}
+                                            {rec.rekam_suhu.map((suhu, idx) => {
+                                                const sortedEntries = Object.entries(suhu.jam_data || {}).sort(([a], [b]) => a.localeCompare(b));
+                                                return (
+                                                    <Fragment key={idx}>
+                                                        <TableRow className="border-b border-slate-100">
+                                                            <TableCell className="font-semibold whitespace-nowrap">{suhu.tanggal}</TableCell>
+                                                            {Array.from({ length: 24 }).map((_, jam) => {
+                                                                const hourStr = jam.toString().padStart(2, '0');
+                                                                const val = suhu.jam_data[hourStr] || suhu.jam_data[`${hourStr}:00`];
+                                                                return (
+                                                                    <TableCell key={jam} className="text-center text-xs">
+                                                                        {val ? `${val}°C` : ''}
+                                                                    </TableCell>
+                                                                );
+                                                            })}
+                                                        </TableRow>
+                                                        {sortedEntries.length > 0 && (
+                                                            <TableRow className="bg-slate-50/70 hover:bg-slate-50 border-b-2 border-slate-200">
+                                                                <TableCell colSpan={25} className="py-2 px-4">
+                                                                    <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                                                                        <span className="font-semibold text-slate-500 text-[11px]">Log Lengkap ({suhu.tanggal}):</span>
+                                                                        {sortedEntries.map(([jamKey, tempVal], i) => {
+                                                                            const isFirst = i === 0;
+                                                                            const isLast = i === sortedEntries.length - 1 && sortedEntries.length > 1;
+                                                                            const isMinute = jamKey.includes(':') && !jamKey.endsWith(':00');
+                                                                            return (
+                                                                                <span
+                                                                                    key={jamKey}
+                                                                                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium border ${
+                                                                                        isFirst && isMinute
+                                                                                            ? 'bg-blue-50 text-blue-700 border-blue-200 font-bold'
+                                                                                            : isLast && isMinute
+                                                                                            ? 'bg-amber-50 text-amber-700 border-amber-200 font-bold'
+                                                                                            : 'bg-white text-slate-700 border-slate-200'
+                                                                                    }`}
+                                                                                >
+                                                                                    <span className="font-mono font-semibold">{jamKey.includes(':') ? jamKey : `${jamKey}:00`}:</span>
+                                                                                    <span className="font-bold">{tempVal}°C</span>
+                                                                                    {isFirst && isMinute && <span className="text-[9px] bg-blue-100 text-blue-800 px-1 rounded">Plug In</span>}
+                                                                                    {isLast && isMinute && <span className="text-[9px] bg-amber-100 text-amber-800 px-1 rounded">Plug Out</span>}
+                                                                                </span>
+                                                                            );
+                                                                        })}
+                                                                    </div>
+                                                                </TableCell>
+                                                            </TableRow>
+                                                        )}
+                                                    </Fragment>
+                                                );
+                                            })}
                                         </TableBody>
                                     </Table>
                                 </div>

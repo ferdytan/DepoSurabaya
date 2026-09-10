@@ -49,6 +49,15 @@ class DashboardController extends Controller
             })
             ->count();
 
+        // Kontainer reefer / butuh pemantauan suhu yang aktif di depo
+        $jumlahReeferAktif = (clone $queryAktif)->where(function ($q) {
+            $q->whereHas('product', function ($p) {
+                $p->where('requires_temperature', 1);
+            })->orWhereHas('additionalProducts', function ($p) {
+                $p->where('requires_temperature', 1);
+            })->orWhereHas('rekamSuhu');
+        })->count();
+
         // 2. ANALITIK BULANAN (6 BULAN TERAKHIR)
         $monthlyThroughput = [];
         for ($i = 5; $i >= 0; $i--) {
@@ -118,50 +127,40 @@ class DashboardController extends Controller
         }
 
         // 6. DAFTAR DETAIL KONTAINER UNTUK TABEL TABULASI
+        $isChecker = ($roleId === 3);
+        $relations = [
+            'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
+            'order.customer:id,name',
+            'order.shipper:id,name',
+            'product:id,service_type,requires_temperature',
+            'additionalProducts:id,service_type,requires_temperature',
+            'rekamSuhu',
+        ];
+
         // Tab A: Kontainer aktif di depo
-        $dataContainerAktif = OrderItem::with([
-                'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
-                'order.customer:id,name',
-                'order.shipper:id,name',
-                'product:id,service_type',
-            ])
+        $dataContainerAktif = OrderItem::with($relations)
             ->whereNotNull('entry_date')
             ->whereNull('exit_date')
             ->latest('entry_date')
-            ->limit(35)
+            ->limit($isChecker ? 250 : 35)
             ->get();
 
         // Tab B: Kontainer belum masuk
-        $dataContainerBelumMasuk = OrderItem::with([
-                'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
-                'order.customer:id,name',
-                'order.shipper:id,name',
-                'product:id,service_type',
-            ])
+        $dataContainerBelumMasuk = OrderItem::with($relations)
             ->whereNull('entry_date')
             ->latest('created_at')
-            ->limit(35)
+            ->limit($isChecker ? 250 : 35)
             ->get();
 
         // Tab C: Kontainer baru saja keluar
-        $dataContainerBaruKeluar = OrderItem::with([
-                'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
-                'order.customer:id,name',
-                'order.shipper:id,name',
-                'product:id,service_type',
-            ])
+        $dataContainerBaruKeluar = OrderItem::with($relations)
             ->whereNotNull('exit_date')
             ->latest('exit_date')
-            ->limit(20)
+            ->limit($isChecker ? 100 : 20)
             ->get();
 
         // Tab D: Kontainer fumigasi (khusus Karantina dan widget fumigasi)
-        $dataContainerFumigasi = OrderItem::with([
-                'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
-                'order.customer:id,name',
-                'order.shipper:id,name',
-                'product:id,service_type',
-            ])
+        $dataContainerFumigasi = OrderItem::with($relations)
             ->whereHas('order', function ($q) {
                 $q->whereNotNull('fumigasi')
                   ->where('fumigasi', '!=', '')
@@ -199,6 +198,7 @@ class DashboardController extends Controller
                 'container_45ft' => $count45ft,
                 'container_other_size' => $countOtherSize,
                 'container_belum_masuk' => $jumlahContainerBelumMasuk,
+                'container_reefer_aktif' => $jumlahReeferAktif,
                 'gate_in_hari_ini' => $gateInHariIni,
                 'gate_out_hari_ini' => $gateOutHariIni,
                 'total_container_masuk' => $totalContainerMasuk,

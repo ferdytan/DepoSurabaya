@@ -912,7 +912,7 @@ public function updateTemperature(Request $request, $id)
             ->first();
 
         if ($rekam) {
-            $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : json_decode($rekam->jam_data ?? '[]', true) ?: [];
+            $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
             unset($jamData[$request->delete_jam]);
             if (empty($jamData)) {
                 $rekam->delete();
@@ -938,7 +938,7 @@ public function updateTemperature(Request $request, $id)
             'tanggal' => $request->tanggal,
         ]);
 
-        $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : json_decode($rekam->jam_data ?? '[]', true) ?: [];
+        $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
         $jamData[$request->jam] = (string) $request->suhu;
 
         // Urutkan jam secara kronologis

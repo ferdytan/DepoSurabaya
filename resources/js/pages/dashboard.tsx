@@ -244,7 +244,7 @@ export default function DashboardPage() {
     }
 
     // 3. TAMPILAN OVERVIEW LENGKAP UNTUK SUPERADMIN (ROLE 1) & ADMIN (ROLE 2)
-    return <AdminOverviewDashboard props={props} roleName={roleName} userName={userName} kpi={kpi} />;
+    return <AdminOverviewDashboard props={props} roleName={roleName} userName={userName} kpi={kpi} roleId={roleId} />;
 }
 
 // =========================================================================
@@ -255,11 +255,13 @@ function AdminOverviewDashboard({
     roleName,
     userName,
     kpi,
+    roleId,
 }: {
     props: PageProps;
     roleName: string;
     userName: string;
     kpi: KpiData;
+    roleId: number;
 }) {
     const invoiceStats = props.invoice_stats ?? {
         unpaid_count: 0,
@@ -450,7 +452,7 @@ function AdminOverviewDashboard({
                     </div>
                 </div>
 
-                {/* Secondary Row: Karantina & Finansial */}
+                {/* Secondary Row: Karantina & Finansial (Hanya Superadmin yg Melihat Finansial) */}
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                     {/* Karantina Aktif Card */}
                     <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
@@ -470,41 +472,90 @@ function AdminOverviewDashboard({
                         </div>
                     </div>
 
-                    {/* Finansial 1: Unpaid Invoices */}
-                    <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                        <div className="space-y-1">
-                            <span className="text-xs font-semibold uppercase tracking-wider text-amber-600">
-                                Tagihan Belum Lunas (Unpaid)
-                            </span>
-                            <div className="text-lg font-bold text-gray-800">
-                                {formatRupiah(invoiceStats.unpaid_amount)}
+                    {roleId === 1 ? (
+                        <>
+                            {/* Finansial 1: Unpaid Invoices (Superadmin Only) */}
+                            <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                                <div className="space-y-1">
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-amber-600">
+                                        Tagihan Belum Lunas (Unpaid)
+                                    </span>
+                                    <div className="text-lg font-bold text-gray-800">
+                                        {formatRupiah(invoiceStats.unpaid_amount)}
+                                    </div>
+                                    <span className="text-xs text-gray-500">
+                                        {invoiceStats.unpaid_count} Invoice tertunda
+                                    </span>
+                                </div>
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-100">
+                                    <DollarSign className="h-6 w-6" />
+                                </div>
                             </div>
-                            <span className="text-xs text-gray-500">
-                                {invoiceStats.unpaid_count} Invoice tertunda
-                            </span>
-                        </div>
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-600 border border-amber-100">
-                            <DollarSign className="h-6 w-6" />
-                        </div>
-                    </div>
 
-                    {/* Finansial 2: Paid Invoices Bulan Ini */}
-                    <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                        <div className="space-y-1">
-                            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-                                Pelunasan Bulan Berjalan
-                            </span>
-                            <div className="text-lg font-bold text-gray-800">
-                                {formatRupiah(invoiceStats.paid_month_amount)}
+                            {/* Finansial 2: Paid Invoices Bulan Ini (Superadmin Only) */}
+                            <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                                <div className="space-y-1">
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                                        Pelunasan Bulan Berjalan
+                                    </span>
+                                    <div className="text-lg font-bold text-gray-800">
+                                        {formatRupiah(invoiceStats.paid_month_amount)}
+                                    </div>
+                                    <span className="text-xs text-gray-500">
+                                        {invoiceStats.paid_month_count} Invoice telah lunas
+                                    </span>
+                                </div>
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100">
+                                    <CheckCircle2 className="h-6 w-6" />
+                                </div>
                             </div>
-                            <span className="text-xs text-gray-500">
-                                {invoiceStats.paid_month_count} Invoice telah lunas
-                            </span>
-                        </div>
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100">
-                            <CheckCircle2 className="h-6 w-6" />
-                        </div>
-                    </div>
+                        </>
+                    ) : (
+                        <>
+                            {/* Operasional 1: Reefer Aktif (Untuk Role selain Superadmin) */}
+                            <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                                <div className="space-y-1">
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-cyan-700">
+                                        Kontainer Reefer Aktif
+                                    </span>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-2xl font-bold text-gray-800">
+                                            {kpi.container_reefer_aktif ?? 0}
+                                        </span>
+                                        <span className="text-xs text-gray-500">Unit reefer di depo</span>
+                                    </div>
+                                    <p className="text-xs text-gray-400">Butuh pemantauan suhu berkala</p>
+                                </div>
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 border border-cyan-100">
+                                    <Thermometer className="h-6 w-6" />
+                                </div>
+                            </div>
+
+                            {/* Operasional 2: Total Historis Gerakan (Untuk Role selain Superadmin) */}
+                            <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                                <div className="space-y-1">
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-700">
+                                        Total Historis Gerakan
+                                    </span>
+                                    <div className="flex items-center gap-3 pt-1">
+                                        <div>
+                                            <span className="text-[11px] text-gray-500 uppercase">Masuk: </span>
+                                            <span className="text-base font-bold text-gray-800">{kpi.total_container_masuk}</span>
+                                        </div>
+                                        <span className="text-gray-300">|</span>
+                                        <div>
+                                            <span className="text-[11px] text-gray-500 uppercase">Keluar: </span>
+                                            <span className="text-base font-bold text-gray-800">{kpi.total_container_keluar}</span>
+                                        </div>
+                                    </div>
+                                    <p className="text-xs text-gray-400">Pergerakan peti kemas tercatat</p>
+                                </div>
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+                                    <Package className="h-6 w-6" />
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </div>
 
                 {/* Interactive Tabbed Container Table */}

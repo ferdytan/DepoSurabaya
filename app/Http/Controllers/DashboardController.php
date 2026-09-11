@@ -100,7 +100,7 @@ class DashboardController extends Controller
                 ->get();
         }
 
-        // 5. STATISTIK FINANSIAL INVOICE (HANYA ROLE 1 & 2)
+        // 5. STATISTIK FINANSIAL INVOICE (HANYA SUPERADMIN: ROLE 1)
         $invoiceStats = [
             'unpaid_count' => 0,
             'unpaid_amount' => 0,
@@ -109,7 +109,7 @@ class DashboardController extends Controller
             'total_invoice_count' => 0,
         ];
 
-        if ($roleId === 1 || $roleId === 2) {
+        if ($roleId === 1) {
             $unpaid = Invoice::where(function ($q) {
                 $q->where('status', 'unpaid')->orWhere('status', 'Belum Lunas');
             });

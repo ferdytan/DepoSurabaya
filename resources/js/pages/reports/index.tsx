@@ -434,8 +434,8 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                 {/* Header Title & Actions */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                        <div className="flex items-center gap-2">
-                            <FileSpreadsheet className="h-7 w-7 text-blue-600" />
+                        <div className="flex items-center gap-2.5">
+                            <FileSpreadsheet className="h-7 w-7 text-gray-900" />
                             <h1 className="text-2xl font-bold tracking-tight text-gray-900">
                                 Laporan Ringkasan Order
                             </h1>
@@ -743,20 +743,20 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
 
                     <div className="overflow-x-auto rounded-lg border border-gray-100">
                         <Table>
-                            <TableHeader className="bg-gray-50">
+                            <TableHeader className="bg-gray-50/75">
                                 <TableRow>
-                                    <TableHead className="w-12 text-center text-xs font-bold">No</TableHead>
-                                    <TableHead className="text-xs font-bold">Customer</TableHead>
-                                    <TableHead className="text-xs font-bold">Shipper</TableHead>
-                                    <TableHead className="text-xs font-bold">Layanan</TableHead>
-                                    <TableHead className="text-xs font-bold">No. Kontainer</TableHead>
-                                    <TableHead className="text-xs font-bold text-center">Ukuran</TableHead>
-                                    <TableHead className="text-xs font-bold">Tgl Masuk</TableHead>
-                                    <TableHead className="text-xs font-bold">Tgl Keluar</TableHead>
-                                    <TableHead className="text-xs font-bold">Komoditi</TableHead>
-                                    <TableHead className="text-xs font-bold text-center">Status Invoice</TableHead>
-                                    <TableHead className="text-xs font-bold text-center">Status Exclude</TableHead>
-                                    <TableHead className="text-xs font-bold text-right">Aksi</TableHead>
+                                    <TableHead className="w-12 text-center text-xs font-semibold text-gray-700">No</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Customer</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Shipper</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Layanan</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">No. Kontainer</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700 text-center">Ukuran</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Tgl Masuk</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Tgl Keluar</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700">Komoditi</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700 text-center">Status Invoice</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700 text-center">Status Exclude</TableHead>
+                                    <TableHead className="text-xs font-semibold text-gray-700 text-right">Aksi</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -769,37 +769,36 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                 ) : (
                                     reports.data.map((item, idx) => (
                                         <TableRow key={item.id} className="hover:bg-gray-50/80">
-                                            <TableCell className="text-center text-xs font-medium text-gray-500">
+                                            <TableCell className="py-3.5 text-center text-xs font-medium text-gray-500">
                                                 {(reports.from || 1) + idx}
                                             </TableCell>
-                                            <TableCell className="text-xs font-medium text-gray-800">
-
+                                            <TableCell className="py-3.5 text-xs font-medium text-gray-800">
                                                 {item.customer_name}
                                             </TableCell>
-                                            <TableCell className="text-xs text-gray-600">
+                                            <TableCell className="py-3.5 text-xs text-gray-600">
                                                 {item.shipper_name}
                                             </TableCell>
-                                            <TableCell className="text-xs text-gray-700">
+                                            <TableCell className="py-3.5 text-xs text-gray-700">
                                                 <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-200">
                                                     {item.service_type}
                                                 </span>
                                             </TableCell>
-                                            <TableCell className="text-xs font-bold text-gray-900">
+                                            <TableCell className="py-3.5 text-xs font-bold text-gray-900">
                                                 {item.container_number}
                                             </TableCell>
-                                            <TableCell className="text-center text-xs font-semibold text-gray-700">
+                                            <TableCell className="py-3.5 text-center text-xs font-semibold text-gray-700">
                                                 {item.size}
                                             </TableCell>
-                                            <TableCell className="text-xs text-gray-600">
+                                            <TableCell className="py-3.5 text-xs text-gray-600">
                                                 {formatDate(item.entry_date)}
                                             </TableCell>
-                                            <TableCell className="text-xs text-gray-600">
+                                            <TableCell className="py-3.5 text-xs text-gray-600">
                                                 {formatDate(item.exit_date)}
                                             </TableCell>
-                                            <TableCell className="text-xs text-gray-600 max-w-[140px] truncate">
+                                            <TableCell className="py-3.5 text-xs text-gray-600 max-w-[140px] truncate">
                                                 {item.commodity}
                                             </TableCell>
-                                            <TableCell className="text-center text-xs">
+                                            <TableCell className="py-3.5 text-center text-xs">
                                                 {item.is_invoiced ? (
                                                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-100 text-emerald-800 border border-emerald-300">
                                                         <CheckCircle2 className="h-3 w-3" />
@@ -811,7 +810,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                                     </span>
                                                 )}
                                             </TableCell>
-                                            <TableCell className="text-center text-xs">
+                                            <TableCell className="py-3.5 text-center text-xs">
                                                 {item.is_excluded ? (
                                                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
                                                         <EyeOff className="h-3 w-3" />
@@ -823,7 +822,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                                     </span>
                                                 )}
                                             </TableCell>
-                                            <TableCell className="text-right">
+                                            <TableCell className="py-3.5 text-right">
                                                 <div className="flex items-center justify-end gap-1.5">
                                                     {/* Cetak Surat Jalan */}
                                                     <Button

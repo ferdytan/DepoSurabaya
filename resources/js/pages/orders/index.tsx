@@ -3,7 +3,7 @@ import AppLayout from '@/layouts/app-layout';
 import OrdersLayout from '@/layouts/orders/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { PlusCircle, Thermometer, X } from 'lucide-react';
+import { Boxes, PlusCircle, Thermometer, X } from 'lucide-react';
 import { Fragment, useState } from 'react';
 // UI Components
 import Heading from '@/components/heading';
@@ -476,10 +476,15 @@ function getNowLocalISO(): string {
                 <div className="space-y-6">
                     {/* Flash Message */}
                     {props.flash?.success && <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">{props.flash.success}</div>}
-                    {props.flash?.error && <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">{props.flash.error}</div>}
                     {/* Header Toolbar */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <Heading title="Order List" description="Manage all registered orders and their statuses." />
+                        <div>
+                            <div className="flex items-center gap-2.5">
+                                <Boxes className="h-7 w-7 text-gray-900" />
+                                <h1 className="text-2xl font-bold tracking-tight text-gray-900">Order List</h1>
+                            </div>
+                            <p className="text-sm text-gray-500 mt-1">Manage all registered orders and their statuses.</p>
+                        </div>
 
                         <div className="flex flex-wrap items-center gap-2.5">
                             <Button variant="outline" size="sm" onClick={toggleTrashed} className="text-xs h-9">
@@ -585,9 +590,10 @@ function getNowLocalISO(): string {
 
 
                     {/* Data Table */}
-                    <div className="w-full overflow-x-auto rounded-md border">
-                        <Table>
-                            <TableHeader>
+                    <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+                        <div className="overflow-x-auto">
+                            <Table>
+                                <TableHeader className="bg-gray-50/75">
                                 <TableRow>
                                     <TableHead>
                                         <SortButton
@@ -912,6 +918,7 @@ function getNowLocalISO(): string {
                             </TableBody>
                         </Table>
                     </div>
+                </div>
 
                     {/* Pagination */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-gray-100">

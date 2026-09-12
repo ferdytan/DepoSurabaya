@@ -127,7 +127,8 @@ class DashboardController extends Controller
         }
 
         // 6. DAFTAR DETAIL KONTAINER UNTUK TABEL TABULASI
-        $isChecker = ($roleId === 3);
+        $roleName = $user && $user->role ? $user->role->name : '';
+        $isChecker = ($roleId === 3 || $roleId === 5 || in_array($roleName, ['Checker', 'Ops Checker']));
         $relations = [
             'order:id,order_id,customer_id,shipper_id,fumigasi,no_aju',
             'order.customer:id,name',
@@ -189,7 +190,7 @@ class DashboardController extends Controller
             'user' => [
                 'name' => $user ? $user->name : 'User',
                 'role_id' => $roleId,
-                'role_name' => $user && $user->role ? $user->role->name : 'User',
+                'role_name' => $roleName ?: ($roleId === 1 ? 'Super User' : ($roleId === 2 ? 'Admin' : ($roleId === 4 ? 'Karantina' : ($roleId === 5 ? 'Ops Checker' : 'Checker')))),
             ],
             'kpi' => [
                 'container_aktif' => $jumlahContainerAktif,

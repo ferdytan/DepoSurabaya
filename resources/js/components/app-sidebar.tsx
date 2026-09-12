@@ -88,8 +88,9 @@ const footerNavItems: NavItem[] = [
 ];
 
 export function AppSidebar() {
-    const { auth } = usePage().props as { auth?: { user?: { role_id: number } } };
+    const { auth } = usePage().props as { auth?: { user?: { role_id: number; role_name?: string } } };
     const roleId = auth?.user?.role_id;
+    const roleName = auth?.user?.role_name;
 
     // Tentukan menu yang akan ditampilkan
     let filteredNavItems: NavItem[] = [];
@@ -100,8 +101,8 @@ export function AppSidebar() {
     } else if (roleId == 2) {
         // Admin: tanpa User, Customers, Shippers, Products
         filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));
-    } else if (roleId == 3) {
-        // Checker: hanya Dashboard dan Orders
+    } else if (roleId == 3 || roleId == 5 || roleName === 'Ops Checker' || roleName === 'Checker') {
+        // Checker & Ops Checker: hanya Dashboard dan Orders
         filteredNavItems = baseNavItems.filter((item) => item.href == '/dashboard' || item.href == '/orders');
     } else if (roleId == 4) {
         // Karantina: hanya menu Dashboard (menu Karantina di-hide sementara)

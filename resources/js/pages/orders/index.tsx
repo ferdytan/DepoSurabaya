@@ -501,7 +501,7 @@ function getNowLocalISO(): string {
                                 </Select>
                             </div>
 
-                            {roleId != 3 && (
+                            {roleId != 3 && roleId != 5 && (
                                 <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700 text-white gap-1.5 h-9 text-xs font-semibold">
                                     <Link href="/orders/create">
                                         <Plus className="h-4 w-4" />
@@ -711,7 +711,7 @@ function getNowLocalISO(): string {
                                                                         </Button>
                                                                     ) : (
                                                                         <>
-                                                                            {roleId != 3 && (
+                                                                            {roleId != 3 && roleId != 5 && (
                                                                                 <>
                                                                                     {/* Action 1: Shortcut Buat Invoice */}
                                                                                     <Link
@@ -840,7 +840,7 @@ function getNowLocalISO(): string {
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">
-                                                                {roleId != 3 && (
+                                                                {roleId != 3 && roleId != 5 && (
                                                                     <>
                                                                         {order.eir_date ? (
                                                                             <button
@@ -863,7 +863,7 @@ function getNowLocalISO(): string {
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">
-                                                                {roleId != 3 && (
+                                                                {roleId != 3 && roleId != 5 && (
                                                                     <>
                                                                         {order.exit_date ? (
                                                                             <button

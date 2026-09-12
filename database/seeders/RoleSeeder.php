@@ -27,6 +27,10 @@ class RoleSeeder extends Seeder
                 'data_entry' => true,
                 'view_restricted_dashboard' => true
             ],
+            'Ops Checker' => [
+                'data_entry' => true,
+                'view_restricted_dashboard' => true
+            ],
             'Karantina' => [
                 'view_restricted_dashboard' => true
             ]

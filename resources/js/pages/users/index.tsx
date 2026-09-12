@@ -27,6 +27,7 @@ import {
     Plus,
     Search,
     Shield,
+    Smartphone,
     Trash2,
     UserCheck,
     UserX,
@@ -179,6 +180,14 @@ export default function UsersIndex({ users, filters }: Props) {
             return (
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                     {roleName || 'Admin'}
+                </span>
+            );
+        }
+        if (name.includes('ops')) {
+            return (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">
+                    <Smartphone className="h-3 w-3 text-cyan-600" />
+                    {roleName || 'Ops Checker'}
                 </span>
             );
         }

@@ -129,6 +129,7 @@ interface PageProps {
             name: string;
             email: string;
             role_id: number;
+            role_name?: string;
         };
     };
     user?: {
@@ -201,7 +202,8 @@ export default function DashboardPage() {
     const userName = props.user?.name ?? props.auth?.user?.name ?? 'User';
     const roleName =
         props.user?.role_name ??
-        (roleId === 1 ? 'Super User' : roleId === 2 ? 'Admin' : roleId === 4 ? 'Karantina' : 'Checker');
+        props.auth?.user?.role_name ??
+        (roleId === 1 ? 'Super User' : roleId === 2 ? 'Admin' : roleId === 4 ? 'Karantina' : roleId === 5 ? 'Ops Checker' : 'Checker');
 
     const kpi: KpiData = props.kpi ?? {
         container_aktif: props.jumlahContainerBelumKeluar ?? 0,
@@ -219,8 +221,21 @@ export default function DashboardPage() {
         fumigasi_total: 0,
     };
 
-    // 1. TAMPILAN KHUSUS CHECKER (ROLE 3): MOBILE-FIRST APP
-    if (roleId === 3) {
+    const isOpsChecker =
+        roleId === 5 ||
+        roleName.toLowerCase().includes('ops') ||
+        props.user?.role_name === 'Ops Checker' ||
+        props.auth?.user?.role_name === 'Ops Checker';
+
+    const isChecker =
+        !isOpsChecker &&
+        (roleId === 3 ||
+            roleName.toLowerCase() === 'checker' ||
+            props.user?.role_name === 'Checker' ||
+            props.auth?.user?.role_name === 'Checker');
+
+    // 1. TAMPILAN KHUSUS OPS CHECKER (ROLE 5): DASHBOARD VERSI 2 (MOBILE-FIRST APP)
+    if (isOpsChecker) {
         return (
             <CheckerMobileApp
                 userName={userName}
@@ -232,8 +247,20 @@ export default function DashboardPage() {
         );
     }
 
-    // 2. TAMPILAN SEDERHANA KHUSUS KARANTINA (ROLE 4)
-    if (roleId === 4) {
+    // 2. TAMPILAN KHUSUS CHECKER (ROLE 3): DASHBOARD VERSI 1 (LEGACY SIMPLE DASHBOARD)
+    if (isChecker) {
+        return (
+            <CheckerSimpleDashboard
+                userName={userName}
+                kpi={kpi}
+                belumMasuk={props.tables?.belum_masuk ?? props.dataContainerBelumMasuk ?? []}
+                belumKeluar={props.tables?.aktif ?? props.dataContainerBelumKeluar ?? []}
+            />
+        );
+    }
+
+    // 3. TAMPILAN SEDERHANA KHUSUS KARANTINA (ROLE 4)
+    if (roleId === 4 || roleName.toLowerCase() === 'karantina') {
         return (
             <KarantinaSimpleDashboard
                 userName={userName}
@@ -243,7 +270,7 @@ export default function DashboardPage() {
         );
     }
 
-    // 3. TAMPILAN OVERVIEW LENGKAP UNTUK SUPERADMIN (ROLE 1) & ADMIN (ROLE 2)
+    // 4. TAMPILAN OVERVIEW LENGKAP UNTUK SUPERADMIN (ROLE 1) & ADMIN (ROLE 2)
     return <AdminOverviewDashboard props={props} roleName={roleName} userName={userName} kpi={kpi} roleId={roleId} />;
 }
 
@@ -2407,7 +2434,250 @@ function CheckerMobileApp({
 }
 
 // =========================================================================
-// KOMPONEN 3: DASHBOARD KHUSUS KARANTINA (ROLE 4) DENGAN FUNGSI /KARANTINA & TAMPILAN /DASHBOARD
+// KOMPONEN 3: DASHBOARD SEDERHANA KHUSUS CHECKER (ROLE 3) - VERSI 1 (LEGACY)
+// =========================================================================
+function CheckerSimpleDashboard({
+    userName,
+    kpi,
+    belumMasuk,
+    belumKeluar,
+}: {
+    userName: string;
+    kpi: KpiData;
+    belumMasuk: ContainerItem[];
+    belumKeluar: ContainerItem[];
+}) {
+    const [searchMasuk, setSearchMasuk] = useState('');
+    const [searchKeluar, setSearchKeluar] = useState('');
+
+    const filteredBelumMasuk = useMemo(() => {
+        const q = searchMasuk.trim().toLowerCase();
+        if (!q) return belumMasuk;
+        return belumMasuk.filter(
+            (item) =>
+                item.container_number?.toLowerCase().includes(q) ||
+                item.order?.customer?.name?.toLowerCase().includes(q)
+        );
+    }, [belumMasuk, searchMasuk]);
+
+    const filteredBelumKeluar = useMemo(() => {
+        const q = searchKeluar.trim().toLowerCase();
+        if (!q) return belumKeluar;
+        return belumKeluar.filter(
+            (item) =>
+                item.container_number?.toLowerCase().includes(q) ||
+                item.order?.customer?.name?.toLowerCase().includes(q)
+        );
+    }, [belumKeluar, searchKeluar]);
+
+    return (
+        <AppLayout breadcrumbs={breadcrumbs}>
+            <Head title="Dashboard - Checker" />
+
+            <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
+                {/* Header Checker */}
+                <div className="flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <div className="flex items-center gap-2.5">
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-800">
+                                Dashboard Gate Lapangan
+                            </h1>
+                            <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-700 border border-emerald-200">
+                                Checker
+                            </span>
+                        </div>
+                        <p className="mt-1 text-sm text-gray-500">
+                            Petugas: <span className="font-semibold text-gray-700">{userName}</span>. Pantau status container masuk dan belum keluar di depo.
+                        </p>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <Link
+                            href="/temperature-records"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+                        >
+                            <Thermometer className="h-4 w-4 text-rose-500" />
+                            Cek Suhu
+                        </Link>
+                    </div>
+                </div>
+
+                {/* 3 Simple Statistic Cards */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    {/* Container Masuk */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <span className="text-sm font-medium text-gray-500">Container Masuk</span>
+                        <span className="mt-2 text-4xl font-bold text-gray-800">{kpi.total_container_masuk}</span>
+                        <span className="mt-1 text-xs text-emerald-600 font-medium">Hari ini: +{kpi.gate_in_hari_ini}</span>
+                    </div>
+
+                    {/* Belum Ada Jam Keluar / Sedang di Depo */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <span className="text-sm font-medium text-gray-500">Belum Ada Jam Keluar</span>
+                        <span className="mt-2 text-4xl font-bold text-gray-800">{kpi.container_aktif}</span>
+                        <span className="mt-1 text-xs text-blue-600 font-medium">Sedang di lapangan</span>
+                    </div>
+
+                    {/* Belum Ada Jam Masuk */}
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                        <span className="text-sm font-medium text-gray-500">Belum Ada Jam Masuk</span>
+                        <span className="mt-2 text-4xl font-bold text-orange-500">{kpi.container_belum_masuk}</span>
+                        <span className="mt-1 text-xs text-gray-400">Menunggu kedatangan</span>
+                    </div>
+                </div>
+
+                {/* Tabel 1: Belum Ada Jam Masuk */}
+                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-5">
+                    <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                        <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+                            <span className="text-xl text-orange-500 font-extrabold">{kpi.container_belum_masuk}</span>
+                            Container Belum Ada Jam Masuk
+                        </h2>
+                        <div className="relative w-full sm:w-72">
+                            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                            <input
+                                type="text"
+                                placeholder="Cari container atau customer..."
+                                value={searchMasuk}
+                                onChange={(e) => setSearchMasuk(e.target.value)}
+                                className="w-full rounded-lg border border-gray-300 bg-white py-2 pl-9 pr-3 text-sm text-gray-800 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="overflow-x-auto rounded-lg border border-gray-200">
+                        <table className="w-full text-left text-sm text-gray-700">
+                            <thead className="bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-600 border-b border-gray-200">
+                                <tr>
+                                    <th className="px-4 py-3">No</th>
+                                    <th className="px-4 py-3">Nomor Container</th>
+                                    <th className="px-4 py-3">Customer</th>
+                                    <th className="px-4 py-3">Entry Date</th>
+                                    <th className="px-4 py-3">Exit Date</th>
+                                    <th className="px-4 py-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100 bg-white">
+                                {filteredBelumMasuk.length === 0 ? (
+                                    <tr>
+                                        <td colSpan={6} className="px-4 py-8 text-center text-sm text-gray-400">
+                                            Tidak ada data container
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    filteredBelumMasuk.map((row, i) => (
+                                        <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
+                                            <td className="px-4 py-3 text-sm font-medium text-slate-500">{i + 1}</td>
+                                            <td className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                                {row.container_number}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.order?.customer?.name || '-'}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.entry_date ? formatDate(row.entry_date) : <span className="text-slate-400">-</span>}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.exit_date ? formatDate(row.exit_date) : <span className="text-slate-400">-</span>}
+                                            </td>
+                                            <td className="px-4 py-3 text-center text-sm">
+                                                <a
+                                                    href={`/orders/item/${row.id}`}
+                                                    className="inline-flex items-center gap-1 font-semibold text-blue-600 hover:text-blue-800 hover:underline"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Detail
+                                                    <ExternalLink className="h-3.5 w-3.5" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                {/* Tabel 2: Belum Ada Jam Keluar */}
+                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-5">
+                    <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                        <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+                            <span className="text-xl text-blue-600 font-extrabold">{kpi.container_aktif}</span>
+                            Daftar Container Belum Ada Jam Keluar
+                        </h2>
+                        <div className="relative w-full sm:w-72">
+                            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                            <input
+                                type="text"
+                                placeholder="Cari container atau customer..."
+                                value={searchKeluar}
+                                onChange={(e) => setSearchKeluar(e.target.value)}
+                                className="w-full rounded-lg border border-gray-300 bg-white py-2 pl-9 pr-3 text-sm text-gray-800 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="overflow-x-auto rounded-lg border border-gray-200">
+                        <table className="w-full text-left text-sm text-gray-700">
+                            <thead className="bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-600 border-b border-gray-200">
+                                <tr>
+                                    <th className="px-4 py-3">No</th>
+                                    <th className="px-4 py-3">Nomor Container</th>
+                                    <th className="px-4 py-3">Customer</th>
+                                    <th className="px-4 py-3">Entry Date</th>
+                                    <th className="px-4 py-3">Exit Date</th>
+                                    <th className="px-4 py-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100 bg-white">
+                                {filteredBelumKeluar.length === 0 ? (
+                                    <tr>
+                                        <td colSpan={6} className="px-4 py-8 text-center text-sm text-gray-400">
+                                            Tidak ada data container
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    filteredBelumKeluar.map((row, i) => (
+                                        <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
+                                            <td className="px-4 py-3 text-sm font-medium text-slate-500">{i + 1}</td>
+                                            <td className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                                {row.container_number}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.order?.customer?.name || '-'}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.entry_date ? formatDate(row.entry_date) : <span className="text-slate-400">-</span>}
+                                            </td>
+                                            <td className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {row.exit_date ? formatDate(row.exit_date) : <span className="text-slate-400">-</span>}
+                                            </td>
+                                            <td className="px-4 py-3 text-center text-sm">
+                                                <a
+                                                    href={`/orders/item/${row.id}`}
+                                                    className="inline-flex items-center gap-1 font-semibold text-blue-600 hover:text-blue-800 hover:underline"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Detail
+                                                    <ExternalLink className="h-3.5 w-3.5" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </AppLayout>
+    );
+}
+
+// =========================================================================
+// KOMPONEN 4: DASHBOARD KHUSUS KARANTINA (ROLE 4) DENGAN FUNGSI /KARANTINA & TAMPILAN /DASHBOARD
 // =========================================================================
 function KarantinaSimpleDashboard({
     userName,

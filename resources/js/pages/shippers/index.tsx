@@ -197,19 +197,19 @@ export default function ShippersIndex({ shippers, filters }: Props) {
                                     ) : (
                                         shippers.data.map((shipper) => (
                                             <TableRow key={shipper.id} className="hover:bg-gray-50/60 transition-colors">
-                                                <TableCell className="py-3.5 font-semibold text-xs text-gray-900">
+                                                <TableCell className="py-3.5 font-semibold text-sm text-gray-900">
                                                     {shipper.name}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600 max-w-[200px] truncate" title={shipper.address || ''}>
+                                                <TableCell className="py-3.5 text-sm text-gray-600 max-w-[200px] truncate" title={shipper.address || ''}>
                                                     {shipper.address || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {[shipper.city, shipper.province].filter(Boolean).join(', ') || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {shipper.phone || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {shipper.email || '-'}
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right whitespace-nowrap">

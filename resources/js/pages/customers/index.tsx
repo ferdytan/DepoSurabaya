@@ -201,19 +201,19 @@ export default function CustomersIndex({ customers, filters }: Props) {
                                     ) : (
                                         customers.data.map((customer) => (
                                             <TableRow key={customer.id} className="hover:bg-gray-50/60 transition-colors">
-                                                <TableCell className="py-3.5 font-semibold text-xs text-gray-900">
+                                                <TableCell className="py-3.5 font-semibold text-sm text-gray-900">
                                                     {customer.name}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {customer.city || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {customer.province || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {customer.phone || '-'}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-sm text-gray-600">
                                                     {customer.email || '-'}
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right whitespace-nowrap">

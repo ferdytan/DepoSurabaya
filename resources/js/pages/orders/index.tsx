@@ -502,7 +502,7 @@ function getNowLocalISO(): string {
                             </div>
 
                             {roleId != 3 && roleId != 5 && (
-                                <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700 text-white gap-1.5 h-9 text-xs font-semibold">
+                                <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold">
                                     <Link href="/orders/create">
                                         <Plus className="h-4 w-4" />
                                         Create Order
@@ -558,7 +558,7 @@ function getNowLocalISO(): string {
 
                             {/* Tombol Aksi Filter & Reset */}
                             <div className="flex items-center gap-2 shrink-0">
-                                <Button size="sm" onClick={handleSearch} className="h-9 text-xs px-3.5 bg-blue-600 hover:bg-blue-700 text-white gap-1.5">
+                                <Button size="sm" onClick={handleSearch} className="h-9 text-xs px-3.5 bg-gray-900 hover:bg-black text-white gap-1.5">
                                     <Search className="h-3.5 w-3.5" />
                                     Filter
                                 </Button>
@@ -666,7 +666,7 @@ function getNowLocalISO(): string {
                                                                 </button>
 
                                                                 {/* Direct Order ID without redundant "Nomor Order:" text */}
-                                                                <span className="font-mono font-bold text-sm text-gray-950 tracking-wider bg-white px-2.5 py-0.5 rounded border border-gray-300 shadow-xs">
+                                                                <span className="font-bold text-sm text-gray-950 bg-white px-2.5 py-0.5 rounded border border-gray-300 shadow-xs">
                                                                     {firstOrder.order?.order_id ?? firstOrder.order_id}
                                                                 </span>
 

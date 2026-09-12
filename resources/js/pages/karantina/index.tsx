@@ -605,7 +605,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 ) : (
                                     filteredOrders.map((order) => (
                                         <TableRow key={order.id} className="hover:bg-slate-50/80 transition-colors">
-                                            <TableCell className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                            <TableCell className="px-4 py-3 text-sm font-semibold text-slate-900">
                                                 {order.container_number}
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">

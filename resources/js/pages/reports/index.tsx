@@ -234,7 +234,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                 <td><strong>${item.customer_name}</strong></td>
                 <td>${item.shipper_name}</td>
                 <td>${item.service_type}</td>
-                <td style="font-weight: bold; font-family: monospace;">${item.container_number}</td>
+                <td style="font-weight: bold;">${item.container_number}</td>
                 <td style="text-align: center;">${item.size}</td>
                 <td>${formatDate(item.entry_date)}</td>
                 <td>${formatDate(item.exit_date)}</td>
@@ -459,7 +459,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                         <Button
                             size="sm"
                             onClick={handlePrintReport}
-                            className="bg-blue-600 hover:bg-blue-700 text-white gap-1.5"
+                            className="bg-gray-900 hover:bg-black text-white gap-1.5"
                         >
                             <Printer className="h-4 w-4" />
                             <span>Cetak Laporan</span>
@@ -700,7 +700,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                 <Button
                                     size="sm"
                                     onClick={() => applyFilters()}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-4"
+                                    className="bg-gray-900 hover:bg-black text-white text-xs px-4"
                                 >
                                     Terapkan Filter
                                 </Button>
@@ -784,7 +784,7 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                                                     {item.service_type}
                                                 </span>
                                             </TableCell>
-                                            <TableCell className="text-xs font-mono font-bold text-gray-900">
+                                            <TableCell className="text-xs font-bold text-gray-900">
                                                 {item.container_number}
                                             </TableCell>
                                             <TableCell className="text-center text-xs font-semibold text-gray-700">

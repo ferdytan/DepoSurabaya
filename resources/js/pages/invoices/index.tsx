@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { RotateCcw, Trash2, Pencil } from 'lucide-react';
+import { RotateCcw, Trash2, Pencil, Plus, Search, Receipt, CheckCircle2, Clock, Eye } from 'lucide-react';
 
 // Types
 interface FlashProps {
@@ -173,232 +173,292 @@ export default function InvoicesIndex() {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Daftar Invoice" />
+            <Head title={isTrashed ? 'Invoice Dihapus (Recycle Bin)' : 'Daftar Invoice'} />
             <InvoicesLayout>
-                <div className="mx-auto max-w-6xl space-y-6">
+                <div className="w-full space-y-6">
                     {/* Flash Messages */}
-                    {flash?.success && <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">{flash.success}</div>}
-                    {flash?.error && <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">{flash.error}</div>}
+                    {flash?.success && <div className="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-sm text-emerald-800 font-medium">{flash.success}</div>}
+                    {flash?.error && <div className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-800 font-medium">{flash.error}</div>}
 
-                    {/* Judul Halaman */}
-                    <Heading title="Daftar Invoice" description="Kelola semua invoice yang telah dibuat dan detailnya." />
-
-                    {/* Toggle Trashed */}
-                    {canDeleteRestore && (
-                        <div className="flex items-center justify-between">
-                            <Button
-                                variant={isTrashed ? 'secondary' : 'outline'}
-                                onClick={toggleTrashed}
-                                className="inline-flex items-center gap-2"
-                            >
-                                <RotateCcw className="h-4 w-4" />
-                                {isTrashed ? '← Kembali ke Invoice Aktif' : 'Tampilkan Invoice yang Dihapus'}
-                            </Button>
+                    {/* Header Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div className="flex items-center gap-2.5">
+                                <Receipt className="h-7 w-7 text-gray-900" />
+                                <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                                    {isTrashed ? 'Invoice Dihapus (Recycle Bin)' : 'Daftar Invoice'}
+                                </h1>
+                            </div>
+                            <p className="text-sm text-gray-500 mt-1">
+                                {isTrashed
+                                    ? 'Riwayat invoice yang telah dihapus beserta alasan dan opsi reuse.'
+                                    : 'Kelola semua tagihan invoice, status pembayaran, dan rincian transaksi.'}
+                            </p>
                         </div>
-                    )}
 
-                    {/* Search Bar */}
-                    <div className="space-y-2">
-                        <Label htmlFor="search">Cari</Label>
-                        <div className="flex flex-col gap-2 sm:flex-row">
-                            <Input
-                                id="search"
-                                placeholder="Cari berdasarkan nomor invoice atau nama customer"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                onKeyUp={(e) => e.key === 'Enter' && handleSearch()}
-                                className="flex-1"
-                            />
-                            <Button onClick={handleSearch} className="w-full sm:w-auto">
-                                Cari
-                            </Button>
+                        <div className="flex items-center gap-2.5 shrink-0">
+                            {canDeleteRestore && (
+                                <Button
+                                    variant={isTrashed ? 'default' : 'outline'}
+                                    size="sm"
+                                    onClick={toggleTrashed}
+                                    className={`gap-1.5 h-9 text-xs font-semibold ${isTrashed ? 'bg-gray-900 hover:bg-black text-white' : ''}`}
+                                >
+                                    <RotateCcw className="h-4 w-4" />
+                                    <span>{isTrashed ? '← Invoice Aktif' : 'Invoice Dihapus'}</span>
+                                </Button>
+                            )}
+
+                            {!isTrashed && (
+                                <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
+                                    <Link href="/invoices/create">
+                                        <Plus className="h-4 w-4" />
+                                        <span>Buat Invoice</span>
+                                    </Link>
+                                </Button>
+                            )}
                         </div>
                     </div>
 
-                    {/* Tombol Buat Invoice */}
-                    {!isTrashed && (
-                        <div className="flex justify-end">
-                            <Button asChild className="mb-2">
-                                <Link href="/invoices/create">+ Buat Invoice</Link>
-                            </Button>
+                    {/* Unified Search & Filter Card */}
+                    <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-xs">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                            <div className="relative flex-1">
+                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                <Input
+                                    id="search"
+                                    placeholder="Cari berdasarkan nomor invoice, nama customer, atau kontainer... (Tekan Enter)"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                                    className="pl-9 h-9 text-xs"
+                                />
+                            </div>
+                            <div className="flex items-center gap-2 shrink-0">
+                                <Button
+                                    size="sm"
+                                    onClick={handleSearch}
+                                    className="h-9 text-xs px-4 bg-gray-900 hover:bg-black text-white gap-1.5 font-medium"
+                                >
+                                    <Search className="h-3.5 w-3.5" />
+                                    Cari
+                                </Button>
+                                {search && (
+                                    <Button
+                                        size="sm"
+                                        variant="outline"
+                                        onClick={() => {
+                                            setSearch('');
+                                            router.get('/invoices', { trashed: isTrashed ? '1' : undefined });
+                                        }}
+                                        className="h-9 text-xs px-3"
+                                    >
+                                        Reset
+                                    </Button>
+                                )}
+                            </div>
                         </div>
-                    )}
+                    </div>
 
-                    {/* Tabel Daftar Invoice */}
-                    <div className="overflow-x-auto rounded-md border">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead>Nomor Invoice</TableHead>
-                                    <TableHead>Customer</TableHead>
-                                    <TableHead>Periode</TableHead>
-                                    <TableHead>Jumlah Kontainer</TableHead>
-                                    <TableHead>Total</TableHead>
-                                    <TableHead>Status</TableHead>
-                                    <TableHead>{isTrashed ? 'Dihapus Pada' : 'Dibuat Pada'}</TableHead>
-                                    {isTrashed && <TableHead>Dihapus Oleh</TableHead>}
-                                    {isTrashed && <TableHead>Alasan Dihapus</TableHead>}
-                                    <TableHead className="text-right">Aksi</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {invoices?.data?.length ? (
-                                    invoices.data.map((invoice) => {
-                                        // Normalisasi status agar tombol/label selalu muncul benar
-                                        const st = (invoice.status ?? 'unpaid').toString().toLowerCase(); // 'paid' | 'unpaid'
+                    {/* Tabel Daftar Invoice Modern Full-Width */}
+                    <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+                        <div className="overflow-x-auto">
+                            <Table>
+                                <TableHeader className="bg-gray-50/75">
+                                    <TableRow>
+                                        <TableHead className="font-semibold text-xs text-gray-700">Nomor Invoice</TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700">Customer</TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700">Periode</TableHead>
+                                        <TableHead className="text-center font-semibold text-xs text-gray-700">Jumlah Kontainer</TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700">Total Tagihan</TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700">Status</TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700">{isTrashed ? 'Dihapus Pada' : 'Dibuat Pada'}</TableHead>
+                                        {isTrashed && <TableHead className="font-semibold text-xs text-gray-700">Dihapus Oleh</TableHead>}
+                                        {isTrashed && <TableHead className="font-semibold text-xs text-gray-700">Alasan Dihapus</TableHead>}
+                                        <TableHead className="text-right font-semibold text-xs text-gray-700">Aksi</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {invoices?.data?.length ? (
+                                        invoices.data.map((invoice) => {
+                                            const st = (invoice.status ?? 'unpaid').toString().toLowerCase();
 
-                                        return (
-                                            <TableRow key={invoice.id} className="group">
-                                                <TableCell className="py-3 font-medium">
-                                                    <div className="flex items-center gap-1.5">
-                                                        <span>{invoice.invoice_number}</span>
-                                                        {invoice.is_reused && !isTrashed && (
-                                                            <span
-                                                                className="inline-flex items-center rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10"
-                                                                title={`Di-reuse oleh ${invoice.reused_by || 'Admin'}`}
-                                                            >
-                                                                Reused
+                                            return (
+                                                <TableRow key={invoice.id} className="hover:bg-gray-50/60 transition-colors">
+                                                    <TableCell className="py-3.5">
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="font-bold text-xs text-gray-900">
+                                                                {invoice.invoice_number}
+                                                            </span>
+                                                            {invoice.is_reused && !isTrashed && (
+                                                                <span
+                                                                    className="inline-flex items-center rounded-md bg-blue-50 px-1.5 py-0.5 text-[10px] font-semibold text-blue-700 border border-blue-200"
+                                                                    title={`Di-reuse oleh ${invoice.reused_by || 'Admin'}`}
+                                                                >
+                                                                    Reused
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    </TableCell>
+                                                    <TableCell className="py-3.5 font-medium text-xs text-gray-800">
+                                                        {invoice.customer.name}
+                                                    </TableCell>
+
+                                                    <TableCell className="py-3.5 text-xs text-gray-600 whitespace-nowrap">
+                                                        {new Date(invoice.period_start).toLocaleDateString('id-ID')} -{' '}
+                                                        {new Date(invoice.period_end).toLocaleDateString('id-ID')}
+                                                    </TableCell>
+
+                                                    <TableCell className="py-3.5 text-center text-xs font-semibold text-gray-800">
+                                                        {invoice.items_count}
+                                                    </TableCell>
+
+                                                    <TableCell className="py-3.5 text-xs font-bold text-gray-900 whitespace-nowrap">
+                                                        Rp {Number(invoice.grand_total ?? 0).toLocaleString('id-ID')}
+                                                    </TableCell>
+
+                                                    <TableCell className="py-3.5 whitespace-nowrap">
+                                                        {st === 'paid' ? (
+                                                            <span className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                                                <CheckCircle2 className="h-3 w-3" />
+                                                                Lunas
+                                                            </span>
+                                                        ) : (
+                                                            <span className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                                                                <Clock className="h-3 w-3" />
+                                                                Belum Lunas
                                                             </span>
                                                         )}
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell className="py-3">{invoice.customer.name}</TableCell>
-
-                                                <TableCell className="py-3">
-                                                    {new Date(invoice.period_start).toLocaleDateString('id-ID')} -{' '}
-                                                    {new Date(invoice.period_end).toLocaleDateString('id-ID')}
-                                                </TableCell>
-
-                                                <TableCell className="py-3">{invoice.items_count}</TableCell>
-
-                                                <TableCell className="py-3">Rp {Number(invoice.grand_total ?? 0).toLocaleString('id-ID')}</TableCell>
-
-                                                <TableCell className="py-3">
-                                                    <span
-                                                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                                                            st === 'paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                                                        }`}
-                                                    >
-                                                        {st === 'paid' ? 'Lunas' : 'Belum Lunas'}
-                                                    </span>
-                                                </TableCell>
-
-                                                <TableCell className="py-3">
-                                                    {isTrashed
-                                                        ? (invoice.deleted_at ? new Date(invoice.deleted_at).toLocaleDateString('id-ID') : '-')
-                                                        : new Date(invoice.created_at).toLocaleDateString('id-ID')
-                                                    }
-                                                </TableCell>
-
-                                                {isTrashed && (
-                                                    <TableCell className="py-3 font-medium text-gray-700">
-                                                        {invoice.deleted_by || 'Admin'}
                                                     </TableCell>
-                                                )}
 
-                                                {isTrashed && (
-                                                    <TableCell className="py-3 text-red-600">
-                                                        {invoice.deleted_reason || '-'}
+                                                    <TableCell className="py-3.5 text-xs text-gray-500 whitespace-nowrap">
+                                                        {isTrashed
+                                                            ? (invoice.deleted_at ? new Date(invoice.deleted_at).toLocaleDateString('id-ID') : '-')
+                                                            : new Date(invoice.created_at).toLocaleDateString('id-ID')
+                                                        }
                                                     </TableCell>
-                                                )}
 
-                                                <TableCell className="py-3 text-right">
-                                                    {isTrashed ? (
-                                                        // Mode Recycle Bin - Tampilkan tombol Reuse
-                                                        canDeleteRestore && (
-                                                            <Button
-                                                                size="sm"
-                                                                onClick={() => handleReuseClick(invoice)}
-                                                                className="inline-flex items-center gap-1 bg-emerald-600 text-white hover:bg-emerald-700"
-                                                                title="Reuse Nomor Invoice"
-                                                            >
-                                                                <RotateCcw className="h-4 w-4" />
-                                                                Reuse
-                                                            </Button>
-                                                        )
-                                                    ) : (
-                                                        // Mode Normal - Tampilkan tombol aksi
-                                                        <>
-                                                            {/* Toggle status */}
-                                                            {st === 'unpaid' && (
-                                                                <Button
-                                                                    size="sm"
-                                                                    onClick={() => router.put(`/invoices/${invoice.id}/pay`)}
-                                                                    className="mr-2 bg-green-600 text-white hover:bg-green-700"
-                                                                >
-                                                                    Lunas
-                                                                </Button>
-                                                            )}
-
-                                                            {st === 'paid' && (
-                                                                <Button
-                                                                    size="sm"
-                                                                    onClick={() => router.put(`/invoices/${invoice.id}/unpay`)}
-                                                                    className="mr-2 bg-amber-600 text-white hover:bg-amber-700"
-                                                                >
-                                                                    Belum Lunas
-                                                                </Button>
-                                                            )}
-
-                                                            {/* Show */}
-                                                            <Button size="sm" variant="outline" asChild className="mr-2">
-                                                                <Link href={`/invoices/${invoice.id}`}>Show</Link>
-                                                            </Button>
-
-                                                            {/* Edit */}
-                                                            <Button size="sm" variant="outline" asChild className="mr-2">
-                                                                <Link href={`/invoices/${invoice.id}/edit`}>Edit</Link>
-                                                            </Button>
-
-                                                            {/* Delete - Hanya untuk admin dan super admin */}
-                                                            {canDeleteRestore && (
-                                                                <button
-                                                                    type="button"
-                                                                    className="inline-flex h-8 w-8 items-center justify-center rounded-md text-sm text-red-500 hover:bg-red-100 disabled:pointer-events-none disabled:opacity-50"
-                                                                    onClick={() => handleDeleteClick(invoice.id)}
-                                                                    aria-label="Hapus"
-                                                                >
-                                                                    <Trash2 className="h-4 w-4" />
-                                                                </button>
-                                                            )}
-                                                        </>
+                                                    {isTrashed && (
+                                                        <TableCell className="py-3.5 font-medium text-xs text-gray-700">
+                                                            {invoice.deleted_by || 'Admin'}
+                                                        </TableCell>
                                                     )}
-                                                </TableCell>
-                                            </TableRow>
-                                        );
-                                    })
-                                ) : (
-                                    <TableRow>
-                                        <TableCell colSpan={isTrashed ? 10 : 8} className="py-8 text-center text-sm text-gray-500">
-                                            {isTrashed ? 'Tidak ada invoice yang dihapus.' : 'Belum ada invoice.'}
-                                        </TableCell>
-                                    </TableRow>
-                                )}
-                            </TableBody>
-                        </Table>
-                    </div>
 
-                    {/* Pagination */}
-                    <div className="flex flex-wrap justify-center gap-1">
-                        {invoices?.links?.map((link, i) =>
-                            link.url ? (
-                                <Button
-                                    key={i}
-                                    variant={link.active ? 'default' : 'outline'}
-                                    onClick={() => router.get(link.url!)} // URL sudah mengandung `?search=...&trashed=...`
-                                    className="px-3 py-1 whitespace-nowrap"
-                                >
-                                    {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
-                                        if (match.includes('Previous')) return '← Sebelumnya';
-                                        if (match.includes('Next')) return 'Selanjutnya →';
-                                        return match;
-                                    })}
-                                </Button>
-                            ) : (
-                                <span key={i} className="px-3 py-1">
-                                    ...
-                                </span>
-                            ),
+                                                    {isTrashed && (
+                                                        <TableCell className="py-3.5 text-xs text-red-600 max-w-[200px] truncate" title={invoice.deleted_reason || ''}>
+                                                            {invoice.deleted_reason || '-'}
+                                                        </TableCell>
+                                                    )}
+
+                                                    <TableCell className="py-3.5 text-right whitespace-nowrap">
+                                                        {isTrashed ? (
+                                                            canDeleteRestore && (
+                                                                <Button
+                                                                    size="sm"
+                                                                    onClick={() => handleReuseClick(invoice)}
+                                                                    className="inline-flex items-center gap-1 bg-emerald-600 text-white hover:bg-emerald-700 h-8 text-xs font-medium px-3 shadow-xs"
+                                                                    title="Reuse Nomor Invoice"
+                                                                >
+                                                                    <RotateCcw className="h-3.5 w-3.5" />
+                                                                    Reuse
+                                                                </Button>
+                                                            )
+                                                        ) : (
+                                                            <div className="inline-flex items-center gap-1.5">
+                                                                {st === 'unpaid' && (
+                                                                    <Button
+                                                                        size="sm"
+                                                                        variant="outline"
+                                                                        onClick={() => router.put(`/invoices/${invoice.id}/pay`)}
+                                                                        className="h-8 text-xs font-medium border-emerald-600 text-emerald-700 hover:bg-emerald-50"
+                                                                    >
+                                                                        Lunas
+                                                                    </Button>
+                                                                )}
+
+                                                                {st === 'paid' && (
+                                                                    <Button
+                                                                        size="sm"
+                                                                        variant="outline"
+                                                                        onClick={() => router.put(`/invoices/${invoice.id}/unpay`)}
+                                                                        className="h-8 text-xs font-medium border-amber-600 text-amber-700 hover:bg-amber-50"
+                                                                    >
+                                                                        Belum Lunas
+                                                                    </Button>
+                                                                )}
+
+                                                                <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
+                                                                    <Link href={`/invoices/${invoice.id}`}>
+                                                                        <Eye className="h-3.5 w-3.5 mr-1 text-gray-500" />
+                                                                        Detail
+                                                                    </Link>
+                                                                </Button>
+
+                                                                <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
+                                                                    <Link href={`/invoices/${invoice.id}/edit`}>
+                                                                        <Pencil className="h-3.5 w-3.5 mr-1 text-gray-500" />
+                                                                        Edit
+                                                                    </Link>
+                                                                </Button>
+
+                                                                {canDeleteRestore && (
+                                                                    <button
+                                                                        type="button"
+                                                                        className="inline-flex h-8 w-8 items-center justify-center rounded-md text-red-500 hover:bg-red-50 hover:text-red-700 transition"
+                                                                        onClick={() => handleDeleteClick(invoice.id)}
+                                                                        aria-label="Hapus"
+                                                                        title="Hapus Invoice"
+                                                                    >
+                                                                        <Trash2 className="h-4 w-4" />
+                                                                    </button>
+                                                                )}
+                                                            </div>
+                                                        )}
+                                                    </TableCell>
+                                                </TableRow>
+                                            );
+                                        })
+                                    ) : (
+                                        <TableRow>
+                                            <TableCell colSpan={isTrashed ? 10 : 8} className="py-12 text-center text-sm text-gray-400">
+                                                {isTrashed ? 'Tidak ada invoice yang dihapus.' : 'Belum ada invoice ditemukan.'}
+                                            </TableCell>
+                                        </TableRow>
+                                    )}
+                                </TableBody>
+                            </Table>
+                        </div>
+
+                        {/* Pagination Footer */}
+                        {invoices?.links && invoices.links.length > 3 && (
+                            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3.5 border-t border-gray-100 bg-gray-50/40">
+                                <div className="text-xs text-gray-500">
+                                    Menampilkan <span className="font-semibold text-gray-900">{invoices.data.length}</span> invoice
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-1">
+                                    {invoices.links.map((link, i) =>
+                                        link.url ? (
+                                            <Button
+                                                key={i}
+                                                size="sm"
+                                                variant={link.active ? 'default' : 'outline'}
+                                                onClick={() => router.get(link.url!)}
+                                                className={`h-8 px-3 text-xs whitespace-nowrap ${link.active ? 'bg-gray-900 hover:bg-black text-white' : ''}`}
+                                            >
+                                                {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
+                                                    if (match.includes('Previous')) return '← Sebelumnya';
+                                                    if (match.includes('Next')) return 'Selanjutnya →';
+                                                    return match;
+                                                })}
+                                            </Button>
+                                        ) : (
+                                            <span key={i} className="px-2.5 py-1 text-xs text-gray-400">
+                                                ...
+                                            </span>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
                         )}
                     </div>
                 </div>
@@ -425,7 +485,7 @@ export default function InvoicesIndex() {
                             <AlertDialogAction
                                 disabled={!deleteReason.trim()}
                                 onClick={confirmDelete}
-                                className="bg-red-600 hover:bg-red-700"
+                                className="bg-red-600 hover:bg-red-700 text-white"
                             >
                                 Hapus Invoice
                             </AlertDialogAction>

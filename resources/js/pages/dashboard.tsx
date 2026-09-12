@@ -2568,7 +2568,7 @@ function CheckerSimpleDashboard({
                                     filteredBelumMasuk.map((row, i) => (
                                         <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
                                             <td className="px-4 py-3 text-sm font-medium text-slate-500">{i + 1}</td>
-                                            <td className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                            <td className="px-4 py-3 text-sm font-semibold text-slate-900">
                                                 {row.container_number}
                                             </td>
                                             <td className="px-4 py-3 text-sm text-slate-800 font-normal">
@@ -2641,7 +2641,7 @@ function CheckerSimpleDashboard({
                                     filteredBelumKeluar.map((row, i) => (
                                         <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
                                             <td className="px-4 py-3 text-sm font-medium text-slate-500">{i + 1}</td>
-                                            <td className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                            <td className="px-4 py-3 text-sm font-semibold text-slate-900">
                                                 {row.container_number}
                                             </td>
                                             <td className="px-4 py-3 text-sm text-slate-800 font-normal">
@@ -2893,7 +2893,7 @@ function KarantinaSimpleDashboard({
                                 (item, idx) => `
                             <tr>
                                 <td>${idx + 1}</td>
-                                <td style="font-family: monospace; font-weight: bold;">${item.container_number}</td>
+                                <td style="font-weight: bold;">${item.container_number}</td>
                                 <td>${item.order?.shipper?.name ?? '-'}</td>
                                 <td>${item.order?.customer?.name ?? '-'}</td>
                                 <td>${formatContainerSize(item.price_type, item.product?.service_type ?? '-')}</td>
@@ -3110,7 +3110,7 @@ function KarantinaSimpleDashboard({
                                                 <td className="px-4 py-3 text-sm font-medium text-slate-500">
                                                     {rowNumber}
                                                 </td>
-                                                <td className="px-4 py-3 font-mono text-sm font-semibold text-slate-900 tracking-tight">
+                                                <td className="px-4 py-3 text-sm font-semibold text-slate-900">
                                                     {row.container_number}
                                                 </td>
                                                 <td className="px-4 py-3 text-sm text-slate-800 font-normal">

@@ -462,7 +462,7 @@ export default function EditInvoice() {
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Edit Invoice ${invoice.invoice_number}`} />
             <InvoicesLayout>
-                <div className="mx-auto max-w-5xl space-y-6 pb-12">
+                <div className="w-full space-y-6 pb-12">
                     {/* Header */}
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                         <Heading
@@ -986,7 +986,7 @@ export default function EditInvoice() {
                             <Button
                                 type="submit"
                                 disabled={submitting}
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6"
+                                className="bg-gray-900 hover:bg-black text-white font-semibold px-6 shadow-sm"
                             >
                                 {submitting ? 'Menyimpan...' : 'Simpan Perubahan Invoice'}
                             </Button>

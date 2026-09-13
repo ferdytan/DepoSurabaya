@@ -11,6 +11,7 @@ import { BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import {
     AlertCircle,
+    ArrowLeft,
     Calendar,
     CheckCircle2,
     Clock,
@@ -18,11 +19,12 @@ import {
     Layers,
     Percent,
     Plus,
+    Receipt,
+    RotateCcw,
     Tag,
+    Trash2,
     User,
     X,
-    RotateCcw,
-    Trash2,
 } from 'lucide-react';
 import React, { useEffect, useMemo, useState } from 'react';
 
@@ -461,17 +463,29 @@ export default function CreateInvoice() {
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={reuse_invoice ? `Reuse Invoice - ${reuse_invoice.invoice_number}` : 'Buat Invoice Baru'} />
             <InvoicesLayout>
-                <div className="mx-auto max-w-5xl space-y-6 pb-12">
-                    {/* Header */}
-                    <div>
-                        <Heading
-                            title={reuse_invoice ? `Reuse Invoice: ${reuse_invoice.invoice_number}` : 'Buat Invoice Baru'}
-                            description={
-                                reuse_invoice
+                <div className="w-full space-y-6 pb-12">
+                    {/* Header Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div className="flex items-center gap-2.5">
+                                <Receipt className="h-7 w-7 text-gray-900" />
+                                <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                                    {reuse_invoice ? `Reuse Invoice: ${reuse_invoice.invoice_number}` : 'Buat Invoice Baru'}
+                                </h1>
+                            </div>
+                            <p className="text-sm text-gray-500 mt-1">
+                                {reuse_invoice
                                     ? 'Gunakan kembali nomor invoice yang telah dihapus dengan memilih Customer, Order/AJU baru, dan rincian produk yang disesuaikan.'
-                                    : 'Pilih customer, nomor order/AJU, dan kontainer untuk menerbitkan invoice baru.'
-                            }
-                        />
+                                    : 'Pilih customer, nomor order/AJU, dan kontainer untuk menerbitkan invoice baru.'}
+                            </p>
+                        </div>
+
+                        <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
+                            <Link href="/invoices">
+                                <ArrowLeft className="h-4 w-4" />
+                                Kembali
+                            </Link>
+                        </Button>
                     </div>
 
                     {/* Banner Pemberitahuan Mode Reuse */}
@@ -541,7 +555,7 @@ export default function CreateInvoice() {
                         {/* Section 1: Informasi Header & Pemilihan Customer/Order */}
                         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
                             <div className="flex items-center gap-2 border-b pb-3">
-                                <FileText className="h-5 w-5 text-blue-600" />
+                                <FileText className="h-5 w-5 text-gray-900" />
                                 <h2 className="text-base font-bold text-gray-900">Informasi Pelanggan & Order</h2>
                             </div>
 
@@ -598,7 +612,7 @@ export default function CreateInvoice() {
                                         Nomor Order / AJU <span className="text-red-500">*</span>
                                     </Label>
                                     {selectedOrderIds.length > 0 && (
-                                        <span className="text-xs font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                                        <span className="text-xs font-medium text-gray-800 bg-gray-100 px-2 py-0.5 rounded border border-gray-200">
                                             {selectedOrderIds.length} order aktif
                                         </span>
                                     )}
@@ -622,16 +636,16 @@ export default function CreateInvoice() {
                                                         {activeOrders.map((o) => (
                                                             <span
                                                                 key={o.id}
-                                                                className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-900 shadow-2xs"
+                                                                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-900 shadow-2xs"
                                                             >
                                                                 <span>Order #{o.order_id}</span>
-                                                                <span className="text-[11px] font-normal text-blue-600">
+                                                                <span className="text-[11px] font-normal text-gray-500">
                                                                     ({o.order_items?.length || 0} kontainer)
                                                                 </span>
                                                                 <button
                                                                     type="button"
                                                                     onClick={() => handleRemoveOrder(o.id.toString())}
-                                                                    className="rounded p-0.5 text-blue-500 hover:bg-blue-200 hover:text-red-600 transition-colors"
+                                                                    className="rounded p-0.5 text-gray-400 hover:bg-gray-200 hover:text-red-600 transition-colors"
                                                                     title="Hapus order ini"
                                                                 >
                                                                     <X className="h-3.5 w-3.5" />
@@ -685,7 +699,7 @@ export default function CreateInvoice() {
                         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-4">
                             <div className="flex items-center justify-between border-b pb-3">
                                 <div className="flex items-center gap-2">
-                                    <Calendar className="h-5 w-5 text-blue-600" />
+                                    <Calendar className="h-5 w-5 text-gray-900" />
                                     <h2 className="text-base font-bold text-gray-900">Periode Layanan</h2>
                                 </div>
 
@@ -694,7 +708,7 @@ export default function CreateInvoice() {
                                         type="checkbox"
                                         checked={showPeriod}
                                         onChange={(e) => setShowPeriod(e.target.checked)}
-                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                        className="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 cursor-pointer"
                                     />
                                     <span>Tampilkan Periode pada Cetakan Invoice</span>
                                 </label>
@@ -737,7 +751,7 @@ export default function CreateInvoice() {
                             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-3 gap-2">
                                     <div className="flex items-center gap-2">
-                                        <Layers className="h-5 w-5 text-blue-600" />
+                                        <Layers className="h-5 w-5 text-gray-900" />
                                         <div>
                                             <h2 className="text-base font-bold text-gray-900">
                                                 Daftar Kontainer & Layanan
@@ -787,7 +801,7 @@ export default function CreateInvoice() {
                                                 {/* Header Order Group */}
                                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200/80 pb-3">
                                                     <div className="flex items-center gap-2.5">
-                                                        <span className="inline-flex items-center rounded-md bg-blue-100 px-2.5 py-1 text-xs font-bold text-blue-900">
+                                                        <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-900 border border-gray-200">
                                                             Order #{order.order_id}
                                                         </span>
                                                         <span className="text-xs text-gray-500">
@@ -849,7 +863,7 @@ export default function CreateInvoice() {
                                                                         isDisabled
                                                                             ? 'border-gray-200 bg-gray-50/60 opacity-60'
                                                                             : isSelected
-                                                                              ? 'border-blue-300 bg-white shadow-xs ring-1 ring-blue-500/20'
+                                                                              ? 'border-gray-900 bg-white shadow-xs ring-1 ring-gray-900/10'
                                                                               : 'border-gray-200 bg-white hover:border-gray-300'
                                                                     }`}
                                                                 >
@@ -862,23 +876,19 @@ export default function CreateInvoice() {
                                                                                 checked={isSelected}
                                                                                 disabled={isDisabled}
                                                                                 onChange={() => toggleContainer(item.id)}
-                                                                                className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer disabled:cursor-not-allowed"
+                                                                                className="mt-1 h-4 w-4 rounded border-gray-300 accent-gray-900 text-gray-900 focus:ring-gray-900 cursor-pointer disabled:cursor-not-allowed"
                                                                             />
                                                                             <div>
                                                                                 <div className="flex flex-wrap items-center gap-2">
                                                                                     <label
                                                                                         htmlFor={`container-${item.id}`}
-                                                                                        className={`text-base font-bold tracking-wide cursor-pointer ${
-                                                                                            isSelected
-                                                                                                ? 'text-blue-900'
-                                                                                                : 'text-gray-900'
-                                                                                        }`}
+                                                                                        className="text-base font-bold tracking-wide cursor-pointer text-gray-900"
                                                                                     >
                                                                                         {item.container_number}
                                                                                     </label>
 
                                                                                     {item.product?.service_type && (
-                                                                                        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                                                        <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-800 ring-1 ring-inset ring-gray-200">
                                                                                             {item.product.service_type}
                                                                                         </span>
                                                                                     )}
@@ -953,7 +963,7 @@ export default function CreateInvoice() {
                                                                                                                 Number(e.target.value),
                                                                                                             )
                                                                                                         }
-                                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-blue-500 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
                                                                                                     />
                                                                                                 </div>
                                                                                             </div>
@@ -987,13 +997,13 @@ export default function CreateInvoice() {
 
                                     {/* Tombol Gabungkan Order Lain di Bagian Bawah Section 3 */}
                                     {availableOrdersToAdd.length > 0 && (
-                                        <div className="rounded-xl border border-dashed border-blue-300 bg-blue-50/50 p-4">
+                                        <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50/80 p-4">
                                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                                 <div>
-                                                    <span className="text-xs font-semibold text-blue-950 block">
+                                                    <span className="text-xs font-semibold text-gray-900 block">
                                                         Mau menambah kontainer dari order lain?
                                                     </span>
-                                                    <span className="text-[11px] text-blue-700">
+                                                    <span className="text-[11px] text-gray-600">
                                                         Pilih order lain milik customer ini untuk digabungkan ke dalam 1 invoice.
                                                     </span>
                                                 </div>
@@ -1028,7 +1038,7 @@ export default function CreateInvoice() {
                         {/* Section 4: Ringkasan Total & Keuangan */}
                         <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
                             <div className="flex items-center gap-2 border-b pb-3">
-                                <Tag className="h-5 w-5 text-blue-600" />
+                                <Tag className="h-5 w-5 text-gray-900" />
                                 <h2 className="text-base font-bold text-gray-900">Rincian Pembayaran</h2>
                             </div>
 
@@ -1043,7 +1053,7 @@ export default function CreateInvoice() {
                                                 <button
                                                     type="button"
                                                     onClick={() => setShowDiscountInput(true)}
-                                                    className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800"
+                                                    className="inline-flex items-center gap-1 text-xs font-semibold text-gray-900 hover:text-black"
                                                 >
                                                     <Plus className="h-3.5 w-3.5" />
                                                     Tambah Diskon
@@ -1060,8 +1070,8 @@ export default function CreateInvoice() {
                                                     <button
                                                         type="button"
                                                         onClick={() => {
-                                                            setShowDiscountInput(false);
-                                                            setDiscount(0);
+                                                             setShowDiscountInput(false);
+                                                             setDiscount(0);
                                                         }}
                                                         className="text-xs text-red-600 hover:text-red-800"
                                                     >
@@ -1091,7 +1101,7 @@ export default function CreateInvoice() {
                                                 type="checkbox"
                                                 checked={applyMaterai}
                                                 onChange={(e) => setApplyMaterai(e.target.checked)}
-                                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                                className="h-4 w-4 rounded border-gray-300 accent-gray-900 text-gray-900 focus:ring-gray-900 cursor-pointer"
                                             />
                                             <span>Terapkan Bea Materai (Rp 10.000)</span>
                                         </label>
@@ -1150,7 +1160,7 @@ export default function CreateInvoice() {
                                     <div className="border-t border-gray-200 pt-3">
                                         <div className="flex items-baseline justify-between">
                                             <span className="text-sm font-bold text-gray-900">Grand Total</span>
-                                            <span className="text-xl font-black text-blue-700">
+                                            <span className="text-2xl font-black text-gray-900">
                                                 {formatRupiah(calculations.grandTotal)}
                                             </span>
                                         </div>
@@ -1177,7 +1187,7 @@ export default function CreateInvoice() {
                                     selectedOrderIds.length === 0 ||
                                     selectedContainers.size === 0
                                 }
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-sm"
+                                className="bg-gray-900 hover:bg-black text-white font-semibold px-6 shadow-sm"
                             >
                                 <CheckCircle2 className="h-4 w-4 mr-2" />
                                 Lanjut ke Preview Invoice

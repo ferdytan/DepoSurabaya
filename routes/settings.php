@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Settings\LoginImageSettingController;
 use App\Http\Controllers\Settings\PasswordController;
+use App\Http\Controllers\Settings\PlugTemperatureSettingController;
 use App\Http\Controllers\Settings\ProfileController;
 use App\Http\Controllers\Settings\SystemSettingController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +20,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('settings/system', [SystemSettingController::class, 'edit'])->name('settings.system');
     Route::put('settings/system', [SystemSettingController::class, 'update'])->name('settings.system.update');
+
+    Route::get('settings/login-image', [LoginImageSettingController::class, 'edit'])->name('settings.login-image');
+    Route::put('settings/login-image', [LoginImageSettingController::class, 'update'])->name('settings.login-image.update');
+
+    Route::get('settings/plug-temperature', [PlugTemperatureSettingController::class, 'edit'])->name('settings.plug-temperature');
+    Route::put('settings/plug-temperature', [PlugTemperatureSettingController::class, 'update'])->name('settings.plug-temperature.update');
 
     Route::get('settings/appearance', function () {
         return Inertia::render('settings/appearance');

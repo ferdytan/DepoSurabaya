@@ -26,6 +26,7 @@ class SystemSettingController extends Controller
             'settings' => [
                 'default_pagination' => (int) Setting::get('default_pagination', 25),
                 'default_sidebar_state' => (string) Setting::get('default_sidebar_state', 'expanded'),
+                'default_invoice_show_period' => filter_var(Setting::get('default_invoice_show_period', true), FILTER_VALIDATE_BOOLEAN),
             ],
             'status' => session('status'),
         ]);
@@ -44,13 +45,16 @@ class SystemSettingController extends Controller
         $validated = $request->validate([
             'default_pagination' => ['required', 'integer', 'in:10,25,50,100'],
             'default_sidebar_state' => ['required', 'string', 'in:expanded,collapsed'],
+            'default_invoice_show_period' => ['required', 'boolean'],
         ], [
             'default_pagination.in' => 'Jumlah baris per halaman harus 10, 25, 50, atau 100.',
             'default_sidebar_state.in' => 'Pilihan status navbar harus expanded atau collapsed.',
+            'default_invoice_show_period.boolean' => 'Pilihan status periode invoice tidak valid.',
         ]);
 
         Setting::set('default_pagination', $validated['default_pagination']);
         Setting::set('default_sidebar_state', $validated['default_sidebar_state']);
+        Setting::set('default_invoice_show_period', $validated['default_invoice_show_period'] ? '1' : '0');
 
         $cookie = cookie(
             'sidebar_state',

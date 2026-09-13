@@ -22,7 +22,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowDown, ArrowUp, ArrowUpDown, Eye, EyeOff, Pencil, Plus, Printer, Receipt, RotateCcw, Search, Trash2 } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { ArrowDown, ArrowUp, ArrowUpDown, Clock, Eye, EyeOff, Pencil, Plus, Power, Printer, Receipt, RotateCcw, Search, Trash2, Zap } from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
 import DateRangePicker from '@/components/date-range-picker';
 import DateTimePicker from '@/components/date-time-picker';
@@ -89,6 +90,10 @@ type Order = {
     entry_date: string | null;
     eir_date: string | null;
     exit_date: string | null;
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
     price_type: string | null;
     commodity: string | null;
     no_aju: string | null;
@@ -175,10 +180,14 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
         setSuratJalanModalOpen(true);
     };
 
+    const [plugStartTime, setPlugStartTime] = useState<string>('');
+    const [plugOutTime, setPlugOutTime] = useState<string>('');
+    const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
+
     const handleOpenTempModal = (order: Order) => {
-        console.log('DATA ORDER:', order);
-        console.log('TEMPERATURE:', order.temperature);
         setTempOrder(order);
+        setPlugStartTime(order.start_plug_in ? toLocalISO(order.start_plug_in) : '');
+        setPlugOutTime(order.plug_out ? toLocalISO(order.plug_out) : '');
         if (order.temperature && Object.keys(order.temperature).length > 0) {
             const records: TemperatureRecord[] = Object.entries(order.temperature).map(([date, temps]) => ({
                 date,
@@ -189,6 +198,72 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
             setTempRecords([{ date: new Date().toISOString().slice(0, 10), temps: {} }]);
         }
         setIsTempDialogOpen(true);
+    };
+
+    const handleQuickPlugIn = () => {
+        if (!tempOrder) return;
+        setIsSubmittingPlug(true);
+        router.post(`/orders/item/${tempOrder.id}/plug-in`, {}, {
+            preserveScroll: true,
+            onSuccess: () => {
+                setIsSubmittingPlug(false);
+                setIsTempDialogOpen(false);
+                router.reload({ only: ['orders'] });
+            },
+            onError: () => setIsSubmittingPlug(false),
+        });
+    };
+
+    const handleQuickPlugOut = () => {
+        if (!tempOrder) return;
+        setIsSubmittingPlug(true);
+        router.post(`/orders/item/${tempOrder.id}/plug-out`, {}, {
+            preserveScroll: true,
+            onSuccess: () => {
+                setIsSubmittingPlug(false);
+                setIsTempDialogOpen(false);
+                router.reload({ only: ['orders'] });
+            },
+            onError: () => setIsSubmittingPlug(false),
+        });
+    };
+
+    const handleSavePlugTimes = () => {
+        if (!tempOrder) return;
+        setIsSubmittingPlug(true);
+        router.post(
+            `/orders/item/${tempOrder.id}/plug-times`,
+            {
+                start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : null,
+                plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : null,
+            },
+            {
+                preserveScroll: true,
+                onSuccess: () => {
+                    setIsSubmittingPlug(false);
+                    setIsTempDialogOpen(false);
+                    router.reload({ only: ['orders'] });
+                },
+                onError: () => setIsSubmittingPlug(false),
+            }
+        );
+    };
+
+    const handleResetPlugTimes = () => {
+        if (!tempOrder) return;
+        if (!confirm(`Reset status Plug In & Out untuk kontainer ${tempOrder.container_number}? Data waktu dan shift akan dikosongkan.`)) {
+            return;
+        }
+        setIsSubmittingPlug(true);
+        router.post(`/orders/item/${tempOrder.id}/plug-reset`, {}, {
+            preserveScroll: true,
+            onSuccess: () => {
+                setIsSubmittingPlug(false);
+                setIsTempDialogOpen(false);
+                router.reload({ only: ['orders'] });
+            },
+            onError: () => setIsSubmittingPlug(false),
+        });
     };
 
     const updateDate = (recordIdx: number, date: string) => {
@@ -846,63 +921,70 @@ function getNowLocalISO(): string {
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">
-                                                                {roleId != 3 && roleId != 5 && (
-                                                                    <>
-                                                                        {order.eir_date ? (
-                                                                            <button
-                                                                                onClick={() => handleEditEirDate(order.id, order.eir_date ?? '')}
-                                                                                className="flex items-center gap-1 hover:underline"
-                                                                            >
-                                                                                {formatDate(order.eir_date)}
-                                                                                <Pencil className="h-4 w-4 text-blue-500" />
-                                                                            </button>
-                                                                        ) : (
-                                                                            <button
-                                                                                onClick={() => handleAddEirDate(order.id)}
-                                                                                className="flex items-center gap-1 hover:underline"
-                                                                            >
-                                                                                Tambah
-                                                                                <Plus className="h-4 w-4 text-green-500" />
-                                                                            </button>
-                                                                        )}
-                                                                    </>
+                                                                {order.eir_date ? (
+                                                                    <button
+                                                                        onClick={() => handleEditEirDate(order.id, order.eir_date ?? '')}
+                                                                        className="flex items-center gap-1 hover:underline"
+                                                                    >
+                                                                        {formatDate(order.eir_date)}
+                                                                        <Pencil className="h-4 w-4 text-blue-500" />
+                                                                    </button>
+                                                                ) : (
+                                                                    <button
+                                                                        onClick={() => handleAddEirDate(order.id)}
+                                                                        className="flex items-center gap-1 hover:underline"
+                                                                    >
+                                                                        Tambah
+                                                                        <Plus className="h-4 w-4 text-green-500" />
+                                                                    </button>
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">
-                                                                {roleId != 3 && roleId != 5 && (
-                                                                    <>
-                                                                        {order.exit_date ? (
-                                                                            <button
-                                                                                onClick={() => handleEditExitDate(order.id, order.exit_date ?? '')}
-                                                                                className="flex items-center gap-1 hover:underline"
-                                                                            >
-                                                                                {formatDate(order.exit_date)}
-                                                                                <Pencil className="h-4 w-4 text-blue-500" />
-                                                                            </button>
-                                                                        ) : (
-                                                                            <button
-                                                                                onClick={() => handleAddExitDate(order.id)}
-                                                                                className="flex items-center gap-1 hover:underline"
-                                                                            >
-                                                                                Tambah
-                                                                                <Plus className="h-4 w-4 text-green-500" />
-                                                                            </button>
-                                                                        )}
-                                                                    </>
+                                                                {order.exit_date ? (
+                                                                    <button
+                                                                        onClick={() => handleEditExitDate(order.id, order.exit_date ?? '')}
+                                                                        className="flex items-center gap-1 hover:underline"
+                                                                    >
+                                                                        {formatDate(order.exit_date)}
+                                                                        <Pencil className="h-4 w-4 text-blue-500" />
+                                                                    </button>
+                                                                ) : (
+                                                                    <button
+                                                                        onClick={() => handleAddExitDate(order.id)}
+                                                                        className="flex items-center gap-1 hover:underline"
+                                                                    >
+                                                                        Tambah
+                                                                        <Plus className="h-4 w-4 text-green-500" />
+                                                                    </button>
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">{order.commodity ?? '-'}</TableCell>
                                                             <TableCell className="py-3 text-center">
                                                                 {String(order.product?.requires_temperature) === '1' && (
-                                                                    <Button
-                                                                        size="icon"
-                                                                        variant="ghost"
-                                                                        onClick={() => handleOpenTempModal(order)}
-                                                                        title="Edit Rekam Suhu"
-                                                                        className="cursor-pointer"
-                                                                    >
-                                                                        <Thermometer className="h-4 w-4 cursor-pointer text-orange-500" />
-                                                                    </Button>
+                                                                    <div className="flex flex-col items-center justify-center gap-1">
+                                                                        <Button
+                                                                            size="sm"
+                                                                            variant="ghost"
+                                                                            onClick={() => handleOpenTempModal(order)}
+                                                                            title="Input Suhu & Plug In/Out"
+                                                                            className="h-8 px-2 flex items-center gap-1 cursor-pointer text-orange-600 hover:text-orange-700 hover:bg-orange-50 font-medium"
+                                                                        >
+                                                                            <Thermometer className="h-4 w-4" />
+                                                                            <span className="text-xs">Suhu</span>
+                                                                        </Button>
+                                                                        {order.start_plug_in && !order.plug_out && (
+                                                                            <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-300 text-[10px] px-1.5 py-0 flex items-center gap-1 animate-pulse">
+                                                                                <Zap className="h-3 w-3 text-amber-500 fill-amber-500" />
+                                                                                Plug In
+                                                                            </Badge>
+                                                                        )}
+                                                                        {order.plug_out && (
+                                                                            <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-300 text-[10px] px-1.5 py-0 flex items-center gap-1">
+                                                                                <Zap className="h-3 w-3 text-emerald-600" />
+                                                                                {order.total_shifts ?? 0} Shift
+                                                                            </Badge>
+                                                                        )}
+                                                                    </div>
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">
@@ -1061,59 +1143,210 @@ function getNowLocalISO(): string {
                 <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
                     <DialogContent className="max-w-3xl">
                         <DialogHeader>
-                            <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
+                            <DialogTitle className="flex items-center gap-2">
+                                <Thermometer className="h-5 w-5 text-orange-500" />
+                                <span>Rekam Suhu & Plug In/Out - Kontainer {tempOrder?.container_number}</span>
+                            </DialogTitle>
                         </DialogHeader>
-                        <div className="max-h-[60vh] space-y-6 overflow-y-auto pr-2">
-                            {tempRecords.map((rec, rIdx) => (
-                                <div key={rIdx} className="space-y-2 rounded border p-4">
+                        <div className="max-h-[75vh] space-y-6 overflow-y-auto pr-2">
+                            {/* Section Plug In / Out */}
+                            <div className="rounded-xl border border-gray-200 bg-slate-50/70 p-4 space-y-4">
+                                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-200 pb-3">
                                     <div className="flex items-center gap-2">
-                                        <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
+                                        <Zap className="h-5 w-5 text-amber-500 fill-amber-500" />
+                                        <div>
+                                            <h4 className="text-sm font-bold text-gray-900">Status Plug In / Out</h4>
+                                            <p className="text-xs text-gray-500">Pencatatan daya listrik kontainer reefer & penagihan shift</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        {!tempOrder?.start_plug_in ? (
+                                            <Badge variant="outline" className="bg-gray-100 text-gray-700 border-gray-300 text-xs px-2.5 py-0.5">
+                                                Belum Plug In
+                                            </Badge>
+                                        ) : !tempOrder?.plug_out ? (
+                                            <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-300 text-xs px-2.5 py-0.5 flex items-center gap-1.5 font-bold">
+                                                <span className="relative flex h-2 w-2">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                                                </span>
+                                                Sedang Plug In (Aktif)
+                                            </Badge>
+                                        ) : (
+                                            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300 text-xs px-2.5 py-0.5 font-bold">
+                                                Selesai ({tempOrder.total_shifts ?? 0} Shift)
+                                            </Badge>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Quick Action Buttons */}
+                                <div className="flex flex-wrap items-center gap-2">
+                                    {!tempOrder?.start_plug_in ? (
+                                        <Button
+                                            type="button"
+                                            onClick={handleQuickPlugIn}
+                                            disabled={isSubmittingPlug}
+                                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs h-9 gap-1.5 font-semibold"
+                                        >
+                                            <Zap className="h-4 w-4" />
+                                            Catat Plug In Sekarang (Real-Time)
+                                        </Button>
+                                    ) : !tempOrder?.plug_out ? (
+                                        <Button
+                                            type="button"
+                                            onClick={handleQuickPlugOut}
+                                            disabled={isSubmittingPlug}
+                                            className="bg-rose-600 hover:bg-rose-700 text-white text-xs h-9 gap-1.5 font-semibold"
+                                        >
+                                            <Power className="h-4 w-4" />
+                                            Catat Plug Out Sekarang (Real-Time)
+                                        </Button>
+                                    ) : (
+                                        <div className="text-xs text-gray-600 bg-white border border-gray-200 rounded-lg px-3 py-1.5">
+                                            Total durasi: <strong className="text-gray-900">{Math.floor((tempOrder.plug_duration_minutes ?? 0) / 60)} Jam {(tempOrder.plug_duration_minutes ?? 0) % 60} Menit</strong> ({tempOrder.total_shifts} Shift)
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Manual Datetime adjustment */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-200">
+                                    <div className="space-y-1.5">
+                                        <div className="flex items-center justify-between">
+                                            <Label htmlFor="plug_start_input" className="text-xs font-semibold text-gray-700">
+                                                Waktu Start Plug In
+                                            </Label>
+                                            <button
+                                                type="button"
+                                                onClick={() => setPlugStartTime(getNowLocalISO())}
+                                                className="text-[11px] text-blue-600 underline font-medium hover:text-blue-800"
+                                            >
+                                                Set Sekarang
+                                            </button>
+                                        </div>
                                         <DateTimePicker
-                                            id={`date_${rIdx}`}
-                                            value={rec.date}
-                                            onChange={(val) => updateDate(rIdx, val)}
-                                            withTime={false}
-                                            placeholder="Pilih tanggal..."
-                                            className="w-[180px]"
+                                            id="plug_start_input"
+                                            value={plugStartTime}
+                                            onChange={(val) => setPlugStartTime(val)}
+                                            withTime={true}
+                                            placeholder="Pilih tanggal & jam plug in..."
+                                            className="w-full bg-white"
                                         />
-                                        {tempRecords.length > 1 && (
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <div className="flex items-center justify-between">
+                                            <Label htmlFor="plug_out_input" className="text-xs font-semibold text-gray-700">
+                                                Waktu Plug Out
+                                            </Label>
+                                            <button
+                                                type="button"
+                                                onClick={() => setPlugOutTime(getNowLocalISO())}
+                                                className="text-[11px] text-blue-600 underline font-medium hover:text-blue-800"
+                                            >
+                                                Set Sekarang
+                                            </button>
+                                        </div>
+                                        <DateTimePicker
+                                            id="plug_out_input"
+                                            value={plugOutTime}
+                                            onChange={(val) => setPlugOutTime(val)}
+                                            withTime={true}
+                                            placeholder="Pilih tanggal & jam plug out..."
+                                            className="w-full bg-white"
+                                        />
+                                        <p className="text-[11px] text-gray-500 italic">
+                                            Kosongkan jika kontainer masih menyala / belum dicabut.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center justify-between pt-2">
+                                    <div>
+                                        {tempOrder?.start_plug_in && (
                                             <Button
                                                 type="button"
-                                                size="icon"
-                                                variant="destructive"
-                                                className="ml-auto"
-                                                onClick={() => removeDateRecord(rIdx)}
+                                                variant="outline"
+                                                onClick={handleResetPlugTimes}
+                                                disabled={isSubmittingPlug}
+                                                className="h-8 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
                                             >
-                                                <X className="h-4 w-4" />
+                                                Reset Status Plug
                                             </Button>
                                         )}
                                     </div>
-                                    <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto">
-                                        {[...Array(24)].map((_, h) => (
-                                            <div key={h} className="flex items-center gap-2">
-                                                <Label htmlFor={`temp_${rIdx}_${h}`}>{h.toString().padStart(2, '0')}:00</Label>
-                                                <Input
-                                                    id={`temp_${rIdx}_${h}`}
-                                                    type="number"
-                                                    step="0.1"
-                                                    value={rec.temps[h.toString().padStart(2, '0')] || ''}
-                                                    onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                    className="w-24"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <Button
+                                        type="button"
+                                        onClick={handleSavePlugTimes}
+                                        disabled={isSubmittingPlug}
+                                        className="h-8 text-xs bg-gray-900 hover:bg-black text-white font-medium"
+                                    >
+                                        {isSubmittingPlug ? 'Menyimpan...' : 'Simpan Waktu Plug'}
+                                    </Button>
                                 </div>
-                            ))}
-                            <Button type="button" variant="outline" onClick={addDateRecord} className="flex items-center gap-2">
-                                <PlusCircle className="h-4 w-4" /> Tambah Tanggal
-                            </Button>
+                            </div>
+
+                            {/* Section Rekam Suhu Per Jam */}
+                            <div className="space-y-3">
+                                <div className="flex items-center justify-between border-b pb-2">
+                                    <div className="flex items-center gap-2">
+                                        <Thermometer className="h-5 w-5 text-orange-500" />
+                                        <h4 className="text-sm font-bold text-gray-900">Rekam Suhu Per Jam</h4>
+                                    </div>
+                                    <Button type="button" size="sm" variant="outline" onClick={addDateRecord} className="flex items-center gap-1.5 h-8 text-xs">
+                                        <PlusCircle className="h-4 w-4" /> Tambah Tanggal
+                                    </Button>
+                                </div>
+
+                                {tempRecords.map((rec, rIdx) => (
+                                    <div key={rIdx} className="space-y-2 rounded border p-4 bg-white">
+                                        <div className="flex items-center gap-2">
+                                            <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
+                                            <DateTimePicker
+                                                id={`date_${rIdx}`}
+                                                value={rec.date}
+                                                onChange={(val) => updateDate(rIdx, val)}
+                                                withTime={false}
+                                                placeholder="Pilih tanggal..."
+                                                className="w-[180px]"
+                                            />
+                                            {tempRecords.length > 1 && (
+                                                <Button
+                                                    type="button"
+                                                    size="icon"
+                                                    variant="destructive"
+                                                    className="ml-auto"
+                                                    onClick={() => removeDateRecord(rIdx)}
+                                                >
+                                                    <X className="h-4 w-4" />
+                                                </Button>
+                                            )}
+                                        </div>
+                                        <div className="grid max-h-64 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 overflow-y-auto">
+                                            {[...Array(24)].map((_, h) => (
+                                                <div key={h} className="flex items-center gap-1.5">
+                                                    <Label htmlFor={`temp_${rIdx}_${h}`} className="text-xs text-gray-600 w-12">{h.toString().padStart(2, '0')}:00</Label>
+                                                    <Input
+                                                        id={`temp_${rIdx}_${h}`}
+                                                        type="number"
+                                                        step="0.1"
+                                                        value={rec.temps[h.toString().padStart(2, '0')] || ''}
+                                                        onChange={(e) => updateTemp(rIdx, h, e.target.value)}
+                                                        className="w-20 h-8 text-xs"
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <DialogFooter className="gap-2">
                             <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
-                                Batal
+                                Tutup
                             </Button>
-                            <Button onClick={handleSaveTemp}>Simpan</Button>
+                            <Button onClick={handleSaveTemp} className="bg-orange-600 hover:bg-orange-700 text-white">
+                                Simpan Rekam Suhu
+                            </Button>
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>

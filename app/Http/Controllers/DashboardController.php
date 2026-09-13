@@ -14,6 +14,12 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $roleId = $user ? (int)$user->role_id : 3;
+        $roleName = $user && $user->role ? $user->role->name : '';
+
+        // Jika user adalah Checker atau Ops Checker, langsung arahkan ke halaman Orders
+        if ($roleId === 3 || $roleId === 5 || in_array($roleName, ['Checker', 'Ops Checker'])) {
+            return redirect()->route('orders.index');
+        }
 
         $today = Carbon::today();
 

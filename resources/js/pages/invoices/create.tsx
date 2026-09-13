@@ -97,6 +97,7 @@ interface PageProps {
     customers: Customer[];
     invoice_number?: string;
     reuse_invoice?: ReuseInvoiceInfo | null;
+    default_show_period?: boolean;
 }
 
 type AxiosErrorResponse = {
@@ -110,7 +111,7 @@ type AxiosErrorResponse = {
 
 export default function CreateInvoice() {
     const page = usePage<PageProps>();
-    const { customers = [], invoice_number, reuse_invoice } = page.props;
+    const { customers = [], invoice_number, reuse_invoice, default_show_period } = page.props;
 
     // State form dasar
     const today = new Date();
@@ -123,7 +124,9 @@ export default function CreateInvoice() {
     const [periodEnd, setPeriodEnd] = useState(() => {
         return reuse_invoice?.period_end || nextWeek.toISOString().split('T')[0];
     });
-    const [showPeriod, setShowPeriod] = useState(true);
+    const [showPeriod, setShowPeriod] = useState(() => {
+        return default_show_period !== undefined ? Boolean(default_show_period) : true;
+    });
 
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
     const urlCustomerId = urlParams?.get('customer_id');

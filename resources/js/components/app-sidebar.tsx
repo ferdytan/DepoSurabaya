@@ -92,6 +92,8 @@ export function AppSidebar() {
     const roleId = auth?.user?.role_id;
     const roleName = auth?.user?.role_name;
 
+    const isChecker = roleId == 3 || roleId == 5 || roleName === 'Ops Checker' || roleName === 'Checker';
+
     // Tentukan menu yang akan ditampilkan
     let filteredNavItems: NavItem[] = [];
 
@@ -101,9 +103,9 @@ export function AppSidebar() {
     } else if (roleId == 2) {
         // Admin: tanpa User, Customers, Shippers, Products
         filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));
-    } else if (roleId == 3 || roleId == 5 || roleName === 'Ops Checker' || roleName === 'Checker') {
-        // Checker & Ops Checker: hanya Dashboard dan Orders
-        filteredNavItems = baseNavItems.filter((item) => item.href == '/dashboard' || item.href == '/orders');
+    } else if (isChecker) {
+        // Checker & Ops Checker: menu tunggal Orders saja
+        filteredNavItems = baseNavItems.filter((item) => item.href == '/orders');
     } else if (roleId == 4) {
         // Karantina: hanya menu Dashboard (menu Karantina di-hide sementara)
         filteredNavItems = [
@@ -123,7 +125,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href="/dashboard" prefetch>
+                            <Link href={isChecker ? '/orders' : '/dashboard'} prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>

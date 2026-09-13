@@ -9,6 +9,7 @@ use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Order;   // <-- tambahkan baris ini
 use App\Models\ActivityLog;
+use App\Models\Setting;
 
 use NumberToWords\NumberToWords;
 use Illuminate\Support\Facades\Redirect;
@@ -236,6 +237,7 @@ class InvoiceController extends Controller
             'customers' => $customers, // Data customer yang sudah dimodifikasi
             'invoice_number' => $invoiceNumber,
             'reuse_invoice' => $reuseInvoice,
+            'default_show_period' => filter_var(Setting::get('default_invoice_show_period', true), FILTER_VALIDATE_BOOLEAN),
         ]);
     }
     

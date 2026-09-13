@@ -7,11 +7,14 @@ import SettingsLayout from '@/layouts/settings/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
 import {
+    CalendarCheck,
+    CalendarX,
     Check,
     CheckCircle2,
     PanelLeft,
     PanelLeftClose,
     PanelLeftOpen,
+    Receipt,
     TableProperties,
 } from 'lucide-react';
 import React from 'react';
@@ -31,6 +34,7 @@ interface SystemSettingsProps {
     settings: {
         default_pagination: number;
         default_sidebar_state?: 'expanded' | 'collapsed';
+        default_invoice_show_period?: boolean;
     };
     status?: string;
 }
@@ -41,6 +45,7 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
     const { data, setData, put, processing, errors, recentlySuccessful } = useForm({
         default_pagination: settings.default_pagination || 25,
         default_sidebar_state: settings.default_sidebar_state || 'expanded',
+        default_invoice_show_period: settings.default_invoice_show_period ?? true,
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -178,6 +183,80 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                 </button>
                             </div>
                             <InputError message={errors.default_sidebar_state} />
+                        </div>
+
+                        {/* Section 3: Default Invoice Period Checkbox */}
+                        <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-5 sm:p-6 shadow-xs">
+                            <div className="flex items-center gap-2">
+                                <Receipt className="h-4 w-4 text-gray-900" />
+                                <Label className="text-sm font-bold text-gray-900">
+                                    Default Tampilkan Periode pada Buat Invoice
+                                </Label>
+                            </div>
+                            <p className="text-xs text-gray-500">
+                                Tentukan apakah opsi "Tampilkan Periode" saat pembuatan invoice baru secara otomatis dicentang (aktif) atau tidak dicentang (non-aktif).
+                            </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 max-w-2xl">
+                                <button
+                                    type="button"
+                                    onClick={() => setData('default_invoice_show_period', true)}
+                                    className={`flex items-start gap-3.5 p-4 rounded-xl border text-left transition-all cursor-pointer ${
+                                        data.default_invoice_show_period === true
+                                            ? 'border-gray-900 bg-gray-100/70 shadow-xs ring-2 ring-gray-900/10'
+                                            : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                                    }`}
+                                >
+                                    <div className={`p-2.5 rounded-lg shrink-0 ${
+                                        data.default_invoice_show_period === true
+                                            ? 'bg-gray-900 text-white'
+                                            : 'bg-gray-100 text-gray-600'
+                                    }`}>
+                                        <CalendarCheck className="h-5 w-5" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-xs font-bold text-gray-900">Otomatis Dicentang (Default)</span>
+                                            {data.default_invoice_show_period === true && (
+                                                <span className="text-[10px] font-extrabold text-gray-800 bg-gray-200 px-2 py-0.5 rounded-full">Aktif</span>
+                                            )}
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 leading-relaxed">
+                                            Checkbox "Tampilkan Periode" otomatis tercentang saat membuka form pembuatan invoice baru.
+                                        </p>
+                                    </div>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    onClick={() => setData('default_invoice_show_period', false)}
+                                    className={`flex items-start gap-3.5 p-4 rounded-xl border text-left transition-all cursor-pointer ${
+                                        data.default_invoice_show_period === false
+                                            ? 'border-gray-900 bg-gray-100/70 shadow-xs ring-2 ring-gray-900/10'
+                                            : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
+                                    }`}
+                                >
+                                    <div className={`p-2.5 rounded-lg shrink-0 ${
+                                        data.default_invoice_show_period === false
+                                            ? 'bg-gray-900 text-white'
+                                            : 'bg-gray-100 text-gray-600'
+                                    }`}>
+                                        <CalendarX className="h-5 w-5" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-xs font-bold text-gray-900">Tidak Dicentang</span>
+                                            {data.default_invoice_show_period === false && (
+                                                <span className="text-[10px] font-extrabold text-gray-800 bg-gray-200 px-2 py-0.5 rounded-full">Aktif</span>
+                                            )}
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 leading-relaxed">
+                                            Checkbox "Tampilkan Periode" dimulai dalam keadaan tidak dicentang (off). User dapat mencentangnya manual jika diperlukan.
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                            <InputError message={errors.default_invoice_show_period} />
                         </div>
 
                         {/* Submit Button */}

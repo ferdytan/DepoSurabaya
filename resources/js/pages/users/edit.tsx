@@ -1,4 +1,3 @@
-import Heading from '@/components/heading';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +7,7 @@ import AppLayout from '@/layouts/app-layout';
 import UsersLayout from '@/layouts/users/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Edit2, Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
+import { ArrowLeft, Edit2, Eye, EyeOff, Lock, Mail, User, Users } from 'lucide-react';
 import React, { useState } from 'react';
 
 type Role = {
@@ -41,6 +40,9 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function EditUser({ user, roles }: Props) {
     const [showPassword, setShowPassword] = useState(false);
 
+    // Sembunyikan opsi role Ops Checker sementara
+    const availableRoles = roles.filter((r) => r.name.toLowerCase() !== 'ops checker');
+
     const { data, setData, put, processing, errors } = useForm({
         name: user.name,
         username: user.username,
@@ -60,19 +62,33 @@ export default function EditUser({ user, roles }: Props) {
             <Head title={`Edit User: ${user.name}`} />
 
             <UsersLayout>
-                <div className="mx-auto max-w-4xl space-y-6 pb-12">
-                    {/* Header */}
-                    <div>
-                        <Heading
-                            title={`Edit User: ${user.name}`}
-                            description="Ubah profil, email, peran wewenang (role), atau perbarui kata sandi akun pengguna."
-                        />
+                <div className="w-full space-y-6 pb-12">
+                    {/* Header Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div className="flex items-center gap-2.5">
+                                <Users className="h-7 w-7 text-gray-900" />
+                                <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                                    Edit User: {user.name}
+                                </h1>
+                            </div>
+                            <p className="text-sm text-gray-500 mt-1">
+                                Ubah profil, email, peran wewenang (role), atau perbarui kata sandi akun pengguna.
+                            </p>
+                        </div>
+
+                        <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
+                            <Link href="/users">
+                                <ArrowLeft className="h-4 w-4" />
+                                Kembali
+                            </Link>
+                        </Button>
                     </div>
 
                     {/* Form Card */}
-                    <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-xs">
+                    <div className="max-w-4xl rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-xs">
                         <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100 mb-6">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-gray-900">
                                 <Edit2 className="h-5 w-5" />
                             </div>
                             <div>
@@ -163,7 +179,7 @@ export default function EditUser({ user, roles }: Props) {
                                                 <SelectValue placeholder="Pilih Role Pengguna" />
                                             </SelectTrigger>
                                             <SelectContent>
-                                                {roles.map((role) => (
+                                                {availableRoles.map((role) => (
                                                     <SelectItem key={role.id} value={role.id.toString()}>
                                                         <span className="font-semibold">{role.name}</span>
                                                     </SelectItem>
@@ -235,15 +251,15 @@ export default function EditUser({ user, roles }: Props) {
 
                             {/* Actions */}
                             <div className="flex items-center justify-end gap-3 pt-6 border-t border-gray-100">
-                                <Button variant="outline" asChild className="h-9 text-xs font-semibold">
+                                <Button variant="outline" asChild className="h-9 text-xs font-semibold px-4">
                                     <Link href="/users">Batal</Link>
                                 </Button>
                                 <Button
                                     type="submit"
                                     disabled={processing}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs px-6 h-9"
+                                    className="h-9 text-xs px-6 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm"
                                 >
-                                    {processing && <span className="mr-2 animate-spin">●</span>}
+                                    {processing && <span className="mr-1 animate-spin">●</span>}
                                     {processing ? 'Menyimpan Perubahan...' : 'Simpan Perubahan'}
                                 </Button>
                             </div>

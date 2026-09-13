@@ -217,24 +217,29 @@ export default function UsersIndex({ users, filters }: Props) {
             <Head title="Master User" />
 
             <UsersLayout>
-                <div className="mx-auto max-w-6xl space-y-6 pb-12">
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="w-full space-y-6 pb-12">
+                    {/* Header Toolbar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
                             <div className="flex items-center gap-2.5">
-                                <Heading
-                                    title="Daftar Pengguna & Admin"
-                                    description="Kelola akun, hak akses peran (role), dan status verifikasi seluruh staf dan admin operasional."
-                                />
+                                <Users className="h-7 w-7 text-gray-900" />
+                                <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                                    Master User
+                                </h1>
                             </div>
+                            <p className="text-sm text-gray-500 mt-1">
+                                Kelola akun, hak akses peran (role), dan status verifikasi seluruh staf dan admin operasional.
+                            </p>
                         </div>
 
-                        <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold h-9 gap-1.5 shadow-sm">
-                            <Link href="/users/create">
-                                <Plus className="h-4 w-4" />
-                                Tambah User Baru
-                            </Link>
-                        </Button>
+                        <div className="flex items-center gap-2.5 shrink-0">
+                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
+                                <Link href="/users/create">
+                                    <Plus className="h-4 w-4" />
+                                    <span>Tambah User Baru</span>
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
 
                     {/* Flash Messages */}
@@ -285,10 +290,10 @@ export default function UsersIndex({ users, filters }: Props) {
                             <Button
                                 type="button"
                                 onClick={handleSearch}
-                                variant="outline"
                                 size="sm"
-                                className="text-xs h-9 font-semibold"
+                                className="text-xs h-9 font-semibold px-4 bg-gray-900 hover:bg-black text-white gap-1.5 shadow-xs"
                             >
+                                <Search className="h-3.5 w-3.5" />
                                 Cari
                             </Button>
 
@@ -341,7 +346,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                                 {/* Name & Username with Avatar */}
                                                 <TableCell className="py-3.5 pl-5">
                                                     <div className="flex items-center gap-3">
-                                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">
+                                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-800 border border-gray-200">
                                                             {user.name.charAt(0).toUpperCase()}
                                                         </div>
                                                         <div className="min-w-0">
@@ -350,7 +355,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                                                     {user.name}
                                                                 </span>
                                                                 {isSelf && (
-                                                                    <span className="text-[10px] bg-blue-100 text-blue-700 font-bold px-1.5 py-0.2 rounded">
+                                                                    <span className="text-[10px] bg-gray-900 text-white font-bold px-1.5 py-0.5 rounded">
                                                                         Anda
                                                                     </span>
                                                                 )}
@@ -404,7 +409,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                                             size="sm"
                                                             variant="outline"
                                                             asChild
-                                                            className="h-8 px-2.5 text-xs font-semibold gap-1 text-gray-700 hover:text-blue-600 hover:border-blue-300"
+                                                            className="h-8 px-2.5 text-xs font-semibold gap-1 text-gray-700 hover:text-gray-900 hover:border-gray-400"
                                                         >
                                                             <Link href={route('users.edit', user.id)}>
                                                                 <Edit2 className="h-3.5 w-3.5" />
@@ -464,7 +469,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                                 onClick={() => router.get(link.url!, {}, { preserveState: true })}
                                                 className={`h-8 px-3 text-xs font-semibold ${
                                                     link.active
-                                                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                                                        ? 'bg-gray-900 hover:bg-black text-white'
                                                         : 'text-gray-700 hover:bg-gray-100'
                                                 }`}
                                             >
@@ -481,7 +486,7 @@ export default function UsersIndex({ users, filters }: Props) {
                     <AlertDialog open={verifyModalOpen} onOpenChange={setVerifyModalOpen}>
                         <AlertDialogContent className="max-w-md">
                             <AlertDialogHeader>
-                                <div className="flex items-center gap-2.5 text-blue-600 pb-1">
+                                <div className="flex items-center gap-2.5 text-gray-900 pb-1">
                                     <UserCheck className="h-5 w-5" />
                                     <AlertDialogTitle className="text-base">Verifikasi Akun Pengguna</AlertDialogTitle>
                                 </div>
@@ -493,7 +498,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                 <AlertDialogCancel onClick={() => setVerifyModalOpen(false)} className="text-xs">
                                     Batal
                                 </AlertDialogCancel>
-                                <AlertDialogAction onClick={confirmVerify} className="bg-blue-600 hover:bg-blue-700 text-white text-xs">
+                                <AlertDialogAction onClick={confirmVerify} className="bg-gray-900 hover:bg-black text-white text-xs">
                                     Ya, Verifikasi Akun
                                 </AlertDialogAction>
                             </AlertDialogFooter>

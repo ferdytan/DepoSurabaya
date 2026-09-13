@@ -48,7 +48,10 @@ class UserController extends Controller
 
     public function create()
     {
-        $roles = Role::select('id', 'name')->get();
+        // Sembunyikan peran Ops Checker sementara sampai diaktifkan kembali
+        $roles = Role::select('id', 'name')
+            ->whereRaw('LOWER(name) != ?', ['ops checker'])
+            ->get();
 
         return Inertia::render('users/create', compact('roles'));
     }
@@ -97,7 +100,10 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        $roles = Role::select('id', 'name')->get();
+        // Sembunyikan peran Ops Checker sementara sampai diaktifkan kembali
+        $roles = Role::select('id', 'name')
+            ->whereRaw('LOWER(name) != ?', ['ops checker'])
+            ->get();
 
         return Inertia::render('users/edit', [
             'user' => $user->only(['id', 'name', 'username', 'email', 'role_id']),

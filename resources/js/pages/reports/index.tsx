@@ -240,7 +240,6 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                 <td>${formatDate(item.exit_date)}</td>
                 <td>${item.commodity || '-'}</td>
                 <td style="text-align: center;">${item.is_invoiced ? `Sudah (${item.invoice_number || 'Inv'})` : 'Belum'}</td>
-                <td style="text-align: center;">${item.is_excluded ? 'Ya' : 'Tidak'}</td>
             </tr>
         `
             )
@@ -384,7 +383,6 @@ export default function ReportIndex({ reports, kpi, customers, shippers, service
                             <th>Tgl Keluar</th>
                             <th>Komoditi</th>
                             <th style="text-align: center;">Invoice</th>
-                            <th style="text-align: center;">Exclude</th>
                         </tr>
                     </thead>
 

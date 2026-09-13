@@ -167,19 +167,36 @@ class InvoiceController extends Controller
             $invoicedOrderItemIds = array_diff($invoicedOrderItemIds, $reuseItemIds);
         }
 
+        @ini_set('memory_limit', '512M');
+
         // Ambil semua customer dengan order dan order_items yang BELUM dibuatkan invoice
-        $customers = Customer::with([
-            'orders' => function ($q) {
-                $q->latest();
-            },
-            'orders.order_items' => function ($q) use ($invoicedOrderItemIds) {
+        $customers = Customer::select('id', 'name')
+            ->whereHas('orders.order_items', function ($q) use ($invoicedOrderItemIds) {
                 if (!empty($invoicedOrderItemIds)) {
                     $q->whereNotIn('id', $invoicedOrderItemIds);
                 }
-            },
-            'orders.order_items.product',
-            'orders.order_items.additionalProducts'
-        ])->get();
+            })
+            ->with([
+                'orders' => function ($q) use ($invoicedOrderItemIds) {
+                    $q->select('id', 'order_id', 'customer_id')
+                        ->whereHas('order_items', function ($iq) use ($invoicedOrderItemIds) {
+                            if (!empty($invoicedOrderItemIds)) {
+                                $iq->whereNotIn('id', $invoicedOrderItemIds);
+                            }
+                        })
+                        ->latest();
+                },
+                'orders.order_items' => function ($q) use ($invoicedOrderItemIds) {
+                    $q->select('id', 'order_id', 'product_id', 'container_number', 'price_type', 'price_value', 'entry_date', 'exit_date', 'start_plug_in', 'plug_out', 'plug_duration_minutes', 'total_shifts');
+                    if (!empty($invoicedOrderItemIds)) {
+                        $q->whereNotIn('id', $invoicedOrderItemIds);
+                    }
+                },
+                'orders.order_items.product:id,service_type,requires_temperature',
+                'orders.order_items.additionalProducts' => function ($q) {
+                    $q->select('products.id', 'service_type', 'requires_temperature');
+                }
+            ])->get();
 
         // Filter agar order yang semua kontainernya sudah di-invoice tidak muncul di dropdown
         $customers->each(function ($customer) {

@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        @ini_set('memory_limit', '512M');
+
         Password::defaults(function () {
             return Password::min(6); // Ubah menjadi minimal 6 karakter
         });

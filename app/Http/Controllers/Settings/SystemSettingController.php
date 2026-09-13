@@ -29,6 +29,8 @@ class SystemSettingController extends Controller
                 'default_pagination' => (int) Setting::get('default_pagination', 25),
                 'login_image_url' => (string) Setting::get('login_image_url', self::DEFAULT_LOGIN_IMAGE),
                 'default_sidebar_state' => (string) Setting::get('default_sidebar_state', 'expanded'),
+                'shift_duration_hours' => (int) Setting::get('shift_duration_hours', 8),
+                'shift_compensation_minutes' => (int) Setting::get('shift_compensation_minutes', 45),
             ],
             'default_login_image' => self::DEFAULT_LOGIN_IMAGE,
             'status' => session('status'),
@@ -49,16 +51,26 @@ class SystemSettingController extends Controller
             'default_pagination' => ['required', 'integer', 'in:10,25,50,100'],
             'login_image_url' => ['required', 'url', 'max:1000'],
             'default_sidebar_state' => ['required', 'string', 'in:expanded,collapsed'],
+            'shift_duration_hours' => ['required', 'integer', 'min:1', 'max:24'],
+            'shift_compensation_minutes' => ['required', 'integer', 'min:0', 'max:180'],
         ], [
             'default_pagination.in' => 'Jumlah baris per halaman harus 10, 25, 50, atau 100.',
             'login_image_url.required' => 'URL gambar login wajib diisi.',
             'login_image_url.url' => 'Format URL gambar login tidak valid.',
             'default_sidebar_state.in' => 'Pilihan status navbar harus expanded atau collapsed.',
+            'shift_duration_hours.required' => 'Durasi kerja per shift wajib diisi.',
+            'shift_duration_hours.min' => 'Durasi kerja per shift minimal 1 jam.',
+            'shift_duration_hours.max' => 'Durasi kerja per shift maksimal 24 jam.',
+            'shift_compensation_minutes.required' => 'Waktu kompensasi/toleransi wajib diisi.',
+            'shift_compensation_minutes.min' => 'Waktu kompensasi/toleransi minimal 0 menit.',
+            'shift_compensation_minutes.max' => 'Waktu kompensasi/toleransi maksimal 180 menit.',
         ]);
 
         Setting::set('default_pagination', $validated['default_pagination']);
         Setting::set('login_image_url', $validated['login_image_url']);
         Setting::set('default_sidebar_state', $validated['default_sidebar_state']);
+        Setting::set('shift_duration_hours', $validated['shift_duration_hours']);
+        Setting::set('shift_compensation_minutes', $validated['shift_compensation_minutes']);
 
         $cookie = cookie(
             'sidebar_state',

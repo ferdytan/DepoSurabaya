@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Carbon\Carbon;
+
 class OrderItem extends Model
 {
     use HasFactory;
@@ -19,11 +21,59 @@ class OrderItem extends Model
         'commodity', 'country', 'vessel',
         'price_type', 'price_value', 'delete_reason',
         'is_excluded_from_report',
+        'start_plug_in', 'plug_out', 'plug_duration_minutes', 'total_shifts',
     ];
 
     protected $casts = [
         'is_excluded_from_report' => 'boolean',
+        'start_plug_in' => 'datetime',
+        'plug_out' => 'datetime',
+        'plug_duration_minutes' => 'integer',
+        'total_shifts' => 'integer',
     ];
+
+    /**
+     * Hitung durasi dan jumlah shift berdasarkan konfigurasi dinamis.
+     * 1 Shift = (shift_duration_hours * 60) + shift_compensation_minutes (default: 8 jam 45 mnt = 525 mnt)
+     * Formula: Total Shift = CEILING(Durasi / 525 menit)
+     */
+    public static function calculateShifts(?Carbon $start, ?Carbon $out): array
+    {
+        if (!$start || !$out) {
+            return [
+                'duration_minutes' => null,
+                'total_shifts' => 0,
+                'is_valid' => true,
+            ];
+        }
+
+        if ($out->lt($start)) {
+            return [
+                'duration_minutes' => null,
+                'total_shifts' => 0,
+                'is_valid' => false,
+                'error' => 'Waktu Plug Out tidak boleh lebih awal dari Start Plug In.',
+            ];
+        }
+
+        $durationMinutes = (int) $start->diffInMinutes($out);
+
+        $shiftHours = (int) Setting::get('shift_duration_hours', 8);
+        $compensationMinutes = (int) Setting::get('shift_compensation_minutes', 45);
+        $shiftMinutes = ($shiftHours * 60) + $compensationMinutes;
+        if ($shiftMinutes <= 0) {
+            $shiftMinutes = 525;
+        }
+
+        $totalShifts = $durationMinutes > 0 ? (int) ceil($durationMinutes / $shiftMinutes) : 1;
+
+        return [
+            'duration_minutes' => $durationMinutes,
+            'total_shifts' => $totalShifts,
+            'is_valid' => true,
+            'shift_minutes' => $shiftMinutes,
+        ];
+    }
 
      protected $dates = [
         'entry_date',

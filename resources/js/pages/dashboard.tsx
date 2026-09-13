@@ -50,6 +50,10 @@ interface ContainerItem {
     entry_date?: string | null;
     eir_date?: string | null;
     exit_date?: string | null;
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
     order?: {
         id: number;
         order_id: string;
@@ -1578,6 +1582,94 @@ function CheckerMobileApp({
                                                 </button>
                                             </div>
                                         )}
+
+                                        {/* Plug-in Temperature Status & Shift Box for Reefer */}
+                                        {isReefer && (
+                                            <div className="mt-2 rounded-xl border border-slate-200 bg-slate-50/75 p-3 space-y-2">
+                                                <div className="flex items-center justify-between">
+                                                    <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800">
+                                                        <Zap className="h-4 w-4 text-slate-900" />
+                                                        <span>Status Plug-in Suhu</span>
+                                                    </div>
+                                                    {item.total_shifts !== null && item.total_shifts !== undefined && item.total_shifts > 0 ? (
+                                                        <span className="rounded-full bg-slate-900 px-2 py-0.5 text-[10px] font-extrabold text-white">
+                                                            {item.total_shifts} Shift
+                                                        </span>
+                                                    ) : item.start_plug_in && !item.plug_out ? (
+                                                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800">
+                                                            <span className="relative flex h-1.5 w-1.5">
+                                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-600"></span>
+                                                            </span>
+                                                            Plugged In
+                                                        </span>
+                                                    ) : (
+                                                        <span className="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-bold text-slate-600">
+                                                            Belum Plug In
+                                                        </span>
+                                                    )}
+                                                </div>
+
+                                                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                                                    <div>
+                                                        <span className="text-slate-400 block text-[10px]">Start Plug In:</span>
+                                                        <span className="font-semibold text-slate-700">
+                                                            {item.start_plug_in ? formatDate(item.start_plug_in) : '-'}
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span className="text-slate-400 block text-[10px]">Plug Out:</span>
+                                                        <span className="font-semibold text-slate-700">
+                                                            {item.plug_out ? formatDate(item.plug_out) : (item.start_plug_in ? 'In Progress' : '-')}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                {item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined && (
+                                                    <div className="text-[11px] text-slate-600 font-medium pt-1 border-t border-slate-200/60 flex items-center justify-between">
+                                                        <span>Durasi: {Math.floor(item.plug_duration_minutes / 60)} Jam {item.plug_duration_minutes % 60} Menit</span>
+                                                        <span className="font-bold text-slate-900">{item.total_shifts} Shift (525 mnt/shift)</span>
+                                                    </div>
+                                                )}
+
+                                                {/* Quick Action Buttons */}
+                                                <div className="pt-1 flex items-center gap-2">
+                                                    {!item.start_plug_in ? (
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => {
+                                                                router.post(`/orders/item/${item.id}/plug-in`, {}, { preserveScroll: true });
+                                                            }}
+                                                            className="flex-1 flex items-center justify-center gap-1.5 h-8 rounded-lg bg-gray-900 hover:bg-black text-white font-bold text-xs shadow-xs transition active:scale-98"
+                                                        >
+                                                            <Zap className="h-3.5 w-3.5" />
+                                                            Plug In Sekarang
+                                                        </button>
+                                                    ) : !item.plug_out ? (
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => {
+                                                                router.post(`/orders/item/${item.id}/plug-out`, {}, { preserveScroll: true });
+                                                            }}
+                                                            className="flex-1 flex items-center justify-center gap-1.5 h-8 rounded-lg bg-gray-900 hover:bg-black text-white font-bold text-xs shadow-xs transition active:scale-98"
+                                                        >
+                                                            <Power className="h-3.5 w-3.5" />
+                                                            Plug Out Sekarang
+                                                        </button>
+                                                    ) : (
+                                                        <div className="flex-1 flex items-center justify-between text-[11px] text-slate-500">
+                                                            <span>Plug Out Selesai ({item.total_shifts} Shift)</span>
+                                                            <a
+                                                                href="/temperature-records"
+                                                                className="text-slate-900 font-bold hover:underline"
+                                                            >
+                                                                Detail Suhu →
+                                                            </a>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Action Buttons Bar */}
@@ -2642,7 +2734,51 @@ function CheckerSimpleDashboard({
                                         <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
                                             <td className="px-4 py-3 text-sm font-medium text-slate-500">{i + 1}</td>
                                             <td className="px-4 py-3 text-sm font-semibold text-slate-900">
-                                                {row.container_number}
+                                                <div className="flex flex-col gap-1">
+                                                    <div className="flex items-center gap-1.5">
+                                                        <span>{row.container_number}</span>
+                                                        {isReeferItem(row) && (
+                                                            <span className="inline-flex items-center gap-0.5 rounded px-1.5 py-0.2 text-[10px] font-bold bg-cyan-50 text-cyan-800 border border-cyan-200">
+                                                                <Thermometer className="h-3 w-3" />
+                                                                REEFER
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    {isReeferItem(row) && (
+                                                        <div className="flex items-center gap-1.5 pt-0.5">
+                                                            {!row.start_plug_in ? (
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={() => router.post(`/orders/item/${row.id}/plug-in`, {}, { preserveScroll: true })}
+                                                                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-gray-900 hover:bg-black text-white"
+                                                                    title="Catat Start Plug In Sekarang"
+                                                                >
+                                                                    <Zap className="h-2.5 w-2.5" />
+                                                                    Plug In
+                                                                </button>
+                                                            ) : !row.plug_out ? (
+                                                                <div className="flex items-center gap-1">
+                                                                    <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                                                        In: {formatDate(row.start_plug_in)}
+                                                                    </span>
+                                                                    <button
+                                                                        type="button"
+                                                                        onClick={() => router.post(`/orders/item/${row.id}/plug-out`, {}, { preserveScroll: true })}
+                                                                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-gray-900 hover:bg-black text-white"
+                                                                        title="Catat Plug Out Sekarang"
+                                                                    >
+                                                                        <Power className="h-2.5 w-2.5" />
+                                                                        Plug Out
+                                                                    </button>
+                                                                </div>
+                                                            ) : (
+                                                                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-900 text-white">
+                                                                    {row.total_shifts} Shift
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </td>
                                             <td className="px-4 py-3 text-sm text-slate-800 font-normal">
                                                 {row.order?.customer?.name || '-'}

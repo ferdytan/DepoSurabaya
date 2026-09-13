@@ -20,6 +20,7 @@ export interface MasterProduct {
     custom_price_40ft?: number | null;
     custom_price_45ft?: number | null;
     custom_global_price?: number | null;
+    requires_temperature?: number | boolean | null;
 }
 
 export interface ActivityLogItem {
@@ -55,6 +56,10 @@ export interface EditableContainerItem {
     container_number: string;
     price_type: string;
     price_value: number;
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
     additional_products: EditableProduct[];
 }
 
@@ -63,12 +68,23 @@ interface OrderItem {
     container_number: string;
     price_value: number;
     price_type?: string;
-    product?: { service_type?: string };
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
+    product?: { service_type?: string; requires_temperature?: number | boolean | null };
     additional_products?: Array<{
         id: number;
         service_type?: string;
+        requires_temperature?: number | boolean | null;
         pivot?: { price_value?: number; quantity?: number };
     }>;
+}
+
+function isPlugService(serviceType?: string, requiresTemperature?: number | boolean | null): boolean {
+    if (requiresTemperature === 1 || requiresTemperature === true) return true;
+    const st = (serviceType || '').toLowerCase();
+    return st.includes('plug') || st.includes('reefer') || st.includes('suhu');
 }
 
 interface Order {
@@ -109,10 +125,15 @@ interface InvoicePayload {
         }>;
         orderItem?: {
             id: number;
-            product?: { service_type?: string };
+            start_plug_in?: string | null;
+            plug_out?: string | null;
+            plug_duration_minutes?: number | null;
+            total_shifts?: number | null;
+            product?: { service_type?: string; requires_temperature?: number | boolean | null };
             additional_products?: Array<{
                 id: number;
                 service_type?: string;
+                requires_temperature?: number | boolean | null;
                 pivot?: { price_value?: number; quantity?: number };
             }>;
         };
@@ -173,6 +194,10 @@ export default function EditInvoice() {
                 container_number: item.container_number,
                 price_type: item.price_type || '20ft',
                 price_value: Number(item.price_value || 0),
+                start_plug_in: item.orderItem?.start_plug_in,
+                plug_out: item.orderItem?.plug_out,
+                plug_duration_minutes: item.orderItem?.plug_duration_minutes,
+                total_shifts: item.orderItem?.total_shifts,
                 additional_products: formattedAdds,
             };
         });
@@ -217,8 +242,12 @@ export default function EditInvoice() {
         return 0;
     };
 
-    // Saat memilih produk pada dropdown "+ Tambah Jenis Produk", otomatis isi harganya
-    const handleProductSelectChange = (prodIdStr: string, priceType: string) => {
+    // Saat memilih produk pada dropdown "+ Tambah Jenis Produk", otomatis isi harganya & auto shift jika plug
+    const handleProductSelectChange = (
+        prodIdStr: string,
+        priceType: string,
+        targetItem?: EditableContainerItem,
+    ) => {
         setSelectedProductId(prodIdStr);
         if (!prodIdStr) {
             setCustomProductPrice('');
@@ -228,6 +257,10 @@ export default function EditInvoice() {
         if (prod) {
             const price = resolveProductDefaultPrice(prod, priceType);
             setCustomProductPrice(price > 0 ? String(price) : '0');
+            const isPlug = isPlugService(prod.service_type, prod.requires_temperature);
+            if (isPlug && targetItem?.total_shifts && targetItem.total_shifts > 0) {
+                setCustomProductQty(targetItem.total_shifts);
+            }
         }
     };
 
@@ -346,12 +379,20 @@ export default function EditInvoice() {
     const handleAddNewOrderItem = (orderItem: OrderItem) => {
         setNewItemIds((prev) => new Set([...prev, orderItem.id]));
 
-        const formattedAdds: EditableProduct[] = (orderItem.additional_products || []).map((ap) => ({
-            id: ap.id,
-            service_type: ap.service_type || 'Produk',
-            price_value: Number(ap.pivot?.price_value ?? 0),
-            quantity: Number(ap.pivot?.quantity ?? 1),
-        }));
+        const formattedAdds: EditableProduct[] = (orderItem.additional_products || []).map((ap) => {
+            const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+            const defaultQty =
+                isPlug && orderItem.total_shifts && orderItem.total_shifts > 0
+                    ? orderItem.total_shifts
+                    : Number(ap.pivot?.quantity ?? 1);
+
+            return {
+                id: ap.id,
+                service_type: ap.service_type || 'Produk',
+                price_value: Number(ap.pivot?.price_value ?? 0),
+                quantity: defaultQty,
+            };
+        });
 
         const newEntry: EditableContainerItem = {
             id: -orderItem.id, // ID negatif sementara untuk item baru
@@ -359,6 +400,10 @@ export default function EditInvoice() {
             container_number: orderItem.container_number,
             price_type: orderItem.price_type || '20ft',
             price_value: Number(orderItem.price_value || 0),
+            start_plug_in: orderItem.start_plug_in,
+            plug_out: orderItem.plug_out,
+            plug_duration_minutes: orderItem.plug_duration_minutes,
+            total_shifts: orderItem.total_shifts,
             additional_products: formattedAdds,
         };
 
@@ -478,12 +523,12 @@ export default function EditInvoice() {
 
                     {/* Banner Pemberitahuan jika di-reuse */}
                     {reuseLog && (
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border border-blue-200 bg-blue-50/80 p-4 text-blue-900 shadow-xs">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-lg border border-gray-200 bg-gray-50/90 p-4 text-gray-900 shadow-xs">
                             <div className="flex items-start gap-3">
-                                <Info className="h-5 w-5 mt-0.5 text-blue-600 flex-shrink-0" />
+                                <Info className="h-5 w-5 mt-0.5 text-gray-700 flex-shrink-0" />
                                 <div className="text-sm">
                                     <p className="font-semibold">Invoice ini digunakan kembali (Reuse)</p>
-                                    <p className="text-blue-700 mt-0.5">
+                                    <p className="text-gray-600 mt-0.5">
                                         Nomor invoice ini di-reuse oleh <strong>{reuseLog.new_values?.reused_by || reuseLog.user?.name || 'Admin'}</strong> pada{' '}
                                         {new Date(reuseLog.created_at).toLocaleString('id-ID')}. Anda dapat menyesuaikan kuantitas/produk di bawah ini, atau mengganti Customer dan Nomor Order.
                                     </p>
@@ -491,9 +536,9 @@ export default function EditInvoice() {
                             </div>
                             <Link
                                 href={`/invoices/create?reuse_id=${invoice.id}`}
-                                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-blue-300 bg-white text-blue-700 hover:bg-blue-50 text-xs font-semibold shadow-xs transition-colors self-start sm:self-center"
+                                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 text-xs font-semibold shadow-xs transition-colors self-start sm:self-center"
                             >
-                                <RotateCcw className="h-3.5 w-3.5 text-blue-600" />
+                                <RotateCcw className="h-3.5 w-3.5 text-gray-700" />
                                 Ganti Customer & Order
                             </Link>
                         </div>
@@ -535,7 +580,7 @@ export default function EditInvoice() {
                                         id="showPeriod"
                                         checked={form.show_period}
                                         onChange={(e) => setForm({ ...form, show_period: e.target.checked })}
-                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                        className="h-4 w-4 rounded border-gray-300 accent-gray-900 text-gray-900 focus:ring-gray-900"
                                     />
                                     <label htmlFor="showPeriod" className="text-sm font-medium text-gray-800 cursor-pointer">
                                         Tampilkan Periode pada Cetakan Invoice
@@ -607,7 +652,7 @@ export default function EditInvoice() {
                                                     <span className="text-base font-bold text-gray-900 tracking-wide">
                                                         {item.container_number}
                                                     </span>
-                                                    <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                    <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800 ring-1 ring-inset ring-gray-200">
                                                         {item.price_type || '20ft'}
                                                     </span>
                                                 </div>
@@ -619,7 +664,7 @@ export default function EditInvoice() {
                                             <div className="flex items-center gap-3">
                                                 <div className="text-right">
                                                     <div className="text-xs text-gray-500">Subtotal Kontainer</div>
-                                                    <div className="text-base font-bold text-blue-700">{formatRupiah(containerTotal)}</div>
+                                                    <div className="text-base font-bold text-gray-900">{formatRupiah(containerTotal)}</div>
                                                 </div>
                                                 <Button
                                                     type="button"
@@ -651,7 +696,7 @@ export default function EditInvoice() {
                                                             setCustomProductPrice('');
                                                             setCustomProductQty(1);
                                                         }}
-                                                        className="h-8 text-xs font-medium text-blue-600 border-blue-200 hover:bg-blue-50"
+                                                        className="h-8 text-xs font-medium text-gray-900 border-gray-300 hover:bg-gray-50"
                                                     >
                                                         <Plus className="h-3.5 w-3.5 mr-1" />
                                                         Tambah Jenis Produk
@@ -670,7 +715,21 @@ export default function EditInvoice() {
                                                                 className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 text-sm"
                                                             >
                                                                 <div className="flex-1 min-w-[180px]">
-                                                                    <div className="font-semibold text-gray-800">{prod.service_type}</div>
+                                                                    <div className="flex items-center gap-2">
+                                                                        <div className="font-semibold text-gray-800">{prod.service_type}</div>
+                                                                        {isPlugService(prod.service_type) && item.total_shifts && item.total_shifts > 0 && (
+                                                                            <span
+                                                                                className="inline-flex items-center gap-1 rounded bg-gray-100 text-gray-800 text-[10px] font-semibold px-1.5 py-0.5 border border-gray-200"
+                                                                                title={
+                                                                                    item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined
+                                                                                        ? `Durasi: ${Math.floor(item.plug_duration_minutes / 60)} Jam ${item.plug_duration_minutes % 60} Menit`
+                                                                                        : undefined
+                                                                                }
+                                                                            >
+                                                                                Auto: {item.total_shifts} Shift
+                                                                            </span>
+                                                                        )}
+                                                                    </div>
                                                                     <div className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
                                                                         <span>Harga satuan:</span>
                                                                         <input
@@ -680,7 +739,7 @@ export default function EditInvoice() {
                                                                             onChange={(e) =>
                                                                                 handleUpdatePrice(item.id, prod.id, Number(e.target.value))
                                                                             }
-                                                                            className="w-24 rounded border border-gray-300 px-1.5 py-0.5 text-xs text-gray-700 focus:border-blue-500 focus:outline-none"
+                                                                            className="w-24 rounded border border-gray-300 px-1.5 py-0.5 text-xs text-gray-700 focus:border-gray-900 focus:outline-none"
                                                                         />
                                                                     </div>
                                                                 </div>
@@ -743,12 +802,12 @@ export default function EditInvoice() {
                                                 </div>
                                             )}
 
-                                            {/* Panel Form Inline "+ Tambah Jenis Produk" */}
-                                            {isAdding && (
-                                                <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4 space-y-3">
+                                            {/* Sub-form: Tambah Jenis Produk Baru ke Kontainer Ini */}
+                                            {addingProductToItemId === item.id && (
+                                                <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-3 space-y-3">
                                                     <div className="flex items-center justify-between">
-                                                        <span className="text-xs font-bold text-blue-900 uppercase">
-                                                            Tambah Jenis Produk ke {item.container_number}
+                                                        <span className="text-xs font-bold text-gray-800">
+                                                            Tambah Jenis Produk ke Kontainer {item.container_number}
                                                         </span>
                                                         <button
                                                             type="button"
@@ -765,8 +824,8 @@ export default function EditInvoice() {
                                                             <Label className="text-xs text-gray-700">Pilih Produk</Label>
                                                             <select
                                                                 value={selectedProductId}
-                                                                onChange={(e) => handleProductSelectChange(e.target.value, item.price_type)}
-                                                                className="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-800 focus:border-blue-500 focus:outline-none"
+                                                                onChange={(e) => handleProductSelectChange(e.target.value, item.price_type, item)}
+                                                                className="w-full rounded-md border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-800 focus:border-gray-900 focus:outline-none"
                                                             >
                                                                 <option value="">-- Pilih Jenis Produk --</option>
                                                                 {allProducts.map((p) => (
@@ -817,7 +876,7 @@ export default function EditInvoice() {
                                                             type="button"
                                                             size="sm"
                                                             onClick={() => handleConfirmAddProduct(item.id)}
-                                                            className="h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white"
+                                                            className="h-8 text-xs bg-gray-900 hover:bg-black text-white"
                                                         >
                                                             <Plus className="h-3.5 w-3.5 mr-1" />
                                                             Tambahkan Produk
@@ -901,7 +960,7 @@ export default function EditInvoice() {
                                                         variant="outline"
                                                         size="sm"
                                                         onClick={() => handleAddNewOrderItem(oi)}
-                                                        className="text-xs font-medium text-blue-600 border-blue-200 hover:bg-blue-50"
+                                                        className="text-xs font-medium text-gray-900 border-gray-300 hover:bg-gray-50"
                                                     >
                                                         <Plus className="h-3.5 w-3.5 mr-1" />
                                                         Sertakan ke Invoice
@@ -967,12 +1026,12 @@ export default function EditInvoice() {
                                 </div>
                             </div>
 
-                            <div className="rounded-lg bg-blue-50 border border-blue-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div className="rounded-lg bg-gray-900 border border-gray-900 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-white shadow-xs">
                                 <div>
-                                    <div className="text-xs font-bold uppercase tracking-wider text-blue-900">Grand Total Akhir</div>
-                                    <div className="text-xs text-blue-700">Subtotal - Diskon + PPN (11%) + Materai</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-gray-300">Grand Total Akhir</div>
+                                    <div className="text-xs text-gray-400">Subtotal - Diskon + PPN (11%) + Materai</div>
                                 </div>
-                                <div className="text-2xl font-extrabold text-blue-900">
+                                <div className="text-2xl font-extrabold text-white">
                                     {formatRupiah(totals.grandTotal)}
                                 </div>
                             </div>
@@ -1005,7 +1064,7 @@ export default function EditInvoice() {
                                 {activityLogs.map((log) => {
                                     const actionLabels: Record<string, { label: string; badge: string }> = {
                                         create_invoice: { label: 'Dibuat', badge: 'bg-green-100 text-green-800' },
-                                        update_invoice: { label: 'Diperbarui', badge: 'bg-blue-100 text-blue-800' },
+                                        update_invoice: { label: 'Diperbarui', badge: 'bg-gray-100 text-gray-800' },
                                         delete_invoice: { label: 'Dihapus', badge: 'bg-red-100 text-red-800' },
                                         restore_invoice: { label: 'Dipulihkan', badge: 'bg-yellow-100 text-yellow-800' },
                                         reuse_invoice: { label: 'Di-reuse', badge: 'bg-emerald-100 text-emerald-800' },

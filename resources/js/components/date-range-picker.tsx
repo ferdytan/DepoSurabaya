@@ -248,12 +248,12 @@ export function DateRangePicker({
                 }}
                 className={`flex items-center justify-between gap-2 h-9 px-3 text-xs bg-white border rounded-md shadow-xs cursor-pointer select-none transition-colors ${
                     isOpen
-                        ? 'border-blue-600 ring-2 ring-blue-500/20 shadow-sm'
+                        ? 'border-gray-900 ring-2 ring-gray-900/10 shadow-sm'
                         : 'border-input hover:border-gray-400 hover:bg-gray-50/50'
                 }`}
             >
                 <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap min-w-0">
-                    <CalendarIcon className="h-4 w-4 text-blue-600 shrink-0" />
+                    <CalendarIcon className="h-4 w-4 text-gray-700 shrink-0" />
                     {startDate && endDate ? (
                         <span className="font-medium text-gray-800 truncate">
                             {formatDisplay(startDate)} &ndash; {formatDisplay(endDate)}
@@ -278,7 +278,7 @@ export function DateRangePicker({
                             <X className="h-3.5 w-3.5" />
                         </button>
                     ) : (
-                        <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue-600' : ''}`} />
+                        <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180 text-gray-900' : ''}`} />
                     )}
                 </div>
             </div>
@@ -286,12 +286,12 @@ export function DateRangePicker({
             {/* Dropdown Calendar Panel */}
             {isOpen && (
                 <div
-                    className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[540px] animate-in fade-in zoom-in-95 duration-150 ${
-                        align === 'right' ? 'right-0' : 'left-0 sm:right-auto'
+                    className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 sm:p-4 w-[310px] sm:w-[580px] animate-in fade-in zoom-in-95 duration-150 ${
+                        align === 'right' ? 'right-0' : 'left-0'
                     }`}
                 >
                     <div className="flex flex-col sm:flex-row gap-4">
-                        {/* Sidebar Presets */}
+                        {/* Quick Presets Sidebar */}
                         <div className="sm:w-36 border-b sm:border-b-0 sm:border-r border-gray-100 pb-3 sm:pb-0 sm:pr-3 flex flex-col gap-1 shrink-0">
                             <span className="text-[10px] font-bold tracking-wider text-gray-400 uppercase px-2 mb-1">
                                 Shortcut Cepat
@@ -299,42 +299,42 @@ export function DateRangePicker({
                             <button
                                 type="button"
                                 onClick={() => applyPreset('today')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 Hari Ini
                             </button>
                             <button
                                 type="button"
                                 onClick={() => applyPreset('yesterday')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 Kemarin
                             </button>
                             <button
                                 type="button"
                                 onClick={() => applyPreset('last7')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 7 Hari Terakhir
                             </button>
                             <button
                                 type="button"
                                 onClick={() => applyPreset('last30')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 30 Hari Terakhir
                             </button>
                             <button
                                 type="button"
                                 onClick={() => applyPreset('thisMonth')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 Bulan Ini
                             </button>
                             <button
                                 type="button"
                                 onClick={() => applyPreset('lastMonth')}
-                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium cursor-pointer"
+                                className="text-left px-2.5 py-1.5 text-xs rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition font-medium cursor-pointer"
                             >
                                 Bulan Lalu
                             </button>
@@ -429,9 +429,9 @@ export function DateRangePicker({
                                             }}
                                             onClick={() => handleDateClick(ymd)}
                                             className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors relative ${
-                                                inRange ? 'bg-blue-50 text-blue-900' : ''
-                                            } ${isStart ? 'rounded-l-lg bg-blue-600 text-white font-bold' : ''} ${
-                                                isEnd ? 'rounded-r-lg bg-blue-600 text-white font-bold' : ''
+                                                inRange ? 'bg-gray-100 text-gray-900' : ''
+                                            } ${isStart ? 'rounded-l-lg bg-gray-900 text-white font-bold' : ''} ${
+                                                isEnd ? 'rounded-r-lg bg-gray-900 text-white font-bold' : ''
                                             } ${
                                                 !isStart && !isEnd && !inRange
                                                     ? 'hover:bg-gray-100 text-gray-700 rounded-lg'
@@ -441,7 +441,7 @@ export function DateRangePicker({
                                             <span
                                                 className={`flex items-center justify-center w-7 h-7 rounded-full ${
                                                     today && !isStart && !isEnd
-                                                        ? 'border border-blue-500 font-bold text-blue-600'
+                                                        ? 'border border-gray-900 font-bold text-gray-900'
                                                         : ''
                                                 }`}
                                             >
@@ -483,7 +483,7 @@ export function DateRangePicker({
                                 type="button"
                                 onClick={() => handleApply()}
                                 disabled={!tempStart}
-                                className="px-3.5 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
                             >
                                 <Check className="h-3.5 w-3.5" />
                                 Terapkan

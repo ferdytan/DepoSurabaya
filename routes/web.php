@@ -138,6 +138,11 @@ Route::middleware(['auth'])->group(function () {
 
         Route::patch('/orders/{id}/temperature', [OrderController::class, 'updateTemperature'])->name('orders.update-temperature');
 
+        // Plug In / Plug Out Actions & Timestamps
+        Route::post('/orders/item/{orderItem}/plug-in', [TemperatureRecordController::class, 'recordPlugIn'])->name('orders.items.plug-in');
+        Route::post('/orders/item/{orderItem}/plug-out', [TemperatureRecordController::class, 'recordPlugOut'])->name('orders.items.plug-out');
+        Route::post('/orders/item/{orderItem}/plug-times', [TemperatureRecordController::class, 'updatePlugTimes'])->name('orders.items.plug-times');
+        Route::post('/orders/item/{orderItem}/plug-reset', [TemperatureRecordController::class, 'resetPlug'])->name('orders.items.plug-reset');
 
     /* ---------- TEMPERATURE RECORDS ---------- */
     Route::get('/temperature-records', [TemperatureRecordController::class, 'index'])

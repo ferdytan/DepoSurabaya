@@ -525,7 +525,7 @@ class InvoiceController extends Controller
         $customerRates = $invoice->customer ? $invoice->customer->products->keyBy('id') : collect();
 
         // Master produk untuk dropdown "+ Tambah Jenis Produk"
-        $allProducts = Product::select('id', 'service_type', 'description')
+        $allProducts = Product::select('id', 'service_type', 'description', 'requires_temperature')
             ->orderBy('service_type')
             ->get()
             ->map(function ($p) use ($customerRates) {
@@ -534,6 +534,7 @@ class InvoiceController extends Controller
                     'id' => $p->id,
                     'service_type' => $p->service_type,
                     'description' => $p->description,
+                    'requires_temperature' => (bool) $p->requires_temperature,
                     'custom_price_20ft' => $custP ? (int) $custP->pivot->custom_price_20ft : null,
                     'custom_price_40ft' => $custP ? (int) $custP->pivot->custom_price_40ft : null,
                     'custom_price_45ft' => $custP ? (int) $custP->pivot->custom_price_45ft : null,

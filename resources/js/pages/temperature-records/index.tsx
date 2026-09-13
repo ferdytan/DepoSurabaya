@@ -8,7 +8,7 @@ import AppLayout from '@/layouts/app-layout';
 import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { ChevronDown, ChevronUp, Clock, Plus, RotateCcw, Search, Thermometer, Trash2, X } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
 import { Fragment, useState } from 'react';
 
 type TemperatureRecordItem = {
@@ -18,6 +18,10 @@ type TemperatureRecordItem = {
     commodity: string | null;
     entry_date: string | null;
     exit_date: string | null;
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
     order: {
         id: number;
         order_id: string;
@@ -74,6 +78,19 @@ function formatDate(dateStr: string | null) {
     return `${day} ${month} ${year}, ${hours}:${minutes}`;
 }
 
+function toDateTimeLocalString(dateStr?: string | null): string {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return '';
+    const pad = (n: number) => n.toString().padStart(2, '0');
+    const yyyy = d.getFullYear();
+    const mm = pad(d.getMonth() + 1);
+    const dd = pad(d.getDate());
+    const hh = pad(d.getHours());
+    const min = pad(d.getMinutes());
+    return `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+}
+
 export default function TemperatureRecordsIndex({ records, filters, counts }: Props) {
     const pageProps = usePage<{ flash?: { success?: string; error?: string } }>().props;
     const flash = pageProps.flash;
@@ -92,6 +109,13 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     const [isCustomTime, setIsCustomTime] = useState(false);
     const [logSuhu, setLogSuhu] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Modal Edit Waktu Plug In / Out
+    const [isPlugModalOpen, setIsPlugModalOpen] = useState(false);
+    const [selectedPlugContainer, setSelectedPlugContainer] = useState<TemperatureRecordItem | null>(null);
+    const [plugStartTime, setPlugStartTime] = useState('');
+    const [plugOutTime, setPlugOutTime] = useState('');
+    const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
 
     const breadcrumbs: BreadcrumbItem[] = [{ title: 'Monitoring Suhu Kontainer', href: '/temperature-records' }];
 
@@ -181,6 +205,64 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
             },
             {
                 preserveScroll: true,
+            },
+        );
+    };
+
+    const openPlugModal = (item: TemperatureRecordItem) => {
+        setSelectedPlugContainer(item);
+        setPlugStartTime(toDateTimeLocalString(item.start_plug_in));
+        setPlugOutTime(toDateTimeLocalString(item.plug_out));
+        setIsPlugModalOpen(true);
+    };
+
+    const handleQuickPlugIn = (orderItemId: number) => {
+        router.post(`/orders/item/${orderItemId}/plug-in`, {}, {
+            preserveScroll: true,
+        });
+    };
+
+    const handleQuickPlugOut = (orderItemId: number) => {
+        router.post(`/orders/item/${orderItemId}/plug-out`, {}, {
+            preserveScroll: true,
+        });
+    };
+
+    const handleSavePlugTimes = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!selectedPlugContainer) return;
+        setIsSubmittingPlug(true);
+        router.post(
+            `/orders/item/${selectedPlugContainer.id}/plug-times`,
+            {
+                start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : null,
+                plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : null,
+            },
+            {
+                onSuccess: () => {
+                    setIsPlugModalOpen(false);
+                    setIsSubmittingPlug(false);
+                },
+                onError: () => {
+                    setIsSubmittingPlug(false);
+                },
+                preserveScroll: true,
+            },
+        );
+    };
+
+    const handleResetPlugTimes = (orderItemId: number, containerNumber: string) => {
+        if (!confirm(`Reset status Plug In & Out untuk kontainer ${containerNumber}? Data waktu dan shift akan dikosongkan.`)) {
+            return;
+        }
+        router.post(
+            `/orders/item/${orderItemId}/plug-reset`,
+            {},
+            {
+                preserveScroll: true,
+                onSuccess: () => {
+                    setIsPlugModalOpen(false);
+                },
             },
         );
     };
@@ -343,6 +425,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Shipper</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Layanan</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Waktu Masuk & Status</TableHead>
+                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Plug In/Out & Shift</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Suhu Terakhir</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700 text-right pr-4">Aksi</TableHead>
                                     </TableRow>
@@ -350,7 +433,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                 <TableBody>
                                     {records.data.length === 0 ? (
                                         <TableRow>
-                                            <TableCell colSpan={7} className="py-12 text-center text-sm text-muted-foreground">
+                                            <TableCell colSpan={8} className="py-12 text-center text-sm text-muted-foreground">
                                                 Tidak ada kontainer dengan pemantauan suhu yang ditemukan.
                                             </TableCell>
                                         </TableRow>
@@ -395,7 +478,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                         {item.order?.order_id}
                                                                     </span>
                                                                     {item.order?.no_aju && (
-                                                                        <span className="text-[10px] bg-blue-50 text-blue-700 font-semibold px-1.5 py-0.2 rounded border border-blue-200">
+                                                                        <span className="text-[10px] bg-gray-100 text-gray-800 font-semibold px-1.5 py-0.2 rounded border border-gray-200">
                                                                             AJU: {item.order.no_aju}
                                                                         </span>
                                                                     )}
@@ -449,6 +532,82 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                             </div>
                                                         </TableCell>
 
+                                                        {/* Plug In/Out & Shift */}
+                                                        <TableCell className="py-3.5">
+                                                            {!item.start_plug_in ? (
+                                                                <div className="flex flex-col gap-1.5 items-start">
+                                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">
+                                                                        Belum Plug In
+                                                                    </span>
+                                                                    <Button
+                                                                        size="sm"
+                                                                        onClick={() => handleQuickPlugIn(item.id)}
+                                                                        className="h-7 text-xs px-2.5 bg-gray-900 hover:bg-black text-white gap-1 font-semibold"
+                                                                        title="Catat Start Plug In Real-Time Sekarang"
+                                                                    >
+                                                                        <Zap className="h-3 w-3" />
+                                                                        Plug In
+                                                                    </Button>
+                                                                </div>
+                                                            ) : !item.plug_out ? (
+                                                                <div className="flex flex-col gap-1.5 items-start">
+                                                                    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                                                                        <span className="relative flex h-2 w-2">
+                                                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                                                                        </span>
+                                                                        Plugged In
+                                                                    </span>
+                                                                    <span className="text-[11px] text-gray-600 font-medium">
+                                                                        In: {formatDate(item.start_plug_in)}
+                                                                    </span>
+                                                                    <div className="flex items-center gap-1">
+                                                                        <Button
+                                                                            size="sm"
+                                                                            onClick={() => handleQuickPlugOut(item.id)}
+                                                                            className="h-7 text-xs px-2 bg-gray-900 hover:bg-black text-white gap-1 font-semibold"
+                                                                            title="Catat Plug Out Real-Time Sekarang & Hitung Shift"
+                                                                        >
+                                                                            <Power className="h-3 w-3" />
+                                                                            Plug Out
+                                                                        </Button>
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => openPlugModal(item)}
+                                                                            className="p-1 text-gray-400 hover:text-gray-900 rounded border border-gray-200 bg-white"
+                                                                            title="Atur Waktu Plug In/Out"
+                                                                        >
+                                                                            <Pencil className="h-3 w-3" />
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <div className="flex flex-col gap-1 items-start">
+                                                                    <div className="flex items-center gap-1.5">
+                                                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-gray-900 text-white shadow-2xs">
+                                                                            <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+                                                                            {item.total_shifts} Shift
+                                                                        </span>
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => openPlugModal(item)}
+                                                                            className="p-1 text-gray-400 hover:text-gray-900 rounded border border-gray-200 bg-white"
+                                                                            title="Edit Waktu Plug In/Out"
+                                                                        >
+                                                                            <Pencil className="h-3 w-3" />
+                                                                        </button>
+                                                                    </div>
+                                                                    <div className="text-[11px] text-gray-600 leading-tight space-y-0.5">
+                                                                        <div>In: {formatDate(item.start_plug_in)}</div>
+                                                                        <div>Out: {formatDate(item.plug_out)}</div>
+                                                                        <div className="font-semibold text-gray-800">
+                                                                            Durasi: {Math.floor((item.plug_duration_minutes || 0) / 60)}j {(item.plug_duration_minutes || 0) % 60}m
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            )}
+                                                        </TableCell>
+
                                                         {/* Suhu Terakhir */}
                                                         <TableCell className="py-3.5">
                                                             {latest ? (
@@ -498,11 +657,77 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                         </TableCell>
                                                     </TableRow>
 
-                                                    {/* Expanded Row for 24h Log Detail */}
+                                                    {/* Expanded Row for 24h Log Detail & Plug Shift Summary */}
                                                     {isExpanded && (
                                                         <TableRow className="bg-slate-50/70 border-y border-slate-200">
-                                                            <TableCell colSpan={7} className="p-4">
+                                                            <TableCell colSpan={8} className="p-4">
                                                                 <div className="space-y-4">
+                                                                    {/* Plug-in & Shift Billing Info Card */}
+                                                                    <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-2xs space-y-2">
+                                                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-2">
+                                                                            <div className="flex items-center gap-2">
+                                                                                <Zap className="h-4 w-4 text-gray-900" />
+                                                                                <span className="text-xs font-bold text-gray-900 uppercase tracking-wide">
+                                                                                    Informasi Plug In & Billing Shift ({item.container_number})
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="flex items-center gap-2">
+                                                                                <Button
+                                                                                    size="sm"
+                                                                                    variant="outline"
+                                                                                    onClick={() => openPlugModal(item)}
+                                                                                    className="h-7 text-xs px-2.5 text-gray-700 bg-white gap-1 border-gray-300 hover:bg-gray-50"
+                                                                                >
+                                                                                    <Pencil className="h-3 w-3" />
+                                                                                    Atur Waktu Plug In/Out
+                                                                                </Button>
+                                                                                {item.start_plug_in && (
+                                                                                    <Button
+                                                                                        size="sm"
+                                                                                        variant="outline"
+                                                                                        onClick={() => handleResetPlugTimes(item.id, item.container_number)}
+                                                                                        className="h-7 text-xs px-2 text-rose-600 hover:text-rose-700 hover:bg-rose-50 border-rose-200"
+                                                                                        title="Reset waktu Plug In/Out"
+                                                                                    >
+                                                                                        Reset
+                                                                                    </Button>
+                                                                                )}
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs pt-1">
+                                                                            <div className="rounded-lg bg-gray-50 p-2.5 border border-gray-100">
+                                                                                <span className="text-gray-500 font-medium block text-[11px]">Start Plug In:</span>
+                                                                                <span className="font-bold text-gray-900 text-xs">
+                                                                                    {item.start_plug_in ? formatDate(item.start_plug_in) : 'Belum tercatat'}
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="rounded-lg bg-gray-50 p-2.5 border border-gray-100">
+                                                                                <span className="text-gray-500 font-medium block text-[11px]">Plug Out:</span>
+                                                                                <span className="font-bold text-gray-900 text-xs">
+                                                                                    {item.plug_out ? formatDate(item.plug_out) : (item.start_plug_in ? 'Sedang Berjalan' : 'Belum tercatat')}
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="rounded-lg bg-gray-50 p-2.5 border border-gray-100">
+                                                                                <span className="text-gray-500 font-medium block text-[11px]">Durasi Real-Time:</span>
+                                                                                <span className="font-bold text-gray-900 text-xs">
+                                                                                    {item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined
+                                                                                        ? `${Math.floor(item.plug_duration_minutes / 60)} Jam ${item.plug_duration_minutes % 60} Menit (${item.plug_duration_minutes} mnt)`
+                                                                                        : (item.start_plug_in ? 'Sedang berjalan...' : '-')}
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="rounded-lg bg-gray-900 text-white p-2.5 shadow-xs">
+                                                                                <span className="text-gray-300 font-medium block text-[11px]">Total Tagihan Shift:</span>
+                                                                                <span className="font-extrabold text-sm text-white">
+                                                                                    {item.total_shifts !== null && item.total_shifts !== undefined ? `${item.total_shifts} Shift` : '-'}
+                                                                                </span>
+                                                                                <span className="text-[10px] text-gray-400 block mt-0.5">
+                                                                                    1 Shift = 8 Jam + 45 Menit (525 mnt)
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
                                                                     <div className="flex items-center justify-between">
                                                                         <h4 className="text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
                                                                             <Clock className="h-3.5 w-3.5 text-gray-500" />
@@ -585,7 +810,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                                             key={jamKey}
                                                                                                             className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium border ${
                                                                                                                 isFirst && isMinute
-                                                                                                                    ? 'bg-blue-50 text-blue-700 border-blue-200 font-bold'
+                                                                                                                    ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-bold'
                                                                                                                     : isLast && isMinute
                                                                                                                     ? 'bg-amber-50 text-amber-700 border-amber-200 font-bold'
                                                                                                                     : 'bg-white text-gray-700 border-gray-200'
@@ -598,7 +823,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                                                 {tempVal}°C
                                                                                                             </span>
                                                                                                             {isFirst && isMinute && (
-                                                                                                                <span className="text-[9px] bg-blue-100 text-blue-800 px-1 rounded">
+                                                                                                                <span className="text-[9px] bg-emerald-100 text-emerald-800 px-1 rounded">
                                                                                                                     Plug In
                                                                                                                 </span>
                                                                                                             )}
@@ -732,7 +957,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         <button
                                             type="button"
                                             onClick={() => setIsCustomTime(!isCustomTime)}
-                                            className="text-[11px] text-blue-600 hover:underline font-medium"
+                                            className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
                                             {isCustomTime ? 'Mode Jam Bulat (00:00)' : 'Mode Jam & Menit Spesifik (Plug In/Out)'}
                                         </button>
@@ -818,6 +1043,129 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     >
                                         {isSubmitting ? 'Menyimpan...' : 'Simpan Suhu'}
                                     </Button>
+                                </DialogFooter>
+                            </form>
+                        )}
+                    </DialogContent>
+                </Dialog>
+
+                {/* Modal Atur / Edit Waktu Plug In & Out */}
+                <Dialog open={isPlugModalOpen} onOpenChange={setIsPlugModalOpen}>
+                    <DialogContent className="max-w-md">
+                        <DialogHeader>
+                            <DialogTitle className="flex items-center gap-2 text-base font-bold text-gray-900">
+                                <Zap className="h-5 w-5 text-gray-900" />
+                                Atur Waktu Plug In & Plug Out
+                            </DialogTitle>
+                        </DialogHeader>
+
+                        {selectedPlugContainer && (
+                            <form onSubmit={handleSavePlugTimes} className="space-y-4 pt-2">
+                                <div className="rounded-xl border border-gray-200 bg-gray-50/75 p-3 space-y-1">
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-xs font-semibold text-gray-500">No. Kontainer:</span>
+                                        <span className="text-xs font-bold text-gray-900 font-mono">
+                                            {selectedPlugContainer.container_number}
+                                        </span>
+                                    </div>
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-xs font-semibold text-gray-500">Customer:</span>
+                                        <span className="text-xs font-medium text-gray-800">
+                                            {selectedPlugContainer.order?.customer?.name ?? '-'}
+                                        </span>
+                                    </div>
+                                    {selectedPlugContainer.order?.no_aju && (
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-xs font-semibold text-gray-500">No. AJU:</span>
+                                            <span className="text-xs font-medium text-gray-700">
+                                                {selectedPlugContainer.order.no_aju}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="start_plug_in" className="text-xs font-semibold text-gray-700">
+                                            Waktu Start Plug In
+                                        </Label>
+                                        <button
+                                            type="button"
+                                            onClick={() => setPlugStartTime(toDateTimeLocalString(new Date().toISOString()))}
+                                            className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
+                                        >
+                                            Set Sekarang
+                                        </button>
+                                    </div>
+                                    <Input
+                                        id="start_plug_in"
+                                        type="datetime-local"
+                                        value={plugStartTime}
+                                        onChange={(e) => setPlugStartTime(e.target.value)}
+                                        className="h-9 text-xs"
+                                    />
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="plug_out" className="text-xs font-semibold text-gray-700">
+                                            Waktu Plug Out
+                                        </Label>
+                                        <button
+                                            type="button"
+                                            onClick={() => setPlugOutTime(toDateTimeLocalString(new Date().toISOString()))}
+                                            className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
+                                        >
+                                            Set Sekarang
+                                        </button>
+                                    </div>
+                                    <Input
+                                        id="plug_out"
+                                        type="datetime-local"
+                                        value={plugOutTime}
+                                        onChange={(e) => setPlugOutTime(e.target.value)}
+                                        className="h-9 text-xs"
+                                    />
+                                    <p className="text-[11px] text-gray-500 italic">
+                                        Biarkan kosong jika kontainer masih terhubung (in progress).
+                                    </p>
+                                </div>
+
+                                <div className="rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-[11px] text-gray-600 space-y-1">
+                                    <span className="font-semibold text-gray-800 block">Aturan Penagihan Shift:</span>
+                                    <span>1 Shift = 8 Jam kerja + 45 menit kompensasi (525 menit). Perhitungan shift dihitung otomatis dengan pembulatan ke atas (CEILING).</span>
+                                </div>
+
+                                <DialogFooter className="gap-2 pt-2 flex items-center justify-between sm:justify-between">
+                                    <div>
+                                        {selectedPlugContainer.start_plug_in && (
+                                            <Button
+                                                type="button"
+                                                variant="outline"
+                                                onClick={() => handleResetPlugTimes(selectedPlugContainer.id, selectedPlugContainer.container_number)}
+                                                className="h-9 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
+                                            >
+                                                Reset Plug
+                                            </Button>
+                                        )}
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Button
+                                            type="button"
+                                            variant="outline"
+                                            onClick={() => setIsPlugModalOpen(false)}
+                                            className="h-9 text-xs"
+                                        >
+                                            Batal
+                                        </Button>
+                                        <Button
+                                            type="submit"
+                                            disabled={isSubmittingPlug}
+                                            className="h-9 text-xs bg-gray-900 hover:bg-black text-white px-4 font-semibold"
+                                        >
+                                            {isSubmittingPlug ? 'Menyimpan...' : 'Simpan Waktu'}
+                                        </Button>
+                                    </div>
                                 </DialogFooter>
                             </form>
                         )}

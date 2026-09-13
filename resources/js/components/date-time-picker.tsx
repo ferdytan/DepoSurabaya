@@ -237,12 +237,12 @@ export function DateTimePicker({
                     disabled
                         ? 'opacity-50 cursor-not-allowed bg-gray-50 border-gray-200'
                         : isOpen
-                        ? 'border-blue-600 ring-2 ring-blue-500/20 shadow-sm cursor-pointer'
+                        ? 'border-gray-900 ring-2 ring-gray-900/10 shadow-sm cursor-pointer'
                         : 'border-input hover:border-gray-400 hover:bg-gray-50/50 cursor-pointer'
                 }`}
             >
                 <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap min-w-0">
-                    <CalendarIcon className="h-4 w-4 text-blue-600 shrink-0" />
+                    <CalendarIcon className="h-4 w-4 text-gray-700 shrink-0" />
                     {displayVal ? (
                         <span className="font-semibold text-gray-800 truncate">{displayVal}</span>
                     ) : (
@@ -263,7 +263,7 @@ export function DateTimePicker({
                             <X className="h-3.5 w-3.5" />
                         </button>
                     ) : (
-                        <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue-600' : ''}`} />
+                        <ChevronDown className={`h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180 text-gray-900' : ''}`} />
                     )}
                 </div>
             </div>
@@ -285,7 +285,7 @@ export function DateTimePicker({
                                 <button
                                     type="button"
                                     onClick={setNow}
-                                    className="px-2 py-1 text-[11px] font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded transition cursor-pointer"
+                                    className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
                                 >
                                     Sekarang
                                 </button>
@@ -374,14 +374,14 @@ export function DateTimePicker({
                                     onClick={() => setSelectedDate(ymd)}
                                     className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
                                         isSelected
-                                            ? 'bg-blue-600 text-white font-bold shadow-xs'
+                                            ? 'bg-gray-900 text-white font-bold shadow-xs'
                                             : 'hover:bg-gray-100 text-gray-700'
                                     }`}
                                 >
                                     <span
                                         className={`flex items-center justify-center w-7 h-7 rounded-full ${
                                             isToday && !isSelected
-                                                ? 'border border-blue-500 font-bold text-blue-600'
+                                                ? 'border border-gray-900 font-bold text-gray-900'
                                                 : ''
                                         }`}
                                     >
@@ -396,7 +396,7 @@ export function DateTimePicker({
                     {withTime && (
                         <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
                             <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
-                                <Clock className="h-3.5 w-3.5 text-blue-600" />
+                                <Clock className="h-3.5 w-3.5 text-gray-700" />
                                 <span>Jam (WIB):</span>
                             </div>
 
@@ -405,12 +405,12 @@ export function DateTimePicker({
                                     type="time"
                                     value={selectedTime}
                                     onChange={(e) => setSelectedTime(e.target.value)}
-                                    className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-blue-500 focus:outline-none"
+                                    className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setSelectedTime(getNowLocalTime())}
-                                    className="px-2 py-1 text-[11px] font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 rounded transition cursor-pointer"
+                                    className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
                                     title="Gunakan jam saat ini"
                                 >
                                     Jam Sekarang
@@ -442,7 +442,7 @@ export function DateTimePicker({
                                 type="button"
                                 onClick={() => handleApply()}
                                 disabled={!selectedDate}
-                                className="px-3.5 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
                             >
                                 <Check className="h-3.5 w-3.5" />
                                 Simpan

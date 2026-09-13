@@ -32,13 +32,16 @@ import React, { useEffect, useMemo, useState } from 'react';
 interface Product {
     id: number;
     service_type: string;
+    requires_temperature?: number | boolean | null;
 }
 
 interface AdditionalProductPivot {
     id: number;
     service_type: string;
+    requires_temperature?: number | boolean | null;
     pivot: {
         price_value: number;
+        quantity?: number;
     };
 }
 
@@ -48,9 +51,19 @@ interface OrderItem {
     price_value: number;
     entry_date?: string | null;
     exit_date?: string | null;
+    start_plug_in?: string | null;
+    plug_out?: string | null;
+    plug_duration_minutes?: number | null;
+    total_shifts?: number | null;
     product_id: number;
     product?: Product;
     additional_products?: AdditionalProductPivot[];
+}
+
+function isPlugService(serviceType?: string, requiresTemperature?: number | boolean | null): boolean {
+    if (requiresTemperature === 1 || requiresTemperature === true) return true;
+    const st = (serviceType || '').toLowerCase();
+    return st.includes('plug') || st.includes('reefer') || st.includes('suhu');
 }
 
 interface Order {
@@ -218,7 +231,11 @@ export default function CreateInvoice() {
                     validIds.add(item.id);
                 }
                 item.additional_products?.forEach((ap) => {
-                    initialQtys[`${item.id}:${ap.id}`] = 1;
+                    const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+                    initialQtys[`${item.id}:${ap.id}`] =
+                        isPlug && item.total_shifts && item.total_shifts > 0
+                            ? item.total_shifts
+                            : (ap.pivot?.quantity ?? 1);
                 });
             });
 
@@ -252,7 +269,11 @@ export default function CreateInvoice() {
                         order.order_items?.forEach((item) => {
                             validIds.add(item.id);
                             item.additional_products?.forEach((ap) => {
-                                initialQtys[`${item.id}:${ap.id}`] = 1;
+                                const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+                                initialQtys[`${item.id}:${ap.id}`] =
+                                    isPlug && item.total_shifts && item.total_shifts > 0
+                                        ? item.total_shifts
+                                        : (ap.pivot?.quantity ?? 1);
                             });
                         });
                     }
@@ -338,7 +359,26 @@ export default function CreateInvoice() {
     };
 
     // Manage qty
-    const getQty = (itemId: number, prodId: number) => addQty[`${itemId}:${prodId}`] ?? 1;
+    const getQty = (itemId: number, prodId: number) => {
+        if (addQty[`${itemId}:${prodId}`] !== undefined) {
+            return addQty[`${itemId}:${prodId}`];
+        }
+        for (const order of activeOrders) {
+            const it = order.order_items?.find((i) => i.id === itemId);
+            if (it) {
+                const ap = it.additional_products?.find((p) => p.id === prodId);
+                if (
+                    ap &&
+                    isPlugService(ap.service_type, ap.requires_temperature) &&
+                    it.total_shifts &&
+                    it.total_shifts > 0
+                ) {
+                    return it.total_shifts;
+                }
+            }
+        }
+        return 1;
+    };
     const updateQty = (itemId: number, prodId: number, val: number) => {
         const v = Math.max(0, Math.floor(val || 0));
         setAddQty((prev) => ({ ...prev, [`${itemId}:${prodId}`]: v }));
@@ -708,7 +748,7 @@ export default function CreateInvoice() {
                                         type="checkbox"
                                         checked={showPeriod}
                                         onChange={(e) => setShowPeriod(e.target.checked)}
-                                        className="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 cursor-pointer"
+                                        className="h-4 w-4 rounded border-gray-300 accent-gray-900 text-gray-900 focus:ring-gray-900 cursor-pointer"
                                     />
                                     <span>Tampilkan Periode pada Cetakan Invoice</span>
                                 </label>
@@ -944,11 +984,11 @@ export default function CreateInvoice() {
                                                                                             key={prod.id}
                                                                                             className="flex flex-col sm:flex-row sm:items-center justify-between rounded-lg bg-gray-50/70 px-3 py-2 text-xs gap-2"
                                                                                         >
-                                                                                            <div className="flex items-center gap-3">
+                                                                                            <div className="flex flex-wrap items-center gap-3">
                                                                                                 <span className="font-medium text-gray-800">
                                                                                                     {prod.service_type || `Layanan Tambahan #${prod.id}`}
                                                                                                 </span>
-                                                                                                <div className="flex items-center gap-1">
+                                                                                                <div className="flex items-center gap-1.5">
                                                                                                     <span className="text-gray-400">Qty:</span>
                                                                                                     <input
                                                                                                         type="number"
@@ -965,6 +1005,21 @@ export default function CreateInvoice() {
                                                                                                         }
                                                                                                         className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
                                                                                                     />
+                                                                                                    {isPlugService(prod.service_type, prod.requires_temperature) &&
+                                                                                                        item.total_shifts &&
+                                                                                                        item.total_shifts > 0 && (
+                                                                                                            <span
+                                                                                                                className="inline-flex items-center gap-1 rounded bg-gray-100 text-gray-800 text-[10px] font-semibold px-1.5 py-0.5 border border-gray-200"
+                                                                                                                title={
+                                                                                                                    item.plug_duration_minutes !== null &&
+                                                                                                                    item.plug_duration_minutes !== undefined
+                                                                                                                        ? `Durasi: ${Math.floor(item.plug_duration_minutes / 60)} Jam ${item.plug_duration_minutes % 60} Menit`
+                                                                                                                        : undefined
+                                                                                                                }
+                                                                                                            >
+                                                                                                                Auto: {item.total_shifts} Shift
+                                                                                                            </span>
+                                                                                                        )}
                                                                                                 </div>
                                                                                             </div>
 

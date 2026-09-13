@@ -144,6 +144,9 @@ export default function CreateInvoice() {
     const [discount, setDiscount] = useState<number>(0);
     const [applyMaterai, setApplyMaterai] = useState(false);
 
+    // Quantity Layanan Pokok Kontainer: key order_item_id
+    const [itemQty, setItemQty] = useState<Record<number, number>>({});
+
     // Quantity Additional Products: key `${order_item_id}:${additional_product_id}`
     const [addQty, setAddQty] = useState<Record<string, number>>({});
 
@@ -208,12 +211,30 @@ export default function CreateInvoice() {
         });
     }, [orders]);
 
+    // Helper manage container item qty
+    const getItemQty = (item: OrderItem) => {
+        if (itemQty[item.id] !== undefined) {
+            return itemQty[item.id];
+        }
+        const isPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+        if (isPlug && item.total_shifts && item.total_shifts > 0) {
+            return item.total_shifts;
+        }
+        return 1;
+    };
+
+    const updateItemQty = (itemId: number, val: number) => {
+        const v = Math.max(1, Math.floor(val || 1));
+        setItemQty((prev) => ({ ...prev, [itemId]: v }));
+    };
+
     // Handle Customer Change
     const handleCustomerChange = (val: string) => {
         setSelectedCustomerId(val);
         setSelectedOrderIds([]);
         setSelectedContainers(new Set());
         setAddQty({});
+        setItemQty({});
         setErrors({});
     };
 
@@ -225,15 +246,20 @@ export default function CreateInvoice() {
         if (order) {
             const validIds = new Set<number>();
             const initialQtys: Record<string, number> = {};
+            const initialItemQtys: Record<number, number> = {};
 
             order.order_items?.forEach((item) => {
                 if (!disabledOrders.has(item.id)) {
                     validIds.add(item.id);
                 }
+                const isPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+                if (isPlug && item.total_shifts && item.total_shifts > 0) {
+                    initialItemQtys[item.id] = item.total_shifts;
+                }
                 item.additional_products?.forEach((ap) => {
-                    const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+                    const isApPlug = isPlugService(ap.service_type, ap.requires_temperature);
                     initialQtys[`${item.id}:${ap.id}`] =
-                        isPlug && item.total_shifts && item.total_shifts > 0
+                        isApPlug && item.total_shifts && item.total_shifts > 0
                             ? item.total_shifts
                             : (ap.pivot?.quantity ?? 1);
                 });
@@ -241,6 +267,7 @@ export default function CreateInvoice() {
 
             setSelectedContainers((prev) => new Set([...prev, ...validIds]));
             setAddQty((prev) => ({ ...initialQtys, ...prev }));
+            setItemQty((prev) => ({ ...initialItemQtys, ...prev }));
         }
         setErrors({});
     };
@@ -262,16 +289,21 @@ export default function CreateInvoice() {
             if (customer) {
                 const validIds = new Set<number>();
                 const initialQtys: Record<string, number> = {};
+                const initialItemQtys: Record<number, number> = {};
 
                 selectedOrderIds.forEach((orderIdStr) => {
                     const order = customer.orders?.find((o) => o.id.toString() === orderIdStr);
                     if (order) {
                         order.order_items?.forEach((item) => {
                             validIds.add(item.id);
+                            const isPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+                            if (isPlug && item.total_shifts && item.total_shifts > 0) {
+                                initialItemQtys[item.id] = item.total_shifts;
+                            }
                             item.additional_products?.forEach((ap) => {
-                                const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+                                const isApPlug = isPlugService(ap.service_type, ap.requires_temperature);
                                 initialQtys[`${item.id}:${ap.id}`] =
-                                    isPlug && item.total_shifts && item.total_shifts > 0
+                                    isApPlug && item.total_shifts && item.total_shifts > 0
                                         ? item.total_shifts
                                         : (ap.pivot?.quantity ?? 1);
                             });
@@ -281,6 +313,7 @@ export default function CreateInvoice() {
 
                 setSelectedContainers(validIds);
                 setAddQty((prev) => ({ ...initialQtys, ...prev }));
+                setItemQty((prev) => ({ ...initialItemQtys, ...prev }));
             }
         }
     }, [selectedCustomerId]);
@@ -391,8 +424,9 @@ export default function CreateInvoice() {
         activeOrders.forEach((order) => {
             order.order_items?.forEach((item) => {
                 if (selectedContainers.has(item.id)) {
-                    // Harga pokok kontainer
-                    subtotal += Number(item.price_value || 0);
+                    // Harga pokok kontainer * qty
+                    const mQty = getItemQty(item);
+                    subtotal += Number(item.price_value || 0) * mQty;
 
                     // Layanan tambahan
                     item.additional_products?.forEach((ap) => {
@@ -423,7 +457,7 @@ export default function CreateInvoice() {
             terbilang: liveTerbilang,
             isUnder5Juta,
         };
-    }, [activeOrders, selectedContainers, discount, applyMaterai, addQty]);
+    }, [activeOrders, selectedContainers, discount, applyMaterai, addQty, itemQty]);
 
     // Otomatis uncheck materai jika tagihan under 5jt
     useEffect(() => {
@@ -466,6 +500,15 @@ export default function CreateInvoice() {
                 ),
         );
 
+        // Susun daftar order items (kontainer) dengan quantity
+        const orderItemSelections = Array.from(selectedContainers).map((id) => {
+            const it = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === id);
+            return {
+                order_item_id: id,
+                quantity: it ? getItemQty(it) : 1,
+            };
+        });
+
         const payload = {
             reuse_id: reuse_invoice?.id || null,
             customer_id: selectedCustomerId,
@@ -473,6 +516,7 @@ export default function CreateInvoice() {
             order_id: selectedOrderIds[0] || null,
             order_ids: selectedOrderIds,
             order_item_ids: Array.from(selectedContainers),
+            order_item_quantities: orderItemSelections,
             period_start: periodStart,
             period_end: periodEnd,
             show_period: showPeriod,
@@ -884,6 +928,8 @@ export default function CreateInvoice() {
                                                             const isSelected = selectedContainers.has(item.id);
                                                             const isDisabled = disabledOrders.has(item.id);
                                                             const priceValue = Number(item.price_value || 0);
+                                                            const isMainPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+                                                            const currentItemQty = getItemQty(item);
 
                                                             // Subtotal item
                                                             const addSum = (item.additional_products || []).reduce(
@@ -894,7 +940,7 @@ export default function CreateInvoice() {
                                                                 },
                                                                 0,
                                                             );
-                                                            const itemSubtotal = priceValue + addSum;
+                                                            const itemSubtotal = (priceValue * currentItemQty) + addSum;
 
                                                             return (
                                                                 <div
@@ -958,8 +1004,40 @@ export default function CreateInvoice() {
 
                                                                         {/* Harga Pokok & Subtotal Kontainer */}
                                                                         <div className="text-right shrink-0">
+                                                                            <div className="flex items-center justify-end gap-1.5 mb-1">
+                                                                                <span className="text-gray-400 text-xs">Qty:</span>
+                                                                                <input
+                                                                                    type="number"
+                                                                                    min={1}
+                                                                                    step={1}
+                                                                                    value={currentItemQty}
+                                                                                    disabled={!isSelected || isDisabled}
+                                                                                    onChange={(e) =>
+                                                                                        updateItemQty(
+                                                                                            item.id,
+                                                                                            Number(e.target.value),
+                                                                                        )
+                                                                                    }
+                                                                                    className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                />
+                                                                                {isMainPlug &&
+                                                                                    item.total_shifts &&
+                                                                                    item.total_shifts > 0 && (
+                                                                                        <span
+                                                                                            className="inline-flex items-center gap-1 rounded bg-gray-100 text-gray-800 text-[10px] font-semibold px-1.5 py-0.5 border border-gray-200"
+                                                                                            title={
+                                                                                                item.plug_duration_minutes !== null &&
+                                                                                                item.plug_duration_minutes !== undefined
+                                                                                                    ? `Durasi: ${Math.floor(item.plug_duration_minutes / 60)} Jam ${item.plug_duration_minutes % 60} Menit`
+                                                                                                    : undefined
+                                                                                            }
+                                                                                        >
+                                                                                            Auto: {item.total_shifts} Shift
+                                                                                        </span>
+                                                                                    )}
+                                                                            </div>
                                                                             <div className="text-xs text-gray-500">
-                                                                                Pokok: {formatRupiah(priceValue)}
+                                                                                Pokok: {formatRupiah(priceValue * currentItemQty)}{currentItemQty > 1 ? ` (${formatRupiah(priceValue)} × ${currentItemQty})` : ''}
                                                                             </div>
                                                                             <div className="text-sm font-bold text-gray-900 mt-0.5">
                                                                                 Total: {formatRupiah(itemSubtotal)}

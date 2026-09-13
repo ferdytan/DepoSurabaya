@@ -23,6 +23,7 @@ interface OrderItem {
     exit_date?: string | null;
     price_value: number | string;
     price_type?: string;
+    quantity?: number;
     product?: Product;
     additional_products?: AdditionalProduct[];
 }
@@ -59,46 +60,58 @@ interface InvoicePreviewProps {
     ppn: number;
     materai: number;
     grand_total: number;
-    terbilang: string;
+    terbilang?: string;
     show_period?: boolean;
+    company?: Company;
 }
 
 type PageProps = { preview: InvoicePreviewProps; company?: Company };
 
-export default function InvoicePreview() {
-    const page = usePage<PageProps>();
-    const { preview, company } = page.props;
+export default function InvoicePreview({
+    preview,
+    company,
+}: {
+    preview: InvoicePreviewProps;
+    company?: Company;
+}) {
     const {
         customer,
         invoice_number,
         order,
         period_start,
         period_end,
+        discount,
         show_period = true,
-        discount = 0,
     } = preview;
 
-    const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
-    const rupiah = (n: number) => Number(n || 0).toLocaleString('id-ID');
+    // Helper format Rupiah tanpa desimal
+    const rupiah = (val: number | string) => {
+        const num = Number(val) || 0;
+        return num.toLocaleString('id-ID');
+    };
 
-    // Format Tanggal / Jam: "8 Sep 2026 ; 23.41"
+    // Helper format date sample "13 Sep 2026; 02.20"
     const formatDateTimeSample = (d?: string | null) => {
         if (!d) return '-';
         try {
             const date = new Date(d);
-            if (isNaN(date.getTime())) return '-';
-            const day = date.getDate();
-            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
-            const month = months[date.getMonth()];
-            const year = date.getFullYear();
-            const pad = (n: number) => n.toString().padStart(2, '0');
-            const hours = pad(date.getHours());
-            const minutes = pad(date.getMinutes());
-            return `${day} ${month} ${year} ; ${hours}.${minutes}`;
+            const dateStr = date.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+            });
+            const timeStr = date.toLocaleTimeString('id-ID', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+            }).replace(':', '.');
+            return `${dateStr} ; ${timeStr}`;
         } catch {
             return '-';
         }
     };
+
+    const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
 
     // Format tanggal kota Surabaya: "22 - 05 -2025"
     const formatSurabayaDate = (d?: string | null) => {
@@ -108,6 +121,18 @@ export default function InvoicePreview() {
         return `${pad(date.getDate())} - ${pad(date.getMonth() + 1)} - ${date.getFullYear()}`;
     };
 
+    // Format tanggal periode dd/mm/yyyy
+    const formatDateSlash = (d?: string | null) => {
+        if (!d) return '-';
+        try {
+            const date = new Date(d);
+            return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        } catch {
+            return '-';
+        }
+    };
+
+    // Bersihkan prefix telp / fax agar tidak dobel
     const formatPhone = (phone?: string) => {
         if (!phone) return 'Telp. 031-353 9484, 031-3539485';
         const clean = phone.trim();
@@ -118,6 +143,21 @@ export default function InvoicePreview() {
         if (!fax) return 'Fax. 031-3539482';
         const clean = fax.trim();
         return /^fax\.?/i.test(clean) ? clean : `Fax. ${clean}`;
+    };
+
+    // --- State Qty untuk Primary Container Items (Pokok) ---
+    const [mainQty, setMainQty] = useState<Record<number, number>>(() => {
+        const m: Record<number, number> = {};
+        for (const item of order.order_items) {
+            m[item.id] = Number(item.quantity ?? 1);
+        }
+        return m;
+    });
+
+    const getMainQty = (itemId: number) => mainQty[itemId] ?? 1;
+    const setMainQtyVal = (itemId: number, val: number) => {
+        const v = Number.isFinite(val) && val >= 1 ? Math.floor(val) : 1;
+        setMainQty((prev) => ({ ...prev, [itemId]: v }));
     };
 
     // --- State Qty untuk Additional Products ---
@@ -144,7 +184,8 @@ export default function InvoicePreview() {
     const calc = () => {
         let subtotal = 0;
         for (const item of order.order_items) {
-            subtotal += Number(item.price_value ?? 0);
+            const mQty = getMainQty(item.id);
+            subtotal += Number(item.price_value ?? 0) * mQty;
             for (const ap of item.additional_products ?? []) {
                 const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
                 const qty = getQty(item.id, ap.id);
@@ -184,6 +225,10 @@ export default function InvoicePreview() {
         grand_total: totals.grand_total,
         terbilang: liveTerbilang,
         order_item_ids: order.order_items.map((item) => item.id),
+        order_item_quantities: order.order_items.map((item) => ({
+            order_item_id: item.id,
+            quantity: getMainQty(item.id),
+        })),
         additional_product_quantities: additionalSelections,
         show_period,
     };
@@ -385,25 +430,45 @@ export default function InvoicePreview() {
                                             </tr>
 
                                             {/* Baris Jasa Utama */}
-                                            <tr>
-                                                <td className="border border-black px-2 py-1 text-center align-top">{itemNo}</td>
-                                                <td className="border border-black px-2 py-1 align-top">
-                                                    {item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer')}
-                                                </td>
-                                                <td className="border border-black px-2 py-1 text-right align-top">
-                                                    <div className="flex justify-between">
-                                                        <span>Rp</span>
-                                                        <span>{rupiah(mainPrice)}</span>
-                                                    </div>
-                                                </td>
-                                                <td className="border border-black px-2 py-1 text-center align-top">1</td>
-                                                <td className="border border-black px-2.5 py-1 text-right align-top">
-                                                    <div className="flex justify-between">
-                                                        <span>Rp</span>
-                                                        <span>{rupiah(mainPrice)}</span>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            {(() => {
+                                                const currentMainQty = getMainQty(item.id);
+                                                const mainSubtotal = Number(mainPrice) * currentMainQty;
+                                                return (
+                                                    <tr>
+                                                        <td className="border border-black px-2 py-1 text-center align-top">{itemNo}</td>
+                                                        <td className="border border-black px-2 py-1 align-top">
+                                                            {item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer')}
+                                                        </td>
+                                                        <td className="border border-black px-2 py-1 text-right align-top">
+                                                            <div className="flex justify-between">
+                                                                <span>Rp</span>
+                                                                <span>{rupiah(mainPrice)}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="border border-black px-2 py-1 text-center align-top">
+                                                            {/* Tampilan layar (bisa input) */}
+                                                            <span className="screen-only inline-block">
+                                                                <input
+                                                                    type="number"
+                                                                    min="1"
+                                                                    step="1"
+                                                                    value={currentMainQty}
+                                                                    onChange={(e) => setMainQtyVal(item.id, Number(e.target.value))}
+                                                                    className="w-12 rounded border border-gray-300 px-1 py-0.5 text-center text-xs font-semibold"
+                                                                />
+                                                            </span>
+                                                            {/* Tampilan print (teks saja) */}
+                                                            <span className="print-only hidden">{currentMainQty}</span>
+                                                        </td>
+                                                        <td className="border border-black px-2.5 py-1 text-right align-top">
+                                                            <div className="flex justify-between">
+                                                                <span>Rp</span>
+                                                                <span>{rupiah(mainSubtotal)}</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })()}
 
                                             {/* Baris Produk Tambahan (jika ada) */}
                                             {(item.additional_products ?? [])
@@ -615,7 +680,7 @@ export default function InvoicePreview() {
                         <Button
                             onClick={handleSaveInvoice}
                             disabled={isSaving}
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-sm inline-flex items-center gap-2"
+                            className="bg-gray-900 hover:bg-black text-white font-semibold px-6 shadow-sm inline-flex items-center gap-2"
                         >
                             <CheckCircle2 className="h-4 w-4" />
                             {isSaving ? 'Menyimpan...' : (preview.reuse_id ? 'Simpan Invoice (Reuse)' : 'Simpan Invoice')}

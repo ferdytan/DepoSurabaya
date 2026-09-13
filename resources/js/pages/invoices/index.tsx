@@ -292,7 +292,7 @@ export default function InvoicesIndex() {
                                                             </span>
                                                             {invoice.is_reused && !isTrashed && (
                                                                 <span
-                                                                    className="inline-flex items-center rounded-md bg-blue-50 px-1.5 py-0.5 text-[10px] font-semibold text-blue-700 border border-blue-200"
+                                                                    className="inline-flex items-center rounded-md bg-gray-100 px-1.5 py-0.5 text-[10px] font-semibold text-gray-700 border border-gray-200"
                                                                     title={`Di-reuse oleh ${invoice.reused_by || 'Admin'}`}
                                                                 >
                                                                     Reused

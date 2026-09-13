@@ -24,6 +24,7 @@ interface OrderItem {
     exit_date?: string | null;
     price_value: number | string;
     price_type?: string;
+    quantity?: number;
     product?: Product;
     additional_products?: AdditionalProduct[];
 }
@@ -144,12 +145,13 @@ export default function ShowInvoice() {
         let runningNo = 1;
         return (invoice.order_items ?? []).map((item) => {
             const mainPrice = Number(item.price_value ?? 0);
+            const mainQty = Number(item.quantity || 1);
             const mainRow = {
                 no: runningNo++,
                 service: item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer'),
                 price: mainPrice,
-                qty: 1,
-                subtotal: mainPrice,
+                qty: mainQty,
+                subtotal: mainPrice * mainQty,
             };
 
             const additionals = (item.additional_products ?? [])
@@ -525,7 +527,7 @@ export default function ShowInvoice() {
                         </Link>
                         <Link
                             href={`/invoices/${invoice.id}/edit`}
-                            className="inline-flex items-center gap-1.5 rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-semibold text-blue-700 shadow-xs hover:bg-blue-100"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 shadow-xs hover:bg-gray-50"
                         >
                             <Edit className="h-4 w-4" />
                             Edit Invoice
@@ -569,7 +571,7 @@ export default function ShowInvoice() {
                                 {activityLogs.map((log) => {
                                     const actionLabels: Record<string, { label: string; badge: string }> = {
                                         create_invoice: { label: 'Dibuat', badge: 'bg-green-100 text-green-800' },
-                                        update_invoice: { label: 'Diperbarui', badge: 'bg-blue-100 text-blue-800' },
+                                        update_invoice: { label: 'Diperbarui', badge: 'bg-gray-100 text-gray-800' },
                                         delete_invoice: { label: 'Dihapus', badge: 'bg-red-100 text-red-800' },
                                         restore_invoice: { label: 'Dipulihkan', badge: 'bg-yellow-100 text-yellow-800' },
                                         reuse_invoice: { label: 'Di-reuse', badge: 'bg-emerald-100 text-emerald-800' },

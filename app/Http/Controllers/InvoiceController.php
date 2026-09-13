@@ -231,6 +231,9 @@ class InvoiceController extends Controller
             'period_end'    => ['required','date','after_or_equal:period_start'],
             'order_item_ids'=> ['required','array','min:1'],
             'order_item_ids.*' => ['integer'],
+            'order_item_quantities' => ['nullable','array'],
+            'order_item_quantities.*.order_item_id' => ['required','integer'],
+            'order_item_quantities.*.quantity' => ['required','integer','min:1'],
             'subtotal'      => ['required','integer','min:0'],
             'discount'      => ['nullable','integer','min:0'],
             'ppn'           => ['required','integer','min:0'],
@@ -244,13 +247,18 @@ class InvoiceController extends Controller
         ]);
 
         return DB::transaction(function () use ($data) {
+            $itemQtyMap = [];
+            foreach (($data['order_item_quantities'] ?? []) as $row) {
+                $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
+            }
+
             $qtyMap = [];
             foreach (($data['additional_product_quantities'] ?? []) as $row) {
                 $qtyMap[$row['order_item_id'].':'.$row['additional_product_id']] = (int) $row['quantity'];
             }
 
             $orderItems = OrderItem::with([
-                'product:id,service_type',
+                'product:id,service_type,requires_temperature',
                 'additionalProducts' => fn($q) => $q->withPivot(['price_value']),
             ])->whereIn('id', $data['order_item_ids'])->get();
 
@@ -260,8 +268,19 @@ class InvoiceController extends Controller
 
             // Hitung ulang subtotal, ppn, grand_total
             $subtotal = 0;
+            $itemQtyValues = [];
             foreach ($orderItems as $oi) {
-                $subtotal += (int) ($oi->price_value ?? 0);
+                $isPlug = false;
+                if ($oi->product) {
+                    $st = strtolower($oi->product->service_type ?? '');
+                    $isPlug = $oi->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+                }
+                $defaultQty = ($isPlug && $oi->total_shifts && $oi->total_shifts > 0) ? (int)$oi->total_shifts : 1;
+                $oiQty = (int) ($itemQtyMap[$oi->id] ?? $defaultQty);
+                if ($oiQty <= 0) $oiQty = 1;
+                $itemQtyValues[$oi->id] = $oiQty;
+
+                $subtotal += (int) ($oi->price_value ?? 0) * $oiQty;
                 foreach ($oi->additionalProducts as $ap) {
                     $price = (int) ($ap->pivot->price_value ?? 0);
                     $qty = (int) ($qtyMap[$oi->id.':'.$ap->id] ?? 0);
@@ -338,13 +357,14 @@ class InvoiceController extends Controller
             }
 
             foreach ($orderItems as $oi) {
+                $oiQty = $itemQtyValues[$oi->id] ?? 1;
                 $invItem = $invoice->items()->create([
                     'order_item_id'    => $oi->id,
                     'product_id'       => $oi->product_id,
                     'container_number' => $oi->container_number,
                     'price_type'       => $oi->price_type,
                     'price_value'      => $oi->price_value,
-                    'quantity'         => 1,
+                    'quantity'         => $oiQty,
                 ]);
 
                 $adds = [];
@@ -433,6 +453,7 @@ class InvoiceController extends Controller
                 'entry_date'          => $oi?->entry_date,
                 'exit_date'           => $oi?->exit_date,
                 'price_value'         => (int) ($it->price_value ?? 0),
+                'quantity'            => (int) ($it->quantity ?? 1),
                 'price_type'          => $it->price_type, // dipakai sebagai label service jika ada
                 'product'             => $it->product ? ['service_type' => $it->product->service_type] : null,
                 // additional_products tersimpan JSON (berisi pivot.price_value & pivot.quantity)
@@ -494,11 +515,11 @@ class InvoiceController extends Controller
         $invoice = Invoice::with([
             'customer.products',
             'items.orderItem.order',
-            'items.orderItem.product:id,service_type',
+            'items.orderItem.product:id,service_type,requires_temperature',
             'items.orderItem.additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
             },
-            'items.product:id,service_type',
+            'items.product:id,service_type,requires_temperature',
         ])->findOrFail($invoice->id);
 
         // Get order from first item to load available order items
@@ -508,7 +529,7 @@ class InvoiceController extends Controller
 
         if ($firstItem && $firstItem->orderItem) {
             $order = Order::with([
-                'order_items.product:id,service_type',
+                'order_items.product:id,service_type,requires_temperature',
                 'order_items.additionalProducts' => function ($q) {
                     $q->withPivot(['price_value']);
                 },
@@ -590,18 +611,25 @@ class InvoiceController extends Controller
             $newOrderItemIds = $request->input('new_order_item_ids', []);
             if (!empty($newOrderItemIds)) {
                 $firstItem = $invoice->items()->first();
-                $newItems = OrderItem::with(['product:id,service_type', 'additionalProducts'])
+                $newItems = OrderItem::with(['product:id,service_type,requires_temperature', 'additionalProducts'])
                     ->whereIn('id', $newOrderItemIds)
                     ->get();
 
                 foreach ($newItems as $orderItem) {
+                    $isPlug = false;
+                    if ($orderItem->product) {
+                        $st = strtolower($orderItem->product->service_type ?? '');
+                        $isPlug = $orderItem->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+                    }
+                    $defaultQty = ($isPlug && $orderItem->total_shifts && $orderItem->total_shifts > 0) ? (int)$orderItem->total_shifts : 1;
+
                     $invItem = $invoice->items()->create([
                         'order_item_id' => $orderItem->id,
                         'product_id' => $orderItem->product_id,
                         'container_number' => $orderItem->container_number,
                         'price_type' => $orderItem->price_type ?? '20ft',
                         'price_value' => (int) ($orderItem->price_value ?? 0),
-                        'quantity' => 1,
+                        'quantity' => $defaultQty,
                     ]);
 
                     $adds = [];
@@ -629,6 +657,9 @@ class InvoiceController extends Controller
                     if ($itemModel) {
                         if (isset($reqItem['price_value'])) {
                             $itemModel->price_value = (int) $reqItem['price_value'];
+                        }
+                        if (isset($reqItem['quantity'])) {
+                            $itemModel->quantity = max(1, (int) $reqItem['quantity']);
                         }
 
                         $formattedAdds = [];
@@ -690,7 +721,8 @@ class InvoiceController extends Controller
 
             $subtotal = 0;
             foreach ($invoice->items as $item) {
-                $subtotal += (int) ($item->price_value ?? 0);
+                $itemQty = max(1, (int) ($item->quantity ?? 1));
+                $subtotal += (int) ($item->price_value ?? 0) * $itemQty;
                 $adds = $item->additional_products ?? [];
                 foreach ($adds as $ap) {
                     $p = (int) ($ap['pivot']['price_value'] ?? $ap['price_value'] ?? 0);
@@ -957,6 +989,9 @@ class InvoiceController extends Controller
             'order_ids.*'    => ['integer'],
             'order_item_ids' => ['required','array','min:1'],
             'order_item_ids.*' => ['integer'],
+            'order_item_quantities' => ['nullable','array'],
+            'order_item_quantities.*.order_item_id' => ['required','integer'],
+            'order_item_quantities.*.quantity' => ['required','integer','min:1'],
             'period_start'   => ['required','date'],
             'period_end'     => ['required','date','after_or_equal:period_start'],
             'applyMaterai'   => ['boolean'],
@@ -969,6 +1004,11 @@ class InvoiceController extends Controller
             'show_period'    => ['boolean'],
         ]);
 
+        $itemQtyMap = [];
+        foreach (($validated['order_item_quantities'] ?? []) as $row) {
+            $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
+        }
+
         $qtyMap = [];
         foreach (($validated['additional_product_quantities'] ?? []) as $row) {
             $key = $row['order_item_id'].':'.$row['additional_product_id'];
@@ -979,7 +1019,7 @@ class InvoiceController extends Controller
 
         $orderItems = OrderItem::with([
             'order:id,order_id',
-            'product:id,service_type',
+            'product:id,service_type,requires_temperature',
             'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
             },
@@ -992,7 +1032,18 @@ class InvoiceController extends Controller
 
         $subtotal = 0;
         foreach ($orderItems as $item) {
-            $subtotal += (int) ($item->price_value ?? 0);
+            $isPlug = false;
+            if ($item->product) {
+                $st = strtolower($item->product->service_type ?? '');
+                $isPlug = $item->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+            }
+            $defaultQty = ($isPlug && $item->total_shifts && $item->total_shifts > 0) ? (int)$item->total_shifts : 1;
+            $itemQty = (int) ($itemQtyMap[$item->id] ?? $defaultQty);
+            if ($itemQty <= 0) $itemQty = 1;
+
+            $item->quantity = $itemQty;
+            $subtotal += (int) ($item->price_value ?? 0) * $itemQty;
+
             $item->additionalProducts->transform(function ($ap) use ($item, $qtyMap, &$subtotal) {
                 $price = (int) ($ap->pivot->price_value ?? 0);
                 $qty   = (int) ($qtyMap[$item->id.':'.$ap->id] ?? 0);

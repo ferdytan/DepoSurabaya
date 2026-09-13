@@ -25,6 +25,7 @@ class InvoiceItem extends Model
     protected $casts = [
         'additional_products' => 'array',
         'price_value' => 'float',
+        'quantity' => 'integer',
     ];
 
     public function invoice()

@@ -56,6 +56,7 @@ export interface EditableContainerItem {
     container_number: string;
     price_type: string;
     price_value: number;
+    quantity: number;
     start_plug_in?: string | null;
     plug_out?: string | null;
     plug_duration_minutes?: number | null;
@@ -188,12 +189,22 @@ export default function EditInvoice() {
                 };
             });
 
+            const isPlug = isPlugService(item.orderItem?.product?.service_type, item.orderItem?.product?.requires_temperature);
+            const defaultQty = Number(
+                item.quantity && item.quantity > 0
+                    ? item.quantity
+                    : (isPlug && item.orderItem?.total_shifts && item.orderItem.total_shifts > 0
+                        ? item.orderItem.total_shifts
+                        : 1)
+            );
+
             return {
                 id: item.id,
                 order_item_id: item.order_item_id,
                 container_number: item.container_number,
                 price_type: item.price_type || '20ft',
                 price_value: Number(item.price_value || 0),
+                quantity: defaultQty,
                 start_plug_in: item.orderItem?.start_plug_in,
                 plug_out: item.orderItem?.plug_out,
                 plug_duration_minutes: item.orderItem?.plug_duration_minutes,
@@ -316,6 +327,14 @@ export default function EditInvoice() {
         setCustomProductQty(1);
     };
 
+    // Ubah kuantitas pokok kontainer
+    const handleUpdateContainerQty = (itemId: number, newQty: number) => {
+        const val = Number.isFinite(newQty) && newQty >= 1 ? Math.floor(newQty) : 1;
+        setItems((prev) =>
+            prev.map((it) => (it.id === itemId ? { ...it, quantity: val } : it))
+        );
+    };
+
     // Ubah kuantitas produk yang sudah ada
     const handleUpdateQty = (itemId: number, prodId: number, newQty: number) => {
         const val = Number.isFinite(newQty) && newQty >= 0 ? Math.floor(newQty) : 0;
@@ -394,12 +413,18 @@ export default function EditInvoice() {
             };
         });
 
+        const isMainPlug = isPlugService(orderItem.product?.service_type, orderItem.product?.requires_temperature);
+        const defaultMainQty = isMainPlug && orderItem.total_shifts && orderItem.total_shifts > 0
+            ? orderItem.total_shifts
+            : 1;
+
         const newEntry: EditableContainerItem = {
             id: -orderItem.id, // ID negatif sementara untuk item baru
             order_item_id: orderItem.id,
             container_number: orderItem.container_number,
             price_type: orderItem.price_type || '20ft',
             price_value: Number(orderItem.price_value || 0),
+            quantity: defaultMainQty,
             start_plug_in: orderItem.start_plug_in,
             plug_out: orderItem.plug_out,
             plug_duration_minutes: orderItem.plug_duration_minutes,
@@ -428,7 +453,7 @@ export default function EditInvoice() {
             if (removedItemIds.has(item.id)) return;
 
             // Harga dasar kontainer
-            subtotal += Number(item.price_value || 0);
+            subtotal += Number(item.price_value || 0) * Number(item.quantity || 1);
 
             // Total produk tambahan
             item.additional_products.forEach((ap) => {
@@ -482,6 +507,7 @@ export default function EditInvoice() {
                 container_number: it.container_number,
                 price_type: it.price_type,
                 price_value: it.price_value,
+                quantity: it.quantity || 1,
                 additional_products: it.additional_products.map((ap) => ({
                     id: ap.id,
                     service_type: ap.service_type,
@@ -632,12 +658,13 @@ export default function EditInvoice() {
                                 const isRemoved = removedItemIds.has(item.id);
                                 if (isRemoved) return null;
 
+                                const currentContainerQty = Number(item.quantity || 1);
                                 // Hitung total per kontainer
                                 const addSum = item.additional_products.reduce(
                                     (sum, p) => sum + (Number(p.price_value) || 0) * (Number(p.quantity) || 0),
                                     0
                                 );
-                                const containerTotal = Number(item.price_value || 0) + addSum;
+                                const containerTotal = (Number(item.price_value || 0) * currentContainerQty) + addSum;
                                 const isAdding = addingProductToItemId === item.id;
 
                                 return (
@@ -656,8 +683,30 @@ export default function EditInvoice() {
                                                         {item.price_type || '20ft'}
                                                     </span>
                                                 </div>
-                                                <div className="text-xs text-gray-500 mt-0.5">
-                                                    Harga Pokok Kontainer: <span className="font-semibold text-gray-700">{formatRupiah(item.price_value)}</span>
+                                                <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mt-1">
+                                                    <span>Harga Satuan: <span className="font-semibold text-gray-700">{formatRupiah(item.price_value)}</span></span>
+                                                    <span>×</span>
+                                                    <div className="flex items-center gap-1.5">
+                                                        <span className="font-medium text-gray-700">Qty:</span>
+                                                        <input
+                                                            type="number"
+                                                            min={1}
+                                                            step={1}
+                                                            value={currentContainerQty}
+                                                            onChange={(e) => handleUpdateContainerQty(item.id, Number(e.target.value))}
+                                                            className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none"
+                                                        />
+                                                    </div>
+                                                    {item.total_shifts && item.total_shifts > 0 ? (
+                                                        <span
+                                                            className="inline-flex items-center rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-medium text-gray-700 border border-gray-200"
+                                                            title={item.plug_duration_minutes ? `Durasi: ${Math.floor(item.plug_duration_minutes / 60)} Jam ${item.plug_duration_minutes % 60} Menit` : undefined}
+                                                        >
+                                                            Auto: {item.total_shifts} Shift
+                                                        </span>
+                                                    ) : null}
+                                                    <span>=</span>
+                                                    <span className="font-bold text-gray-900">{formatRupiah(Number(item.price_value || 0) * currentContainerQty)}</span>
                                                 </div>
                                             </div>
 

@@ -166,8 +166,8 @@ export default function ProductsIndex({ products, filters }: Props) {
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-2.5 shrink-0">
-                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
+                        <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
+                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm w-full sm:w-auto justify-center">
                                 <Link href="/products/create">
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah Produk</span>
@@ -190,11 +190,11 @@ export default function ProductsIndex({ products, filters }: Props) {
                                     className="pl-9 h-9 text-xs"
                                 />
                             </div>
-                            <div className="flex items-center gap-2 shrink-0">
+                            <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
                                 <Button
                                     size="sm"
                                     onClick={handleSearch}
-                                    className="h-9 text-xs px-4 bg-gray-900 hover:bg-black text-white gap-1.5 font-medium shadow-xs"
+                                    className="h-9 text-xs px-4 bg-gray-900 hover:bg-black text-white gap-1.5 font-medium shadow-xs flex-1 sm:flex-none justify-center"
                                 >
                                     <Search className="h-3.5 w-3.5" />
                                     Cari
@@ -207,7 +207,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                             setSearch('');
                                             router.get('/products');
                                         }}
-                                        className="h-9 text-xs px-3"
+                                        className="h-9 text-xs px-3 flex-1 sm:flex-none justify-center"
                                     >
                                         Reset
                                     </Button>
@@ -329,7 +329,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                     )}
                                 </div>
 
-                                <div className="flex items-center gap-1">
+                                <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1">
                                     {products.links.map((link, i) => {
                                         const isPrev = link.label.includes('&laquo;') || link.label.toLowerCase().includes('prev');
                                         const isNext = link.label.includes('&raquo;') || link.label.toLowerCase().includes('next');

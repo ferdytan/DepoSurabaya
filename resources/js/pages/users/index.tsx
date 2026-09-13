@@ -232,8 +232,8 @@ export default function UsersIndex({ users, filters }: Props) {
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-2.5 shrink-0">
-                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
+                        <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
+                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm w-full sm:w-auto justify-center">
                                 <Link href="/users/create">
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah User Baru</span>
@@ -262,9 +262,9 @@ export default function UsersIndex({ users, filters }: Props) {
                     )}
 
                     {/* Toolbar: Search & Per Page */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-xs">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white p-3.5 sm:p-4 shadow-xs">
                         {/* Search Input */}
-                        <div className="relative flex-1 max-w-md">
+                        <div className="relative flex-1 w-full sm:max-w-md">
                             <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                             <Input
                                 id="search"
@@ -272,7 +272,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 onKeyUp={(e) => e.key === 'Enter' && handleSearch()}
-                                className="h-9 pl-9 pr-8 text-xs bg-gray-50/50"
+                                className="h-9 pl-9 pr-8 text-xs bg-gray-50/50 w-full"
                             />
                             {search && (
                                 <button
@@ -286,19 +286,19 @@ export default function UsersIndex({ users, filters }: Props) {
                         </div>
 
                         {/* Right: Per Page & Search Action */}
-                        <div className="flex items-center gap-2 self-end sm:self-auto">
+                        <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
                             <Button
                                 type="button"
                                 onClick={handleSearch}
                                 size="sm"
-                                className="text-xs h-9 font-semibold px-4 bg-gray-900 hover:bg-black text-white gap-1.5 shadow-xs"
+                                className="text-xs h-9 font-semibold px-4 bg-gray-900 hover:bg-black text-white gap-1.5 shadow-xs flex-1 sm:flex-none justify-center"
                             >
                                 <Search className="h-3.5 w-3.5" />
                                 Cari
                             </Button>
 
                             <div className="flex items-center gap-2 text-xs text-gray-500 font-medium pl-2 border-l border-gray-200">
-                                <span>Tampilkan:</span>
+                                <span className="hidden xs:inline">Tampilkan:</span>
                                 <Select value={perPage} onValueChange={handlePerPageChange}>
                                     <SelectTrigger className="h-9 w-[80px] text-xs font-semibold">
                                         <SelectValue placeholder="25" />
@@ -316,7 +316,8 @@ export default function UsersIndex({ users, filters }: Props) {
 
                     {/* Table Card */}
                     <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
-                        <Table>
+                        <div className="overflow-x-auto">
+                            <Table>
                             <TableHeader className="bg-gray-50/80">
                                 <TableRow>
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5 pl-5">Pengguna</TableHead>
@@ -435,17 +436,18 @@ export default function UsersIndex({ users, filters }: Props) {
                                 )}
                             </TableBody>
                         </Table>
+                    </div>
 
-                        {/* Pagination Footer */}
-                        {users.total > 0 && (
-                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 py-3.5 bg-gray-50/50 border-t border-gray-100 text-xs text-gray-500">
-                                <div>
-                                    Menampilkan <span className="font-semibold text-gray-700">{users.from || 0}</span> sampai{' '}
-                                    <span className="font-semibold text-gray-700">{users.to || 0}</span> dari total{' '}
-                                    <span className="font-semibold text-gray-700">{users.total}</span> pengguna
-                                </div>
+                    {/* Pagination Footer */}
+                    {users.total > 0 && (
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 py-3.5 bg-gray-50/50 border-t border-gray-100 text-xs text-gray-500">
+                            <div>
+                                Menampilkan <span className="font-semibold text-gray-700">{users.from || 0}</span> sampai{' '}
+                                <span className="font-semibold text-gray-700">{users.to || 0}</span> dari total{' '}
+                                <span className="font-semibold text-gray-700">{users.total}</span> pengguna
+                            </div>
 
-                                <div className="flex items-center gap-1">
+                            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1">
                                     {users.links.map((link, i) => {
                                         const isPrev = link.label.includes('&laquo;') || link.label.toLowerCase().includes('prev');
                                         const isNext = link.label.includes('&raquo;') || link.label.toLowerCase().includes('next');

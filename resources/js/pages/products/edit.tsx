@@ -75,7 +75,7 @@ export default function EditProduct() {
                     </div>
 
                     {/* Form Card */}
-                    <div className="max-w-3xl rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-xs">
+                    <div className="w-full rounded-xl border border-gray-200 bg-white p-5 sm:p-8 shadow-xs">
                         <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100 mb-6">
                             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-gray-900">
                                 <Edit2 className="h-5 w-5" />
@@ -144,14 +144,14 @@ export default function EditProduct() {
                             </div>
 
                             {/* Submit & Cancel Actions */}
-                            <div className="flex items-center justify-end gap-3 pt-6 border-t border-gray-100">
-                                <Button variant="outline" asChild className="h-9 text-xs font-semibold px-4">
+                            <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-6 border-t border-gray-100">
+                                <Button variant="outline" asChild className="h-10 sm:h-9 text-xs font-semibold px-4 w-full sm:w-auto justify-center">
                                     <Link href="/products">Batal</Link>
                                 </Button>
                                 <Button
                                     type="submit"
                                     disabled={processing}
-                                    className="h-9 text-xs px-6 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm"
+                                    className="h-10 sm:h-9 text-xs px-6 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm w-full sm:w-auto justify-center"
                                 >
                                     {processing && <span className="mr-1 animate-spin">●</span>}
                                     {processing ? 'Menyimpan Perubahan...' : 'Simpan Perubahan'}

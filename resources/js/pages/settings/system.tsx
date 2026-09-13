@@ -88,7 +88,7 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                 Menentukan jumlah baris data default yang dimuat saat membuka daftar Order, User/Admin, dan tabel data lainnya.
                             </p>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 max-w-2xl">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 w-full">
                                 {paginationOptions.map((opt) => {
                                     const isSelected = Number(data.default_pagination) === opt;
                                     return (
@@ -123,7 +123,7 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                 Tentukan apakah bilah samping (sidebar menu) tampil terbuka penuh (expanded) atau tertutup/mini (collapsed) secara default saat membuka aplikasi.
                             </p>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 max-w-2xl">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 w-full">
                                 <button
                                     type="button"
                                     onClick={() => setData('default_sidebar_state', 'expanded')}
@@ -197,7 +197,7 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                 Tentukan apakah opsi "Tampilkan Periode" saat pembuatan invoice baru secara otomatis dicentang (aktif) atau tidak dicentang (non-aktif).
                             </p>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 max-w-2xl">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 w-full">
                                 <button
                                     type="button"
                                     onClick={() => setData('default_invoice_show_period', true)}

@@ -265,6 +265,12 @@ class InvoiceController extends Controller
             'show_period'   => ['boolean'],
         ]);
 
+        if (!($data['show_period'] ?? true)) {
+            $today = now()->format('Y-m-d');
+            $data['period_start'] = $today;
+            $data['period_end'] = $today;
+        }
+
         return DB::transaction(function () use ($data) {
             $itemQtyMap = [];
             foreach (($data['order_item_quantities'] ?? []) as $row) {
@@ -486,6 +492,7 @@ class InvoiceController extends Controller
             'invoice_number' => $invoice->invoice_number,
             'period_start'   => $invoice->period_start,
             'period_end'     => $invoice->period_end,
+            'created_at'     => $invoice->created_at ? $invoice->created_at->toISOString() : null,
             'subtotal'       => (int) $invoice->subtotal,
             'discount'       => (int) ($invoice->discount ?? 0),
             'ppn'            => (int) $invoice->ppn,
@@ -616,6 +623,12 @@ class InvoiceController extends Controller
             'new_order_item_ids' => ['nullable', 'array'],
             'additional_product_quantities' => ['nullable', 'array'],
         ]);
+
+        if (!($validated['show_period'] ?? true)) {
+            $createdDate = $invoice->created_at ? $invoice->created_at->format('Y-m-d') : now()->format('Y-m-d');
+            $validated['period_start'] = $createdDate;
+            $validated['period_end'] = $createdDate;
+        }
 
         return DB::transaction(function () use ($request, $invoice, $validated) {
             $oldValues = $invoice->toArray();
@@ -1022,6 +1035,12 @@ class InvoiceController extends Controller
             'additional_product_quantities.*.quantity' => ['required','integer','min:0'],
             'show_period'    => ['boolean'],
         ]);
+
+        if (!($validated['show_period'] ?? true)) {
+            $today = now()->format('Y-m-d');
+            $validated['period_start'] = $today;
+            $validated['period_end'] = $today;
+        }
 
         $itemQtyMap = [];
         foreach (($validated['order_item_quantities'] ?? []) as $row) {

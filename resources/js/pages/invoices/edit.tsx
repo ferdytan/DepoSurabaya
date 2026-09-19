@@ -109,6 +109,7 @@ interface InvoicePayload {
     terbilang: string;
     status: string;
     show_period: boolean;
+    created_at?: string;
     items: Array<{
         id: number;
         order_item_id: number;
@@ -491,9 +492,10 @@ export default function EditInvoice() {
 
         setSubmitting(true);
 
+        const effectiveDate = invoice.created_at ? invoice.created_at.split('T')[0] : (form.period_end || new Date().toISOString().split('T')[0]);
         const payload = {
-            period_start: form.period_start,
-            period_end: form.period_end,
+            period_start: form.show_period ? form.period_start : effectiveDate,
+            period_end: form.show_period ? form.period_end : effectiveDate,
             discount: totals.discount,
             ppn: totals.ppn,
             materai: totals.materai,

@@ -39,6 +39,7 @@ interface Invoice {
     materai: number;
     grand_total: number;
     status: 'paid' | 'unpaid';
+    show_period?: boolean;
     created_at: string;
     items_count: number; // jumlah kontainer (tetap)
     additional_qty_total?: number; // <-- NEW: total qty additional (dari backend)
@@ -305,8 +306,14 @@ export default function InvoicesIndex() {
                                                     </TableCell>
 
                                                     <TableCell className="py-3.5 text-xs text-gray-600 whitespace-nowrap">
-                                                        {new Date(invoice.period_start).toLocaleDateString('id-ID')} -{' '}
-                                                        {new Date(invoice.period_end).toLocaleDateString('id-ID')}
+                                                        {invoice.show_period ?? true ? (
+                                                            <>
+                                                                {new Date(invoice.period_start).toLocaleDateString('id-ID')} -{' '}
+                                                                {new Date(invoice.period_end).toLocaleDateString('id-ID')}
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-gray-400 font-normal">-</span>
+                                                        )}
                                                     </TableCell>
 
                                                     <TableCell className="py-3.5 text-center text-xs font-semibold text-gray-800">

@@ -114,8 +114,8 @@ export default function InvoicePreview({
     const dateID = (d?: string | null) => (d ? new Date(d).toLocaleDateString('id-ID') : '-');
 
     // Format tanggal kota Surabaya: "22 - 05 -2025"
-    const formatSurabayaDate = (d?: string | null) => {
-        const date = d ? new Date(d) : new Date();
+    const formatSurabayaDate = (d?: string | Date | null) => {
+        const date = d instanceof Date ? d : (d ? new Date(d) : new Date());
         if (isNaN(date.getTime())) return new Date().toLocaleDateString('id-ID');
         const pad = (n: number) => n.toString().padStart(2, '0');
         return `${pad(date.getDate())} - ${pad(date.getMonth() + 1)} - ${date.getFullYear()}`;
@@ -216,8 +216,8 @@ export default function InvoicePreview({
         invoice_number,
         customer_id: customer.id,
         order_id: order.id,
-        period_start,
-        period_end,
+        period_start: show_period ? period_start : new Date().toISOString().split('T')[0],
+        period_end: show_period ? period_end : new Date().toISOString().split('T')[0],
         subtotal: totals.subtotal,
         discount: safeDiscount,
         ppn: totals.ppn,
@@ -647,7 +647,7 @@ export default function InvoicePreview({
                                 {/* Kanan: Tanggal Surabaya & Tanda Tangan (Rata Kanan Rapi & Pas di Tepi) */}
                                 <div className="space-y-1 text-right">
                                     <div className="font-medium whitespace-nowrap">
-                                        Surabaya, {formatSurabayaDate(period_end)}
+                                        Surabaya, {formatSurabayaDate(show_period ? period_end : new Date())}
                                     </div>
                                     <div className="h-20" />
                                     <div className="font-semibold whitespace-nowrap">

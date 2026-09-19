@@ -4,7 +4,7 @@ import InvoicesLayout from '@/layouts/invoices/layout';
 import { terbilang as toTerbilangWords } from '@/lib/terbilang';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { ArrowLeft, CheckCircle2, Printer } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 // ==== Types ====
 interface AdditionalProduct {

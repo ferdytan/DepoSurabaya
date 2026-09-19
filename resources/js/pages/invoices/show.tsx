@@ -144,7 +144,21 @@ export default function ShowInvoice() {
 
     // Format tanggal kota Surabaya: "22 - 05 -2025"
     const formatSurabayaDate = (d?: string | Date | null) => {
-        const date = d instanceof Date ? d : (d ? new Date(d) : new Date());
+        if (!d) {
+            const date = new Date();
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            return `${pad(date.getDate())} - ${pad(date.getMonth() + 1)} - ${date.getFullYear()}`;
+        }
+        if (d instanceof Date) {
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            return `${pad(d.getDate())} - ${pad(d.getMonth() + 1)} - ${d.getFullYear()}`;
+        }
+        const match = String(d).match(/^(\d{4})-(\d{2})-(\d{2})/);
+        if (match) {
+            const [, year, month, day] = match;
+            return `${day} - ${month} - ${year}`;
+        }
+        const date = new Date(d);
         if (isNaN(date.getTime())) return new Date().toLocaleDateString('id-ID');
         const pad = (n: number) => n.toString().padStart(2, '0');
         return `${pad(date.getDate())} - ${pad(date.getMonth() + 1)} - ${date.getFullYear()}`;

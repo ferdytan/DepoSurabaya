@@ -127,6 +127,7 @@ interface InvoicePayload {
         }>;
         orderItem?: {
             id: number;
+            exit_date?: string | null;
             start_plug_in?: string | null;
             plug_out?: string | null;
             plug_duration_minutes?: number | null;
@@ -492,7 +493,20 @@ export default function EditInvoice() {
 
         setSubmitting(true);
 
-        const effectiveDate = invoice.created_at ? invoice.created_at.split('T')[0] : (form.period_end || new Date().toISOString().split('T')[0]);
+        // Cari exit_date paling terakhir dari activeItems
+        const exitTimestamps = activeItems
+            .map((it) => (it.orderItem?.exit_date ? new Date(it.orderItem.exit_date).getTime() : 0))
+            .filter((ts) => ts > 0);
+        let latestExitDate: string | null = null;
+        if (exitTimestamps.length > 0) {
+            const maxTs = Math.max(...exitTimestamps);
+            const d = new Date(maxTs);
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            latestExitDate = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+        }
+
+        const effectiveDate = latestExitDate 
+            || (invoice.created_at ? invoice.created_at.split('T')[0] : (form.period_end || new Date().toISOString().split('T')[0]));
         const payload = {
             period_start: form.show_period ? form.period_start : effectiveDate,
             period_end: form.show_period ? form.period_end : effectiveDate,

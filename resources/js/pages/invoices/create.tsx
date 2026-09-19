@@ -512,6 +512,21 @@ export default function CreateInvoice() {
             };
         });
 
+        // Cari tanggal keluar (exit_date) paling terakhir dari kontainer yang dipilih
+        const selectedItems = activeOrders
+            .flatMap((o) => o.order_items || [])
+            .filter((it) => selectedContainers.has(it.id));
+        const exitTimestamps = selectedItems
+            .map((it) => (it.exit_date ? new Date(it.exit_date).getTime() : 0))
+            .filter((ts) => ts > 0);
+        let effectiveDate = new Date().toISOString().split('T')[0];
+        if (exitTimestamps.length > 0) {
+            const maxTs = Math.max(...exitTimestamps);
+            const d = new Date(maxTs);
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            effectiveDate = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+        }
+
         const payload = {
             reuse_id: reuse_invoice?.id || null,
             customer_id: selectedCustomerId,
@@ -520,8 +535,8 @@ export default function CreateInvoice() {
             order_ids: selectedOrderIds,
             order_item_ids: Array.from(selectedContainers),
             order_item_quantities: orderItemSelections,
-            period_start: showPeriod ? periodStart : new Date().toISOString().split('T')[0],
-            period_end: showPeriod ? periodEnd : new Date().toISOString().split('T')[0],
+            period_start: showPeriod ? periodStart : effectiveDate,
+            period_end: showPeriod ? periodEnd : effectiveDate,
             show_period: showPeriod,
             subtotal: calculations.subtotal,
             discount: calculations.discount,

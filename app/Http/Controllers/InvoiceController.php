@@ -265,12 +265,6 @@ class InvoiceController extends Controller
             'show_period'   => ['boolean'],
         ]);
 
-        if (!($data['show_period'] ?? true)) {
-            $today = now()->format('Y-m-d');
-            $data['period_start'] = $today;
-            $data['period_end'] = $today;
-        }
-
         return DB::transaction(function () use ($data) {
             $itemQtyMap = [];
             foreach (($data['order_item_quantities'] ?? []) as $row) {
@@ -283,12 +277,24 @@ class InvoiceController extends Controller
             }
 
             $orderItems = OrderItem::with([
+                'order:id,exit_date',
                 'product:id,service_type,requires_temperature',
                 'additionalProducts' => fn($q) => $q->withPivot(['price_value']),
             ])->whereIn('id', $data['order_item_ids'])->get();
 
             if ($orderItems->isEmpty()) {
                 abort(422, 'Order item tidak ditemukan.');
+            }
+
+            if (!($data['show_period'] ?? true)) {
+                $latestExitDate = $orderItems->map(function ($oi) {
+                    $raw = $oi->exit_date ?? $oi->order?->exit_date;
+                    return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
+                })->filter()->max();
+
+                $effectiveDate = $latestExitDate ?: now()->format('Y-m-d');
+                $data['period_start'] = $effectiveDate;
+                $data['period_end'] = $effectiveDate;
             }
 
             // Hitung ulang subtotal, ppn, grand_total
@@ -469,6 +475,8 @@ class InvoiceController extends Controller
             'order_id' => !empty($orderNumbers) ? $orderNumbers : ($firstOrder?->order_id ?? '-'),
         ];
 
+        $invoice->loadMissing(['items.orderItem.order']);
+
         // Map invoice_items → struktur yang dibutuhkan oleh show.tsx
         $orderItems = $invoice->items->map(function ($it) {
             $oi = $it->orderItem;
@@ -476,7 +484,7 @@ class InvoiceController extends Controller
                 'id'                  => $it->id,
                 'container_number'    => $it->container_number,
                 'entry_date'          => $oi?->entry_date,
-                'exit_date'           => $oi?->exit_date,
+                'exit_date'           => $oi?->exit_date ?? $oi?->order?->exit_date,
                 'price_value'         => (int) ($it->price_value ?? 0),
                 'quantity'            => (int) ($it->quantity ?? 1),
                 'price_type'          => $it->price_type, // dipakai sebagai label service jika ada
@@ -486,12 +494,19 @@ class InvoiceController extends Controller
             ];
         })->values();
 
+        $latestExitDate = $orderItems->pluck('exit_date')->filter()->map(function ($d) {
+            return \Carbon\Carbon::parse($d)->format('Y-m-d');
+        })->max();
+
+        $effectiveDate = $latestExitDate ?: ($invoice->created_at ? $invoice->created_at->format('Y-m-d') : now()->format('Y-m-d'));
+
         // Susun payload persis seperti yang diharapkan show.tsx (mirip InvoicePreview)
         $payload = [
             'id'             => $invoice->id,
             'invoice_number' => $invoice->invoice_number,
-            'period_start'   => $invoice->period_start,
-            'period_end'     => $invoice->period_end,
+            'period_start'   => (!$invoice->show_period && $latestExitDate) ? $effectiveDate : $invoice->period_start,
+            'period_end'     => (!$invoice->show_period && $latestExitDate) ? $effectiveDate : $invoice->period_end,
+            'invoice_date'   => (bool) ($invoice->show_period ?? true) ? $invoice->period_end : $effectiveDate,
             'created_at'     => $invoice->created_at ? $invoice->created_at->toISOString() : null,
             'subtotal'       => (int) $invoice->subtotal,
             'discount'       => (int) ($invoice->discount ?? 0),
@@ -623,12 +638,6 @@ class InvoiceController extends Controller
             'new_order_item_ids' => ['nullable', 'array'],
             'additional_product_quantities' => ['nullable', 'array'],
         ]);
-
-        if (!($validated['show_period'] ?? true)) {
-            $createdDate = $invoice->created_at ? $invoice->created_at->format('Y-m-d') : now()->format('Y-m-d');
-            $validated['period_start'] = $createdDate;
-            $validated['period_end'] = $createdDate;
-        }
 
         return DB::transaction(function () use ($request, $invoice, $validated) {
             $oldValues = $invoice->toArray();
@@ -771,6 +780,18 @@ class InvoiceController extends Controller
 
             // Generate terbilang di server
             $terbilang = $this->numberToWords($grand);
+
+            if (!($validated['show_period'] ?? true)) {
+                $invoice->loadMissing(['items.orderItem.order']);
+                $latestExitDate = $invoice->items->map(function ($it) {
+                    $raw = $it->orderItem?->exit_date ?? $it->orderItem?->order?->exit_date;
+                    return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
+                })->filter()->max();
+
+                $effectiveDate = $latestExitDate ?: ($invoice->created_at ? $invoice->created_at->format('Y-m-d') : now()->format('Y-m-d'));
+                $validated['period_start'] = $effectiveDate;
+                $validated['period_end'] = $effectiveDate;
+            }
 
             // Update record invoice
             $invoice->update([
@@ -1036,12 +1057,6 @@ class InvoiceController extends Controller
             'show_period'    => ['boolean'],
         ]);
 
-        if (!($validated['show_period'] ?? true)) {
-            $today = now()->format('Y-m-d');
-            $validated['period_start'] = $today;
-            $validated['period_end'] = $today;
-        }
-
         $itemQtyMap = [];
         foreach (($validated['order_item_quantities'] ?? []) as $row) {
             $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
@@ -1056,12 +1071,23 @@ class InvoiceController extends Controller
         $customer = Customer::findOrFail($validated['customer_id']);
 
         $orderItems = OrderItem::with([
-            'order:id,order_id',
+            'order:id,order_id,exit_date',
             'product:id,service_type,requires_temperature',
             'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
             },
         ])->whereIn('id', $validated['order_item_ids'])->get();
+
+        if (!($validated['show_period'] ?? true)) {
+            $latestExitDate = $orderItems->map(function ($oi) {
+                $raw = $oi->exit_date ?? $oi->order?->exit_date;
+                return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
+            })->filter()->max();
+
+            $effectiveDate = $latestExitDate ?: now()->format('Y-m-d');
+            $validated['period_start'] = $effectiveDate;
+            $validated['period_end'] = $effectiveDate;
+        }
 
         // Kumpulkan semua nomor order yang terkait dengan kontainer-kontainer yang dipilih
         $orderIds = $orderItems->pluck('order_id')->filter()->unique()->values();

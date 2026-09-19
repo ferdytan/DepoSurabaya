@@ -211,13 +211,28 @@ export default function InvoicePreview({
         })),
     );
 
+    // Hitung tanggal keluar paling terakhir jika tanpa periode
+    const latestExitDate = useMemo(() => {
+        const exitTimestamps = (order?.order_items || [])
+            .map((it) => (it.exit_date ? new Date(it.exit_date).getTime() : 0))
+            .filter((ts) => ts > 0);
+        if (exitTimestamps.length === 0) return null;
+        const maxTs = Math.max(...exitTimestamps);
+        const d = new Date(maxTs);
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    }, [order?.order_items]);
+
+    const effectiveUnperiodedDate = latestExitDate || period_end || new Date().toISOString().split('T')[0];
+    const displayInvoiceDate = show_period ? period_end : effectiveUnperiodedDate;
+
     const formData = {
         reuse_id: preview.reuse_id || null,
         invoice_number,
         customer_id: customer.id,
         order_id: order.id,
-        period_start: show_period ? period_start : new Date().toISOString().split('T')[0],
-        period_end: show_period ? period_end : new Date().toISOString().split('T')[0],
+        period_start: show_period ? period_start : effectiveUnperiodedDate,
+        period_end: show_period ? period_end : effectiveUnperiodedDate,
         subtotal: totals.subtotal,
         discount: safeDiscount,
         ppn: totals.ppn,
@@ -647,7 +662,7 @@ export default function InvoicePreview({
                                 {/* Kanan: Tanggal Surabaya & Tanda Tangan (Rata Kanan Rapi & Pas di Tepi) */}
                                 <div className="space-y-1 text-right">
                                     <div className="font-medium whitespace-nowrap">
-                                        Surabaya, {formatSurabayaDate(show_period ? period_end : new Date())}
+                                        Surabaya, {formatSurabayaDate(displayInvoiceDate)}
                                     </div>
                                     <div className="h-20" />
                                     <div className="font-semibold whitespace-nowrap">

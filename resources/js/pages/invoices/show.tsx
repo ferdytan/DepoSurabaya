@@ -64,6 +64,7 @@ interface InvoicePayload {
     status: string;
     show_period?: boolean;
     created_at?: string;
+    invoice_date?: string;
     customer: Customer;
     order: Order;
     order_items: OrderItem[];
@@ -76,8 +77,12 @@ interface ActivityLogItem {
     user?: {
         id: number;
         name: string;
+        email: string;
     };
     new_values?: {
+        status?: string;
+        paid_at?: string;
+        payment_method?: string;
         deleted_by?: string;
         deleted_reason?: string;
         reused_by?: string;
@@ -95,6 +100,22 @@ export default function ShowInvoice() {
     const page = usePage<PageProps>();
     const { invoice, company, activityLogs = [] } = page.props;
     const showPeriod = invoice.show_period ?? true;
+
+    // Hitung tanggal keluar kontainer paling terakhir jika tanpa periode
+    const latestExitDate = useMemo(() => {
+        const exitTimestamps = (invoice.order_items || [])
+            .map((it) => (it.exit_date ? new Date(it.exit_date).getTime() : 0))
+            .filter((ts) => ts > 0);
+        if (exitTimestamps.length === 0) return null;
+        const maxTs = Math.max(...exitTimestamps);
+        const d = new Date(maxTs);
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    }, [invoice.order_items]);
+
+    const displayInvoiceDate = invoice.invoice_date 
+        ? invoice.invoice_date 
+        : (showPeriod ? invoice.period_end : (latestExitDate || invoice.period_end || invoice.created_at || new Date()));
     const discount = Number(invoice.discount || 0);
     const materai = Number(invoice.materai || 0);
 
@@ -506,7 +527,7 @@ export default function ShowInvoice() {
                                 {/* Kanan: Tanggal Surabaya & Tanda Tangan (Rata Kanan Rapi & Pas di Tepi) */}
                                 <div className="space-y-1 text-right">
                                     <div className="font-medium whitespace-nowrap">
-                                        Surabaya, {formatSurabayaDate(showPeriod ? invoice.period_end : (invoice.created_at ?? new Date()))}
+                                        Surabaya, {formatSurabayaDate(displayInvoiceDate)}
                                     </div>
                                     <div className="h-20" />
                                     <div className="font-semibold whitespace-nowrap">

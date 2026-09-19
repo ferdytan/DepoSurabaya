@@ -277,7 +277,6 @@ class InvoiceController extends Controller
             }
 
             $orderItems = OrderItem::with([
-                'order:id,exit_date',
                 'product:id,service_type,requires_temperature',
                 'additionalProducts' => fn($q) => $q->withPivot(['price_value']),
             ])->whereIn('id', $data['order_item_ids'])->get();
@@ -288,8 +287,7 @@ class InvoiceController extends Controller
 
             if (!($data['show_period'] ?? true)) {
                 $latestExitDate = $orderItems->map(function ($oi) {
-                    $raw = $oi->exit_date ?? $oi->order?->exit_date;
-                    return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
+                    return $oi->exit_date ? \Carbon\Carbon::parse($oi->exit_date)->format('Y-m-d') : null;
                 })->filter()->max();
 
                 $effectiveDate = $latestExitDate ?: now()->format('Y-m-d');
@@ -484,7 +482,7 @@ class InvoiceController extends Controller
                 'id'                  => $it->id,
                 'container_number'    => $it->container_number,
                 'entry_date'          => $oi?->entry_date,
-                'exit_date'           => $oi?->exit_date ?? $oi?->order?->exit_date,
+                'exit_date'           => $oi?->exit_date,
                 'price_value'         => (int) ($it->price_value ?? 0),
                 'quantity'            => (int) ($it->quantity ?? 1),
                 'price_type'          => $it->price_type, // dipakai sebagai label service jika ada
@@ -782,9 +780,9 @@ class InvoiceController extends Controller
             $terbilang = $this->numberToWords($grand);
 
             if (!($validated['show_period'] ?? true)) {
-                $invoice->loadMissing(['items.orderItem.order']);
+                $invoice->loadMissing(['items.orderItem']);
                 $latestExitDate = $invoice->items->map(function ($it) {
-                    $raw = $it->orderItem?->exit_date ?? $it->orderItem?->order?->exit_date;
+                    $raw = $it->orderItem?->exit_date;
                     return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
                 })->filter()->max();
 
@@ -1071,7 +1069,7 @@ class InvoiceController extends Controller
         $customer = Customer::findOrFail($validated['customer_id']);
 
         $orderItems = OrderItem::with([
-            'order:id,order_id,exit_date',
+            'order:id,order_id',
             'product:id,service_type,requires_temperature',
             'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
@@ -1080,7 +1078,7 @@ class InvoiceController extends Controller
 
         if (!($validated['show_period'] ?? true)) {
             $latestExitDate = $orderItems->map(function ($oi) {
-                $raw = $oi->exit_date ?? $oi->order?->exit_date;
+                $raw = $oi->exit_date;
                 return $raw ? \Carbon\Carbon::parse($raw)->format('Y-m-d') : null;
             })->filter()->max();
 

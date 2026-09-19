@@ -316,9 +316,9 @@ class OrderController extends Controller
             $orderItem = $order->items()->create([
                 'product_id' => $itemData['product_id'],
                 'container_number' => $itemData['container_number'],
-                'entry_date' => $itemData['entry_date'] ?? null,
-                'eir_date' => $itemData['eir_date'] ?? null,
-                'exit_date' => $itemData['exit_date'] ?? null,
+                'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
+                'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
                 'commodity' => $itemData['commodity'] ?? null,
                 'country' => $itemData['country'] ?? null,
                 'vessel' => $itemData['vessel'] ?? null,
@@ -627,9 +627,9 @@ public function update(Request $request, Order $order)
                 $orderItem->update([
                     'product_id' => $itemData['product_id'],
                     'container_number' => $itemData['container_number'],
-                    'entry_date' => $itemData['entry_date'] ?? null,
-                    'eir_date' => $itemData['eir_date'] ?? null,
-                    'exit_date' => $itemData['exit_date'] ?? null,
+                    'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                    'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
+                    'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
                     'commodity' => $itemData['commodity'] ?? null,
                     'country' => $itemData['country'] ?? null,
                     'vessel' => $itemData['vessel'] ?? null,
@@ -713,9 +713,9 @@ $orderItem->additionalProducts()->sync($syncData);
                 $orderItem = $order->items()->create([
                     'product_id' => $itemData['product_id'],
                     'container_number' => $itemData['container_number'],
-                    'entry_date' => $itemData['entry_date'] ?? null,
-                    'eir_date' => $itemData['eir_date'] ?? null,
-                    'exit_date' => $itemData['exit_date'] ?? null,
+                    'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                    'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
+                    'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
                     'commodity' => $itemData['commodity'] ?? null,
                     'country' => $itemData['country'] ?? null,
                     'vessel' => $itemData['vessel'] ?? null,
@@ -844,32 +844,23 @@ $orderItem->additionalProducts()->sync($syncData);
 
 
     public function updateEntry(Request $request, OrderItem $orderItem) {
-        $request->validate(['entry_date' => 'required|date']);
-        $orderItem->entry_date = $request->entry_date;
+        $request->validate(['entry_date' => 'nullable']);
+        $orderItem->entry_date = !empty($request->entry_date) ? \Carbon\Carbon::parse($request->entry_date) : null;
         $orderItem->save();
-        return back()->with('success', 'Tanggal masuk diperbarui.');
+        return back()->with('success', 'Tanggal masuk berhasil diperbarui.');
     }
 
-
     public function updateEir(Request $request, OrderItem $orderItem) {
-        $request->validate([
-            'eir_date' => 'required|date',
-        ]);
-
-        $orderItem->eir_date = $request->eir_date;
+        $request->validate(['eir_date' => 'nullable']);
+        $orderItem->eir_date = !empty($request->eir_date) ? \Carbon\Carbon::parse($request->eir_date) : null;
         $orderItem->save();
-
         return back()->with('success', 'Tanggal EIR berhasil diperbarui.');
     }
 
     public function updateExit(Request $request, OrderItem $orderItem) {
-        $request->validate([
-            'exit_date' => 'required|date',
-        ]);
-
-        $orderItem->exit_date = $request->exit_date;
+        $request->validate(['exit_date' => 'nullable']);
+        $orderItem->exit_date = !empty($request->exit_date) ? \Carbon\Carbon::parse($request->exit_date) : null;
         $orderItem->save();
-
         return back()->with('success', 'Tanggal keluar berhasil diperbarui.');
     }
 

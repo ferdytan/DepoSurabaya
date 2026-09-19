@@ -517,7 +517,7 @@ export default function CreateInvoice() {
             .flatMap((o) => o.order_items || [])
             .filter((it) => selectedContainers.has(it.id));
         const exitTimestamps = selectedItems
-            .map((it) => (it.exit_date ? new Date(it.exit_date).getTime() : 0))
+            .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
         let effectiveDate = new Date().toISOString().split('T')[0];
         if (exitTimestamps.length > 0) {

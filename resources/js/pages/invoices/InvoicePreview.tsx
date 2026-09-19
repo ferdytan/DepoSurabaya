@@ -228,7 +228,7 @@ export default function InvoicePreview({
     // Hitung tanggal keluar paling terakhir jika tanpa periode
     const latestExitDate = useMemo(() => {
         const exitTimestamps = (order?.order_items || [])
-            .map((it) => (it.exit_date ? new Date(it.exit_date).getTime() : 0))
+            .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
         if (exitTimestamps.length === 0) return null;
         const maxTs = Math.max(...exitTimestamps);

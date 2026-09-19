@@ -38,6 +38,17 @@ function getNowLocalTime(): string {
 function parseValue(val?: string, withTime = true) {
     const defaultTime = getNowLocalTime();
     if (!val) return { date: '', time: defaultTime };
+
+    if (val.includes('Z') || (val.includes('+') && val.includes('T'))) {
+        const d = new Date(val);
+        if (!isNaN(d.getTime())) {
+            const date = formatYMD(d);
+            const hours = String(d.getHours()).padStart(2, '0');
+            const minutes = String(d.getMinutes()).padStart(2, '0');
+            return { date, time: `${hours}:${minutes}` };
+        }
+    }
+
     const cleaned = val.replace(' ', 'T');
     const parts = cleaned.split('T');
     const date = parts[0] || '';
@@ -179,6 +190,35 @@ export function DateTimePicker({
         setIsOpen(false);
     };
 
+    const handleDateSelect = (ymd: string) => {
+        setSelectedDate(ymd);
+        const t = selectedTime || getNowLocalTime();
+        if (withTime) {
+            onChange(`${ymd}T${t}`);
+        } else {
+            onChange(ymd);
+        }
+    };
+
+    const handleTimeChange = (newTime: string) => {
+        setSelectedTime(newTime);
+        const d = selectedDate || formatYMD(new Date());
+        if (!selectedDate) setSelectedDate(d);
+        if (withTime) {
+            onChange(`${d}T${newTime || '08:00'}`);
+        }
+    };
+
+    const handleSetNowTime = () => {
+        const nowTime = getNowLocalTime();
+        setSelectedTime(nowTime);
+        const d = selectedDate || formatYMD(new Date());
+        if (!selectedDate) setSelectedDate(d);
+        if (withTime) {
+            onChange(`${d}T${nowTime}`);
+        }
+    };
+
     const setNow = () => {
         const now = new Date();
         const dateStr = formatYMD(now);
@@ -205,6 +245,12 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(now.getFullYear());
         setViewMonth(now.getMonth());
+        const t = selectedTime || getNowLocalTime();
+        if (withTime) {
+            onChange(`${dateStr}T${t}`);
+        } else {
+            onChange(dateStr);
+        }
     };
 
     const setTomorrow = () => {
@@ -214,6 +260,12 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(d.getFullYear());
         setViewMonth(d.getMonth());
+        const t = selectedTime || getNowLocalTime();
+        if (withTime) {
+            onChange(`${dateStr}T${t}`);
+        } else {
+            onChange(dateStr);
+        }
     };
 
     const defaultPlaceholder = withTime ? 'Pilih tanggal & jam...' : 'Pilih tanggal...';
@@ -371,7 +423,7 @@ export function DateTimePicker({
                             return (
                                 <div
                                     key={ymd}
-                                    onClick={() => setSelectedDate(ymd)}
+                                    onClick={() => handleDateSelect(ymd)}
                                     className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
                                         isSelected
                                             ? 'bg-gray-900 text-white font-bold shadow-xs'
@@ -404,12 +456,12 @@ export function DateTimePicker({
                                 <input
                                     type="time"
                                     value={selectedTime}
-                                    onChange={(e) => setSelectedTime(e.target.value)}
+                                    onChange={(e) => handleTimeChange(e.target.value)}
                                     className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none"
                                 />
                                 <button
                                     type="button"
-                                    onClick={() => setSelectedTime(getNowLocalTime())}
+                                    onClick={handleSetNowTime}
                                     className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
                                     title="Gunakan jam saat ini"
                                 >

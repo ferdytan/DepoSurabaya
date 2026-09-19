@@ -131,7 +131,8 @@ type PageProps = {
 };
 function formatDate(dateStr?: string | null) {
     if (!dateStr) return '-';
-    const date = new Date(dateStr);
+    const cleanStr = typeof dateStr === 'string' ? dateStr.replace(' ', 'T') : dateStr;
+    const date = new Date(cleanStr);
     if (isNaN(date.getTime())) return '-';
     const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const day = date.getDate().toString().padStart(2, '0');
@@ -350,7 +351,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
 function toLocalISO(dateInput?: string | Date | null): string {
     if (!dateInput) return '';
-    const d = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
+    const cleanInput = typeof dateInput === 'string' ? dateInput.replace(' ', 'T') : dateInput;
+    const d = typeof cleanInput === 'string' ? new Date(cleanInput) : cleanInput;
     if (isNaN(d.getTime())) return '';
     const y = d.getFullYear();
     const m = String(d.getMonth() + 1).padStart(2, '0');
@@ -381,13 +383,14 @@ function getNowLocalISO(): string {
     };
 
     const confirmEntryDateUpdate = () => {
-        if (!orderIdToEditEntry || !entryDateInput) return;
+        if (!orderIdToEditEntry) return;
         router.patch(
             route('orders.update-entry', orderIdToEditEntry),
             {
-                entry_date: entryDateInput,
+                entry_date: entryDateInput || null,
             },
             {
+                preserveScroll: true,
                 onSuccess: () => {
                     setIsEntryDialogOpen(false);
                     router.reload({ only: ['orders'] });
@@ -417,13 +420,15 @@ function getNowLocalISO(): string {
     };
 
     const confirmExitDateUpdate = () => {
-        if (!orderIdToEditExit || !exitDateInput) return;
+        if (!orderIdToEditExit) return;
         router.patch(
             route('orders.update-exit', orderIdToEditExit),
-            { exit_date: exitDateInput },
+            { exit_date: exitDateInput || null },
             {
+                preserveScroll: true,
                 onSuccess: () => {
                     setIsExitDialogOpen(false);
+                    router.reload({ only: ['orders'] });
                 },
             },
         );
@@ -442,13 +447,15 @@ function getNowLocalISO(): string {
     };
 
     const confirmEirDateUpdate = () => {
-        if (!orderIdToEdit || !eirDateInput) return;
+        if (!orderIdToEdit) return;
         router.patch(
             route('orders.update-eir', orderIdToEdit),
-            { eir_date: eirDateInput },
+            { eir_date: eirDateInput || null },
             {
+                preserveScroll: true,
                 onSuccess: () => {
                     setIsEirDialogOpen(false);
+                    router.reload({ only: ['orders'] });
                 },
             },
         );

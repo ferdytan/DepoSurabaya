@@ -495,7 +495,7 @@ export default function EditInvoice() {
 
         // Cari exit_date paling terakhir dari activeItems
         const exitTimestamps = activeItems
-            .map((it) => (it.orderItem?.exit_date ? new Date(it.orderItem.exit_date).getTime() : 0))
+            .map((it) => (it.orderItem?.exit_date ? new Date(it.orderItem.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
         let latestExitDate: string | null = null;
         if (exitTimestamps.length > 0) {

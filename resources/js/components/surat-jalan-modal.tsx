@@ -611,28 +611,32 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             color: #222;
         }
         .customer-info {
-            margin-top: 2mm;
-            font-size: 9pt;
-            font-weight: 800;
+            margin-top: 2.5mm;
+            font-size: 11pt;
+            font-weight: 900;
             line-height: 1.25;
+            color: #000;
+            text-transform: uppercase;
         }
         .shipper-info {
-            font-size: 8.5pt;
-            font-weight: 700;
-            padding-left: 17mm;
-            color: #222;
+            font-size: 10.5pt;
+            font-weight: 900;
+            padding-left: 20mm;
+            color: #000;
+            text-transform: uppercase;
+            margin-top: 0.8mm;
         }
 
         /* Title Box */
         .title-box {
-            border: 1.5px solid #000;
+            border: 2px solid #000;
             padding: 2mm 6mm;
             text-align: center;
             align-self: flex-start;
             margin: 0 2mm;
         }
         .title-text {
-            font-size: 12.5pt;
+            font-size: 13pt;
             font-weight: 900;
             letter-spacing: 2px;
             line-height: 1;
@@ -641,32 +645,35 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
 
         /* Meta Box Right */
         .meta-box {
-            width: 62mm;
-            border: 1.5px solid #000;
-            font-size: 8pt;
+            width: 68mm;
+            border: 2px solid #000;
+            font-size: 9.5pt;
         }
         .meta-row {
             display: flex;
-            border-bottom: 1px solid #000;
-            height: 5.4mm;
+            border-bottom: 1.5px solid #000;
+            height: 6.2mm;
             align-items: center;
         }
         .meta-row:last-child {
             border-bottom: none;
         }
         .meta-lbl {
-            width: 21mm;
-            padding-left: 2mm;
-            font-weight: 600;
+            width: 25mm;
+            padding-left: 2.5mm;
+            font-weight: 900;
+            color: #000;
         }
         .meta-sep {
-            width: 3mm;
-            font-weight: 700;
+            width: 3.5mm;
+            font-weight: 900;
+            color: #000;
         }
         .meta-val {
             flex: 1;
-            padding-right: 2mm;
-            font-weight: 700;
+            padding-right: 2.5mm;
+            font-weight: 900;
+            color: #000;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -684,26 +691,29 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .td-lbl {
             width: 33mm;
-            font-size: 8.5pt;
-            font-weight: 800;
+            font-size: 9.5pt;
+            font-weight: 900;
             text-align: center;
             line-height: 1.15;
             padding: 1mm;
+            color: #000;
         }
         .td-cont-num {
             height: 16mm;
-            font-size: 24pt;
-            font-weight: 800;
+            font-size: 26pt;
+            font-weight: 900;
             letter-spacing: 0.5px;
             text-align: center;
+            color: #000;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         }
         .td-val-row {
             height: 8.5mm;
-            font-size: 10pt;
-            font-weight: 700;
+            font-size: 10.5pt;
+            font-weight: 900;
             text-align: center;
             padding: 0 3mm;
+            color: #000;
         }
         .td-service-col {
             width: 56mm;
@@ -712,17 +722,19 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             padding: 0;
         }
         .service-size-box {
-            font-size: 12.5pt;
-            font-weight: 800;
+            font-size: 13pt;
+            font-weight: 900;
             padding: 2mm 0;
             border-bottom: 1.5px solid #000;
+            color: #000;
         }
         .service-title-box {
-            font-size: 13pt;
-            font-weight: 800;
+            font-size: 13.5pt;
+            font-weight: 900;
             padding: 4mm 2mm;
             line-height: 1.25;
             text-transform: uppercase;
+            color: #000;
         }
 
         /* Footer Signature Table */
@@ -734,32 +746,37 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             height: 31mm;
         }
         table.footer-table td {
-            border: 1px solid #000;
+            border: 1.5px solid #000;
             vertical-align: top;
         }
         .td-notice {
-            width: 46mm;
+            width: 56mm;
             padding: 2.5mm;
-            font-size: 7.5pt;
+            font-size: 9pt;
+            font-weight: 900;
             line-height: 1.3;
-            color: #111;
+            color: #000;
         }
         .td-notice u {
-            font-weight: 700;
+            font-weight: 900;
         }
         .td-sig-col {
-            width: 36mm;
+            width: 34mm;
             text-align: center;
-            font-size: 8.5pt;
-            font-weight: 700;
-            padding-top: 2mm;
+            font-size: 9.5pt;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #000;
+            padding-top: 2.5mm;
         }
         .td-sig-empty {
             flex: 1;
             text-align: center;
-            font-size: 8.5pt;
-            font-weight: 700;
-            padding-top: 2mm;
+            font-size: 9.5pt;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #000;
+            padding-top: 2.5mm;
         }
     </style>
 </head>
@@ -1268,35 +1285,35 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                         </div>
 
                                         {/* Meta Box Kanan Atas */}
-                                        <div className="w-[230px] border-[1.5px] border-black text-[11px]">
-                                            <div className="flex border-b border-black py-0.5 items-center">
-                                                <div className="w-[80px] pl-2 font-semibold">Tanggal</div>
-                                                <div className="w-3 font-bold">:</div>
-                                                <div className="flex-1 pr-2 font-bold truncate">{tanggal || '-'}</div>
+                                        <div className="w-[250px] border-2 border-black text-[13px] sm:text-[13.5px]">
+                                            <div className="flex border-b-2 border-black py-1 items-center">
+                                                <div className="w-[90px] pl-2.5 font-black text-black">Tanggal</div>
+                                                <div className="w-3.5 font-black text-black">:</div>
+                                                <div className="flex-1 pr-2 font-black text-black truncate">{tanggal || '-'}</div>
                                             </div>
-                                            <div className="flex border-b border-black py-0.5 items-center">
-                                                <div className="w-[80px] pl-2 font-semibold">Jam Keluar</div>
-                                                <div className="w-3 font-bold">:</div>
-                                                <div className="flex-1 pr-2 font-bold truncate">{jamKeluar || '-'}</div>
+                                            <div className="flex border-b-2 border-black py-1 items-center">
+                                                <div className="w-[90px] pl-2.5 font-black text-black">Jam Keluar</div>
+                                                <div className="w-3.5 font-black text-black">:</div>
+                                                <div className="flex-1 pr-2 font-black text-black truncate">{jamKeluar || '-'}</div>
                                             </div>
-                                            <div className="flex border-b border-black py-0.5 items-center">
-                                                <div className="w-[80px] pl-2 font-semibold">No. Pol</div>
-                                                <div className="w-3 font-bold">:</div>
-                                                <div className="flex-1 pr-2 font-bold truncate">{noPol || '-'}</div>
+                                            <div className="flex border-b-2 border-black py-1 items-center">
+                                                <div className="w-[90px] pl-2.5 font-black text-black">No. Pol</div>
+                                                <div className="w-3.5 font-black text-black">:</div>
+                                                <div className="flex-1 pr-2 font-black text-black truncate">{noPol || '-'}</div>
                                             </div>
-                                            <div className="flex py-0.5 items-center">
-                                                <div className="w-[80px] pl-2 font-semibold">Tujuan</div>
-                                                <div className="w-3 font-bold">:</div>
-                                                <div className="flex-1 pr-2 font-bold truncate">{tujuan || '-'}</div>
+                                            <div className="flex py-1 items-center">
+                                                <div className="w-[90px] pl-2.5 font-black text-black">Tujuan</div>
+                                                <div className="w-3.5 font-black text-black">:</div>
+                                                <div className="flex-1 pr-2 font-black text-black truncate">{tujuan || '-'}</div>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Baris Customer & Shipper */}
-                                    <div className="mt-2 text-[12px] font-bold text-gray-950 leading-tight">
-                                        Customer : {customerName}
+                                    <div className="mt-2.5 text-[14px] sm:text-[15px] font-black text-black leading-tight uppercase">
+                                        Customer : <span className="font-black">{customerName}</span>
                                         {shipperName && (
-                                            <div className="font-semibold text-gray-800 pl-16">
+                                            <div className="font-black text-black text-[13px] sm:text-[14px] pl-20 mt-0.5">
                                                 ({shipperName})
                                             </div>
                                         )}
@@ -1307,42 +1324,42 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 <table className="w-full border-2 border-black border-collapse">
                                     <tbody>
                                         <tr>
-                                            <td className="w-[125px] border border-black p-2 font-bold text-center text-xs">
+                                            <td className="w-[125px] border border-black p-2 font-black text-center text-[12.5px] text-black uppercase">
                                                 NO<br />CONTAINER
                                             </td>
-                                            <td className="border border-black p-2 font-extrabold text-2xl sm:text-3xl text-center tracking-normal">
+                                            <td className="border border-black p-2 font-black text-2xl sm:text-3xl text-center tracking-normal text-black">
                                                 {containerNumber}
                                             </td>
                                             <td rowSpan={4} className="w-[210px] border border-black p-0 text-center align-middle bg-gray-50/30">
-                                                <div className="text-base font-black py-2.5 border-b-[1.5px] border-black">
+                                                <div className="text-base font-black py-2.5 border-b-[1.5px] border-black text-black">
                                                     {containerSize}
                                                 </div>
-                                                <div className="text-base font-black py-5 px-2 tracking-wide uppercase leading-tight">
+                                                <div className="text-base font-black py-5 px-2 tracking-wide uppercase leading-tight text-black">
                                                     {serviceType}
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="border border-black p-1.5 font-bold text-center text-xs">
+                                            <td className="border border-black p-1.5 font-black text-center text-[12.5px] text-black uppercase">
                                                 ISI
                                             </td>
-                                            <td className="border border-black p-1.5 px-3 font-semibold text-xs sm:text-sm text-center">
+                                            <td className="border border-black p-1.5 px-3 font-black text-sm text-center text-black">
                                                 {isi || 'FULL CONT(ON-CHASIS)'}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="border border-black p-1.5 font-bold text-center text-xs">
+                                            <td className="border border-black p-1.5 font-black text-center text-[12.5px] text-black uppercase">
                                                 NO SEGEL
                                             </td>
-                                            <td className="border border-black p-1.5 px-3 font-semibold text-xs sm:text-sm text-center">
+                                            <td className="border border-black p-1.5 px-3 font-black text-sm text-center text-black">
                                                 {noSegel || '-'}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="border border-black p-1.5 font-bold text-center text-xs">
+                                            <td className="border border-black p-1.5 font-black text-center text-[12.5px] text-black uppercase">
                                                 KETERANGAN
                                             </td>
-                                            <td className="border border-black p-1.5 px-3 font-semibold text-xs sm:text-sm text-center">
+                                            <td className="border border-black p-1.5 px-3 font-black text-sm text-center text-black">
                                                 {keterangan || '-'}
                                             </td>
                                         </tr>
@@ -1353,17 +1370,17 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 <table className="w-full border-2 border-black border-t-0 border-collapse h-[115px]">
                                     <tbody>
                                         <tr>
-                                            <td className="w-[185px] border border-black p-2.5 text-[10px] leading-tight text-gray-800 align-top">
-                                                <strong><u>PERHATIAN :</u></strong> Mohon container dicek terlebih dahulu, komplain setelah keluar depo bukan tanggung jawab kami.
+                                            <td className="w-[240px] sm:w-[260px] border border-black p-2.5 text-[11.5px] sm:text-[12px] font-black leading-snug text-black align-top">
+                                                <strong className="underline">PERHATIAN :</strong> Mohon container dicek terlebih dahulu, komplain setelah keluar depo bukan tanggung jawab kami.
                                             </td>
-                                            <td className="w-[145px] border border-black text-center text-xs p-2 align-top">
-                                                <div className="font-semibold">Diserahkan oleh</div>
+                                            <td className="w-[135px] border border-black text-center p-2 align-top">
+                                                <div className="font-black text-[12px] uppercase text-black">Diserahkan oleh</div>
                                             </td>
-                                            <td className="w-[145px] border border-black text-center text-xs p-2 align-top">
-                                                <div className="font-semibold">Sopir</div>
+                                            <td className="w-[135px] border border-black text-center p-2 align-top">
+                                                <div className="font-black text-[12px] uppercase text-black">Sopir</div>
                                             </td>
-                                            <td className="border border-black text-center text-xs p-2 align-top">
-                                                <div className="font-semibold">Penerima</div>
+                                            <td className="border border-black text-center p-2 align-top">
+                                                <div className="font-black text-[12px] uppercase text-black">Penerima</div>
                                             </td>
                                         </tr>
                                     </tbody>

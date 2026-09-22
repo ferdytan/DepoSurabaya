@@ -204,14 +204,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             flex: 1.3;
         }
         .m-log-label {
-            font-size: 8pt;
+            font-size: 10pt;
             text-transform: uppercase;
             font-weight: 900;
             color: #000000;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
         .m-log-value {
-            font-size: 10pt;
+            font-size: 11pt;
             font-weight: 900;
             color: #000000;
             margin-top: 1px;
@@ -271,10 +271,10 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             justify-content: center;
         }
         .m-cont-lbl {
-            font-size: 8pt;
+            font-size: 10pt;
             font-weight: 900;
             color: #000000;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
         }
         .m-cont-number {
@@ -329,13 +329,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             flex: 1.3;
         }
         .m-subcol-lbl {
-            font-size: 8pt;
+            font-size: 9.5pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
+            letter-spacing: 0.3px;
         }
         .m-subcol-val {
-            font-size: 9.5pt;
+            font-size: 10.5pt;
             font-weight: 900;
             margin-top: 1px;
             color: #000000;
@@ -372,18 +373,28 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             height: 27mm;
         }
         .m-notice-box {
-            width: 50mm;
-            border: 1.5px solid #000;
-            padding: 2mm;
-            font-size: 7pt;
-            line-height: 1.3;
+            width: 60mm;
+            border: 2px solid #000;
+            padding: 2mm 2.5mm;
             background: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .m-notice-box u {
+        .m-notice-title {
+            font-size: 10pt;
             font-weight: 900;
+            text-transform: uppercase;
+            color: #000000;
+            text-decoration: underline;
+            margin-bottom: 1.2mm;
+            letter-spacing: 0.3px;
+        }
+        .m-notice-body {
+            font-size: 9pt;
+            font-weight: 900;
+            line-height: 1.3;
+            color: #000000;
         }
         .m-sig-card {
             flex: 1;
@@ -488,8 +499,8 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         <!-- Modern Footer & Signatures -->
         <div class="m-footer-section">
             <div class="m-notice-box">
-                <div><strong><u>PERHATIAN PENTING :</u></strong></div>
-                <div>Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                <div class="m-notice-title">PERHATIAN PENTING :</div>
+                <div class="m-notice-body">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
             </div>
             <div class="m-sig-card">
                 <div class="m-sig-role">DISERAHKAN OLEH</div>
@@ -1127,25 +1138,25 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     {/* 4-Box Logistics Bar */}
                                     <div className="grid grid-cols-4 gap-2 mt-2">
                                         <div className="border-2 border-black p-2 bg-white rounded-xs">
-                                            <div className="text-[10px] uppercase font-black text-black tracking-wider">TANGGAL</div>
-                                            <div className="text-[13.5px] font-black text-black truncate">{tanggal || '-'}</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">TANGGAL</div>
+                                            <div className="text-[15px] sm:text-[16px] font-black text-black truncate mt-0.5">{tanggal || '-'}</div>
                                         </div>
                                         <div className="border-2 border-black p-2 bg-white rounded-xs">
-                                            <div className="text-[10px] uppercase font-black text-black tracking-wider">JAM KELUAR</div>
-                                            <div className="text-[13.5px] font-black text-black truncate">{jamKeluar || '-'}</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">JAM KELUAR</div>
+                                            <div className="text-[15px] sm:text-[16px] font-black text-black truncate mt-0.5">{jamKeluar || '-'}</div>
                                         </div>
                                         <div className="border-2 border-black p-2 bg-white rounded-xs">
-                                            <div className="text-[10px] uppercase font-black text-black tracking-wider">NO. POLISI</div>
-                                            <div className="text-[13.5px] font-black text-black truncate">{noPol || '-'}</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">NO. POLISI</div>
+                                            <div className="text-[15px] sm:text-[16px] font-black text-black truncate mt-0.5">{noPol || '-'}</div>
                                         </div>
                                         <div className="border-2 border-black p-2 bg-white rounded-xs">
-                                            <div className="text-[10px] uppercase font-black text-black tracking-wider">TUJUAN</div>
-                                            <div className="text-[13.5px] font-black text-black truncate">{tujuan || '-'}</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">TUJUAN</div>
+                                            <div className="text-[15px] sm:text-[16px] font-black text-black truncate mt-0.5">{tujuan || '-'}</div>
                                         </div>
                                     </div>
 
                                     {/* Customer & Shipper Banner */}
-                                    <div className="flex justify-between items-center bg-white border-2 border-black border-l-[6px] px-3 py-2 mt-2 text-[13px]">
+                                    <div className="flex justify-between items-center bg-white border-2 border-black border-l-[6px] px-3 py-2 mt-2 text-[13.5px]">
                                         <div className="font-black text-black uppercase">
                                             CUSTOMER: <span className="font-black">{customerName}</span>
                                         </div>
@@ -1162,37 +1173,37 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     {/* Baris 1: No. Container & Jumlah / Ukuran (Sejajar Sempurna) */}
                                     <div className="flex border-b-2 border-black min-h-[75px]">
                                         <div className="flex-1 border-r-2 border-black p-2.5 flex flex-col justify-center">
-                                            <div className="text-[10.5px] uppercase font-black text-black tracking-wider">NO. CONTAINER</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">NO. CONTAINER</div>
                                             <div className="text-3xl sm:text-4xl font-black tracking-wider text-black mt-0.5 leading-none">
                                                 {containerNumber || '-'}
                                             </div>
                                         </div>
                                         <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
-                                            <div className="text-[10.5px] uppercase font-black text-black tracking-wider">JUMLAH / UKURAN</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">JUMLAH / UKURAN</div>
                                             <div className="text-2xl sm:text-3xl font-black text-black mt-0.5 leading-none">{ukuranCont}</div>
                                         </div>
                                     </div>
 
                                     {/* Baris 2: Subgrid 3 Kolom & Nama Produk / Layanan */}
-                                    <div className="flex min-h-[70px]">
+                                    <div className="flex min-h-[75px]">
                                         <div className="flex-1 border-r-2 border-black grid grid-cols-12 divide-x-2 divide-black bg-white">
                                             <div className="col-span-5 p-2 flex flex-col justify-center">
-                                                <div className="text-[10px] uppercase font-black text-black tracking-wider">ISI KONTAINER</div>
-                                                <div className="text-xs sm:text-[13px] font-black text-black break-words whitespace-normal leading-tight mt-0.5">
+                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">ISI KONTAINER</div>
+                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words whitespace-normal leading-tight mt-0.5">
                                                     {isi || 'FULL CONT(ON-CHASIS)'}
                                                 </div>
                                             </div>
                                             <div className="col-span-3 p-2 flex flex-col justify-center">
-                                                <div className="text-[10px] uppercase font-black text-black tracking-wider">NO. SEGEL</div>
-                                                <div className="text-xs sm:text-[13px] font-black text-black break-words mt-0.5">{noSegel || '-'}</div>
+                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">NO. SEGEL</div>
+                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words mt-0.5">{noSegel || '-'}</div>
                                             </div>
                                             <div className="col-span-4 p-2 flex flex-col justify-center">
-                                                <div className="text-[10px] uppercase font-black text-black tracking-wider">KETERANGAN</div>
-                                                <div className="text-xs sm:text-[13px] font-black text-black break-words mt-0.5">{keterangan || '-'}</div>
+                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">KETERANGAN</div>
+                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words mt-0.5">{keterangan || '-'}</div>
                                             </div>
                                         </div>
                                         <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
-                                            <div className="text-[10.5px] uppercase font-black text-black tracking-wider">NAMA PRODUK / LAYANAN</div>
+                                            <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">NAMA PRODUK / LAYANAN</div>
                                             <div className="text-base sm:text-lg font-black uppercase tracking-tight leading-tight mt-0.5 text-black">
                                                 {layanan}
                                             </div>
@@ -1201,21 +1212,21 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 </div>
 
                                 {/* Modern Footer & Signatures */}
-                                <div className="flex gap-2.5 h-[105px] items-stretch mt-2">
-                                    <div className="w-[200px] border-2 border-black p-2 bg-white text-[9.5px] leading-tight flex flex-col justify-between">
-                                        <div><strong><u>PERHATIAN PENTING :</u></strong></div>
-                                        <div className="font-bold text-black">Mohon kondisi container dan segel dicek terlebih dahulu sebelum keluar depo. Komplain setelah keluar bukan tanggung jawab kami.</div>
+                                <div className="flex gap-2.5 h-[115px] items-stretch mt-2">
+                                    <div className="w-[250px] sm:w-[270px] border-2 border-black p-2.5 bg-white flex flex-col justify-between">
+                                        <div className="text-[12.5px] sm:text-[13px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
+                                        <div className="text-[12px] sm:text-[12.5px] font-black text-black leading-snug mt-1">Mohon kondisi container dan segel dicek terlebih dahulu sebelum keluar depo. Komplain setelah keluar bukan tanggung jawab kami.</div>
                                     </div>
                                     <div className="flex-1 border-2 border-black p-2 bg-white flex flex-col justify-between text-center">
-                                        <div className="text-[11px] font-black uppercase text-black">DISERAHKAN OLEH</div>
+                                        <div className="text-[12px] font-black uppercase text-black">DISERAHKAN OLEH</div>
                                         <div className="border-b-2 border-dotted border-black mx-4"></div>
                                     </div>
                                     <div className="flex-1 border-2 border-black p-2 bg-white flex flex-col justify-between text-center">
-                                        <div className="text-[11px] font-black uppercase text-black">SOPIR TRUK</div>
+                                        <div className="text-[12px] font-black uppercase text-black">SOPIR TRUK</div>
                                         <div className="border-b-2 border-dotted border-black mx-4"></div>
                                     </div>
                                     <div className="flex-1 border-2 border-black p-2 bg-white flex flex-col justify-between text-center">
-                                        <div className="text-[11px] font-black uppercase text-black">PENERIMA</div>
+                                        <div className="text-[12px] font-black uppercase text-black">PENERIMA</div>
                                         <div className="border-b-2 border-dotted border-black mx-4"></div>
                                     </div>
                                 </div>

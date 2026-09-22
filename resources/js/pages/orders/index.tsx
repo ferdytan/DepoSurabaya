@@ -1071,13 +1071,13 @@ function getNowLocalISO(): string {
                     </AlertDialogContent>
                 </AlertDialog>
 
-                {/* AlertDialogs lainnya tetap sama */}
-                <AlertDialog open={isEirDialogOpen} onOpenChange={setIsEirDialogOpen}>
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>{eirDateInput ? 'Edit Tanggal EIR' : 'Tambah Tanggal EIR'}</AlertDialogTitle>
-                        </AlertDialogHeader>
-                        <div className="space-y-4">
+                {/* Dialogs untuk EIR, Keluar, dan Masuk */}
+                <Dialog open={isEirDialogOpen} onOpenChange={setIsEirDialogOpen}>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>{eirDateInput ? 'Edit Tanggal EIR' : 'Tambah Tanggal EIR'}</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-4 py-2">
                             <Label htmlFor="eir-date">Tanggal EIR</Label>
                             <DateTimePicker
                                 id="eir-date"
@@ -1088,21 +1088,23 @@ function getNowLocalISO(): string {
                                 className="w-full"
                             />
                         </div>
-                        <AlertDialogFooter>
-                            <AlertDialogCancel onClick={() => setIsEirDialogOpen(false)}>Batal</AlertDialogCancel>
-                            <AlertDialogAction onClick={confirmEirDateUpdate} className="bg-blue-600 hover:bg-blue-700">
+                        <DialogFooter className="flex flex-row justify-end gap-2 pt-2">
+                            <Button variant="outline" type="button" onClick={() => setIsEirDialogOpen(false)}>
+                                Batal
+                            </Button>
+                            <Button type="button" onClick={confirmEirDateUpdate} className="bg-gray-900 hover:bg-black text-white">
                                 Simpan
-                            </AlertDialogAction>
-                        </AlertDialogFooter>
-                    </AlertDialogContent>
-                </AlertDialog>
+                            </Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
 
-                <AlertDialog open={isExitDialogOpen} onOpenChange={setIsExitDialogOpen}>
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>{exitDateInput ? 'Edit Tanggal Keluar' : 'Tambah Tanggal Keluar'}</AlertDialogTitle>
-                        </AlertDialogHeader>
-                        <div className="space-y-4">
+                <Dialog open={isExitDialogOpen} onOpenChange={setIsExitDialogOpen}>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>{exitDateInput ? 'Edit Tanggal Keluar' : 'Tambah Tanggal Keluar'}</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-4 py-2">
                             <Label htmlFor="exit-date">Tanggal Keluar</Label>
                             <DateTimePicker
                                 id="exit-date"
@@ -1113,21 +1115,23 @@ function getNowLocalISO(): string {
                                 className="w-full"
                             />
                         </div>
-                        <AlertDialogFooter>
-                            <AlertDialogCancel onClick={() => setIsExitDialogOpen(false)}>Batal</AlertDialogCancel>
-                            <AlertDialogAction onClick={confirmExitDateUpdate} className="bg-blue-600 hover:bg-blue-700">
+                        <DialogFooter className="flex flex-row justify-end gap-2 pt-2">
+                            <Button variant="outline" type="button" onClick={() => setIsExitDialogOpen(false)}>
+                                Batal
+                            </Button>
+                            <Button type="button" onClick={confirmExitDateUpdate} className="bg-gray-900 hover:bg-black text-white">
                                 Simpan
-                            </AlertDialogAction>
-                        </AlertDialogFooter>
-                    </AlertDialogContent>
-                </AlertDialog>
+                            </Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
 
-                <AlertDialog open={isEntryDialogOpen} onOpenChange={setIsEntryDialogOpen}>
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>{entryDateInput ? 'Edit Tanggal Masuk' : 'Tambah Tanggal Masuk'}</AlertDialogTitle>
-                        </AlertDialogHeader>
-                        <div className="space-y-4">
+                <Dialog open={isEntryDialogOpen} onOpenChange={setIsEntryDialogOpen}>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>{entryDateInput ? 'Edit Tanggal Masuk' : 'Tambah Tanggal Masuk'}</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-4 py-2">
                             <Label htmlFor="entry-date">Tanggal Masuk</Label>
                             <DateTimePicker
                                 id="entry-date"
@@ -1138,14 +1142,16 @@ function getNowLocalISO(): string {
                                 className="w-full"
                             />
                         </div>
-                        <AlertDialogFooter>
-                            <AlertDialogCancel onClick={() => setIsEntryDialogOpen(false)}>Batal</AlertDialogCancel>
-                            <AlertDialogAction onClick={confirmEntryDateUpdate} className="bg-blue-600 hover:bg-blue-700">
+                        <DialogFooter className="flex flex-row justify-end gap-2 pt-2">
+                            <Button variant="outline" type="button" onClick={() => setIsEntryDialogOpen(false)}>
+                                Batal
+                            </Button>
+                            <Button type="button" onClick={confirmEntryDateUpdate} className="bg-gray-900 hover:bg-black text-white">
                                 Simpan
-                            </AlertDialogAction>
-                        </AlertDialogFooter>
-                    </AlertDialogContent>
-                </AlertDialog>
+                            </Button>
+                        </DialogFooter>
+                    </DialogContent>
+                </Dialog>
 
                 <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
                     <DialogContent className="max-w-3xl">

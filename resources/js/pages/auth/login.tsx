@@ -260,7 +260,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                         {/* Submit Button */}
                         <Button
                             type="submit"
-                            className="w-full h-10 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-sm shadow-blue-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                            className="w-full h-10 bg-gray-900 hover:bg-black text-white font-semibold text-xs shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
                             tabIndex={4}
                             disabled={processing}
                         >

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { DismissableLayerBranch } from '@radix-ui/react-dismissable-layer';
 import {
     Calendar as CalendarIcon,
     Clock,
@@ -194,7 +195,7 @@ export function DateTimePicker({
         setIsOpen(false);
     };
 
-    const handleClear = (e?: React.MouseEvent) => {
+    const handleClear = (e?: React.SyntheticEvent | Event) => {
         e?.stopPropagation();
         setSelectedDate('');
         onChange('');
@@ -431,6 +432,14 @@ export function DateTimePicker({
                                 return (
                                     <div
                                         key={ymd}
+                                        onPointerDown={(e) => {
+                                            e.stopPropagation();
+                                            handleDateSelect(ymd);
+                                        }}
+                                        onTouchEnd={(e) => {
+                                            e.stopPropagation();
+                                            handleDateSelect(ymd);
+                                        }}
                                         onClick={() => handleDateSelect(ymd)}
                                         className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
                                             isSelected
@@ -469,6 +478,14 @@ export function DateTimePicker({
                                     />
                                     <button
                                         type="button"
+                                        onPointerDown={(e) => {
+                                            e.stopPropagation();
+                                            handleSetNowTime();
+                                        }}
+                                        onTouchEnd={(e) => {
+                                            e.stopPropagation();
+                                            handleSetNowTime();
+                                        }}
                                         onClick={handleSetNowTime}
                                         className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
                                         title="Gunakan jam saat ini"
@@ -483,8 +500,18 @@ export function DateTimePicker({
                         <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-gray-100 shrink-0">
                             <button
                                 type="button"
+                                onPointerDown={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    handleClear(e);
+                                }}
+                                onTouchEnd={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    handleClear(e);
+                                }}
                                 onClick={handleClear}
-                                className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
+                                className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 active:bg-red-100 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
                             >
                                 <RotateCcw className="h-3 w-3" />
                                 Hapus
@@ -493,16 +520,42 @@ export function DateTimePicker({
                             <div className="flex items-center gap-2">
                                 <button
                                     type="button"
-                                    onClick={() => setIsOpen(false)}
-                                    className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition font-medium cursor-pointer"
+                                    onPointerDown={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }}
+                                    onTouchEnd={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 active:bg-gray-200 rounded-md transition font-medium cursor-pointer"
                                 >
                                     Batal
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => handleApply()}
+                                    onPointerDown={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        if (selectedDate) handleApply();
+                                    }}
+                                    onTouchEnd={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        if (selectedDate) handleApply();
+                                    }}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (selectedDate) handleApply();
+                                    }}
                                     disabled={!selectedDate}
-                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black active:bg-neutral-800 disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
                                 >
                                     <Check className="h-3.5 w-3.5" />
                                     Simpan
@@ -514,37 +567,71 @@ export function DateTimePicker({
 
                 if (isMobile && typeof document !== 'undefined') {
                     return createPortal(
-                        <div
-                            className="fixed inset-0 z-[9999] flex items-center justify-center p-3 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
-                            onClick={(e) => {
-                                if (e.target === e.currentTarget) setIsOpen(false);
-                            }}
-                        >
+                        <DismissableLayerBranch asChild>
                             <div
-                                className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col"
-                                onClick={(e) => e.stopPropagation()}
+                                className="fixed inset-0 z-[9999] pointer-events-auto flex items-center justify-center p-3 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150 select-none"
+                                onPointerDown={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
+                                onTouchEnd={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
+                                onClick={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
                             >
-                                {/* Mobile Header Bar */}
-                                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
-                                    <div className="flex items-center gap-2">
-                                        <CalendarIcon className="h-4 w-4 text-blue-600" />
-                                        <span className="text-xs font-bold text-gray-900">
-                                            {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
-                                        </span>
+                                <div
+                                    className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto select-auto"
+                                    onPointerDown={(e) => e.stopPropagation()}
+                                    onTouchEnd={(e) => e.stopPropagation()}
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    {/* Mobile Header Bar */}
+                                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
+                                        <div className="flex items-center gap-2">
+                                            <CalendarIcon className="h-4 w-4 text-blue-600" />
+                                            <span className="text-xs font-bold text-gray-900">
+                                                {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
+                                            </span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onPointerDown={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            onTouchEnd={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
+                                            aria-label="Tutup"
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </button>
                                     </div>
-                                    <button
-                                        type="button"
-                                        onClick={() => setIsOpen(false)}
-                                        className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 cursor-pointer"
-                                        aria-label="Tutup"
-                                    >
-                                        <X className="h-4 w-4" />
-                                    </button>
-                                </div>
 
-                                {panelContent}
+                                    {panelContent}
+                                </div>
                             </div>
-                        </div>,
+                        </DismissableLayerBranch>,
                         document.body
                     );
                 }

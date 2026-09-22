@@ -202,7 +202,7 @@ export default function CreateInvoice() {
                         const apSt = (ap.service_type || '').toLowerCase();
                         if (apSt.includes('fumiga')) return true;
                     }
-                    const orderFumigasi = (order.fumigasi || '').toLowerCase().trim();
+                    const orderFumigasi = (((order as any).fumigasi as string) || '').toLowerCase().trim();
                     if (orderFumigasi && orderFumigasi !== '0' && orderFumigasi !== 'false') {
                         return true;
                     }

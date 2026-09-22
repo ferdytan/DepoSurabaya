@@ -910,106 +910,108 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                             </div>
                                         ) : (
                                             <>
-                                                {/* Row 1: Produk, Harga, Nomor Kontainer */}
-                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                    {/* Produk */}
-                                                    <div className="space-y-1.5">
-                                                        <Label className="text-xs font-semibold text-gray-700">
-                                                            Produk / Layanan <span className="text-red-500">*</span>
-                                                        </Label>
-                                                        <SearchableSelect
-                                                            options={customerProducts.map((p) => ({
-                                                                value: p.id.toString(),
-                                                                label: p.service_type,
-                                                                subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
-                                                            }))}
-                                                            value={item.product_id}
-                                                            onChange={(val) => {
-                                                                updateOrderItem(idx, 'product_id', val);
-                                                                updateOrderItem(idx, 'price_type', undefined);
-                                                            }}
-                                                            placeholder={
-                                                                productsLoading
-                                                                    ? 'Memuat layanan...'
-                                                                    : data.customer_id
-                                                                      ? 'Pilih Layanan Utama'
-                                                                      : 'Pilih Customer terlebih dahulu'
-                                                            }
-                                                            searchPlaceholder="Cari layanan..."
-                                                            disabled={!data.customer_id || productsLoading}
-                                                            showClear
-                                                        />
-                                                        {errors[`order_items.${idx}.product_id`] && (
-                                                            <p className="text-xs text-red-500 font-medium">
-                                                                {errors[`order_items.${idx}.product_id`]}
-                                                            </p>
-                                                        )}
-                                                    </div>
+                                                {(() => {
+                                                    const errorMap = errors as Record<string, string | undefined>;
+                                                    return (
+                                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                            {/* Produk */}
+                                                            <div className="space-y-1.5">
+                                                                <Label className="text-xs font-semibold text-gray-700">
+                                                                    Produk / Layanan <span className="text-red-500">*</span>
+                                                                </Label>
+                                                                <SearchableSelect
+                                                                    options={customerProducts.map((p) => ({
+                                                                        value: p.id.toString(),
+                                                                        label: p.service_type,
+                                                                        subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
+                                                                    }))}
+                                                                    value={item.product_id ? String(item.product_id) : ''}
+                                                                    onChange={(val) => {
+                                                                        updateOrderItem(idx, 'product_id', val ? Number(val) : '');
+                                                                        updateOrderItem(idx, 'price_type', '');
+                                                                    }}
+                                                                    placeholder={
+                                                                        data.customer_id
+                                                                            ? 'Pilih Layanan Utama'
+                                                                            : 'Pilih Customer terlebih dahulu'
+                                                                    }
+                                                                    searchPlaceholder="Cari layanan..."
+                                                                    disabled={!data.customer_id || productsLoading}
+                                                                    showClear
+                                                                />
+                                                                {errorMap[`order_items.${idx}.product_id`] && (
+                                                                    <p className="text-xs text-red-500 font-medium">
+                                                                        {errorMap[`order_items.${idx}.product_id`]}
+                                                                    </p>
+                                                                )}
+                                                            </div>
 
-                                                    {/* Pilih Harga */}
-                                                    <div className="space-y-1.5">
-                                                        <Label className="text-xs font-semibold text-gray-700">
-                                                            Pilih Harga <span className="text-red-500">*</span>
-                                                        </Label>
-                                                        <Select
-                                                            value={item.price_type}
-                                                            onValueChange={(val) =>
-                                                                updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
-                                                            }
-                                                            disabled={!item.product_id || priceOptions.length === 0}
-                                                        >
-                                                            <SelectTrigger className="h-10">
-                                                                <SelectValue placeholder="Pilih Tipe Harga" />
-                                                            </SelectTrigger>
-                                                            <SelectContent>
-                                                                {priceOptions.map((o) => (
-                                                                    <SelectItem key={o.value} value={o.value}>
-                                                                        {o.label}{' '}
-                                                                        {o.price
-                                                                            ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
-                                                                            : ''}
-                                                                    </SelectItem>
-                                                                ))}
-                                                            </SelectContent>
-                                                        </Select>
-                                                        {item.product_id && priceOptions.length === 0 && (
-                                                            <p className="text-[11px] text-red-500">
-                                                                Tidak ada harga terdaftar untuk produk ini
-                                                            </p>
-                                                        )}
-                                                        {errors[`order_items.${idx}.price_type`] && (
-                                                            <p className="text-xs text-red-500 font-medium">
-                                                                {errors[`order_items.${idx}.price_type`]}
-                                                            </p>
-                                                        )}
-                                                    </div>
+                                                            {/* Pilih Harga */}
+                                                            <div className="space-y-1.5">
+                                                                <Label className="text-xs font-semibold text-gray-700">
+                                                                    Pilih Harga <span className="text-red-500">*</span>
+                                                                </Label>
+                                                                <Select
+                                                                    value={item.price_type}
+                                                                    onValueChange={(val) =>
+                                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
+                                                                    }
+                                                                    disabled={!item.product_id || priceOptions.length === 0}
+                                                                >
+                                                                    <SelectTrigger className="h-10">
+                                                                        <SelectValue placeholder="Pilih Tipe Harga" />
+                                                                    </SelectTrigger>
+                                                                    <SelectContent>
+                                                                        {priceOptions.map((o) => (
+                                                                            <SelectItem key={o.value} value={o.value}>
+                                                                                {o.label}{' '}
+                                                                                {o.price
+                                                                                    ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
+                                                                                    : ''}
+                                                                            </SelectItem>
+                                                                        ))}
+                                                                    </SelectContent>
+                                                                </Select>
+                                                                {item.product_id && priceOptions.length === 0 && (
+                                                                    <p className="text-[11px] text-red-500">
+                                                                        Tidak ada harga terdaftar untuk produk ini
+                                                                    </p>
+                                                                )}
+                                                                {errorMap[`order_items.${idx}.price_type`] && (
+                                                                    <p className="text-xs text-red-500 font-medium">
+                                                                        {errorMap[`order_items.${idx}.price_type`]}
+                                                                    </p>
+                                                                )}
+                                                            </div>
 
-                                                    {/* Nomor Kontainer */}
-                                                    <div className="space-y-1.5">
-                                                        <Label className="text-xs font-semibold text-gray-700">
-                                                            Nomor Kontainer <span className="text-red-500">*</span>
-                                                        </Label>
-                                                        <Input
-                                                            value={item.container_number}
-                                                            onChange={(e) =>
-                                                                updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
-                                                            }
-                                                            placeholder="Contoh: EMCU1234567"
-                                                            maxLength={11}
-                                                            className="h-10 font-mono text-sm tracking-wider"
-                                                        />
-                                                        {hasDuplicateContainer(idx) && (
-                                                            <p className="text-[11px] text-red-500 font-medium">
-                                                                Nomor kontainer sudah dipakai pada layanan lain
-                                                            </p>
-                                                        )}
-                                                        {errors[`order_items.${idx}.container_number`] && (
-                                                            <p className="text-xs text-red-500 font-medium">
-                                                                {errors[`order_items.${idx}.container_number`]}
-                                                            </p>
-                                                        )}
-                                                    </div>
-                                                </div>
+                                                            {/* Nomor Kontainer */}
+                                                            <div className="space-y-1.5">
+                                                                <Label className="text-xs font-semibold text-gray-700">
+                                                                    Nomor Kontainer <span className="text-red-500">*</span>
+                                                                </Label>
+                                                                <Input
+                                                                    value={item.container_number}
+                                                                    onChange={(e) =>
+                                                                        updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
+                                                                    }
+                                                                    placeholder="Contoh: EMCU1234567"
+                                                                    maxLength={11}
+                                                                    className="h-10 font-mono text-sm tracking-wider"
+                                                                />
+                                                                {hasDuplicateContainer(idx) && (
+                                                                    <p className="text-[11px] text-red-500 font-medium">
+                                                                        Nomor kontainer sudah dipakai pada layanan lain
+                                                                    </p>
+                                                                )}
+                                                                {errorMap[`order_items.${idx}.container_number`] && (
+                                                                    <p className="text-xs text-red-500 font-medium">
+                                                                        {errorMap[`order_items.${idx}.container_number`]}
+                                                                    </p>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })()}
 
                                                 {/* Row 2: Additional Products */}
                                                 <div className="space-y-2 pt-2 border-t border-gray-100">

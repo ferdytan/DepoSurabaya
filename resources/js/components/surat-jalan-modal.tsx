@@ -226,21 +226,25 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             justify-content: space-between;
             align-items: center;
             background: #ffffff;
-            border: 1.5px solid #000;
-            border-left: 4.5px solid #000;
-            padding: 2mm 3mm;
+            border: 2px solid #000;
+            border-left: 5.5px solid #000;
+            padding: 2.2mm 3.5mm;
             margin-top: 2mm;
-            font-size: 9.5pt;
+            font-size: 11pt;
         }
         .m-party-cust {
             font-weight: 900;
+            font-size: 11pt;
             color: #000000;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
         .m-party-ship {
             font-weight: 900;
+            font-size: 11pt;
             color: #000000;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
 
         /* Hero Container Display (Clean 2-Row Border Grid, Perfectly Aligned) */
@@ -310,11 +314,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             display: flex;
         }
         .m-subcol {
-            padding: 1.8mm 2.5mm;
+            padding: 1.2mm 2.5mm 1.5mm 2.5mm;
             border-right: 1.5px solid #000;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .m-subcol:last-child {
             border-right: none;
@@ -334,11 +338,16 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
             color: #000000;
             letter-spacing: 0.3px;
+            line-height: 1.1;
+        }
+        .m-subcol-val-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
         }
         .m-subcol-val {
             font-size: 10.5pt;
             font-weight: 900;
-            margin-top: 1px;
             color: #000000;
             line-height: 1.25;
             word-break: break-word;
@@ -346,13 +355,19 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-service-box {
             width: 65mm;
-            padding: 2mm 2mm;
+            padding: 1.2mm 2mm 1.5mm 2mm;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             text-align: center;
             background: #ffffff;
+        }
+        .m-service-val-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .m-service-val {
             font-size: 13.5pt;
@@ -360,7 +375,6 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
             line-height: 1.2;
             letter-spacing: 0.3px;
-            margin-top: 0.8mm;
             color: #000000;
         }
 
@@ -478,20 +492,28 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                 <div class="m-subgrid-box">
                     <div class="m-subcol m-subcol-isi">
                         <div class="m-subcol-lbl">ISI KONTAINER</div>
-                        <div class="m-subcol-val">${isi || 'FULL CONT(ON-CHASIS)'}</div>
+                        <div class="m-subcol-val-wrap">
+                            <div class="m-subcol-val">${isi || 'FULL CONT(ON-CHASIS)'}</div>
+                        </div>
                     </div>
                     <div class="m-subcol m-subcol-segel">
                         <div class="m-subcol-lbl">NO. SEGEL</div>
-                        <div class="m-subcol-val">${noSegel || '-'}</div>
+                        <div class="m-subcol-val-wrap">
+                            <div class="m-subcol-val">${noSegel || '-'}</div>
+                        </div>
                     </div>
                     <div class="m-subcol m-subcol-ket">
                         <div class="m-subcol-lbl">KETERANGAN</div>
-                        <div class="m-subcol-val">${keterangan || '-'}</div>
+                        <div class="m-subcol-val-wrap">
+                            <div class="m-subcol-val">${keterangan || '-'}</div>
+                        </div>
                     </div>
                 </div>
                 <div class="m-service-box">
                     <div class="m-cont-lbl">NAMA PRODUK / LAYANAN</div>
-                    <div class="m-service-val">${layanan}</div>
+                    <div class="m-service-val-wrap">
+                        <div class="m-service-val">${layanan}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1173,12 +1195,12 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     </div>
 
                                     {/* Customer & Shipper Banner */}
-                                    <div className="flex justify-between items-center bg-white border-2 border-black border-l-[6px] px-3 py-2 mt-2 text-[13.5px]">
-                                        <div className="font-black text-black uppercase">
-                                            CUSTOMER: <span className="font-black">{customerName}</span>
+                                    <div className="flex justify-between items-center bg-white border-2 border-black border-l-[6px] px-3.5 py-2 mt-2 text-[15px] sm:text-[16px]">
+                                        <div className="font-black text-black uppercase tracking-tight" style={{ fontWeight: 900 }}>
+                                            CUSTOMER: <span className="font-black" style={{ fontWeight: 900 }}>{customerName}</span>
                                         </div>
                                         {shipperName && (
-                                            <div className="font-black text-black uppercase">
+                                            <div className="font-black text-black uppercase tracking-tight" style={{ fontWeight: 900 }}>
                                                 SHIPPER: ({shipperName})
                                             </div>
                                         )}
@@ -1190,39 +1212,59 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     {/* Baris 1: No. Container & Jumlah / Ukuran (Sejajar Sempurna) */}
                                     <div className="flex border-b-2 border-black min-h-[75px]">
                                         <div className="flex-1 border-r-2 border-black p-2.5 flex flex-col justify-center">
-                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">NO. CONTAINER</div>
-                                            <div className="text-3xl sm:text-4xl font-black tracking-wider text-black mt-0.5 leading-none">
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide" style={{ fontWeight: 900 }}>NO. CONTAINER</div>
+                                            <div className="text-3xl sm:text-4xl font-black tracking-wider text-black mt-0.5 leading-none" style={{ fontWeight: 900 }}>
                                                 {containerNumber || '-'}
                                             </div>
                                         </div>
                                         <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
-                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide">JUMLAH / UKURAN</div>
-                                            <div className="text-2xl sm:text-3xl font-black text-black mt-0.5 leading-none">{ukuranCont}</div>
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide" style={{ fontWeight: 900 }}>JUMLAH / UKURAN</div>
+                                            <div className="text-2xl sm:text-3xl font-black text-black mt-0.5 leading-none" style={{ fontWeight: 900 }}>{ukuranCont}</div>
                                         </div>
                                     </div>
 
                                     {/* Baris 2: Subgrid 3 Kolom & Nama Produk / Layanan */}
                                     <div className="flex min-h-[75px]">
                                         <div className="flex-1 border-r-2 border-black grid grid-cols-12 divide-x-2 divide-black bg-white">
-                                            <div className="col-span-5 p-2 flex flex-col justify-center">
-                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">ISI KONTAINER</div>
-                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words whitespace-normal leading-tight mt-0.5">
-                                                    {isi || 'FULL CONT(ON-CHASIS)'}
+                                            <div className="col-span-5 px-2.5 pt-1.5 pb-2 flex flex-col">
+                                                <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide leading-tight" style={{ fontWeight: 900 }}>
+                                                    ISI KONTAINER
+                                                </div>
+                                                <div className="flex-1 flex items-center">
+                                                    <div className="text-xs sm:text-[14px] font-black text-black break-words whitespace-normal leading-tight" style={{ fontWeight: 900 }}>
+                                                        {isi || 'FULL CONT(ON-CHASIS)'}
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="col-span-3 p-2 flex flex-col justify-center">
-                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">NO. SEGEL</div>
-                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words mt-0.5">{noSegel || '-'}</div>
+                                            <div className="col-span-3 px-2.5 pt-1.5 pb-2 flex flex-col">
+                                                <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide leading-tight" style={{ fontWeight: 900 }}>
+                                                    NO. SEGEL
+                                                </div>
+                                                <div className="flex-1 flex items-center">
+                                                    <div className="text-xs sm:text-[14px] font-black text-black break-words" style={{ fontWeight: 900 }}>
+                                                        {noSegel || '-'}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="col-span-4 p-2 flex flex-col justify-center">
-                                                <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">KETERANGAN</div>
-                                                <div className="text-xs sm:text-[13.5px] font-black text-black break-words mt-0.5">{keterangan || '-'}</div>
+                                            <div className="col-span-4 px-2.5 pt-1.5 pb-2 flex flex-col">
+                                                <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide leading-tight" style={{ fontWeight: 900 }}>
+                                                    KETERANGAN
+                                                </div>
+                                                <div className="flex-1 flex items-center">
+                                                    <div className="text-xs sm:text-[14px] font-black text-black break-words" style={{ fontWeight: 900 }}>
+                                                        {keterangan || '-'}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="w-[240px] sm:w-[260px] p-2 flex flex-col justify-center items-center text-center bg-white">
-                                            <div className="text-[12.5px] sm:text-[13.5px] uppercase font-black text-black tracking-wide">NAMA PRODUK / LAYANAN</div>
-                                            <div className="text-base sm:text-lg font-black uppercase tracking-tight leading-tight mt-0.5 text-black">
-                                                {layanan}
+                                        <div className="w-[240px] sm:w-[260px] px-2.5 pt-1.5 pb-2 flex flex-col items-center text-center bg-white">
+                                            <div className="text-[13px] sm:text-[14px] uppercase font-black text-black tracking-wide leading-tight" style={{ fontWeight: 900 }}>
+                                                NAMA PRODUK / LAYANAN
+                                            </div>
+                                            <div className="flex-1 flex items-center justify-center">
+                                                <div className="text-base sm:text-lg font-black uppercase tracking-tight leading-tight text-black" style={{ fontWeight: 900 }}>
+                                                    {layanan}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

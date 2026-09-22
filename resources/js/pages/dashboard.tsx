@@ -1843,7 +1843,7 @@ function CheckerMobileApp({
             {/* ========================================================================= */}
             {gateInTarget && (
                 <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4 animate-in fade-in duration-150">
-                    <div className="w-full max-w-lg rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
+                    <div className="w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
                         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                             <div className="flex items-center gap-2">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">
@@ -1942,7 +1942,7 @@ function CheckerMobileApp({
             {/* ========================================================================= */}
             {gateOutTarget && (
                 <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4 animate-in fade-in duration-150">
-                    <div className="w-full max-w-lg rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
+                    <div className="w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
                         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                             <div className="flex items-center gap-2">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-700">
@@ -2054,7 +2054,7 @@ function CheckerMobileApp({
             {/* ========================================================================= */}
             {editDateTarget && (
                 <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4 animate-in fade-in duration-150">
-                    <div className="w-full max-w-lg rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
+                    <div className="w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-2xl bg-white p-5 shadow-2xl animate-in slide-in-from-bottom duration-200">
                         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                             <div className="flex items-center gap-2">
                                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-700">

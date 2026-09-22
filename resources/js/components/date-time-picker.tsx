@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import {
     Calendar as CalendarIcon,
     Clock,
@@ -102,6 +103,7 @@ export function DateTimePicker({
     align = 'left',
 }: DateTimePickerProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const initial = parseValue(value, withTime);
@@ -112,6 +114,13 @@ export function DateTimePicker({
     const initDateObj = parseYMD(initial.date) || new Date();
     const [viewYear, setViewYear] = useState<number>(initDateObj.getFullYear());
     const [viewMonth, setViewMonth] = useState<number>(initDateObj.getMonth());
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const parsed = parseValue(value, withTime);
@@ -128,6 +137,8 @@ export function DateTimePicker({
 
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
+            // Pada mobile dialog portaled, penutupan diatur via backdrop overlay
+            if (isMobile) return;
             if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
                 setIsOpen(false);
             }
@@ -145,7 +156,7 @@ export function DateTimePicker({
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isOpen]);
+    }, [isOpen, isMobile]);
 
     const prevMonth = () => {
         if (viewMonth === 0) {
@@ -321,188 +332,233 @@ export function DateTimePicker({
             </div>
 
             {/* Dropdown Calendar / Time Panel */}
-            {isOpen && (
-                <div
-                    className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[310px] sm:w-[340px] animate-in fade-in zoom-in-95 duration-150 ${
-                        align === 'right' ? 'right-0' : 'left-0'
-                    }`}
-                >
-                    {/* Quick Preset Buttons Header */}
-                    <div className="flex items-center justify-between gap-1.5 pb-2.5 mb-2.5 border-b border-gray-100">
-                        <span className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                            Shortcut
-                        </span>
-                        <div className="flex items-center gap-1">
-                            {withTime && (
+            {isOpen && (() => {
+                const panelContent = (
+                    <>
+                        {/* Quick Preset Buttons Header */}
+                        <div className="flex items-center justify-between gap-1.5 pb-2.5 mb-2.5 border-b border-gray-100 shrink-0">
+                            <span className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
+                                Shortcut
+                            </span>
+                            <div className="flex items-center gap-1">
+                                {withTime && (
+                                    <button
+                                        type="button"
+                                        onClick={setNow}
+                                        className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
+                                    >
+                                        Sekarang
+                                    </button>
+                                )}
                                 <button
                                     type="button"
-                                    onClick={setNow}
-                                    className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
+                                    onClick={setToday}
+                                    className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
                                 >
-                                    Sekarang
+                                    Hari Ini
                                 </button>
-                            )}
+                                <button
+                                    type="button"
+                                    onClick={setTomorrow}
+                                    className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
+                                >
+                                    Besok
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Month Header Navigation */}
+                        <div className="flex items-center justify-between mb-3 px-1 shrink-0">
                             <button
                                 type="button"
-                                onClick={setToday}
-                                className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
+                                onClick={prevMonth}
+                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
+                                title="Bulan sebelumnya"
                             >
-                                Hari Ini
+                                <ChevronLeft className="h-4 w-4" />
                             </button>
+                            <span className="text-xs font-bold text-gray-800">
+                                {MONTH_NAMES[viewMonth]} {viewYear}
+                            </span>
                             <button
                                 type="button"
-                                onClick={setTomorrow}
-                                className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
+                                onClick={nextMonth}
+                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
+                                title="Bulan berikutnya"
                             >
-                                Besok
+                                <ChevronRight className="h-4 w-4" />
                             </button>
                         </div>
-                    </div>
 
-                    {/* Month Header Navigation */}
-                    <div className="flex items-center justify-between mb-3 px-1">
-                        <button
-                            type="button"
-                            onClick={prevMonth}
-                            className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
-                            title="Bulan sebelumnya"
-                        >
-                            <ChevronLeft className="h-4 w-4" />
-                        </button>
-                        <span className="text-xs font-bold text-gray-800">
-                            {MONTH_NAMES[viewMonth]} {viewYear}
-                        </span>
-                        <button
-                            type="button"
-                            onClick={nextMonth}
-                            className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
-                            title="Bulan berikutnya"
-                        >
-                            <ChevronRight className="h-4 w-4" />
-                        </button>
-                    </div>
-
-                    {/* Days Header */}
-                    <div className="grid grid-cols-7 gap-1 text-center mb-1">
-                        {DAY_NAMES.map((d, idx) => (
-                            <span
-                                key={d}
-                                className={`text-[11px] font-semibold ${
-                                    idx === 0 ? 'text-red-500' : 'text-gray-400'
-                                }`}
-                            >
-                                {d}
-                            </span>
-                        ))}
-                    </div>
-
-                    {/* Days Grid */}
-                    <div className="grid grid-cols-7 gap-y-1 text-center">
-                        {/* Prev month days */}
-                        {Array.from({ length: firstDayIndex }).map((_, i) => {
-                            const prevDay = daysInPrevMonth - firstDayIndex + 1 + i;
-                            return (
-                                <div
-                                    key={`prev-${i}`}
-                                    className="h-8 flex items-center justify-center text-xs text-gray-300 select-none cursor-default"
-                                >
-                                    {prevDay}
-                                </div>
-                            );
-                        })}
-
-                        {/* Current month days */}
-                        {Array.from({ length: daysInMonth }).map((_, i) => {
-                            const day = i + 1;
-                            const dayStr = String(day).padStart(2, '0');
-                            const monthStr = String(viewMonth + 1).padStart(2, '0');
-                            const ymd = `${viewYear}-${monthStr}-${dayStr}`;
-                            const isSelected = ymd === selectedDate;
-                            const isToday = ymd === formatYMD(new Date());
-
-                            return (
-                                <div
-                                    key={ymd}
-                                    onClick={() => handleDateSelect(ymd)}
-                                    className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
-                                        isSelected
-                                            ? 'bg-gray-900 text-white font-bold shadow-xs'
-                                            : 'hover:bg-gray-100 text-gray-700'
+                        {/* Days Header */}
+                        <div className="grid grid-cols-7 gap-1 text-center mb-1 shrink-0">
+                            {DAY_NAMES.map((d, idx) => (
+                                <span
+                                    key={d}
+                                    className={`text-[11px] font-semibold ${
+                                        idx === 0 ? 'text-red-500' : 'text-gray-400'
                                     }`}
                                 >
-                                    <span
-                                        className={`flex items-center justify-center w-7 h-7 rounded-full ${
-                                            isToday && !isSelected
-                                                ? 'border border-gray-900 font-bold text-gray-900'
-                                                : ''
+                                    {d}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* Days Grid */}
+                        <div className="grid grid-cols-7 gap-y-1 text-center shrink-0">
+                            {/* Prev month days */}
+                            {Array.from({ length: firstDayIndex }).map((_, i) => {
+                                const prevDay = daysInPrevMonth - firstDayIndex + 1 + i;
+                                return (
+                                    <div
+                                        key={`prev-${i}`}
+                                        className="h-8 flex items-center justify-center text-xs text-gray-300 select-none cursor-default"
+                                    >
+                                        {prevDay}
+                                    </div>
+                                );
+                            })}
+
+                            {/* Current month days */}
+                            {Array.from({ length: daysInMonth }).map((_, i) => {
+                                const day = i + 1;
+                                const dayStr = String(day).padStart(2, '0');
+                                const monthStr = String(viewMonth + 1).padStart(2, '0');
+                                const ymd = `${viewYear}-${monthStr}-${dayStr}`;
+                                const isSelected = ymd === selectedDate;
+                                const isToday = ymd === formatYMD(new Date());
+
+                                return (
+                                    <div
+                                        key={ymd}
+                                        onClick={() => handleDateSelect(ymd)}
+                                        className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
+                                            isSelected
+                                                ? 'bg-gray-900 text-white font-bold shadow-xs'
+                                                : 'hover:bg-gray-100 text-gray-700'
                                         }`}
                                     >
-                                        {day}
-                                    </span>
+                                        <span
+                                            className={`flex items-center justify-center w-7 h-7 rounded-full ${
+                                                isToday && !isSelected
+                                                    ? 'border border-gray-900 font-bold text-gray-900'
+                                                    : ''
+                                            }`}
+                                        >
+                                            {day}
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Time Picker Section (If withTime is true) */}
+                        {withTime && (
+                            <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 shrink-0">
+                                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
+                                    <Clock className="h-3.5 w-3.5 text-gray-700" />
+                                    <span>Jam (WIB):</span>
                                 </div>
-                            );
-                        })}
-                    </div>
 
-                    {/* Time Picker Section (If withTime is true) */}
-                    {withTime && (
-                        <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
-                            <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
-                                <Clock className="h-3.5 w-3.5 text-gray-700" />
-                                <span>Jam (WIB):</span>
+                                <div className="flex items-center gap-1.5">
+                                    <input
+                                        type="time"
+                                        value={selectedTime}
+                                        onChange={(e) => handleTimeChange(e.target.value)}
+                                        className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={handleSetNowTime}
+                                        className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
+                                        title="Gunakan jam saat ini"
+                                    >
+                                        Jam Sekarang
+                                    </button>
+                                </div>
                             </div>
+                        )}
 
-                            <div className="flex items-center gap-1.5">
-                                <input
-                                    type="time"
-                                    value={selectedTime}
-                                    onChange={(e) => handleTimeChange(e.target.value)}
-                                    className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none"
-                                />
+                        {/* Footer Actions */}
+                        <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-gray-100 shrink-0">
+                            <button
+                                type="button"
+                                onClick={handleClear}
+                                className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
+                            >
+                                <RotateCcw className="h-3 w-3" />
+                                Hapus
+                            </button>
+
+                            <div className="flex items-center gap-2">
                                 <button
                                     type="button"
-                                    onClick={handleSetNowTime}
-                                    className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
-                                    title="Gunakan jam saat ini"
+                                    onClick={() => setIsOpen(false)}
+                                    className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition font-medium cursor-pointer"
                                 >
-                                    Jam Sekarang
+                                    Batal
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleApply()}
+                                    disabled={!selectedDate}
+                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                >
+                                    <Check className="h-3.5 w-3.5" />
+                                    Simpan
                                 </button>
                             </div>
                         </div>
-                    )}
+                    </>
+                );
 
-                    {/* Footer Actions */}
-                    <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-gray-100">
-                        <button
-                            type="button"
-                            onClick={handleClear}
-                            className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
+                if (isMobile && typeof document !== 'undefined') {
+                    return createPortal(
+                        <div
+                            className="fixed inset-0 z-[9999] flex items-center justify-center p-3 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
+                            onClick={(e) => {
+                                if (e.target === e.currentTarget) setIsOpen(false);
+                            }}
                         >
-                            <RotateCcw className="h-3 w-3" />
-                            Hapus
-                        </button>
+                            <div
+                                className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {/* Mobile Header Bar */}
+                                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
+                                    <div className="flex items-center gap-2">
+                                        <CalendarIcon className="h-4 w-4 text-blue-600" />
+                                        <span className="text-xs font-bold text-gray-900">
+                                            {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
+                                        </span>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsOpen(false)}
+                                        className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                        aria-label="Tutup"
+                                    >
+                                        <X className="h-4 w-4" />
+                                    </button>
+                                </div>
 
-                        <div className="flex items-center gap-2">
-                            <button
-                                type="button"
-                                onClick={() => setIsOpen(false)}
-                                className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition font-medium cursor-pointer"
-                            >
-                                Batal
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => handleApply()}
-                                disabled={!selectedDate}
-                                className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
-                            >
-                                <Check className="h-3.5 w-3.5" />
-                                Simpan
-                            </button>
-                        </div>
+                                {panelContent}
+                            </div>
+                        </div>,
+                        document.body
+                    );
+                }
+
+                return (
+                    <div
+                        className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[340px] max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
+                            align === 'right' ? 'right-0' : 'left-0'
+                        }`}
+                    >
+                        {panelContent}
                     </div>
-                </div>
-            )}
+                );
+            })()}
         </div>
     );
 }

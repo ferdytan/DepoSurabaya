@@ -96,6 +96,8 @@ interface PageProps {
     [k: string]: unknown;
     customers: Customer[];
     invoice_number?: string;
+    next_in1_number?: string;
+    next_in2_number?: string;
     reuse_invoice?: ReuseInvoiceInfo | null;
     default_show_period?: boolean;
 }
@@ -111,7 +113,7 @@ type AxiosErrorResponse = {
 
 export default function CreateInvoice() {
     const page = usePage<PageProps>();
-    const { customers = [], invoice_number, reuse_invoice, default_show_period } = page.props;
+    const { customers = [], invoice_number, next_in1_number, next_in2_number, reuse_invoice, default_show_period } = page.props;
 
     // State form dasar
     const today = new Date();
@@ -187,6 +189,39 @@ export default function CreateInvoice() {
     const activeOrders = useMemo(() => {
         return orders.filter((o) => selectedOrderIds.includes(o.id.toString()));
     }, [orders, selectedOrderIds]);
+
+    // Deteksi apakah kontainer yang dipilih memiliki layanan jenis Fumigasi
+    const hasSelectedFumigasi = useMemo(() => {
+        if (selectedContainers.size === 0) return false;
+        for (const order of activeOrders) {
+            for (const item of order.order_items || []) {
+                if (selectedContainers.has(item.id)) {
+                    const st = (item.product?.service_type || '').toLowerCase();
+                    if (st.includes('fumiga')) return true;
+                    for (const ap of item.additional_products || []) {
+                        const apSt = (ap.service_type || '').toLowerCase();
+                        if (apSt.includes('fumiga')) return true;
+                    }
+                    const orderFumigasi = (order.fumigasi || '').toLowerCase().trim();
+                    if (orderFumigasi && orderFumigasi !== '0' && orderFumigasi !== 'false') {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }, [activeOrders, selectedContainers]);
+
+    // Dynamic nomor invoice preview
+    const dynamicInvoiceNumber = useMemo(() => {
+        if (reuse_invoice) return reuse_invoice.invoice_number;
+        if (selectedContainers.size === 0) {
+            return invoice_number || 'Otomatis di-generate saat simpan';
+        }
+        return hasSelectedFumigasi
+            ? (next_in1_number || invoice_number || 'Otomatis di-generate saat simpan')
+            : (next_in2_number || invoice_number || 'Otomatis di-generate saat simpan');
+    }, [reuse_invoice, selectedContainers.size, hasSelectedFumigasi, invoice_number, next_in1_number, next_in2_number]);
 
     // Orders yang masih tersedia untuk ditambahkan / digabungkan
     const availableOrdersToAdd = useMemo(() => {
@@ -530,7 +565,7 @@ export default function CreateInvoice() {
         const payload = {
             reuse_id: reuse_invoice?.id || null,
             customer_id: selectedCustomerId,
-            invoice_number: invoice_number || '',
+            invoice_number: dynamicInvoiceNumber || invoice_number || '',
             order_id: selectedOrderIds[0] || null,
             order_ids: selectedOrderIds,
             order_item_ids: Array.from(selectedContainers),
@@ -668,26 +703,42 @@ export default function CreateInvoice() {
                                         <Label htmlFor="invoice_number" className="text-xs font-semibold text-gray-700">
                                             Nomor Invoice (Preview)
                                         </Label>
-                                        {reuse_invoice && (
+                                        {reuse_invoice ? (
                                             <span className="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800 border border-amber-300">
                                                 REUSE
                                             </span>
-                                        )}
+                                        ) : selectedContainers.size > 0 ? (
+                                            hasSelectedFumigasi ? (
+                                                <span className="inline-flex items-center rounded bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-800 border border-purple-300" title="Invoice mencakup layanan Fumigasi">
+                                                    IN1 (FUMIGASI)
+                                                </span>
+                                            ) : (
+                                                <span className="inline-flex items-center rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-800 border border-blue-300" title="Invoice non-fumigasi">
+                                                    IN2 (NON-FUMIGASI)
+                                                </span>
+                                            )
+                                        ) : null}
                                     </div>
                                     <Input
                                         id="invoice_number"
-                                        value={invoice_number || 'Otomatis di-generate saat simpan'}
+                                        value={dynamicInvoiceNumber}
                                         readOnly
                                         className={`font-mono text-xs font-medium ${
                                             reuse_invoice
                                                 ? 'bg-amber-50/70 border-amber-300 text-amber-950 font-bold'
-                                                : 'bg-gray-50/80 text-gray-600'
+                                                : hasSelectedFumigasi
+                                                ? 'bg-purple-50/70 border-purple-200 text-purple-900 font-bold'
+                                                : 'bg-gray-50/80 text-gray-700 font-bold'
                                         }`}
                                     />
-                                    <p className="text-[11px] text-gray-400">
+                                    <p className="text-[11px] text-gray-500">
                                         {reuse_invoice
                                             ? `Menggunakan kembali nomor invoice ${reuse_invoice.invoice_number} dari invoice yang dihapus.`
-                                            : 'Nomor invoice otomatis tersusun saat disimpan ke database.'}
+                                            : selectedContainers.size > 0
+                                            ? hasSelectedFumigasi
+                                                ? 'Format DSS-IN1 (Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
+                                                : 'Format DSS-IN2 (Non-Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
+                                            : 'Pilih kontainer untuk melihat format nomor invoice (IN1 untuk fumigasi, IN2 selain fumigasi).'}
                                     </p>
                                 </div>
 

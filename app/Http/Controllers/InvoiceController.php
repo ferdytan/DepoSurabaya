@@ -224,18 +224,18 @@ class InvoiceController extends Controller
             return $customer;
         });
 
+        $nextIn1 = $this->getNextInvoicePreview(true);
+        $nextIn2 = $this->getNextInvoicePreview(false);
+
         if (!$reuseInvoice) {
-            // Auto-generate invoice number
-            $prefix = 'IN-1';
-            $date = now()->format('m/Y');
-            $latestInvoice = Invoice::where('invoice_number', 'like', "$prefix-$date-%")->first();
-            $nextNumber = $latestInvoice ? ((int)substr($latestInvoice->invoice_number, -4)) + 1 : 1;
-            $invoiceNumber = "$prefix-$date-" . sprintf("%04d", $nextNumber);
+            $invoiceNumber = $nextIn2;
         }
 
         return Inertia::render('invoices/create', [
             'customers' => $customers, // Data customer yang sudah dimodifikasi
             'invoice_number' => $invoiceNumber,
+            'next_in1_number' => $nextIn1,
+            'next_in2_number' => $nextIn2,
             'reuse_invoice' => $reuseInvoice,
             'default_show_period' => filter_var(Setting::get('default_invoice_show_period', true), FILTER_VALIDATE_BOOLEAN),
         ]);
@@ -277,6 +277,7 @@ class InvoiceController extends Controller
             }
 
             $orderItems = OrderItem::with([
+                'order:id,customer_id,fumigasi',
                 'product:id,service_type,requires_temperature',
                 'additionalProducts' => fn($q) => $q->withPivot(['price_value']),
             ])->whereIn('id', $data['order_item_ids'])->get();
@@ -367,7 +368,8 @@ class InvoiceController extends Controller
 
                 $isReuse = true;
             } else {
-                $invoiceNumber = $this->generateInvoiceNumber((int)$data['customer_id'], $data['period_start']);
+                $hasFumigasi = $this->hasFumigasiService($orderItems);
+                $invoiceNumber = $this->generateInvoiceNumber($hasFumigasi);
 
                 $invoice = Invoice::create([
                     'invoice_number' => $invoiceNumber,
@@ -1069,7 +1071,7 @@ class InvoiceController extends Controller
         $customer = Customer::findOrFail($validated['customer_id']);
 
         $orderItems = OrderItem::with([
-            'order:id,order_id',
+            'order:id,order_id,fumigasi',
             'product:id,service_type,requires_temperature',
             'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
@@ -1097,7 +1099,9 @@ class InvoiceController extends Controller
             $isPlug = false;
             if ($item->product) {
                 $st = strtolower($item->product->service_type ?? '');
-                $isPlug = $item->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+                if ($item->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu')) {
+                    $isPlug = true;
+                }
             }
             $defaultQty = ($isPlug && $item->total_shifts && $item->total_shifts > 0) ? (int)$item->total_shifts : 1;
             $itemQty = (int) ($itemQtyMap[$item->id] ?? $defaultQty);
@@ -1126,13 +1130,18 @@ class InvoiceController extends Controller
         // ✅ Generate terbilang di backend
         $terbilang = $this->numberToWords($grand);
 
+        $hasFumigasi = $this->hasFumigasiService($orderItems);
+        $previewInvoiceNumber = !empty($validated['reuse_id'])
+            ? ($validated['invoice_number'] ?? null)
+            : $this->getNextInvoicePreview($hasFumigasi);
+
         $preview = [
             'reuse_id'       => $validated['reuse_id'] ?? null,
             'customer'       => [
                 'id'   => $customer->id,
                 'name' => $customer->name,
             ],
-            'invoice_number' => $validated['invoice_number'] ?? null,
+            'invoice_number' => $previewInvoiceNumber,
             'order'          => [
                 'id'          => $orders->first()?->id ?? ($validated['order_id'] ?? 0),
                 'order_id'    => !empty($orderIdStrings) ? $orderIdStrings : ($orders->first()?->order_id ?? '-'),
@@ -1216,16 +1225,60 @@ class InvoiceController extends Controller
         return redirect()->back()->with('success', 'Status invoice berhasil diubah menjadi Belum Lunas.');
     }
 
-    private function generateInvoiceNumber(int $customerId, string $periodStart): string
+    public function hasFumigasiService($orderItems): bool
     {
-        // Format target: IN-{customerId}-{mm}/{YYYY}-{####}
-        $month = date('m', strtotime($periodStart));
-        $year  = date('Y', strtotime($periodStart));
-        $prefix = "IN-{$customerId}-{$month}/{$year}-";
+        foreach ($orderItems as $item) {
+            if ($item->product) {
+                $st = strtolower($item->product->service_type ?? '');
+                if (str_contains($st, 'fumiga')) {
+                    return true;
+                }
+            }
+            if ($item->relationLoaded('additionalProducts') && $item->additionalProducts) {
+                foreach ($item->additionalProducts as $ap) {
+                    $st = strtolower($ap->service_type ?? '');
+                    if (str_contains($st, 'fumiga')) {
+                        return true;
+                    }
+                }
+            }
+            if ($item->relationLoaded('order') && $item->order) {
+                $f = strtolower(trim($item->order->fumigasi ?? ''));
+                if (!empty($f) && $f !== '0' && $f !== 'false') {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
-        // Lock baris-baris kandidat agar tidak race
-        $last = Invoice::where('invoice_number', 'like', $prefix.'%')
+    public function generateInvoiceNumber(bool $hasFumigasi, ?string $date = null): string
+    {
+        // Format: DSS-IN1-MMYYYY-0001 (Fumigasi) atau DSS-IN2-MMYYYY-0001 (Non-Fumigasi)
+        $type = $hasFumigasi ? 'IN1' : 'IN2';
+        $monthYear = ($date ? Carbon::parse($date) : now())->format('mY');
+        $prefix = "DSS-{$type}-{$monthYear}-";
+
+        // Lock baris kandidat agar tidak terjadi race condition
+        $last = Invoice::withTrashed()
+            ->where('invoice_number', 'like', $prefix . '%')
             ->lockForUpdate()
+            ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '-', -1) AS UNSIGNED)) as max_seq")
+            ->value('max_seq');
+
+        $nextSeq = ($last ? (int)$last : 0) + 1;
+
+        return $prefix . str_pad((string)$nextSeq, 4, '0', STR_PAD_LEFT);
+    }
+
+    public function getNextInvoicePreview(bool $hasFumigasi, ?string $date = null): string
+    {
+        $type = $hasFumigasi ? 'IN1' : 'IN2';
+        $monthYear = ($date ? Carbon::parse($date) : now())->format('mY');
+        $prefix = "DSS-{$type}-{$monthYear}-";
+
+        $last = Invoice::withTrashed()
+            ->where('invoice_number', 'like', $prefix . '%')
             ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '-', -1) AS UNSIGNED)) as max_seq")
             ->value('max_seq');
 

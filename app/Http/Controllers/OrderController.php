@@ -278,7 +278,7 @@ class OrderController extends Controller
         'order_items.*.additional_product_ids'=> 'nullable|array',
         'order_items.*.additional_product_ids.*' => 'exists:products,id',
         'order_items.*.additional_product_prices' => 'nullable|array',
-        'order_items.*.additional_product_prices.*' => 'string|regex:/^\d+:\d+$/',
+        'order_items.*.additional_product_prices.*' => 'string|regex:/^\d+:[\d.]+$/',
         'order_items.*.temperature'           => 'nullable|array',
         'order_items.*.temperature.*'         => 'array',
     ]);
@@ -534,7 +534,7 @@ public function update(Request $request, Order $order)
         'order_items.*.additional_product_ids'=> 'nullable|array',
         'order_items.*.additional_product_ids.*' => 'exists:products,id',
         'order_items.*.additional_product_prices' => 'nullable|array',
-        'order_items.*.additional_product_prices.*' => 'string|regex:/^\d+:\d+$/',
+        'order_items.*.additional_product_prices.*' => 'string|regex:/^\d+:[\d.]+$/',
         'order_items.*.temperature'           => 'nullable|array',
         'order_items.*.temperature.*'         => 'array',
     ]);

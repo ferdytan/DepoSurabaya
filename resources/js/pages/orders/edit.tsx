@@ -13,6 +13,9 @@ import { Head, Link, useForm } from '@inertiajs/react';
 import axios from 'axios';
 import {
     AlertCircle,
+    ChevronDown,
+    ChevronUp,
+    Copy,
     FileCheck,
     FileText,
     Hash,
@@ -234,9 +237,58 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
     const getSelectedProduct = (productId: string) => customerProducts.find((p) => p.id === Number(productId));
 
     // ==================================
-    //  Dynamic Order Item Helpers
+    //  Dynamic Order Item & Mobile Collapse helpers
     // ==================================
+    const [collapsedItems, setCollapsedItems] = useState<Record<number, boolean>>({});
+
+    const toggleCollapse = (index: number) => {
+        setCollapsedItems((prev) => ({ ...prev, [index]: !prev[index] }));
+    };
+
+    const collapseAll = () => {
+        const all: Record<number, boolean> = {};
+        data.order_items.forEach((_, idx) => {
+            all[idx] = true;
+        });
+        setCollapsedItems(all);
+    };
+
+    const expandAll = () => {
+        setCollapsedItems({});
+    };
+
+    const copyFromPrevious = (index: number) => {
+        if (index <= 0) return;
+        const prev = data.order_items[index - 1];
+        const newItems = [...data.order_items];
+        newItems[index] = {
+            ...newItems[index],
+            product_id: prev.product_id,
+            price_type: prev.price_type,
+            price_value: prev.price_value,
+            additional_product_ids: prev.additional_product_ids ? [...prev.additional_product_ids] : [],
+            additional_product_prices: prev.additional_product_prices ? [...prev.additional_product_prices] : [],
+            commodity: prev.commodity,
+            country: prev.country,
+            vessel: prev.vessel,
+            entry_date: prev.entry_date,
+            eir_date: prev.eir_date,
+            exit_date: prev.exit_date,
+        };
+        setData('order_items', newItems);
+    };
+
     const addOrderItem = () => {
+        // Jika kontainer sudah banyak (>= 3), otomatis ciutkan kontainer lama agar layar mobile tetap rapi
+        if (data.order_items.length >= 3) {
+            setCollapsedItems((prev) => {
+                const updated = { ...prev };
+                data.order_items.forEach((_, i) => {
+                    updated[i] = true;
+                });
+                return updated;
+            });
+        }
         setData('order_items', [
             ...data.order_items,
             {
@@ -262,6 +314,17 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             'order_items',
             data.order_items.filter((_, i) => i !== index),
         );
+        setCollapsedItems((prev) => {
+            const next: Record<number, boolean> = {};
+            let newIdx = 0;
+            data.order_items.forEach((_, i) => {
+                if (i !== index) {
+                    if (prev[i]) next[newIdx] = true;
+                    newIdx++;
+                }
+            });
+            return next;
+        });
     };
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -303,10 +366,30 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
 
         if (data.fumigasi && data.fumigasi.trim() !== '' && !data.shipper_id) {
             setData('error', 'Shipper wajib diisi karena catatan Fumigator diisi.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
 
-        put(route('orders.update', order.id));
+        put(route('orders.update', order.id), {
+            onError: (errs) => {
+                // Auto scroll ke error pertama atau kartu kontainer yang bermasalah
+                const firstKey = Object.keys(errs)[0];
+                const match = firstKey?.match(/^order_items\.(\d+)\./);
+                if (match) {
+                    const errIdx = parseInt(match[1], 10);
+                    setCollapsedItems((prev) => ({ ...prev, [errIdx]: false }));
+                    setTimeout(() => {
+                        const el = document.getElementById(`container-card-${errIdx}`);
+                        if (el) {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            return;
+                        }
+                    }, 50);
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            },
+        });
     };
 
     // ==================================
@@ -380,12 +463,23 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
     };
 
     const formatErrorMessage = (key: string, message: string) => {
-        const cleanKey = key.replace(/^order_items\.\d+\./, '');
+        const match = key.match(/^order_items\.(\d+)\.(.+)$/);
+        let prefix = '';
+        let cleanKey = key;
+
+        if (match) {
+            const idx = parseInt(match[1], 10);
+            const subKey = match[2];
+            const containerNo = data.order_items[idx]?.container_number?.trim();
+            prefix = containerNo ? `Layanan #${idx + 1} (${containerNo})` : `Layanan #${idx + 1}`;
+            cleanKey = subKey;
+        }
+
         const labelMap: Record<string, string> = {
             customer_id: 'Customer',
             shipper_id: 'Shipper',
             no_aju: 'Nomor AJU',
-            product_id: 'Produk',
+            product_id: 'Produk Layanan',
             container_number: 'Nomor Kontainer',
             entry_date: 'Tanggal Masuk',
             eir_date: 'Tanggal EIR',
@@ -395,6 +489,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             vessel: 'Nama Kapal',
             price_type: 'Tipe Harga',
             additional_product_ids: 'Produk Tambahan',
+            additional_product_prices: 'Harga Produk Tambahan',
             temperature: 'Rekam Suhu',
             order_items: 'Item order',
         };
@@ -414,7 +509,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             .replace(/\.$/, '')
             .trim();
 
-        return `${fieldLabel} ${cleanMessage}`;
+        return prefix ? `${prefix}: ${fieldLabel} ${cleanMessage}` : `${fieldLabel} ${cleanMessage}`;
     };
 
     // ==================================
@@ -653,19 +748,43 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
 
                         {/* Section 2: Layanan & Nomor Kontainer */}
                         <div className="space-y-4">
-                            <div className="flex items-center justify-between">
+                            <div className="flex flex-wrap items-center justify-between gap-3">
                                 <div className="flex items-center gap-2">
                                     <Layers className="h-5 w-5 text-blue-600" />
                                     <h2 className="text-base font-bold text-gray-900">Layanan & Nomor Kontainer</h2>
+                                    <span className="text-xs text-gray-500 font-medium">
+                                        (Total: {data.order_items.length} Kontainer)
+                                    </span>
                                 </div>
-                                <span className="text-xs text-gray-500 font-medium">
-                                    Total: {data.order_items.length} Kontainer
-                                </span>
+                                {data.order_items.length > 2 && (
+                                    <div className="flex items-center gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={collapseAll}
+                                            className="text-xs font-semibold text-gray-600 hover:text-gray-900 px-2.5 py-1 rounded-md border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer"
+                                        >
+                                            Ciutkan Semua
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={expandAll}
+                                            className="text-xs font-semibold text-blue-600 hover:text-blue-800 px-2.5 py-1 rounded-md border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors cursor-pointer"
+                                        >
+                                            Buka Semua
+                                        </button>
+                                    </div>
+                                )}
                             </div>
 
                             {data.order_items.map((item, idx) => {
                                 const product = getSelectedProduct(item.product_id);
                                 const requiresTemp = product?.requires_temperature || false;
+                                const itemErrorEntries = Object.entries(errors).filter(([k]) =>
+                                    k.startsWith(`order_items.${idx}.`),
+                                );
+                                const hasCardError = itemErrorEntries.length > 0;
+                                const isCollapsed = Boolean(collapsedItems[idx]);
+
                                 const priceOptions = [
                                     {
                                         label: 'Harga 20ft',
@@ -692,12 +811,17 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                                 return (
                                     <div
                                         key={idx}
-                                        className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4 transition-all hover:border-gray-300"
+                                        id={`container-card-${idx}`}
+                                        className={`rounded-xl border bg-white p-4 sm:p-5 shadow-xs space-y-4 transition-all ${
+                                            hasCardError
+                                                ? 'border-red-400 ring-2 ring-red-100 bg-red-50/10'
+                                                : 'border-gray-200 hover:border-gray-300'
+                                        }`}
                                     >
                                         {/* Card Header */}
-                                        <div className="flex items-center justify-between pb-3 border-b border-gray-100">
-                                            <div className="flex items-center gap-2.5">
-                                                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                                        <div className="flex items-center justify-between pb-3 border-b border-gray-100 gap-2">
+                                            <div className="flex flex-wrap items-center gap-2">
+                                                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold shrink-0">
                                                     {idx + 1}
                                                 </span>
                                                 <h3 className="text-sm font-bold text-gray-900">
@@ -713,258 +837,375 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                                                         {product.service_type}
                                                     </span>
                                                 )}
+                                                {hasCardError && (
+                                                    <span className="inline-flex items-center gap-1 text-[11px] font-bold text-red-700 bg-red-100 border border-red-200 px-2 py-0.5 rounded">
+                                                        ⚠️ Belum Lengkap
+                                                    </span>
+                                                )}
                                             </div>
 
-                                            {data.order_items.length > 1 && (
+                                            <div className="flex items-center gap-1.5 shrink-0">
+                                                {idx > 0 && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => copyFromPrevious(idx)}
+                                                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2 py-1 rounded-md border border-blue-200 transition cursor-pointer"
+                                                        title="Salin layanan, harga, kapal, negara, komoditi dari kontainer sebelumnya"
+                                                    >
+                                                        <Copy className="h-3 w-3" />
+                                                        <span className="hidden sm:inline">Salin Sebelumnya</span>
+                                                        <span className="sm:hidden">Salin</span>
+                                                    </button>
+                                                )}
+
                                                 <button
                                                     type="button"
-                                                    onClick={() => removeOrderItem(idx)}
-                                                    className="inline-flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-700 px-2 py-1 rounded hover:bg-red-50 transition-colors cursor-pointer"
+                                                    onClick={() => toggleCollapse(idx)}
+                                                    className="p-1 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition cursor-pointer"
+                                                    title={isCollapsed ? 'Buka formulir rincian' : 'Ciutkan kartu'}
                                                 >
-                                                    <Trash2 className="h-3.5 w-3.5" />
-                                                    Hapus
+                                                    {isCollapsed ? (
+                                                        <ChevronDown className="h-4 w-4" />
+                                                    ) : (
+                                                        <ChevronUp className="h-4 w-4" />
+                                                    )}
                                                 </button>
-                                            )}
+
+                                                {data.order_items.length > 1 && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removeOrderItem(idx)}
+                                                        className="inline-flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-700 p-1.5 rounded hover:bg-red-50 transition-colors cursor-pointer"
+                                                        title="Hapus Kontainer Ini"
+                                                    >
+                                                        <Trash2 className="h-3.5 w-3.5" />
+                                                    </button>
+                                                )}
+                                            </div>
                                         </div>
 
-                                        {/* Row 1: Produk, Harga, Nomor Kontainer */}
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            {/* Produk */}
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">
-                                                    Produk / Layanan <span className="text-red-500">*</span>
-                                                </Label>
-                                                <SearchableSelect
-                                                    options={customerProducts.map((p) => ({
-                                                        value: p.id.toString(),
-                                                        label: p.service_type,
-                                                        subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
-                                                    }))}
-                                                    value={item.product_id}
-                                                    onChange={(val) => {
-                                                        updateOrderItem(idx, 'product_id', val);
-                                                        updateOrderItem(idx, 'price_type', undefined);
-                                                    }}
-                                                    placeholder={
-                                                        productsLoading
-                                                            ? 'Memuat layanan...'
-                                                            : data.customer_id
-                                                            ? 'Pilih Layanan Utama'
-                                                            : 'Pilih Customer terlebih dahulu'
-                                                    }
-                                                    searchPlaceholder="Cari layanan..."
-                                                    disabled={!data.customer_id || productsLoading}
-                                                    showClear
-                                                />
-                                            </div>
-
-                                            {/* Pilih Harga */}
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">
-                                                    Pilih Harga <span className="text-red-500">*</span>
-                                                </Label>
-                                                <Select
-                                                    value={item.price_type}
-                                                    onValueChange={(val) =>
-                                                        updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
-                                                    }
-                                                    disabled={!item.product_id || priceOptions.length === 0}
+                                        {/* Collapsed State Summary Row */}
+                                        {isCollapsed ? (
+                                            <div className="flex flex-wrap items-center justify-between text-xs text-gray-600 py-1 gap-2">
+                                                <div className="flex flex-wrap items-center gap-2">
+                                                    <span className="font-semibold text-gray-900 font-mono">
+                                                        {item.container_number || '(Nomor kontainer belum diisi)'}
+                                                    </span>
+                                                    <span>•</span>
+                                                    <span>{product?.service_type || 'Belum pilih layanan'}</span>
+                                                    {item.price_type && <span className="font-medium">({item.price_type})</span>}
+                                                    {item.vessel && (
+                                                        <>
+                                                            <span>•</span>
+                                                            <span className="text-gray-500">Kapal: {item.vessel}</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => toggleCollapse(idx)}
+                                                    className="text-xs font-semibold text-blue-600 hover:text-blue-800 underline cursor-pointer"
                                                 >
-                                                    <SelectTrigger className="h-10">
-                                                        <SelectValue placeholder="Pilih Tipe Harga" />
-                                                    </SelectTrigger>
-                                                    <SelectContent>
-                                                        {priceOptions.map((o) => (
-                                                            <SelectItem key={o.value} value={o.value}>
-                                                                {o.label}{' '}
-                                                                {o.price
-                                                                    ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
-                                                                    : ''}
-                                                            </SelectItem>
-                                                        ))}
-                                                    </SelectContent>
-                                                </Select>
-                                                {item.product_id && priceOptions.length === 0 && (
-                                                    <p className="text-[11px] text-red-500">
-                                                        Tidak ada harga terdaftar untuk produk ini
-                                                    </p>
-                                                )}
+                                                    Buka Rincian
+                                                </button>
                                             </div>
+                                        ) : (
+                                            <>
+                                                {/* Row 1: Produk, Harga, Nomor Kontainer */}
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                    {/* Produk */}
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">
+                                                            Produk / Layanan <span className="text-red-500">*</span>
+                                                        </Label>
+                                                        <SearchableSelect
+                                                            options={customerProducts.map((p) => ({
+                                                                value: p.id.toString(),
+                                                                label: p.service_type,
+                                                                subLabel: p.requires_temperature ? 'Perlu Rekam Suhu' : undefined,
+                                                            }))}
+                                                            value={item.product_id}
+                                                            onChange={(val) => {
+                                                                updateOrderItem(idx, 'product_id', val);
+                                                                updateOrderItem(idx, 'price_type', undefined);
+                                                            }}
+                                                            placeholder={
+                                                                productsLoading
+                                                                    ? 'Memuat layanan...'
+                                                                    : data.customer_id
+                                                                    ? 'Pilih Layanan Utama'
+                                                                    : 'Pilih Customer terlebih dahulu'
+                                                            }
+                                                            searchPlaceholder="Cari layanan..."
+                                                            disabled={!data.customer_id || productsLoading}
+                                                            showClear
+                                                        />
+                                                        {errors[`order_items.${idx}.product_id` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.product_id` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
 
-                                            {/* Nomor Kontainer */}
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">
-                                                    Nomor Kontainer <span className="text-red-500">*</span>
-                                                </Label>
-                                                <Input
-                                                    value={item.container_number}
-                                                    onChange={(e) =>
-                                                        updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
-                                                    }
-                                                    placeholder="Contoh: EMCU1234567"
-                                                    maxLength={11}
-                                                    className="h-10 font-mono text-sm tracking-wider"
-                                                />
-                                                {hasDuplicateContainer(idx) && (
-                                                    <p className="text-[11px] text-red-500 font-medium">
-                                                        Nomor kontainer sudah dipakai pada layanan lain
-                                                    </p>
-                                                )}
-                                            </div>
-                                        </div>
+                                                    {/* Pilih Harga */}
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">
+                                                            Pilih Harga <span className="text-red-500">*</span>
+                                                        </Label>
+                                                        <Select
+                                                            value={item.price_type}
+                                                            onValueChange={(val) =>
+                                                                updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
+                                                            }
+                                                            disabled={!item.product_id || priceOptions.length === 0}
+                                                        >
+                                                            <SelectTrigger className="h-10">
+                                                                <SelectValue placeholder="Pilih Tipe Harga" />
+                                                            </SelectTrigger>
+                                                            <SelectContent>
+                                                                {priceOptions.map((o) => (
+                                                                    <SelectItem key={o.value} value={o.value}>
+                                                                        {o.label}{' '}
+                                                                        {o.price
+                                                                            ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
+                                                                            : ''}
+                                                                    </SelectItem>
+                                                                ))}
+                                                            </SelectContent>
+                                                        </Select>
+                                                        {item.product_id && priceOptions.length === 0 && (
+                                                            <p className="text-[11px] text-red-500">
+                                                                Tidak ada harga terdaftar untuk produk ini
+                                                            </p>
+                                                        )}
+                                                        {errors[`order_items.${idx}.price_type` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.price_type` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
 
-                                        {/* Row 2: Additional Products */}
-                                        <div className="space-y-2 pt-2 border-t border-gray-100">
-                                            <div className="flex items-center justify-between">
-                                                <Label className="text-xs font-semibold text-gray-700">
-                                                    Additional Produk (Produk Tambahan)
-                                                </Label>
-                                                <span className="text-[11px] text-gray-400">
-                                                    {item.additional_product_ids?.length || 0} dipilih
-                                                </span>
-                                            </div>
-
-                                            {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 ? (
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-40 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
-                                                    {customerProducts
-                                                        .filter((p) => p.id.toString() !== item.product_id)
-                                                        .map((p) => {
-                                                            const isChecked = item.additional_product_ids?.includes(p.id.toString());
-                                                            return (
-                                                                <label
-                                                                    key={p.id}
-                                                                    className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border text-xs font-medium cursor-pointer transition-all ${
-                                                                        isChecked
-                                                                            ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold'
-                                                                            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
-                                                                    }`}
-                                                                >
-                                                                    <input
-                                                                        type="checkbox"
-                                                                        checked={isChecked}
-                                                                        onChange={(e) => {
-                                                                            const checked = e.target.checked;
-                                                                            const val = p.id.toString();
-                                                                            let next = item.additional_product_ids?.slice() || [];
-
-                                                                            if (checked) {
-                                                                                if (!next.includes(val)) next.push(val);
-                                                                            } else {
-                                                                                next = next.filter((v) => v !== val);
-                                                                            }
-
-                                                                            updateOrderItem(idx, 'additional_product_ids', next);
-                                                                            const additionalPrices = getAdditionalProductPrices(next, item.price_type, customerProducts);
-                                                                            updateOrderItem(idx, 'additional_product_prices', additionalPrices);
-                                                                        }}
-                                                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                                                                    />
-                                                                    <span className="truncate">{p.service_type}</span>
-                                                                </label>
-                                                            );
-                                                        })}
-                                                </div>
-                                            ) : (
-                                                <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
-                                                    {data.customer_id
-                                                        ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
-                                                        : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
-                                                </div>
-                                            )}
-                                        </div>
-
-                                        {/* Row 3: Pengiriman & Muatan */}
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-gray-100">
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Negara Asal / Tujuan</Label>
-                                                <Input
-                                                    value={item.country}
-                                                    onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
-                                                    placeholder="Contoh: Indonesia, China"
-                                                    className="h-10"
-                                                />
-                                            </div>
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Nama Kapal (Vessel)</Label>
-                                                <Input
-                                                    value={item.vessel || ''}
-                                                    onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
-                                                    placeholder="Contoh: KMTC Jakarta"
-                                                    className="h-10"
-                                                />
-                                            </div>
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Komoditi</Label>
-                                                <Input
-                                                    value={item.commodity}
-                                                    onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
-                                                    placeholder="Contoh: Barang Elektronik"
-                                                    className="h-10"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Row 4: Jadwal Tanggal & Waktu */}
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Masuk</Label>
-                                                <DateTimePicker
-                                                    value={item.entry_date}
-                                                    onChange={(val) => updateOrderItem(idx, 'entry_date', val)}
-                                                    withTime={true}
-                                                    placeholder="Pilih tgl & jam masuk..."
-                                                    className="w-full"
-                                                />
-                                            </div>
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam EIR</Label>
-                                                <DateTimePicker
-                                                    value={item.eir_date}
-                                                    onChange={(val) => updateOrderItem(idx, 'eir_date', val)}
-                                                    withTime={true}
-                                                    placeholder="Pilih tgl & jam EIR..."
-                                                    className="w-full"
-                                                />
-                                            </div>
-                                            <div className="space-y-1.5">
-                                                <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Keluar</Label>
-                                                <DateTimePicker
-                                                    value={item.exit_date}
-                                                    onChange={(val) => updateOrderItem(idx, 'exit_date', val)}
-                                                    withTime={true}
-                                                    placeholder="Pilih tgl & jam keluar..."
-                                                    className="w-full"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Row 5: Rekam Suhu Banner */}
-                                        {requiresTemp && (
-                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-lg border border-cyan-200 bg-cyan-50/70 text-cyan-900 mt-2">
-                                                <div className="flex items-center gap-2.5">
-                                                    <Thermometer className="h-5 w-5 text-cyan-600 shrink-0" />
-                                                    <div>
-                                                        <p className="text-xs font-bold text-cyan-950">
-                                                            Layanan ini memerlukan pencatatan suhu kontainer
-                                                        </p>
-                                                        <p className="text-[11px] text-cyan-700">
-                                                            {Object.keys(item.temperature || {}).length > 0
-                                                                ? `${Object.keys(item.temperature || {}).length} tanggal suhu telah dicatat`
-                                                                : 'Belum ada data suhu yang direkam untuk kontainer ini.'}
-                                                        </p>
+                                                    {/* Nomor Kontainer */}
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">
+                                                            Nomor Kontainer <span className="text-red-500">*</span>
+                                                        </Label>
+                                                        <Input
+                                                            value={item.container_number}
+                                                            onChange={(e) =>
+                                                                updateOrderItem(idx, 'container_number', e.target.value.toUpperCase())
+                                                            }
+                                                            placeholder="Contoh: EMCU1234567"
+                                                            maxLength={11}
+                                                            className="h-10 font-mono text-sm tracking-wider"
+                                                        />
+                                                        {hasDuplicateContainer(idx) && (
+                                                            <p className="text-[11px] text-red-500 font-medium">
+                                                                Nomor kontainer sudah dipakai pada layanan lain
+                                                            </p>
+                                                        )}
+                                                        {errors[`order_items.${idx}.container_number` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.container_number` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
                                                     </div>
                                                 </div>
-                                                <Button
-                                                    type="button"
-                                                    variant="outline"
-                                                    size="sm"
-                                                    onClick={() => openTempModal(idx)}
-                                                    className="border-cyan-300 bg-white text-cyan-800 hover:bg-cyan-100 text-xs font-semibold gap-1.5 self-start sm:self-center"
-                                                >
-                                                    <Thermometer className="h-3.5 w-3.5 text-cyan-600" />
-                                                    Rekam Suhu
-                                                </Button>
-                                            </div>
+
+                                                {/* Row 2: Additional Products */}
+                                                <div className="space-y-2 pt-2 border-t border-gray-100">
+                                                    <div className="flex items-center justify-between">
+                                                        <Label className="text-xs font-semibold text-gray-700">
+                                                            Additional Produk (Produk Tambahan)
+                                                        </Label>
+                                                        <span className="text-[11px] text-gray-400">
+                                                            {item.additional_product_ids?.length || 0} dipilih
+                                                        </span>
+                                                    </div>
+
+                                                    {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 ? (
+                                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-40 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
+                                                            {customerProducts
+                                                                .filter((p) => p.id.toString() !== item.product_id)
+                                                                .map((p) => {
+                                                                    const isChecked = item.additional_product_ids?.includes(p.id.toString());
+                                                                    return (
+                                                                        <label
+                                                                            key={p.id}
+                                                                            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border text-xs font-medium cursor-pointer transition-all ${
+                                                                                isChecked
+                                                                                    ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold'
+                                                                                    : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+                                                                            }`}
+                                                                        >
+                                                                            <input
+                                                                                type="checkbox"
+                                                                                checked={isChecked}
+                                                                                onChange={(e) => {
+                                                                                    const checked = e.target.checked;
+                                                                                    const val = p.id.toString();
+                                                                                    let next = item.additional_product_ids?.slice() || [];
+
+                                                                                    if (checked) {
+                                                                                        if (!next.includes(val)) next.push(val);
+                                                                                    } else {
+                                                                                        next = next.filter((v) => v !== val);
+                                                                                    }
+
+                                                                                    updateOrderItem(idx, 'additional_product_ids', next);
+                                                                                    const additionalPrices = getAdditionalProductPrices(next, item.price_type, customerProducts);
+                                                                                    updateOrderItem(idx, 'additional_product_prices', additionalPrices);
+                                                                                }}
+                                                                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                                                            />
+                                                                            <span className="truncate">{p.service_type}</span>
+                                                                        </label>
+                                                                    );
+                                                                })}
+                                                        </div>
+                                                    ) : (
+                                                        <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                            {data.customer_id
+                                                                ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
+                                                                : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
+                                                        </div>
+                                                    )}
+                                                    {errors[`order_items.${idx}.additional_product_prices` as keyof typeof errors] && (
+                                                        <p className="text-xs text-red-500">
+                                                            {errors[`order_items.${idx}.additional_product_prices` as keyof typeof errors]}
+                                                        </p>
+                                                    )}
+                                                    {errors[`order_items.${idx}.additional_product_ids` as keyof typeof errors] && (
+                                                        <p className="text-xs text-red-500">
+                                                            {errors[`order_items.${idx}.additional_product_ids` as keyof typeof errors]}
+                                                        </p>
+                                                    )}
+                                                </div>
+
+                                                {/* Row 3: Pengiriman & Muatan */}
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 border-t border-gray-100">
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Negara Asal / Tujuan</Label>
+                                                        <Input
+                                                            value={item.country}
+                                                            onChange={(e) => updateOrderItem(idx, 'country', e.target.value)}
+                                                            placeholder="Contoh: Indonesia, China"
+                                                            className="h-10"
+                                                        />
+                                                        {errors[`order_items.${idx}.country` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.country` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Nama Kapal (Vessel)</Label>
+                                                        <Input
+                                                            value={item.vessel || ''}
+                                                            onChange={(e) => updateOrderItem(idx, 'vessel', e.target.value)}
+                                                            placeholder="Contoh: KMTC Jakarta"
+                                                            className="h-10"
+                                                        />
+                                                        {errors[`order_items.${idx}.vessel` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.vessel` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Komoditi</Label>
+                                                        <Input
+                                                            value={item.commodity}
+                                                            onChange={(e) => updateOrderItem(idx, 'commodity', e.target.value)}
+                                                            placeholder="Contoh: Barang Elektronik"
+                                                            className="h-10"
+                                                        />
+                                                        {errors[`order_items.${idx}.commodity` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.commodity` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+
+                                                {/* Row 4: Jadwal Tanggal & Waktu */}
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Masuk</Label>
+                                                        <DateTimePicker
+                                                            value={item.entry_date}
+                                                            onChange={(val) => updateOrderItem(idx, 'entry_date', val)}
+                                                            withTime={true}
+                                                            placeholder="Pilih tgl & jam masuk..."
+                                                            className="w-full"
+                                                        />
+                                                        {errors[`order_items.${idx}.entry_date` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.entry_date` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam EIR</Label>
+                                                        <DateTimePicker
+                                                            value={item.eir_date}
+                                                            onChange={(val) => updateOrderItem(idx, 'eir_date', val)}
+                                                            withTime={true}
+                                                            placeholder="Pilih tgl & jam EIR..."
+                                                            className="w-full"
+                                                        />
+                                                        {errors[`order_items.${idx}.eir_date` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.eir_date` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="space-y-1.5">
+                                                        <Label className="text-xs font-semibold text-gray-700">Tanggal & Jam Keluar</Label>
+                                                        <DateTimePicker
+                                                            value={item.exit_date}
+                                                            onChange={(val) => updateOrderItem(idx, 'exit_date', val)}
+                                                            withTime={true}
+                                                            placeholder="Pilih tgl & jam keluar..."
+                                                            className="w-full"
+                                                        />
+                                                        {errors[`order_items.${idx}.exit_date` as keyof typeof errors] && (
+                                                            <p className="text-xs text-red-500">
+                                                                {errors[`order_items.${idx}.exit_date` as keyof typeof errors]}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                </div>
+
+                                                {/* Row 5: Rekam Suhu Banner */}
+                                                {requiresTemp && (
+                                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-lg border border-cyan-200 bg-cyan-50/70 text-cyan-900 mt-2">
+                                                        <div className="flex items-center gap-2.5">
+                                                            <Thermometer className="h-5 w-5 text-cyan-600 shrink-0" />
+                                                            <div>
+                                                                <p className="text-xs font-bold text-cyan-950">
+                                                                    Layanan ini memerlukan pencatatan suhu kontainer
+                                                                </p>
+                                                                <p className="text-[11px] text-cyan-700">
+                                                                    {Object.keys(item.temperature || {}).length > 0
+                                                                        ? `${Object.keys(item.temperature || {}).length} tanggal suhu telah dicatat`
+                                                                        : 'Belum ada data suhu yang direkam untuk kontainer ini.'}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <Button
+                                                            type="button"
+                                                            variant="outline"
+                                                            size="sm"
+                                                            onClick={() => openTempModal(idx)}
+                                                            className="border-cyan-300 bg-white text-cyan-800 hover:bg-cyan-100 text-xs font-semibold gap-1.5 self-start sm:self-center"
+                                                        >
+                                                            <Thermometer className="h-3.5 w-3.5 text-cyan-600" />
+                                                            Rekam Suhu
+                                                        </Button>
+                                                    </div>
+                                                )}
+                                            </>
                                         )}
                                     </div>
                                 );

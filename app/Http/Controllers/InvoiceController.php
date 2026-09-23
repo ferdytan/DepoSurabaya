@@ -1254,17 +1254,28 @@ class InvoiceController extends Controller
 
     public function generateInvoiceNumber(bool $hasFumigasi, ?string $date = null): string
     {
-        // Format: DSS-IN1-MMYYYY-0001 (Fumigasi) atau DSS-IN2-MMYYYY-0001 (Non-Fumigasi)
-        $type = $hasFumigasi ? 'IN1' : 'IN2';
-        $monthYear = ($date ? Carbon::parse($date) : now())->format('mY');
-        $prefix = "DSS-{$type}-{$monthYear}-";
+        // Format: IN-1/MM/YY/0001 (Fumigasi) atau IN-2/MM/YY/0001 (Non-Fumigasi)
+        $typeNum = $hasFumigasi ? '1' : '2';
+        $carbon = $date ? Carbon::parse($date) : now();
+        $month = $carbon->format('m');
+        $year = $carbon->format('y');
+        $prefix = "IN-{$typeNum}/{$month}/{$year}/";
 
-        // Lock baris kandidat agar tidak terjadi race condition
-        $last = Invoice::withTrashed()
-            ->where('invoice_number', 'like', $prefix . '%')
-            ->lockForUpdate()
-            ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '-', -1) AS UNSIGNED)) as max_seq")
-            ->value('max_seq');
+        $driver = DB::connection()->getDriverName();
+        if ($driver === 'sqlite') {
+            $last = Invoice::withTrashed()
+                ->where('invoice_number', 'like', $prefix . '%')
+                ->pluck('invoice_number')
+                ->map(fn($num) => (int) substr($num, strrpos($num, '/') !== false ? strrpos($num, '/') + 1 : 0))
+                ->max();
+        } else {
+            // Lock baris kandidat agar tidak terjadi race condition
+            $last = Invoice::withTrashed()
+                ->where('invoice_number', 'like', $prefix . '%')
+                ->lockForUpdate()
+                ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '/', -1) AS UNSIGNED)) as max_seq")
+                ->value('max_seq');
+        }
 
         $nextSeq = ($last ? (int)$last : 0) + 1;
 
@@ -1273,14 +1284,26 @@ class InvoiceController extends Controller
 
     public function getNextInvoicePreview(bool $hasFumigasi, ?string $date = null): string
     {
-        $type = $hasFumigasi ? 'IN1' : 'IN2';
-        $monthYear = ($date ? Carbon::parse($date) : now())->format('mY');
-        $prefix = "DSS-{$type}-{$monthYear}-";
+        // Format: IN-1/MM/YY/0001 (Fumigasi) atau IN-2/MM/YY/0001 (Non-Fumigasi)
+        $typeNum = $hasFumigasi ? '1' : '2';
+        $carbon = $date ? Carbon::parse($date) : now();
+        $month = $carbon->format('m');
+        $year = $carbon->format('y');
+        $prefix = "IN-{$typeNum}/{$month}/{$year}/";
 
-        $last = Invoice::withTrashed()
-            ->where('invoice_number', 'like', $prefix . '%')
-            ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '-', -1) AS UNSIGNED)) as max_seq")
-            ->value('max_seq');
+        $driver = DB::connection()->getDriverName();
+        if ($driver === 'sqlite') {
+            $last = Invoice::withTrashed()
+                ->where('invoice_number', 'like', $prefix . '%')
+                ->pluck('invoice_number')
+                ->map(fn($num) => (int) substr($num, strrpos($num, '/') !== false ? strrpos($num, '/') + 1 : 0))
+                ->max();
+        } else {
+            $last = Invoice::withTrashed()
+                ->where('invoice_number', 'like', $prefix . '%')
+                ->selectRaw("MAX(CAST(SUBSTRING_INDEX(invoice_number, '/', -1) AS UNSIGNED)) as max_seq")
+                ->value('max_seq');
+        }
 
         $nextSeq = ($last ? (int)$last : 0) + 1;
 

@@ -710,11 +710,11 @@ export default function CreateInvoice() {
                                         ) : selectedContainers.size > 0 ? (
                                             hasSelectedFumigasi ? (
                                                 <span className="inline-flex items-center rounded bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-800 border border-purple-300" title="Invoice mencakup layanan Fumigasi">
-                                                    IN1 (FUMIGASI)
+                                                    IN-1 (FUMIGASI)
                                                 </span>
                                             ) : (
                                                 <span className="inline-flex items-center rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-800 border border-blue-300" title="Invoice non-fumigasi">
-                                                    IN2 (NON-FUMIGASI)
+                                                    IN-2 (NON-FUMIGASI)
                                                 </span>
                                             )
                                         ) : null}
@@ -736,9 +736,9 @@ export default function CreateInvoice() {
                                             ? `Menggunakan kembali nomor invoice ${reuse_invoice.invoice_number} dari invoice yang dihapus.`
                                             : selectedContainers.size > 0
                                             ? hasSelectedFumigasi
-                                                ? 'Format DSS-IN1 (Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
-                                                : 'Format DSS-IN2 (Non-Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
-                                            : 'Pilih kontainer untuk melihat format nomor invoice (IN1 untuk fumigasi, IN2 selain fumigasi).'}
+                                                ? 'Format IN-1 (Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
+                                                : 'Format IN-2 (Non-Fumigasi). Otomatis bertambah & reset setiap berganti bulan.'
+                                            : 'Pilih kontainer untuk melihat format nomor invoice (IN-1 untuk fumigasi, IN-2 selain fumigasi).'}
                                     </p>
                                 </div>
 

@@ -337,6 +337,15 @@ export default function InvoicePreview({
                         width: 100% !important;
                         border-collapse: collapse !important;
                     }
+                    table.date-info-table {
+                        width: auto !important;
+                        min-width: 275px !important;
+                        border: none !important;
+                    }
+                    table.date-info-table td {
+                        border: none !important;
+                        padding: 1px 0 !important;
+                    }
                     .border { border: 1px solid #000 !important; }
                     .border-t { border-top: 1px solid #000 !important; }
                     .border-b { border-bottom: 1px solid #000 !important; }
@@ -435,15 +444,27 @@ export default function InvoicePreview({
                                                         <div className="font-bold text-xs pt-0.5">
                                                             No. Kontainer : <span className="tracking-wide">{item.container_number}</span>
                                                         </div>
-                                                        <div className="text-xs space-y-0.5">
-                                                            <div className="flex justify-end gap-3">
-                                                                <span className="font-semibold text-gray-800">Tanggal / Jam Masuk :</span>
-                                                                <span className="font-semibold">{formatDateTimeSample(item.entry_date)}</span>
-                                                            </div>
-                                                            <div className="flex justify-end gap-3">
-                                                                <span className="font-semibold text-gray-800">Tanggal / Jam Keluar :</span>
-                                                                <span className="font-semibold">{formatDateTimeSample(item.exit_date)}</span>
-                                                            </div>
+                                                        <div className="text-xs">
+                                                            <table className="date-info-table text-xs border-collapse min-w-[275px] border-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
+                                                                            Tanggal / Jam Masuk :
+                                                                        </td>
+                                                                        <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
+                                                                            {formatDateTimeSample(item.entry_date)}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
+                                                                            Tanggal / Jam Keluar :
+                                                                        </td>
+                                                                        <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
+                                                                            {formatDateTimeSample(item.exit_date)}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </td>

@@ -16,6 +16,7 @@ import {
     ShieldCheck,
     Thermometer,
     Truck,
+    UserPlus,
 } from 'lucide-react';
 import { FormEventHandler, useState } from 'react';
 
@@ -267,6 +268,29 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                             {processing && <LoaderCircle className="h-4 w-4 animate-spin" />}
                             {processing ? 'Memverifikasi Akun...' : 'Masuk ke Sistem'}
                         </Button>
+
+                        {/* Divider & Sign Up Button */}
+                        <div className="relative my-3 flex items-center justify-center">
+                            <div className="border-t border-gray-200 w-full" />
+                            <span className="bg-gray-50 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-medium">atau</span>
+                        </div>
+
+                        <Button
+                            type="button"
+                            variant="outline"
+                            asChild
+                            className="w-full h-10 border-gray-300 bg-white hover:bg-gray-100 text-gray-800 font-semibold text-xs shadow-2xs transition-all flex items-center justify-center gap-2 cursor-pointer"
+                            tabIndex={5}
+                        >
+                            <Link href={route('register')}>
+                                <UserPlus className="h-4 w-4 text-gray-600" />
+                                <span>Daftar Akun Baru (Sign Up)</span>
+                            </Link>
+                        </Button>
+
+                        <div className="text-center text-[11px] text-gray-500 pt-0.5">
+                            Belum memiliki akun? Silakan klik tombol di atas untuk registrasi pengguna baru.
+                        </div>
                     </form>
 
                     {/* Bottom Security Note */}

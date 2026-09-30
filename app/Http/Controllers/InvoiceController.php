@@ -1242,12 +1242,6 @@ class InvoiceController extends Controller
                     }
                 }
             }
-            if ($item->relationLoaded('order') && $item->order) {
-                $f = strtolower(trim($item->order->fumigasi ?? ''));
-                if (!empty($f) && $f !== '0' && $f !== 'false') {
-                    return true;
-                }
-            }
         }
         return false;
     }

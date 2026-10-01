@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Book, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
+import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
 import AppLogo from './app-logo';
 
 // Definisikan item menu utama TANPA menu Karantina
@@ -98,8 +98,16 @@ export function AppSidebar() {
     let filteredNavItems: NavItem[] = [];
 
     if (roleId == 1) {
-        // Superadmin: semua menu kecuali Karantina (karena hanya untuk role 4)
-        filteredNavItems = baseNavItems;
+        // Superadmin: semua menu + Database Backup
+        filteredNavItems = [
+            ...baseNavItems,
+            {
+                title: 'Database Backup',
+                href: '/bckp',
+                icon: Database,
+                shortcut: 'B',
+            },
+        ];
     } else if (roleId == 2) {
         // Admin: tanpa User, Customers, Shippers, Products
         filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));

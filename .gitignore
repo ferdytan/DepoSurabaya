@@ -6,3 +6,5 @@
 .claude/
 node_modules/
 .DS_Store
+.phpunit.result.cache
+storage/framework/*.lock

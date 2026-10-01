@@ -195,7 +195,17 @@ Route::middleware(['auth'])->group(function () {
 });
 
 /* =====================================================
+ |  DATABASE BACKUP (SUPER ADMIN ONLY)
+ * =====================================================*/
+Route::middleware(['auth', 'superadmin'])->group(function () {
+    Route::get('/bckp', [\App\Http\Controllers\DatabaseBackupController::class, 'index'])->name('bckp.index');
+    Route::get('/bckp/download/{file}', [\App\Http\Controllers\DatabaseBackupController::class, 'download'])
+        ->name('bckp.download');
+});
+
+/* =====================================================
  |  SYSTEM ROUTES
  * =====================================================*/
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
+

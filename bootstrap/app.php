@@ -25,6 +25,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
             EnsureEmailIsVerifiedByAdmin::class,
         ]);
+
+        $middleware->alias([
+            'superadmin' => \App\Http\Middleware\EnsureUserIsSuperAdmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

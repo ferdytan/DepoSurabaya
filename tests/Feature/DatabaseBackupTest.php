@@ -187,4 +187,31 @@ class DatabaseBackupTest extends TestCase
             }
         }
     }
+
+    public function test_super_admin_can_update_backup_schedule_and_retention_settings(): void
+    {
+        $superAdmin = $this->createSuperAdminUser();
+
+        $response = $this->actingAs($superAdmin)->post('/bckp/settings', [
+            'schedule_time' => '03:15',
+            'retention_days' => 30,
+        ]);
+
+        $response->assertRedirect();
+        $this->assertEquals('03:15', \App\Models\Setting::get('backup_schedule_time'));
+        $this->assertEquals('30', \App\Models\Setting::get('backup_retention_days'));
+    }
+
+    public function test_regular_user_cannot_update_backup_settings(): void
+    {
+        $adminUser = $this->createRegularUser(2, 'Admin');
+
+        $response = $this->actingAs($adminUser)->post('/bckp/settings', [
+            'schedule_time' => '03:15',
+            'retention_days' => 30,
+        ]);
+
+        $response->assertStatus(403);
+    }
 }
+

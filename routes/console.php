@@ -12,13 +12,19 @@ Artisan::command('inspire', function () {
 | Scheduled Console Tasks
 |--------------------------------------------------------------------------
 |
-| Backup database otomatis setiap hari pukul 00:01 WIB (Asia/Jakarta).
+| Backup database otomatis setiap hari sesuai jam yang diatur di sistem (/bckp).
+| Default: pukul 00:01 WIB (Asia/Jakarta).
 | Dilengkapi withoutOverlapping() untuk mencegah eksekusi ganda jika proses
 | sebelumnya masih berjalan.
 |
 */
+$backupTime = (string) \App\Models\Setting::get('backup_schedule_time', '00:01');
+if (!preg_match('/^([01][0-9]|2[0-3]):[0-5][0-9]$/', $backupTime)) {
+    $backupTime = '00:01';
+}
+
 \Illuminate\Support\Facades\Schedule::command('db:backup')
-    ->dailyAt('00:01')
+    ->dailyAt($backupTime)
     ->timezone('Asia/Jakarta')
     ->withoutOverlapping();
 

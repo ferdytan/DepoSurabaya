@@ -199,6 +199,8 @@ Route::middleware(['auth'])->group(function () {
  * =====================================================*/
 Route::middleware(['auth', 'superadmin'])->group(function () {
     Route::get('/bckp', [\App\Http\Controllers\DatabaseBackupController::class, 'index'])->name('bckp.index');
+    Route::post('/bckp/settings', [\App\Http\Controllers\DatabaseBackupController::class, 'updateSettings'])
+        ->name('bckp.settings.update');
     Route::get('/bckp/download/{file}', [\App\Http\Controllers\DatabaseBackupController::class, 'download'])
         ->name('bckp.download');
 });

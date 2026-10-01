@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Services\DatabaseBackupService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -27,14 +29,21 @@ class DatabaseBackupController extends Controller
         $driver = config("database.connections.{$connection}.driver", 'unknown');
         $database = config("database.connections.{$connection}.database", 'unknown');
 
+        $scheduleTime = (string) Setting::get('backup_schedule_time', '00:01');
+        if (!preg_match('/^([01][0-9]|2[0-3]):[0-5][0-9]$/', $scheduleTime)) {
+            $scheduleTime = '00:01';
+        }
+        $retentionDays = (int) Setting::get('backup_retention_days', config('backup.retention_days', 14));
+
         return Inertia::render('bckp/index', [
             'backups' => $backups,
             'stats' => [
                 'total_count' => count($backups),
                 'total_size_bytes' => $totalSizeBytes,
                 'total_size_formatted' => $this->backupService->formatBytes($totalSizeBytes),
-                'retention_days' => (int) config('backup.retention_days', 14),
-                'schedule_time' => '00:01 WIB (Asia/Jakarta)',
+                'retention_days' => $retentionDays,
+                'schedule_time' => "{$scheduleTime} WIB (Asia/Jakarta)",
+                'raw_schedule_time' => $scheduleTime,
                 'active_connection' => $connection,
                 'active_driver' => strtoupper($driver),
                 'active_database' => $database,
@@ -45,6 +54,28 @@ class DatabaseBackupController extends Controller
                 'error' => session('error'),
             ],
         ]);
+    }
+
+    /**
+     * Perbarui pengaturan jam backup otomatis dan retensi penyimpanan.
+     */
+    public function updateSettings(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'schedule_time' => ['required', 'regex:/^([01][0-9]|2[0-3]):[0-5][0-9]$/'],
+            'retention_days' => ['required', 'integer', 'min:1', 'max:365'],
+        ], [
+            'schedule_time.required' => 'Waktu backup wajib diisi.',
+            'schedule_time.regex' => 'Format waktu backup harus format jam HH:MM (contoh: 00:01 atau 02:30).',
+            'retention_days.required' => 'Masa retensi wajib diisi.',
+            'retention_days.min' => 'Masa retensi minimal 1 hari.',
+            'retention_days.max' => 'Masa retensi maksimal 365 hari.',
+        ]);
+
+        Setting::set('backup_schedule_time', $validated['schedule_time']);
+        Setting::set('backup_retention_days', $validated['retention_days']);
+
+        return back()->with('success', "Pengaturan berhasil diperbarui: Jadwal backup pukul {$validated['schedule_time']} WIB, retensi {$validated['retention_days']} hari.");
     }
 
     /**

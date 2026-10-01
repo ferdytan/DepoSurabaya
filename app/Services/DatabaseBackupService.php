@@ -100,7 +100,7 @@ class DatabaseBackupService
             ]);
 
             // Jalankan pembersihan retensi HANYA setelah backup hari ini sukses
-            $days = $retentionDays ?? (int) config('backup.retention_days', 14);
+            $days = $retentionDays ?? (int) \App\Models\Setting::get('backup_retention_days', config('backup.retention_days', 14));
             $this->pruneOldBackups($days);
 
             return [

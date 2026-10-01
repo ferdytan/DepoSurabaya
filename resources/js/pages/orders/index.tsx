@@ -1098,6 +1098,7 @@ function getNowLocalISO(): string {
                                 value={eirDateInput}
                                 onChange={(val) => setEirDateInput(val)}
                                 withTime={true}
+                                inModal={true}
                                 placeholder="Pilih tanggal & jam EIR..."
                                 className="w-full"
                             />
@@ -1125,6 +1126,7 @@ function getNowLocalISO(): string {
                                 value={exitDateInput}
                                 onChange={(val) => setExitDateInput(val)}
                                 withTime={true}
+                                inModal={true}
                                 placeholder="Pilih tanggal & jam keluar..."
                                 className="w-full"
                             />
@@ -1152,6 +1154,7 @@ function getNowLocalISO(): string {
                                 value={entryDateInput}
                                 onChange={(val) => setEntryDateInput(val)}
                                 withTime={true}
+                                inModal={true}
                                 placeholder="Pilih tanggal & jam masuk..."
                                 className="w-full"
                             />
@@ -1256,6 +1259,7 @@ function getNowLocalISO(): string {
                                             value={plugStartTime}
                                             onChange={(val) => setPlugStartTime(val)}
                                             withTime={true}
+                                            inModal={true}
                                             placeholder="Pilih tanggal & jam plug in..."
                                             className="w-full bg-white"
                                         />
@@ -1278,6 +1282,7 @@ function getNowLocalISO(): string {
                                             value={plugOutTime}
                                             onChange={(val) => setPlugOutTime(val)}
                                             withTime={true}
+                                            inModal={true}
                                             placeholder="Pilih tanggal & jam plug out..."
                                             className="w-full bg-white"
                                         />
@@ -1333,6 +1338,7 @@ function getNowLocalISO(): string {
                                                 value={rec.date}
                                                 onChange={(val) => updateDate(rIdx, val)}
                                                 withTime={false}
+                                                inModal={true}
                                                 placeholder="Pilih tanggal..."
                                                 className="w-[180px]"
                                             />

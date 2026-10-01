@@ -1262,6 +1262,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                                                         value={rec.date}
                                                         onChange={(val) => updateDate(rIdx, val)}
                                                         withTime={false}
+                                                        inModal={true}
                                                         placeholder="Pilih tanggal..."
                                                         className="w-48"
                                                     />

@@ -20,7 +20,9 @@ interface DateTimePickerProps {
     className?: string;
     id?: string;
     disabled?: boolean;
-    align?: 'left' | 'right';
+    align?: 'left' | 'right' | 'center';
+    inModal?: boolean;
+    centered?: boolean;
 }
 
 const MONTH_NAMES = [
@@ -99,9 +101,12 @@ export function DateTimePicker({
     id,
     disabled = false,
     align = 'left',
+    inModal = false,
+    centered = false,
 }: DateTimePickerProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isInsideDialog, setIsInsideDialog] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const initial = parseValue(value, withTime);
@@ -114,11 +119,31 @@ export function DateTimePicker({
     const [viewMonth, setViewMonth] = useState<number>(initDateObj.getMonth());
 
     useEffect(() => {
-        const checkMobile = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth < 640);
+        const checkMobile = () => {
+            if (typeof window === 'undefined') return;
+            setIsMobile(window.innerWidth < 768);
+        };
         checkMobile();
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
+
+    useEffect(() => {
+        if (containerRef.current) {
+            const inDialog = Boolean(
+                containerRef.current.closest('[data-slot="dialog-content"], [role="dialog"], [data-radix-dialog-content], .dialog-content')
+            );
+            setIsInsideDialog(inDialog);
+        }
+    }, [isOpen]);
+
+    const isActuallyInModal = Boolean(
+        inModal ||
+        centered ||
+        isInsideDialog ||
+        (typeof document !== 'undefined' && containerRef.current?.closest('[data-slot="dialog-content"], [role="dialog"], [data-radix-dialog-content], .dialog-content'))
+    );
+    const shouldCenter = Boolean(isActuallyInModal || isMobile);
 
     useEffect(() => {
         const parsed = parseValue(value, withTime);
@@ -135,8 +160,8 @@ export function DateTimePicker({
 
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
-            // Pada mobile dialog portaled, penutupan diatur via backdrop overlay
-            if (isMobile) return;
+            // Pada centered modal / portaled popup, penutupan diatur via backdrop overlay
+            if (shouldCenter) return;
             if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
                 setIsOpen(false);
             }
@@ -154,7 +179,7 @@ export function DateTimePicker({
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, [isOpen, isMobile]);
+    }, [isOpen, shouldCenter]);
 
     const prevMonth = () => {
         if (viewMonth === 0) {
@@ -562,11 +587,11 @@ export function DateTimePicker({
                     </>
                 );
 
-                if (isMobile && typeof document !== 'undefined') {
+                if (shouldCenter && typeof document !== 'undefined') {
                     return createPortal(
                         <DismissableLayerBranch asChild>
                             <div
-                                className="fixed inset-0 z-[9999] pointer-events-auto flex items-center justify-center p-3 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150 select-none"
+                                className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150 select-none"
                                 onPointerDown={(e) => {
                                     if (e.target === e.currentTarget) {
                                         e.preventDefault();
@@ -594,10 +619,10 @@ export function DateTimePicker({
                                     onTouchEnd={(e) => e.stopPropagation()}
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    {/* Mobile Header Bar */}
+                                    {/* Header Bar */}
                                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
                                         <div className="flex items-center gap-2">
-                                            <CalendarIcon className="h-4 w-4 text-blue-600" />
+                                            <CalendarIcon className="h-4 w-4 text-gray-900" />
                                             <span className="text-xs font-bold text-gray-900">
                                                 {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
                                             </span>
@@ -636,7 +661,7 @@ export function DateTimePicker({
                 return (
                     <div
                         className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[340px] max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
-                            align === 'right' ? 'right-0' : 'left-0'
+                            align === 'right' ? 'right-0' : align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'
                         }`}
                     >
                         {panelContent}

@@ -1224,6 +1224,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                         value={rec.date}
                                                         onChange={(val) => updateDate(rIdx, val)}
                                                         withTime={false}
+                                                        inModal={true}
                                                         placeholder="Pilih tanggal..."
                                                         className="w-48"
                                                     />

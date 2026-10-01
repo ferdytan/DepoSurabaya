@@ -686,6 +686,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                             value={rec.date}
                                             onChange={(val) => updateDate(rIdx, val)}
                                             withTime={false}
+                                            inModal={true}
                                             placeholder="Pilih tanggal..."
                                             className="w-[180px]"
                                         />

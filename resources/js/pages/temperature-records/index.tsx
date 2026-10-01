@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import AppLayout from '@/layouts/app-layout';
 import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
+import DateTimePicker from '@/components/date-time-picker';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
@@ -966,13 +967,14 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     <Label htmlFor="log_date" className="text-xs font-semibold text-gray-700">
                                         Tanggal
                                     </Label>
-                                    <Input
+                                    <DateTimePicker
                                         id="log_date"
-                                        type="date"
                                         value={logDate}
-                                        onChange={(e) => setLogDate(e.target.value)}
-                                        required
-                                        className="h-9 text-xs"
+                                        onChange={(val) => setLogDate(val)}
+                                        withTime={false}
+                                        inModal={true}
+                                        placeholder="Pilih tanggal..."
+                                        className="w-full bg-white"
                                     />
                                 </div>
 
@@ -1122,12 +1124,14 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                             Set Sekarang
                                         </button>
                                     </div>
-                                    <Input
+                                    <DateTimePicker
                                         id="start_plug_in"
-                                        type="datetime-local"
                                         value={plugStartTime}
-                                        onChange={(e) => setPlugStartTime(e.target.value)}
-                                        className="h-9 text-xs"
+                                        onChange={(val) => setPlugStartTime(val)}
+                                        withTime={true}
+                                        inModal={true}
+                                        placeholder="Pilih tanggal & waktu start plug in..."
+                                        className="w-full bg-white"
                                     />
                                 </div>
 
@@ -1144,12 +1148,14 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                             Set Sekarang
                                         </button>
                                     </div>
-                                    <Input
+                                    <DateTimePicker
                                         id="plug_out"
-                                        type="datetime-local"
                                         value={plugOutTime}
-                                        onChange={(e) => setPlugOutTime(e.target.value)}
-                                        className="h-9 text-xs"
+                                        onChange={(val) => setPlugOutTime(val)}
+                                        withTime={true}
+                                        inModal={true}
+                                        placeholder="Pilih tanggal & waktu plug out..."
+                                        className="w-full bg-white"
                                     />
                                     <p className="text-[11px] text-gray-500 italic">
                                         Biarkan kosong jika kontainer masih terhubung (in progress).

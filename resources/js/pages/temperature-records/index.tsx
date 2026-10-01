@@ -67,6 +67,15 @@ type Props = {
 
 function formatDate(dateStr: string | null) {
     if (!dateStr) return '-';
+    const match = String(dateStr).match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
+    if (match) {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        const day = match[3];
+        const month = months[parseInt(match[2], 10) - 1] || match[2];
+        const year = match[1];
+        const time = match[4] && match[5] ? `, ${match[4]}:${match[5]}` : '';
+        return `${day} ${month} ${year}${time}`;
+    }
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return '-';
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -78,9 +87,25 @@ function formatDate(dateStr: string | null) {
     return `${day} ${month} ${year}, ${hours}:${minutes}`;
 }
 
-function toDateTimeLocalString(dateStr?: string | null): string {
+function toDateTimeLocalString(dateStr?: string | Date | null): string {
     if (!dateStr) return '';
-    const d = new Date(dateStr);
+    if (dateStr instanceof Date) {
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        const yyyy = dateStr.getFullYear();
+        const mm = pad(dateStr.getMonth() + 1);
+        const dd = pad(dateStr.getDate());
+        const hh = pad(dateStr.getHours());
+        const min = pad(dateStr.getMinutes());
+        return `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+    }
+    const str = String(dateStr);
+    const match = str.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
+    if (match) {
+        const date = `${match[1]}-${match[2]}-${match[3]}`;
+        const time = match[4] && match[5] ? `${match[4]}:${match[5]}` : '00:00';
+        return `${date}T${time}`;
+    }
+    const d = new Date(str);
     if (isNaN(d.getTime())) return '';
     const pad = (n: number) => n.toString().padStart(2, '0');
     const yyyy = d.getFullYear();
@@ -1091,7 +1116,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         </Label>
                                         <button
                                             type="button"
-                                            onClick={() => setPlugStartTime(toDateTimeLocalString(new Date().toISOString()))}
+                                            onClick={() => setPlugStartTime(toDateTimeLocalString(new Date()))}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
                                             Set Sekarang
@@ -1113,7 +1138,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         </Label>
                                         <button
                                             type="button"
-                                            onClick={() => setPlugOutTime(toDateTimeLocalString(new Date().toISOString()))}
+                                            onClick={() => setPlugOutTime(toDateTimeLocalString(new Date()))}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
                                             Set Sekarang

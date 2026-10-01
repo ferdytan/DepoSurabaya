@@ -351,8 +351,22 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
 function toLocalISO(dateInput?: string | Date | null): string {
     if (!dateInput) return '';
-    const cleanInput = typeof dateInput === 'string' ? dateInput.replace(' ', 'T') : dateInput;
-    const d = typeof cleanInput === 'string' ? new Date(cleanInput) : cleanInput;
+    if (dateInput instanceof Date) {
+        const y = dateInput.getFullYear();
+        const m = String(dateInput.getMonth() + 1).padStart(2, '0');
+        const day = String(dateInput.getDate()).padStart(2, '0');
+        const hours = String(dateInput.getHours()).padStart(2, '0');
+        const minutes = String(dateInput.getMinutes()).padStart(2, '0');
+        return `${y}-${m}-${day}T${hours}:${minutes}`;
+    }
+    const str = String(dateInput);
+    const match = str.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
+    if (match) {
+        const date = `${match[1]}-${match[2]}-${match[3]}`;
+        const time = match[4] && match[5] ? `${match[4]}:${match[5]}` : '00:00';
+        return `${date}T${time}`;
+    }
+    const d = new Date(str);
     if (isNaN(d.getTime())) return '';
     const y = d.getFullYear();
     const m = String(d.getMonth() + 1).padStart(2, '0');

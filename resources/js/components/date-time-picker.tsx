@@ -41,14 +41,11 @@ function parseValue(val?: string, withTime = true) {
     const defaultTime = getNowLocalTime();
     if (!val) return { date: '', time: defaultTime };
 
-    if (val.includes('Z') || (val.includes('+') && val.includes('T'))) {
-        const d = new Date(val);
-        if (!isNaN(d.getTime())) {
-            const date = formatYMD(d);
-            const hours = String(d.getHours()).padStart(2, '0');
-            const minutes = String(d.getMinutes()).padStart(2, '0');
-            return { date, time: `${hours}:${minutes}` };
-        }
+    const match = val.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
+    if (match) {
+        const date = `${match[1]}-${match[2]}-${match[3]}`;
+        const time = withTime && match[4] && match[5] ? `${match[4]}:${match[5]}` : defaultTime;
+        return { date, time };
     }
 
     const cleaned = val.replace(' ', 'T');

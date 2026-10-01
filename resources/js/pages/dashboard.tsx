@@ -182,6 +182,15 @@ function formatRupiah(amount: number) {
 
 function formatDate(dateStr?: string | null) {
     if (!dateStr) return '-';
+    const match = String(dateStr).match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
+    if (match) {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        const day = match[3];
+        const month = months[parseInt(match[2], 10) - 1] || match[2];
+        const year = match[1];
+        const time = match[4] && match[5] ? `, ${match[4]}:${match[5]}` : '';
+        return `${day} ${month} ${year}${time}`;
+    }
     const date = new Date(dateStr);
     if (isNaN(date.getTime())) return '-';
     return date.toLocaleString('id-ID', {

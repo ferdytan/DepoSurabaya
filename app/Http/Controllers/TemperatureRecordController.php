@@ -106,7 +106,7 @@ class TemperatureRecordController extends Controller
             ? Carbon::parse($request->input('time'), 'Asia/Jakarta')
             : Carbon::now('Asia/Jakarta');
 
-        $orderItem->start_plug_in = $time;
+        $orderItem->start_plug_in = $time->format('Y-m-d H:i:s');
         $orderItem->plug_out = null;
         $orderItem->plug_duration_minutes = null;
         $orderItem->total_shifts = null;
@@ -128,7 +128,8 @@ class TemperatureRecordController extends Controller
             ? Carbon::parse($request->input('time'), 'Asia/Jakarta')
             : Carbon::now('Asia/Jakarta');
 
-        $start = Carbon::parse($orderItem->start_plug_in, 'Asia/Jakarta');
+        $rawStart = $orderItem->getRawOriginal('start_plug_in') ?? (is_string($orderItem->start_plug_in) ? $orderItem->start_plug_in : $orderItem->start_plug_in?->format('Y-m-d H:i:s'));
+        $start = Carbon::parse($rawStart, 'Asia/Jakarta');
 
         if ($time->lt($start)) {
             return redirect()->back()->with('error', 'Waktu Plug Out tidak boleh lebih awal dari Start Plug In.');
@@ -136,7 +137,7 @@ class TemperatureRecordController extends Controller
 
         $calc = OrderItem::calculateShifts($start, $time);
 
-        $orderItem->plug_out = $time;
+        $orderItem->plug_out = $time->format('Y-m-d H:i:s');
         $orderItem->plug_duration_minutes = $calc['duration_minutes'];
         $orderItem->total_shifts = $calc['total_shifts'];
         $orderItem->save();
@@ -173,8 +174,8 @@ class TemperatureRecordController extends Controller
             return redirect()->back()->with('error', 'Waktu Plug Out tidak boleh lebih awal dari Start Plug In.');
         }
 
-        $orderItem->start_plug_in = $start;
-        $orderItem->plug_out = $out;
+        $orderItem->start_plug_in = $start ? $start->format('Y-m-d H:i:s') : null;
+        $orderItem->plug_out = $out ? $out->format('Y-m-d H:i:s') : null;
 
         if ($start && $out) {
             $calc = OrderItem::calculateShifts($start, $out);

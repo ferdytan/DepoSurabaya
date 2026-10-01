@@ -26,8 +26,8 @@ class OrderItem extends Model
 
     protected $casts = [
         'is_excluded_from_report' => 'boolean',
-        'start_plug_in' => 'datetime',
-        'plug_out' => 'datetime',
+        'start_plug_in' => 'datetime:Y-m-d H:i:s',
+        'plug_out' => 'datetime:Y-m-d H:i:s',
         'plug_duration_minutes' => 'integer',
         'total_shifts' => 'integer',
     ];
@@ -47,7 +47,11 @@ class OrderItem extends Model
             ];
         }
 
-        if ($out->lt($start)) {
+        // Normalisasi kedua objek Carbon ke format lokal Asia/Jakarta agar tidak terjadi pergeseran zona waktu
+        $startNorm = Carbon::parse($start->format('Y-m-d H:i:s'), 'Asia/Jakarta');
+        $outNorm = Carbon::parse($out->format('Y-m-d H:i:s'), 'Asia/Jakarta');
+
+        if ($outNorm->lt($startNorm)) {
             return [
                 'duration_minutes' => null,
                 'total_shifts' => 0,
@@ -56,7 +60,7 @@ class OrderItem extends Model
             ];
         }
 
-        $durationMinutes = (int) $start->diffInMinutes($out);
+        $durationMinutes = (int) $startNorm->diffInMinutes($outNorm);
 
         $shiftHours = (int) Setting::get('shift_duration_hours', 8);
         $compensationMinutes = (int) Setting::get('shift_compensation_minutes', 45);

@@ -24,6 +24,9 @@ class UserController extends Controller
         }
 
         $users = User::with('role')
+            ->whereDoesntHave('role', function ($q) {
+                $q->whereRaw('LOWER(name) = ?', ['ops checker']);
+            })
             ->when($search, function ($query) use ($search) {
                 $query->where('name', 'like', "%$search%")
                       ->orWhere('email', 'like', "%$search%")
@@ -63,7 +66,16 @@ class UserController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|lowercase|email|max:255|unique:users',
             'password' => ['required', 'confirmed', 'min:6'],
-            'role_id' => 'required|exists:roles,id',
+            'role_id' => [
+                'required',
+                'exists:roles,id',
+                function ($attribute, $value, $fail) {
+                    $role = Role::find($value);
+                    if ($role && strtolower($role->name) === 'ops checker') {
+                        $fail('Peran Ops Checker dinonaktifkan sementara.');
+                    }
+                },
+            ],
         ], [
             'name.required' => 'Nama lengkap wajib diisi.',
             'username.required' => 'Username wajib diisi.',
@@ -117,7 +129,16 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . $user->id,
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
-            'role_id' => 'required|exists:roles,id',
+            'role_id' => [
+                'required',
+                'exists:roles,id',
+                function ($attribute, $value, $fail) {
+                    $role = Role::find($value);
+                    if ($role && strtolower($role->name) === 'ops checker') {
+                        $fail('Peran Ops Checker dinonaktifkan sementara.');
+                    }
+                },
+            ],
             'password' => ['nullable', 'confirmed', 'min:6'],
         ], [
             'name.required' => 'Nama lengkap wajib diisi.',

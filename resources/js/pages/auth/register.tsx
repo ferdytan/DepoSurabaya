@@ -38,6 +38,11 @@ export default function Register({ roles }: Props) {
         role_id: '',
     });
 
+    // Sembunyikan opsi role Ops Checker dan Super User sementara
+    const availableRoles = (roles || []).filter(
+        (r) => r.name.toLowerCase() !== 'ops checker' && r.name.toLowerCase() !== 'super user'
+    );
+
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
         post(route('register'), {
@@ -105,7 +110,7 @@ export default function Register({ roles }: Props) {
                                 <SelectValue placeholder="Select role" />
                             </SelectTrigger>
                             <SelectContent>
-                                {roles.map((role) => (
+                                {availableRoles.map((role) => (
                                     <SelectItem key={role.id} value={role.id.toString()}>
                                         {role.name}
                                     </SelectItem>

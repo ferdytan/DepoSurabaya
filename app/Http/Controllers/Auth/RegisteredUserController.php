@@ -21,7 +21,11 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        $roles = Role::where('name', '!=', 'Super User')->get(['id', 'name']);
+        // Sembunyikan Super User dan Ops Checker sementara sampai dibutuhkan
+        $roles = Role::whereRaw('LOWER(name) != ?', ['super user'])
+            ->whereRaw('LOWER(name) != ?', ['ops checker'])
+            ->get(['id', 'name']);
+
         return Inertia::render('auth/register', [
             'roles' => $roles,
         ]);
@@ -38,7 +42,16 @@ class RegisteredUserController extends Controller
             'username' => 'required|string|max:255|unique:users,username',
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:users,email',
-            'role_id' => 'exists:roles,id',
+            'role_id' => [
+                'required',
+                'exists:roles,id',
+                function ($attribute, $value, $fail) {
+                    $role = Role::find($value);
+                    if ($role && in_array(strtolower($role->name), ['ops checker', 'super user'])) {
+                        $fail('Peran yang dipilih tidak tersedia.');
+                    }
+                },
+            ],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 

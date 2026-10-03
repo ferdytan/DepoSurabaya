@@ -145,23 +145,49 @@ class OrderController extends Controller
         // }
 
         // Filter date range
-        if ($startDate) {
-            $query->where(function ($q) use ($startDate) {
-                $q->where('entry_date', '>=', $startDate)
-                  ->orWhere('eir_date', '>=', $startDate)
-                  ->orWhere('exit_date', '>=', $startDate);
+        if ($startDate && $endDate) {
+            $startDateStart = strlen($startDate) === 10 ? $startDate . ' 00:00:00' : $startDate;
+            $endDateEnd = strlen($endDate) === 10 ? $endDate . ' 23:59:59' : $endDate;
+            $query->where(function ($q) use ($startDateStart, $endDateEnd) {
+                $q->whereBetween('entry_date', [$startDateStart, $endDateEnd])
+                  ->orWhereBetween('eir_date', [$startDateStart, $endDateEnd])
+                  ->orWhereBetween('exit_date', [$startDateStart, $endDateEnd]);
+            });
+        } elseif ($startDate) {
+            $startDateStart = strlen($startDate) === 10 ? $startDate . ' 00:00:00' : $startDate;
+            $query->where(function ($q) use ($startDateStart) {
+                $q->where('entry_date', '>=', $startDateStart)
+                  ->orWhere('eir_date', '>=', $startDateStart)
+                  ->orWhere('exit_date', '>=', $startDateStart);
+            });
+        } elseif ($endDate) {
+            $endDateEnd = strlen($endDate) === 10 ? $endDate . ' 23:59:59' : $endDate;
+            $query->where(function ($q) use ($endDateEnd) {
+                $q->where('entry_date', '<=', $endDateEnd)
+                  ->orWhere('eir_date', '<=', $endDateEnd)
+                  ->orWhere('exit_date', '<=', $endDateEnd);
             });
         }
 
-        if ($endDate) {
-            $query->where(function ($q) use ($endDate) {
-                $q->where('entry_date', '<=', $endDate)
-                  ->orWhere('eir_date', '<=', $endDate)
-                  ->orWhere('exit_date', '<=', $endDate);
-            });
+        $sortBy = $request->input('sort_by');
+        $sortDir = strtolower($request->input('sort_dir', 'asc')) === 'desc' ? 'desc' : 'asc';
+
+        if ($sortBy === 'container_number') {
+            $query->orderBy('container_number', $sortDir);
+        } elseif ($sortBy === 'shippers.name') {
+            $query->join('orders', 'order_items.order_id', '=', 'orders.id')
+                  ->leftJoin('shippers', 'orders.shipper_id', '=', 'shippers.id')
+                  ->select('order_items.*')
+                  ->orderBy('shippers.name', $sortDir);
+        } elseif ($sortBy === 'fumigasi') {
+            $query->join('orders', 'order_items.order_id', '=', 'orders.id')
+                  ->select('order_items.*')
+                  ->orderBy('orders.fumigasi', $sortDir);
+        } else {
+            $query->latest();
         }
 
-        $orders = $query->latest()->paginate(25);
+        $orders = $query->paginate(25)->withQueryString();
 
         $orders->getCollection()->transform(function ($item) {
             $data = $item->toArray();
@@ -182,11 +208,12 @@ class OrderController extends Controller
             'orders' => $orders,
             'customers' => Customer::orderBy('name')->get(['id', 'name']), // Masih dibutuhkan untuk select filter
             'filters' => [
-                'search' => $search,  // Tambahkan search
+                'search' => $search,
                 'trashed' => $trashed,
                 'start_date' => $startDate,
                 'end_date' => $endDate,
-                // 'customer' => $customerName, // HAPUS INI
+                'sort_by' => $sortBy,
+                'sort_dir' => $sortDir,
             ],
             'flash' => [
                 'success' => session('success'),

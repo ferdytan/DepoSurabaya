@@ -26,10 +26,21 @@ type Props = {
     orders: {
         data: Order[];
         links: Array<{ url: string | null; label: string; active: boolean }>;
+        current_page?: number;
+        first_page_url?: string;
+        from?: number | null;
+        last_page?: number;
+        last_page_url?: string;
+        next_page_url?: string | null;
+        path?: string;
+        per_page?: number;
+        prev_page_url?: string | null;
+        to?: number | null;
+        total?: number;
     };
     customers: Customer[]; // ✅ Sudah benar
     filters: {
-        customer: string;
+        customer?: string;
         search?: string;
         trashed?: string;
         sort_by?: string;
@@ -132,37 +143,23 @@ function formatContainerSize(priceType?: string | null, fallback?: string): stri
 
 export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const filters = rawFilters || {};
-    const [search, setSearch] = useState(filters.search ?? ''); // Tambahkan state search
-    // const [customerFilter, setCustomerFilter] = useState<string>(filters.customer ?? ''); // HAPUS INI
+    const [search, setSearch] = useState(filters.search ?? '');
     const [startDate, setStartDate] = useState<string>(filters.start_date ?? '');
     const [endDate, setEndDate] = useState<string>(filters.end_date ?? '');
+
+    // Sinkronkan state input jika URL / filter berubah dari navigasi atau pagination
+    useEffect(() => {
+        setSearch(rawFilters?.search ?? '');
+        setStartDate(rawFilters?.start_date ?? '');
+        setEndDate(rawFilters?.end_date ?? '');
+    }, [rawFilters?.search, rawFilters?.start_date, rawFilters?.end_date]);
 
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
 
-    // Di dalam komponen, setelah state
-    // HAPUS FILTER CUSTOMER DARI LOGIC INI
-    const filteredOrders = orders.data.filter((order) => {
-        // 🔁 Cek periode (start & end date)
-        const matchesPeriod = () => {
-            if (!startDate && !endDate) return true;
-
-            const datesToCheck = [order.entry_date, order.eir_date, order.exit_date];
-            return datesToCheck.some((dateStr) => {
-                if (!dateStr) return false;
-                const date = new Date(dateStr);
-                const start = startDate ? new Date(startDate) : null;
-                const end = endDate ? new Date(endDate) : null;
-
-                if (start && date < start) return false;
-                if (end && date > end) return false;
-                return true;
-            });
-        };
-
-        return matchesPeriod();
-    });
+    // Data kontainer diambil langsung dari hasil query backend ter-paginasi
+    const filteredOrders = orders.data;
 
     const updateDate = (recordIdx: number, date: string) => {
         setTempRecords((prev) => {
@@ -391,16 +388,21 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const { props } = usePage<PageProps>();
 
     const handleSearch = () => {
-        const currentPath = window.location.pathname;
-        const routeUrl = currentPath.startsWith('/karantina') ? '/karantina' : '/karantina';
-
-        router.get(routeUrl, {
-            search, // Tambahkan search ke parameter
-            trashed: filters.trashed,
-            start_date: startDate,
-            end_date: endDate,
-            // customer: customerFilter, // HAPUS INI
-        });
+        router.get(
+            '/karantina',
+            {
+                search: search || undefined,
+                trashed: filters.trashed || undefined,
+                start_date: startDate || undefined,
+                end_date: endDate || undefined,
+                sort_by: filters.sort_by || undefined,
+                sort_dir: filters.sort_dir || undefined,
+            },
+            {
+                preserveState: true,
+                preserveScroll: true,
+            },
+        );
     };
 
     // Di dalam komponen SortButton
@@ -412,15 +414,15 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                 href={route(routeName, {
                     sort_by: field,
                     sort_dir: direction,
-                    search: search, // Tambahkan search ke parameter
-                    // customer: customerFilter, // HAPUS INI
-                    start_date: startDate,
-                    end_date: endDate,
+                    search: search || undefined,
+                    start_date: startDate || undefined,
+                    end_date: endDate || undefined,
                 })}
+                preserveState
+                preserveScroll
                 className="flex items-center gap-1 font-semibold text-gray-700 hover:text-black"
             >
-                {label} {/* <-- Tambahkan ini untuk menampilkan label */}
-                {/* Icon logic tetap sama */}
+                {label}
                 {currentSort === field ? (
                     direction === 'asc' ? (
                         <ArrowUp className="h-4 w-4" />
@@ -428,7 +430,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         <ArrowDown className="h-4 w-4" />
                     )
                 ) : (
-                    <ArrowUpDown className="h-4 w-4 text-gray-400" /> // Anda juga perlu mengimpor ArrowUpDown dan ArrowUp, ArrowDown
+                    <ArrowUpDown className="h-4 w-4 text-gray-400" />
                 )}
             </Link>
         );
@@ -510,6 +512,12 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 type="text"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        e.preventDefault();
+                                        handleSearch();
+                                    }
+                                }}
                                 placeholder="Cari fumigator, shipper, atau nomor kontainer..."
                                 className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
                             />
@@ -526,6 +534,25 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 onChange={({ startDate: s, endDate: e }) => {
                                     setStartDate(s);
                                     setEndDate(e);
+                                }}
+                                onApply={({ startDate: s, endDate: e }) => {
+                                    setStartDate(s);
+                                    setEndDate(e);
+                                    router.get(
+                                        '/karantina',
+                                        {
+                                            search: search || undefined,
+                                            trashed: filters.trashed || undefined,
+                                            start_date: s || undefined,
+                                            end_date: e || undefined,
+                                            sort_by: filters.sort_by || undefined,
+                                            sort_dir: filters.sort_dir || undefined,
+                                        },
+                                        {
+                                            preserveState: true,
+                                            preserveScroll: true,
+                                        },
+                                    );
                                 }}
                                 placeholder="Pilih rentang tanggal filter..."
                                 className="w-full"
@@ -561,7 +588,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             Daftar Kontainer Karantina & Fumigasi
                         </h2>
                         <p className="text-xs text-gray-500">
-                            Menampilkan <span className="font-semibold text-gray-700">{filteredOrders.length}</span> kontainer sesuai kriteria filter.
+                            Total <span className="font-semibold text-gray-700">{orders.total ?? filteredOrders.length}</span> kontainer sesuai kriteria filter.
                         </p>
                     </div>
 
@@ -645,28 +672,35 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     </div>
 
                     {/* Pagination */}
-                    <div className="mt-4 flex flex-wrap justify-center gap-1">
-                        {orders.links.map((link, i) =>
-                            link.url ? (
-                                <Button
-                                    key={i}
-                                    variant={link.active ? 'default' : 'outline'}
-                                    disabled={!link.url}
-                                    onClick={() => router.get(link.url!)}
-                                    className="px-3 py-1 whitespace-nowrap text-xs font-medium"
-                                >
-                                    {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
-                                        if (match.includes('Previous')) return '← Prev';
-                                        if (match.includes('Next')) return 'Next →';
-                                        return match;
-                                    })}
-                                </Button>
-                            ) : (
-                                <span key={i} className="px-3 py-1 text-xs text-gray-400">
-                                    ...
-                                </span>
-                            ),
-                        )}
+                    <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <p className="text-xs text-gray-500">
+                            Menampilkan <span className="font-semibold text-gray-700">{orders.from ?? 0}</span> sampai{' '}
+                            <span className="font-semibold text-gray-700">{orders.to ?? 0}</span> dari{' '}
+                            <span className="font-semibold text-gray-700">{orders.total ?? orders.data.length}</span> kontainer
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            {orders.links.map((link, i) =>
+                                link.url ? (
+                                    <Button
+                                        key={i}
+                                        variant={link.active ? 'default' : 'outline'}
+                                        disabled={!link.url}
+                                        onClick={() => router.get(link.url!, {}, { preserveState: true, preserveScroll: true })}
+                                        className="px-3 py-1 whitespace-nowrap text-xs font-medium"
+                                    >
+                                        {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
+                                            if (match.includes('Previous')) return '← Prev';
+                                            if (match.includes('Next')) return 'Next →';
+                                            return match;
+                                        })}
+                                    </Button>
+                                ) : (
+                                    <span key={i} className="px-3 py-1 text-xs text-gray-400">
+                                        ...
+                                    </span>
+                                ),
+                            )}
+                        </div>
                     </div>
                 </div>
 

@@ -88,6 +88,7 @@ type Order = {
     exit_date: string | null;
     price_type: string | null; // ➜ baru
     commodity: string | null;
+    country?: string | null;
     no_aju: string | null;
     deleted_reason: string | null;
     deleted_at: string | null;
@@ -321,7 +322,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                 <div class="header">
                     <img src="${logoUrl}" alt="Logo" class="logo">
                     <div class="company-info">
-                        <strong>PT. DEPO SUBARAYA SEJAHTERA</strong><br>
+                        <strong>PT. DEPO SURABAYA SEJAHTERA</strong><br>
                         Tanjung Sadari No. 90<br>
                         Surabaya<br>
                         Jawa Timur - Indonesia
@@ -340,9 +341,9 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             <th>Nama Shipper</th>
                             <th>Size</th>
                             <th>Tanggal Masuk</th>
-                            <th>Tanggal EIR</th>
                             <th>Tanggal Keluar</th>
                             <th>Komoditi</th>
+                            <th>Negara Tujuan</th>
                             <th>Fumigator</th>
                         </tr>
                     </thead>
@@ -355,9 +356,9 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 <td>${order.order?.shipper?.name ?? '-'}</td>
                                 <td>${formatContainerSize(order.price_type)}</td>
                                 <td>${order.entry_date ? new Date(order.entry_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${order.eir_date ? new Date(order.eir_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${order.exit_date ? new Date(order.exit_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${order.commodity ?? '-'}</td>
+                                <td>${order.country ?? '-'}</td>
                                 <td>
     ${order.order?.fumigasi ? (order.order.fumigasi.length > 50 ? order.order.fumigasi.substring(0, 50) + '...' : order.order.fumigasi) : '–'}
 </td>
@@ -617,6 +618,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                     <TableHead className="px-4 py-3">Tanggal EIR</TableHead>
                                     <TableHead className="px-4 py-3">Tanggal Keluar</TableHead>
                                     <TableHead className="px-4 py-3">Komoditi</TableHead>
+                                    <TableHead className="px-4 py-3">Negara Tujuan</TableHead>
                                     <TableHead className="px-4 py-3">
                                         <SortButton label="Fumigasi" field="fumigasi" currentSort={filters.sort_by} currentDir={filters.sort_dir} />
                                     </TableHead>
@@ -625,7 +627,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                             <TableBody className="divide-y divide-gray-100 bg-white">
                                 {filteredOrders.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={8} className="py-10 text-center text-sm text-gray-400">
+                                        <TableCell colSpan={9} className="py-10 text-center text-sm text-gray-400">
                                             Tidak ada data yang sesuai filter.
                                         </TableCell>
                                     </TableRow>
@@ -654,6 +656,9 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
                                                 {order.commodity ?? '-'}
+                                            </TableCell>
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
+                                                {order.country ?? '-'}
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm">
                                                 {order.order?.fumigasi ? (

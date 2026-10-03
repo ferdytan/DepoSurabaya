@@ -685,7 +685,6 @@ export function generateTemperaturePrintHtml(
                     <td style="width: 25%; background-color: #f1f5f9;">
                         <div class="plug-title">Total Tagihan Shift</div>
                         <div class="plug-shift-highlight">${totalShiftsStr}</div>
-                        <div style="font-size: 6.5pt; color: #64748b; margin-top: 1px;">(1 Shift = 8 Jam 45 Menit)</div>
                     </td>
                 </tr>
             </tbody>
@@ -1316,7 +1315,6 @@ export default function TemperaturePrintModal({ isOpen, onClose, data }: Tempera
                                 <span className="font-black text-sm text-gray-900 mt-0.5 block">
                                     {data.total_shifts !== null && data.total_shifts !== undefined ? `${data.total_shifts} Shift` : '-'}
                                 </span>
-                                <span className="text-[8px] text-gray-500 block">(1 Shift = 8j 45m)</span>
                             </div>
                         </div>
 

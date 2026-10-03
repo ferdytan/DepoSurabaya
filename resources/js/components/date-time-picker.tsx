@@ -116,6 +116,10 @@ export function DateTimePicker({
     const initialTimeParts = (initial.time || '08:00').split(':');
     const [hourVal, setHourVal] = useState<string>(initialTimeParts[0] || '08');
     const [minuteVal, setMinuteVal] = useState<string>(initialTimeParts[1] || '00');
+    const hourValRef = useRef<string>(initialTimeParts[0] || '08');
+    const minuteValRef = useRef<string>(initialTimeParts[1] || '00');
+    const prevIsOpenRef = useRef<boolean>(false);
+    const prevValueRef = useRef<string>(value);
     const hourInputRef = useRef<HTMLInputElement>(null);
     const minuteInputRef = useRef<HTMLInputElement>(null);
     const portalWrapperRef = useRef<HTMLDivElement>(null);
@@ -154,18 +158,41 @@ export function DateTimePicker({
 
     useEffect(() => {
         const parsed = parseValue(value, withTime);
-        setSelectedDate(parsed.date);
-        setSelectedTime(parsed.time);
         const parts = (parsed.time || '08:00').split(':');
-        setHourVal(parts[0] || '08');
-        setMinuteVal(parts[1] || '00');
-        if (parsed.date) {
-            const d = parseYMD(parsed.date);
-            if (d) {
-                setViewYear(d.getFullYear());
-                setViewMonth(d.getMonth());
+        const h = parts[0] || '08';
+        const m = parts[1] || '00';
+
+        const justOpened = !prevIsOpenRef.current && isOpen;
+        const valueChangedWhileClosed = !isOpen && value !== prevValueRef.current;
+
+        if (justOpened || valueChangedWhileClosed) {
+            setSelectedDate(parsed.date);
+            setSelectedTime(parsed.time);
+            setHourVal(h);
+            setMinuteVal(m);
+            hourValRef.current = h;
+            minuteValRef.current = m;
+            if (parsed.date) {
+                const d = parseYMD(parsed.date);
+                if (d) {
+                    setViewYear(d.getFullYear());
+                    setViewMonth(d.getMonth());
+                }
+            }
+        } else if (isOpen && value !== prevValueRef.current) {
+            setSelectedDate(parsed.date);
+            const currentRefTime = `${(hourValRef.current || '08').padStart(2, '0')}:${(minuteValRef.current || '00').padStart(2, '0')}`;
+            if (parsed.time && parsed.time !== currentRefTime) {
+                setSelectedTime(parsed.time);
+                setHourVal(h);
+                setMinuteVal(m);
+                hourValRef.current = h;
+                minuteValRef.current = m;
             }
         }
+
+        prevIsOpenRef.current = isOpen;
+        prevValueRef.current = value;
     }, [value, withTime, isOpen]);
 
     // Native Focus & Pointer Event Bubbling Isolation:
@@ -241,128 +268,177 @@ export function DateTimePicker({
         const validH = (h || '08').padStart(2, '0');
         const validM = (m || '00').padStart(2, '0');
         const fullTime = `${validH}:${validM}`;
+        hourValRef.current = validH;
+        minuteValRef.current = validM;
         setSelectedTime(fullTime);
     };
 
     const handleHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const raw = e.target.value.replace(/\D/g, '');
+        let raw = e.target.value.replace(/\D/g, '');
         if (raw === '') {
+            hourValRef.current = '';
             setHourVal('');
             return;
         }
+
+        // Jika user mengetik angka ke-3 ke dalam box yang sudah berisi 2 digit
+        // (tanpa sempat block/select all), ambil digit yang baru diketik!
+        if (raw.length > 2) {
+            raw = raw.slice(-1);
+        }
+
         const num = parseInt(raw, 10);
         if (isNaN(num)) return;
 
-        if (raw.length >= 2) {
+        if (raw.length === 2) {
             const clamped = Math.min(23, Math.max(0, num));
             const formatted = String(clamped).padStart(2, '0');
+            hourValRef.current = formatted;
             setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteVal || '00');
-            // Auto-advance ke input menit
+            updateTimeFromParts(formatted, minuteValRef.current || '00');
+            // Auto-advance ke input menit dan langsung select all teks menit
             minuteInputRef.current?.focus();
-            minuteInputRef.current?.select();
+            requestAnimationFrame(() => minuteInputRef.current?.select());
         } else {
+            // raw.length === 1
             if (num > 2) {
-                // Angka 3-9 otomatis jadi 03-09 dan lompat ke menit
+                // Jam dalam format 24h: angka 3 - 9 otomatis jadi 03 - 09
                 const formatted = `0${num}`;
+                hourValRef.current = formatted;
                 setHourVal(formatted);
-                updateTimeFromParts(formatted, minuteVal || '00');
+                updateTimeFromParts(formatted, minuteValRef.current || '00');
+                // Auto-advance ke input menit dan langsung select all teks menit
                 minuteInputRef.current?.focus();
-                minuteInputRef.current?.select();
+                requestAnimationFrame(() => minuteInputRef.current?.select());
             } else {
+                // Angka 0, 1, 2: tunggu kemungkinan digit kedua (misal 12, 15, 23)
+                hourValRef.current = raw;
                 setHourVal(raw);
             }
         }
     };
 
-    const handleHourBlur = () => {
-        const num = parseInt(hourVal, 10);
-        const formatted = isNaN(num) ? '08' : String(Math.min(23, Math.max(0, num))).padStart(2, '0');
+    const handleHourBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        const raw = e.target.value.replace(/\D/g, '');
+        let formatted = '08';
+        if (raw !== '') {
+            const num = parseInt(raw, 10);
+            if (!isNaN(num)) {
+                const clamped = Math.min(23, Math.max(0, num));
+                formatted = String(clamped).padStart(2, '0');
+            }
+        }
+        hourValRef.current = formatted;
         setHourVal(formatted);
-        updateTimeFromParts(formatted, minuteVal || '00');
+        updateTimeFromParts(formatted, minuteValRef.current || '00');
     };
 
     const handleMinuteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const raw = e.target.value.replace(/\D/g, '');
+        let raw = e.target.value.replace(/\D/g, '');
         if (raw === '') {
+            minuteValRef.current = '';
             setMinuteVal('');
             return;
         }
+
+        // Jika user mengetik angka ke-3 ke dalam box yang sudah berisi 2 digit
+        if (raw.length > 2) {
+            raw = raw.slice(-1);
+        }
+
         const num = parseInt(raw, 10);
         if (isNaN(num)) return;
 
-        if (raw.length >= 2) {
+        if (raw.length === 2) {
             const clamped = Math.min(59, Math.max(0, num));
             const formatted = String(clamped).padStart(2, '0');
+            minuteValRef.current = formatted;
             setMinuteVal(formatted);
-            updateTimeFromParts(hourVal || '08', formatted);
+            updateTimeFromParts(hourValRef.current || '08', formatted);
         } else {
+            // raw.length === 1
             if (num > 5) {
-                // Angka 6-9 otomatis jadi 06-09
+                // Angka menit 6 - 9 otomatis jadi 06 - 09
                 const formatted = `0${num}`;
+                minuteValRef.current = formatted;
                 setMinuteVal(formatted);
-                updateTimeFromParts(hourVal || '08', formatted);
+                updateTimeFromParts(hourValRef.current || '08', formatted);
             } else {
+                minuteValRef.current = raw;
                 setMinuteVal(raw);
             }
         }
     };
 
-    const handleMinuteBlur = () => {
-        const num = parseInt(minuteVal, 10);
-        const formatted = isNaN(num) ? '00' : String(Math.min(59, Math.max(0, num))).padStart(2, '0');
+    const handleMinuteBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        const raw = e.target.value.replace(/\D/g, '');
+        let formatted = '00';
+        if (raw !== '') {
+            const num = parseInt(raw, 10);
+            if (!isNaN(num)) {
+                const clamped = Math.min(59, Math.max(0, num));
+                formatted = String(clamped).padStart(2, '0');
+            }
+        }
+        minuteValRef.current = formatted;
         setMinuteVal(formatted);
-        updateTimeFromParts(hourVal || '08', formatted);
+        updateTimeFromParts(hourValRef.current || '08', formatted);
     };
 
     const handleHourKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'ArrowUp') {
             e.preventDefault();
-            const cur = parseInt(hourVal, 10) || 0;
+            const cur = parseInt(hourValRef.current || hourVal, 10) || 0;
             const next = (cur + 1) % 24;
             const formatted = String(next).padStart(2, '0');
+            hourValRef.current = formatted;
             setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteVal || '00');
+            updateTimeFromParts(formatted, minuteValRef.current || '00');
+            requestAnimationFrame(() => hourInputRef.current?.select());
         } else if (e.key === 'ArrowDown') {
             e.preventDefault();
-            const cur = parseInt(hourVal, 10) || 0;
+            const cur = parseInt(hourValRef.current || hourVal, 10) || 0;
             const next = (cur - 1 + 24) % 24;
             const formatted = String(next).padStart(2, '0');
+            hourValRef.current = formatted;
             setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteVal || '00');
+            updateTimeFromParts(formatted, minuteValRef.current || '00');
+            requestAnimationFrame(() => hourInputRef.current?.select());
         } else if (e.key === 'ArrowRight' || e.key === 'Enter') {
-            if (hourInputRef.current?.selectionStart === hourVal.length || e.key === 'Enter') {
-                e.preventDefault();
-                minuteInputRef.current?.focus();
-                minuteInputRef.current?.select();
-            }
+            e.preventDefault();
+            minuteInputRef.current?.focus();
+            requestAnimationFrame(() => minuteInputRef.current?.select());
         }
     };
 
     const handleMinuteKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'ArrowUp') {
             e.preventDefault();
-            const cur = parseInt(minuteVal, 10) || 0;
+            const cur = parseInt(minuteValRef.current || minuteVal, 10) || 0;
             const next = (cur + 1) % 60;
             const formatted = String(next).padStart(2, '0');
+            minuteValRef.current = formatted;
             setMinuteVal(formatted);
-            updateTimeFromParts(hourVal || '08', formatted);
+            updateTimeFromParts(hourValRef.current || '08', formatted);
+            requestAnimationFrame(() => minuteInputRef.current?.select());
         } else if (e.key === 'ArrowDown') {
             e.preventDefault();
-            const cur = parseInt(minuteVal, 10) || 0;
+            const cur = parseInt(minuteValRef.current || minuteVal, 10) || 0;
             const next = (cur - 1 + 60) % 60;
             const formatted = String(next).padStart(2, '0');
+            minuteValRef.current = formatted;
             setMinuteVal(formatted);
-            updateTimeFromParts(hourVal || '08', formatted);
+            updateTimeFromParts(hourValRef.current || '08', formatted);
+            requestAnimationFrame(() => minuteInputRef.current?.select());
         } else if (e.key === 'Backspace' && (minuteVal === '' || minuteInputRef.current?.selectionStart === 0)) {
             e.preventDefault();
             hourInputRef.current?.focus();
-            hourInputRef.current?.select();
+            requestAnimationFrame(() => hourInputRef.current?.select());
         } else if (e.key === 'ArrowLeft') {
             if (minuteInputRef.current?.selectionStart === 0) {
                 e.preventDefault();
                 hourInputRef.current?.focus();
-                hourInputRef.current?.select();
+                requestAnimationFrame(() => hourInputRef.current?.select());
             }
         } else if (e.key === 'Enter') {
             e.preventDefault();
@@ -377,6 +453,8 @@ export function DateTimePicker({
         if (match) {
             const h = String(Math.min(23, Math.max(0, parseInt(match[1], 10)))).padStart(2, '0');
             const m = String(Math.min(59, Math.max(0, parseInt(match[2], 10)))).padStart(2, '0');
+            hourValRef.current = h;
+            minuteValRef.current = m;
             setHourVal(h);
             setMinuteVal(m);
             updateTimeFromParts(h, m);
@@ -389,8 +467,8 @@ export function DateTimePicker({
             setIsOpen(false);
             return;
         }
-        const h = (hourVal || '08').padStart(2, '0');
-        const m = (minuteVal || '00').padStart(2, '0');
+        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
+        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
         const finalTime = `${h}:${m}`;
         if (withTime) {
             onChange(`${d}T${finalTime}`);
@@ -406,16 +484,20 @@ export function DateTimePicker({
         const nowTime = getNowLocalTime();
         setSelectedTime(nowTime);
         const [h, m] = nowTime.split(':');
-        setHourVal(h || '08');
-        setMinuteVal(m || '00');
+        const validH = h || '08';
+        const validM = m || '00';
+        hourValRef.current = validH;
+        minuteValRef.current = validM;
+        setHourVal(validH);
+        setMinuteVal(validM);
         onChange('');
         setIsOpen(false);
     };
 
     const handleDateSelect = (ymd: string) => {
         setSelectedDate(ymd);
-        const h = (hourVal || '08').padStart(2, '0');
-        const m = (minuteVal || '00').padStart(2, '0');
+        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
+        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
         const t = `${h}:${m}`;
         if (withTime) {
             onChange(`${ymd}T${t}`);
@@ -428,8 +510,12 @@ export function DateTimePicker({
         const nowTime = getNowLocalTime();
         setSelectedTime(nowTime);
         const [h, m] = nowTime.split(':');
-        setHourVal(h || '08');
-        setMinuteVal(m || '00');
+        const validH = h || '08';
+        const validM = m || '00';
+        hourValRef.current = validH;
+        minuteValRef.current = validM;
+        setHourVal(validH);
+        setMinuteVal(validM);
         const d = selectedDate || formatYMD(new Date());
         if (!selectedDate) setSelectedDate(d);
         if (withTime) {
@@ -446,6 +532,8 @@ export function DateTimePicker({
 
         setSelectedDate(dateStr);
         setSelectedTime(timeStr);
+        hourValRef.current = hours;
+        minuteValRef.current = minutes;
         setHourVal(hours);
         setMinuteVal(minutes);
         setViewYear(now.getFullYear());
@@ -465,7 +553,9 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(now.getFullYear());
         setViewMonth(now.getMonth());
-        const t = selectedTime || getNowLocalTime();
+        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
+        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
+        const t = `${h}:${m}`;
         if (withTime) {
             onChange(`${dateStr}T${t}`);
         } else {
@@ -480,7 +570,9 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(d.getFullYear());
         setViewMonth(d.getMonth());
-        const t = selectedTime || getNowLocalTime();
+        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
+        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
+        const t = `${h}:${m}`;
         if (withTime) {
             onChange(`${dateStr}T${t}`);
         } else {
@@ -689,14 +781,18 @@ export function DateTimePicker({
                                             type="text"
                                             inputMode="numeric"
                                             pattern="[0-9]*"
-                                            maxLength={2}
+                                            maxLength={3}
                                             value={hourVal}
                                             onChange={handleHourChange}
                                             onKeyDown={handleHourKeyDown}
-                                            onFocus={(e) => e.target.select()}
+                                            onClick={(e) => (e.target as HTMLInputElement).select()}
+                                            onFocus={(e) => {
+                                                const el = e.currentTarget;
+                                                requestAnimationFrame(() => el.select());
+                                            }}
                                             onBlur={handleHourBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:outline-none select-all"
+                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none select-all cursor-text transition-colors"
                                             placeholder="JJ"
                                             title="Ketik 2 digit jam (00 - 23)"
                                         />
@@ -706,14 +802,18 @@ export function DateTimePicker({
                                             type="text"
                                             inputMode="numeric"
                                             pattern="[0-9]*"
-                                            maxLength={2}
+                                            maxLength={3}
                                             value={minuteVal}
                                             onChange={handleMinuteChange}
                                             onKeyDown={handleMinuteKeyDown}
-                                            onFocus={(e) => e.target.select()}
+                                            onClick={(e) => (e.target as HTMLInputElement).select()}
+                                            onFocus={(e) => {
+                                                const el = e.currentTarget;
+                                                requestAnimationFrame(() => el.select());
+                                            }}
                                             onBlur={handleMinuteBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:outline-none select-all"
+                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none select-all cursor-text transition-colors"
                                             placeholder="MM"
                                             title="Ketik 2 digit menit (00 - 59)"
                                         />

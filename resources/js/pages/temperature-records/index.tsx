@@ -776,9 +776,6 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                 <span className="font-extrabold text-sm text-white">
                                                                                     {item.total_shifts !== null && item.total_shifts !== undefined ? `${item.total_shifts} Shift` : '-'}
                                                                                 </span>
-                                                                                <span className="text-[10px] text-gray-400 block mt-0.5">
-                                                                                    1 Shift = 8 Jam + 45 Menit (525 mnt)
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1207,7 +1204,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                                 <div className="rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-[11px] text-gray-600 space-y-1">
                                     <span className="font-semibold text-gray-800 block">Aturan Penagihan Shift:</span>
-                                    <span>1 Shift = 8 Jam kerja + 45 menit kompensasi (525 menit). Perhitungan shift dihitung otomatis dengan pembulatan ke atas (CEILING).</span>
+                                    <span>Perhitungan shift dihitung otomatis dengan pembulatan ke atas (CEILING).</span>
                                 </div>
 
                                 <DialogFooter className="gap-2 pt-2 flex items-center justify-between sm:justify-between">

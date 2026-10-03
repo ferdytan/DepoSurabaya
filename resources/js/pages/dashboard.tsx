@@ -1637,7 +1637,7 @@ function CheckerMobileApp({
                                                 {item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined && (
                                                     <div className="text-[11px] text-slate-600 font-medium pt-1 border-t border-slate-200/60 flex items-center justify-between">
                                                         <span>Durasi: {Math.floor(item.plug_duration_minutes / 60)} Jam {item.plug_duration_minutes % 60} Menit</span>
-                                                        <span className="font-bold text-slate-900">{item.total_shifts} Shift (525 mnt/shift)</span>
+                                                        <span className="font-bold text-slate-900">{item.total_shifts} Shift</span>
                                                     </div>
                                                 )}
 

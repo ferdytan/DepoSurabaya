@@ -16,6 +16,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        // Save current list URL with filters/sorting/pagination to session
+        session(['users_index_url' => $request->fullUrl()]);
+
         $search = $request->input('search');
         $defaultPagination = (int) Setting::get('default_pagination', 25);
         $perPage = (int) $request->input('per_page', $defaultPagination);
@@ -49,14 +52,19 @@ class UserController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         // Sembunyikan peran Ops Checker sementara sampai diaktifkan kembali
         $roles = Role::select('id', 'name')
             ->whereRaw('LOWER(name) != ?', ['ops checker'])
             ->get();
 
-        return Inertia::render('users/create', compact('roles'));
+        $returnUrl = $request->input('return_url') ?: session('users_index_url', route('users.index'));
+
+        return Inertia::render('users/create', [
+            'roles' => $roles,
+            'return_url' => $returnUrl,
+        ]);
     }
 
     public function store(Request $request)
@@ -97,7 +105,9 @@ class UserController extends Controller
             'email_verified_at' => now(), // langsung verifikasi saat dibuat oleh admin
         ]);
 
-        return redirect()->route('users.index')->with('success', "User {$validated['name']} berhasil ditambahkan.");
+        $returnUrl = $request->input('return_url') ?: session('users_index_url', route('users.index'));
+
+        return redirect()->to($returnUrl)->with('success', "User {$validated['name']} berhasil ditambahkan.");
     }
 
     /**
@@ -110,16 +120,19 @@ class UserController extends Controller
         return back()->with('success', "Akun {$user->name} berhasil diverifikasi.");
     }
 
-    public function edit(User $user)
+    public function edit(Request $request, User $user)
     {
         // Sembunyikan peran Ops Checker sementara sampai diaktifkan kembali
         $roles = Role::select('id', 'name')
             ->whereRaw('LOWER(name) != ?', ['ops checker'])
             ->get();
 
+        $returnUrl = $request->input('return_url') ?: session('users_index_url', route('users.index'));
+
         return Inertia::render('users/edit', [
             'user' => $user->only(['id', 'name', 'username', 'email', 'role_id']),
             'roles' => $roles,
+            'return_url' => $returnUrl,
         ]);
     }
 
@@ -164,10 +177,12 @@ class UserController extends Controller
 
         $user->update($updateData);
 
-        return redirect()->route('users.index')->with('success', "Data user {$user->name} berhasil diperbarui.");
+        $returnUrl = $request->input('return_url') ?: session('users_index_url', route('users.index'));
+
+        return redirect()->to($returnUrl)->with('success', "Data user {$user->name} berhasil diperbarui.");
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $user = User::findOrFail($id);
         
@@ -179,6 +194,8 @@ class UserController extends Controller
         $userName = $user->name;
         $user->delete();
 
-        return redirect()->route('users.index')->with('success', "User {$userName} berhasil dihapus.");
+        $returnUrl = $request->input('return_url') ?: session('users_index_url', route('users.index'));
+
+        return redirect()->to($returnUrl)->with('success', "User {$userName} berhasil dihapus.");
     }
 }

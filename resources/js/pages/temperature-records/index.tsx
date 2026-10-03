@@ -11,7 +11,7 @@ import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
 import { Fragment, useState } from 'react';
-import TemperaturePrintModal, { executeTemperatureRekapPrint } from '@/components/temperature-print-modal';
+import { executeTemperaturePrint, executeTemperatureRekapPrint } from '@/components/temperature-print-modal';
 
 type TemperatureRecordItem = {
     id: number;
@@ -143,10 +143,6 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     const [plugStartTime, setPlugStartTime] = useState('');
     const [plugOutTime, setPlugOutTime] = useState('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
- 
-    // Modal Cetak PDF Lembar Suhu
-    const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
-    const [printContainer, setPrintContainer] = useState<TemperatureRecordItem | null>(null);
 
     const breadcrumbs: BreadcrumbItem[] = [{ title: 'Monitoring Suhu Kontainer', href: '/temperature-records' }];
 
@@ -680,8 +676,30 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     size="sm"
                                                                     variant="outline"
                                                                     onClick={() => {
-                                                                        setPrintContainer(item);
-                                                                        setIsPrintModalOpen(true);
+                                                                        executeTemperaturePrint({
+                                                                            container_number: item.container_number,
+                                                                            price_type: item.price_type,
+                                                                            commodity: item.commodity,
+                                                                            order_id: item.order?.order_id,
+                                                                            no_aju: item.order?.no_aju,
+                                                                            customer_name: item.order?.customer?.name,
+                                                                            shipper_name: item.order?.shipper?.name,
+                                                                            service_type: item.product?.service_type,
+                                                                            additional_products: item.additional_products,
+                                                                            entry_date: item.entry_date,
+                                                                            exit_date: item.exit_date,
+                                                                            start_plug_in: item.start_plug_in,
+                                                                            plug_out: item.plug_out,
+                                                                            plug_duration_minutes: item.plug_duration_minutes,
+                                                                            total_shifts: item.total_shifts,
+                                                                            rekam_suhu: (item.rekam_suhu || []).map((r) => ({
+                                                                                id: r.id,
+                                                                                tanggal: r.tanggal,
+                                                                                jam_data: r.jam_data,
+                                                                            })),
+                                                                            order: item.order,
+                                                                            product: item.product,
+                                                                        });
                                                                     }}
                                                                     className="h-8 text-xs px-2.5 text-gray-700 hover:text-black gap-1 border-gray-300 bg-white"
                                                                     title="Cetak Lembar Pemantauan Suhu & Plugging (PDF)"
@@ -795,8 +813,30 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                 size="sm"
                                                                                 variant="outline"
                                                                                 onClick={() => {
-                                                                                    setPrintContainer(item);
-                                                                                    setIsPrintModalOpen(true);
+                                                                                    executeTemperaturePrint({
+                                                                                        container_number: item.container_number,
+                                                                                        price_type: item.price_type,
+                                                                                        commodity: item.commodity,
+                                                                                        order_id: item.order?.order_id,
+                                                                                        no_aju: item.order?.no_aju,
+                                                                                        customer_name: item.order?.customer?.name,
+                                                                                        shipper_name: item.order?.shipper?.name,
+                                                                                        service_type: item.product?.service_type,
+                                                                                        additional_products: item.additional_products,
+                                                                                        entry_date: item.entry_date,
+                                                                                        exit_date: item.exit_date,
+                                                                                        start_plug_in: item.start_plug_in,
+                                                                                        plug_out: item.plug_out,
+                                                                                        plug_duration_minutes: item.plug_duration_minutes,
+                                                                                        total_shifts: item.total_shifts,
+                                                                                        rekam_suhu: (item.rekam_suhu || []).map((r) => ({
+                                                                                            id: r.id,
+                                                                                            tanggal: r.tanggal,
+                                                                                            jam_data: r.jam_data,
+                                                                                        })),
+                                                                                        order: item.order,
+                                                                                        product: item.product,
+                                                                                    });
                                                                                 }}
                                                                                 className="h-7 text-xs px-2.5 text-gray-700 bg-white gap-1 hover:text-black border-gray-300"
                                                                             >
@@ -976,11 +1016,11 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                 {/* Modal Quick Catat Suhu */}
                 <Dialog open={isLogModalOpen} onOpenChange={setIsLogModalOpen}>
-                    <DialogContent className="max-w-md">
-                        <DialogHeader>
+                    <DialogContent className="max-w-md w-[95vw] sm:w-full p-4 sm:p-6">
+                        <DialogHeader className="pr-8 text-left">
                             <DialogTitle className="flex items-center gap-2 text-base font-bold text-gray-900">
-                                <Thermometer className="h-5 w-5 text-gray-900" />
-                                Catat Suhu Kontainer
+                                <Thermometer className="h-5 w-5 text-gray-900 shrink-0" />
+                                <span>Catat Suhu Kontainer</span>
                             </DialogTitle>
                         </DialogHeader>
 
@@ -1031,7 +1071,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                             onClick={() => setIsCustomTime(!isCustomTime)}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
-                                            {isCustomTime ? 'Mode Jam Bulat (00:00)' : 'Mode Jam & Menit Spesifik (Plug In/Out)'}
+                                            {isCustomTime ? 'Mode Jam Bulat (00:00)' : 'Mode Jam & Menit Spesifik'}
                                         </button>
                                     </div>
 
@@ -1099,19 +1139,19 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     />
                                 </div>
 
-                                <DialogFooter className="gap-2 pt-2">
+                                <DialogFooter className="gap-2 pt-2 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end">
                                     <Button
                                         type="button"
                                         variant="outline"
                                         onClick={() => setIsLogModalOpen(false)}
-                                        className="h-9 text-xs"
+                                        className="w-full sm:w-auto h-9 text-xs"
                                     >
                                         Batal
                                     </Button>
                                     <Button
                                         type="submit"
                                         disabled={isSubmitting || !logSuhu}
-                                        className="h-9 text-xs bg-gray-900 hover:bg-black text-white px-4 font-semibold"
+                                        className="w-full sm:w-auto h-9 text-xs bg-gray-900 hover:bg-black text-white px-4 font-semibold"
                                     >
                                         {isSubmitting ? 'Menyimpan...' : 'Simpan Suhu'}
                                     </Button>
@@ -1123,11 +1163,11 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                 {/* Modal Atur / Edit Waktu Plug In & Out */}
                 <Dialog open={isPlugModalOpen} onOpenChange={setIsPlugModalOpen}>
-                    <DialogContent className="max-w-md">
-                        <DialogHeader>
+                    <DialogContent className="max-w-md w-[95vw] sm:w-full p-4 sm:p-6">
+                        <DialogHeader className="pr-8 text-left">
                             <DialogTitle className="flex items-center gap-2 text-base font-bold text-gray-900">
-                                <Zap className="h-5 w-5 text-gray-900" />
-                                Atur Waktu Plug In & Plug Out
+                                <Zap className="h-5 w-5 text-gray-900 shrink-0" />
+                                <span>Atur Waktu Plug In & Plug Out</span>
                             </DialogTitle>
                         </DialogHeader>
 
@@ -1212,32 +1252,32 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     <span>Perhitungan shift dihitung otomatis dengan pembulatan ke atas (CEILING).</span>
                                 </div>
 
-                                <DialogFooter className="gap-2 pt-2 flex items-center justify-between sm:justify-between">
+                                <DialogFooter className="gap-2 pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between sm:justify-between">
                                     <div>
                                         {selectedPlugContainer.start_plug_in && (
                                             <Button
                                                 type="button"
                                                 variant="outline"
                                                 onClick={() => handleResetPlugTimes(selectedPlugContainer.id, selectedPlugContainer.container_number)}
-                                                className="h-9 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
+                                                className="w-full sm:w-auto h-9 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
                                             >
                                                 Reset Plug
                                             </Button>
                                         )}
                                     </div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-2 w-full sm:w-auto">
                                         <Button
                                             type="button"
                                             variant="outline"
                                             onClick={() => setIsPlugModalOpen(false)}
-                                            className="h-9 text-xs"
+                                            className="flex-1 sm:flex-initial h-9 text-xs"
                                         >
                                             Batal
                                         </Button>
                                         <Button
                                             type="submit"
                                             disabled={isSubmittingPlug}
-                                            className="h-9 text-xs bg-gray-900 hover:bg-black text-white px-4 font-semibold"
+                                            className="flex-1 sm:flex-initial h-9 text-xs bg-gray-900 hover:bg-black text-white px-4 font-semibold"
                                         >
                                             {isSubmittingPlug ? 'Menyimpan...' : 'Simpan Waktu'}
                                         </Button>
@@ -1247,13 +1287,6 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                         )}
                     </DialogContent>
                 </Dialog>
-
-                {/* Modal Cetak PDF Lembar Pemantauan Suhu & Plugging */}
-                <TemperaturePrintModal
-                    isOpen={isPrintModalOpen}
-                    onClose={() => setIsPrintModalOpen(false)}
-                    data={printContainer}
-                />
             </TemperatureRecordsLayout>
         </AppLayout>
     );

@@ -73,11 +73,15 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 export default function CustomersIndex({ customers, filters }: Props) {
+    const { props } = usePage<PageProps>();
     const [search, setSearch] = useState(filters.search || '');
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [customerIdToDelete, setCustomerIdToDelete] = useState<number | null>(null);
 
-    const { props } = usePage<PageProps>();
+    const getCurrentPageUrl = () => {
+        if (typeof window === 'undefined') return '/customers';
+        return `${window.location.pathname}${window.location.search}`;
+    };
 
     const handleSearch = () => {
         router.get('/customers', { search });
@@ -129,7 +133,7 @@ export default function CustomersIndex({ customers, filters }: Props) {
 
                         <div className="flex items-center gap-2.5 shrink-0">
                             <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
-                                <Link href="/customers/create">
+                                <Link href={`/customers/create?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah Customer</span>
                                 </Link>
@@ -219,7 +223,7 @@ export default function CustomersIndex({ customers, filters }: Props) {
                                                 <TableCell className="py-3.5 text-right whitespace-nowrap">
                                                     <div className="inline-flex items-center gap-1.5">
                                                         <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
-                                                            <Link href={`/customers/${customer.id}/edit`}>
+                                                            <Link href={`/customers/${customer.id}/edit?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                 <Pencil className="h-3.5 w-3.5 mr-1 text-gray-500" />
                                                                 Edit
                                                             </Link>

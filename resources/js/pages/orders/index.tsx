@@ -3,7 +3,6 @@ import AppLayout from '@/layouts/app-layout';
 import OrdersLayout from '@/layouts/orders/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { Boxes, PlusCircle, Thermometer, X } from 'lucide-react';
 import { Fragment, useEffect, useState } from 'react';
 // UI Components
 import Heading from '@/components/heading';
@@ -23,9 +22,30 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { ArrowDown, ArrowUp, ArrowUpDown, Clock, Eye, EyeOff, Pencil, Plus, Power, Printer, Receipt, RotateCcw, Search, Trash2, Zap } from 'lucide-react';
+import {
+    ArrowDown,
+    ArrowUp,
+    ArrowUpDown,
+    Boxes,
+    Check,
+    Clock,
+    Eye,
+    EyeOff,
+    Pencil,
+    Plus,
+    PlusCircle,
+    Power,
+    Printer,
+    Receipt,
+    RotateCcw,
+    Search,
+    Thermometer,
+    Trash2,
+    X,
+    Zap,
+} from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
-import TemperaturePrintModal from '@/components/temperature-print-modal';
+import { executeTemperaturePrint } from '@/components/temperature-print-modal';
 import DateRangePicker from '@/components/date-range-picker';
 import DateTimePicker from '@/components/date-time-picker';
 // Types
@@ -221,7 +241,6 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
-    const [isPrintTempOpen, setIsPrintTempOpen] = useState(false);
     const [collapsedGroups, setCollapsedGroups] = useState<{
         [key: string]: boolean;
     }>({});
@@ -1242,22 +1261,22 @@ function getNowLocalISO(): string {
                 </Dialog>
 
                 <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
-                    <DialogContent className="max-w-3xl">
-                        <DialogHeader>
-                            <DialogTitle className="flex items-center gap-2">
-                                <Thermometer className="h-5 w-5 text-orange-500" />
-                                <span>Rekam Suhu & Plug In/Out - Kontainer {tempOrder?.container_number}</span>
+                    <DialogContent className="max-w-3xl w-[95vw] sm:w-full p-4 sm:p-6 max-h-[92vh] flex flex-col">
+                        <DialogHeader className="pr-8 text-left shrink-0">
+                            <DialogTitle className="flex items-center gap-2 text-sm sm:text-base font-bold text-gray-900 break-words">
+                                <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
+                                <span className="leading-tight">Rekam Suhu & Plug In/Out &mdash; Kontainer {tempOrder?.container_number}</span>
                             </DialogTitle>
                         </DialogHeader>
-                        <div className="max-h-[75vh] space-y-6 overflow-y-auto pr-2">
+                        <div className="flex-1 space-y-5 overflow-y-auto pr-1 sm:pr-2">
                             {/* Section Plug In / Out */}
-                            <div className="rounded-xl border border-gray-200 bg-slate-50/70 p-4 space-y-4">
+                            <div className="rounded-xl border border-gray-200 bg-slate-50/70 p-3 sm:p-4 space-y-4">
                                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-200 pb-3">
                                     <div className="flex items-center gap-2">
-                                        <Zap className="h-5 w-5 text-amber-500 fill-amber-500" />
+                                        <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-amber-500 fill-amber-500 shrink-0" />
                                         <div>
-                                            <h4 className="text-sm font-bold text-gray-900">Status Plug In / Out</h4>
-                                            <p className="text-xs text-gray-500">Pencatatan daya listrik kontainer reefer & penagihan shift</p>
+                                            <h4 className="text-xs sm:text-sm font-bold text-gray-900">Status Plug In / Out</h4>
+                                            <p className="text-[11px] sm:text-xs text-gray-500">Pencatatan daya listrik kontainer reefer & penagihan shift</p>
                                         </div>
                                     </div>
                                     <div>
@@ -1288,7 +1307,7 @@ function getNowLocalISO(): string {
                                             type="button"
                                             onClick={handleQuickPlugIn}
                                             disabled={isSubmittingPlug}
-                                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs h-9 gap-1.5 font-semibold"
+                                            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white text-xs h-9 gap-1.5 font-semibold"
                                         >
                                             <Zap className="h-4 w-4" />
                                             Catat Plug In Sekarang (Real-Time)
@@ -1298,13 +1317,13 @@ function getNowLocalISO(): string {
                                             type="button"
                                             onClick={handleQuickPlugOut}
                                             disabled={isSubmittingPlug}
-                                            className="bg-rose-600 hover:bg-rose-700 text-white text-xs h-9 gap-1.5 font-semibold"
+                                            className="w-full sm:w-auto bg-rose-600 hover:bg-rose-700 text-white text-xs h-9 gap-1.5 font-semibold"
                                         >
                                             <Power className="h-4 w-4" />
                                             Catat Plug Out Sekarang (Real-Time)
                                         </Button>
                                     ) : (
-                                        <div className="text-xs text-gray-600 bg-white border border-gray-200 rounded-lg px-3 py-1.5">
+                                        <div className="w-full sm:w-auto text-xs text-gray-600 bg-white border border-gray-200 rounded-lg px-3 py-1.5">
                                             Total durasi: <strong className="text-gray-900">{Math.floor((tempOrder.plug_duration_minutes ?? 0) / 60)} Jam {(tempOrder.plug_duration_minutes ?? 0) % 60} Menit</strong> ({tempOrder.total_shifts} Shift)
                                         </div>
                                     )}
@@ -1363,7 +1382,7 @@ function getNowLocalISO(): string {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center justify-between pt-2">
+                                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pt-2">
                                     <div>
                                         {tempOrder?.start_plug_in && (
                                             <Button
@@ -1371,7 +1390,7 @@ function getNowLocalISO(): string {
                                                 variant="outline"
                                                 onClick={handleResetPlugTimes}
                                                 disabled={isSubmittingPlug}
-                                                className="h-8 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
+                                                className="w-full sm:w-auto h-8 text-xs text-rose-600 border-rose-200 hover:bg-rose-50"
                                             >
                                                 Reset Status Plug
                                             </Button>
@@ -1381,7 +1400,7 @@ function getNowLocalISO(): string {
                                         type="button"
                                         onClick={handleSavePlugTimes}
                                         disabled={isSubmittingPlug}
-                                        className="h-8 text-xs bg-gray-900 hover:bg-black text-white font-medium"
+                                        className="w-full sm:w-auto h-8 text-xs bg-gray-900 hover:bg-black text-white font-medium"
                                     >
                                         {isSubmittingPlug ? 'Menyimpan...' : 'Simpan Waktu Plug'}
                                     </Button>
@@ -1390,20 +1409,20 @@ function getNowLocalISO(): string {
 
                             {/* Section Rekam Suhu Per Jam */}
                             <div className="space-y-3">
-                                <div className="flex items-center justify-between border-b pb-2">
+                                <div className="flex flex-wrap items-center justify-between gap-2 border-b pb-2">
                                     <div className="flex items-center gap-2">
-                                        <Thermometer className="h-5 w-5 text-orange-500" />
-                                        <h4 className="text-sm font-bold text-gray-900">Rekam Suhu Per Jam</h4>
+                                        <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
+                                        <h4 className="text-xs sm:text-sm font-bold text-gray-900">Rekam Suhu Per Jam</h4>
                                     </div>
-                                    <Button type="button" size="sm" variant="outline" onClick={addDateRecord} className="flex items-center gap-1.5 h-8 text-xs">
-                                        <PlusCircle className="h-4 w-4" /> Tambah Tanggal
+                                    <Button type="button" size="sm" variant="outline" onClick={addDateRecord} className="flex items-center gap-1.5 h-7 sm:h-8 text-xs">
+                                        <PlusCircle className="h-3.5 w-3.5" /> Tambah Tanggal
                                     </Button>
                                 </div>
 
                                 {tempRecords.map((rec, rIdx) => (
-                                    <div key={rIdx} className="space-y-2 rounded border p-4 bg-white">
-                                        <div className="flex items-center gap-2">
-                                            <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
+                                    <div key={rIdx} className="space-y-2 rounded-lg border p-3 sm:p-4 bg-white shadow-2xs">
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <Label htmlFor={`date_${rIdx}`} className="text-xs font-semibold text-gray-700 shrink-0">Tanggal:</Label>
                                             <DateTimePicker
                                                 id={`date_${rIdx}`}
                                                 value={rec.date}
@@ -1411,31 +1430,32 @@ function getNowLocalISO(): string {
                                                 withTime={false}
                                                 inModal={true}
                                                 placeholder="Pilih tanggal..."
-                                                className="w-[180px]"
+                                                className="w-44 max-w-full"
                                             />
                                             {tempRecords.length > 1 && (
                                                 <Button
                                                     type="button"
                                                     size="icon"
                                                     variant="destructive"
-                                                    className="ml-auto"
+                                                    className="ml-auto h-8 w-8"
                                                     onClick={() => removeDateRecord(rIdx)}
                                                 >
                                                     <X className="h-4 w-4" />
                                                 </Button>
                                             )}
                                         </div>
-                                        <div className="grid max-h-64 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 overflow-y-auto">
+                                        <div className="grid max-h-60 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 overflow-y-auto pt-1">
                                             {[...Array(24)].map((_, h) => (
-                                                <div key={h} className="flex items-center gap-1.5">
-                                                    <Label htmlFor={`temp_${rIdx}_${h}`} className="text-xs text-gray-600 w-12">{h.toString().padStart(2, '0')}:00</Label>
+                                                <div key={h} className="flex items-center gap-1.5 bg-gray-50/70 p-1 rounded border border-gray-100">
+                                                    <Label htmlFor={`temp_${rIdx}_${h}`} className="text-xs text-gray-600 w-11 shrink-0 font-mono">{h.toString().padStart(2, '0')}:00</Label>
                                                     <Input
                                                         id={`temp_${rIdx}_${h}`}
                                                         type="number"
                                                         step="0.1"
                                                         value={rec.temps[h.toString().padStart(2, '0')] || ''}
                                                         onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                        className="w-20 h-8 text-xs"
+                                                        className="flex-1 min-w-0 h-8 text-xs bg-white text-center"
+                                                        placeholder="°C"
                                                     />
                                                 </div>
                                             ))}
@@ -1444,21 +1464,50 @@ function getNowLocalISO(): string {
                                 ))}
                             </div>
                         </div>
-                        <DialogFooter className="gap-2 flex flex-row items-center justify-between sm:justify-between">
+                        <DialogFooter className="gap-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between sm:justify-between pt-3 border-t shrink-0">
                             <Button
                                 type="button"
                                 variant="outline"
-                                onClick={() => setIsPrintTempOpen(true)}
-                                className="h-9 text-xs text-gray-700 hover:text-black gap-1.5 border-gray-300"
+                                onClick={() => {
+                                    if (!tempOrder) return;
+                                    executeTemperaturePrint({
+                                        container_number: tempOrder.container_number,
+                                        commodity: tempOrder.commodity,
+                                        order_id: tempOrder.order_id,
+                                        no_aju: tempOrder.no_aju,
+                                        customer_name: tempOrder.order?.customer?.name || tempOrder.customer?.name,
+                                        shipper_name: tempOrder.order?.shipper?.name || tempOrder.shipper?.name,
+                                        service_type: tempOrder.product?.service_type,
+                                        entry_date: tempOrder.entry_date,
+                                        exit_date: tempOrder.exit_date,
+                                        start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : tempOrder.start_plug_in,
+                                        plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : tempOrder.plug_out,
+                                        plug_duration_minutes: tempOrder.plug_duration_minutes,
+                                        total_shifts: tempOrder.total_shifts,
+                                        price_type: tempOrder.price_type,
+                                        rekam_suhu: tempRecords.map((r) => ({
+                                            tanggal: r.date,
+                                            jam_data: r.temps,
+                                        })),
+                                        order: {
+                                            order_id: tempOrder.order_id,
+                                            no_aju: tempOrder.no_aju,
+                                            customer: tempOrder.customer,
+                                            shipper: tempOrder.shipper,
+                                        },
+                                        product: tempOrder.product,
+                                    });
+                                }}
+                                className="w-full sm:w-auto h-9 text-xs text-gray-700 hover:text-black gap-1.5 border-gray-300"
                             >
                                 <Printer className="h-3.5 w-3.5" />
                                 Cetak PDF Lembar Suhu
                             </Button>
-                            <div className="flex items-center gap-2">
-                                <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
+                            <div className="flex items-center gap-2 w-full sm:w-auto">
+                                <Button variant="outline" onClick={() => setIsTempDialogOpen(false)} className="flex-1 sm:flex-initial h-9 text-xs">
                                     Tutup
                                 </Button>
-                                <Button onClick={handleSaveTemp} className="bg-orange-600 hover:bg-orange-700 text-white">
+                                <Button onClick={handleSaveTemp} className="flex-1 sm:flex-initial h-9 text-xs bg-orange-600 hover:bg-orange-700 text-white font-medium">
                                     Simpan Rekam Suhu
                                 </Button>
                             </div>
@@ -1471,36 +1520,6 @@ function getNowLocalISO(): string {
                     isOpen={suratJalanModalOpen}
                     onClose={() => setSuratJalanModalOpen(false)}
                     data={selectedSuratJalan}
-                />
-
-                {/* Modal Cetak Lembar Pemantauan Suhu (PDF) */}
-                <TemperaturePrintModal
-                    isOpen={isPrintTempOpen}
-                    onClose={() => setIsPrintTempOpen(false)}
-                    data={
-                        tempOrder
-                            ? {
-                                  container_number: tempOrder.container_number,
-                                  size: tempOrder.price_type,
-                                  customer_name: tempOrder.order?.customer?.name || tempOrder.customer?.name,
-                                  shipper_name: tempOrder.order?.shipper?.name || tempOrder.shipper?.name,
-                                  commodity: tempOrder.commodity,
-                                  service_type: tempOrder.product?.service_type,
-                                  order_id: tempOrder.order?.order_id || tempOrder.order_id,
-                                  no_aju: tempOrder.order?.no_aju || tempOrder.no_aju,
-                                  entry_date: tempOrder.entry_date,
-                                  exit_date: tempOrder.exit_date,
-                                  start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : tempOrder.start_plug_in,
-                                  plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : tempOrder.plug_out,
-                                  plug_duration_minutes: tempOrder.plug_duration_minutes,
-                                  total_shifts: tempOrder.total_shifts,
-                                  temperature: tempRecords.reduce((acc, r) => {
-                                      if (r.date) acc[r.date] = r.temps;
-                                      return acc;
-                                  }, {} as Record<string, Record<string, string>>),
-                              }
-                            : null
-                    }
                 />
             </OrdersLayout>
         </AppLayout>

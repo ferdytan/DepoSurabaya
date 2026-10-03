@@ -129,10 +129,15 @@ export function DateTimePicker({
     const [viewYear, setViewYear] = useState<number>(initDateObj.getFullYear());
     const [viewMonth, setViewMonth] = useState<number>(initDateObj.getMonth());
 
+    const [isShortViewport, setIsShortViewport] = useState(false);
+    const [dropPosition, setDropPosition] = useState<'bottom' | 'top'>('bottom');
+    const [horizontalAlign, setHorizontalAlign] = useState<'left' | 'right' | 'center'>(align);
+
     useEffect(() => {
         const checkMobile = () => {
             if (typeof window === 'undefined') return;
             setIsMobile(window.innerWidth < 768);
+            setIsShortViewport(window.innerHeight < 550);
         };
         checkMobile();
         window.addEventListener('resize', checkMobile);
@@ -154,7 +159,43 @@ export function DateTimePicker({
         isInsideDialog ||
         (typeof document !== 'undefined' && containerRef.current?.closest('[data-slot="dialog-content"], [role="dialog"], [data-radix-dialog-content], .dialog-content'))
     );
-    const shouldCenter = Boolean(isActuallyInModal || isMobile);
+    const shouldCenter = Boolean(isActuallyInModal || isMobile || isShortViewport);
+
+    // Dynamic placement check for desktop when opened as a dropdown
+    useEffect(() => {
+        if (!isOpen || shouldCenter) return;
+
+        const updatePosition = () => {
+            if (!containerRef.current) return;
+            const rect = containerRef.current.getBoundingClientRect();
+            const popupHeight = 440;
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const spaceAbove = rect.top;
+
+            // If space below is not enough for the dropdown and space above is larger, flip upward
+            if (spaceBelow < popupHeight && spaceAbove > spaceBelow) {
+                setDropPosition('top');
+            } else {
+                setDropPosition('bottom');
+            }
+
+            // Check horizontal bounds
+            const spaceRight = window.innerWidth - rect.left;
+            if (align === 'left' && spaceRight < 340 && rect.right > 340) {
+                setHorizontalAlign('right');
+            } else {
+                setHorizontalAlign(align);
+            }
+        };
+
+        updatePosition();
+        window.addEventListener('resize', updatePosition);
+        window.addEventListener('scroll', updatePosition, true);
+        return () => {
+            window.removeEventListener('resize', updatePosition);
+            window.removeEventListener('scroll', updatePosition, true);
+        };
+    }, [isOpen, shouldCenter, align]);
 
     useEffect(() => {
         const parsed = parseValue(value, withTime);
@@ -984,8 +1025,10 @@ export function DateTimePicker({
 
                 return (
                     <div
-                        className={`absolute z-50 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[340px] max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
-                            align === 'right' ? 'right-0' : align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'
+                        className={`absolute z-50 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[340px] max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
+                            dropPosition === 'top' ? 'bottom-full mb-1.5 origin-bottom' : 'top-full mt-1.5 origin-top'
+                        } ${
+                            horizontalAlign === 'right' ? 'right-0' : horizontalAlign === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'
                         }`}
                     >
                         {panelContent}

@@ -76,6 +76,11 @@ export default function ShippersIndex({ shippers, filters }: Props) {
 
     const { props } = usePage<PageProps>();
 
+    const getCurrentPageUrl = () => {
+        if (typeof window === 'undefined') return '/shippers';
+        return `${window.location.pathname}${window.location.search}`;
+    };
+
     const handleSearch = () => {
         router.get('/shippers', { search });
     };
@@ -125,7 +130,7 @@ export default function ShippersIndex({ shippers, filters }: Props) {
 
                         <div className="flex items-center gap-2.5 shrink-0">
                             <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
-                                <Link href="/shippers/create">
+                                <Link href={`/shippers/create?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah Shipper</span>
                                 </Link>
@@ -215,7 +220,7 @@ export default function ShippersIndex({ shippers, filters }: Props) {
                                                 <TableCell className="py-3.5 text-right whitespace-nowrap">
                                                     <div className="inline-flex items-center gap-1.5">
                                                         <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
-                                                            <Link href={`/shippers/${shipper.id}/edit`}>
+                                                            <Link href={`/shippers/${shipper.id}/edit?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                 <Pencil className="h-3.5 w-3.5 mr-1 text-gray-500" />
                                                                 Edit
                                                             </Link>

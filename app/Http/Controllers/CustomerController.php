@@ -11,6 +11,7 @@ class CustomerController extends Controller
 {
     public function index(Request $request)
     {
+        session(['customers_index_url' => $request->fullUrl()]);
         $search = $request->input('search');
 
         $customers = Customer::when($search, function ($query) use ($search) {
@@ -24,9 +25,11 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('customers/create');
+        return Inertia::render('customers/create', [
+            'return_url' => $request->input('return_url') ?: session('customers_index_url', route('customers.index')),
+        ]);
     }
 
     public function store(Request $request)
@@ -68,10 +71,11 @@ class CustomerController extends Controller
             }
         }
 
-        return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
+        $returnUrl = $request->input('return_url') ?: session('customers_index_url', route('customers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Customer created successfully.');
     }
 
-    public function edit(Customer $customer)
+    public function edit(Request $request, Customer $customer)
     {
         // Ambil semua produk (untuk pencarian)
         $products = Product::select('id', 'service_type as name')->get();
@@ -94,6 +98,7 @@ class CustomerController extends Controller
             'customer' => $customer,
             'products' => $products,
             'product_prices' => $productPrices,
+            'return_url' => $request->input('return_url') ?: session('customers_index_url', route('customers.index')),
         ]);
     }
 
@@ -139,13 +144,15 @@ class CustomerController extends Controller
             }
         }
 
-        return redirect()->route('customers.index')->with('success', 'Customer updated successfully.');
+        $returnUrl = $request->input('return_url') ?: session('customers_index_url', route('customers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Customer updated successfully.');
     }
 
     public function destroy(Customer $customer)
     {
         $customer->delete();
-        return back()->with('success', 'Customer deleted successfully.');
+        $returnUrl = session('customers_index_url', route('customers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Customer deleted successfully.');
     }
 
     // API: Produk milik customer tertentu

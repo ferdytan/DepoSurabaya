@@ -33,11 +33,14 @@ interface PageProps {
         phone: string | null;
         email: string | null;
     };
+    return_url?: string;
     [key: string]: unknown;
 }
 
 export default function EditCustomer() {
-    const { customer, products, product_prices } = usePage<PageProps>().props;
+    const pageProps = usePage<PageProps>().props;
+    const { customer, products, product_prices } = pageProps;
+    const returnUrl = pageProps.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/customers';
 
     const { data, setData, put, processing, errors } = useForm({
         name: customer.name,
@@ -47,6 +50,7 @@ export default function EditCustomer() {
         phone: customer.phone ?? '',
         email: customer.email ?? '',
         product_prices: product_prices ?? [],
+        return_url: returnUrl,
     });
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -54,7 +58,7 @@ export default function EditCustomer() {
     const [selectedProducts, setSelectedProducts] = useState<number[]>(product_prices.map((p) => p.product_id));
 
     const breadcrumbs: BreadcrumbItem[] = [
-        { title: 'Customer Management', href: '/customers' },
+        { title: 'Customer Management', href: returnUrl },
         { title: `Edit ${customer.name}`, href: `/customers/${customer.id}/edit` },
     ];
 
@@ -146,7 +150,7 @@ export default function EditCustomer() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/customers">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -422,7 +426,7 @@ export default function EditCustomer() {
                         {/* Submit & Batal Actions */}
                         <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild className="h-9 text-xs px-4">
-                                <Link href="/customers">Batal</Link>
+                                <Link href={returnUrl}>Batal</Link>
                             </Button>
                             <Button
                                 type="submit"

@@ -4,7 +4,7 @@ import { Label } from '@/components/ui/label';
 import AppLayout from '@/layouts/app-layout';
 import CustomersLayout from '@/layouts/customers/layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
 import { ArrowLeft, Building2, DollarSign, Plus, Search, Trash2, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +13,15 @@ type Product = {
     name: string;
 };
 
+interface PageProps {
+    return_url?: string;
+    [key: string]: unknown;
+}
+
 export default function CreateCustomer() {
+    const pageProps = usePage<PageProps>().props;
+    const returnUrl = pageProps.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/customers';
+
     const { data, setData, post, processing, errors } = useForm({
         name: '',
         address: '',
@@ -28,6 +36,7 @@ export default function CreateCustomer() {
             price_45ft: string;
             price_global: string;
         }>,
+        return_url: returnUrl,
     });
 
     const [availableProducts, setAvailableProducts] = useState<Product[]>([]);
@@ -35,7 +44,7 @@ export default function CreateCustomer() {
     const [searchTerm, setSearchTerm] = useState('');
 
     const breadcrumbs: BreadcrumbItem[] = [
-        { title: 'Customer Management', href: '/customers' },
+        { title: 'Customer Management', href: returnUrl },
         { title: 'Tambah Customer', href: '/customers/create' },
     ];
 
@@ -123,7 +132,7 @@ export default function CreateCustomer() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/customers">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -403,7 +412,7 @@ export default function CreateCustomer() {
                         {/* Submit & Batal Actions */}
                         <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild className="h-9 text-xs px-4">
-                                <Link href="/customers">Batal</Link>
+                                <Link href={returnUrl}>Batal</Link>
                             </Button>
                             <Button
                                 type="submit"

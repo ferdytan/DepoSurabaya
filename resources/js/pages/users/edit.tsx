@@ -24,20 +24,12 @@ type Props = {
         role_id: number;
     };
     roles: Role[];
+    return_url?: string;
 };
 
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Master User',
-        href: '/users',
-    },
-    {
-        title: 'Edit User',
-        href: '#',
-    },
-];
+export default function EditUser({ user, roles, return_url: initialReturnUrl }: Props) {
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/users';
 
-export default function EditUser({ user, roles }: Props) {
     const [showPassword, setShowPassword] = useState(false);
 
     // Sembunyikan opsi role Ops Checker sementara
@@ -50,7 +42,19 @@ export default function EditUser({ user, roles }: Props) {
         role_id: user.role_id ? user.role_id.toString() : '',
         password: '',
         password_confirmation: '',
+        return_url: returnUrl,
     });
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        {
+            title: 'Master User',
+            href: returnUrl,
+        },
+        {
+            title: 'Edit User',
+            href: '#',
+        },
+    ];
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -78,7 +82,7 @@ export default function EditUser({ user, roles }: Props) {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/users">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -252,7 +256,7 @@ export default function EditUser({ user, roles }: Props) {
                             {/* Actions */}
                             <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-6 border-t border-gray-100">
                                 <Button variant="outline" asChild className="h-10 sm:h-9 text-xs font-semibold px-4 w-full sm:w-auto justify-center">
-                                    <Link href="/users">Batal</Link>
+                                    <Link href={returnUrl}>Batal</Link>
                                 </Button>
                                 <Button
                                     type="submit"

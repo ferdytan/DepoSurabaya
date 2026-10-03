@@ -154,6 +154,7 @@ interface PageProps {
         success?: string;
         error?: string;
     };
+    return_url?: string;
 }
 
 export default function EditInvoice() {
@@ -166,6 +167,19 @@ export default function EditInvoice() {
         activityLogs = [],
         flash,
     } = page.props;
+
+    const returnUrl = page.props.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/invoices';
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        {
+            title: 'Master Invoice',
+            href: returnUrl,
+        },
+        {
+            title: `Edit Invoice ${invoice.invoice_number}`,
+            href: `/invoices/${invoice.id}/edit`,
+        },
+    ];
 
     // State untuk form periode & keuangan
     const [form, setForm] = useState({
@@ -537,6 +551,7 @@ export default function EditInvoice() {
                     },
                 })),
             })),
+            return_url: returnUrl,
         };
 
         router.put(`/invoices/${invoice.id}`, payload, {
@@ -560,7 +575,7 @@ export default function EditInvoice() {
                         />
                         <div className="flex items-center gap-2">
                             <Button variant="outline" size="sm" asChild>
-                                <Link href={`/invoices/${invoice.id}`}>Lihat Detail</Link>
+                                <Link href={`/invoices/${invoice.id}?return_url=${encodeURIComponent(returnUrl)}`}>Lihat Detail</Link>
                             </Button>
                         </div>
                     </div>
@@ -1107,7 +1122,7 @@ export default function EditInvoice() {
                         {/* Tombol Simpan / Batal */}
                         <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild disabled={submitting}>
-                                <Link href={`/invoices/${invoice.id}`}>Batal</Link>
+                                <Link href={`/invoices/${invoice.id}?return_url=${encodeURIComponent(returnUrl)}`}>Batal</Link>
                             </Button>
                             <Button
                                 type="submit"
@@ -1164,15 +1179,3 @@ export default function EditInvoice() {
         </AppLayout>
     );
 }
-
-// Breadcrumbs
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Master Invoice',
-        href: '/invoices',
-    },
-    {
-        title: 'Edit Invoice',
-        href: '/invoices/edit',
-    },
-];

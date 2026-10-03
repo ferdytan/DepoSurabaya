@@ -10,6 +10,7 @@ class ShipperController extends Controller
 {
     public function index(Request $request)
     {
+        session(['shippers_index_url' => $request->fullUrl()]);
         $search = $request->input('search');
 
         $shippers = Shipper::when($search, function ($query) use ($search) {
@@ -23,51 +24,59 @@ class ShipperController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('shippers/create');
+        return Inertia::render('shippers/create', [
+            'return_url' => $request->input('return_url') ?: session('shippers_index_url', route('shippers.index')),
+        ]);
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
             'name'     => 'required|string|max:255',
-            'address'  => 'nullable|string',      // ✅ diubah: boleh kosong
+            'address'  => 'nullable|string',
             'city'     => 'nullable|string',
             'province' => 'nullable|string',
             'phone'    => 'nullable|string',
-            'email'    => 'nullable|email|unique:shippers,email', // ✅ nullable
+            'email'    => 'nullable|email|unique:shippers,email',
         ]);
 
         Shipper::create($validated);
 
-        return redirect()->route('shippers.index')->with('success', 'Shipper created successfully.');
+        $returnUrl = $request->input('return_url') ?: session('shippers_index_url', route('shippers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Shipper created successfully.');
     }
 
-    public function edit(Shipper $shipper)
+    public function edit(Request $request, Shipper $shipper)
     {
-        return Inertia::render('shippers/edit', ['shipper' => $shipper]);
+        return Inertia::render('shippers/edit', [
+            'shipper' => $shipper,
+            'return_url' => $request->input('return_url') ?: session('shippers_index_url', route('shippers.index')),
+        ]);
     }
 
     public function update(Request $request, Shipper $shipper)
     {
         $validated = $request->validate([
             'name'     => 'required|string|max:255',
-            'address'  => 'nullable|string',      // ✅ diubah
+            'address'  => 'nullable|string',
             'city'     => 'nullable|string',
             'province' => 'nullable|string',
             'phone'    => 'nullable|string',
-            'email'    => 'nullable|email|unique:shippers,email,' . $shipper->id, // ✅ nullable
+            'email'    => 'nullable|email|unique:shippers,email,' . $shipper->id,
         ]);
 
         $shipper->update($validated);
 
-        return redirect()->route('shippers.index')->with('success', 'Shipper updated successfully.');
+        $returnUrl = $request->input('return_url') ?: session('shippers_index_url', route('shippers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Shipper updated successfully.');
     }
 
     public function destroy(Shipper $shipper)
     {
-        $shipper->delete(); // ini sekarang soft delete
-        return redirect()->route('shippers.index')->with('success', 'Shipper deleted successfully.');
+        $shipper->delete();
+        $returnUrl = session('shippers_index_url', route('shippers.index'));
+        return redirect()->to($returnUrl)->with('success', 'Shipper deleted successfully.');
     }
 }

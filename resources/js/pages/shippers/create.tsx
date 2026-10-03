@@ -4,10 +4,18 @@ import { Label } from '@/components/ui/label';
 import AppLayout from '@/layouts/app-layout';
 import ShippersLayout from '@/layouts/shippers/layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
 import { ArrowLeft, Building2, Truck } from 'lucide-react';
 
+interface PageProps {
+    return_url?: string;
+    [key: string]: unknown;
+}
+
 export default function CreateShipper() {
+    const { return_url: initialReturnUrl } = usePage<PageProps>().props;
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/shippers';
+
     const { data, setData, post, processing, errors } = useForm({
         name: '',
         address: '',
@@ -15,10 +23,11 @@ export default function CreateShipper() {
         province: '',
         phone: '',
         email: '',
+        return_url: returnUrl,
     });
 
     const breadcrumbs: BreadcrumbItem[] = [
-        { title: 'Shipper Management', href: '/shippers' },
+        { title: 'Shipper Management', href: returnUrl },
         { title: 'Tambah Shipper', href: '/shippers/create' },
     ];
 
@@ -48,7 +57,7 @@ export default function CreateShipper() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/shippers">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -166,7 +175,7 @@ export default function CreateShipper() {
                         {/* Submit & Batal Actions */}
                         <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild className="h-9 text-xs px-4">
-                                <Link href="/shippers">Batal</Link>
+                                <Link href={returnUrl}>Batal</Link>
                             </Button>
                             <Button
                                 type="submit"

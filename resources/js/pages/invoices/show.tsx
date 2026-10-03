@@ -94,11 +94,18 @@ interface ActivityLogItem {
     old_values?: Record<string, unknown>;
 }
 
-type PageProps = { invoice: InvoicePayload; company?: Company; activityLogs?: ActivityLogItem[] };
+type PageProps = { invoice: InvoicePayload; company?: Company; activityLogs?: ActivityLogItem[]; return_url?: string };
 
 export default function ShowInvoice() {
     const page = usePage<PageProps>();
     const { invoice, company, activityLogs = [] } = page.props;
+    const returnUrl = page.props.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/invoices';
+
+    const breadcrumbs = [
+        { title: 'Invoices', href: returnUrl },
+        { title: invoice.invoice_number, href: `/invoices/${invoice.id}` },
+    ];
+
     const showPeriod = invoice.show_period ?? true;
 
     // Hitung tanggal keluar kontainer paling terakhir jika tanpa periode
@@ -227,7 +234,7 @@ export default function ShowInvoice() {
     const markAsUnpaid = () => router.put(`/invoices/${invoice.id}/unpay`);
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Invoice ${invoice.invoice_number}`} />
 
             <style>{`
@@ -576,14 +583,14 @@ export default function ShowInvoice() {
                     {/* Tombol Aksi (Print, Edit, Bayar, Kembali) */}
                     <div className="flex flex-wrap items-center justify-end gap-2.5 pt-2 print:hidden">
                         <Link
-                            href="/invoices"
+                            href={returnUrl}
                             className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 shadow-xs hover:bg-gray-50"
                         >
                             <ArrowLeft className="h-4 w-4" />
                             Kembali
                         </Link>
                         <Link
-                            href={`/invoices/${invoice.id}/edit`}
+                            href={`/invoices/${invoice.id}/edit?return_url=${encodeURIComponent(returnUrl)}`}
                             className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 shadow-xs hover:bg-gray-50"
                         >
                             <Edit className="h-4 w-4" />

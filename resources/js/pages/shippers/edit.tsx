@@ -17,9 +17,12 @@ type Props = {
         phone: string | null;
         email: string | null;
     };
+    return_url?: string;
 };
 
-export default function EditShipper({ shipper }: Props) {
+export default function EditShipper({ shipper, return_url: initialReturnUrl }: Props) {
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/shippers';
+
     const { data, setData, put, processing, errors } = useForm({
         name: shipper.name,
         address: shipper.address ?? '',
@@ -27,10 +30,11 @@ export default function EditShipper({ shipper }: Props) {
         province: shipper.province ?? '',
         phone: shipper.phone ?? '',
         email: shipper.email ?? '',
+        return_url: returnUrl,
     });
 
     const breadcrumbs: BreadcrumbItem[] = [
-        { title: 'Shipper Management', href: '/shippers' },
+        { title: 'Shipper Management', href: returnUrl },
         { title: `Edit ${shipper.name}`, href: `/shippers/${shipper.id}/edit` },
     ];
 
@@ -60,7 +64,7 @@ export default function EditShipper({ shipper }: Props) {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/shippers">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -178,7 +182,7 @@ export default function EditShipper({ shipper }: Props) {
                         {/* Submit & Batal Actions */}
                         <div className="flex items-center justify-end gap-3 pt-2">
                             <Button variant="outline" asChild className="h-9 text-xs px-4">
-                                <Link href="/shippers">Batal</Link>
+                                <Link href={returnUrl}>Batal</Link>
                             </Button>
                             <Button
                                 type="submit"

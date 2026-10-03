@@ -11,6 +11,9 @@ class TemperatureRecordController extends Controller
 {
     public function index(Request $request)
     {
+        // Save current list URL with filters/sorting/pagination to session
+        session(['temperature_records_index_url' => $request->fullUrl()]);
+
         $search = $request->input('search');
         $status = $request->input('status', 'active');
         $perPage = (int) $request->input('per_page', 15);

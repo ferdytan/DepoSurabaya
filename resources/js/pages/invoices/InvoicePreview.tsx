@@ -65,7 +65,7 @@ interface InvoicePreviewProps {
     company?: Company;
 }
 
-type PageProps = { preview: InvoicePreviewProps; company?: Company };
+type PageProps = { preview: InvoicePreviewProps; company?: Company; return_url?: string };
 
 export default function InvoicePreview({
     preview,
@@ -74,6 +74,14 @@ export default function InvoicePreview({
     preview: InvoicePreviewProps;
     company?: Company;
 }) {
+    const pageProps = usePage<PageProps>().props;
+    const returnUrl = pageProps.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/invoices';
+
+    const breadcrumbs = [
+        { title: 'Master Invoice', href: returnUrl },
+        { title: 'Preview Invoice', href: '#' },
+    ];
+
     const {
         customer,
         invoice_number,
@@ -260,6 +268,7 @@ export default function InvoicePreview({
         })),
         additional_product_quantities: additionalSelections,
         show_period,
+        return_url: returnUrl,
     };
 
     const handleSaveInvoice = (e: React.FormEvent) => {
@@ -280,7 +289,7 @@ export default function InvoicePreview({
     let runningNo = 1;
 
     return (
-        <AppLayout>
+        <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Preview Invoice - Order #${order.id}`} />
 
             <style>{`
@@ -712,7 +721,7 @@ export default function InvoicePreview({
                     <div className="flex flex-wrap items-center justify-end gap-3 pt-2 print:hidden">
                         <Button variant="outline" asChild>
                             <Link
-                                href={preview.reuse_id ? `/invoices/create?reuse_id=${preview.reuse_id}` : '/invoices/create'}
+                                href={preview.reuse_id ? `/invoices/create?reuse_id=${preview.reuse_id}&return_url=${encodeURIComponent(returnUrl)}` : `/invoices/create?return_url=${encodeURIComponent(returnUrl)}`}
                                 className="inline-flex items-center gap-1.5 text-xs"
                             >
                                 <ArrowLeft className="h-4 w-4" />

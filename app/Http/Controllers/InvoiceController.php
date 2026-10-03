@@ -21,6 +21,9 @@ class InvoiceController extends Controller
 {
     public function index(Request $request)
     {
+        // Save current list URL with filters/sorting/pagination to session
+        session(['invoices_index_url' => $request->fullUrl()]);
+
         $search = $request->input('search', '');
         $trashed = $request->boolean('trashed', false);
 
@@ -231,6 +234,8 @@ class InvoiceController extends Controller
             $invoiceNumber = $nextIn2;
         }
 
+        $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
+
         return Inertia::render('invoices/create', [
             'customers' => $customers, // Data customer yang sudah dimodifikasi
             'invoice_number' => $invoiceNumber,
@@ -238,6 +243,7 @@ class InvoiceController extends Controller
             'next_in2_number' => $nextIn2,
             'reuse_invoice' => $reuseInvoice,
             'default_show_period' => filter_var(Setting::get('default_invoice_show_period', true), FILTER_VALIDATE_BOOLEAN),
+            'return_url' => $returnUrl,
         ]);
     }
     
@@ -265,7 +271,7 @@ class InvoiceController extends Controller
             'show_period'   => ['boolean'],
         ]);
 
-        return DB::transaction(function () use ($data) {
+        return DB::transaction(function () use ($data, $request) {
             $itemQtyMap = [];
             foreach (($data['order_item_quantities'] ?? []) as $row) {
                 $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
@@ -448,15 +454,17 @@ class InvoiceController extends Controller
                 $msg = "Invoice {$invoice->invoice_number} berhasil disimpan.";
             }
 
+            $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
+
             return redirect()
-                ->route('invoices.show', $invoice->id)
+                ->to(route('invoices.show', $invoice->id) . '?return_url=' . urlencode($returnUrl))
                 ->with('success', $msg);
         });
     }
 
 
 
-    public function show(Invoice $invoice)
+    public function show(Request $request, Invoice $invoice)
     {
         // Muat ulang invoice dengan payload yang dibutuhkan UI (tanpa mengubah relasi lama)
         $invoice = Invoice::withShowPayload()->findOrFail($invoice->id);
@@ -536,9 +544,12 @@ class InvoiceController extends Controller
             'bank_holder' => 'Depo Surabaya Sejahtera',
         ];
 
+        $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
+
         return Inertia::render('invoices/show', [
             'invoice' => $payload,
             'company' => $company,
+            'return_url' => $returnUrl,
             'activityLogs' => ActivityLog::where('model_type', 'Invoice')
                 ->where('model_id', $invoice->id)
                 ->with('user:id,name,email')
@@ -550,7 +561,7 @@ class InvoiceController extends Controller
     /**
      * Show form for editing invoice
      */
-    public function edit(Invoice $invoice)
+    public function edit(Request $request, Invoice $invoice)
     {
         // Load invoice with items and relations
         $invoice = Invoice::with([
@@ -611,12 +622,15 @@ class InvoiceController extends Controller
             ->latest()
             ->get();
 
+        $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
+
         return Inertia::render('invoices/edit', [
             'invoice' => $invoice,
             'order' => $order,
             'availableOrderItems' => $availableOrderItems->values(),
             'allProducts' => $allProducts,
             'activityLogs' => $activityLogs,
+            'return_url' => $returnUrl,
         ]);
     }
 
@@ -821,8 +835,10 @@ class InvoiceController extends Controller
                 ]
             );
 
+            $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
+
             return redirect()
-                ->route('invoices.show', $invoice->id)
+                ->to(route('invoices.show', $invoice->id) . '?return_url=' . urlencode($returnUrl))
                 ->with('success', "Invoice {$invoice->invoice_number} berhasil diperbarui.");
         });
     }
@@ -861,8 +877,9 @@ class InvoiceController extends Controller
             );
 
             DB::commit();
+            $returnUrl = $request->input('return_url') ?: session('invoices_index_url', route('invoices.index'));
             return redirect()
-                ->route('invoices.index')
+                ->to($returnUrl)
                 ->with('success', "Invoice {$invoice->invoice_number} berhasil dihapus.");
         } catch (\Exception $e) {
             DB::rollBack();
@@ -1161,6 +1178,7 @@ class InvoiceController extends Controller
 
         return Inertia::render('invoices/InvoicePreview', [
             'preview' => $preview,
+            'return_url' => $request->input('return_url') ?: session('invoices_index_url', route('invoices.index')),
             'company' => [
                 'name'        => 'PT. DEPO SURABAYA SEJAHTERA',
                 'address'     => 'Jl. Tanjung Sadari No. 90',

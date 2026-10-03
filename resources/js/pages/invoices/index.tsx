@@ -128,10 +128,20 @@ export default function InvoicesIndex() {
         setDeleteModalOpen(true);
     };
 
+    const getCurrentPageUrl = () => {
+        if (typeof window !== 'undefined') {
+            return window.location.pathname + window.location.search;
+        }
+        return '/invoices';
+    };
+
     const confirmDelete = () => {
         if (invoiceIdToDelete !== null && deleteReason.trim()) {
             router.delete(`/invoices/${invoiceIdToDelete}`, {
-                data: { delete_reason: deleteReason },
+                data: { 
+                    delete_reason: deleteReason,
+                    return_url: getCurrentPageUrl(),
+                },
                 onSuccess: () => {
                     setDeleteModalOpen(false);
                     setInvoiceIdToDelete(null);
@@ -212,7 +222,7 @@ export default function InvoicesIndex() {
 
                             {!isTrashed && (
                                 <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm">
-                                    <Link href="/invoices/create">
+                                    <Link href={`/invoices/create?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                         <Plus className="h-4 w-4" />
                                         <span>Buat Invoice</span>
                                     </Link>
@@ -395,14 +405,14 @@ export default function InvoicesIndex() {
                                                                 )}
 
                                                                 <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
-                                                                    <Link href={`/invoices/${invoice.id}`}>
+                                                                    <Link href={`/invoices/${invoice.id}?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                         <Eye className="h-3.5 w-3.5 mr-1 text-gray-500" />
                                                                         Detail
                                                                     </Link>
                                                                 </Button>
 
                                                                 <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
-                                                                    <Link href={`/invoices/${invoice.id}/edit`}>
+                                                                    <Link href={`/invoices/${invoice.id}/edit?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                         <Pencil className="h-3.5 w-3.5 mr-1 text-gray-500" />
                                                                         Edit
                                                                     </Link>

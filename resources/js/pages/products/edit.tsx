@@ -18,28 +18,31 @@ interface PageProps {
         description: string | null;
         requires_temperature: number; // 0 atau 1
     };
+    return_url?: string;
     [key: string]: unknown;
 }
 
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Master Produk',
-        href: '/products',
-    },
-    {
-        title: 'Edit Produk',
-        href: '#',
-    },
-];
-
 export default function EditProduct() {
-    const { product } = usePage<PageProps>().props;
+    const { product, return_url: initialReturnUrl } = usePage<PageProps>().props;
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/products';
 
     const { data, setData, put, processing, errors } = useForm({
         service_type: product.service_type,
         description: product.description ?? '',
         requires_temperature: Number(product.requires_temperature),
+        return_url: returnUrl,
     });
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        {
+            title: 'Master Produk',
+            href: returnUrl,
+        },
+        {
+            title: 'Edit Produk',
+            href: '#',
+        },
+    ];
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -67,7 +70,7 @@ export default function EditProduct() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/products">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -146,7 +149,7 @@ export default function EditProduct() {
                             {/* Submit & Cancel Actions */}
                             <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-6 border-t border-gray-100">
                                 <Button variant="outline" asChild className="h-10 sm:h-9 text-xs font-semibold px-4 w-full sm:w-auto justify-center">
-                                    <Link href="/products">Batal</Link>
+                                    <Link href={returnUrl}>Batal</Link>
                                 </Button>
                                 <Button
                                     type="submit"

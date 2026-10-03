@@ -100,6 +100,7 @@ interface PageProps {
     next_in2_number?: string;
     reuse_invoice?: ReuseInvoiceInfo | null;
     default_show_period?: boolean;
+    return_url?: string;
 }
 
 type AxiosErrorResponse = {
@@ -114,6 +115,18 @@ type AxiosErrorResponse = {
 export default function CreateInvoice() {
     const page = usePage<PageProps>();
     const { customers = [], invoice_number, next_in1_number, next_in2_number, reuse_invoice, default_show_period } = page.props;
+    const returnUrl = page.props.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/invoices';
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        {
+            title: 'Master Invoice',
+            href: returnUrl,
+        },
+        {
+            title: 'Create Invoice',
+            href: '/invoices/create',
+        },
+    ];
 
     // State form dasar
     const today = new Date();
@@ -577,6 +590,7 @@ export default function CreateInvoice() {
             terbilang: calculations.terbilang,
             applyMaterai,
             additional_product_quantities: additionalSelections,
+            return_url: returnUrl,
         };
 
         try {
@@ -614,7 +628,7 @@ export default function CreateInvoice() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/invoices">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -1397,15 +1411,3 @@ export default function CreateInvoice() {
         </AppLayout>
     );
 }
-
-// Breadcrumbs
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Master Invoice',
-        href: '/invoices',
-    },
-    {
-        title: 'Create Invoice',
-        href: '/invoices/create',
-    },
-];

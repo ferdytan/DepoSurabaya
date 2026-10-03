@@ -11,6 +11,9 @@ class ProductController extends Controller
     // Menampilkan daftar produk dengan pencarian
     public function index(Request $request)
     {
+        // Save current list URL with filters/sorting/pagination to session
+        session(['products_index_url' => $request->fullUrl()]);
+
         $query = Product::query();
 
         // Search (jika ada)
@@ -50,9 +53,12 @@ class ProductController extends Controller
     }
 
     // Menampilkan form tambah produk
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('products/create');
+        $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
+        return Inertia::render('products/create', [
+            'return_url' => $returnUrl,
+        ]);
     }
 
     // File: ProductController.php
@@ -71,13 +77,20 @@ class ProductController extends Controller
             'requires_temperature' => $validated['requires_temperature'], // Gunakan langsung nilai validasi
         ]);
 
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
+        $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
+
+        return redirect()->to($returnUrl)->with('success', 'Product created successfully.');
     }
     
     // Menampilkan form edit produk
-    public function edit(Product $product)
+    public function edit(Request $request, Product $product)
     {
-        return Inertia::render('products/edit', ['product' => $product]);
+        $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
+
+        return Inertia::render('products/edit', [
+            'product' => $product,
+            'return_url' => $returnUrl,
+        ]);
     }
 
     // Memperbarui produk
@@ -95,13 +108,16 @@ class ProductController extends Controller
             'requires_temperature' => $validated['requires_temperature'],
         ]);
 
-        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+        $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
+
+        return redirect()->to($returnUrl)->with('success', 'Product updated successfully.');
     }
 
     // Menghapus produk
-    public function destroy(Product $product)
+    public function destroy(Request $request, Product $product)
     {
         $product->delete();
-        return back()->with('success', 'Product deleted successfully.');
+        $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
+        return redirect()->to($returnUrl)->with('success', 'Product deleted successfully.');
     }
 }

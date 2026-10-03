@@ -6,27 +6,36 @@ import { Switch } from '@/components/ui/switch';
 import AppLayout from '@/layouts/app-layout';
 import ProductsLayout from '@/layouts/products/layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
 import { ArrowLeft, Package, PackagePlus } from 'lucide-react';
 import React from 'react';
 
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Master Produk',
-        href: '/products',
-    },
-    {
-        title: 'Tambah Produk',
-        href: '/products/create',
-    },
-];
+interface PageProps {
+    return_url?: string;
+    [key: string]: unknown;
+}
 
 export default function CreateProduct() {
+    const { return_url: initialReturnUrl } = usePage<PageProps>().props;
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/products';
+
     const { data, setData, post, processing, errors } = useForm({
         service_type: '',
         description: '',
         requires_temperature: 0,
+        return_url: returnUrl,
     });
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        {
+            title: 'Master Produk',
+            href: returnUrl,
+        },
+        {
+            title: 'Tambah Produk',
+            href: '/products/create',
+        },
+    ];
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -54,7 +63,7 @@ export default function CreateProduct() {
                         </div>
 
                         <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href="/products">
+                            <Link href={returnUrl}>
                                 <ArrowLeft className="h-4 w-4" />
                                 Kembali
                             </Link>
@@ -133,7 +142,7 @@ export default function CreateProduct() {
                             {/* Submit & Cancel Actions */}
                             <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-6 border-t border-gray-100">
                                 <Button variant="outline" asChild className="h-10 sm:h-9 text-xs font-semibold px-4 w-full sm:w-auto justify-center">
-                                    <Link href="/products">Batal</Link>
+                                    <Link href={returnUrl}>Batal</Link>
                                 </Button>
                                 <Button
                                     type="submit"

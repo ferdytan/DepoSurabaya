@@ -122,6 +122,13 @@ export default function ProductsIndex({ products, filters }: Props) {
         });
     };
 
+    const getCurrentPageUrl = () => {
+        if (typeof window !== 'undefined') {
+            return window.location.pathname + window.location.search;
+        }
+        return '/products';
+    };
+
     const handleDeleteClick = (id: number) => {
         setProductIdToDelete(id);
         setDeleteModalOpen(true);
@@ -129,7 +136,9 @@ export default function ProductsIndex({ products, filters }: Props) {
 
     const confirmDelete = () => {
         if (productIdToDelete !== null) {
-            router.delete(`/products/${productIdToDelete}`);
+            router.delete(`/products/${productIdToDelete}`, {
+                data: { return_url: getCurrentPageUrl() },
+            });
         }
         setDeleteModalOpen(false);
     };
@@ -168,7 +177,7 @@ export default function ProductsIndex({ products, filters }: Props) {
 
                         <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
                             <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm w-full sm:w-auto justify-center">
-                                <Link href="/products/create">
+                                <Link href={`/products/create?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah Produk</span>
                                 </Link>
@@ -293,7 +302,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                             asChild
                                                             className="h-8 px-2.5 text-xs font-semibold gap-1 text-gray-700 hover:text-gray-900 hover:border-gray-400"
                                                         >
-                                                            <Link href={route('products.edit', product.id)}>
+                                                            <Link href={`${route('products.edit', product.id)}?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                 <Pencil className="h-3.5 w-3.5" />
                                                                 Edit
                                                             </Link>

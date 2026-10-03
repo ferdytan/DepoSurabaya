@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { DismissableLayerBranch } from '@radix-ui/react-dismissable-layer';
+import { FocusScope } from '@radix-ui/react-focus-scope';
 import {
     Calendar as CalendarIcon,
     Clock,
@@ -236,10 +237,12 @@ export function DateTimePicker({
 
     const handleTimeChange = (newTime: string) => {
         setSelectedTime(newTime);
-        const d = selectedDate || formatYMD(new Date());
-        if (!selectedDate) setSelectedDate(d);
-        if (withTime) {
-            onChange(`${d}T${newTime || '08:00'}`);
+        if (newTime) {
+            const d = selectedDate || formatYMD(new Date());
+            if (!selectedDate) setSelectedDate(d);
+            if (withTime) {
+                onChange(`${d}T${newTime}`);
+            }
         }
     };
 
@@ -494,9 +497,11 @@ export function DateTimePicker({
                                 <div className="flex items-center gap-1.5">
                                     <input
                                         type="time"
+                                        step="60"
                                         value={selectedTime}
                                         onChange={(e) => handleTimeChange(e.target.value)}
-                                        className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none"
+                                        style={{ userSelect: 'text', WebkitUserSelect: 'text' }}
+                                        className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none select-text cursor-text"
                                     />
                                     <button
                                         type="button"
@@ -590,69 +595,71 @@ export function DateTimePicker({
                 if (shouldCenter && typeof document !== 'undefined') {
                     return createPortal(
                         <DismissableLayerBranch asChild>
-                            <div
-                                className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150 select-none"
-                                onPointerDown={(e) => {
-                                    if (e.target === e.currentTarget) {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }
-                                }}
-                                onTouchEnd={(e) => {
-                                    if (e.target === e.currentTarget) {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }
-                                }}
-                                onClick={(e) => {
-                                    if (e.target === e.currentTarget) {
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }
-                                }}
-                            >
+                            <FocusScope asChild loop={false} trapped={false} onMountAutoFocus={(e) => e.preventDefault()}>
                                 <div
-                                    className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto select-auto"
-                                    onPointerDown={(e) => e.stopPropagation()}
-                                    onTouchEnd={(e) => e.stopPropagation()}
-                                    onClick={(e) => e.stopPropagation()}
+                                    className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
+                                    onPointerDown={(e) => {
+                                        if (e.target === e.currentTarget) {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            setIsOpen(false);
+                                        }
+                                    }}
+                                    onTouchEnd={(e) => {
+                                        if (e.target === e.currentTarget) {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            setIsOpen(false);
+                                        }
+                                    }}
+                                    onClick={(e) => {
+                                        if (e.target === e.currentTarget) {
+                                            e.stopPropagation();
+                                            setIsOpen(false);
+                                        }
+                                    }}
                                 >
-                                    {/* Header Bar */}
-                                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
-                                        <div className="flex items-center gap-2">
-                                            <CalendarIcon className="h-4 w-4 text-gray-900" />
-                                            <span className="text-xs font-bold text-gray-900">
-                                                {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
-                                            </span>
+                                    <div
+                                        className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onTouchEnd={(e) => e.stopPropagation()}
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        {/* Header Bar */}
+                                        <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
+                                            <div className="flex items-center gap-2">
+                                                <CalendarIcon className="h-4 w-4 text-gray-900" />
+                                                <span className="text-xs font-bold text-gray-900">
+                                                    {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
+                                                </span>
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onPointerDown={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    setIsOpen(false);
+                                                }}
+                                                onTouchEnd={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    setIsOpen(false);
+                                                }}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setIsOpen(false);
+                                                }}
+                                                className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
+                                                aria-label="Tutup"
+                                            >
+                                                <X className="h-4 w-4" />
+                                            </button>
                                         </div>
-                                        <button
-                                            type="button"
-                                            onPointerDown={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
-                                            onTouchEnd={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
-                                            className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
-                                            aria-label="Tutup"
-                                        >
-                                            <X className="h-4 w-4" />
-                                        </button>
-                                    </div>
 
-                                    {panelContent}
+                                        {panelContent}
+                                    </div>
                                 </div>
-                            </div>
+                            </FocusScope>
                         </DismissableLayerBranch>,
                         document.body
                     );

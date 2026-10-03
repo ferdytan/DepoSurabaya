@@ -31,6 +31,8 @@ class OrderController extends Controller
     $query = OrderItem::with([
         'order.customer',
         'order.shipper',
+        'order.items.product',
+        'order.items.additionalProducts',
         'product',
         'additionalProducts',
         'rekamSuhu'
@@ -71,13 +73,63 @@ class OrderController extends Controller
     // Urutkan
     $orders = $query->latest()->paginate($perPage)->withQueryString();
 
-    // Transform untuk tambahkan temperature
-    $orders->getCollection()->transform(function ($item) {
+    // Helper closure untuk mendeteksi apakah suatu produk / layanan adalah layanan suhu / plug
+    $isPlugOrSuhuService = function ($product) {
+        if (!$product) return false;
+        $req = $product->requires_temperature ?? null;
+        if ($req == 1 || $req === true || $req === '1') return true;
+        $st = strtolower($product->service_type ?? '');
+        return str_contains($st, 'plug') || str_contains($st, 'suhu') || str_contains($st, 'reefer');
+    };
+
+    // Transform untuk tambahkan temperature dan status layanan suhu
+    $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService) {
         $data = $item->toArray();
         $data['temperature'] = [];
         foreach ($item->rekamSuhu as $rekam) {
             $data['temperature'][$rekam->tanggal] = $rekam->jam_data;
         }
+
+        // Cek layanan suhu pada item ini (produk utama atau addon)
+        $itemHasTempService = $isPlugOrSuhuService($item->product);
+        if (!$itemHasTempService && $item->relationLoaded('additionalProducts') && $item->additionalProducts) {
+            foreach ($item->additionalProducts as $ap) {
+                if ($isPlugOrSuhuService($ap)) {
+                    $itemHasTempService = true;
+                    break;
+                }
+            }
+        }
+        if (!$itemHasTempService && (!empty($data['temperature']) || !empty($item->start_plug_in) || !empty($item->plug_out))) {
+            $itemHasTempService = true;
+        }
+
+        // Cek apakah di dalam order yang sama ada kontainer dengan addon / layanan suhu
+        $orderHasTempService = $itemHasTempService;
+        if (!$orderHasTempService && $item->order && $item->order->relationLoaded('items') && $item->order->items) {
+            foreach ($item->order->items as $sibling) {
+                if ($isPlugOrSuhuService($sibling->product)) {
+                    $orderHasTempService = true;
+                    break;
+                }
+                if ($sibling->relationLoaded('additionalProducts') && $sibling->additionalProducts) {
+                    foreach ($sibling->additionalProducts as $sibAp) {
+                        if ($isPlugOrSuhuService($sibAp)) {
+                            $orderHasTempService = true;
+                            break 2;
+                        }
+                    }
+                }
+                if (!empty($sibling->start_plug_in) || !empty($sibling->plug_out)) {
+                    $orderHasTempService = true;
+                    break;
+                }
+            }
+        }
+
+        $data['has_temperature_service'] = $itemHasTempService;
+        $data['order_has_temperature_service'] = $orderHasTempService;
+
         return $data;
     });
 

@@ -64,7 +64,7 @@ type Customer = {
 type Product = {
     id: number;
     service_type: string;
-    requires_temperature: boolean;
+    requires_temperature: boolean | number;
 };
 type Shipper = {
     id: number;
@@ -102,6 +102,13 @@ type Order = {
     is_excluded_from_report?: boolean;
     customer: Customer;
     product: Product;
+    additional_products?: Array<{
+        id: number;
+        service_type: string;
+        requires_temperature?: number | boolean | null;
+    }>;
+    has_temperature_service?: boolean;
+    order_has_temperature_service?: boolean;
     shipper: Shipper;
     temperature?: {
         [date: string]: { [hour: string]: string };
@@ -141,6 +148,47 @@ function formatDate(dateStr?: string | null) {
     const hour = date.getHours().toString().padStart(2, '0');
     const minute = date.getMinutes().toString().padStart(2, '0');
     return `${day} ${month} ${year}, ${hour}:${minute}`;
+}
+
+function isPlugOrSuhuService(product?: { service_type?: string; requires_temperature?: number | boolean | null } | null): boolean {
+    if (!product) return false;
+    if (String(product.requires_temperature) === '1' || product.requires_temperature === true) return true;
+    const st = (product.service_type || '').toLowerCase();
+    return st.includes('plug') || st.includes('suhu') || st.includes('reefer');
+}
+
+function canItemRecordTemperature(order: Order, groupOrders?: Order[]): boolean {
+    if (order.has_temperature_service || order.order_has_temperature_service) {
+        return true;
+    }
+    if (isPlugOrSuhuService(order.product)) {
+        return true;
+    }
+    const addons = order.additional_products || (order as any).additionalProducts || [];
+    if (Array.isArray(addons) && addons.some((ap) => isPlugOrSuhuService(ap))) {
+        return true;
+    }
+    if (order.temperature && Object.keys(order.temperature).length > 0) {
+        return true;
+    }
+    if (order.start_plug_in || order.plug_out) {
+        return true;
+    }
+    if (groupOrders && groupOrders.length > 0) {
+        const anyInGroupHasTemp = groupOrders.some((sibling) => {
+            if (sibling.has_temperature_service || sibling.order_has_temperature_service) return true;
+            if (isPlugOrSuhuService(sibling.product)) return true;
+            const sibAddons = sibling.additional_products || (sibling as any).additionalProducts || [];
+            if (Array.isArray(sibAddons) && sibAddons.some((ap) => isPlugOrSuhuService(ap))) return true;
+            if (sibling.temperature && Object.keys(sibling.temperature).length > 0) return true;
+            if (sibling.start_plug_in || sibling.plug_out) return true;
+            return false;
+        });
+        if (anyInGroupHasTemp) {
+            return true;
+        }
+    }
+    return false;
 }
 
 export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
@@ -981,7 +1029,7 @@ function getNowLocalISO(): string {
                                                             </TableCell>
                                                             <TableCell className="py-3">{order.commodity ?? '-'}</TableCell>
                                                             <TableCell className="py-3 text-center">
-                                                                {String(order.product?.requires_temperature) === '1' && (
+                                                                {canItemRecordTemperature(order, groupOrders) ? (
                                                                     <div className="flex flex-col items-center justify-center gap-1">
                                                                         <Button
                                                                             size="sm"
@@ -1006,6 +1054,8 @@ function getNowLocalISO(): string {
                                                                             </Badge>
                                                                         )}
                                                                     </div>
+                                                                ) : (
+                                                                    <span className="text-gray-300 text-xs">-</span>
                                                                 )}
                                                             </TableCell>
                                                             <TableCell className="py-3">

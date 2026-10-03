@@ -777,7 +777,25 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
 
                             {data.order_items.map((item, idx) => {
                                 const product = getSelectedProduct(item.product_id);
-                                const requiresTemp = product?.requires_temperature || false;
+                                const isPlugOrSuhuService = (p?: Product | null) => {
+                                    if (!p) return false;
+                                    if (String(p.requires_temperature) === '1' || p.requires_temperature === true) return true;
+                                    const st = (p.service_type || '').toLowerCase();
+                                    return st.includes('plug') || st.includes('suhu') || st.includes('reefer');
+                                };
+                                const itemHasAddonTemp = (item.additional_product_ids || []).some((addId) => {
+                                    const ap = customerProducts.find((p) => p.id.toString() === addId.toString());
+                                    return isPlugOrSuhuService(ap);
+                                });
+                                const anyOrderHasTempAddon = data.order_items.some((oi) => {
+                                    const p = getSelectedProduct(oi.product_id);
+                                    if (isPlugOrSuhuService(p)) return true;
+                                    return (oi.additional_product_ids || []).some((addId) => {
+                                        const ap = customerProducts.find((cp) => cp.id.toString() === addId.toString());
+                                        return isPlugOrSuhuService(ap);
+                                    });
+                                });
+                                const requiresTemp = isPlugOrSuhuService(product) || itemHasAddonTemp || anyOrderHasTempAddon;
                                 const itemErrorEntries = Object.entries(errors).filter(([k]) =>
                                     k.startsWith(`order_items.${idx}.`),
                                 );

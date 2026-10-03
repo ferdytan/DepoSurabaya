@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { DismissableLayerBranch } from '@radix-ui/react-dismissable-layer';
-import { FocusScope } from '@radix-ui/react-focus-scope';
 import {
     Calendar as CalendarIcon,
     Clock,
@@ -114,6 +113,13 @@ export function DateTimePicker({
     const [selectedDate, setSelectedDate] = useState<string>(initial.date);
     const [selectedTime, setSelectedTime] = useState<string>(initial.time);
 
+    const initialTimeParts = (initial.time || '08:00').split(':');
+    const [hourVal, setHourVal] = useState<string>(initialTimeParts[0] || '08');
+    const [minuteVal, setMinuteVal] = useState<string>(initialTimeParts[1] || '00');
+    const hourInputRef = useRef<HTMLInputElement>(null);
+    const minuteInputRef = useRef<HTMLInputElement>(null);
+    const portalWrapperRef = useRef<HTMLDivElement>(null);
+
     // Current displayed month in calendar
     const initDateObj = parseYMD(initial.date) || new Date();
     const [viewYear, setViewYear] = useState<number>(initDateObj.getFullYear());
@@ -150,6 +156,9 @@ export function DateTimePicker({
         const parsed = parseValue(value, withTime);
         setSelectedDate(parsed.date);
         setSelectedTime(parsed.time);
+        const parts = (parsed.time || '08:00').split(':');
+        setHourVal(parts[0] || '08');
+        setMinuteVal(parts[1] || '00');
         if (parsed.date) {
             const d = parseYMD(parsed.date);
             if (d) {
@@ -157,7 +166,31 @@ export function DateTimePicker({
                 setViewMonth(d.getMonth());
             }
         }
-    }, [value, withTime]);
+    }, [value, withTime, isOpen]);
+
+    // Native Focus & Pointer Event Bubbling Isolation:
+    // Prevents focusin, focusout, pointerdown from bubbling up to document,
+    // so Radix UI's Dialog FocusScope on the parent modal NEVER steals focus!
+    useEffect(() => {
+        const el = portalWrapperRef.current;
+        if (!el || !isOpen) return;
+
+        const stopPropagation = (e: Event) => {
+            e.stopPropagation();
+        };
+
+        el.addEventListener('focusin', stopPropagation, false);
+        el.addEventListener('focusout', stopPropagation, false);
+        el.addEventListener('pointerdown', stopPropagation, false);
+        el.addEventListener('mousedown', stopPropagation, false);
+
+        return () => {
+            el.removeEventListener('focusin', stopPropagation, false);
+            el.removeEventListener('focusout', stopPropagation, false);
+            el.removeEventListener('pointerdown', stopPropagation, false);
+            el.removeEventListener('mousedown', stopPropagation, false);
+        };
+    }, [isOpen, shouldCenter]);
 
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
@@ -204,14 +237,163 @@ export function DateTimePicker({
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
     const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
 
+    const updateTimeFromParts = (h: string, m: string) => {
+        const validH = (h || '08').padStart(2, '0');
+        const validM = (m || '00').padStart(2, '0');
+        const fullTime = `${validH}:${validM}`;
+        setSelectedTime(fullTime);
+    };
+
+    const handleHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const raw = e.target.value.replace(/\D/g, '');
+        if (raw === '') {
+            setHourVal('');
+            return;
+        }
+        const num = parseInt(raw, 10);
+        if (isNaN(num)) return;
+
+        if (raw.length >= 2) {
+            const clamped = Math.min(23, Math.max(0, num));
+            const formatted = String(clamped).padStart(2, '0');
+            setHourVal(formatted);
+            updateTimeFromParts(formatted, minuteVal || '00');
+            // Auto-advance ke input menit
+            minuteInputRef.current?.focus();
+            minuteInputRef.current?.select();
+        } else {
+            if (num > 2) {
+                // Angka 3-9 otomatis jadi 03-09 dan lompat ke menit
+                const formatted = `0${num}`;
+                setHourVal(formatted);
+                updateTimeFromParts(formatted, minuteVal || '00');
+                minuteInputRef.current?.focus();
+                minuteInputRef.current?.select();
+            } else {
+                setHourVal(raw);
+            }
+        }
+    };
+
+    const handleHourBlur = () => {
+        const num = parseInt(hourVal, 10);
+        const formatted = isNaN(num) ? '08' : String(Math.min(23, Math.max(0, num))).padStart(2, '0');
+        setHourVal(formatted);
+        updateTimeFromParts(formatted, minuteVal || '00');
+    };
+
+    const handleMinuteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const raw = e.target.value.replace(/\D/g, '');
+        if (raw === '') {
+            setMinuteVal('');
+            return;
+        }
+        const num = parseInt(raw, 10);
+        if (isNaN(num)) return;
+
+        if (raw.length >= 2) {
+            const clamped = Math.min(59, Math.max(0, num));
+            const formatted = String(clamped).padStart(2, '0');
+            setMinuteVal(formatted);
+            updateTimeFromParts(hourVal || '08', formatted);
+        } else {
+            if (num > 5) {
+                // Angka 6-9 otomatis jadi 06-09
+                const formatted = `0${num}`;
+                setMinuteVal(formatted);
+                updateTimeFromParts(hourVal || '08', formatted);
+            } else {
+                setMinuteVal(raw);
+            }
+        }
+    };
+
+    const handleMinuteBlur = () => {
+        const num = parseInt(minuteVal, 10);
+        const formatted = isNaN(num) ? '00' : String(Math.min(59, Math.max(0, num))).padStart(2, '0');
+        setMinuteVal(formatted);
+        updateTimeFromParts(hourVal || '08', formatted);
+    };
+
+    const handleHourKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const cur = parseInt(hourVal, 10) || 0;
+            const next = (cur + 1) % 24;
+            const formatted = String(next).padStart(2, '0');
+            setHourVal(formatted);
+            updateTimeFromParts(formatted, minuteVal || '00');
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const cur = parseInt(hourVal, 10) || 0;
+            const next = (cur - 1 + 24) % 24;
+            const formatted = String(next).padStart(2, '0');
+            setHourVal(formatted);
+            updateTimeFromParts(formatted, minuteVal || '00');
+        } else if (e.key === 'ArrowRight' || e.key === 'Enter') {
+            if (hourInputRef.current?.selectionStart === hourVal.length || e.key === 'Enter') {
+                e.preventDefault();
+                minuteInputRef.current?.focus();
+                minuteInputRef.current?.select();
+            }
+        }
+    };
+
+    const handleMinuteKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const cur = parseInt(minuteVal, 10) || 0;
+            const next = (cur + 1) % 60;
+            const formatted = String(next).padStart(2, '0');
+            setMinuteVal(formatted);
+            updateTimeFromParts(hourVal || '08', formatted);
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const cur = parseInt(minuteVal, 10) || 0;
+            const next = (cur - 1 + 60) % 60;
+            const formatted = String(next).padStart(2, '0');
+            setMinuteVal(formatted);
+            updateTimeFromParts(hourVal || '08', formatted);
+        } else if (e.key === 'Backspace' && (minuteVal === '' || minuteInputRef.current?.selectionStart === 0)) {
+            e.preventDefault();
+            hourInputRef.current?.focus();
+            hourInputRef.current?.select();
+        } else if (e.key === 'ArrowLeft') {
+            if (minuteInputRef.current?.selectionStart === 0) {
+                e.preventDefault();
+                hourInputRef.current?.focus();
+                hourInputRef.current?.select();
+            }
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            handleApply();
+        }
+    };
+
+    const handleTimePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const text = e.clipboardData.getData('text').trim();
+        const match = text.match(/^(\d{1,2})[:.](\d{1,2})/);
+        if (match) {
+            const h = String(Math.min(23, Math.max(0, parseInt(match[1], 10)))).padStart(2, '0');
+            const m = String(Math.min(59, Math.max(0, parseInt(match[2], 10)))).padStart(2, '0');
+            setHourVal(h);
+            setMinuteVal(m);
+            updateTimeFromParts(h, m);
+        }
+    };
+
     const handleApply = (d = selectedDate, t = selectedTime) => {
         if (!d) {
             onChange('');
             setIsOpen(false);
             return;
         }
+        const h = (hourVal || '08').padStart(2, '0');
+        const m = (minuteVal || '00').padStart(2, '0');
+        const finalTime = `${h}:${m}`;
         if (withTime) {
-            onChange(`${d}T${t || '08:00'}`);
+            onChange(`${d}T${finalTime}`);
         } else {
             onChange(d);
         }
@@ -221,13 +403,20 @@ export function DateTimePicker({
     const handleClear = (e?: React.SyntheticEvent | Event) => {
         e?.stopPropagation();
         setSelectedDate('');
+        const nowTime = getNowLocalTime();
+        setSelectedTime(nowTime);
+        const [h, m] = nowTime.split(':');
+        setHourVal(h || '08');
+        setMinuteVal(m || '00');
         onChange('');
         setIsOpen(false);
     };
 
     const handleDateSelect = (ymd: string) => {
         setSelectedDate(ymd);
-        const t = selectedTime || getNowLocalTime();
+        const h = (hourVal || '08').padStart(2, '0');
+        const m = (minuteVal || '00').padStart(2, '0');
+        const t = `${h}:${m}`;
         if (withTime) {
             onChange(`${ymd}T${t}`);
         } else {
@@ -235,20 +424,12 @@ export function DateTimePicker({
         }
     };
 
-    const handleTimeChange = (newTime: string) => {
-        setSelectedTime(newTime);
-        if (newTime) {
-            const d = selectedDate || formatYMD(new Date());
-            if (!selectedDate) setSelectedDate(d);
-            if (withTime) {
-                onChange(`${d}T${newTime}`);
-            }
-        }
-    };
-
     const handleSetNowTime = () => {
         const nowTime = getNowLocalTime();
         setSelectedTime(nowTime);
+        const [h, m] = nowTime.split(':');
+        setHourVal(h || '08');
+        setMinuteVal(m || '00');
         const d = selectedDate || formatYMD(new Date());
         if (!selectedDate) setSelectedDate(d);
         if (withTime) {
@@ -265,6 +446,8 @@ export function DateTimePicker({
 
         setSelectedDate(dateStr);
         setSelectedTime(timeStr);
+        setHourVal(hours);
+        setMinuteVal(minutes);
         setViewYear(now.getFullYear());
         setViewMonth(now.getMonth());
 
@@ -489,20 +672,53 @@ export function DateTimePicker({
                         {/* Time Picker Section (If withTime is true) */}
                         {withTime && (
                             <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 shrink-0">
-                                <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
-                                    <Clock className="h-3.5 w-3.5 text-gray-700" />
+                                <div className="flex items-center gap-1.5 text-xs text-gray-700 font-semibold">
+                                    <Clock className="h-3.5 w-3.5 text-gray-900" />
                                     <span>Jam (WIB):</span>
                                 </div>
 
-                                <div className="flex items-center gap-1.5">
-                                    <input
-                                        type="time"
-                                        step="60"
-                                        value={selectedTime}
-                                        onChange={(e) => handleTimeChange(e.target.value)}
-                                        style={{ userSelect: 'text', WebkitUserSelect: 'text' }}
-                                        className="h-8 px-2 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-md text-gray-800 focus:bg-white focus:border-gray-900 focus:outline-none select-text cursor-text"
-                                    />
+                                <div className="flex items-center gap-2">
+                                    {/* Direct Editable Time Input Container */}
+                                    <div
+                                        className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs"
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onMouseDown={(e) => e.stopPropagation()}
+                                    >
+                                        <input
+                                            ref={hourInputRef}
+                                            type="text"
+                                            inputMode="numeric"
+                                            pattern="[0-9]*"
+                                            maxLength={2}
+                                            value={hourVal}
+                                            onChange={handleHourChange}
+                                            onKeyDown={handleHourKeyDown}
+                                            onFocus={(e) => e.target.select()}
+                                            onBlur={handleHourBlur}
+                                            onPaste={handleTimePaste}
+                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:outline-none select-all"
+                                            placeholder="JJ"
+                                            title="Ketik 2 digit jam (00 - 23)"
+                                        />
+                                        <span className="font-bold text-gray-400 select-none px-0.5">:</span>
+                                        <input
+                                            ref={minuteInputRef}
+                                            type="text"
+                                            inputMode="numeric"
+                                            pattern="[0-9]*"
+                                            maxLength={2}
+                                            value={minuteVal}
+                                            onChange={handleMinuteChange}
+                                            onKeyDown={handleMinuteKeyDown}
+                                            onFocus={(e) => e.target.select()}
+                                            onBlur={handleMinuteBlur}
+                                            onPaste={handleTimePaste}
+                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:outline-none select-all"
+                                            placeholder="MM"
+                                            title="Ketik 2 digit menit (00 - 59)"
+                                        />
+                                    </div>
+
                                     <button
                                         type="button"
                                         onPointerDown={(e) => {
@@ -514,10 +730,11 @@ export function DateTimePicker({
                                             handleSetNowTime();
                                         }}
                                         onClick={handleSetNowTime}
-                                        className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
+                                        className="px-2.5 py-1.5 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition cursor-pointer flex items-center gap-1 shadow-2xs"
                                         title="Gunakan jam saat ini"
                                     >
-                                        Jam Sekarang
+                                        <Clock className="h-3 w-3 text-gray-700" />
+                                        <span>Jam Sekarang</span>
                                     </button>
                                 </div>
                             </div>
@@ -595,71 +812,71 @@ export function DateTimePicker({
                 if (shouldCenter && typeof document !== 'undefined') {
                     return createPortal(
                         <DismissableLayerBranch asChild>
-                            <FocusScope asChild loop={false} trapped={false} onMountAutoFocus={(e) => e.preventDefault()}>
+                            <div
+                                ref={portalWrapperRef}
+                                className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
+                                onPointerDown={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
+                                onTouchEnd={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
+                                onClick={(e) => {
+                                    if (e.target === e.currentTarget) {
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                    }
+                                }}
+                            >
                                 <div
-                                    className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
-                                    onPointerDown={(e) => {
-                                        if (e.target === e.currentTarget) {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                            setIsOpen(false);
-                                        }
-                                    }}
-                                    onTouchEnd={(e) => {
-                                        if (e.target === e.currentTarget) {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                            setIsOpen(false);
-                                        }
-                                    }}
-                                    onClick={(e) => {
-                                        if (e.target === e.currentTarget) {
-                                            e.stopPropagation();
-                                            setIsOpen(false);
-                                        }
-                                    }}
+                                    className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
+                                    onPointerDown={(e) => e.stopPropagation()}
+                                    onMouseDown={(e) => e.stopPropagation()}
+                                    onTouchEnd={(e) => e.stopPropagation()}
+                                    onClick={(e) => e.stopPropagation()}
                                 >
-                                    <div
-                                        className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onTouchEnd={(e) => e.stopPropagation()}
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        {/* Header Bar */}
-                                        <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
-                                            <div className="flex items-center gap-2">
-                                                <CalendarIcon className="h-4 w-4 text-gray-900" />
-                                                <span className="text-xs font-bold text-gray-900">
-                                                    {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
-                                                </span>
-                                            </div>
-                                            <button
-                                                type="button"
-                                                onPointerDown={(e) => {
-                                                    e.preventDefault();
-                                                    e.stopPropagation();
-                                                    setIsOpen(false);
-                                                }}
-                                                onTouchEnd={(e) => {
-                                                    e.preventDefault();
-                                                    e.stopPropagation();
-                                                    setIsOpen(false);
-                                                }}
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    setIsOpen(false);
-                                                }}
-                                                className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
-                                                aria-label="Tutup"
-                                            >
-                                                <X className="h-4 w-4" />
-                                            </button>
+                                    {/* Header Bar */}
+                                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
+                                        <div className="flex items-center gap-2">
+                                            <CalendarIcon className="h-4 w-4 text-gray-900" />
+                                            <span className="text-xs font-bold text-gray-900">
+                                                {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
+                                            </span>
                                         </div>
-
-                                        {panelContent}
+                                        <button
+                                            type="button"
+                                            onPointerDown={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            onTouchEnd={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setIsOpen(false);
+                                            }}
+                                            className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
+                                            aria-label="Tutup"
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </button>
                                     </div>
+
+                                    {panelContent}
                                 </div>
-                            </FocusScope>
+                            </div>
                         </DismissableLayerBranch>,
                         document.body
                     );

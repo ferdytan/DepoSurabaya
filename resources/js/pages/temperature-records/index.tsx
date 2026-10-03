@@ -603,6 +603,9 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <span className="text-[11px] text-gray-600 font-medium">
                                                                         In: {formatDate(item.start_plug_in)}
                                                                     </span>
+                                                                    <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
+                                                                        Shift {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} (Aktif)
+                                                                    </span>
                                                                     <div className="flex items-center gap-1">
                                                                         <Button
                                                                             size="sm"
@@ -628,7 +631,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <div className="flex items-center gap-1.5">
                                                                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-gray-900 text-white shadow-2xs">
                                                                             <CheckCircle2 className="h-3 w-3 text-emerald-400" />
-                                                                            {item.total_shifts} Shift
+                                                                            {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} Shift
                                                                         </span>
                                                                         <button
                                                                             type="button"
@@ -774,7 +777,9 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             <div className="rounded-lg bg-gray-900 text-white p-2.5 shadow-xs">
                                                                                 <span className="text-gray-300 font-medium block text-[11px]">Total Tagihan Shift:</span>
                                                                                 <span className="font-extrabold text-sm text-white">
-                                                                                    {item.total_shifts !== null && item.total_shifts !== undefined ? `${item.total_shifts} Shift` : '-'}
+                                                                                    {item.total_shifts !== null && item.total_shifts !== undefined && item.total_shifts > 0
+                                                                                        ? `${item.total_shifts} Shift`
+                                                                                        : (item.start_plug_in ? '1 Shift (Sedang berjalan)' : '-')}
                                                                                 </span>
                                                                             </div>
                                                                         </div>

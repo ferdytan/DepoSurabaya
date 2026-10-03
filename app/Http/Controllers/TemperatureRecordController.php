@@ -82,6 +82,21 @@ class TemperatureRecordController extends Controller
         ->paginate($perPage)
         ->withQueryString();
 
+        // Pastikan setiap record yang sudah memiliki start_plug_in terisi total_shifts minimal 1 (menit pertama di plug s/d 8 jam = 1 shift)
+        $records->getCollection()->transform(function ($item) {
+            if ($item->start_plug_in && (!$item->total_shifts || $item->total_shifts < 1)) {
+                $calc = OrderItem::calculateShifts(
+                    Carbon::parse($item->start_plug_in),
+                    $item->plug_out ? Carbon::parse($item->plug_out) : null
+                );
+                $item->total_shifts = $calc['total_shifts'];
+                if ($item->plug_out && !$item->plug_duration_minutes) {
+                    $item->plug_duration_minutes = $calc['duration_minutes'];
+                }
+            }
+            return $item;
+        });
+
         return Inertia::render('temperature-records/index', [
             'records' => $records,
             'filters' => [
@@ -109,10 +124,11 @@ class TemperatureRecordController extends Controller
         $orderItem->start_plug_in = $time->format('Y-m-d H:i:s');
         $orderItem->plug_out = null;
         $orderItem->plug_duration_minutes = null;
-        $orderItem->total_shifts = null;
+        // Shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
+        $orderItem->total_shifts = 1;
         $orderItem->save();
 
-        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB.");
+        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB (Shift 1 aktif).");
     }
 
     /**
@@ -180,6 +196,11 @@ class TemperatureRecordController extends Controller
         if ($start && $out) {
             $calc = OrderItem::calculateShifts($start, $out);
             $orderItem->plug_duration_minutes = $calc['duration_minutes'];
+            $orderItem->total_shifts = $calc['total_shifts'];
+        } elseif ($start && !$out) {
+            // Kontainer sedang aktif ter-plug: shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
+            $calc = OrderItem::calculateShifts($start, null);
+            $orderItem->plug_duration_minutes = null;
             $orderItem->total_shifts = $calc['total_shifts'];
         } else {
             $orderItem->plug_duration_minutes = null;

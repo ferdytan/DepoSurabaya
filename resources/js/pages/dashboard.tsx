@@ -1610,7 +1610,7 @@ function CheckerMobileApp({
                                                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                                                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-600"></span>
                                                             </span>
-                                                            Plugged In
+                                                            Plugged In ({item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} Shift)
                                                         </span>
                                                     ) : (
                                                         <span className="rounded-full bg-slate-200 px-2 py-0.5 text-[10px] font-bold text-slate-600">
@@ -1623,7 +1623,7 @@ function CheckerMobileApp({
                                                     <div>
                                                         <span className="text-slate-400 block text-[10px]">Start Plug In:</span>
                                                         <span className="font-semibold text-slate-700">
-                                                            {item.start_plug_in ? formatDate(item.start_plug_in) : '-'}
+                                                             {item.start_plug_in ? formatDate(item.start_plug_in) : '-'}
                                                         </span>
                                                     </div>
                                                     <div>
@@ -1634,10 +1634,15 @@ function CheckerMobileApp({
                                                     </div>
                                                 </div>
 
-                                                {item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined && (
+                                                {item.plug_duration_minutes !== null && item.plug_duration_minutes !== undefined ? (
                                                     <div className="text-[11px] text-slate-600 font-medium pt-1 border-t border-slate-200/60 flex items-center justify-between">
                                                         <span>Durasi: {Math.floor(item.plug_duration_minutes / 60)} Jam {item.plug_duration_minutes % 60} Menit</span>
-                                                        <span className="font-bold text-slate-900">{item.total_shifts} Shift</span>
+                                                        <span className="font-bold text-slate-900">{item.total_shifts ?? 1} Shift</span>
+                                                    </div>
+                                                ) : item.start_plug_in && (
+                                                    <div className="text-[11px] text-slate-600 font-medium pt-1 border-t border-slate-200/60 flex items-center justify-between">
+                                                        <span className="text-amber-600 font-semibold">Sedang berjalan (Aktif)</span>
+                                                        <span className="font-bold text-slate-900">{item.total_shifts ?? 1} Shift</span>
                                                     </div>
                                                 )}
 

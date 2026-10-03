@@ -1046,13 +1046,13 @@ function getNowLocalISO(): string {
                                                                         {order.start_plug_in && !order.plug_out && (
                                                                             <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-300 text-[10px] px-1.5 py-0 flex items-center gap-1 animate-pulse">
                                                                                 <Zap className="h-3 w-3 text-amber-500 fill-amber-500" />
-                                                                                Plug In
+                                                                                Plug In ({order.total_shifts && order.total_shifts > 0 ? order.total_shifts : 1} Shift)
                                                                             </Badge>
                                                                         )}
                                                                         {order.plug_out && (
                                                                             <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-300 text-[10px] px-1.5 py-0 flex items-center gap-1">
                                                                                 <Zap className="h-3 w-3 text-emerald-600" />
-                                                                                {order.total_shifts ?? 0} Shift
+                                                                                {order.total_shifts && order.total_shifts > 0 ? order.total_shifts : 1} Shift
                                                                             </Badge>
                                                                         )}
                                                                     </div>

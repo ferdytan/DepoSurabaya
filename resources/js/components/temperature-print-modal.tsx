@@ -243,16 +243,40 @@ export function generateTemperaturePrintHtml(
           : 'Belum Plug In';
 
     let durationStr = '-';
+    let runningShifts: number | null = data.total_shifts ?? null;
+
     if (data.plug_duration_minutes !== null && data.plug_duration_minutes !== undefined) {
         const hours = Math.floor(data.plug_duration_minutes / 60);
         const mins = data.plug_duration_minutes % 60;
         durationStr = `${hours} Jam ${mins} Menit (${data.plug_duration_minutes} mnt)`;
+        if (!runningShifts || runningShifts < 1) {
+            runningShifts = Math.max(1, Math.ceil(data.plug_duration_minutes / (8 * 60)));
+        }
     } else if (data.start_plug_in && !data.plug_out) {
-        durationStr = 'Sedang berjalan...';
+        try {
+            const start = new Date(data.start_plug_in.replace(' ', 'T')).getTime();
+            const now = new Date().getTime();
+            const diffMins = Math.max(0, Math.floor((now - start) / (1000 * 60)));
+            const hours = Math.floor(diffMins / 60);
+            const mins = diffMins % 60;
+            durationStr = `${hours} Jam ${mins} Menit (Sedang berjalan)`;
+            if (!runningShifts || runningShifts < 1) {
+                runningShifts = Math.max(1, Math.ceil(diffMins / (8 * 60)));
+            }
+        } catch {
+            durationStr = 'Sedang berjalan...';
+        }
+    }
+
+    // Shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
+    if (data.start_plug_in && (!runningShifts || runningShifts < 1)) {
+        runningShifts = 1;
     }
 
     const totalShiftsStr =
-        data.total_shifts !== null && data.total_shifts !== undefined ? `${data.total_shifts} Shift` : '-';
+        runningShifts !== null && runningShifts !== undefined && runningShifts > 0
+            ? `${runningShifts} Shift`
+            : '-';
 
     const nowPrinted = new Date().toLocaleString('id-ID', {
         dateStyle: 'medium',
@@ -1055,6 +1079,9 @@ export function generateTemperatureRekapPrintHtml(
                               const customer = item.customer_name || item.order?.customer?.name || '-';
                               const shipper = item.shipper_name || item.order?.shipper?.name || '';
                               const inDepo = !item.exit_date;
+                              const itemShifts = item.total_shifts && item.total_shifts > 0
+                                  ? item.total_shifts
+                                  : (item.start_plug_in ? 1 : null);
                               return `
                 <tr>
                     <td class="text-center">${idx + 1}</td>
@@ -1068,7 +1095,7 @@ export function generateTemperatureRekapPrintHtml(
                     <td class="text-center">${item.entry_date ? formatDateTimeIndo(item.entry_date) : '-'}</td>
                     <td class="text-center">${item.start_plug_in ? formatDateTimeIndo(item.start_plug_in) : '<span style="color:#888;">Belum Plug In</span>'}</td>
                     <td class="text-center">${item.plug_out ? formatDateTimeIndo(item.plug_out) : item.start_plug_in ? '<strong>Aktif (In)</strong>' : '-'}</td>
-                    <td class="text-center font-bold">${item.total_shifts !== null && item.total_shifts !== undefined ? `${item.total_shifts} Shift` : '-'}</td>
+                    <td class="text-center font-bold">${itemShifts ? `${itemShifts} Shift` : '-'}</td>
                     <td class="text-center font-bold">${inDepo ? 'Depo' : 'Keluar'}</td>
                 </tr>
                 `;
@@ -1185,12 +1212,33 @@ export default function TemperaturePrintModal({ isOpen, onClose, data }: Tempera
     const serviceType = data.service_type || data.product?.service_type || 'PLUG IN & MONITORING SUHU';
 
     let durationStr = '-';
+    let effectiveShifts: number | null = data.total_shifts ?? null;
+
     if (data.plug_duration_minutes !== null && data.plug_duration_minutes !== undefined) {
         const hours = Math.floor(data.plug_duration_minutes / 60);
         const mins = data.plug_duration_minutes % 60;
         durationStr = `${hours}j ${mins}m (${data.plug_duration_minutes} mnt)`;
+        if (!effectiveShifts || effectiveShifts < 1) {
+            effectiveShifts = Math.max(1, Math.ceil(data.plug_duration_minutes / (8 * 60)));
+        }
     } else if (data.start_plug_in && !data.plug_out) {
-        durationStr = 'Sedang berjalan...';
+        try {
+            const start = new Date(data.start_plug_in.replace(' ', 'T')).getTime();
+            const now = new Date().getTime();
+            const diffMins = Math.max(0, Math.floor((now - start) / (1000 * 60)));
+            const hours = Math.floor(diffMins / 60);
+            const mins = diffMins % 60;
+            durationStr = `${hours}j ${mins}m (Sedang berjalan)`;
+            if (!effectiveShifts || effectiveShifts < 1) {
+                effectiveShifts = Math.max(1, Math.ceil(diffMins / (8 * 60)));
+            }
+        } catch {
+            durationStr = 'Sedang berjalan...';
+        }
+    }
+
+    if (data.start_plug_in && (!effectiveShifts || effectiveShifts < 1)) {
+        effectiveShifts = 1;
     }
 
     const handlePrint = async () => {
@@ -1313,7 +1361,7 @@ export default function TemperaturePrintModal({ isOpen, onClose, data }: Tempera
                             <div className="p-2 bg-slate-100">
                                 <span className="text-[9px] font-bold text-gray-500 uppercase block">Total Tagihan Shift</span>
                                 <span className="font-black text-sm text-gray-900 mt-0.5 block">
-                                    {data.total_shifts !== null && data.total_shifts !== undefined ? `${data.total_shifts} Shift` : '-'}
+                                    {effectiveShifts !== null && effectiveShifts !== undefined && effectiveShifts > 0 ? `${effectiveShifts} Shift` : '-'}
                                 </span>
                             </div>
                         </div>

@@ -26,7 +26,7 @@ import {
     User,
     X,
 } from 'lucide-react';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 // ==== Types ====
 interface Product {
@@ -487,11 +487,11 @@ export default function CreateInvoice() {
 
         const safeDiscount = Math.min(subtotal, Math.max(0, Number(discount) || 0));
         const afterDiscount = Math.max(0, subtotal - safeDiscount);
-        const isUnder5Juta = afterDiscount < 5000000;
-        const effectiveMaterai = isUnder5Juta ? false : applyMaterai;
-        const materaiVal = effectiveMaterai ? 10000 : 0;
         const ppn = Math.round(afterDiscount * 0.11);
-        const grandTotal = afterDiscount + ppn + materaiVal;
+        const totalBeforeMaterai = afterDiscount + ppn;
+        const isEligibleMaterai = totalBeforeMaterai >= 5000000;
+        const materaiVal = applyMaterai ? 10000 : 0;
+        const grandTotal = totalBeforeMaterai + materaiVal;
         const liveTerbilang = terbilang(grandTotal);
 
         return {
@@ -499,21 +499,30 @@ export default function CreateInvoice() {
             discount: safeDiscount,
             afterDiscount,
             ppn,
+            totalBeforeMaterai,
             materai: materaiVal,
             grandTotal,
             terbilang: liveTerbilang,
-            isUnder5Juta,
+            isEligibleMaterai,
         };
     }, [activeOrders, selectedContainers, discount, applyMaterai, addQty, itemQty]);
 
-    // Otomatis uncheck materai jika tagihan under 5jt
+    // Ref untuk mencatat status eligibility sebelumnya agar tidak menimpa aksi manual user
+    const prevEligibleRef = useRef<boolean | null>(null);
+
+    // Otomatis centang materai jika tagihan >= 5jt, dan uncheck jika < 5jt saat nominal berubah melintasi batas 5jt
     useEffect(() => {
-        if (calculations.isUnder5Juta) {
-            setApplyMaterai(false);
-        } else if (!calculations.isUnder5Juta && calculations.subtotal > 0) {
-            setApplyMaterai(true);
+        if (calculations.totalBeforeMaterai <= 0) {
+            prevEligibleRef.current = null;
+            return;
         }
-    }, [calculations.isUnder5Juta]);
+
+        const isEligible = calculations.isEligibleMaterai;
+        if (prevEligibleRef.current === null || prevEligibleRef.current !== isEligible) {
+            setApplyMaterai(isEligible);
+            prevEligibleRef.current = isEligible;
+        }
+    }, [calculations.totalBeforeMaterai, calculations.isEligibleMaterai]);
 
     // Handle Submit / Preview
     const handleSubmit = async (e: React.FormEvent) => {
@@ -1317,9 +1326,29 @@ export default function CreateInvoice() {
                                             />
                                             <span>Terapkan Bea Materai (Rp 10.000)</span>
                                         </label>
-                                        {calculations.isUnder5Juta && calculations.subtotal > 0 && (
-                                            <p className="text-[11px] text-amber-700 font-medium mt-1.5 pl-6">
-                                                * Otomatis tidak dicentang karena total tagihan di bawah Rp 5.000.000,-
+                                        {calculations.subtotal > 0 && (
+                                            <p className="text-[11px] font-medium mt-1.5 pl-6">
+                                                {calculations.isEligibleMaterai ? (
+                                                    applyMaterai ? (
+                                                        <span className="text-emerald-700 font-semibold">
+                                                            * Otomatis dicentang karena total tagihan mencapai Rp 5.000.000,- atau lebih.
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-amber-700">
+                                                            * Total tagihan Rp 5.000.000,- atau lebih (opsi materai dinonaktifkan manual).
+                                                        </span>
+                                                    )
+                                                ) : (
+                                                    applyMaterai ? (
+                                                        <span className="text-gray-600">
+                                                            * Bea materai diterapkan secara manual (total tagihan di bawah Rp 5.000.000,-).
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-amber-700">
+                                                            * Otomatis tidak dicentang karena total tagihan di bawah Rp 5.000.000,-.
+                                                        </span>
+                                                    )
+                                                )}
                                             </p>
                                         )}
                                     </div>

@@ -1136,7 +1136,8 @@ class InvoiceController extends Controller
             });
         }
 
-        $materai = (int) ($validated['applyMaterai'] ?? true ? ($validated['materai'] ?? 10000) : 0);
+        $applyMaterai = filter_var($validated['applyMaterai'] ?? false, FILTER_VALIDATE_BOOLEAN);
+        $materai = $applyMaterai ? (int) (($validated['materai'] ?? 0) > 0 ? $validated['materai'] : 10000) : 0;
         $discount = (int) ($validated['discount'] ?? 0);
 
         // Hitung: (Subtotal - Diskon) + PPN + Materai

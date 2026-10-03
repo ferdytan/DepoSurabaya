@@ -110,10 +110,12 @@ export function DateTimePicker({
     const containerRef = useRef<HTMLDivElement>(null);
 
     const initial = parseValue(value, withTime);
+    const defaultToday = formatYMD(new Date());
+    const defaultNow = getNowLocalTime();
     const [selectedDate, setSelectedDate] = useState<string>(initial.date);
-    const [selectedTime, setSelectedTime] = useState<string>(initial.time);
+    const [selectedTime, setSelectedTime] = useState<string>(initial.time || defaultNow);
 
-    const initialTimeParts = (initial.time || '08:00').split(':');
+    const initialTimeParts = (initial.time || defaultNow).split(':');
     const [hourVal, setHourVal] = useState<string>(initialTimeParts[0] || '08');
     const [minuteVal, setMinuteVal] = useState<string>(initialTimeParts[1] || '00');
     const hourValRef = useRef<string>(initialTimeParts[0] || '08');
@@ -199,31 +201,38 @@ export function DateTimePicker({
 
     useEffect(() => {
         const parsed = parseValue(value, withTime);
-        const parts = (parsed.time || '08:00').split(':');
-        const h = parts[0] || '08';
-        const m = parts[1] || '00';
+        const curToday = formatYMD(new Date());
+        const curNow = getNowLocalTime();
 
         const justOpened = !prevIsOpenRef.current && isOpen;
         const valueChangedWhileClosed = !isOpen && value !== prevValueRef.current;
 
         if (justOpened || valueChangedWhileClosed) {
-            setSelectedDate(parsed.date);
-            setSelectedTime(parsed.time);
+            // Ketika baru dibuka atau value berubah dari luar:
+            // Jika value kosong saat picker dibuka, otomatis defaultkan ke Hari Ini & Jam Sekarang
+            const dateToSet = parsed.date || (isOpen ? curToday : '');
+            const timeToSet = parsed.time || curNow;
+            const parts = timeToSet.split(':');
+            const h = parts[0] || '08';
+            const m = parts[1] || '00';
+
+            setSelectedDate(dateToSet);
+            setSelectedTime(timeToSet);
             setHourVal(h);
             setMinuteVal(m);
             hourValRef.current = h;
             minuteValRef.current = m;
-            if (parsed.date) {
-                const d = parseYMD(parsed.date);
-                if (d) {
-                    setViewYear(d.getFullYear());
-                    setViewMonth(d.getMonth());
-                }
-            }
+
+            const d = parseYMD(dateToSet) || new Date();
+            setViewYear(d.getFullYear());
+            setViewMonth(d.getMonth());
         } else if (isOpen && value !== prevValueRef.current) {
-            setSelectedDate(parsed.date);
+            setSelectedDate(parsed.date || curToday);
             const currentRefTime = `${(hourValRef.current || '08').padStart(2, '0')}:${(minuteValRef.current || '00').padStart(2, '0')}`;
             if (parsed.time && parsed.time !== currentRefTime) {
+                const parts = (parsed.time || curNow).split(':');
+                const h = parts[0] || '08';
+                const m = parts[1] || '00';
                 setSelectedTime(parsed.time);
                 setHourVal(h);
                 setMinuteVal(m);
@@ -237,7 +246,7 @@ export function DateTimePicker({
     }, [value, withTime, isOpen]);
 
     // Native Focus & Pointer Event Bubbling Isolation:
-    // Prevents focusin, focusout, pointerdown from bubbling up to document,
+    // Prevents focusin, focusout from bubbling up to document,
     // so Radix UI's Dialog FocusScope on the parent modal NEVER steals focus!
     useEffect(() => {
         const el = portalWrapperRef.current;
@@ -249,14 +258,10 @@ export function DateTimePicker({
 
         el.addEventListener('focusin', stopPropagation, false);
         el.addEventListener('focusout', stopPropagation, false);
-        el.addEventListener('pointerdown', stopPropagation, false);
-        el.addEventListener('mousedown', stopPropagation, false);
 
         return () => {
             el.removeEventListener('focusin', stopPropagation, false);
             el.removeEventListener('focusout', stopPropagation, false);
-            el.removeEventListener('pointerdown', stopPropagation, false);
-            el.removeEventListener('mousedown', stopPropagation, false);
         };
     }, [isOpen, shouldCenter]);
 
@@ -312,6 +317,15 @@ export function DateTimePicker({
         hourValRef.current = validH;
         minuteValRef.current = validM;
         setSelectedTime(fullTime);
+
+        // Pastikan tanggal aktif jika picker terbuka dan sync ke onChange
+        const targetDate = selectedDate || formatYMD(new Date());
+        if (!selectedDate) {
+            setSelectedDate(targetDate);
+        }
+        if (withTime) {
+            onChange(`${targetDate}T${fullTime}`);
+        }
     };
 
     const handleHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -503,18 +517,14 @@ export function DateTimePicker({
     };
 
     const handleApply = (d = selectedDate, t = selectedTime) => {
-        if (!d) {
-            onChange('');
-            setIsOpen(false);
-            return;
-        }
+        const finalDate = d || formatYMD(new Date());
         const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
         const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
         const finalTime = `${h}:${m}`;
         if (withTime) {
-            onChange(`${d}T${finalTime}`);
+            onChange(`${finalDate}T${finalTime}`);
         } else {
-            onChange(d);
+            onChange(finalDate);
         }
         setIsOpen(false);
     };
@@ -558,7 +568,7 @@ export function DateTimePicker({
         setHourVal(validH);
         setMinuteVal(validM);
         const d = selectedDate || formatYMD(new Date());
-        if (!selectedDate) setSelectedDate(d);
+        setSelectedDate(d);
         if (withTime) {
             onChange(`${d}T${nowTime}`);
         }
@@ -773,14 +783,6 @@ export function DateTimePicker({
                                 return (
                                     <div
                                         key={ymd}
-                                        onPointerDown={(e) => {
-                                            e.stopPropagation();
-                                            handleDateSelect(ymd);
-                                        }}
-                                        onTouchEnd={(e) => {
-                                            e.stopPropagation();
-                                            handleDateSelect(ymd);
-                                        }}
                                         onClick={() => handleDateSelect(ymd)}
                                         className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
                                             isSelected
@@ -813,27 +815,33 @@ export function DateTimePicker({
                                 <div className="flex items-center gap-2">
                                     {/* Direct Editable Time Input Container */}
                                     <div
-                                        className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs"
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onMouseDown={(e) => e.stopPropagation()}
+                                        onClick={() => hourInputRef.current?.focus()}
+                                        className="flex items-center bg-gray-50 hover:bg-gray-100/70 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs cursor-text"
                                     >
                                         <input
                                             ref={hourInputRef}
                                             type="text"
                                             inputMode="numeric"
                                             pattern="[0-9]*"
-                                            maxLength={3}
+                                            maxLength={2}
                                             value={hourVal}
                                             onChange={handleHourChange}
                                             onKeyDown={handleHourKeyDown}
-                                            onClick={(e) => (e.target as HTMLInputElement).select()}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                                                    (e.target as HTMLInputElement).select();
+                                                }
+                                            }}
                                             onFocus={(e) => {
-                                                const el = e.currentTarget;
-                                                requestAnimationFrame(() => el.select());
+                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                                                    const el = e.currentTarget;
+                                                    requestAnimationFrame(() => el.select());
+                                                }
                                             }}
                                             onBlur={handleHourBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none select-all cursor-text transition-colors"
+                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
                                             placeholder="JJ"
                                             title="Ketik 2 digit jam (00 - 23)"
                                         />
@@ -843,18 +851,25 @@ export function DateTimePicker({
                                             type="text"
                                             inputMode="numeric"
                                             pattern="[0-9]*"
-                                            maxLength={3}
+                                            maxLength={2}
                                             value={minuteVal}
                                             onChange={handleMinuteChange}
                                             onKeyDown={handleMinuteKeyDown}
-                                            onClick={(e) => (e.target as HTMLInputElement).select()}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                                                    (e.target as HTMLInputElement).select();
+                                                }
+                                            }}
                                             onFocus={(e) => {
-                                                const el = e.currentTarget;
-                                                requestAnimationFrame(() => el.select());
+                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                                                    const el = e.currentTarget;
+                                                    requestAnimationFrame(() => el.select());
+                                                }
                                             }}
                                             onBlur={handleMinuteBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none select-all cursor-text transition-colors"
+                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
                                             placeholder="MM"
                                             title="Ketik 2 digit menit (00 - 59)"
                                         />
@@ -862,14 +877,6 @@ export function DateTimePicker({
 
                                     <button
                                         type="button"
-                                        onPointerDown={(e) => {
-                                            e.stopPropagation();
-                                            handleSetNowTime();
-                                        }}
-                                        onTouchEnd={(e) => {
-                                            e.stopPropagation();
-                                            handleSetNowTime();
-                                        }}
                                         onClick={handleSetNowTime}
                                         className="px-2.5 py-1.5 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition cursor-pointer flex items-center gap-1 shadow-2xs"
                                         title="Gunakan jam saat ini"
@@ -885,16 +892,6 @@ export function DateTimePicker({
                         <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-gray-100 shrink-0">
                             <button
                                 type="button"
-                                onPointerDown={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    handleClear(e);
-                                }}
-                                onTouchEnd={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    handleClear(e);
-                                }}
                                 onClick={handleClear}
                                 className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 active:bg-red-100 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
                             >
@@ -905,42 +902,15 @@ export function DateTimePicker({
                             <div className="flex items-center gap-2">
                                 <button
                                     type="button"
-                                    onPointerDown={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }}
-                                    onTouchEnd={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }}
+                                    onClick={() => setIsOpen(false)}
                                     className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 active:bg-gray-200 rounded-md transition font-medium cursor-pointer"
                                 >
                                     Batal
                                 </button>
                                 <button
                                     type="button"
-                                    onPointerDown={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        if (selectedDate) handleApply();
-                                    }}
-                                    onTouchEnd={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        if (selectedDate) handleApply();
-                                    }}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        if (selectedDate) handleApply();
-                                    }}
-                                    disabled={!selectedDate}
-                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black active:bg-neutral-800 disabled:opacity-50 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                    onClick={() => handleApply()}
+                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black active:bg-neutral-800 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
                                 >
                                     <Check className="h-3.5 w-3.5" />
                                     Simpan
@@ -956,32 +926,14 @@ export function DateTimePicker({
                             <div
                                 ref={portalWrapperRef}
                                 className="fixed inset-0 z-[99999] pointer-events-auto flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
-                                onPointerDown={(e) => {
-                                    if (e.target === e.currentTarget) {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }
-                                }}
-                                onTouchEnd={(e) => {
-                                    if (e.target === e.currentTarget) {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setIsOpen(false);
-                                    }
-                                }}
                                 onClick={(e) => {
                                     if (e.target === e.currentTarget) {
-                                        e.stopPropagation();
                                         setIsOpen(false);
                                     }
                                 }}
                             >
                                 <div
                                     className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
-                                    onPointerDown={(e) => e.stopPropagation()}
-                                    onMouseDown={(e) => e.stopPropagation()}
-                                    onTouchEnd={(e) => e.stopPropagation()}
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     {/* Header Bar */}
@@ -994,20 +946,7 @@ export function DateTimePicker({
                                         </div>
                                         <button
                                             type="button"
-                                            onPointerDown={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
-                                            onTouchEnd={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setIsOpen(false);
-                                            }}
+                                            onClick={() => setIsOpen(false)}
                                             className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors"
                                             aria-label="Tutup"
                                         >

@@ -9,8 +9,9 @@ import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
 import DateTimePicker from '@/components/date-time-picker';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
 import { Fragment, useState } from 'react';
+import TemperaturePrintModal, { executeTemperatureRekapPrint } from '@/components/temperature-print-modal';
 
 type TemperatureRecordItem = {
     id: number;
@@ -142,6 +143,10 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     const [plugStartTime, setPlugStartTime] = useState('');
     const [plugOutTime, setPlugOutTime] = useState('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
+ 
+    // Modal Cetak PDF Lembar Suhu
+    const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
+    const [printContainer, setPrintContainer] = useState<TemperatureRecordItem | null>(null);
 
     const breadcrumbs: BreadcrumbItem[] = [{ title: 'Monitoring Suhu Kontainer', href: '/temperature-records' }];
 
@@ -343,6 +348,17 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                         </div>
 
                         <div className="flex flex-wrap items-center gap-2.5">
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => executeTemperatureRekapPrint(records.data, currentStatus, search)}
+                                className="h-9 text-xs px-3 bg-white text-gray-700 hover:text-black border-gray-200 gap-1.5 font-medium shadow-xs"
+                                title="Cetak Rekapitulasi Pemantauan Suhu Kontainer (PDF)"
+                            >
+                                <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                <span>Cetak Rekap (PDF)</span>
+                            </Button>
+
                             <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium px-2 py-1 bg-white border border-gray-200 rounded-md shadow-xs h-9">
                                 <span className="shrink-0">Tampilkan:</span>
                                 <Select value={perPage} onValueChange={handlePerPageChange}>
@@ -659,6 +675,19 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                             <div className="flex items-center justify-end gap-1.5">
                                                                 <Button
                                                                     size="sm"
+                                                                    variant="outline"
+                                                                    onClick={() => {
+                                                                        setPrintContainer(item);
+                                                                        setIsPrintModalOpen(true);
+                                                                    }}
+                                                                    className="h-8 text-xs px-2.5 text-gray-700 hover:text-black gap-1 border-gray-300 bg-white"
+                                                                    title="Cetak Lembar Pemantauan Suhu & Plugging (PDF)"
+                                                                >
+                                                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                                                    <span>Cetak PDF</span>
+                                                                </Button>
+                                                                <Button
+                                                                    size="sm"
                                                                     onClick={() => openLogModal(item)}
                                                                     className="h-8 text-xs px-2.5 bg-gray-900 hover:bg-black text-white font-medium gap-1"
                                                                     title="Catat Suhu Kontainer"
@@ -759,15 +788,29 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             <Clock className="h-3.5 w-3.5 text-gray-500" />
                                                                             Riwayat Rekaman Suhu 24 Jam ({item.container_number})
                                                                         </h4>
-                                                                        <Button
-                                                                            size="sm"
-                                                                            variant="outline"
-                                                                            onClick={() => openLogModal(item)}
-                                                                            className="h-7 text-xs px-2.5 text-gray-700 bg-white gap-1"
-                                                                        >
-                                                                            <Plus className="h-3.5 w-3.5 text-gray-600" />
-                                                                            Tambah Catatan Jam
-                                                                        </Button>
+                                                                        <div className="flex items-center gap-2">
+                                                                            <Button
+                                                                                size="sm"
+                                                                                variant="outline"
+                                                                                onClick={() => {
+                                                                                    setPrintContainer(item);
+                                                                                    setIsPrintModalOpen(true);
+                                                                                }}
+                                                                                className="h-7 text-xs px-2.5 text-gray-700 bg-white gap-1 hover:text-black border-gray-300"
+                                                                            >
+                                                                                <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                                                                Cetak Lembar Suhu (PDF)
+                                                                            </Button>
+                                                                            <Button
+                                                                                size="sm"
+                                                                                variant="outline"
+                                                                                onClick={() => openLogModal(item)}
+                                                                                className="h-7 text-xs px-2.5 text-gray-700 bg-white gap-1"
+                                                                            >
+                                                                                <Plus className="h-3.5 w-3.5 text-gray-600" />
+                                                                                Tambah Catatan Jam
+                                                                            </Button>
+                                                                        </div>
                                                                     </div>
 
                                                                     {item.rekam_suhu.length === 0 ? (
@@ -1202,6 +1245,13 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                         )}
                     </DialogContent>
                 </Dialog>
+
+                {/* Modal Cetak PDF Lembar Pemantauan Suhu & Plugging */}
+                <TemperaturePrintModal
+                    isOpen={isPrintModalOpen}
+                    onClose={() => setIsPrintModalOpen(false)}
+                    data={printContainer}
+                />
             </TemperatureRecordsLayout>
         </AppLayout>
     );

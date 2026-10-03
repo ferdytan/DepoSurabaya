@@ -25,6 +25,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, ArrowUp, ArrowUpDown, Clock, Eye, EyeOff, Pencil, Plus, Power, Printer, Receipt, RotateCcw, Search, Trash2, Zap } from 'lucide-react';
 import SuratJalanModal, { SuratJalanData } from '@/components/surat-jalan-modal';
+import TemperaturePrintModal from '@/components/temperature-print-modal';
 import DateRangePicker from '@/components/date-range-picker';
 import DateTimePicker from '@/components/date-time-picker';
 // Types
@@ -201,6 +202,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
+    const [isPrintTempOpen, setIsPrintTempOpen] = useState(false);
     const [collapsedGroups, setCollapsedGroups] = useState<{
         [key: string]: boolean;
     }>({});
@@ -1423,13 +1425,24 @@ function getNowLocalISO(): string {
                                 ))}
                             </div>
                         </div>
-                        <DialogFooter className="gap-2">
-                            <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
-                                Tutup
+                        <DialogFooter className="gap-2 flex flex-row items-center justify-between sm:justify-between">
+                            <Button
+                                type="button"
+                                variant="outline"
+                                onClick={() => setIsPrintTempOpen(true)}
+                                className="h-9 text-xs text-gray-700 hover:text-black gap-1.5 border-gray-300"
+                            >
+                                <Printer className="h-3.5 w-3.5" />
+                                Cetak PDF Lembar Suhu
                             </Button>
-                            <Button onClick={handleSaveTemp} className="bg-orange-600 hover:bg-orange-700 text-white">
-                                Simpan Rekam Suhu
-                            </Button>
+                            <div className="flex items-center gap-2">
+                                <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
+                                    Tutup
+                                </Button>
+                                <Button onClick={handleSaveTemp} className="bg-orange-600 hover:bg-orange-700 text-white">
+                                    Simpan Rekam Suhu
+                                </Button>
+                            </div>
                         </DialogFooter>
                     </DialogContent>
                 </Dialog>
@@ -1439,6 +1452,36 @@ function getNowLocalISO(): string {
                     isOpen={suratJalanModalOpen}
                     onClose={() => setSuratJalanModalOpen(false)}
                     data={selectedSuratJalan}
+                />
+
+                {/* Modal Cetak Lembar Pemantauan Suhu (PDF) */}
+                <TemperaturePrintModal
+                    isOpen={isPrintTempOpen}
+                    onClose={() => setIsPrintTempOpen(false)}
+                    data={
+                        tempOrder
+                            ? {
+                                  container_number: tempOrder.container_number,
+                                  size: tempOrder.price_type,
+                                  customer_name: tempOrder.order?.customer?.name || tempOrder.customer?.name,
+                                  shipper_name: tempOrder.order?.shipper?.name || tempOrder.shipper?.name,
+                                  commodity: tempOrder.commodity,
+                                  service_type: tempOrder.product?.service_type,
+                                  order_id: tempOrder.order?.order_id || tempOrder.order_id,
+                                  no_aju: tempOrder.order?.no_aju || tempOrder.no_aju,
+                                  entry_date: tempOrder.entry_date,
+                                  exit_date: tempOrder.exit_date,
+                                  start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : tempOrder.start_plug_in,
+                                  plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : tempOrder.plug_out,
+                                  plug_duration_minutes: tempOrder.plug_duration_minutes,
+                                  total_shifts: tempOrder.total_shifts,
+                                  temperature: tempRecords.reduce((acc, r) => {
+                                      if (r.date) acc[r.date] = r.temps;
+                                      return acc;
+                                  }, {} as Record<string, Record<string, string>>),
+                              }
+                            : null
+                    }
                 />
             </OrdersLayout>
         </AppLayout>

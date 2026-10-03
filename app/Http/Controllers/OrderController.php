@@ -28,6 +28,9 @@ class OrderController extends Controller
         $perPage = $defaultPagination;
     }
 
+    // Simpan full URL saat ini ke session agar saat edit/update selesai, user kembali ke halaman & filter yang persis sama
+    session(['orders_index_url' => $request->fullUrl()]);
+
     $query = OrderItem::with([
         'order.customer',
         'order.shipper',
@@ -320,11 +323,12 @@ class OrderController extends Controller
     // }
     
 
-    public function create()
+    public function create(Request $request)
     {
         return Inertia::render('orders/create', [
             'customers' => Customer::all(),
             'shippers' => Shipper::all(),
+            'return_url' => $this->getSafeReturnUrl($request->input('return_url')),
         ]);
     }
 
@@ -469,7 +473,7 @@ class OrderController extends Controller
     }
 }
 
-    public function show(Order $order)
+    public function show(Request $request, Order $order)
     {
         $order->load([
             'customer:id,name',
@@ -480,7 +484,8 @@ class OrderController extends Controller
         ]);
 
         return Inertia::render('orders/show', [
-            'order' => $order
+            'order' => $order,
+            'return_url' => $this->getSafeReturnUrl($request->input('return_url')),
         ]);
     }
 
@@ -548,7 +553,7 @@ class OrderController extends Controller
     }
 
 
-   public function edit($id)
+   public function edit(Request $request, $id)
     {
         $order = Order::with([
             'items.product',
@@ -580,6 +585,7 @@ class OrderController extends Controller
             'order' => $order,
             'customers' => Customer::all(['id', 'name']),
             'shippers' => Shipper::all(['id', 'name']),
+            'return_url' => $this->getSafeReturnUrl($request->input('return_url')),
         ]);
     }
 
@@ -851,7 +857,9 @@ $orderItem->additionalProducts()->sync($syncData);
 
         DB::commit();
 
-        return redirect()->route('orders.index')->with('success', 'Order berhasil diperbarui.');
+        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
+
+        return redirect()->to($returnUrl)->with('success', 'Order berhasil diperbarui.');
 
     } catch (\Exception $e) {
         DB::rollBack();
@@ -880,7 +888,10 @@ $orderItem->additionalProducts()->sync($syncData);
         $order->update(['delete_reason' => $deleteReason]);
         $order->delete();
         DB::commit();
-        return redirect()->route('orders.index')->with('success', 'Order berhasil dihapus.');
+
+        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
+
+        return redirect()->to($returnUrl)->with('success', 'Order berhasil dihapus.');
     } catch (\Exception $e) {
         DB::rollBack();
         return redirect()->route('orders.index')->with('error', 'Gagal menghapus order: '.$e->getMessage());
@@ -943,7 +954,7 @@ $orderItem->additionalProducts()->sync($syncData);
         return back()->with('success', 'Tanggal keluar berhasil diperbarui.');
     }
 
-    public function restore($id)
+    public function restore(Request $request, $id)
 {
     $order = Order::onlyTrashed()->findOrFail($id);
     DB::beginTransaction();
@@ -965,7 +976,10 @@ $orderItem->additionalProducts()->sync($syncData);
         }
         
         DB::commit();
-        return redirect()->route('orders.index')->with('success', 'Order berhasil dipulihkan.');
+
+        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
+
+        return redirect()->to($returnUrl)->with('success', 'Order berhasil dipulihkan.');
     } catch (\Exception $e) {
         DB::rollBack();
         return redirect()->route('orders.index')->with('error', 'Gagal memulihkan order: '.$e->getMessage());
@@ -1230,6 +1244,25 @@ private function getPriceForType($product, $priceType, $order)
         ->header('Access-Control-Allow-Origin', '*')
         ->header('Access-Control-Allow-Methods', 'GET, OPTIONS')
         ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, X-Requested-With');
+    }
+
+    /**
+     * Resolve safe return URL with fallback to session or orders.index.
+     */
+    protected function getSafeReturnUrl(?string $returnUrl = null): string
+    {
+        $target = $returnUrl ?: session('orders_index_url', route('orders.index'));
+
+        if (!empty($target)) {
+            $appUrl = config('app.url');
+            $isRelative = str_starts_with($target, '/') && !str_starts_with($target, '//');
+            $isSameHost = $appUrl && str_starts_with($target, $appUrl);
+            if ($isRelative || $isSameHost) {
+                return $target;
+            }
+        }
+
+        return route('orders.index');
     }
 
 }

@@ -32,10 +32,6 @@ import {
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Orders', href: '/orders' },
-    { title: 'Buat Order Baru', href: '/orders/create' },
-];
 
 // =====================
 //  Tipe Data
@@ -94,6 +90,7 @@ interface PageProps {
     products: Product[]; // not directly used; fetched per‑customer
     shippers: Shipper[];
     order_id?: string;
+    return_url?: string;
 }
 
 function getNowLocalISO(): string {
@@ -106,7 +103,13 @@ function getNowLocalISO(): string {
     return `${y}-${m}-${day}T${hours}:${minutes}`;
 }
 
-export default function CreateOrderWithMultiTemp({ customers, shippers, order_id }: PageProps) {
+export default function CreateOrderWithMultiTemp({ customers, shippers, order_id, return_url: initialReturnUrl }: PageProps) {
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/orders';
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        { title: 'Orders', href: returnUrl },
+        { title: 'Buat Order Baru', href: '/orders/create' },
+    ];
     // ==================================
     //  State Inertia Form
     // ==================================
@@ -1209,7 +1212,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                         {/* Submit Button & Actions */}
                         <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
                             <Button variant="outline" asChild>
-                                <Link href="/orders" className="text-xs font-semibold">
+                                <Link href={returnUrl} className="text-xs font-semibold">
                                     Batal
                                 </Link>
                             </Button>

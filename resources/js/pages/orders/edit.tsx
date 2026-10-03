@@ -28,10 +28,6 @@ import {
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
-const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Orders', href: '/orders' },
-    { title: 'Edit Order', href: '#' },
-];
 
 function getNowLocalISO(): string {
     const now = new Date();
@@ -101,11 +97,19 @@ interface PageProps {
     order: OrderProps;
     customers: Customer[];
     shippers: Shipper[];
+    return_url?: string;
 }
 
 type PriceType = '20ft' | '40ft' | '45ft' | 'global' | undefined;
 
-export default function EditOrder({ order, customers, shippers }: PageProps) {
+export default function EditOrder({ order, customers, shippers, return_url: initialReturnUrl }: PageProps) {
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/orders';
+
+    const breadcrumbs: BreadcrumbItem[] = [
+        { title: 'Orders', href: returnUrl },
+        { title: 'Edit Order', href: '#' },
+    ];
+
     // ======================
     //  Inertia Form State
     // ======================
@@ -151,6 +155,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         no_aju: string;
         fumigasi: string | null;
         error?: string;
+        return_url?: string;
         order_items: {
             id?: number;
             product_id: string;
@@ -172,6 +177,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
         shipper_id: order.shipper_id ? order.shipper_id.toString() : '',
         no_aju: order.no_aju ?? '',
         fumigasi: order.fumigasi ?? null,
+        return_url: returnUrl,
         order_items: initialOrderItems,
     });
 
@@ -370,7 +376,9 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
             return;
         }
 
-        put(route('orders.update', order.id), {
+        const updateUrl = route('orders.update', order.id) + (returnUrl ? `?return_url=${encodeURIComponent(returnUrl)}` : '');
+
+        put(updateUrl, {
             onError: (errs) => {
                 // Auto scroll ke error pertama atau kartu kontainer yang bermasalah
                 const firstKey = Object.keys(errs)[0];
@@ -1251,7 +1259,7 @@ export default function EditOrder({ order, customers, shippers }: PageProps) {
                         {/* Submit Button & Actions */}
                         <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
                             <Button variant="outline" asChild>
-                                <Link href="/orders" className="text-xs font-semibold">
+                                <Link href={returnUrl} className="text-xs font-semibold">
                                     Batal
                                 </Link>
                             </Button>

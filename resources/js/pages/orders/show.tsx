@@ -48,16 +48,18 @@ type PageProps = Page & {
 
 interface Props {
     order: OrderProps;
+    return_url?: string;
 }
 
-export default function ShowOrder({ order }: Props) {
+export default function ShowOrder({ order, return_url: initialReturnUrl }: Props) {
     // Ambil role_id dari Inertia props
     const { auth } = usePage<PageProps>().props;
     const roleId = auth?.user?.role_id;
     const isRoleKarantina = roleId == 4;
 
+    const returnUrl = initialReturnUrl || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null);
     // Tentukan rute kembali berdasarkan role
-    const backUrl = isRoleKarantina ? '/karantina' : '/orders';
+    const backUrl = isRoleKarantina ? '/karantina' : (returnUrl || '/orders');
 
     return (
         <AppLayout>
@@ -71,7 +73,7 @@ export default function ShowOrder({ order }: Props) {
                             {/* Hanya tampilkan tombol Edit jika bukan role_id 4 */}
                             {!isRoleKarantina && (
                                 <Button variant="outline" asChild>
-                                    <Link href={route('orders.edit', order.id)}>
+                                    <Link href={`${route('orders.edit', order.id)}${backUrl ? `?return_url=${encodeURIComponent(backUrl)}` : ''}`}>
                                         <Pencil className="mr-1 h-4 w-4" /> Edit
                                     </Link>
                                 </Button>

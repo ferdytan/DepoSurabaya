@@ -4,7 +4,7 @@ import OrdersLayout from '@/layouts/orders/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { Boxes, PlusCircle, Thermometer, X } from 'lucide-react';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 // UI Components
 import Heading from '@/components/heading';
 import {
@@ -199,6 +199,25 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const [dateFrom, setDateFrom] = useState(filters?.date_from ?? '');
     const [dateTo, setDateTo] = useState(filters?.date_to ?? '');
     const [perPage, setPerPage] = useState<string>(String(filters?.per_page || orders?.per_page || 25));
+
+    // Sinkronkan state lokal jika props filter dari server berubah (misal saat kembali dari edit order)
+    useEffect(() => {
+        setSearch(filters?.search ?? '');
+        setIsTrashed(!!filters.trashed);
+        setDateFrom(filters?.date_from ?? '');
+        setDateTo(filters?.date_to ?? '');
+        setPerPage(String(filters?.per_page || orders?.per_page || 25));
+    }, [filters?.search, filters?.trashed, filters?.date_from, filters?.date_to, filters?.per_page, orders?.per_page]);
+
+    // Helper untuk menyimpan URL halaman order saat ini (termasuk filter/search) sebagai parameter return_url
+    const getReturnUrlQuery = () => {
+        if (typeof window !== 'undefined') {
+            const currentPath = window.location.pathname;
+            const currentSearch = window.location.search;
+            return `?return_url=${encodeURIComponent(currentPath + currentSearch)}`;
+        }
+        return '';
+    };
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
     const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
@@ -654,7 +673,7 @@ function getNowLocalISO(): string {
 
                             {roleId != 3 && roleId != 5 && (
                                 <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold">
-                                    <Link href="/orders/create">
+                                    <Link href={`/orders/create${getReturnUrlQuery()}`}>
                                         <Plus className="h-4 w-4" />
                                         Create Order
                                     </Link>
@@ -918,7 +937,7 @@ function getNowLocalISO(): string {
 
                                                                                     {/* Detail Order */}
                                                                                     <Link
-                                                                                        href={route('orders.show', firstOrder.order.id)}
+                                                                                        href={`${route('orders.show', firstOrder.order.id)}${getReturnUrlQuery()}`}
                                                                                         title="Lihat Detail Order"
                                                                                         onClick={(e) => e.stopPropagation()}
                                                                                         className="text-gray-600 hover:text-gray-900 p-1.5 rounded hover:bg-gray-200 transition-colors"
@@ -928,7 +947,7 @@ function getNowLocalISO(): string {
 
                                                                                     {/* Edit Order */}
                                                                                     <Link
-                                                                                        href={route('orders.edit', firstOrder.order.id)}
+                                                                                        href={`${route('orders.edit', firstOrder.order.id)}${getReturnUrlQuery()}`}
                                                                                         title="Edit Order"
                                                                                         onClick={(e) => e.stopPropagation()}
                                                                                         className="text-blue-600 hover:text-blue-800 p-1.5 rounded hover:bg-blue-100/80 transition-colors"

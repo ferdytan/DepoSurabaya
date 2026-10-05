@@ -178,7 +178,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                     <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
                                         Database Backup Manager
                                     </h1>
-                                    <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-0.5 text-[11px] font-bold text-indigo-700 border border-indigo-200">
+                                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-800 border border-slate-200">
                                         <Lock className="h-3 w-3" />
                                         Super Admin
                                     </span>
@@ -194,7 +194,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                             type="button"
                             onClick={handleRunManualBackup}
                             disabled={isRunningBackup}
-                            className="bg-indigo-600 hover:bg-indigo-700 text-white h-9 px-4 text-xs font-semibold gap-2 shadow-xs shrink-0 transition-all cursor-pointer"
+                            className="bg-gray-900 hover:bg-black text-white h-9 px-4 text-xs font-semibold gap-2 shadow-xs shrink-0 transition-all cursor-pointer"
                         >
                             {isRunningBackup ? (
                                 <LoaderCircle className="h-4 w-4 animate-spin" />
@@ -462,7 +462,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                 <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4">
                     <div className="flex items-center justify-between border-b border-gray-100 pb-3">
                         <div className="flex items-center gap-2">
-                            <Sparkles className="h-4 w-4 text-indigo-600" />
+                            <Sparkles className="h-4 w-4 text-blue-600" />
                             <h2 className="text-sm font-bold text-gray-900">Metode Otomasi Backup (Tanpa Masuk Terminal cPanel)</h2>
                         </div>
                         <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
@@ -486,7 +486,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                         <div className="rounded-lg border border-gray-200 bg-gray-50/60 p-4 space-y-2">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2 text-gray-900 font-semibold text-xs">
-                                    <Terminal className="h-4 w-4 text-purple-600" />
+                                    <Terminal className="h-4 w-4 text-slate-700" />
                                     <span>2. cPanel Cron via URL (Direkomendasikan)</span>
                                 </div>
                                 <button
@@ -588,7 +588,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                             {/* File Name */}
                                             <TableCell className="py-3.5 pl-5">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-100">
+                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
                                                         <FileArchive className="h-4 w-4" />
                                                     </div>
                                                     <div className="min-w-0">

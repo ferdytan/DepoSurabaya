@@ -824,7 +824,7 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                         >
                             Reset
                         </Button>
-                        <Button onClick={() => handleApplyFilter()} className="text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white">
+                        <Button onClick={() => handleApplyFilter()} className="text-xs font-semibold bg-gray-900 hover:bg-black text-white">
                             Terapkan Filter
                         </Button>
                     </div>

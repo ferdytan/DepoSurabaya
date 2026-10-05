@@ -13,55 +13,46 @@ const baseNavItems: NavItem[] = [
         title: 'Dashboard',
         href: '/dashboard',
         icon: LayoutGrid,
-        shortcut: 'D',
     },
     {
         title: 'User',
         href: '/users',
         icon: User,
-        shortcut: 'U',
     },
     {
         title: 'Customers',
         href: '/customers',
         icon: SquareUserRound,
-        shortcut: 'C',
     },
     {
         title: 'Shippers',
         href: '/shippers',
         icon: Truck,
-        shortcut: 'S',
     },
     {
         title: 'Products',
         href: '/products',
         icon: Package,
-        shortcut: 'P',
     },
     {
         title: 'Orders',
         href: '/orders',
         icon: Book,
-        shortcut: 'O',
     },
     {
         title: 'Temperature',
         href: '/temperature-records',
         icon: Thermometer,
-        shortcut: 'T',
     },
     {
         title: 'Invoices',
         href: '/invoices',
         icon: Paperclip,
-        shortcut: 'I',
     },
     {
         title: 'Report',
         href: '/reports',
         icon: FileSpreadsheet,
-        shortcut: 'R',
     },
 ];
 
@@ -70,7 +61,6 @@ const karantinaNavItem: NavItem = {
     title: 'Karantina',
     href: '/karantina',
     icon: User, // Ganti dengan ikon yang sesuai jika perlu
-    shortcut: 'K',
 };
 
 // Footer tetap sama
@@ -113,7 +103,6 @@ export function AppSidebar() {
                 title: 'Dashboard',
                 href: '/dashboard',
                 icon: LayoutGrid,
-                shortcut: 'D',
             },
         ];
     }

@@ -285,9 +285,6 @@ export default function InvoicePreview({
         window.print();
     };
 
-    // Struktur urutan baris
-    let runningNo = 1;
-
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Preview Invoice - Order #${order.id}`} />
@@ -442,13 +439,20 @@ export default function InvoicePreview({
                             <tbody>
                                 {order.order_items.map((item, itemIdx) => {
                                     const mainPrice = Number(item.price_value || 0);
-                                    const itemNo = runningNo++;
+                                    const activeAdditionals = (item.additional_products ?? []).filter((ap) => getQty(item.id, ap.id) > 0);
+                                    const totalRows = 3 + activeAdditionals.length;
 
                                     return (
                                         <React.Fragment key={item.id || itemIdx}>
                                             {/* Bar Informasi Kontainer & Waktu Gate In / Gate Out MERGED (TANPA PEMBATAS DI TENGAH) */}
                                             <tr className="bg-gray-50/50 print:bg-transparent">
-                                                <td colSpan={5} className="border border-black px-2.5 py-1 align-top text-xs">
+                                                <td
+                                                    rowSpan={totalRows}
+                                                    className="border border-black px-2 py-1 text-center align-middle font-bold text-sm"
+                                                >
+                                                    {itemIdx + 1}
+                                                </td>
+                                                <td colSpan={4} className="border border-black px-2.5 py-1 align-top text-xs">
                                                     <div className="flex justify-between items-start gap-4">
                                                         <div className="font-bold text-xs pt-0.5">
                                                             No. Kontainer : <span className="tracking-wide">{item.container_number}</span>
@@ -481,7 +485,6 @@ export default function InvoicePreview({
 
                                             {/* Header Kolom Tabel */}
                                             <tr className="bg-gray-100/60 print:bg-transparent font-bold text-center">
-                                                <td className="border border-black px-2 py-1 text-center">No</td>
                                                 <td className="border border-black px-2 py-1 text-left">Jasa</td>
                                                 <td className="border border-black px-2 py-1 text-right">Price</td>
                                                 <td className="border border-black px-2 py-1 text-center">Qty</td>
@@ -494,7 +497,6 @@ export default function InvoicePreview({
                                                 const mainSubtotal = Number(mainPrice) * currentMainQty;
                                                 return (
                                                     <tr>
-                                                        <td className="border border-black px-2 py-1 text-center align-top">{itemNo}</td>
                                                         <td className="border border-black px-2 py-1 align-top">
                                                             {item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer')}
                                                         </td>
@@ -530,50 +532,46 @@ export default function InvoicePreview({
                                             })()}
 
                                             {/* Baris Produk Tambahan (jika ada) */}
-                                            {(item.additional_products ?? [])
-                                                .filter((ap) => getQty(item.id, ap.id) > 0)
-                                                .map((ap) => {
-                                                    const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
-                                                    const qty = getQty(item.id, ap.id);
-                                                    const lineTotal = price * qty;
-                                                    const addNo = runningNo++;
+                                            {activeAdditionals.map((ap) => {
+                                                const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
+                                                const qty = getQty(item.id, ap.id);
+                                                const lineTotal = price * qty;
 
-                                                    return (
-                                                        <tr key={ap.id}>
-                                                            <td className="border border-black px-2 py-1 text-center align-top">{addNo}</td>
-                                                            <td className="border border-black px-2 py-1 align-top">
-                                                                {ap.service_type || 'Layanan Tambahan'}
-                                                            </td>
-                                                            <td className="border border-black px-2 py-1 text-right align-top">
-                                                                <div className="flex justify-between">
-                                                                    <span>Rp</span>
-                                                                    <span>{rupiah(price)}</span>
-                                                                </div>
-                                                            </td>
-                                                            <td className="border border-black px-2 py-1 text-center align-top">
-                                                                {/* Tampilan layar (bisa input) */}
-                                                                <span className="screen-only inline-block">
-                                                                    <input
-                                                                        type="number"
-                                                                        min="0"
-                                                                        step="1"
-                                                                        value={qty}
-                                                                        onChange={(e) => setQty(item.id, ap.id, Number(e.target.value))}
-                                                                        className="w-12 rounded border border-gray-300 px-1 py-0.5 text-center text-xs font-semibold"
-                                                                    />
-                                                                </span>
-                                                                {/* Tampilan print (teks saja) */}
-                                                                <span className="print-only hidden">{qty}</span>
-                                                            </td>
-                                                            <td className="border border-black px-2.5 py-1 text-right align-top">
-                                                                <div className="flex justify-between">
-                                                                    <span>Rp</span>
-                                                                    <span>{rupiah(lineTotal)}</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    );
-                                                })}
+                                                return (
+                                                    <tr key={ap.id}>
+                                                        <td className="border border-black px-2 py-1 align-top">
+                                                            {ap.service_type || 'Layanan Tambahan'}
+                                                        </td>
+                                                        <td className="border border-black px-2 py-1 text-right align-top">
+                                                            <div className="flex justify-between">
+                                                                <span>Rp</span>
+                                                                <span>{rupiah(price)}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="border border-black px-2 py-1 text-center align-top">
+                                                            {/* Tampilan layar (bisa input) */}
+                                                            <span className="screen-only inline-block">
+                                                                <input
+                                                                    type="number"
+                                                                    min="0"
+                                                                    step="1"
+                                                                    value={qty}
+                                                                    onChange={(e) => setQty(item.id, ap.id, Number(e.target.value))}
+                                                                    className="w-12 rounded border border-gray-300 px-1 py-0.5 text-center text-xs font-semibold"
+                                                                />
+                                                            </span>
+                                                            {/* Tampilan print (teks saja) */}
+                                                            <span className="print-only hidden">{qty}</span>
+                                                        </td>
+                                                        <td className="border border-black px-2.5 py-1 text-right align-top">
+                                                            <div className="flex justify-between">
+                                                                <span>Rp</span>
+                                                                <span>{rupiah(lineTotal)}</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
                                         </React.Fragment>
                                     );
                                 })}

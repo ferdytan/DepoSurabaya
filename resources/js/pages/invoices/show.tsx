@@ -185,12 +185,10 @@ export default function ShowInvoice() {
 
     // Struktur kontainer & rincian jasa
     const containers = useMemo(() => {
-        let runningNo = 1;
         return (invoice.order_items ?? []).map((item) => {
             const mainPrice = Number(item.price_value ?? 0);
             const mainQty = Number(item.quantity || 1);
             const mainRow = {
-                no: runningNo++,
                 service: item.product?.service_type || (item.price_type ? `Jasa Kontainer (${item.price_type})` : 'Biaya Kontainer'),
                 price: mainPrice,
                 qty: mainQty,
@@ -203,7 +201,6 @@ export default function ShowInvoice() {
                     const price = Number(ap.pivot?.price_value ?? ap.price_value ?? 0);
                     const qty = Number(ap.pivot?.quantity ?? 1);
                     return {
-                        no: runningNo++,
                         service: ap.service_type || 'Layanan Tambahan',
                         price,
                         qty,
@@ -374,72 +371,79 @@ export default function ShowInvoice() {
                                 <col className="w-[22%]" />
                             </colgroup>
                             <tbody>
-                                {containers.map((cont, contIdx) => (
-                                    <React.Fragment key={cont.id || contIdx}>
-                                        {/* Bar Informasi Kontainer & Waktu Gate In / Gate Out MERGED (TANPA PEMBATAS DI TENGAH) */}
-                                        <tr className="bg-gray-50/50 print:bg-transparent">
-                                            <td colSpan={5} className="border border-black px-2.5 py-1 align-top text-xs">
-                                                <div className="flex justify-between items-start gap-4">
-                                                    <div className="font-bold text-xs pt-0.5">
-                                                        No. Kontainer : <span className="tracking-wide">{cont.container_number}</span>
-                                                    </div>
-                                                    <div className="text-xs">
-                                                        <table className="date-info-table text-xs border-collapse min-w-[275px] border-0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
-                                                                        Tanggal / Jam Masuk :
-                                                                    </td>
-                                                                    <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
-                                                                        {formatDateTimeSample(cont.entry_date)}
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
-                                                                        Tanggal / Jam Keluar :
-                                                                    </td>
-                                                                    <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
-                                                                        {formatDateTimeSample(cont.exit_date)}
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        {/* Header Kolom Tabel */}
-                                        <tr className="bg-gray-100/60 print:bg-transparent font-bold text-center">
-                                            <td className="border border-black px-2 py-1 text-center">No</td>
-                                            <td className="border border-black px-2 py-1 text-left">Jasa</td>
-                                            <td className="border border-black px-2 py-1 text-right">Price</td>
-                                            <td className="border border-black px-2 py-1 text-center">Qty</td>
-                                            <td className="border border-black px-2.5 py-1 text-right">Subtotal</td>
-                                        </tr>
-
-                                        {/* Baris-baris Jasa */}
-                                        {cont.services.map((svc) => (
-                                            <tr key={svc.no}>
-                                                <td className="border border-black px-2 py-1 text-center align-top">{svc.no}</td>
-                                                <td className="border border-black px-2 py-1 align-top">{svc.service}</td>
-                                                <td className="border border-black px-2 py-1 text-right align-top">
-                                                    <div className="flex justify-between">
-                                                        <span>Rp</span>
-                                                        <span>{rupiah(svc.price)}</span>
-                                                    </div>
+                                {containers.map((cont, contIdx) => {
+                                    const totalRows = 2 + cont.services.length;
+                                    return (
+                                        <React.Fragment key={cont.id || contIdx}>
+                                            {/* Bar Informasi Kontainer & Waktu Gate In / Gate Out MERGED (TANPA PEMBATAS DI TENGAH) */}
+                                            <tr className="bg-gray-50/50 print:bg-transparent">
+                                                <td
+                                                    rowSpan={totalRows}
+                                                    className="border border-black px-2 py-1 text-center align-middle font-bold text-sm"
+                                                >
+                                                    {contIdx + 1}
                                                 </td>
-                                                <td className="border border-black px-2 py-1 text-center align-top">{svc.qty}</td>
-                                                <td className="border border-black px-2.5 py-1 text-right align-top">
-                                                    <div className="flex justify-between">
-                                                        <span>Rp</span>
-                                                        <span>{rupiah(svc.subtotal)}</span>
+                                                <td colSpan={4} className="border border-black px-2.5 py-1 align-top text-xs">
+                                                    <div className="flex justify-between items-start gap-4">
+                                                        <div className="font-bold text-xs pt-0.5">
+                                                            No. Kontainer : <span className="tracking-wide">{cont.container_number}</span>
+                                                        </div>
+                                                        <div className="text-xs">
+                                                            <table className="date-info-table text-xs border-collapse min-w-[275px] border-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
+                                                                            Tanggal / Jam Masuk :
+                                                                        </td>
+                                                                        <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
+                                                                            {formatDateTimeSample(cont.entry_date)}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="font-semibold text-gray-800 text-left whitespace-nowrap py-0.5 pr-4 border-0">
+                                                                            Tanggal / Jam Keluar :
+                                                                        </td>
+                                                                        <td className="font-semibold text-right whitespace-nowrap py-0.5 border-0">
+                                                                            {formatDateTimeSample(cont.exit_date)}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        ))}
-                                    </React.Fragment>
-                                ))}
+
+                                            {/* Header Kolom Tabel */}
+                                            <tr className="bg-gray-100/60 print:bg-transparent font-bold text-center">
+                                                <td className="border border-black px-2 py-1 text-left">Jasa</td>
+                                                <td className="border border-black px-2 py-1 text-right">Price</td>
+                                                <td className="border border-black px-2 py-1 text-center">Qty</td>
+                                                <td className="border border-black px-2.5 py-1 text-right">Subtotal</td>
+                                            </tr>
+
+                                            {/* Baris-baris Jasa */}
+                                            {cont.services.map((svc, svcIdx) => (
+                                                <tr key={svcIdx}>
+                                                    <td className="border border-black px-2 py-1 align-top">{svc.service}</td>
+                                                    <td className="border border-black px-2 py-1 text-right align-top">
+                                                        <div className="flex justify-between">
+                                                            <span>Rp</span>
+                                                            <span>{rupiah(svc.price)}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td className="border border-black px-2 py-1 text-center align-top">{svc.qty}</td>
+                                                    <td className="border border-black px-2.5 py-1 text-right align-top">
+                                                        <div className="flex justify-between">
+                                                            <span>Rp</span>
+                                                            <span>{rupiah(svc.subtotal)}</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </React.Fragment>
+                                    );
+                                })}
 
                                 {/* Baris Total (Subtotal) */}
                                 <tr>

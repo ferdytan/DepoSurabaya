@@ -5,11 +5,17 @@ import { Head, Link, router, usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ArrowDown, ArrowUp, ArrowUpDown, PlusCircle, PrinterIcon, X } from 'lucide-react';
+import { ArrowDown, ArrowUp, ArrowUpDown, ChevronDown, PlusCircle, PrinterIcon, X } from 'lucide-react';
 
 // UI Components
 import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -21,6 +27,56 @@ interface FlashProps {
     success?: string;
     error?: string;
 }
+
+type Customer = {
+    id: number;
+    name: string;
+};
+
+type Product = {
+    id: number;
+    service_type: string;
+    requires_temperature?: boolean;
+};
+
+type Shipper = {
+    id: number;
+    name: string;
+};
+
+type OrderParent = {
+    id: number;
+    no_aju: string | null;
+    order_id: string;
+    customer: Customer;
+    shipper: { id: number; name: string };
+    fumigasi: string | null;
+};
+
+type Order = {
+    id: number;
+    order_id: string;
+    customer_id: number;
+    product_id: number;
+    shipper_id: number;
+    container_number: string;
+    order: OrderParent;
+    entry_date: string | null;
+    eir_date: string | null;
+    exit_date: string | null;
+    price_type: string | null;
+    commodity: string | null;
+    country?: string | null;
+    no_aju: string | null;
+    deleted_reason: string | null;
+    deleted_at: string | null;
+    customer: Customer;
+    product: Product;
+    shipper: Shipper;
+    temperature?: {
+        [date: string]: { [hour: string]: string };
+    };
+};
 
 type Props = {
     orders: {
@@ -38,7 +94,8 @@ type Props = {
         to?: number | null;
         total?: number;
     };
-    customers: Customer[]; // ✅ Sudah benar
+    customers: Customer[];
+    products?: Product[];
     filters: {
         customer?: string;
         search?: string;
@@ -47,59 +104,44 @@ type Props = {
         sort_dir?: string;
         start_date?: string;
         end_date?: string;
+        product_ids?: number[];
     };
 };
 
-type Customer = {
-    id: number;
-    name: string;
-};
+const MONTH_NAMES_ID = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
 
-type Product = {
-    id: number;
-    service_type: string;
-    requires_temperature: boolean;
-};
+function formatKarantinaDateTime(dateStr?: string | null) {
+    if (!dateStr) return <span className="text-gray-400">–</span>;
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return <span className="text-gray-400">–</span>;
 
-type Shipper = {
-    id: number;
-    name: string;
-};
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = MONTH_NAMES_ID[d.getMonth()];
+    const year = d.getFullYear();
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
 
-type OrderParent = {
-    id: number;
-    no_aju: string | null;
-    order_id: string;
-    customer: Customer;
-    shipper: { id: number; name: string };
-    fumigasi: string | null; // ✅ Tambahkan baris ini
-};
+    return (
+        <div className="flex flex-col leading-tight whitespace-nowrap">
+            <span className="font-medium text-slate-800 text-[13px]">{day} {month}</span>
+            <span className="text-[12px] text-slate-500 font-normal">{year}, {hours}:{minutes}</span>
+        </div>
+    );
+}
 
-type Order = {
-    id: number;
-    order_id: string;
-    customer_id: number;
-    product_id: number;
-    shipper_id: number;
-    container_number: string;
-    order: OrderParent; // ✅ Tambahkan ini!
-    entry_date: string | null;
-    eir_date: string | null;
-    exit_date: string | null;
-    price_type: string | null; // ➜ baru
-    commodity: string | null;
-    country?: string | null;
-    no_aju: string | null;
-    deleted_reason: string | null;
-    deleted_at: string | null;
-    customer: Customer;
-    product: Product;
-    shipper: Shipper;
-    // Tambahkan ini:
-    temperature?: {
-        [date: string]: { [hour: string]: string };
-    };
-};
+function formatKarantinaDateTimeString(dateStr?: string | null): string {
+    if (!dateStr) return '–';
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return '–';
+
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = MONTH_NAMES_ID[d.getMonth()];
+    const year = d.getFullYear();
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+
+    return `${day} ${month} ${year}, ${hours}:${minutes}`;
+}
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -109,7 +151,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 type TemperatureRecord = {
-    date: string; // YYYY-MM-DD
+    date: string;
     temps: { [hour: string]: string };
 };
 
@@ -121,7 +163,7 @@ type PageProps = {
             id: number;
             name: string;
             email: string;
-            role_id: number; // Tambahkan ini!
+            role_id: number;
         };
     };
 };
@@ -131,7 +173,7 @@ interface SortButtonProps {
     field: string;
     currentSort?: string;
     currentDir?: string;
-    routeName?: string; // 👈 Tambahkan prop ini
+    routeName?: string;
 }
 
 function formatContainerSize(priceType?: string | null, fallback?: string): string {
@@ -142,18 +184,27 @@ function formatContainerSize(priceType?: string | null, fallback?: string): stri
     return val || fallback || '-';
 }
 
-export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
+export default function OrdersIndex({ orders, products = [], filters: rawFilters }: Props) {
     const filters = rawFilters || {};
     const [search, setSearch] = useState(filters.search ?? '');
     const [startDate, setStartDate] = useState<string>(filters.start_date ?? '');
     const [endDate, setEndDate] = useState<string>(filters.end_date ?? '');
+
+    const initialProductIds: number[] = Array.isArray(rawFilters?.product_ids)
+        ? rawFilters.product_ids.map(Number).filter((n) => !isNaN(n))
+        : [];
+    const [selectedProductIds, setSelectedProductIds] = useState<number[]>(initialProductIds);
 
     // Sinkronkan state input jika URL / filter berubah dari navigasi atau pagination
     useEffect(() => {
         setSearch(rawFilters?.search ?? '');
         setStartDate(rawFilters?.start_date ?? '');
         setEndDate(rawFilters?.end_date ?? '');
-    }, [rawFilters?.search, rawFilters?.start_date, rawFilters?.end_date]);
+        const pIds = Array.isArray(rawFilters?.product_ids)
+            ? rawFilters.product_ids.map(Number).filter((n) => !isNaN(n))
+            : [];
+        setSelectedProductIds(pIds);
+    }, [rawFilters?.search, rawFilters?.start_date, rawFilters?.end_date, rawFilters?.product_ids]);
 
     const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
     const [tempOrder, setTempOrder] = useState<Order | null>(null);
@@ -355,8 +406,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 <td>${order.container_number}</td>
                                 <td>${order.order?.shipper?.name ?? '-'}</td>
                                 <td>${formatContainerSize(order.price_type)}</td>
-                                <td>${order.entry_date ? new Date(order.entry_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${order.exit_date ? new Date(order.exit_date).toLocaleString('id-ID') : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${order.entry_date ? formatKarantinaDateTimeString(order.entry_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${order.exit_date ? formatKarantinaDateTimeString(order.exit_date) : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${order.commodity ?? '-'}</td>
                                 <td>${order.country ?? '-'}</td>
                                 <td>
@@ -388,14 +439,31 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     const { props } = usePage<PageProps>();
 
-    const handleSearch = () => {
+    const toggleProduct = (id: number) => {
+        setSelectedProductIds((prev) =>
+            prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+        );
+    };
+
+    const handleApplyFilter = (customParams?: {
+        search?: string;
+        start_date?: string;
+        end_date?: string;
+        product_ids?: number[];
+    }) => {
+        const s = customParams?.search !== undefined ? customParams.search : search;
+        const start = customParams?.start_date !== undefined ? customParams.start_date : startDate;
+        const end = customParams?.end_date !== undefined ? customParams.end_date : endDate;
+        const pIds = customParams?.product_ids !== undefined ? customParams.product_ids : selectedProductIds;
+
         router.get(
             '/karantina',
             {
-                search: search || undefined,
+                search: s || undefined,
                 trashed: filters.trashed || undefined,
-                start_date: startDate || undefined,
-                end_date: endDate || undefined,
+                start_date: start || undefined,
+                end_date: end || undefined,
+                product_ids: pIds.length > 0 ? pIds : undefined,
                 sort_by: filters.sort_by || undefined,
                 sort_dir: filters.sort_dir || undefined,
             },
@@ -404,6 +472,14 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                 preserveScroll: true,
             },
         );
+    };
+
+    const handleReset = () => {
+        setSearch('');
+        setStartDate('');
+        setEndDate('');
+        setSelectedProductIds([]);
+        router.get('/karantina');
     };
 
     // Di dalam komponen SortButton
@@ -418,6 +494,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                     search: search || undefined,
                     start_date: startDate || undefined,
                     end_date: endDate || undefined,
+                    product_ids: selectedProductIds.length > 0 ? selectedProductIds : undefined,
                 })}
                 preserveState
                 preserveScroll
@@ -502,11 +579,11 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                         {/* Search Input */}
-                        <div className="md:col-span-2 space-y-1">
+                        <div className="md:col-span-5 space-y-1">
                             <Label htmlFor="search" className="text-xs font-medium text-gray-600">
-                                Cari (Fumigator, Shipper, Kontainer)
+                                Cari (Fumigator, Shipper, Customer, Kontainer)
                             </Label>
                             <Input
                                 id="search"
@@ -516,16 +593,102 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 onKeyDown={(e) => {
                                     if (e.key === 'Enter') {
                                         e.preventDefault();
-                                        handleSearch();
+                                        handleApplyFilter();
                                     }
                                 }}
-                                placeholder="Cari fumigator, shipper, atau nomor kontainer..."
+                                placeholder="Cari fumigator, shipper, customer, atau nomor kontainer..."
                                 className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
                             />
                         </div>
 
+                        {/* Multi-Select Products Filter */}
+                        <div className="md:col-span-3 space-y-1">
+                            <Label className="text-xs font-medium text-gray-600 flex items-center justify-between">
+                                <span>Filter Produk</span>
+                                {selectedProductIds.length > 0 && (
+                                    <span className="text-[11px] text-blue-600 font-semibold">
+                                        {selectedProductIds.length} dipilih
+                                    </span>
+                                )}
+                            </Label>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        type="button"
+                                        className="w-full justify-between border-gray-300 py-2 text-sm font-normal text-gray-800 shadow-sm hover:bg-gray-50 focus:border-blue-500 h-9"
+                                    >
+                                        <span className="truncate">
+                                            {selectedProductIds.length === 0
+                                                ? 'Semua Produk'
+                                                : selectedProductIds.length === 1
+                                                ? (products.find((p) => p.id === selectedProductIds[0])?.service_type || '1 Produk')
+                                                : `${selectedProductIds.length} Produk Dipilih`}
+                                        </span>
+                                        <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-64 max-h-72 overflow-y-auto p-2" align="start">
+                                    <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-1">
+                                        <span className="text-xs font-semibold text-gray-700">Pilih Produk</span>
+                                        <div className="flex gap-2 text-[11px]">
+                                            <button
+                                                type="button"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setSelectedProductIds(products.map((p) => p.id));
+                                                }}
+                                                className="text-blue-600 hover:underline font-medium"
+                                            >
+                                                Pilih Semua
+                                            </button>
+                                            <span className="text-gray-300">|</span>
+                                            <button
+                                                type="button"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setSelectedProductIds([]);
+                                                }}
+                                                className="text-gray-500 hover:underline"
+                                            >
+                                                Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-0.5">
+                                        {products.length === 0 ? (
+                                            <div className="p-2 text-center text-xs text-gray-400">Tidak ada produk</div>
+                                        ) : (
+                                            products.map((product) => {
+                                                const isSelected = selectedProductIds.includes(product.id);
+                                                return (
+                                                    <div
+                                                        key={product.id}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            toggleProduct(product.id);
+                                                        }}
+                                                        className={`flex items-center gap-2 px-2 py-1.5 rounded-md cursor-pointer text-xs transition-colors ${
+                                                            isSelected ? 'bg-blue-50 text-blue-900 font-medium' : 'hover:bg-gray-100 text-gray-700'
+                                                        }`}
+                                                    >
+                                                        <Checkbox
+                                                            checked={isSelected}
+                                                            onCheckedChange={() => toggleProduct(product.id)}
+                                                            className="h-3.5 w-3.5"
+                                                        />
+                                                        <span className="truncate">{product.service_type}</span>
+                                                    </div>
+                                                );
+                                            })
+                                        )}
+                                    </div>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+
                         {/* Date Range Picker */}
-                        <div className="md:col-span-2 space-y-1">
+                        <div className="md:col-span-4 space-y-1">
                             <Label className="text-xs font-medium text-gray-600">
                                 Rentang Tanggal
                             </Label>
@@ -539,21 +702,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                 onApply={({ startDate: s, endDate: e }) => {
                                     setStartDate(s);
                                     setEndDate(e);
-                                    router.get(
-                                        '/karantina',
-                                        {
-                                            search: search || undefined,
-                                            trashed: filters.trashed || undefined,
-                                            start_date: s || undefined,
-                                            end_date: e || undefined,
-                                            sort_by: filters.sort_by || undefined,
-                                            sort_dir: filters.sort_dir || undefined,
-                                        },
-                                        {
-                                            preserveState: true,
-                                            preserveScroll: true,
-                                        },
-                                    );
+                                    handleApplyFilter({ start_date: s, end_date: e });
                                 }}
                                 placeholder="Pilih rentang tanggal filter..."
                                 className="w-full"
@@ -562,21 +711,49 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                         </div>
                     </div>
 
+                    {/* Chips untuk produk terpilih jika ada */}
+                    {selectedProductIds.length > 0 && (
+                        <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-gray-100 pt-2.5">
+                            <span className="text-[11px] text-gray-500 font-medium">Produk Terpilih:</span>
+                            {selectedProductIds.map((id) => {
+                                const prod = products.find((p) => p.id === id);
+                                if (!prod) return null;
+                                return (
+                                    <span
+                                        key={id}
+                                        className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 border border-blue-200"
+                                    >
+                                        {prod.service_type}
+                                        <button
+                                            type="button"
+                                            onClick={() => toggleProduct(id)}
+                                            className="hover:text-blue-900 focus:outline-none"
+                                        >
+                                            <X className="h-3 w-3" />
+                                        </button>
+                                    </span>
+                                );
+                            })}
+                            <button
+                                type="button"
+                                onClick={() => setSelectedProductIds([])}
+                                className="text-[11px] text-gray-500 hover:text-rose-600 underline ml-1"
+                            >
+                                Hapus Semua
+                            </button>
+                        </div>
+                    )}
+
                     {/* Action buttons for search */}
                     <div className="mt-4 flex items-center justify-end gap-2 border-t border-gray-100 pt-3">
                         <Button
                             variant="outline"
-                            onClick={() => {
-                                setSearch('');
-                                setStartDate('');
-                                setEndDate('');
-                                router.get('/karantina');
-                            }}
+                            onClick={handleReset}
                             className="text-xs font-medium"
                         >
                             Reset
                         </Button>
-                        <Button onClick={handleSearch} className="text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white">
+                        <Button onClick={() => handleApplyFilter()} className="text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white">
                             Terapkan Filter
                         </Button>
                     </div>
@@ -646,13 +823,13 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                                                 </span>
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.entry_date ? new Date(order.entry_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                                {formatKarantinaDateTime(order.entry_date)}
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.eir_date ? new Date(order.eir_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                                {formatKarantinaDateTime(order.eir_date)}
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.exit_date ? new Date(order.exit_date).toLocaleString('id-ID') : <span className="text-gray-400">-</span>}
+                                                {formatKarantinaDateTime(order.exit_date)}
                                             </TableCell>
                                             <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
                                                 {order.commodity ?? '-'}

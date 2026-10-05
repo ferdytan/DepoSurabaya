@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use App\Models\OrderItem;
+use App\Models\Product;
 use App\Models\Setting;
 
 class OrderController extends Controller
@@ -159,7 +160,15 @@ class OrderController extends Controller
         $search = $request->input('search');  // Tambahkan search
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
-        // $customerName = $request->input('customer'); // HAPUS INI
+
+        // Multi-select product filter
+        $productParam = $request->input('product_ids', $request->input('products'));
+        $productIds = [];
+        if (is_array($productParam)) {
+            $productIds = array_values(array_filter(array_map('intval', $productParam)));
+        } elseif (is_string($productParam) && trim($productParam) !== '') {
+            $productIds = array_values(array_filter(array_map('intval', explode(',', $productParam))));
+        }
 
         $query = OrderItem::with([
             'order:id,customer_id,shipper_id,fumigasi',
@@ -179,25 +188,31 @@ class OrderController extends Controller
             $query->onlyTrashed();
         }
 
-        // Tambahkan filter pencarian
+        // Filter produk (multi-select: utama atau additional products)
+        if (!empty($productIds)) {
+            $query->where(function ($q) use ($productIds) {
+                $q->whereIn('product_id', $productIds)
+                  ->orWhereHas('additionalProducts', function ($sub) use ($productIds) {
+                      $sub->whereIn('products.id', $productIds);
+                  });
+            });
+        }
+
+        // Tambahkan filter pencarian (fumigator, shipper, customer, container number)
         if ($search) {
             $query->where(function ($q) use ($search) {
                 $q->whereHas('order', function ($q) use ($search) {
                     $q->where('fumigasi', 'like', "%{$search}%")  // Fumigator
                       ->orWhereHas('shipper', function ($q) use ($search) {
                           $q->where('name', 'like', "%{$search}%");  // Shipper
+                      })
+                      ->orWhereHas('customer', function ($q) use ($search) {
+                          $q->where('name', 'like', "%{$search}%");  // Customer
                       });
                 })
                 ->orWhere('container_number', 'like', "%{$search}%");  // Container number
             });
         }
-
-        // HAPUS FILTER CUSTOMER
-        // if ($customerName) {
-        //     $query->whereHas('order.customer', function ($q) use ($customerName) {
-        //         $q->where('name', $customerName);
-        //     });
-        // }
 
         // Filter date range
         if ($startDate && $endDate) {
@@ -261,6 +276,7 @@ class OrderController extends Controller
 
         return Inertia::render('karantina/index', [
             'orders' => $orders,
+            'products' => Product::orderBy('service_type')->get(['id', 'service_type']),
             'customers' => Customer::orderBy('name')->get(['id', 'name']), // Masih dibutuhkan untuk select filter
             'filters' => [
                 'search' => $search,
@@ -269,6 +285,7 @@ class OrderController extends Controller
                 'end_date' => $endDate,
                 'sort_by' => $sortBy,
                 'sort_dir' => $sortDir,
+                'product_ids' => $productIds,
             ],
             'flash' => [
                 'success' => session('success'),

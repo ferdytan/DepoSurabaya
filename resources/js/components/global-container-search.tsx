@@ -17,6 +17,7 @@ interface ContainerSearchResult {
     exit_date: string | null;
     url: string;
     order_url: string;
+    item_url?: string;
 }
 
 export function GlobalContainerSearch() {

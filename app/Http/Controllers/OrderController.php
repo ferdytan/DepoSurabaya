@@ -1302,8 +1302,9 @@ private function getPriceForType($product, $priceType, $order)
                 'status_color' => $statusColor,
                 'entry_date' => $entryDate,
                 'exit_date' => $exitDate,
-                'url' => "/orders/item/{$item->id}",
-                'order_url' => "/orders/{$item->order_id}/detail",
+                'url' => "/orders/{$item->order_id}/detail?item={$item->id}",
+                'order_url' => "/orders/{$item->order_id}/detail?item={$item->id}",
+                'item_url' => "/orders/item/{$item->id}",
             ];
         });
 

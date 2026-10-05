@@ -197,10 +197,17 @@ Route::middleware(['auth'])->group(function () {
 });
 
 /* =====================================================
- |  DATABASE BACKUP (SUPER ADMIN ONLY)
+ |  DATABASE BACKUP (SUPER ADMIN & CRON)
  * =====================================================*/
+Route::match(['get', 'post'], '/cron/backup', [\App\Http\Controllers\DatabaseBackupController::class, 'runCron'])
+    ->name('cron.backup');
+
 Route::middleware(['auth', 'superadmin'])->group(function () {
     Route::get('/bckp', [\App\Http\Controllers\DatabaseBackupController::class, 'index'])->name('bckp.index');
+    Route::post('/bckp/run', [\App\Http\Controllers\DatabaseBackupController::class, 'runManual'])
+        ->name('bckp.run');
+    Route::post('/bckp/token/regenerate', [\App\Http\Controllers\DatabaseBackupController::class, 'regenerateToken'])
+        ->name('bckp.token.regenerate');
     Route::post('/bckp/settings', [\App\Http\Controllers\DatabaseBackupController::class, 'updateSettings'])
         ->name('bckp.settings.update');
     Route::get('/bckp/download/{file}', [\App\Http\Controllers\DatabaseBackupController::class, 'download'])

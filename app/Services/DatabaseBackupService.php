@@ -415,6 +415,198 @@ class DatabaseBackupService
     }
 
     /**
+     * Dapatkan token rahasia untuk web cron trigger.
+     * Jika belum ada, buat token 32 karakter secara otomatis.
+     */
+    public function getCronToken(): string
+    {
+        $token = (string) \App\Models\Setting::get('backup_cron_token', '');
+        if (empty($token) || strlen($token) < 16) {
+            $token = bin2hex(random_bytes(16));
+            \App\Models\Setting::set('backup_cron_token', $token);
+        }
+        return $token;
+    }
+
+    /**
+     * Generate ulang token rahasia web cron.
+     */
+    public function regenerateCronToken(): string
+    {
+        $token = bin2hex(random_bytes(16));
+        \App\Models\Setting::set('backup_cron_token', $token);
+        return $token;
+    }
+
+    /**
+     * Periksa apakah auto backup sudah waktunya berjalan hari ini.
+     * Logika:
+     * 1. Jam saat ini (WIB) sudah >= jam jadwal harian (contoh: 00:01).
+     * 2. Belum ada arsip backup yang berhasil dibuat untuk hari ini (pada atau setelah jam jadwal).
+     */
+    public function shouldRunAutoBackup(): bool
+    {
+        $now = Carbon::now('Asia/Jakarta');
+        $todayDate = $now->toDateString();
+
+        // 1. Cek jam jadwal
+        $scheduleTime = (string) \App\Models\Setting::get('backup_schedule_time', '00:01');
+        if (!preg_match('/^([01][0-9]|2[0-3]):[0-5][0-9]$/', $scheduleTime)) {
+            $scheduleTime = '00:01';
+        }
+
+        [$schedHour, $schedMinute] = explode(':', $scheduleTime);
+        $scheduledToday = $now->copy()->setTime((int) $schedHour, (int) $schedMinute, 0);
+
+        // Jika waktu sekarang belum mencapai waktu jadwal hari ini, skip
+        if ($now->lt($scheduledToday)) {
+            return false;
+        }
+
+        // 2. Cek flag setting hari ini
+        $lastDate = \App\Models\Setting::get('last_auto_backup_date');
+        if ($lastDate === $todayDate) {
+            return false;
+        }
+
+        // 3. Verifikasi apakah di folder backup sudah ada file yang dibuat hari ini >= scheduledToday
+        $backups = $this->getBackups();
+        foreach ($backups as $b) {
+            $createdCarbon = Carbon::createFromTimestamp($b['mtime'], 'Asia/Jakarta');
+            if ($createdCarbon->toDateString() === $todayDate && $createdCarbon->gte($scheduledToday)) {
+                // Catat tanggal hari ini agar tidak dicek berulang
+                \App\Models\Setting::set('last_auto_backup_date', $todayDate);
+                \App\Models\Setting::set('last_auto_backup_at', $createdCarbon->toDateTimeString());
+                \App\Models\Setting::set('last_auto_backup_status', 'success');
+                \App\Models\Setting::set('last_auto_backup_file', $b['filename']);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Jalankan auto backup jika sudah jatuh tempo (opportunistic / web-triggered / scheduler).
+     * Dilengkapi cache lock dan file lock agar aman dari race condition traffic konkuren.
+     */
+    public function runAutoBackupIfDue(): ?array
+    {
+        try {
+            // Cache throttle: hindari query disk berulang dalam rentang 60 detik jika belum due
+            if (\Illuminate\Support\Facades\Cache::get('backup_check_skipped_lock')) {
+                return null;
+            }
+        } catch (\Throwable $e) {
+            // Abaikan jika cache store sedang tidak dapat diakses
+        }
+
+        if (!$this->shouldRunAutoBackup()) {
+            try {
+                \Illuminate\Support\Facades\Cache::put('backup_check_skipped_lock', true, 60);
+            } catch (\Throwable $e) {}
+            return null;
+        }
+
+        // Atomic lock 10 menit
+        $lock = null;
+        try {
+            $lock = \Illuminate\Support\Facades\Cache::lock('depo_auto_backup_running', 600);
+            if (!$lock->get()) {
+                return null;
+            }
+        } catch (\Throwable $e) {
+            // Jika cache locking gagal (misal cache driver DB issue), flock di runBackup() tetap menjaga konkurensi filesystem
+        }
+
+        $now = Carbon::now('Asia/Jakarta');
+        try {
+            Log::info("Auto backup otomatis dipicu pada: " . $now->toDateTimeString());
+            $result = $this->runBackup();
+
+            \App\Models\Setting::set('last_auto_backup_date', $now->toDateString());
+            \App\Models\Setting::set('last_auto_backup_at', $now->toDateTimeString());
+            \App\Models\Setting::set('last_auto_backup_status', 'success');
+            \App\Models\Setting::set('last_auto_backup_file', $result['filename']);
+
+            try {
+                \Illuminate\Support\Facades\Cache::put('backup_check_skipped_lock', true, 300);
+            } catch (\Throwable $e) {}
+
+            return $result;
+        } catch (\Throwable $e) {
+            \App\Models\Setting::set('last_auto_backup_status', 'failed: ' . $e->getMessage());
+            Log::error("Auto backup gagal: " . $e->getMessage());
+            return null;
+        } finally {
+            if ($lock) {
+                try {
+                    $lock->release();
+                } catch (\Throwable $e) {}
+            }
+        }
+    }
+
+    /**
+     * Dapatkan status ringkas auto backup hari ini untuk UI.
+     */
+    public function getAutoBackupStatus(): array
+    {
+        $now = Carbon::now('Asia/Jakarta');
+        $todayDate = $now->toDateString();
+
+        $scheduleTime = (string) \App\Models\Setting::get('backup_schedule_time', '00:01');
+        if (!preg_match('/^([01][0-9]|2[0-3]):[0-5][0-9]$/', $scheduleTime)) {
+            $scheduleTime = '00:01';
+        }
+
+        [$schedHour, $schedMinute] = explode(':', $scheduleTime);
+        $scheduledToday = $now->copy()->setTime((int) $schedHour, (int) $schedMinute, 0);
+
+        $lastDate = (string) \App\Models\Setting::get('last_auto_backup_date', '');
+        $lastAt = (string) \App\Models\Setting::get('last_auto_backup_at', '');
+        $lastStatus = (string) \App\Models\Setting::get('last_auto_backup_status', '');
+        $lastFile = (string) \App\Models\Setting::get('last_auto_backup_file', '');
+
+        $hasBackedUpToday = ($lastDate === $todayDate);
+
+        // Jika belum tercatat di setting tapi ada file hari ini >= waktu jadwal
+        if (!$hasBackedUpToday) {
+            $backups = $this->getBackups();
+            foreach ($backups as $b) {
+                $createdCarbon = Carbon::createFromTimestamp($b['mtime'], 'Asia/Jakarta');
+                if ($createdCarbon->toDateString() === $todayDate && $createdCarbon->gte($scheduledToday)) {
+                    $hasBackedUpToday = true;
+                    $lastAt = $createdCarbon->toDateTimeString();
+                    $lastDate = $todayDate;
+                    $lastFile = $b['filename'];
+                    $lastStatus = 'success';
+                    \App\Models\Setting::set('last_auto_backup_date', $todayDate);
+                    \App\Models\Setting::set('last_auto_backup_at', $lastAt);
+                    \App\Models\Setting::set('last_auto_backup_status', 'success');
+                    \App\Models\Setting::set('last_auto_backup_file', $lastFile);
+                    break;
+                }
+            }
+        }
+
+        $cronToken = $this->getCronToken();
+        $cronUrl = url("/cron/backup?token={$cronToken}");
+
+        return [
+            'today_date' => $todayDate,
+            'has_backed_up_today' => $hasBackedUpToday,
+            'schedule_time' => $scheduleTime,
+            'is_time_passed_today' => $now->gte($scheduledToday),
+            'last_backup_at' => $lastAt ? Carbon::parse($lastAt)->format('d M Y, H:i') . ' WIB' : null,
+            'last_backup_file' => $lastFile,
+            'last_backup_status' => $lastStatus,
+            'cron_token' => $cronToken,
+            'cron_url' => $cronUrl,
+        ];
+    }
+
+    /**
      * Format ukuran file ke format byte/KB/MB/GB yang mudah dibaca.
      */
     public function formatBytes(int $bytes, int $precision = 2): string
@@ -428,3 +620,4 @@ class DatabaseBackupService
         return round($bytes, $precision) . ' ' . $units[$pow];
     }
 }
+

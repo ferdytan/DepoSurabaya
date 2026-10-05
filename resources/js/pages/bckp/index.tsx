@@ -19,26 +19,31 @@ import {
 } from '@/components/ui/table';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, router, useForm } from '@inertiajs/react';
 import {
     Archive,
     Check,
     CheckCircle2,
     Clock,
+    Copy,
     Database,
     Download,
     FileArchive,
+    Globe,
     HardDrive,
     Info,
     LoaderCircle,
     Lock,
+    Play,
+    RefreshCw,
     Save,
     Server,
     ShieldAlert,
     Sliders,
+    Sparkles,
     Terminal,
 } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface BackupItem {
     id: string;
@@ -64,9 +69,22 @@ interface BackupStats {
     storage_relative_path: string;
 }
 
+interface AutoBackupStatus {
+    today_date: string;
+    has_backed_up_today: boolean;
+    schedule_time: string;
+    is_time_passed_today: boolean;
+    last_backup_at: string | null;
+    last_backup_file: string;
+    last_backup_status: string;
+    cron_token: string;
+    cron_url: string;
+}
+
 interface Props {
     backups: BackupItem[];
     stats: BackupStats;
+    auto_backup: AutoBackupStatus;
     flash?: {
         success?: string;
         error?: string;
@@ -84,7 +102,12 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function BackupIndex({ backups, stats, flash }: Props) {
+export default function BackupIndex({ backups, stats, auto_backup, flash }: Props) {
+    const [isRunningBackup, setIsRunningBackup] = useState(false);
+    const [copiedUrl, setCopiedUrl] = useState(false);
+    const [copiedCurl, setCopiedCurl] = useState(false);
+    const [copiedArtisan, setCopiedArtisan] = useState(false);
+
     const { data, setData, post, processing, errors, recentlySuccessful } = useForm({
         schedule_time: stats.raw_schedule_time || '00:01',
         retention_days: String(stats.retention_days || 14),
@@ -96,6 +119,47 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
             preserveScroll: true,
         });
     };
+
+    const handleRunManualBackup = () => {
+        if (isRunningBackup) return;
+        if (!confirm('Jalankan proses backup database sekarang? Proses ini akan membuat arsip cadangan terbaru.')) {
+            return;
+        }
+
+        setIsRunningBackup(true);
+        router.post(
+            '/bckp/run',
+            {},
+            {
+                preserveScroll: true,
+                onFinish: () => setIsRunningBackup(false),
+            }
+        );
+    };
+
+    const handleRegenerateToken = () => {
+        if (!confirm('Generate ulang token cron? URL webhook cron lama akan dinonaktifkan.')) {
+            return;
+        }
+        router.post('/bckp/token/regenerate', {}, { preserveScroll: true });
+    };
+
+    const copyToClipboard = (text: string, type: 'url' | 'curl' | 'artisan') => {
+        navigator.clipboard.writeText(text);
+        if (type === 'url') {
+            setCopiedUrl(true);
+            setTimeout(() => setCopiedUrl(false), 2000);
+        } else if (type === 'curl') {
+            setCopiedCurl(true);
+            setTimeout(() => setCopiedCurl(false), 2000);
+        } else if (type === 'artisan') {
+            setCopiedArtisan(true);
+            setTimeout(() => setCopiedArtisan(false), 2000);
+        }
+    };
+
+    const curlCommand = `curl -s "${auto_backup.cron_url}" > /dev/null 2>&1`;
+    const artisanCommand = `* * * * * cd /path/to/project && php artisan schedule:run >> /dev/null 2>&1`;
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -120,10 +184,106 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
                                     </span>
                                 </div>
                                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                                    Arsip cadangan basis data terkompresi (.sql.gz). Unduh langsung tanpa perlu login ke cPanel.
+                                    Arsip cadangan basis data terkompresi (.sql.gz). Otomatis harian dan unduh langsung tanpa login cPanel.
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                        <Button
+                            type="button"
+                            onClick={handleRunManualBackup}
+                            disabled={isRunningBackup}
+                            className="bg-indigo-600 hover:bg-indigo-700 text-white h-9 px-4 text-xs font-semibold gap-2 shadow-xs shrink-0 transition-all cursor-pointer"
+                        >
+                            {isRunningBackup ? (
+                                <LoaderCircle className="h-4 w-4 animate-spin" />
+                            ) : (
+                                <Play className="h-3.5 w-3.5 fill-white" />
+                            )}
+                            <span>{isRunningBackup ? 'Sedang Mem-backup Database...' : 'Backup Sekarang'}</span>
+                        </Button>
+                    </div>
+                </div>
+
+                {/* Status Auto-Backup Hari Ini */}
+                <div
+                    className={`rounded-xl border p-4 sm:p-5 shadow-xs transition-all ${
+                        auto_backup.has_backed_up_today
+                            ? 'border-emerald-200 bg-emerald-50/70 text-emerald-950'
+                            : 'border-amber-200 bg-amber-50/70 text-amber-950'
+                    }`}
+                >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div className="flex items-start gap-3">
+                            {auto_backup.has_backed_up_today ? (
+                                <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                            ) : (
+                                <Clock className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                            )}
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <h3 className="font-bold text-sm">
+                                        {auto_backup.has_backed_up_today
+                                            ? 'Auto Backup Hari Ini Telah Berhasil'
+                                            : `Menunggu Jadwal Backup Hari Ini (${auto_backup.schedule_time} WIB)`}
+                                    </h3>
+                                    <span
+                                        className={`rounded-full px-2 py-0.5 text-[10px] font-bold border ${
+                                            auto_backup.has_backed_up_today
+                                                ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                                                : 'bg-amber-100 text-amber-800 border-amber-300'
+                                        }`}
+                                    >
+                                        {auto_backup.has_backed_up_today ? 'Hari Ini Selesai' : 'Pending'}
+                                    </span>
+                                </div>
+                                <p className="text-xs mt-1 text-gray-600 leading-relaxed">
+                                    {auto_backup.has_backed_up_today ? (
+                                        <>
+                                            Arsip terakhir berhasil dibuat pada{' '}
+                                            <span className="font-semibold text-gray-800">
+                                                {auto_backup.last_backup_at || 'Hari ini'}
+                                            </span>
+                                            {auto_backup.last_backup_file && (
+                                                <>
+                                                    {' '}
+                                                    (<code className="font-mono text-[11px] bg-emerald-100/80 px-1 py-0.2 rounded text-emerald-900">{auto_backup.last_backup_file}</code>)
+                                                </>
+                                            )}
+                                            . Sistem tidak akan melakukan duplikasi backup pada hari yang sama.
+                                        </>
+                                    ) : auto_backup.is_time_passed_today ? (
+                                        <>
+                                            Waktu jadwal pukul <span className="font-semibold">{auto_backup.schedule_time} WIB</span> telah tercapai. Sistem otomatis (web-triggered / cron) akan mengeksekusi backup saat ada aktivitas sistem berikutnya.
+                                        </>
+                                    ) : (
+                                        <>
+                                            Jadwal harian diatur pada pukul{' '}
+                                            <span className="font-semibold">{auto_backup.schedule_time} WIB</span>. Backup otomatis akan dieksekusi secara instan saat jam tersebut tiba.
+                                        </>
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        {!auto_backup.has_backed_up_today && (
+                            <Button
+                                type="button"
+                                size="sm"
+                                variant="outline"
+                                onClick={handleRunManualBackup}
+                                disabled={isRunningBackup}
+                                className="border-amber-300 bg-white hover:bg-amber-100 text-amber-900 text-xs font-semibold h-8 shrink-0"
+                            >
+                                {isRunningBackup ? (
+                                    <LoaderCircle className="h-3.5 w-3.5 animate-spin" />
+                                ) : (
+                                    <Play className="h-3 w-3" />
+                                )}
+                                <span>Jalankan Sekarang</span>
+                            </Button>
+                        )}
                     </div>
                 </div>
 
@@ -175,7 +335,7 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
                                 {stats.schedule_time}
                             </span>
                         </div>
-                        <p className="mt-1 text-[11px] text-gray-400">Eksekusi harian via scheduler</p>
+                        <p className="mt-1 text-[11px] text-gray-400">Eksekusi harian otomatis</p>
                     </div>
 
                     {/* Card 3: Retensi Penyimpanan */}
@@ -277,13 +437,13 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
 
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-gray-100">
                             <p className="text-[11px] text-gray-400">
-                                Perubahan jadwal langsung berlaku pada cron job tanpa perlu restart server atau mengubah cron cPanel.
+                                Perubahan jadwal langsung berlaku pada sistem scheduler dan web trigger otomatis.
                             </p>
                             <Button
                                 type="submit"
                                 size="sm"
                                 disabled={processing}
-                                className="bg-gray-900 hover:bg-black text-white h-9 px-4 text-xs font-semibold gap-1.5 shadow-xs shrink-0"
+                                className="bg-gray-900 hover:bg-black text-white h-9 px-4 text-xs font-semibold gap-1.5 shadow-xs shrink-0 cursor-pointer"
                             >
                                 {processing ? (
                                     <LoaderCircle className="h-3.5 w-3.5 animate-spin" />
@@ -296,6 +456,67 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
                             </Button>
                         </div>
                     </form>
+                </div>
+
+                {/* Panduan Eksekusi Otomatis & cPanel Cron */}
+                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4">
+                    <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                        <div className="flex items-center gap-2">
+                            <Sparkles className="h-4 w-4 text-indigo-600" />
+                            <h2 className="text-sm font-bold text-gray-900">Metode Otomasi Backup (Tanpa Masuk Terminal cPanel)</h2>
+                        </div>
+                        <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                            Web-Trigger Aktif
+                        </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        {/* Metode 1: Web-Trigger Otomatis */}
+                        <div className="rounded-lg border border-gray-200 bg-gray-50/60 p-4 space-y-2">
+                            <div className="flex items-center gap-2 text-gray-900 font-semibold text-xs">
+                                <Globe className="h-4 w-4 text-blue-600" />
+                                <span>1. Web-Trigger Otomatis (Sudah Aktif)</span>
+                            </div>
+                            <p className="text-xs text-gray-600 leading-relaxed">
+                                Sistem secara otomatis mendeteksi jadwal backup harian. Begitu jam backup terlewati dan ada aktivitas pada aplikasi web, proses backup akan berjalan di background tanpa menghambat pengguna dan tanpa perlu login ke cPanel.
+                            </p>
+                        </div>
+
+                        {/* Metode 2: cPanel Web Cron via curl */}
+                        <div className="rounded-lg border border-gray-200 bg-gray-50/60 p-4 space-y-2">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2 text-gray-900 font-semibold text-xs">
+                                    <Terminal className="h-4 w-4 text-purple-600" />
+                                    <span>2. cPanel Cron via URL (Direkomendasikan)</span>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={handleRegenerateToken}
+                                    className="text-[11px] text-gray-500 hover:text-gray-900 flex items-center gap-1 cursor-pointer underline"
+                                    title="Generate token rahasia baru"
+                                >
+                                    <RefreshCw className="h-3 w-3" />
+                                    Reset Token
+                                </button>
+                            </div>
+                            <p className="text-xs text-gray-600">
+                                Pasang 1 baris berikut di menu <strong>cPanel &gt; Cron Jobs</strong> (misal setiap hari pukul {auto_backup.schedule_time}):
+                            </p>
+                            <div className="flex items-center gap-2 bg-gray-900 text-gray-100 p-2 rounded-md font-mono text-[11px]">
+                                <span className="truncate flex-1">{curlCommand}</span>
+                                <Button
+                                    type="button"
+                                    size="sm"
+                                    variant="ghost"
+                                    onClick={() => copyToClipboard(curlCommand, 'curl')}
+                                    className="h-6 px-2 text-white hover:bg-gray-800 text-[10px] shrink-0"
+                                >
+                                    {copiedCurl ? <Check className="h-3 w-3 text-green-400" /> : <Copy className="h-3 w-3" />}
+                                    <span className="ml-1">{copiedCurl ? 'Disalin' : 'Salin'}</span>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Security & Storage Note Box */}
@@ -312,7 +533,7 @@ export default function BackupIndex({ backups, stats, flash }: Props) {
                             <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-blue-800">
                                 <span className="flex items-center gap-1">
                                     <Terminal className="h-3.5 w-3.5" />
-                                    Jalankan manual di terminal: <code className="bg-blue-100 px-1 py-0.2 rounded font-mono font-bold">php artisan db:backup</code>
+                                    Opsi terminal server: <code className="bg-blue-100 px-1 py-0.2 rounded font-mono font-bold">php artisan db:backup</code>
                                 </span>
                             </div>
                         </div>

@@ -49,11 +49,88 @@ class DatabaseBackupController extends Controller
                 'active_database' => $database,
                 'storage_relative_path' => 'storage/app/private/backups/',
             ],
+            'auto_backup' => $this->backupService->getAutoBackupStatus(),
             'flash' => [
                 'success' => session('success'),
                 'error' => session('error'),
             ],
         ]);
+    }
+
+    /**
+     * Jalankan backup manual seketika dari tombol UI (Super Admin).
+     */
+    public function runManual(Request $request): RedirectResponse
+    {
+        try {
+            $result = $this->backupService->runBackup();
+
+            $now = \Carbon\Carbon::now('Asia/Jakarta');
+            Setting::set('last_auto_backup_date', $now->toDateString());
+            Setting::set('last_auto_backup_at', $now->toDateTimeString());
+            Setting::set('last_auto_backup_status', 'success');
+            Setting::set('last_auto_backup_file', $result['filename']);
+
+            return back()->with('success', "Backup database berhasil dibuat: {$result['filename']} ({$result['size_formatted']}).");
+        } catch (\Throwable $e) {
+            return back()->with('error', "Gagal membuat backup database: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Generate ulang token rahasia cron web (Super Admin).
+     */
+    public function regenerateToken(Request $request): RedirectResponse
+    {
+        $newToken = $this->backupService->regenerateCronToken();
+        return back()->with('success', 'Token cron berhasil diperbarui.');
+    }
+
+    /**
+     * Web Cron trigger endpoint (dapat dipanggil oleh cPanel curl/wget atau external uptime/cron monitor).
+     */
+    public function runCron(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $token = (string) ($request->query('token') ?: $request->input('token') ?: $request->query('key') ?: $request->input('key'));
+        $validToken = $this->backupService->getCronToken();
+
+        if (empty($token) || !hash_equals($validToken, $token)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Token otentikasi cron tidak valid.',
+            ], 403);
+        }
+
+        $force = $request->boolean('force', false);
+
+        if (!$force && !$this->backupService->shouldRunAutoBackup()) {
+            $status = $this->backupService->getAutoBackupStatus();
+            return response()->json([
+                'success' => true,
+                'message' => 'Backup hari ini sudah tersedia atau belum memasuki jadwal.',
+                'data' => $status,
+            ]);
+        }
+
+        try {
+            $result = $this->backupService->runBackup();
+            $now = \Carbon\Carbon::now('Asia/Jakarta');
+            Setting::set('last_auto_backup_date', $now->toDateString());
+            Setting::set('last_auto_backup_at', $now->toDateTimeString());
+            Setting::set('last_auto_backup_status', 'success');
+            Setting::set('last_auto_backup_file', $result['filename']);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Backup database berhasil dieksekusi via cron.',
+                'data' => $result,
+            ]);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Eksekusi backup gagal: ' . $e->getMessage(),
+            ], 500);
+        }
     }
 
     /**

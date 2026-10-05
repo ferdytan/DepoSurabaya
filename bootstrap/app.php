@@ -18,12 +18,16 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
+        $middleware->validateCsrfTokens(except: [
+            'cron/*',
+        ]);
+
         $middleware->web(append: [
             HandleAppearance::class,
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
-
             EnsureEmailIsVerifiedByAdmin::class,
+            \App\Http\Middleware\CheckScheduledBackup::class,
         ]);
 
         $middleware->alias([

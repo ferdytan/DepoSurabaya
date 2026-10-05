@@ -51,6 +51,11 @@ class DatabaseBackupCommand extends Command
         try {
             $result = $backupService->runBackup($retentionDays);
 
+            \App\Models\Setting::set('last_auto_backup_date', \Carbon\Carbon::now('Asia/Jakarta')->toDateString());
+            \App\Models\Setting::set('last_auto_backup_at', \Carbon\Carbon::now('Asia/Jakarta')->toDateTimeString());
+            \App\Models\Setting::set('last_auto_backup_status', 'success');
+            \App\Models\Setting::set('last_auto_backup_file', $result['filename']);
+
             $duration = round(microtime(true) - $startTime, 2);
 
             $this->newLine();

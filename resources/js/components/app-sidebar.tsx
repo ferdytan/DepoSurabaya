@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Book, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
+import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
 import AppLogo from './app-logo';
 
 // Definisikan item menu utama TANPA menu Karantina
@@ -63,6 +63,12 @@ const baseNavItems: NavItem[] = [
         icon: FileSpreadsheet,
         shortcut: 'R',
     },
+    {
+        title: 'Backup & Clean Up',
+        href: '/bckp',
+        icon: Database,
+        shortcut: 'B',
+    },
 ];
 
 // Menu Karantina — hanya untuk role_id 4
@@ -98,11 +104,11 @@ export function AppSidebar() {
     let filteredNavItems: NavItem[] = [];
 
     if (roleId == 1) {
-        // Superadmin: semua menu kecuali Karantina (karena hanya untuk role 4)
+        // Superadmin: semua menu termasuk Backup & Clean Up kecuali Karantina
         filteredNavItems = baseNavItems;
     } else if (roleId == 2) {
-        // Admin: tanpa User, Customers, Shippers, Products
-        filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));
+        // Admin: tanpa User, Products, dan Backup & Clean Up
+        filteredNavItems = baseNavItems.filter((item) => !['/users', '/products', '/bckp'].includes(item.href));
     } else if (isChecker) {
         // Checker & Ops Checker: menu tunggal Orders saja
         filteredNavItems = baseNavItems.filter((item) => item.href == '/orders');

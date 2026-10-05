@@ -212,6 +212,12 @@ Route::middleware(['auth', 'superadmin'])->group(function () {
         ->name('bckp.settings.update');
     Route::get('/bckp/download/{file}', [\App\Http\Controllers\DatabaseBackupController::class, 'download'])
         ->name('bckp.download');
+    Route::post('/bckp/selective/preview', [\App\Http\Controllers\DatabaseBackupController::class, 'selectivePreview'])
+        ->name('bckp.selective.preview');
+    Route::post('/bckp/selective/run', [\App\Http\Controllers\DatabaseBackupController::class, 'runSelectiveBackup'])
+        ->name('bckp.selective.run');
+    Route::post('/bckp/cleanup/run', [\App\Http\Controllers\DatabaseBackupController::class, 'runCleanup'])
+        ->name('bckp.cleanup.run');
 });
 
 /* =====================================================

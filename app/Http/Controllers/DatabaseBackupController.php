@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use App\Services\DatabaseBackupService;
+use App\Services\DataSelectiveBackupService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,7 +14,8 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 class DatabaseBackupController extends Controller
 {
     public function __construct(
-        protected DatabaseBackupService $backupService
+        protected DatabaseBackupService $backupService,
+        protected DataSelectiveBackupService $selectiveService
     ) {}
 
     /**
@@ -202,5 +204,86 @@ class DatabaseBackupController extends Controller
             'Expires' => '0',
             'Content-Type' => 'application/gzip',
         ]);
+    }
+
+    /**
+     * API preview hitungan baris untuk seleksi backup / cleanup.
+     */
+    public function selectivePreview(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+        $modules = (array) $request->input('modules', []);
+
+        $result = $this->selectiveService->getPreviewCounts($startDate, $endDate, $modules);
+
+        return response()->json([
+            'success' => true,
+            'counts' => $result['counts'],
+        ]);
+    }
+
+    /**
+     * Jalankan seleksi backup berdasarkan date range & pilihan modul.
+     */
+    public function runSelectiveBackup(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'start_date' => ['nullable', 'date_format:Y-m-d'],
+            'end_date' => ['nullable', 'date_format:Y-m-d'],
+            'modules' => ['required', 'array', 'min:1'],
+            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices'],
+            'template' => ['nullable', 'string', 'max:50'],
+        ]);
+
+        try {
+            $startDate = $validated['start_date'] ?? null;
+            $endDate = $validated['end_date'] ?? null;
+            $modules = $validated['modules'];
+            $template = $validated['template'] ?? 'Custom Selection';
+
+            $result = $this->selectiveService->generateSelectiveBackup($startDate, $endDate, $modules, $template);
+
+            $rangeLabel = ($startDate ?: 'Awal Mulai') . ' s/d ' . ($endDate ?: 'Sekarang');
+            return back()->with('success', "Selective Backup '{$template}' ({$rangeLabel}) sukses dibuat: {$result['filename']} ({$result['size_formatted']}, {$result['total_rows']} baris data).");
+        } catch (\Throwable $e) {
+            return back()->with('error', "Gagal membuat selective backup: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Jalankan penghapusan data (Clean Up Data) berdasarkan kriteria tanggal & modul.
+     */
+    public function runCleanup(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'start_date' => ['nullable', 'date_format:Y-m-d'],
+            'end_date' => ['nullable', 'date_format:Y-m-d'],
+            'modules' => ['required', 'array', 'min:1'],
+            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices'],
+            'confirmation' => ['required', 'string', 'in:HAPUS DATA,DELETE DATA,DELETE'],
+            'safety_backup' => ['nullable', 'boolean'],
+        ], [
+            'confirmation.in' => 'Konfirmasi kata kunci tidak cocok. Ketik "HAPUS DATA" untuk menyetujui.',
+        ]);
+
+        try {
+            $startDate = $validated['start_date'] ?? null;
+            $endDate = $validated['end_date'] ?? null;
+            $modules = $validated['modules'];
+            $safetyBackup = $request->boolean('safety_backup', true);
+
+            $res = $this->selectiveService->executeDataCleanup($startDate, $endDate, $modules, $safetyBackup);
+
+            $rangeLabel = ($startDate ?: 'Awal Mulai') . ' s/d ' . ($endDate ?: 'Sekarang');
+            $msg = "Clean Up Data ({$rangeLabel}) sukses dilakukan: {$res['deleted_counts']['total_deleted']} total baris data dihapus.";
+            if (!empty($res['safety_backup'])) {
+                $msg .= " (Safety backup otomatis telah diamankan: {$res['safety_backup']['filename']})";
+            }
+
+            return back()->with('success', $msg);
+        } catch (\Throwable $e) {
+            return back()->with('error', "Clean Up Data gagal: " . $e->getMessage());
+        }
     }
 }

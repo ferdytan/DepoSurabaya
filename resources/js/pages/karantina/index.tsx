@@ -5,7 +5,7 @@ import { Head, Link, router, usePage } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ArrowDown, ArrowUp, ArrowUpDown, ChevronDown, PlusCircle, PrinterIcon, X } from 'lucide-react';
+import { ArrowDown, ArrowUp, ArrowUpDown, ChevronDown, PlusCircle, PrinterIcon, Search, X } from 'lucide-react';
 
 // UI Components
 import Heading from '@/components/heading';
@@ -439,10 +439,32 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
 
     const { props } = usePage<PageProps>();
 
+    const [productSearchQuery, setProductSearchQuery] = useState('');
+
     const toggleProduct = (id: number) => {
         setSelectedProductIds((prev) =>
             prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
         );
+    };
+
+    const filteredProductsList = products.filter((p) =>
+        p.service_type.toLowerCase().includes(productSearchQuery.toLowerCase())
+    );
+
+    const isAllFilteredSelected =
+        filteredProductsList.length > 0 &&
+        filteredProductsList.every((p) => selectedProductIds.includes(p.id));
+
+    const toggleAllFiltered = () => {
+        const filteredIds = filteredProductsList.map((p) => p.id);
+        if (isAllFilteredSelected) {
+            // Batalkan pilihan semua item di hasil pencarian
+            const filteredSet = new Set(filteredIds);
+            setSelectedProductIds((prev) => prev.filter((id) => !filteredSet.has(id)));
+        } else {
+            // Centang semua item di hasil pencarian
+            setSelectedProductIds((prev) => Array.from(new Set([...prev, ...filteredIds])));
+        }
     };
 
     const handleApplyFilter = (customParams?: {
@@ -479,6 +501,7 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
         setStartDate('');
         setEndDate('');
         setSelectedProductIds([]);
+        setProductSearchQuery('');
         router.get('/karantina');
     };
 
@@ -628,8 +651,8 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                         <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent className="w-64 max-h-72 overflow-y-auto p-2" align="start">
-                                    <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-1">
+                                <DropdownMenuContent className="w-80 p-2 shadow-lg" align="start">
+                                    <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-2">
                                         <span className="text-xs font-semibold text-gray-700">Pilih Produk</span>
                                         <div className="flex gap-2 text-[11px]">
                                             <button
@@ -640,7 +663,7 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                                 }}
                                                 className="text-blue-600 hover:underline font-medium"
                                             >
-                                                Pilih Semua
+                                                Pilih Semua ({products.length})
                                             </button>
                                             <span className="text-gray-300">|</span>
                                             <button
@@ -655,11 +678,59 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="space-y-0.5">
-                                        {products.length === 0 ? (
-                                            <div className="p-2 text-center text-xs text-gray-400">Tidak ada produk</div>
+
+                                    {/* Search Input di dalam Dropdown */}
+                                    <div className="relative mb-2 px-1">
+                                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-gray-400" />
+                                        <Input
+                                            type="text"
+                                            placeholder="Cari produk (misal: fumigasi)..."
+                                            value={productSearchQuery}
+                                            onChange={(e) => setProductSearchQuery(e.target.value)}
+                                            onKeyDown={(e) => e.stopPropagation()}
+                                            className="h-8 pl-8 pr-7 text-xs rounded-md border-gray-200 focus:border-blue-500"
+                                        />
+                                        {productSearchQuery && (
+                                            <button
+                                                type="button"
+                                                onClick={() => setProductSearchQuery('')}
+                                                className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
+                                            >
+                                                <X className="h-3.5 w-3.5" />
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* Opsi Centang Semua Hasil Filter */}
+                                    {filteredProductsList.length > 0 && (
+                                        <div
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                toggleAllFiltered();
+                                            }}
+                                            className="flex items-center gap-2 px-2 py-1.5 mb-1.5 rounded bg-slate-50 hover:bg-slate-100 cursor-pointer text-xs font-medium text-slate-700 border border-slate-200 transition-colors"
+                                        >
+                                            <Checkbox
+                                                checked={isAllFilteredSelected}
+                                                onCheckedChange={toggleAllFiltered}
+                                                className="h-3.5 w-3.5"
+                                            />
+                                            <span className="truncate">
+                                                {productSearchQuery
+                                                    ? `Centang Semua Hasil ("${productSearchQuery}") (${filteredProductsList.length})`
+                                                    : `Centang Semua (${filteredProductsList.length})`}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    {/* List Produk */}
+                                    <div className="space-y-0.5 max-h-56 overflow-y-auto">
+                                        {filteredProductsList.length === 0 ? (
+                                            <div className="py-4 text-center text-xs text-gray-400">
+                                                Tidak ada produk cocok dengan "{productSearchQuery}"
+                                            </div>
                                         ) : (
-                                            products.map((product) => {
+                                            filteredProductsList.map((product) => {
                                                 const isSelected = selectedProductIds.includes(product.id);
                                                 return (
                                                     <div

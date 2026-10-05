@@ -92,6 +92,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/karantina', [OrderController::class, 'index_karantina'])->name('index_karantina');
+    Route::get('/containers/quick-search', [OrderController::class, 'quickSearchContainers'])->name('containers.quick-search');
 
     /* ---------- ORDERS ---------- */
      Route::prefix('orders')->name('orders.')->group(function () {
@@ -99,6 +100,7 @@ Route::middleware(['auth'])->group(function () {
         // Static endpoints
         Route::get('/unavailable', [OrderController::class, 'unavailable'])->name('unavailable');
         Route::get('/next-order-id', [OrderController::class, 'getNextOrderId']);
+        Route::get('/quick-search', [OrderController::class, 'quickSearchContainers'])->name('quick-search');
 
         // Collection endpoints
         Route::get('/', [OrderController::class, 'index'])->name('index');

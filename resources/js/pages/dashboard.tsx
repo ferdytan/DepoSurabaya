@@ -316,7 +316,6 @@ function AdminOverviewDashboard({
     const listBaruKeluar = props.tables?.baru_keluar ?? [];
 
     const [activeTab, setActiveTab] = useState<'aktif' | 'belum_masuk' | 'baru_keluar'>('aktif');
-    const [searchQuery, setSearchQuery] = useState('');
 
     const currentList = useMemo(() => {
         if (activeTab === 'aktif') return listAktif;
@@ -324,24 +323,7 @@ function AdminOverviewDashboard({
         return listBaruKeluar;
     }, [activeTab, listAktif, listBelumMasuk, listBaruKeluar]);
 
-    const filteredList = useMemo(() => {
-        const q = searchQuery.trim().toLowerCase();
-        if (!q) return currentList;
-        return currentList.filter((item) => {
-            const containerNum = item.container_number?.toLowerCase() || '';
-            const custName = item.order?.customer?.name?.toLowerCase() || '';
-            const shipperName = item.order?.shipper?.name?.toLowerCase() || '';
-            const service = item.product?.service_type?.toLowerCase() || '';
-            const commodity = item.commodity?.toLowerCase() || '';
-            return (
-                containerNum.includes(q) ||
-                custName.includes(q) ||
-                shipperName.includes(q) ||
-                service.includes(q) ||
-                commodity.includes(q)
-            );
-        });
-    }, [currentList, searchQuery]);
+    const filteredList = currentList;
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -652,18 +634,6 @@ function AdminOverviewDashboard({
                                 </span>
                             </button>
                         </div>
-
-                        {/* Search Input */}
-                        <div className="relative w-full md:w-72">
-                            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-                            <input
-                                type="text"
-                                placeholder="Cari kontainer, customer..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full rounded-lg border border-gray-300 bg-white py-2 pl-9 pr-3 text-sm text-gray-800 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100"
-                            />
-                        </div>
                     </div>
 
                     {/* Table View */}
@@ -689,7 +659,7 @@ function AdminOverviewDashboard({
                                 {filteredList.length === 0 ? (
                                     <tr>
                                         <td colSpan={activeTab === 'aktif' ? 10 : 9} className="py-12 text-center text-sm text-gray-400">
-                                            {searchQuery ? 'Tidak ada data kontainer yang cocok dengan pencarian.' : 'Tidak ada data kontainer pada kategori ini.'}
+                                            Tidak ada data kontainer pada kategori ini.
                                         </td>
                                     </tr>
                                 ) : (
@@ -798,7 +768,7 @@ function AdminOverviewDashboard({
                     {/* Table Footer */}
                     <div className="flex items-center justify-between border-t border-gray-100 p-4 text-xs text-gray-500 bg-white">
                         <span>
-                            Menampilkan {filteredList.length} dari {currentList.length} kontainer
+                            Menampilkan {currentList.length} kontainer terbaru
                         </span>
                         <Link href="/orders" className="font-semibold text-blue-600 hover:underline">
                             Buka Order Management Penuh →

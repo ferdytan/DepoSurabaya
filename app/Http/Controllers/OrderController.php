@@ -1247,6 +1247,73 @@ private function getPriceForType($product, $priceType, $order)
     }
 
     /**
+     * Global Container Quick Search (Autocomplete API)
+     * Mencari kontainer dari database untuk dropdown autocomplete di top header bar
+     */
+    public function quickSearchContainers(Request $request)
+    {
+        $q = trim($request->input('q', ''));
+
+        if (empty($q) || strlen($q) < 2) {
+            return response()->json([
+                'containers' => [],
+                'query' => $q,
+            ]);
+        }
+
+        $items = OrderItem::with([
+            'order.customer:id,name',
+            'order.shipper:id,name',
+            'product:id,service_type',
+        ])
+        ->where('container_number', 'like', "%{$q}%")
+        ->latest('id')
+        ->limit(10)
+        ->get();
+
+        $containers = $items->map(function ($item) {
+            $customerName = $item->order?->customer?->name ?? '-';
+            $shipperName = $item->order?->shipper?->name ?? '-';
+            $size = $item->price_type ?? '40ft';
+            $orderId = $item->order?->order_id ?? '-';
+            $entryDate = $item->entry_date ? date('d M Y, H:i', strtotime($item->entry_date)) : '-';
+            $exitDate = $item->exit_date ? date('d M Y, H:i', strtotime($item->exit_date)) : null;
+
+            $status = 'In Yard';
+            $statusColor = 'emerald';
+            if ($item->exit_date) {
+                $status = 'Gate Out';
+                $statusColor = 'purple';
+            } elseif (!$item->entry_date) {
+                $status = 'Belum Masuk';
+                $statusColor = 'amber';
+            }
+
+            return [
+                'id' => $item->id,
+                'container_number' => $item->container_number,
+                'size' => $size,
+                'customer_name' => $customerName,
+                'shipper_name' => $shipperName,
+                'order_id' => $orderId,
+                'order_pk' => $item->order_id,
+                'commodity' => $item->commodity ?: '-',
+                'status' => $status,
+                'status_color' => $statusColor,
+                'entry_date' => $entryDate,
+                'exit_date' => $exitDate,
+                'url' => "/orders/item/{$item->id}",
+                'order_url' => "/orders/{$item->order_id}/detail",
+            ];
+        });
+
+        return response()->json([
+            'containers' => $containers,
+            'query' => $q,
+        ]);
+    }
+
+    /**
      * Resolve safe return URL with fallback to session or orders.index.
      */
     protected function getSafeReturnUrl(?string $returnUrl = null): string
@@ -1266,4 +1333,5 @@ private function getPriceForType($product, $priceType, $order)
     }
 
 }
+
 

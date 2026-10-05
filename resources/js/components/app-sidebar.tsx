@@ -63,12 +63,6 @@ const baseNavItems: NavItem[] = [
         icon: FileSpreadsheet,
         shortcut: 'R',
     },
-    {
-        title: 'Backup & Clean Up',
-        href: '/bckp',
-        icon: Database,
-        shortcut: 'B',
-    },
 ];
 
 // Menu Karantina — hanya untuk role_id 4
@@ -104,11 +98,11 @@ export function AppSidebar() {
     let filteredNavItems: NavItem[] = [];
 
     if (roleId == 1) {
-        // Superadmin: semua menu termasuk Backup & Clean Up kecuali Karantina
+        // Superadmin: semua menu kecuali Karantina (karena hanya untuk role 4)
         filteredNavItems = baseNavItems;
     } else if (roleId == 2) {
-        // Admin: tanpa User, Products, dan Backup & Clean Up
-        filteredNavItems = baseNavItems.filter((item) => !['/users', '/products', '/bckp'].includes(item.href));
+        // Admin: tanpa User, Customers, Shippers, Products
+        filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));
     } else if (isChecker) {
         // Checker & Ops Checker: menu tunggal Orders saja
         filteredNavItems = baseNavItems.filter((item) => item.href == '/orders');

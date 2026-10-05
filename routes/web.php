@@ -218,6 +218,8 @@ Route::middleware(['auth', 'superadmin'])->group(function () {
         ->name('bckp.selective.run');
     Route::post('/bckp/cleanup/run', [\App\Http\Controllers\DatabaseBackupController::class, 'runCleanup'])
         ->name('bckp.cleanup.run');
+    Route::post('/bckp/import', [\App\Http\Controllers\DatabaseBackupController::class, 'importSql'])
+        ->name('bckp.import');
 });
 
 /* =====================================================

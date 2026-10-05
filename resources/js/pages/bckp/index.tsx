@@ -41,6 +41,7 @@ import {
     Database,
     Download,
     FileArchive,
+    FileUp,
     Filter,
     Globe,
     HardDrive,
@@ -48,6 +49,7 @@ import {
     Layers,
     LoaderCircle,
     Lock,
+    Package,
     Play,
     RefreshCw,
     Save,
@@ -55,11 +57,15 @@ import {
     ShieldAlert,
     Sliders,
     Sparkles,
+    SquareUserRound,
     Terminal,
     Trash2,
     TriangleAlert,
+    Truck,
+    Upload,
+    UserCheck,
 } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface BackupItem {
     id: string;
@@ -117,6 +123,11 @@ interface PreviewCounts {
     invoices: number;
     invoice_items: number;
     activity_logs: number;
+    customers: number;
+    customer_product: number;
+    shippers: number;
+    products: number;
+    users: number;
     total_rows: number;
 }
 
@@ -131,7 +142,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const MODULE_OPTIONS = [
+const OPERATIONAL_MODULE_OPTIONS = [
     {
         id: 'orders',
         label: 'Orders (Master Order)',
@@ -154,9 +165,36 @@ const MODULE_OPTIONS = [
     },
 ];
 
+const MASTER_DATA_MODULE_OPTIONS = [
+    {
+        id: 'customers',
+        label: 'Master Customers & Harga Khusus',
+        desc: 'Data pelanggan, alamat, kontak, dan mapping custom price per produk.',
+        icon: SquareUserRound,
+    },
+    {
+        id: 'shippers',
+        label: 'Master Shippers (Ekspedisi/Pengirim)',
+        desc: 'Daftar nama shipper, alamat, dan nomor telepon.',
+        icon: Truck,
+    },
+    {
+        id: 'products',
+        label: 'Master Produk & Tarif Layanan',
+        desc: 'Daftar layanan depo, tarif dasar 20ft, 40ft, 45ft, dan setting kebutuhan suhu.',
+        icon: Package,
+    },
+    {
+        id: 'users',
+        label: 'Data User Staf / Checker (Non-Superadmin)',
+        desc: 'Akun login pengguna operasional (akun Super Admin utama tetap terlindungi).',
+        icon: UserCheck,
+    },
+];
+
 export default function BackupIndex({ backups, stats, auto_backup, flash }: Props) {
-    // Tab State: 'overview' | 'selective_backup' | 'cleanup'
-    const [activeTab, setActiveTab] = useState<'overview' | 'selective_backup' | 'cleanup'>('overview');
+    // Tab State: 'overview' | 'selective_backup' | 'cleanup' | 'import'
+    const [activeTab, setActiveTab] = useState<'overview' | 'selective_backup' | 'cleanup' | 'import'>('overview');
 
     const [isRunningBackup, setIsRunningBackup] = useState(false);
     const [copiedCurl, setCopiedCurl] = useState(false);
@@ -167,9 +205,9 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
         retention_days: String(stats.retention_days || 14),
     });
 
-    // State Seleksi Date Range & Modul (Dipakai untuk Selective Backup & Cleanup)
+    // State Seleksi Date Range & Modul
     const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('2026-09-30'); // Default tanggal yang diminta user (30 September)
+    const [endDate, setEndDate] = useState('2026-09-30');
     const [selectedModules, setSelectedModules] = useState<string[]>([
         'orders',
         'containers',
@@ -182,12 +220,21 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
     const [previewCounts, setPreviewCounts] = useState<PreviewCounts | null>(null);
     const [isLoadingPreview, setIsLoadingPreview] = useState(false);
 
-    // State Modals
+    // State Modals & Actions
     const [isExporting, setIsExporting] = useState(false);
     const [isCleanupModalOpen, setIsCleanupModalOpen] = useState(false);
     const [cleanupConfirmText, setCleanupConfirmText] = useState('');
     const [autoSafetyBackup, setAutoSafetyBackup] = useState(true);
     const [isCleaningUp, setIsCleaningUp] = useState(false);
+
+    // State Import SQL
+    const [importSource, setImportSource] = useState<'upload' | 'existing'>('upload');
+    const [selectedExistingFile, setSelectedExistingFile] = useState<string>(backups[0]?.filename || '');
+    const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+    const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+    const [importConfirmText, setImportConfirmText] = useState('');
+    const [isImporting, setIsImporting] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     // Handlers Pengaturan
     const handleSaveSettings = (e: React.FormEvent) => {
@@ -236,8 +283,18 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
             setSelectedModules(['orders', 'containers', 'temperature_records']);
         } else if (templateKey === 'invoice_only') {
             setSelectedModules(['invoices']);
-        } else if (templateKey === 'custom') {
-            // Keep current
+        } else if (templateKey === 'all_including_master') {
+            setSelectedModules([
+                'orders',
+                'containers',
+                'temperature_records',
+                'invoices',
+                'customers',
+                'shippers',
+                'products',
+            ]);
+        } else if (templateKey === 'master_only') {
+            setSelectedModules(['customers', 'shippers', 'products']);
         }
     };
 
@@ -248,7 +305,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
         );
     };
 
-    // Fetch Preview Counts dari backend
+    // Fetch Preview Counts
     const fetchPreview = async (s = startDate, e = endDate, mods = selectedModules) => {
         setIsLoadingPreview(true);
         try {
@@ -257,7 +314,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json',
+                    Accept: 'application/json',
                     'X-CSRF-TOKEN': csrfToken || '',
                 },
                 body: JSON.stringify({
@@ -277,7 +334,6 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
         }
     };
 
-    // Trigger preview fetch saat tab dibuka atau filter diganti
     useEffect(() => {
         if (activeTab === 'selective_backup' || activeTab === 'cleanup') {
             fetchPreview(startDate, endDate, selectedModules);
@@ -336,11 +392,52 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
         );
     };
 
+    // Eksekusi Import SQL
+    const handleTriggerImport = () => {
+        if (importSource === 'upload' && !uploadedFile) {
+            alert('Silakan pilih berkas SQL atau .sql.gz yang ingin di-import.');
+            return;
+        }
+        if (importSource === 'existing' && !selectedExistingFile) {
+            alert('Silakan pilih salah satu file arsip yang tersedia di server.');
+            return;
+        }
+        setIsImportModalOpen(true);
+    };
+
+    const handleRunImport = () => {
+        if (importConfirmText.trim().toUpperCase() !== 'IMPORT DATA') {
+            alert('Silakan ketik "IMPORT DATA" untuk mengonfirmasi proses ini.');
+            return;
+        }
+
+        setIsImporting(true);
+        const formData = new FormData();
+        if (importSource === 'upload' && uploadedFile) {
+            formData.append('sql_file', uploadedFile);
+        } else if (importSource === 'existing' && selectedExistingFile) {
+            formData.append('existing_filename', selectedExistingFile);
+        }
+
+        router.post('/bckp/import', formData, {
+            preserveScroll: true,
+            onFinish: () => {
+                setIsImporting(false);
+                setIsImportModalOpen(false);
+                setImportConfirmText('');
+                setUploadedFile(null);
+                if (fileInputRef.current) {
+                    fileInputRef.current.value = '';
+                }
+            },
+        });
+    };
+
     const curlCommand = `curl -s "${auto_backup.cron_url}" > /dev/null 2>&1`;
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Database Backup & Data Cleanup" />
+            <Head title="Database Backup, Import & Data Clean Up" />
 
             <div className="w-full space-y-6 px-4 sm:px-6 lg:px-8 py-6 pb-16 max-w-7xl mx-auto">
                 {/* Header Toolbar */}
@@ -353,7 +450,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                             <div>
                                 <div className="flex items-center gap-2">
                                     <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
-                                        Database Backup & Data Clean Up
+                                        Database Backup, Import & Clean Up
                                     </h1>
                                     <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-800 border border-slate-200">
                                         <Lock className="h-3 w-3" />
@@ -361,7 +458,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                     </span>
                                 </div>
                                 <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                                    Kelola backup berkala, export selektif berdasarkan rentang tanggal kontainer/invoice, dan pembersihan data aman.
+                                    Backup harian otomatis, export data selektif (kontainer & master data), import file SQL (.sql.gz), dan pembersihan data aman.
                                 </p>
                             </div>
                         </div>
@@ -384,42 +481,54 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                 </div>
 
                 {/* Navigasi Tab */}
-                <div className="flex border-b border-gray-200">
+                <div className="flex border-b border-gray-200 overflow-x-auto">
                     <button
                         type="button"
                         onClick={() => setActiveTab('overview')}
-                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer ${
+                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer shrink-0 ${
                             activeTab === 'overview'
                                 ? 'border-gray-900 text-gray-900'
                                 : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
                         }`}
                     >
                         <Archive className="h-4 w-4" />
-                        <span>Daftar Arsip & Jadwal Backup</span>
+                        <span>Daftar Arsip & Jadwal</span>
                     </button>
                     <button
                         type="button"
                         onClick={() => setActiveTab('selective_backup')}
-                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer ${
+                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer shrink-0 ${
                             activeTab === 'selective_backup'
                                 ? 'border-blue-600 text-blue-700'
                                 : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
                         }`}
                     >
                         <ArrowDownToLine className="h-4 w-4 text-blue-600" />
-                        <span>Backup Selektif (Date Range)</span>
+                        <span>Backup Selektif (Date & Master)</span>
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setActiveTab('import')}
+                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer shrink-0 ${
+                            activeTab === 'import'
+                                ? 'border-emerald-600 text-emerald-700'
+                                : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
+                        }`}
+                    >
+                        <FileUp className="h-4 w-4 text-emerald-600" />
+                        <span>Import Database (.sql)</span>
                     </button>
                     <button
                         type="button"
                         onClick={() => setActiveTab('cleanup')}
-                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer ${
+                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer shrink-0 ${
                             activeTab === 'cleanup'
                                 ? 'border-red-600 text-red-700'
                                 : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
                         }`}
                     >
                         <Trash2 className="h-4 w-4 text-red-600" />
-                        <span>Clean Up Data Database</span>
+                        <span>Clean Up Data</span>
                     </button>
                 </div>
 
@@ -819,7 +928,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                 )}
 
                 {/* =================================================================== */}
-                {/* TAB 2 & TAB 3: SELECTIVE BACKUP & CLEAN UP DATA */}
+                {/* TAB 2 & TAB 4: SELECTIVE BACKUP & CLEAN UP DATA */}
                 {/* =================================================================== */}
                 {(activeTab === 'selective_backup' || activeTab === 'cleanup') && (
                     <div className="space-y-6">
@@ -841,16 +950,16 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                     <h3 className="font-bold text-sm">
                                         {activeTab === 'cleanup'
                                             ? 'Clean Up Data Database (Pembersihan Entri Tertentu)'
-                                            : 'Export Selective Backup Berdasarkan Rentang Tanggal'}
+                                            : 'Export Selective Backup Berdasarkan Rentang Tanggal & Master Data'}
                                     </h3>
                                     <p className="leading-relaxed">
                                         {activeTab === 'cleanup' ? (
                                             <>
-                                                Fitur ini menghapus entri operasional (Order, Kontainer, Riwayat Suhu, dan/atau Invoice) sesuai rentang tanggal yang Anda tentukan. Master data penting seperti <strong>Customer, Shipper, Product (tarif), Pengguna, dan Setting</strong> dijamin <strong>100% AMAN dan TIDAK AKAN DIHAPUS</strong>.
+                                                Fitur ini menghapus entri operasional (Order, Kontainer, Riwayat Suhu, Invoice) dan/atau Master Data (Customer, Shipper, Produk) sesuai pilihan Anda. Pilihlah dengan cermat modul yang ingin dibersihkan.
                                             </>
                                         ) : (
                                             <>
-                                                Fitur ini menghasilkan file dump SQL terkompresi (<code className="font-mono bg-blue-100 px-1 py-0.2 rounded text-blue-900">.sql.gz</code>) khusus untuk data operasional dalam rentang waktu yang Anda pilih (misal dari awal s/d 30 September). File ini mandiri dan dapat di-import kembali ke database kapan saja tanpa merusak master data.
+                                                Fitur ini menghasilkan file dump SQL terkompresi (<code className="font-mono bg-blue-100 px-1 py-0.2 rounded text-blue-900">.sql.gz</code>) khusus untuk data operasional dan master data yang Anda pilih (misal dari awal s/d 30 September). File ini siap di-import kembali melalui tab <strong>Import Database</strong>.
                                             </>
                                         )}
                                     </p>
@@ -866,7 +975,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 <div className="space-y-2">
                                     <Label className="text-xs font-bold text-gray-800 flex items-center gap-1.5">
                                         <Calendar className="h-3.5 w-3.5 text-gray-500" />
-                                        <span>Rentang Tanggal (Date Range)</span>
+                                        <span>Rentang Tanggal Operasional</span>
                                     </Label>
                                     <DateRangePicker
                                         startDate={startDate}
@@ -921,7 +1030,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                             }`}
                                         >
                                             <div className="font-bold">Order + Invoice</div>
-                                            <div className="text-[10px] opacity-80 mt-0.5">Semua kontainer, suhu & invoice</div>
+                                            <div className="text-[10px] opacity-80 mt-0.5">Kontainer, suhu & invoice</div>
                                         </button>
 
                                         <button
@@ -934,38 +1043,38 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                             }`}
                                         >
                                             <div className="font-bold">Kontainer & Suhu</div>
-                                            <div className="text-[10px] opacity-80 mt-0.5">Hanya order & suhu (tanpa invoice)</div>
+                                            <div className="text-[10px] opacity-80 mt-0.5">Hanya kontainer & suhu</div>
                                         </button>
 
                                         <button
                                             type="button"
-                                            onClick={() => handleSelectTemplate('invoice_only')}
+                                            onClick={() => handleSelectTemplate('all_including_master')}
                                             className={`p-2.5 rounded-lg border text-left text-xs transition-all cursor-pointer ${
-                                                activeTemplate === 'invoice_only'
+                                                activeTemplate === 'all_including_master'
                                                     ? 'border-gray-900 bg-gray-900 text-white shadow-xs font-semibold'
                                                     : 'border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700'
                                             }`}
                                         >
-                                            <div className="font-bold">Hanya Invoice</div>
-                                            <div className="text-[10px] opacity-80 mt-0.5">Invoice & invoice item saja</div>
+                                            <div className="font-bold">Semua + Master</div>
+                                            <div className="text-[10px] opacity-80 mt-0.5">Termasuk customer & produk</div>
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Baris 2: Multiple Selection Checklist Modul */}
+                            {/* Section 1: Modul Operasional (Terkait Tanggal) */}
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between">
-                                    <Label className="text-xs font-bold text-gray-800">
-                                        Pilih Kategori Data Spesifik (Multiple Checkboxes)
+                                    <Label className="text-xs font-bold text-gray-900">
+                                        1. Data Operasional (Terkait Rentang Tanggal)
                                     </Label>
                                     <span className="text-[11px] text-gray-500">
-                                        {selectedModules.length} dari {MODULE_OPTIONS.length} kategori dipilih
+                                        Dipengaruhi oleh filter tanggal di atas
                                     </span>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    {MODULE_OPTIONS.map((mod) => {
+                                    {OPERATIONAL_MODULE_OPTIONS.map((mod) => {
                                         const isChecked = selectedModules.includes(mod.id);
                                         return (
                                             <div
@@ -996,7 +1105,52 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 </div>
                             </div>
 
-                            {/* Baris 3: Live Preview Hitungan Baris Data */}
+                            {/* Section 2: Modul Master Data (Opsional / Independen) */}
+                            <div className="space-y-3 pt-2 border-t border-gray-100">
+                                <div className="flex items-center justify-between">
+                                    <Label className="text-xs font-bold text-gray-900">
+                                        2. Master Data (Customer, Shipper, Produk, Staf)
+                                    </Label>
+                                    <span className="text-[11px] text-gray-500">
+                                        Opsional • Independen dari filter tanggal
+                                    </span>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    {MASTER_DATA_MODULE_OPTIONS.map((mod) => {
+                                        const isChecked = selectedModules.includes(mod.id);
+                                        const IconComponent = mod.icon;
+                                        return (
+                                            <div
+                                                key={mod.id}
+                                                onClick={() => toggleModule(mod.id)}
+                                                className={`flex items-start gap-3 p-3 rounded-lg border transition-all cursor-pointer select-none ${
+                                                    isChecked
+                                                        ? 'border-gray-900 bg-gray-50/80 shadow-2xs'
+                                                        : 'border-gray-200 bg-white hover:bg-gray-50'
+                                                }`}
+                                            >
+                                                <Checkbox
+                                                    checked={isChecked}
+                                                    onCheckedChange={() => toggleModule(mod.id)}
+                                                    className="mt-0.5"
+                                                />
+                                                <div className="space-y-0.5 flex-1 min-w-0">
+                                                    <div className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
+                                                        <IconComponent className="h-3.5 w-3.5 text-gray-600" />
+                                                        <span>{mod.label}</span>
+                                                    </div>
+                                                    <p className="text-[11px] text-gray-500 leading-relaxed">
+                                                        {mod.desc}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Live Preview Hitungan Baris Data */}
                             <div className="rounded-lg border border-gray-200 bg-gray-50/70 p-4 space-y-3">
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-2">
@@ -1024,22 +1178,22 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                         <span>Menghitung baris database...</span>
                                     </div>
                                 ) : previewCounts ? (
-                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-2.5 text-xs">
                                         <div className="p-2.5 bg-white rounded-md border border-gray-200">
-                                            <span className="text-[11px] text-gray-500 block">Orders Terpilih</span>
-                                            <span className="text-base font-bold text-gray-900">
+                                            <span className="text-[10px] text-gray-500 block">Orders</span>
+                                            <span className="text-sm font-bold text-gray-900">
                                                 {previewCounts.orders.toLocaleString()}
                                             </span>
                                         </div>
                                         <div className="p-2.5 bg-white rounded-md border border-gray-200">
-                                            <span className="text-[11px] text-gray-500 block">Kontainer (Order Items)</span>
-                                            <span className="text-base font-bold text-gray-900">
+                                            <span className="text-[10px] text-gray-500 block">Kontainer (Items)</span>
+                                            <span className="text-sm font-bold text-gray-900">
                                                 {previewCounts.order_items.toLocaleString()}
                                             </span>
                                         </div>
                                         <div className="p-2.5 bg-white rounded-md border border-gray-200">
-                                            <span className="text-[11px] text-gray-500 block">Riwayat & Log Suhu</span>
-                                            <span className="text-base font-bold text-gray-900">
+                                            <span className="text-[10px] text-gray-500 block">Log/Suhu</span>
+                                            <span className="text-sm font-bold text-gray-900">
                                                 {(
                                                     previewCounts.order_item_rekam_suhus +
                                                     previewCounts.reefer_temperature_logs +
@@ -1048,18 +1202,25 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                             </span>
                                         </div>
                                         <div className="p-2.5 bg-white rounded-md border border-gray-200">
-                                            <span className="text-[11px] text-gray-500 block">Invoices & Rincian</span>
-                                            <span className="text-base font-bold text-gray-900">
+                                            <span className="text-[10px] text-gray-500 block">Invoices & Items</span>
+                                            <span className="text-sm font-bold text-gray-900">
                                                 {(previewCounts.invoices + previewCounts.invoice_items).toLocaleString()}
+                                            </span>
+                                        </div>
+                                        <div className="p-2.5 bg-white rounded-md border border-gray-200">
+                                            <span className="text-[10px] text-gray-500 block">Customers</span>
+                                            <span className="text-sm font-bold text-gray-900">
+                                                {previewCounts.customers.toLocaleString()}
+                                            </span>
+                                        </div>
+                                        <div className="p-2.5 bg-white rounded-md border border-gray-200">
+                                            <span className="text-[10px] text-gray-500 block">Shipper/Produk</span>
+                                            <span className="text-sm font-bold text-gray-900">
+                                                {(previewCounts.shippers + previewCounts.products).toLocaleString()}
                                             </span>
                                         </div>
                                     </div>
                                 ) : null}
-
-                                <div className="text-[11px] text-gray-500 flex items-center gap-1.5 pt-1">
-                                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                                    <span>Tabel Customer, Shipper, dan Produk (tarif) diproteksi secara permanen dari penghapusan.</span>
-                                </div>
                             </div>
 
                             {/* Tombol Aksi Sesuai Tab Aktif */}
@@ -1067,7 +1228,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 <div className="text-xs text-gray-500">
                                     {activeTab === 'cleanup' ? (
                                         <span className="text-red-600 font-semibold">
-                                            Perhatian: Clean Up akan menghapus data terpilih dari database utama secara permanen.
+                                            Perhatian: Clean Up akan menghapus data terpilih secara permanen dari database.
                                         </span>
                                     ) : (
                                         <span>
@@ -1106,6 +1267,144 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                     </div>
                 )}
 
+                {/* =================================================================== */}
+                {/* TAB 3: IMPORT DATABASE (.SQL / .SQL.GZ) */}
+                {/* =================================================================== */}
+                {activeTab === 'import' && (
+                    <div className="space-y-6">
+                        {/* Banner Informasi Import */}
+                        <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 sm:p-5 shadow-xs text-emerald-950">
+                            <div className="flex items-start gap-3">
+                                <FileUp className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                                <div className="space-y-1 text-xs">
+                                    <h3 className="font-bold text-sm">
+                                        Import Data Cadangan (.sql / .sql.gz)
+                                    </h3>
+                                    <p className="leading-relaxed">
+                                        Gunakan fitur ini untuk memulihkan atau memasukkan kembali data backup hasil selective backup maupun full database dump ke dalam sistem. Format query menggunakan <code className="bg-emerald-100 px-1 py-0.2 rounded font-mono text-emerald-900">ON DUPLICATE KEY UPDATE</code>, sehingga aman dari konflik primary key.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Card Pilihan Sumber Import */}
+                        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-5">
+                            <div className="border-b border-gray-100 pb-3">
+                                <h2 className="text-sm font-bold text-gray-900">Pilih Sumber File Import</h2>
+                                <p className="text-xs text-gray-500">Anda dapat mengunggah file baru dari komputer atau memilih arsip yang sudah tersimpan di server.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {/* Opsi 1: Upload File Baru */}
+                                <div
+                                    onClick={() => setImportSource('upload')}
+                                    className={`p-4 rounded-xl border transition-all cursor-pointer ${
+                                        importSource === 'upload'
+                                            ? 'border-gray-900 bg-gray-50/80 shadow-2xs'
+                                            : 'border-gray-200 bg-white hover:bg-gray-50'
+                                    }`}
+                                >
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <input
+                                            type="radio"
+                                            checked={importSource === 'upload'}
+                                            onChange={() => setImportSource('upload')}
+                                            className="text-gray-900 focus:ring-gray-900"
+                                        />
+                                        <Label className="text-xs font-bold text-gray-900 cursor-pointer">
+                                            1. Unggah File Baru (.sql / .sql.gz)
+                                        </Label>
+                                    </div>
+                                    <p className="text-[11px] text-gray-500 mb-3">
+                                        Pilih berkas dump dari komputer lokal Anda (Maksimal 100MB).
+                                    </p>
+
+                                    <div className="space-y-2">
+                                        <input
+                                            ref={fileInputRef}
+                                            type="file"
+                                            accept=".sql,.gz"
+                                            disabled={importSource !== 'upload'}
+                                            onChange={(e) => {
+                                                const file = e.target.files?.[0] || null;
+                                                setUploadedFile(file);
+                                            }}
+                                            className="block w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-gray-900 file:text-white hover:file:bg-black cursor-pointer"
+                                        />
+                                        {uploadedFile && (
+                                            <div className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                                                <Check className="h-3 w-3" />
+                                                <span>File dipilih: {uploadedFile.name} ({(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Opsi 2: Dari Arsip Server yang Ada */}
+                                <div
+                                    onClick={() => setImportSource('existing')}
+                                    className={`p-4 rounded-xl border transition-all cursor-pointer ${
+                                        importSource === 'existing'
+                                            ? 'border-gray-900 bg-gray-50/80 shadow-2xs'
+                                            : 'border-gray-200 bg-white hover:bg-gray-50'
+                                    }`}
+                                >
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <input
+                                            type="radio"
+                                            checked={importSource === 'existing'}
+                                            onChange={() => setImportSource('existing')}
+                                            className="text-gray-900 focus:ring-gray-900"
+                                        />
+                                        <Label className="text-xs font-bold text-gray-900 cursor-pointer">
+                                            2. Pilih dari Arsip yang Ada di Server
+                                        </Label>
+                                    </div>
+                                    <p className="text-[11px] text-gray-500 mb-3">
+                                        Pilih salah satu file dari daftar backup yang tersimpan di direktori server.
+                                    </p>
+
+                                    <Select
+                                        value={selectedExistingFile}
+                                        onValueChange={setSelectedExistingFile}
+                                        disabled={importSource !== 'existing' || backups.length === 0}
+                                    >
+                                        <SelectTrigger className="h-9 text-xs">
+                                            <SelectValue placeholder="Pilih file backup..." />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {backups.map((b) => (
+                                                <SelectItem key={b.filename} value={b.filename}>
+                                                    {b.filename} ({b.size_formatted})
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+
+                            {/* Tombol Eksekusi Import */}
+                            <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                                <span className="text-[11px] text-gray-400">
+                                    Proses import mengeksekusi perintah SQL secara streaming dengan safe-guards.
+                                </span>
+                                <Button
+                                    type="button"
+                                    onClick={handleTriggerImport}
+                                    disabled={
+                                        (importSource === 'upload' && !uploadedFile) ||
+                                        (importSource === 'existing' && !selectedExistingFile)
+                                    }
+                                    className="bg-emerald-600 hover:bg-emerald-700 text-white h-9 px-5 text-xs font-bold gap-2 shadow-xs cursor-pointer"
+                                >
+                                    <Upload className="h-4 w-4" />
+                                    <span>Mulai Import ke Database...</span>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Footer Note */}
                 <div className="rounded-lg bg-gray-50 p-3.5 border border-gray-200 text-center text-xs text-gray-500">
                     Sistem perlindungan data aktif: Seluruh file backup tersimpan dalam direktori privat server dan dilindungi autentikasi Super Admin.
@@ -1121,15 +1420,14 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                             <span>Konfirmasi Clean Up Data Database</span>
                         </DialogTitle>
                         <DialogDescription className="text-xs text-gray-600 pt-2 leading-relaxed">
-                            Anda akan menghapus data entri operasional berikut:
+                            Anda akan menghapus entri data berikut dari database utama:
                         </DialogDescription>
                     </DialogHeader>
 
                     <div className="space-y-4 py-2 text-xs">
-                        {/* Rincian yang akan dihapus */}
                         <div className="rounded-lg bg-red-50 p-3 border border-red-200 space-y-1.5 text-red-950 font-medium">
                             <div>• Rentang Tanggal: <strong>{startDate || 'Sejak Awal'}</strong> s/d <strong>{endDate || 'Sekarang'}</strong></div>
-                            <div>• Kategori: <strong>{selectedModules.join(', ')}</strong></div>
+                            <div>• Kategori Terpilih: <strong>{selectedModules.join(', ')}</strong></div>
                             {previewCounts && (
                                 <div className="pt-1 border-t border-red-200/80 font-bold text-red-700">
                                     Total data yang akan dihapus: {previewCounts.total_rows.toLocaleString()} baris
@@ -1137,7 +1435,6 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                             )}
                         </div>
 
-                        {/* Opsi Auto Safety Backup */}
                         <div className="flex items-start gap-2.5 p-3 rounded-lg border border-gray-200 bg-gray-50/80">
                             <Checkbox
                                 id="auto_safety_backup"
@@ -1146,14 +1443,13 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 className="mt-0.5"
                             />
                             <Label htmlFor="auto_safety_backup" className="text-xs cursor-pointer font-medium leading-relaxed">
-                                <span className="font-bold text-gray-900 block">Buat Safety Backup Otomatis Terlebih Dahulu (Direkomendasikan)</span>
+                                <span className="font-bold text-gray-900 block">Buat Safety Backup Otomatis Terlebih Dahulu</span>
                                 <span className="text-gray-500 text-[11px]">
-                                    Sistem akan mengekspor backup .sql.gz dari data ini sebelum dihapus, sehingga data tetap dapat dipulihkan kapan saja jika diperlukan.
+                                    Sistem akan mengekspor file cadangan .sql.gz sebelum data dihapus sehingga tetap dapat di-restore kapan saja.
                                 </span>
                             </Label>
                         </div>
 
-                        {/* Ketik Konfirmasi */}
                         <div className="space-y-1.5">
                             <Label className="text-xs font-bold text-gray-800">
                                 Ketik <code className="bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-mono font-bold">HAPUS DATA</code> untuk melanjutkan:
@@ -1192,6 +1488,75 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 <Trash2 className="h-3.5 w-3.5" />
                             )}
                             <span>{isCleaningUp ? 'Sedang Menghapus Data...' : 'Konfirmasi & Eksekusi Cleanup'}</span>
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Modal Konfirmasi Keamanan Import Database */}
+            <Dialog open={isImportModalOpen} onOpenChange={setIsImportModalOpen}>
+                <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                        <DialogTitle className="flex items-center gap-2 text-emerald-700 text-base">
+                            <FileUp className="h-5 w-5" />
+                            <span>Konfirmasi Import Database</span>
+                        </DialogTitle>
+                        <DialogDescription className="text-xs text-gray-600 pt-2 leading-relaxed">
+                            Proses ini akan mengeksekusi query SQL dari berkas backup ke dalam database sistem.
+                        </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="space-y-4 py-2 text-xs">
+                        <div className="rounded-lg bg-emerald-50 p-3 border border-emerald-200 space-y-1.5 text-emerald-950 font-medium">
+                            <div>
+                                • Sumber File:{' '}
+                                <strong>
+                                    {importSource === 'upload' ? uploadedFile?.name : selectedExistingFile}
+                                </strong>
+                            </div>
+                            <div className="text-[11px] text-emerald-800 pt-1">
+                                Data yang sudah ada dengan ID yang sama akan diperbarui otomatis, data yang belum ada akan ditambahkan.
+                            </div>
+                        </div>
+
+                        <div className="space-y-1.5">
+                            <Label className="text-xs font-bold text-gray-800">
+                                Ketik <code className="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">IMPORT DATA</code> untuk melanjutkan:
+                            </Label>
+                            <Input
+                                value={importConfirmText}
+                                onChange={(e) => setImportConfirmText(e.target.value)}
+                                placeholder="Ketik IMPORT DATA di sini..."
+                                className="h-9 text-xs"
+                                disabled={isImporting}
+                            />
+                        </div>
+                    </div>
+
+                    <DialogFooter className="gap-2 sm:gap-0">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setIsImportModalOpen(false)}
+                            disabled={isImporting}
+                            className="text-xs"
+                        >
+                            Batal
+                        </Button>
+                        <Button
+                            type="button"
+                            size="sm"
+                            onClick={handleRunImport}
+                            disabled={isImporting || importConfirmText.trim().toUpperCase() !== 'IMPORT DATA'}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold gap-1.5 cursor-pointer"
+                        >
+                            {isImporting ? (
+                                <LoaderCircle className="h-3.5 w-3.5 animate-spin" />
+                            ) : (
+                                <Upload className="h-3.5 w-3.5" />
+                            )}
+                            <span>{isImporting ? 'Sedang Meng-import...' : 'Konfirmasi & Eksekusi Import'}</span>
                         </Button>
                     </DialogFooter>
                 </DialogContent>

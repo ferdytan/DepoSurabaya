@@ -14,15 +14,23 @@ use RuntimeException;
 class DataSelectiveBackupService
 {
     /**
-     * Tabel-tabel yang didukung untuk seleksi backup / cleanup.
+     * Modul Operasional (terkait rentang tanggal / kontainer / order / invoice)
      */
     public const MODULE_ORDERS = 'orders';
-    public const MODULE_INVOICES = 'invoices';
-    public const MODULE_CONTAINERS = 'containers'; // order_items + records
+    public const MODULE_CONTAINERS = 'containers';
     public const MODULE_TEMP_RECORDS = 'temperature_records';
+    public const MODULE_INVOICES = 'invoices';
 
     /**
-     * Hitung preview estimasi data yang akan di-backup / di-cleanup berdasarkan filter.
+     * Modul Master Data (independen dari tanggal, dapat dipilih fleksibel)
+     */
+    public const MODULE_CUSTOMERS = 'customers';
+    public const MODULE_SHIPPERS = 'shippers';
+    public const MODULE_PRODUCTS = 'products';
+    public const MODULE_USERS = 'users';
+
+    /**
+     * Hitung preview estimasi baris data yang akan di-backup / di-cleanup.
      */
     public function getPreviewCounts(
         ?string $startDate,
@@ -47,9 +55,16 @@ class DataSelectiveBackupService
             'invoices' => 0,
             'invoice_items' => 0,
             'activity_logs' => 0,
+            // Master Data
+            'customers' => 0,
+            'customer_product' => 0,
+            'shippers' => 0,
+            'products' => 0,
+            'users' => 0,
             'total_rows' => 0,
         ];
 
+        // 1. Operasional
         if (in_array(self::MODULE_ORDERS, $selectedModules, true)) {
             $counts['orders'] = count($orderIds);
         }
@@ -101,6 +116,25 @@ class DataSelectiveBackupService
             }
         }
 
+        // 2. Master Data
+        if (in_array(self::MODULE_CUSTOMERS, $selectedModules, true)) {
+            $counts['customers'] = DB::table('customers')->count();
+            $counts['customer_product'] = DB::table('customer_product')->count();
+        }
+
+        if (in_array(self::MODULE_SHIPPERS, $selectedModules, true)) {
+            $counts['shippers'] = DB::table('shippers')->count();
+        }
+
+        if (in_array(self::MODULE_PRODUCTS, $selectedModules, true)) {
+            $counts['products'] = DB::table('products')->count();
+        }
+
+        if (in_array(self::MODULE_USERS, $selectedModules, true)) {
+            // Kecualikan super admin utama dari penghapusan
+            $counts['users'] = DB::table('users')->where('role_id', '!=', 1)->count();
+        }
+
         $counts['total_rows'] = array_sum($counts);
 
         return [
@@ -112,7 +146,7 @@ class DataSelectiveBackupService
     }
 
     /**
-     * Jalankan seleksi data dan dump ke berkas SQL (.sql.gz) yang valid dan siap di-restore via mysqldump/mysql CLI/phpMyAdmin.
+     * Jalankan seleksi data dan dump ke berkas SQL (.sql.gz) yang valid dan siap di-restore.
      */
     public function generateSelectiveBackup(
         ?string $startDate,
@@ -146,14 +180,14 @@ class DataSelectiveBackupService
         $invoiceIds = $preview['invoice_ids'];
 
         try {
-            // 1. Tulis Header SQL Standar
+            // Header SQL
             $header = "-- =====================================================================\n"
                 . "-- Depo Surabaya Selective Database Backup\n"
                 . "-- Template: {$templateName}\n"
                 . "-- Date Range: " . ($startDate ?: 'Awal Mulai') . " s/d " . ($endDate ?: 'Sekarang') . "\n"
                 . "-- Generated At: " . $now->format('Y-m-d H:i:s') . " WIB\n"
                 . "-- Modules: " . implode(', ', $selectedModules) . "\n"
-                . "-- Safe Note: Tables structure, Users, Customers, Shippers & Products PRESERVED\n"
+                . "-- Format: Standard SQL dump with transactional ON DUPLICATE KEY UPDATE\n"
                 . "-- =====================================================================\n\n"
                 . "SET NAMES utf8mb4;\n"
                 . "SET FOREIGN_KEY_CHECKS = 0;\n"
@@ -162,12 +196,35 @@ class DataSelectiveBackupService
                 . "START TRANSACTION;\n\n";
             gzwrite($gz, $header);
 
-            // 2. Dump Orders (jika dipilih)
+            // 1. Master Data (Jika dipilih)
+            if (in_array(self::MODULE_CUSTOMERS, $selectedModules, true)) {
+                $custIds = DB::table('customers')->pluck('id')->all();
+                $this->dumpTableRows($gz, 'customers', 'id', $custIds);
+                $custProdIds = DB::table('customer_product')->pluck('id')->all();
+                $this->dumpTableRows($gz, 'customer_product', 'id', $custProdIds);
+            }
+
+            if (in_array(self::MODULE_SHIPPERS, $selectedModules, true)) {
+                $shipIds = DB::table('shippers')->pluck('id')->all();
+                $this->dumpTableRows($gz, 'shippers', 'id', $shipIds);
+            }
+
+            if (in_array(self::MODULE_PRODUCTS, $selectedModules, true)) {
+                $prodIds = DB::table('products')->pluck('id')->all();
+                $this->dumpTableRows($gz, 'products', 'id', $prodIds);
+            }
+
+            if (in_array(self::MODULE_USERS, $selectedModules, true)) {
+                $userIds = DB::table('users')->pluck('id')->all();
+                $this->dumpTableRows($gz, 'users', 'id', $userIds);
+            }
+
+            // 2. Orders (Operasional)
             if (in_array(self::MODULE_ORDERS, $selectedModules, true) && !empty($orderIds)) {
                 $this->dumpTableRows($gz, 'orders', 'id', $orderIds);
             }
 
-            // 3. Dump Order Items & Child Records
+            // 3. Order Items & Child Records
             if ((in_array(self::MODULE_CONTAINERS, $selectedModules, true) || in_array(self::MODULE_ORDERS, $selectedModules, true)) && !empty($orderItemIds)) {
                 $this->dumpTableRows($gz, 'order_items', 'id', $orderItemIds);
                 $this->dumpTableRows($gz, 'order_item_additional_products', 'order_item_id', $orderItemIds);
@@ -175,7 +232,7 @@ class DataSelectiveBackupService
                 $this->dumpTableRows($gz, 'reefer_temperature_logs', 'order_item_id', $orderItemIds);
             }
 
-            // 4. Dump Temperature Records format harian
+            // 4. Temperature Records format harian
             if (in_array(self::MODULE_TEMP_RECORDS, $selectedModules, true) || in_array(self::MODULE_ORDERS, $selectedModules, true)) {
                 $tempQuery = DB::table('temperature_records');
                 if ($startDate && $endDate) {
@@ -194,7 +251,7 @@ class DataSelectiveBackupService
                 }
             }
 
-            // 5. Dump Invoices & Invoice Items
+            // 5. Invoices & Invoice Items
             if (in_array(self::MODULE_INVOICES, $selectedModules, true) && !empty($invoiceIds)) {
                 $this->dumpTableRows($gz, 'invoices', 'id', $invoiceIds);
                 $this->dumpTableRows($gz, 'invoice_items', 'invoice_id', $invoiceIds);
@@ -203,7 +260,7 @@ class DataSelectiveBackupService
                 });
             }
 
-            // 6. Tulis Footer Commit
+            // Footer Commit
             $footer = "\nCOMMIT;\n"
                 . "SET FOREIGN_KEY_CHECKS = 1;\n"
                 . "-- Selective Backup Finished at " . Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s') . " WIB --\n";
@@ -241,7 +298,6 @@ class DataSelectiveBackupService
 
     /**
      * Jalankan pembersihan/penghapusan data (Clean Up Data) secara aman dalam transaksi database.
-     * Tidak akan menyentuh tabel customer, shipper, product, user, role, settings, dsb.
      */
     public function executeDataCleanup(
         ?string $startDate,
@@ -278,6 +334,11 @@ class DataSelectiveBackupService
             'invoices' => 0,
             'invoice_items' => 0,
             'activity_logs' => 0,
+            'customers' => 0,
+            'customer_product' => 0,
+            'shippers' => 0,
+            'products' => 0,
+            'users' => 0,
             'total_deleted' => 0,
         ];
 
@@ -299,9 +360,8 @@ class DataSelectiveBackupService
                     ->delete();
             }
 
-            // B. Hapus Child Records dari Order Items (jika container atau order dipilih)
+            // B. Hapus Child Records dari Order Items
             if ((in_array(self::MODULE_CONTAINERS, $selectedModules, true) || in_array(self::MODULE_ORDERS, $selectedModules, true)) && !empty($orderItemIds)) {
-                // Jika invoice TIDAK ikut dipilih, detach / bersihkan invoice_items yang mengarah ke orderItem ini agar tidak melanggar foreign key
                 $deletedCounts['invoice_items'] += DB::table('invoice_items')
                     ->whereIn('order_item_id', $orderItemIds)
                     ->delete();
@@ -341,9 +401,28 @@ class DataSelectiveBackupService
 
             // D. Hapus Orders
             if (in_array(self::MODULE_ORDERS, $selectedModules, true) && !empty($orderIds)) {
-                // Pastikan order_items sisa di order ini terhapus
                 DB::table('order_items')->whereIn('order_id', $orderIds)->delete();
                 $deletedCounts['orders'] += DB::table('orders')->whereIn('id', $orderIds)->delete();
+            }
+
+            // E. Hapus Master Data (Jika pengguna memilihnya secara eksplisit)
+            if (in_array(self::MODULE_CUSTOMERS, $selectedModules, true)) {
+                $deletedCounts['customer_product'] += DB::table('customer_product')->delete();
+                $deletedCounts['customers'] += DB::table('customers')->delete();
+            }
+
+            if (in_array(self::MODULE_SHIPPERS, $selectedModules, true)) {
+                $deletedCounts['shippers'] += DB::table('shippers')->delete();
+            }
+
+            if (in_array(self::MODULE_PRODUCTS, $selectedModules, true)) {
+                $deletedCounts['customer_product'] += DB::table('customer_product')->delete();
+                $deletedCounts['products'] += DB::table('products')->delete();
+            }
+
+            if (in_array(self::MODULE_USERS, $selectedModules, true)) {
+                // Selalu amankan Super Admin (role_id = 1) agar akun admin tidak terhapus
+                $deletedCounts['users'] += DB::table('users')->where('role_id', '!=', 1)->delete();
             }
 
             $deletedCounts['total_deleted'] = array_sum($deletedCounts);
@@ -369,6 +448,146 @@ class DataSelectiveBackupService
     }
 
     /**
+     * Import berkas SQL / .sql.gz ke dalam database.
+     * Mampu menangani file plain .sql maupun terkompresi .sql.gz secara streaming.
+     */
+    public function importSqlFile(string $filePath): array
+    {
+        if (!file_exists($filePath) || !is_readable($filePath)) {
+            throw new RuntimeException("File SQL tidak ditemukan atau tidak dapat dibaca: {$filePath}");
+        }
+
+        @ini_set('memory_limit', '512M');
+        @ini_set('max_execution_time', '600');
+
+        $isGz = str_ends_with(strtolower($filePath), '.gz');
+        $handle = $isGz ? gzopen($filePath, 'rb') : fopen($filePath, 'rb');
+
+        if (!$handle) {
+            throw new RuntimeException("Gagal membuka file: {$filePath}");
+        }
+
+        $queryCount = 0;
+        $errorCount = 0;
+        $errors = [];
+
+        // Nonaktifkan pemeriksaan foreign key untuk proses import
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::statement('SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO"');
+
+        $currentQuery = '';
+        $inString = false;
+        $stringChar = '';
+        $inLineComment = false;
+        $inBlockComment = false;
+
+        try {
+            while (!($isGz ? gzeof($handle) : feof($handle))) {
+                $buffer = $isGz ? gzread($handle, 65536) : fread($handle, 65536);
+                if ($buffer === false || strlen($buffer) === 0) {
+                    break;
+                }
+
+                $len = strlen($buffer);
+                for ($i = 0; $i < $len; $i++) {
+                    $c = $buffer[$i];
+                    $next = ($i + 1 < $len) ? $buffer[$i + 1] : '';
+
+                    if ($inLineComment) {
+                        if ($c === "\n") {
+                            $inLineComment = false;
+                        }
+                        continue;
+                    }
+
+                    if ($inBlockComment) {
+                        if ($c === '*' && $next === '/') {
+                            $inBlockComment = false;
+                            $i++;
+                        }
+                        continue;
+                    }
+
+                    if (!$inString) {
+                        if (($c === '-' && $next === '-') || $c === '#') {
+                            $inLineComment = true;
+                            continue;
+                        }
+                        if ($c === '/' && $next === '*') {
+                            $inBlockComment = true;
+                            $i++;
+                            continue;
+                        }
+                    }
+
+                    if ($c === "'" || $c === '"' || $c === '`') {
+                        if (!$inString) {
+                            $inString = true;
+                            $stringChar = $c;
+                        } elseif ($stringChar === $c) {
+                            $escaped = false;
+                            $j = $i - 1;
+                            while ($j >= 0 && $buffer[$j] === '\\') {
+                                $escaped = !$escaped;
+                                $j--;
+                            }
+                            if (!$escaped) {
+                                $inString = false;
+                            }
+                        }
+                    }
+
+                    if ($c === ';' && !$inString) {
+                        $stmt = trim($currentQuery);
+                        $currentQuery = '';
+                        if ($stmt !== '') {
+                            try {
+                                DB::unprepared($stmt);
+                                $queryCount++;
+                            } catch (\Throwable $ex) {
+                                $errorCount++;
+                                if (count($errors) < 5) {
+                                    $errors[] = substr($ex->getMessage(), 0, 150);
+                                }
+                            }
+                        }
+                    } else {
+                        $currentQuery .= $c;
+                    }
+                }
+            }
+
+            // Eksekusi sisa query terakhir jika ada
+            $stmt = trim($currentQuery);
+            if ($stmt !== '') {
+                try {
+                    DB::unprepared($stmt);
+                    $queryCount++;
+                } catch (\Throwable $ex) {
+                    $errorCount++;
+                    if (count($errors) < 5) {
+                        $errors[] = substr($ex->getMessage(), 0, 150);
+                    }
+                }
+            }
+        } finally {
+            if ($isGz) {
+                gzclose($handle);
+            } else {
+                fclose($handle);
+            }
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        }
+
+        return [
+            'success' => true,
+            'queries_executed' => $queryCount,
+            'errors_count' => $errorCount,
+            'sample_errors' => $errors,
+        ];
+    }
+
+    /**
      * Dapatkan ID orders yang cocok dengan kriteria tanggal.
      */
     protected function queryOrderIds(?string $startDate, ?string $endDate): array
@@ -380,7 +599,6 @@ class DataSelectiveBackupService
         if ($startDate || $endDate) {
             $query->leftJoin('order_items', 'orders.id', '=', 'order_items.order_id')
                 ->where(function ($q) use ($startDate, $endDate) {
-                    // Cek entry_date di item
                     $q->where(function ($sub) use ($startDate, $endDate) {
                         if ($startDate && $endDate) {
                             $sub->whereBetween('order_items.entry_date', [$startDate . ' 00:00:00', $endDate . ' 23:59:59']);
@@ -391,7 +609,6 @@ class DataSelectiveBackupService
                         }
                     });
 
-                    // Cek created_at di order jika item belum ada
                     $q->orWhere(function ($sub) use ($startDate, $endDate) {
                         if ($startDate && $endDate) {
                             $sub->whereBetween('orders.created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59']);
@@ -430,7 +647,7 @@ class DataSelectiveBackupService
     }
 
     /**
-     * Dapatkan ID invoice yang terkait dengan item order atau berdasarkan rentang tanggal invoice.
+     * Dapatkan ID invoice yang terkait.
      */
     protected function queryInvoiceIds(array $orderItemIds, ?string $startDate, ?string $endDate): array
     {
@@ -517,7 +734,6 @@ class DataSelectiveBackupService
                     } elseif (is_numeric($val) && !is_string($val)) {
                         $escapedValues[] = $val;
                     } else {
-                        // Escape string aman untuk MySQL
                         $escaped = addcslashes((string) $val, "\0\n\r\t\\'\"");
                         $escapedValues[] = "'{$escaped}'";
                     }

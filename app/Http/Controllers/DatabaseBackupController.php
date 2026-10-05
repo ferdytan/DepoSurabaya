@@ -232,7 +232,7 @@ class DatabaseBackupController extends Controller
             'start_date' => ['nullable', 'date_format:Y-m-d'],
             'end_date' => ['nullable', 'date_format:Y-m-d'],
             'modules' => ['required', 'array', 'min:1'],
-            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices'],
+            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices,customers,shippers,products,users'],
             'template' => ['nullable', 'string', 'max:50'],
         ]);
 
@@ -260,7 +260,7 @@ class DatabaseBackupController extends Controller
             'start_date' => ['nullable', 'date_format:Y-m-d'],
             'end_date' => ['nullable', 'date_format:Y-m-d'],
             'modules' => ['required', 'array', 'min:1'],
-            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices'],
+            'modules.*' => ['string', 'in:orders,containers,temperature_records,invoices,customers,shippers,products,users'],
             'confirmation' => ['required', 'string', 'in:HAPUS DATA,DELETE DATA,DELETE'],
             'safety_backup' => ['nullable', 'boolean'],
         ], [
@@ -284,6 +284,64 @@ class DatabaseBackupController extends Controller
             return back()->with('success', $msg);
         } catch (\Throwable $e) {
             return back()->with('error', "Clean Up Data gagal: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Import berkas SQL (.sql / .sql.gz) yang diunggah pengguna atau dari arsip yang sudah ada di server.
+     */
+    public function importSql(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'sql_file' => ['nullable', 'file', 'max:102400'], // max 100MB
+            'existing_filename' => ['nullable', 'string'],
+        ]);
+
+        $filePath = null;
+        $isUploaded = false;
+
+        try {
+            if ($request->hasFile('sql_file')) {
+                $file = $request->file('sql_file');
+                $ext = strtolower($file->getClientOriginalExtension());
+                $origName = $file->getClientOriginalName();
+
+                if (!in_array($ext, ['sql', 'gz'])) {
+                    return back()->with('error', 'Format file tidak didukung. Harap unggah berkas berekstensi .sql atau .sql.gz.');
+                }
+
+                $tempPath = $file->storeAs('private/temp_imports', 'import_' . time() . '_' . $origName);
+                $filePath = storage_path('app/' . $tempPath);
+                $isUploaded = true;
+            } elseif ($existingName = $request->input('existing_filename')) {
+                // Import langsung dari file yang sudah ada di storage backup
+                if (!preg_match('/^[a-zA-Z0-9_\-\.]+\.(sql\.gz|sqlite\.gz|sql)$/', $existingName)) {
+                    return back()->with('error', 'Nama file arsip tidak valid.');
+                }
+                $backupDir = config('backup.path', storage_path('app/private/backups'));
+                $filePath = $backupDir . DIRECTORY_SEPARATOR . $existingName;
+            } else {
+                return back()->with('error', 'Harap pilih berkas SQL untuk diunggah atau pilih dari daftar arsip.');
+            }
+
+            if (!file_exists($filePath)) {
+                return back()->with('error', 'Berkas SQL tidak ditemukan di sistem.');
+            }
+
+            $importResult = $this->selectiveService->importSqlFile($filePath);
+
+            $msg = "Import database berhasil! Sebanyak {$importResult['queries_executed']} query SQL dieksekusi.";
+            if ($importResult['errors_count'] > 0) {
+                $msg .= " (Peringatan: {$importResult['errors_count']} pernyataan diabaikan karena sudah ada atau sintaks non-kritis).";
+            }
+
+            return back()->with('success', $msg);
+        } catch (\Throwable $e) {
+            return back()->with('error', 'Gagal memproses import database: ' . $e->getMessage());
+        } finally {
+            if ($isUploaded && $filePath && file_exists($filePath)) {
+                @unlink($filePath);
+            }
         }
     }
 }

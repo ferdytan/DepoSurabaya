@@ -135,7 +135,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                     {/* Card Informasi Order Utama (Format Resmi & Rapi) */}
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs">
                         <div className="flex items-center gap-2 border-b border-gray-100 pb-3 mb-4">
-                            <FileText className="h-4 w-4 text-indigo-600" />
+                            <FileText className="h-4 w-4 text-blue-600" />
                             <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wide">
                                 Informasi Order & Mitra
                             </h2>
@@ -147,7 +147,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                 <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider block">
                                     Nomor Order
                                 </span>
-                                <p className="font-mono font-bold text-gray-900 text-sm">
+                                <p className="font-bold text-gray-900 text-sm">
                                     {order.order_id}
                                 </p>
                             </div>
@@ -157,7 +157,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                 <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider block">
                                     Nomor AJU
                                 </span>
-                                <p className="font-mono font-medium text-gray-800 text-sm">
+                                <p className="font-medium text-gray-800 text-sm">
                                     {order.no_aju || '-'}
                                 </p>
                             </div>
@@ -215,9 +215,9 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                 : 'Belum Masuk';
 
                             const statusBadgeClass = item.exit_date
-                                ? 'bg-purple-50 text-purple-700 border-purple-200'
+                                ? 'bg-gray-900 text-white border-gray-900'
                                 : item.entry_date
-                                ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                ? 'bg-blue-50 text-blue-700 border-blue-200'
                                 : 'bg-amber-50 text-amber-700 border-amber-200';
 
                             return (
@@ -228,7 +228,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                     }}
                                     className={`rounded-xl border bg-white p-5 shadow-xs transition-all ${
                                         isHighlighted
-                                            ? 'border-indigo-500 ring-2 ring-indigo-200 bg-indigo-50/10'
+                                            ? 'border-blue-600 ring-2 ring-blue-100 bg-blue-50/20'
                                             : 'border-gray-200'
                                     }`}
                                 >
@@ -239,7 +239,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                                 #{idx + 1}
                                             </span>
 
-                                            <span className="font-mono font-extrabold text-base sm:text-lg text-gray-900 tracking-wider">
+                                            <span className="font-extrabold text-base sm:text-lg text-gray-900">
                                                 {item.container_number}
                                             </span>
 
@@ -283,7 +283,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                                 <Calendar className="h-3 w-3 text-gray-400" />
                                                 Entry Date
                                             </span>
-                                            <p className="font-mono text-gray-800">
+                                            <p className="text-gray-800">
                                                 {formatDateTimeIndo(item.entry_date)}
                                             </p>
                                         </div>
@@ -294,7 +294,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                                 <Clock className="h-3 w-3 text-gray-400" />
                                                 EIR Date
                                             </span>
-                                            <p className="font-mono text-gray-800">
+                                            <p className="text-gray-800">
                                                 {formatDateTimeIndo(item.eir_date)}
                                             </p>
                                         </div>
@@ -305,7 +305,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                                 <Calendar className="h-3 w-3 text-gray-400" />
                                                 Exit Date
                                             </span>
-                                            <p className="font-mono text-gray-800">
+                                            <p className="text-gray-800">
                                                 {formatDateTimeIndo(item.exit_date)}
                                             </p>
                                         </div>

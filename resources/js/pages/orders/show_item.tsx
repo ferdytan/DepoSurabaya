@@ -75,9 +75,9 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
         : 'Belum Masuk';
 
     const statusBadgeClass = orderItem.exit_date
-        ? 'bg-purple-50 text-purple-700 border-purple-200'
+        ? 'bg-gray-900 text-white border-gray-900'
         : orderItem.entry_date
-        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+        ? 'bg-blue-50 text-blue-700 border-blue-200'
         : 'bg-amber-50 text-amber-700 border-amber-200';
 
     const hasTemp = Boolean(
@@ -100,7 +100,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                 </div>
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <h1 className="text-xl sm:text-2xl font-mono font-extrabold tracking-tight text-gray-900">
+                                        <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900">
                                             {orderItem.container_number}
                                         </h1>
                                         {orderItem.price_type && (
@@ -150,7 +150,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                     {/* Card Informasi Order & Mitra Terkait */}
                     <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs">
                         <div className="flex items-center gap-2 border-b border-gray-100 pb-3 mb-4">
-                            <FileText className="h-4 w-4 text-indigo-600" />
+                            <FileText className="h-4 w-4 text-blue-600" />
                             <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wide">
                                 Informasi Order & Mitra
                             </h2>
@@ -163,7 +163,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                 </span>
                                 <Link
                                     href={`/orders/${order.id}/detail?item=${orderItem.id}`}
-                                    className="font-mono font-bold text-indigo-600 hover:text-indigo-800 text-sm inline-flex items-center gap-1"
+                                    className="font-bold text-blue-600 hover:text-blue-800 text-sm inline-flex items-center gap-1"
                                 >
                                     <span>{order.order_id}</span>
                                     <ExternalLink className="h-3 w-3" />
@@ -174,7 +174,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                 <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider block">
                                     Nomor AJU
                                 </span>
-                                <p className="font-mono font-medium text-gray-800 text-sm">
+                                <p className="font-medium text-gray-800 text-sm">
                                     {order.no_aju || '-'}
                                 </p>
                             </div>
@@ -216,7 +216,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                     <Calendar className="h-3 w-3 text-gray-400" />
                                     Entry Date
                                 </span>
-                                <p className="font-mono text-gray-800">
+                                <p className="text-gray-800">
                                     {formatDateTimeIndo(orderItem.entry_date)}
                                 </p>
                             </div>
@@ -226,7 +226,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                     <Clock className="h-3 w-3 text-gray-400" />
                                     EIR Date
                                 </span>
-                                <p className="font-mono text-gray-800">
+                                <p className="text-gray-800">
                                     {formatDateTimeIndo(orderItem.eir_date)}
                                 </p>
                             </div>
@@ -236,7 +236,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                     <Calendar className="h-3 w-3 text-gray-400" />
                                     Exit Date
                                 </span>
-                                <p className="font-mono text-gray-800">
+                                <p className="text-gray-800">
                                     {formatDateTimeIndo(orderItem.exit_date)}
                                 </p>
                             </div>

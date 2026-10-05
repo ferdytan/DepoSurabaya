@@ -117,7 +117,7 @@ export default function ContainerTemperatureView({
                             <Clock className="h-3 w-3 text-emerald-600" />
                             Start Plug-In
                         </span>
-                        <p className="text-xs font-bold text-slate-900 font-mono">
+                        <p className="text-xs font-bold text-slate-900">
                             {formatDateTimeIndo(startPlugIn)}
                         </p>
                     </div>
@@ -127,7 +127,7 @@ export default function ContainerTemperatureView({
                             <Clock className="h-3 w-3 text-amber-600" />
                             Plug-Out
                         </span>
-                        <p className="text-xs font-bold text-slate-900 font-mono">
+                        <p className="text-xs font-bold text-slate-900">
                             {formatDateTimeIndo(plugOut)}
                         </p>
                     </div>
@@ -144,11 +144,11 @@ export default function ContainerTemperatureView({
 
                     <div className="space-y-0.5">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                            <Zap className="h-3 w-3 text-indigo-600" />
+                            <Zap className="h-3 w-3 text-blue-600" />
                             Total Shift
                         </span>
-                        <p className="text-xs font-bold text-indigo-900">
-                            <span className="text-sm font-black">{totalShifts || 0}</span> Shift
+                        <p className="text-xs font-bold text-slate-900">
+                            <span className="text-sm font-black text-blue-700">{totalShifts || 0}</span> Shift
                         </p>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ export default function ContainerTemperatureView({
                                     <span className="font-bold text-slate-900 text-xs sm:text-sm">
                                         {day.tanggalFormatted}
                                     </span>
-                                    <span className="text-[11px] text-slate-500 font-mono">
+                                    <span className="text-[11px] text-slate-500">
                                         ({day.tanggal})
                                     </span>
                                 </div>
@@ -189,7 +189,7 @@ export default function ContainerTemperatureView({
                                     )}
                                     {day.avgTemp !== null && (
                                         <span className="flex items-center gap-1 bg-white px-1.5 py-0.5 rounded border border-slate-200">
-                                            <span>Rata-rata: <strong className="text-indigo-700">{day.avgTemp}°C</strong></span>
+                                            <span>Rata-rata: <strong className="text-blue-700">{day.avgTemp}°C</strong></span>
                                         </span>
                                     )}
                                     <span className="text-slate-400 font-normal">
@@ -218,7 +218,7 @@ export default function ContainerTemperatureView({
                                                 return (
                                                     <td
                                                         key={cell.hour}
-                                                        className={`py-1.5 px-0.5 border-r border-slate-200 last:border-r-0 font-mono ${
+                                                        className={`py-1.5 px-0.5 border-r border-slate-200 last:border-r-0 ${
                                                             hasVal ? 'font-bold text-slate-900 bg-blue-50/30' : 'text-slate-300'
                                                         }`}
                                                     >
@@ -246,7 +246,7 @@ export default function ContainerTemperatureView({
                                                 return (
                                                     <td
                                                         key={cell.hour}
-                                                        className={`py-1.5 px-0.5 border-r border-slate-200 last:border-r-0 font-mono ${
+                                                        className={`py-1.5 px-0.5 border-r border-slate-200 last:border-r-0 ${
                                                             hasVal ? 'font-bold text-slate-900 bg-blue-50/30' : 'text-slate-300'
                                                         }`}
                                                     >
@@ -268,7 +268,7 @@ export default function ContainerTemperatureView({
                                     {day.customEntries.map((c, idx) => (
                                         <span
                                             key={idx}
-                                            className="inline-flex items-center gap-1 rounded bg-white px-2 py-0.5 border border-slate-200 font-mono font-medium text-slate-800 shadow-2xs"
+                                            className="inline-flex items-center gap-1 rounded bg-white px-2 py-0.5 border border-slate-200 font-medium text-slate-800 shadow-2xs"
                                         >
                                             <span className="text-slate-500">{c.time}:</span>
                                             <span className="font-bold text-blue-700">{c.value}°C</span>

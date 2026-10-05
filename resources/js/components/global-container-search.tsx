@@ -257,7 +257,7 @@ export function GlobalContainerSearch() {
                                         <div className="space-y-1 min-w-0 flex-1">
                                             {/* Container Number & Badges */}
                                             <div className="flex items-center gap-2 flex-wrap">
-                                                <span className="font-mono text-xs font-bold text-gray-900 tracking-wide">
+                                                <span className="text-xs font-bold text-gray-900">
                                                     {item.container_number}
                                                 </span>
                                                 <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-gray-100 text-gray-700 rounded border border-gray-200">
@@ -271,7 +271,7 @@ export function GlobalContainerSearch() {
                                                     </span>
                                                 )}
                                                 {item.status === 'Gate Out' && (
-                                                    <span className="px-1.5 py-0.5 text-[10px] font-semibold rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+                                                    <span className="px-1.5 py-0.5 text-[10px] font-semibold rounded-full bg-gray-900 text-white border border-gray-900">
                                                         Gate Out
                                                     </span>
                                                 )}
@@ -289,7 +289,7 @@ export function GlobalContainerSearch() {
                                                     {item.customer_name}
                                                 </span>
                                                 <span className="text-gray-300">•</span>
-                                                <span className="font-mono text-[10px] text-gray-400">
+                                                <span className="text-[10px] text-gray-400 font-medium">
                                                     #{item.order_id}
                                                 </span>
                                             </div>
@@ -335,7 +335,7 @@ export function GlobalContainerSearch() {
                                         Tidak ada kontainer ditemukan
                                     </p>
                                     <p className="text-[11px] text-gray-500 max-w-xs mx-auto">
-                                        Nomor kontainer <span className="font-mono font-semibold text-gray-700">"{query}"</span> tidak terdaftar dalam sistem.
+                                        Nomor kontainer <span className="font-semibold text-gray-800">"{query}"</span> tidak terdaftar dalam sistem.
                                     </p>
                                 </div>
                                 <div className="pt-2">

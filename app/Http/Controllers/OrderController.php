@@ -75,7 +75,14 @@ class OrderController extends Controller
     }
 
     // 🧾 Filter Order yang Perlu Diinvoicekan (Kontainer sudah Gate In & Gate Out, dan belum di-invoice)
-    $needInvoice = $request->boolean('need_invoice') || $request->input('need_invoice') === '1' || $request->input('filter') === 'need_invoice';
+    // Opsi ini hanya dapat diakses oleh Super Admin dan Admin (Checker tidak memiliki opsi ini)
+    $user = $request->user();
+    $canManageInvoice = $user && (
+        in_array((int)$user->role_id, [1, 2]) || 
+        in_array($user->role?->name, ['Super User', 'Admin'])
+    );
+
+    $needInvoice = $canManageInvoice && ($request->boolean('need_invoice') || $request->input('need_invoice') === '1' || $request->input('filter') === 'need_invoice');
 
     $invoicedOrderItemIds = DB::table('invoice_items')
         ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')

@@ -155,6 +155,11 @@ type PageProps = {
             name: string;
             email: string;
             role_id: number;
+            role_name?: string | null;
+            role?: {
+                id: number;
+                name: string;
+            };
         };
     };
 };
@@ -214,13 +219,20 @@ function canItemRecordTemperature(order: Order, groupOrders?: Order[]): boolean 
 }
 
 export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
+    const { props } = usePage<PageProps>();
+    const roleId = props.auth?.user?.role_id;
+    const roleName = props.auth?.user?.role_name || props.auth?.user?.role?.name || '';
+    const isSuperAdmin = roleId === 1 || /super/i.test(roleName);
+    const isAdmin = roleId === 2 || /admin/i.test(roleName);
+    const canManageInvoice = Boolean(isSuperAdmin || isAdmin);
+
     const filters = rawFilters || {};
     const [search, setSearch] = useState(filters?.search ?? '');
     const [isTrashed, setIsTrashed] = useState(!!filters.trashed);
     const [dateFrom, setDateFrom] = useState(filters?.date_from ?? '');
     const [dateTo, setDateTo] = useState(filters?.date_to ?? '');
     const [perPage, setPerPage] = useState<string>(String(filters?.per_page || orders?.per_page || 25));
-    const [needInvoice, setNeedInvoice] = useState(Boolean(filters?.need_invoice));
+    const [needInvoice, setNeedInvoice] = useState(Boolean(canManageInvoice && filters?.need_invoice));
 
     // Sinkronkan state lokal jika props filter dari server berubah (misal saat kembali dari edit order)
     useEffect(() => {
@@ -229,8 +241,8 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
         setDateFrom(filters?.date_from ?? '');
         setDateTo(filters?.date_to ?? '');
         setPerPage(String(filters?.per_page || orders?.per_page || 25));
-        setNeedInvoice(Boolean(filters?.need_invoice));
-    }, [filters?.search, filters?.trashed, filters?.date_from, filters?.date_to, filters?.per_page, filters?.need_invoice, orders?.per_page]);
+        setNeedInvoice(Boolean(canManageInvoice && filters?.need_invoice));
+    }, [filters?.search, filters?.trashed, filters?.date_from, filters?.date_to, filters?.per_page, filters?.need_invoice, orders?.per_page, canManageInvoice]);
 
     // Helper untuk menyimpan URL halaman order saat ini (termasuk filter/search) sebagai parameter return_url
     const getReturnUrlQuery = () => {
@@ -410,9 +422,6 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
         );
     };
 
-    const { props } = usePage<PageProps>();
-    const roleId = props.auth?.user?.role_id;
-
     const handleSearch = () => {
         router.get('/orders', {
             search: search || undefined,
@@ -420,7 +429,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
             date_from: dateFrom || undefined,
             date_to: dateTo || undefined,
             per_page: perPage,
-            need_invoice: needInvoice ? '1' : undefined,
+            need_invoice: canManageInvoice && needInvoice ? '1' : undefined,
         });
     };
 
@@ -434,7 +443,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
                 date_from: dateFrom || undefined,
                 date_to: dateTo || undefined,
                 per_page: val,
-                need_invoice: needInvoice ? '1' : undefined,
+                need_invoice: canManageInvoice && needInvoice ? '1' : undefined,
             },
             {
                 preserveState: true,
@@ -615,7 +624,7 @@ function getNowLocalISO(): string {
                     date_from: filters.date_from,
                     date_to: filters.date_to,
                     per_page: perPage,
-                    need_invoice: filters.need_invoice,
+                    need_invoice: canManageInvoice && filters.need_invoice ? '1' : undefined,
                 })}
                 className="flex items-center gap-1 font-semibold text-gray-700 hover:text-black"
             >
@@ -642,7 +651,7 @@ function getNowLocalISO(): string {
             date_from: dateFrom || undefined,
             date_to: dateTo || undefined,
             per_page: perPage,
-            need_invoice: needInvoice ? '1' : undefined,
+            need_invoice: canManageInvoice && needInvoice ? '1' : undefined,
         });
     };
 
@@ -743,7 +752,7 @@ function getNowLocalISO(): string {
                                             date_to: endDate,
                                             trashed: filters.trashed,
                                             per_page: perPage,
-                                            need_invoice: needInvoice ? '1' : undefined,
+                                            need_invoice: canManageInvoice && needInvoice ? '1' : undefined,
                                         },
                                         { preserveState: true, replace: true }
                                     );
@@ -755,31 +764,33 @@ function getNowLocalISO(): string {
 
                             {/* Tombol Aksi Filter & Reset */}
                             <div className="flex items-center gap-2 shrink-0">
-                                <Button
-                                    size="sm"
-                                    variant={needInvoice ? 'default' : 'outline'}
-                                    onClick={() => {
-                                        const next = !needInvoice;
-                                        setNeedInvoice(next);
-                                        router.get('/orders', {
-                                            search: search || undefined,
-                                            trashed: filters.trashed,
-                                            date_from: dateFrom || undefined,
-                                            date_to: dateTo || undefined,
-                                            per_page: perPage,
-                                            need_invoice: next ? '1' : undefined,
-                                        });
-                                    }}
-                                    className={`h-9 text-xs px-3 gap-1.5 font-semibold transition-colors ${
-                                        needInvoice
-                                            ? 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-2xs'
-                                            : 'text-blue-700 hover:bg-blue-50 border-blue-200'
-                                    }`}
-                                    title="Filter order yang kontainernya sudah Gate In & Gate Out dan belum dibuatkan invoice"
-                                >
-                                    <Receipt className="h-3.5 w-3.5" />
-                                    <span>Perlu Diinvoicekan</span>
-                                </Button>
+                                {canManageInvoice && (
+                                    <Button
+                                        size="sm"
+                                        variant={needInvoice ? 'default' : 'outline'}
+                                        onClick={() => {
+                                            const next = !needInvoice;
+                                            setNeedInvoice(next);
+                                            router.get('/orders', {
+                                                search: search || undefined,
+                                                trashed: filters.trashed,
+                                                date_from: dateFrom || undefined,
+                                                date_to: dateTo || undefined,
+                                                per_page: perPage,
+                                                need_invoice: next ? '1' : undefined,
+                                            });
+                                        }}
+                                        className={`h-9 text-xs px-3 gap-1.5 font-semibold transition-colors ${
+                                            needInvoice
+                                                ? 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-2xs'
+                                                : 'text-blue-700 hover:bg-blue-50 border-blue-200'
+                                        }`}
+                                        title="Filter order yang kontainernya sudah Gate In & Gate Out dan belum dibuatkan invoice"
+                                    >
+                                        <Receipt className="h-3.5 w-3.5" />
+                                        <span>Perlu Diinvoicekan</span>
+                                    </Button>
+                                )}
                                 <Button size="sm" onClick={handleSearch} className="h-9 text-xs px-3.5 bg-gray-900 hover:bg-black text-white gap-1.5">
                                     <Search className="h-3.5 w-3.5" />
                                     Filter
@@ -807,7 +818,7 @@ function getNowLocalISO(): string {
                     </div>
 
                     {/* Active Filter Banner when needInvoice is active */}
-                    {needInvoice && (
+                    {canManageInvoice && needInvoice && (
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl bg-blue-50 border border-blue-200 p-4 text-xs text-blue-900 shadow-xs">
                             <div className="flex items-center gap-2.5">
                                 <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse shrink-0"></span>

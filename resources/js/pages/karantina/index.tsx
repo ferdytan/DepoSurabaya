@@ -268,23 +268,10 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
         console.log('Semua data orders:', orders.data);
     }, [orders.data]);
 
-    const handlePrint = () => {
-        // Use the already filtered orders for printing
-        if (filteredOrders.length === 0) {
-            alert('Tidak ada data yang sesuai filter untuk dicetak.');
-            return;
-        }
+    const [isPrinting, setIsPrinting] = useState(false);
 
-        // Format label periode
-        const startLabel = startDate ? new Date(startDate).toLocaleDateString('id-ID') : 'Semua';
-        const endLabel = endDate ? new Date(endDate).toLocaleDateString('id-ID') : 'Semua';
-        const periodLabel = `${startLabel} s/d ${endLabel}`;
-
-        const logoUrl = '/logo.png'; // pastikan path benar
-
-        const img = new Image();
-        img.src = logoUrl;
-
+    const handlePrint = async () => {
+        // Buka jendela cetak segera agar tidak diblokir browser popup blocker
         const printWindow = window.open('', '_blank');
         if (!printWindow) {
             alert('Gagal membuka jendela cetak. Pastikan popup tidak diblokir.');
@@ -292,13 +279,81 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
         }
 
         printWindow.document.write(`
-        <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-            Memuat logo...
-        </div>
-    `);
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Menyiapkan Billing Statement...</title>
+                <style>
+                    body {
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 70vh;
+                        color: #334155;
+                        margin: 0;
+                    }
+                    .spinner {
+                        width: 36px;
+                        height: 36px;
+                        border: 3px solid #e2e8f0;
+                        border-top-color: #059669;
+                        border-radius: 50%;
+                        animation: spin 0.8s linear infinite;
+                        margin-bottom: 14px;
+                    }
+                    @keyframes spin {
+                        to { transform: rotate(360deg); }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="spinner"></div>
+                <div style="font-size: 15px; font-weight: 600;">Memuat semua data kontainer untuk dicetak...</div>
+                <div style="font-size: 12px; color: #64748b; margin-top: 5px;">Total data: ${orders.total ?? filteredOrders.length} kontainer</div>
+            </body>
+            </html>
+        `);
         printWindow.document.close();
 
-        img.onload = () => {
+        setIsPrinting(true);
+
+        try {
+            // Ambil semua data kontainer yang sesuai filter aktif dari backend
+            const params = new URLSearchParams();
+            if (search) params.append('search', search);
+            if (startDate) params.append('start_date', startDate);
+            if (endDate) params.append('end_date', endDate);
+            if (filters.trashed) params.append('trashed', filters.trashed);
+            if (filters.sort_by) params.append('sort_by', filters.sort_by);
+            if (filters.sort_dir) params.append('sort_dir', filters.sort_dir);
+            if (selectedProductIds.length > 0) {
+                selectedProductIds.forEach((pid) => params.append('product_ids[]', pid.toString()));
+            }
+
+            const res = await fetch(`/karantina/print-data?${params.toString()}`);
+            if (!res.ok) throw new Error('Gagal mengambil data dari server');
+            const json = await res.json();
+            const allPrintData = json.data || [];
+
+            if (allPrintData.length === 0) {
+                printWindow.document.body.innerHTML = `
+                    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+                        <p style="color: #ef4444; font-weight: 600;">Tidak ada data yang sesuai filter untuk dicetak.</p>
+                        <button onclick="window.close()" style="padding: 6px 12px; cursor: pointer;">Tutup</button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Format label periode
+            const startLabel = startDate ? new Date(startDate).toLocaleDateString('id-ID') : 'Semua';
+            const endLabel = endDate ? new Date(endDate).toLocaleDateString('id-ID') : 'Semua';
+            const periodLabel = `${startLabel} s/d ${endLabel}`;
+            const logoUrl = '/logo.png';
+
             const html = `
             <!DOCTYPE html>
             <html>
@@ -320,6 +375,7 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                     .logo {
                         width: 70px;
                         height: 70px;
+                        object-fit: contain;
                     }
                     .company-info {
                         font-size: 14px;
@@ -330,16 +386,19 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                     .customer-info {
                         margin-top: 10px;
                         font-size: 14px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
                     }
                     table {
                         width: 100%;
                         border-collapse: collapse;
-                        margin-top: 20px;
+                        margin-top: 15px;
                         font-size: 12px;
                     }
                     th, td {
                         border: 1px solid #000;
-                        padding: 8px 10px;
+                        padding: 7px 8px;
                         text-align: left;
                     }
                     th {
@@ -348,15 +407,6 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                     }
                     .text-gray-400 {
                         color: #9ca3af;
-                    }
-                    .bg-yellow-100 {
-                        background-color: #fef3c7;
-                        padding: 4px 6px;
-                        border-radius: 4px;
-                        font-size: 11px;
-                    }
-                    .text-yellow-800 {
-                        color: #854d0e;
                     }
                     @media print {
                         @page {
@@ -381,13 +431,18 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                 </div>
 
                 <div class="customer-info">
-                    <strong>Periode:</strong> ${periodLabel}<br>
-                  
+                    <div>
+                        <strong>Periode:</strong> ${periodLabel}
+                    </div>
+                    <div style="font-size: 12px; color: #555;">
+                        Total: <strong>${allPrintData.length}</strong> Kontainer
+                    </div>
                 </div>
 
                 <table>
                     <thead>
                         <tr>
+                            <th style="width: 35px; text-align: center;">No</th>
                             <th>Nomor Kontainer</th>
                             <th>Nama Shipper</th>
                             <th>Size</th>
@@ -399,42 +454,50 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                         </tr>
                     </thead>
                     <tbody>
-                        ${filteredOrders
+                        ${allPrintData
                             .map(
-                                (order) => `
+                                (item: any, idx: number) => `
                             <tr>
-                                <td>${order.container_number}</td>
-                                <td>${order.order?.shipper?.name ?? '-'}</td>
-                                <td>${formatContainerSize(order.price_type)}</td>
-                                <td>${order.entry_date ? formatKarantinaDateTimeString(order.entry_date) : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${order.exit_date ? formatKarantinaDateTimeString(order.exit_date) : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${order.commodity ?? '-'}</td>
-                                <td>${order.country ?? '-'}</td>
+                                <td style="text-align: center;">${idx + 1}</td>
+                                <td style="font-weight: 600;">${item.container_number}</td>
+                                <td>${item.shipper_name ?? '-'}</td>
+                                <td>${formatContainerSize(item.price_type)}</td>
+                                <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${item.exit_date ? formatKarantinaDateTimeString(item.exit_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${item.commodity ?? '-'}</td>
+                                <td>${item.country ?? '-'}</td>
                                 <td>
-    ${order.order?.fumigasi ? (order.order.fumigasi.length > 50 ? order.order.fumigasi.substring(0, 50) + '...' : order.order.fumigasi) : '–'}
-</td>
+                                    ${item.fumigasi ? (item.fumigasi.length > 50 ? item.fumigasi.substring(0, 50) + '...' : item.fumigasi) : '–'}
+                                </td>
                             </tr>
                         `,
                             )
                             .join('')}
                     </tbody>
                 </table>
-
             </body>
             </html>
-        `;
+            `;
 
+            printWindow.document.open();
             printWindow.document.write(html);
             printWindow.document.close();
-            printWindow.focus();
 
-            setTimeout(() => printWindow.print(), 300);
-        };
-
-        img.onerror = () => {
-            alert('Gagal memuat logo. Pastikan file /logo.png ada di folder public.');
-            printWindow.close();
-        };
+            setTimeout(() => {
+                printWindow.focus();
+                printWindow.print();
+            }, 300);
+        } catch (err) {
+            console.error('Error saat cetak billing statement:', err);
+            printWindow.document.body.innerHTML = `
+                <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+                    <p style="color: #ef4444; font-weight: 600;">Terjadi kesalahan saat memuat seluruh data kontainer.</p>
+                    <button onclick="window.close()" style="padding: 6px 12px; cursor: pointer;">Tutup</button>
+                </div>
+            `;
+        } finally {
+            setIsPrinting(false);
+        }
     };
 
     const { props } = usePage<PageProps>();
@@ -585,11 +648,12 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                     <div className="flex flex-wrap items-center gap-2">
                         <Button
                             type="button"
+                            disabled={isPrinting}
                             onClick={handlePrint}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm"
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm disabled:opacity-75"
                         >
-                            <PrinterIcon className="mr-2 h-4 w-4" />
-                            Cetak Billing Statement
+                            <PrinterIcon className={`mr-2 h-4 w-4 ${isPrinting ? 'animate-spin' : ''}`} />
+                            {isPrinting ? 'Menyiapkan Data...' : 'Cetak Billing Statement'}
                         </Button>
                     </div>
                 </div>

@@ -74,6 +74,21 @@ class OrderController extends Controller
         $query->where('entry_date', '<=', $dateTo . ' 23:59:59');
     }
 
+    // 🧾 Filter Order yang Perlu Diinvoicekan (Kontainer sudah Gate In & Gate Out, dan belum di-invoice)
+    $needInvoice = $request->boolean('need_invoice') || $request->input('need_invoice') === '1' || $request->input('filter') === 'need_invoice';
+
+    $invoicedOrderItemIds = DB::table('invoice_items')
+        ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')
+        ->whereNull('invoices.deleted_at')
+        ->pluck('invoice_items.order_item_id')
+        ->toArray();
+
+    if ($needInvoice) {
+        $query->whereNotNull('entry_date')
+              ->whereNotNull('exit_date')
+              ->whereNotIn('id', $invoicedOrderItemIds);
+    }
+
     // Urutkan
     $orders = $query->latest()->paginate($perPage)->withQueryString();
 
@@ -87,7 +102,7 @@ class OrderController extends Controller
     };
 
     // Transform untuk tambahkan temperature dan status layanan suhu
-    $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService) {
+    $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService, $invoicedOrderItemIds) {
         $data = $item->toArray();
         $data['temperature'] = [];
         foreach ($item->rekamSuhu as $rekam) {
@@ -133,6 +148,7 @@ class OrderController extends Controller
 
         $data['has_temperature_service'] = $itemHasTempService;
         $data['order_has_temperature_service'] = $orderHasTempService;
+        $data['is_invoiced'] = in_array($item->id, $invoicedOrderItemIds);
 
         return $data;
     });
@@ -145,6 +161,7 @@ class OrderController extends Controller
             'date_from' => $dateFrom,
             'date_to' => $dateTo,
             'per_page' => $perPage,
+            'need_invoice' => $needInvoice ? '1' : '',
         ],
         'flash' => [
             'success' => session('success'),
@@ -154,10 +171,10 @@ class OrderController extends Controller
 }
 
 
- public function index_karantina(Request $request)
+    protected function getKarantinaQuery(Request $request)
     {
         $trashed = $request->input('trashed');
-        $search = $request->input('search');  // Tambahkan search
+        $search = $request->input('search');
         $startDate = $request->input('start_date');
         $endDate = $request->input('end_date');
 
@@ -171,12 +188,10 @@ class OrderController extends Controller
         }
 
         $query = OrderItem::with([
-            'order:id,customer_id,shipper_id,fumigasi',
+            'order:id,customer_id,shipper_id,fumigasi,no_aju,order_id',
             'order.customer:id,name',
             'order.shipper:id,name',
-            'product',
-            'additionalProducts',
-            'rekamSuhu'
+            'product:id,service_type',
         ])
         ->whereHas('order', function ($q) {
             $q->whereNotNull('fumigasi')
@@ -198,19 +213,17 @@ class OrderController extends Controller
             });
         }
 
-        // Tambahkan filter pencarian (fumigator, shipper, customer, container number)
+        // Tambahkan filter pencarian (fumigator, shipper, customer, container number, no_aju, order_id)
         if ($search) {
             $query->where(function ($q) use ($search) {
                 $q->whereHas('order', function ($q) use ($search) {
-                    $q->where('fumigasi', 'like', "%{$search}%")  // Fumigator
-                      ->orWhereHas('shipper', function ($q) use ($search) {
-                          $q->where('name', 'like', "%{$search}%");  // Shipper
-                      })
-                      ->orWhereHas('customer', function ($q) use ($search) {
-                          $q->where('name', 'like', "%{$search}%");  // Customer
-                      });
+                    $q->where('fumigasi', 'like', "%{$search}%")
+                      ->orWhere('no_aju', 'like', "%{$search}%")
+                      ->orWhere('order_id', 'like', "%{$search}%")
+                      ->orWhereHas('shipper', fn($q) => $q->where('name', 'like', "%{$search}%"))
+                      ->orWhereHas('customer', fn($q) => $q->where('name', 'like', "%{$search}%"));
                 })
-                ->orWhere('container_number', 'like', "%{$search}%");  // Container number
+                ->orWhere('container_number', 'like', "%{$search}%");
             });
         }
 
@@ -257,6 +270,29 @@ class OrderController extends Controller
             $query->latest();
         }
 
+        return $query;
+    }
+
+    public function index_karantina(Request $request)
+    {
+        $trashed = $request->input('trashed');
+        $search = $request->input('search');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+        $sortBy = $request->input('sort_by');
+        $sortDir = strtolower($request->input('sort_dir', 'asc')) === 'desc' ? 'desc' : 'asc';
+
+        $productParam = $request->input('product_ids', $request->input('products'));
+        $productIds = [];
+        if (is_array($productParam)) {
+            $productIds = array_values(array_filter(array_map('intval', $productParam)));
+        } elseif (is_string($productParam) && trim($productParam) !== '') {
+            $productIds = array_values(array_filter(array_map('intval', explode(',', $productParam))));
+        }
+
+        $query = $this->getKarantinaQuery($request)
+            ->with(['additionalProducts', 'rekamSuhu']);
+
         $orders = $query->paginate(25)->withQueryString();
 
         $orders->getCollection()->transform(function ($item) {
@@ -270,6 +306,7 @@ class OrderController extends Controller
             $data['fumigasi'] = $item->order->fumigasi ?? null;
             $data['customer_name'] = $item->order->customer ? $item->order->customer->name : '-';
             $data['shipper_name'] = $item->order->shipper ? $item->order->shipper->name : '-';
+            $data['no_aju'] = $item->order->no_aju ?? null;
 
             return $data;
         });
@@ -277,7 +314,7 @@ class OrderController extends Controller
         return Inertia::render('karantina/index', [
             'orders' => $orders,
             'products' => Product::orderBy('service_type')->get(['id', 'service_type']),
-            'customers' => Customer::orderBy('name')->get(['id', 'name']), // Masih dibutuhkan untuk select filter
+            'customers' => Customer::orderBy('name')->get(['id', 'name']),
             'filters' => [
                 'search' => $search,
                 'trashed' => $trashed,
@@ -291,6 +328,33 @@ class OrderController extends Controller
                 'success' => session('success'),
                 'error' => session('error'),
             ],
+        ]);
+    }
+
+    public function karantina_print_data(Request $request)
+    {
+        @ini_set('memory_limit', '512M');
+        $query = $this->getKarantinaQuery($request);
+
+        $items = $query->get()->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'container_number' => $item->container_number,
+                'shipper_name' => $item->order?->shipper?->name ?? '-',
+                'customer_name' => $item->order?->customer?->name ?? '-',
+                'price_type' => $item->price_type,
+                'entry_date' => $item->entry_date ? (string) $item->entry_date : null,
+                'exit_date' => $item->exit_date ? (string) $item->exit_date : null,
+                'commodity' => $item->commodity ?? '-',
+                'country' => $item->country ?? '-',
+                'fumigasi' => $item->order?->fumigasi ?? null,
+                'no_aju' => $item->order?->no_aju ?? null,
+            ];
+        });
+
+        return response()->json([
+            'data' => $items,
+            'total' => $items->count(),
         ]);
     }
 

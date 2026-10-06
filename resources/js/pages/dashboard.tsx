@@ -115,6 +115,8 @@ interface KpiData {
     fumigasi_aktif: number;
     fumigasi_selesai?: number;
     fumigasi_total?: number;
+    order_perlu_invoice?: number;
+    container_perlu_invoice?: number;
 }
 
 interface InvoiceStats {
@@ -474,8 +476,8 @@ function AdminOverviewDashboard({
                     </div>
                 </div>
 
-                {/* Secondary Row: Karantina & Finansial (Hanya Superadmin yg Melihat Finansial) */}
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                {/* Secondary Row: Karantina, Operasional / Finansial, & Order Perlu Diinvoicekan */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {/* Karantina Aktif Card */}
                     <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
                         <div className="space-y-1">
@@ -578,6 +580,34 @@ function AdminOverviewDashboard({
                             </div>
                         </>
                     )}
+
+                    {/* Card: Order Perlu Diinvoicekan (Klik untuk ke /orders yang difilter) */}
+                    <Link
+                        href="/orders?need_invoice=1"
+                        className="group flex items-center justify-between rounded-xl border border-blue-200/90 bg-white p-5 shadow-sm transition-all hover:border-blue-400 hover:shadow-md cursor-pointer"
+                        title="Klik untuk melihat order yang perlu di-invoicekan"
+                    >
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-1.5">
+                                <span className="text-xs font-semibold uppercase tracking-wider text-blue-700">
+                                    Order Perlu Diinvoicekan
+                                </span>
+                                <ExternalLink className="h-3 w-3 text-blue-400 group-hover:text-blue-600 transition-colors" />
+                            </div>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-2xl font-bold text-gray-800 group-hover:text-blue-900 transition-colors">
+                                    {kpi.order_perlu_invoice ?? 0}
+                                </span>
+                                <span className="text-xs font-medium text-gray-500">Order</span>
+                            </div>
+                            <p className="text-xs text-gray-500 group-hover:text-gray-700 transition-colors">
+                                {kpi.container_perlu_invoice ?? 0} kontainer (Gate In & Out)
+                            </p>
+                        </div>
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <FileText className="h-6 w-6" />
+                        </div>
+                    </Link>
                 </div>
 
                 {/* Interactive Tabbed Container Table */}

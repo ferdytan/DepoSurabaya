@@ -32,6 +32,7 @@ interface OrderItem {
 interface Order {
     id: number;
     order_id: string;
+    no_aju?: string | null;
 }
 
 interface Customer {

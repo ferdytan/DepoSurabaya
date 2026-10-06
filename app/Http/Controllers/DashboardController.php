@@ -64,6 +64,19 @@ class DashboardController extends Controller
             })->orWhereHas('rekamSuhu');
         })->count();
 
+        // Kontainer yang perlu di-invoicekan: sudah gate in DAN gate out, dan belum pernah dibuatkan invoice
+        $invoicedOrderItemIds = DB::table('invoice_items')
+            ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')
+            ->whereNull('invoices.deleted_at')
+            ->pluck('invoice_items.order_item_id');
+
+        $queryPerluInvoice = OrderItem::whereNotNull('entry_date')
+            ->whereNotNull('exit_date')
+            ->whereNotIn('id', $invoicedOrderItemIds);
+
+        $jumlahContainerPerluInvoice = (clone $queryPerluInvoice)->count();
+        $jumlahOrderPerluInvoice = (clone $queryPerluInvoice)->distinct('order_id')->count('order_id');
+
         // 2. ANALITIK BULANAN (6 BULAN TERAKHIR)
         $monthlyThroughput = [];
         for ($i = 5; $i >= 0; $i--) {
@@ -213,6 +226,8 @@ class DashboardController extends Controller
                 'fumigasi_aktif' => $jumlahFumigasiAktif,
                 'fumigasi_selesai' => $jumlahFumigasiSelesai,
                 'fumigasi_total' => $jumlahFumigasiTotal,
+                'order_perlu_invoice' => $jumlahOrderPerluInvoice,
+                'container_perlu_invoice' => $jumlahContainerPerluInvoice,
             ],
             'analytics' => [
                 'monthly_throughput' => $monthlyThroughput,

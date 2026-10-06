@@ -91,6 +91,7 @@ function isPlugService(serviceType?: string, requiresTemperature?: number | bool
 interface Order {
     id: number;
     order_id: string;
+    no_aju?: string | null;
     order_items: OrderItem[];
 }
 
@@ -1007,7 +1008,7 @@ export default function EditInvoice() {
                         {availableOrderItems && availableOrderItems.length > 0 && (
                             <div className="rounded-xl border bg-white p-5 shadow-sm space-y-3">
                                 <Label className="text-base font-semibold text-gray-900">
-                                    Tambah Kontainer Lain dari Order #{order?.order_id || '-'}
+                                    Tambah Kontainer Lain dari {order?.no_aju && order.no_aju.trim() !== '' && order.no_aju !== '-' ? `AJU: ${order.no_aju}` : `Order #${order?.order_id || '-'}`}
                                 </Label>
 
                                 <div className="space-y-2">

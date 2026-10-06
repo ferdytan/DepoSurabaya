@@ -69,6 +69,7 @@ function isPlugService(serviceType?: string, requiresTemperature?: number | bool
 interface Order {
     id: number;
     order_id: string;
+    no_aju?: string | null;
     container_number?: string;
     price_value?: number;
     entry_date?: string | null;
@@ -250,9 +251,11 @@ export default function CreateInvoice() {
     const orderOptions = useMemo(() => {
         return orders.map((o) => {
             const containers = o.order_items?.map((it) => it.container_number).filter(Boolean).join(', ');
+            const hasAju = Boolean(o.no_aju && o.no_aju.trim() !== '' && o.no_aju !== '-');
+            const displayTitle = hasAju ? `AJU: ${o.no_aju}` : `Order #${o.order_id}`;
             return {
                 value: o.id.toString(),
-                label: `Order #${o.order_id}`,
+                label: displayTitle,
                 subLabel: containers ? `Kontainer: ${containers}` : `${o.order_items?.length || 0} item`,
             };
         });
@@ -810,7 +813,7 @@ export default function CreateInvoice() {
                                                                 key={o.id}
                                                                 className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-900 shadow-2xs"
                                                             >
-                                                                <span>Order #{o.order_id}</span>
+                                                                <span>{o.no_aju && o.no_aju.trim() !== '' && o.no_aju !== '-' ? `AJU: ${o.no_aju}` : `Order #${o.order_id}`}</span>
                                                                 <span className="text-[11px] font-normal text-gray-500">
                                                                     ({o.order_items?.length || 0} kontainer)
                                                                 </span>
@@ -834,9 +837,10 @@ export default function CreateInvoice() {
                                                                         ?.map((it) => it.container_number)
                                                                         .filter(Boolean)
                                                                         .join(', ');
+                                                                    const title = o.no_aju && o.no_aju.trim() !== '' && o.no_aju !== '-' ? `AJU: ${o.no_aju}` : `Order #${o.order_id}`;
                                                                     return {
                                                                         value: o.id.toString(),
-                                                                        label: `+ Tambah Order #${o.order_id}`,
+                                                                        label: `+ Tambah ${title}`,
                                                                         subLabel: containers
                                                                             ? `Kontainer: ${containers}`
                                                                             : `${o.order_items?.length || 0} item`,
@@ -974,7 +978,7 @@ export default function CreateInvoice() {
                                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200/80 pb-3">
                                                     <div className="flex items-center gap-2.5">
                                                         <span className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-bold text-gray-900 border border-gray-200">
-                                                            Order #{order.order_id}
+                                                            {order.no_aju && order.no_aju.trim() !== '' && order.no_aju !== '-' ? `AJU: ${order.no_aju}` : `Order #${order.order_id}`}
                                                         </span>
                                                         <span className="text-xs text-gray-500">
                                                             ({orderSelectedCount} dari {order.order_items?.length || 0} kontainer dipilih)
@@ -1235,9 +1239,10 @@ export default function CreateInvoice() {
                                                                 ?.map((it) => it.container_number)
                                                                 .filter(Boolean)
                                                                 .join(', ');
+                                                            const title = o.no_aju && o.no_aju.trim() !== '' && o.no_aju !== '-' ? `AJU: ${o.no_aju}` : `Order #${o.order_id}`;
                                                             return {
                                                                 value: o.id.toString(),
-                                                                label: `+ Gabungkan Order #${o.order_id}`,
+                                                                label: `+ Gabungkan ${title}`,
                                                                 subLabel: containers
                                                                     ? `Kontainer: ${containers}`
                                                                     : `${o.order_items?.length || 0} item`,

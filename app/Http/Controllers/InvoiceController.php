@@ -43,6 +43,10 @@ class InvoiceController extends Controller
                     ->orWhereHas('items', function ($q) use ($search) {
                         $q->whereRaw("JSON_CONTAINS(additional_products, ?)", ['"' . $search . '"']);
                     })
+                    ->orWhereHas('items.orderItem.order', function ($q) use ($search) {
+                        $q->where('no_aju', 'like', "%{$search}%")
+                          ->orWhere('order_id', 'like', "%{$search}%");
+                    })
                     ->orWhereRaw("LOWER(status) LIKE ?", ["%{$lowerSearch}%"])
                     ->orWhereRaw("CAST(grand_total AS CHAR) LIKE ?", ["%{$search}%"]);
                 });
@@ -182,7 +186,7 @@ class InvoiceController extends Controller
             })
             ->with([
                 'orders' => function ($q) use ($invoicedOrderItemIds) {
-                    $q->select('id', 'order_id', 'customer_id')
+                    $q->select('id', 'order_id', 'no_aju', 'customer_id')
                         ->whereHas('order_items', function ($iq) use ($invoicedOrderItemIds) {
                             if (!empty($invoicedOrderItemIds)) {
                                 $iq->whereNotIn('id', $invoicedOrderItemIds);
@@ -469,18 +473,29 @@ class InvoiceController extends Controller
         // Muat ulang invoice dengan payload yang dibutuhkan UI (tanpa mengubah relasi lama)
         $invoice = Invoice::withShowPayload()->findOrFail($invoice->id);
 
-        // Ambil semua nomor order yang terkait invoice untuk header
+        // Ambil semua nomor order/AJU yang terkait invoice untuk header
         $orderNumbers = $invoice->itemsWithOrder
-            ->map(fn($it) => $it->orderItem?->order?->order_id)
+            ->map(function ($it) {
+                $order = $it->orderItem?->order;
+                if (!$order) return null;
+                return (!empty($order->no_aju) && trim($order->no_aju) !== '' && $order->no_aju !== '-')
+                    ? $order->no_aju
+                    : $order->order_id;
+            })
             ->filter()
             ->unique()
             ->values()
             ->implode(', ');
 
         $firstOrder = $invoice->firstOrder();
+        $firstOrderNumber = (!empty($firstOrder?->no_aju) && trim($firstOrder->no_aju) !== '' && $firstOrder->no_aju !== '-')
+            ? $firstOrder->no_aju
+            : ($firstOrder?->order_id ?? '-');
+
         $orderPayload = [
             'id'       => $firstOrder?->id ?? 0,
-            'order_id' => !empty($orderNumbers) ? $orderNumbers : ($firstOrder?->order_id ?? '-'),
+            'order_id' => !empty($orderNumbers) ? $orderNumbers : $firstOrderNumber,
+            'no_aju'   => $firstOrder?->no_aju,
         ];
 
         $invoice->loadMissing(['items.orderItem.order']);
@@ -1106,10 +1121,14 @@ class InvoiceController extends Controller
             $validated['period_end'] = $effectiveDate;
         }
 
-        // Kumpulkan semua nomor order yang terkait dengan kontainer-kontainer yang dipilih
+        // Kumpulkan semua nomor order/AJU yang terkait dengan kontainer-kontainer yang dipilih
         $orderIds = $orderItems->pluck('order_id')->filter()->unique()->values();
         $orders = Order::whereIn('id', $orderIds)->get();
-        $orderIdStrings = $orders->pluck('order_id')->filter()->unique()->values()->implode(', ');
+        $orderIdStrings = $orders->map(function ($o) {
+            return (!empty($o->no_aju) && trim($o->no_aju) !== '' && $o->no_aju !== '-')
+                ? $o->no_aju
+                : $o->order_id;
+        })->filter()->unique()->values()->implode(', ');
 
         $subtotal = 0;
         foreach ($orderItems as $item) {
@@ -1162,7 +1181,8 @@ class InvoiceController extends Controller
             'invoice_number' => $previewInvoiceNumber,
             'order'          => [
                 'id'          => $orders->first()?->id ?? ($validated['order_id'] ?? 0),
-                'order_id'    => !empty($orderIdStrings) ? $orderIdStrings : ($orders->first()?->order_id ?? '-'),
+                'order_id'    => !empty($orderIdStrings) ? $orderIdStrings : ((!empty($orders->first()?->no_aju) && trim($orders->first()?->no_aju) !== '' && $orders->first()?->no_aju !== '-') ? $orders->first()?->no_aju : ($orders->first()?->order_id ?? '-')),
+                'no_aju'      => $orders->first()?->no_aju,
                 'order_items' => $orderItems->toArray(),
             ],
             'period_start'   => $validated['period_start'],

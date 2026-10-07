@@ -12,10 +12,22 @@ class Product extends Model
 
     protected $fillable = [
         'service_type',
+        'price_20ft',
+        'price_40ft',
+        'price_45ft',
+        'price_global',
         'tariff_20ft',
         'tariff_40ft',
         'description',
         'requires_temperature'
+    ];
+
+    protected $casts = [
+        'price_20ft' => 'float',
+        'price_40ft' => 'float',
+        'price_45ft' => 'float',
+        'price_global' => 'float',
+        'requires_temperature' => 'integer',
     ];
 
     public function customers()

@@ -22,7 +22,7 @@ class ProductController extends Controller
         }
 
         // Sorting
-        $allowedSorts = ['service_type', 'requires_temperature', 'description'];
+        $allowedSorts = ['service_type', 'requires_temperature', 'description', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global'];
         if ($request->filled('sort_by')) {
             $sortBy = in_array($request->sort_by, $allowedSorts) ? $request->sort_by : 'service_type';
             $sortDir = $request->input('sort_dir', 'asc');
@@ -47,7 +47,16 @@ class ProductController extends Controller
 
         $products = Product::when($query, function ($q) use ($query) {
             $q->where('service_type', 'like', "%$query%");
-        })->get(['id', 'service_type as name']);
+        })->get([
+            'id',
+            'service_type as name',
+            'service_type',
+            'requires_temperature',
+            'price_20ft',
+            'price_40ft',
+            'price_45ft',
+            'price_global'
+        ]);
 
         return response()->json($products);
     }
@@ -69,12 +78,20 @@ class ProductController extends Controller
             'service_type' => 'required|string|max:255',
             'description' => 'nullable|string',
             'requires_temperature' => 'required|in:0,1', // Terima 0 dan 1
+            'price_20ft' => 'nullable|numeric|min:0',
+            'price_40ft' => 'nullable|numeric|min:0',
+            'price_45ft' => 'nullable|numeric|min:0',
+            'price_global' => 'nullable|numeric|min:0',
         ]);
 
         Product::create([
             'service_type' => $validated['service_type'],
             'description' => $validated['description'] ?? null,
-            'requires_temperature' => $validated['requires_temperature'], // Gunakan langsung nilai validasi
+            'requires_temperature' => $validated['requires_temperature'],
+            'price_20ft' => $validated['price_20ft'] ?? null,
+            'price_40ft' => $validated['price_40ft'] ?? null,
+            'price_45ft' => $validated['price_45ft'] ?? null,
+            'price_global' => $validated['price_global'] ?? null,
         ]);
 
         $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));
@@ -99,13 +116,21 @@ class ProductController extends Controller
         $validated = $request->validate([
             'service_type' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'requires_temperature' => 'required|in:0,1', // Pastikan selalu divalidasi
+            'requires_temperature' => 'required|in:0,1',
+            'price_20ft' => 'nullable|numeric|min:0',
+            'price_40ft' => 'nullable|numeric|min:0',
+            'price_45ft' => 'nullable|numeric|min:0',
+            'price_global' => 'nullable|numeric|min:0',
         ]);
 
         $product->update([
             'service_type' => $validated['service_type'],
             'description' => $validated['description'] ?? null,
             'requires_temperature' => $validated['requires_temperature'],
+            'price_20ft' => $validated['price_20ft'] ?? null,
+            'price_40ft' => $validated['price_40ft'] ?? null,
+            'price_45ft' => $validated['price_45ft'] ?? null,
+            'price_global' => $validated['price_global'] ?? null,
         ]);
 
         $returnUrl = $request->input('return_url') ?: session('products_index_url', route('products.index'));

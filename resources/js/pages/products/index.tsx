@@ -52,6 +52,10 @@ type Product = {
     service_type: string;
     description: string | null;
     requires_temperature: number;
+    price_20ft?: number | string | null;
+    price_40ft?: number | string | null;
+    price_45ft?: number | string | null;
+    price_global?: number | string | null;
 };
 
 type Props = {
@@ -106,6 +110,13 @@ const SortButton = ({ label, field, currentSort, currentDir, trashed, search }: 
         </Link>
     );
 };
+
+function formatRupiah(val?: number | string | null) {
+    if (val === undefined || val === null || val === '') return '-';
+    const num = Number(val);
+    if (isNaN(num) || num === 0) return '-';
+    return `Rp ${num.toLocaleString('id-ID')}`;
+}
 
 export default function ProductsIndex({ products, filters }: Props) {
     const [search, setSearch] = useState(filters.search || '');
@@ -249,6 +260,42 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 search={filters.search}
                                             />
                                         </TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                            <SortButton
+                                                label="Tarif 20'"
+                                                field="price_20ft"
+                                                currentSort={filters.sort_by}
+                                                currentDir={filters.sort_dir}
+                                                search={filters.search}
+                                            />
+                                        </TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                            <SortButton
+                                                label="Tarif 40'"
+                                                field="price_40ft"
+                                                currentSort={filters.sort_by}
+                                                currentDir={filters.sort_dir}
+                                                search={filters.search}
+                                            />
+                                        </TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                            <SortButton
+                                                label="Tarif 45'"
+                                                field="price_45ft"
+                                                currentSort={filters.sort_by}
+                                                currentDir={filters.sort_dir}
+                                                search={filters.search}
+                                            />
+                                        </TableHead>
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                            <SortButton
+                                                label="Tarif Global"
+                                                field="price_global"
+                                                currentSort={filters.sort_by}
+                                                currentDir={filters.sort_dir}
+                                                search={filters.search}
+                                            />
+                                        </TableHead>
                                         <TableHead className="font-semibold text-xs text-gray-700 py-3.5">
                                             <SortButton
                                                 label="Keterangan"
@@ -266,7 +313,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                 <TableBody>
                                     {products.data.length === 0 ? (
                                         <TableRow>
-                                            <TableCell colSpan={4} className="py-12 text-center text-xs text-gray-500">
+                                            <TableCell colSpan={8} className="py-12 text-center text-xs text-gray-500">
                                                 <div className="flex flex-col items-center justify-center space-y-2">
                                                     <Package className="h-8 w-8 text-gray-300" />
                                                     <span>Tidak ada produk layanan yang ditemukan.</span>
@@ -282,16 +329,28 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 <TableCell className="py-3.5">
                                                     {product.requires_temperature === 1 ? (
                                                         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                                                            <Check className="h-3 w-3 text-emerald-600" />
-                                                            Wajib Suhu
+                                                             <Check className="h-3 w-3 text-emerald-600" />
+                                                             Wajib Suhu
                                                         </span>
                                                     ) : (
                                                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
-                                                            Tidak
+                                                             Tidak
                                                         </span>
                                                     )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600">
+                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
+                                                    {formatRupiah(product.price_20ft)}
+                                                </TableCell>
+                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
+                                                    {formatRupiah(product.price_40ft)}
+                                                </TableCell>
+                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
+                                                    {formatRupiah(product.price_45ft)}
+                                                </TableCell>
+                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
+                                                    {formatRupiah(product.price_global)}
+                                                </TableCell>
+                                                <TableCell className="py-3.5 text-xs text-gray-600 max-w-[200px] truncate">
                                                     {product.description || '-'}
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right pr-5">

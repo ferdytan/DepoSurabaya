@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     CustomerController,
     ShipperController,
     ProductController,
+    SpecialPriceController,
     OrderController,
     InvoiceController,
     TemperatureRecordController,
@@ -89,6 +90,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('edit')->whereNumber('product');
         Route::put('/{product}', [ProductController::class, 'update'])->name('update')->whereNumber('product');
         Route::delete('/{product}', [ProductController::class, 'destroy'])->name('destroy')->whereNumber('product');
+    });
+
+    /* ---------- SPECIAL PRICES (HARGA KHUSUS) ---------- */
+    Route::prefix('special-prices')->name('special-prices.')->group(function () {
+        Route::get('/', [SpecialPriceController::class, 'index'])->name('index');
+        Route::post('/customer/{customer}', [SpecialPriceController::class, 'store'])->name('store')->whereNumber('customer');
+        Route::delete('/customer/{customer}/product/{product}', [SpecialPriceController::class, 'destroy'])
+            ->name('destroy')
+            ->whereNumber(['customer', 'product']);
     });
 
     Route::get('/karantina', [OrderController::class, 'index_karantina'])->name('index_karantina');

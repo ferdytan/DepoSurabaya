@@ -56,7 +56,7 @@ class ReeferShiftCalculationService
     ) {
         $this->timezone = $timezone;
         $this->shiftDurationHours = $shiftDurationHours ?? (int) Setting::get('shift_duration_hours', 8);
-        $this->shiftCompensationMinutes = $shiftCompensationMinutes ?? (int) Setting::get('shift_compensation_minutes', 0);
+        $this->shiftCompensationMinutes = $shiftCompensationMinutes ?? (int) Setting::get('shift_compensation_minutes', 45);
         $this->idleGapThresholdMinutes = $idleGapThresholdMinutes ?? (int) Setting::get('shift_max_gap_minutes', 150);
 
         if ($this->shiftDurationHours <= 0) {
@@ -134,7 +134,6 @@ class ReeferShiftCalculationService
         $isStillPluggedIn = ($outNorm === null);
         $effectiveOut = $outNorm ?? Carbon::now($this->timezone);
 
-        $maxShiftMinutes = ($this->shiftDurationHours * 60) + $this->shiftCompensationMinutes;
         $totalDurationMinutes = (int) $startNorm->diffInMinutes($effectiveOut);
 
         // Ekstraksi dan sanitasi log suhu ke stream kronologis
@@ -142,7 +141,7 @@ class ReeferShiftCalculationService
 
         // Edge Case: Tidak ada catatan suhu -> Fallback ke perhitungan selisih durasi mentah
         if ($sanitizedLogs->isEmpty()) {
-            return $this->calculateRawFallback($startNorm, $effectiveOut, $totalDurationMinutes, $maxShiftMinutes);
+            return $this->calculateRawFallback($startNorm, $effectiveOut, $totalDurationMinutes);
         }
 
         // Jalankan Algoritma Shift Windowing
@@ -151,115 +150,226 @@ class ReeferShiftCalculationService
             $effectiveOut,
             $sanitizedLogs,
             $totalDurationMinutes,
-            $maxShiftMinutes,
             $isStillPluggedIn
+        );
+    }
+
+    /**
+     * Hitung jumlah shift berdasarkan durasi total menit, durasi kerja per shift (jam), dan batas kompensasi/toleransi (menit).
+     *
+     * Aturan Bisnis Resmi:
+     * 1. Menit pertama s.d. 8 jam = 1 shift (minimal 1 shift saat plugged-in).
+     * 2. 1 shift standar = $shiftDurationHours jam (default 8 jam = 480 menit).
+     * 3. Sisa menit (remainder) setelah kelipatan 8 jam:
+     *    - Sisa <= $compensationMinutes (default 45 menit): Masuk batas toleransi (grace period), TIDAK menambah shift baru.
+     *    - Sisa > $compensationMinutes: Melewati batas toleransi (misal 46 menit), LANGSUNG dihitung sebagai 1 shift baru!
+     *
+     * Contoh Kasus (8 jam, toleransi 45 menit):
+     * - 1 menit s.d. 8 jam 45 menit  => 1 shift
+     * - 8 jam 46 menit s.d. 16 jam 45 menit => 2 shift
+     * - 152 jam 00 menit s.d. 152 jam 45 menit => 19 shift (19 x 8 jam = 152 jam)
+     * - 152 jam 46 menit => 20 shift
+     * - 159 jam 34 menit => 20 shift (152 jam + 7 jam 34 menit)
+     * - 160 jam 45 menit => 20 shift
+     * - 160 jam 46 menit => 21 shift
+     */
+    public static function calculateShiftsFromDuration(
+        int $durationMinutes,
+        int $shiftDurationHours = 8,
+        int $compensationMinutes = 45
+    ): int {
+        if ($durationMinutes <= 0) {
+            return 1;
+        }
+
+        $shiftMinutes = $shiftDurationHours * 60;
+        if ($shiftMinutes <= 0) {
+            $shiftMinutes = 480;
+        }
+
+        $fullShifts = intdiv($durationMinutes, $shiftMinutes);
+        $remainderMinutes = $durationMinutes % $shiftMinutes;
+
+        // Jika belum melebihi 1 shift dasar (misal 1 menit s.d 8 jam):
+        if ($fullShifts === 0) {
+            return 1;
+        }
+
+        // Jika pas di batas kelipatan shift (misal tepat 8 jam, 16 jam, 152 jam):
+        if ($remainderMinutes === 0) {
+            return $fullShifts;
+        }
+
+        // Jika kelebihan waktu melebihi batas toleransi kompensasi (lewat 45 menit):
+        // langsung dihitung sebagai 1 shift baru!
+        if ($remainderMinutes > $compensationMinutes) {
+            return $fullShifts + 1;
+        }
+
+        // Jika kelebihan waktu masih dalam batas toleransi (<= 45 menit):
+        return $fullShifts;
+    }
+
+    /**
+     * Hitung shift dari durasi menit menggunakan konfigurasi instance service saat ini.
+     */
+    public function calculateShiftsFromMinutes(int $durationMinutes): int
+    {
+        return self::calculateShiftsFromDuration(
+            $durationMinutes,
+            $this->shiftDurationHours,
+            $this->shiftCompensationMinutes
         );
     }
 
     /**
      * Algoritma Inti: Shift Windowing Algorithm.
      * Mengelompokkan log suhu ke dalam blok shift aktif dengan mempertimbangkan
-     * durasi maksimal shift dan toleransi gap jeda monitoring.
+     * toleransi jeda (gap) monitoring dan perhitungan shift per sesi aktif.
      */
     protected function executeShiftWindowing(
         Carbon $plugIn,
         Carbon $plugOut,
         Collection $logs,
         int $totalDurationMinutes,
-        int $maxShiftMinutes,
         bool $isStillPluggedIn
     ): ShiftCalculationResult {
-        $shiftBlocks = [];
-        $totalBilledShifts = 0;
-        $totalActiveMinutes = 0;
         $totalIdleMinutes = 0;
 
         /** @var Carbon $firstLog */
         $firstLog = $logs->first()['timestamp'];
 
-        // Anchor awal Shift 1:
+        // Anchor awal Sesi 1:
         // Jika gap antara Plug-In dan log pertama masih dalam batas toleransi wajar, anchor ke Plug-In
         $gapToFirstLog = (int) $plugIn->diffInMinutes($firstLog);
-        $currentShiftStart = ($gapToFirstLog <= $this->idleGapThresholdMinutes) ? $plugIn->copy() : $firstLog->copy();
+        $currentSessionStart = ($gapToFirstLog <= $this->idleGapThresholdMinutes) ? $plugIn->copy() : $firstLog->copy();
 
-        $currentShiftLogs = [];
-        $lastEventTime = $currentShiftStart->copy();
-        $shiftNumber = 1;
+        $activeSessions = [];
+        $currentSessionLogs = [];
+        $lastEventTime = $currentSessionStart->copy();
 
         foreach ($logs as $logItem) {
             /** @var Carbon $logTime */
             $logTime = $logItem['timestamp'];
 
-            // Lewati jika waktu log sama dengan waktu event terakhir (deduplikasi waktu)
+            // Deduplikasi waktu event yang sama
             if ($logTime->equalTo($lastEventTime)) {
-                $currentShiftLogs[] = $logItem;
+                $currentSessionLogs[] = $logItem;
                 continue;
             }
 
             $gapSinceLastEvent = (int) $lastEventTime->diffInMinutes($logTime);
-            $spanSinceShiftStart = (int) $currentShiftStart->diffInMinutes($logTime);
 
-            // Kondisi 1: Terjadi jeda panjang tanpa monitoring (Gap > Threshold)
-            $isIdleGap = ($gapSinceLastEvent > $this->idleGapThresholdMinutes);
+            // Jika jeda antar log melebihi batas jeda (gap idle terdeteksi)
+            if ($gapSinceLastEvent > $this->idleGapThresholdMinutes) {
+                // Tutup sesi aktif sebelum jeda
+                $activeSessions[] = [
+                    'start' => $currentSessionStart->copy(),
+                    'end' => $lastEventTime->copy(),
+                    'logs' => $currentSessionLogs,
+                ];
+                $totalIdleMinutes += $gapSinceLastEvent;
 
-            // Kondisi 2: Durasi shift aktif melebihi batas maksimal kapasitas 1 shift (525 menit)
-            $isShiftOverflow = ($spanSinceShiftStart > $maxShiftMinutes);
-
-            if ($isIdleGap || $isShiftOverflow) {
-                // Tutup shift saat ini pada event terakhir sebelum gap/overflow
-                $shiftEnd = $lastEventTime->copy();
-                $block = $this->finalizeShiftBlock(
-                    $shiftNumber,
-                    $currentShiftStart,
-                    $shiftEnd,
-                    $currentShiftLogs,
-                    $maxShiftMinutes
-                );
-
-                $shiftBlocks[] = $block;
-                $totalBilledShifts += $block['shifts_billed'];
-                $totalActiveMinutes += $block['duration_minutes'];
-
-                if ($isIdleGap) {
-                    $totalIdleMinutes += (int) $lastEventTime->diffInMinutes($logTime);
-                }
-
-                // Buka Shift Baru
-                $shiftNumber++;
-                $currentShiftStart = $logTime->copy();
+                // Buka sesi aktif baru setelah jeda
+                $currentSessionStart = $logTime->copy();
                 $lastEventTime = $logTime->copy();
-                $currentShiftLogs = [$logItem];
+                $currentSessionLogs = [$logItem];
             } else {
-                // Log masih dalam rentang siklus shift yang sama
-                $currentShiftLogs[] = $logItem;
+                $currentSessionLogs[] = $logItem;
                 $lastEventTime = $logTime->copy();
             }
         }
 
-        // Tangani penutupan shift terakhir bersama Plug Out
+        // Tangani penutupan sesi terakhir bersama Plug Out
         $gapToPlugOut = (int) $lastEventTime->diffInMinutes($plugOut);
-        
-        // Jika plug out terjadi dalam batas toleransi wajar setelah log terakhir
         if ($gapToPlugOut <= $this->idleGapThresholdMinutes) {
-            $finalShiftEnd = $plugOut->copy();
+            $finalSessionEnd = $plugOut->copy();
         } else {
             // Ada jeda panjang tak termonitor setelah log terakhir sebelum plug out dicabut
-            $finalShiftEnd = $lastEventTime->copy();
-            $totalIdleMinutes += (int) $lastEventTime->diffInMinutes($plugOut);
+            $finalSessionEnd = $lastEventTime->copy();
+            $totalIdleMinutes += $gapToPlugOut;
         }
 
-        // Finalisasi blok shift terakhir
-        $finalBlock = $this->finalizeShiftBlock(
-            $shiftNumber,
-            $currentShiftStart,
-            $finalShiftEnd,
-            $currentShiftLogs,
-            $maxShiftMinutes
-        );
+        $activeSessions[] = [
+            'start' => $currentSessionStart->copy(),
+            'end' => $finalSessionEnd->copy(),
+            'logs' => $currentSessionLogs,
+        ];
 
-        $shiftBlocks[] = $finalBlock;
-        $totalBilledShifts += $finalBlock['shifts_billed'];
-        $totalActiveMinutes += $finalBlock['duration_minutes'];
+        // Konversi sesi aktif menjadi blok shift
+        $shiftBlocks = [];
+        $totalBilledShifts = 0;
+        $totalActiveMinutes = 0;
+        $shiftNumber = 1;
+
+        $baseShiftMinutes = $this->shiftDurationHours * 60;
+        if ($baseShiftMinutes <= 0) {
+            $baseShiftMinutes = 480;
+        }
+
+        foreach ($activeSessions as $session) {
+            $sessionStart = $session['start'];
+            $sessionEnd = $session['end'];
+            $sessionLogs = $session['logs'];
+
+            $sessionDuration = max(0, (int) $sessionStart->diffInMinutes($sessionEnd));
+            $totalActiveMinutes += $sessionDuration;
+
+            $sessionShifts = $this->calculateShiftsFromMinutes($sessionDuration);
+            $totalBilledShifts += $sessionShifts;
+
+            if ($sessionShifts <= 1) {
+                // 1 Blok Shift untuk sesi ini
+                $hours = floor($sessionDuration / 60);
+                $minutes = $sessionDuration % 60;
+
+                $shiftBlocks[] = [
+                    'shift_number' => $shiftNumber++,
+                    'start_time' => $sessionStart->format('Y-m-d H:i:s'),
+                    'end_time' => $sessionEnd->format('Y-m-d H:i:s'),
+                    'duration_minutes' => $sessionDuration,
+                    'duration_formatted' => "{$hours} Jam {$minutes} Menit",
+                    'shifts_billed' => max(1, $sessionShifts),
+                    'log_count' => count($sessionLogs),
+                    'logs' => $sessionLogs,
+                ];
+            } else {
+                // Multi-shift dalam 1 sesi kontinu tanpa gap:
+                // Pecah menjadi $sessionShifts blok:
+                // Shift 1 s.d N-1 berdurasi standar $baseShiftMinutes (8 jam)
+                // Shift N berdurasi sisa waktu ($sessionDuration - (N-1) * $baseShiftMinutes)
+                for ($i = 0; $i < $sessionShifts; $i++) {
+                    $blockStart = $sessionStart->copy()->addMinutes($i * $baseShiftMinutes);
+                    if ($i === $sessionShifts - 1) {
+                        $blockEnd = $sessionEnd->copy();
+                    } else {
+                        $blockEnd = $sessionStart->copy()->addMinutes(($i + 1) * $baseShiftMinutes);
+                    }
+
+                    $blockDuration = (int) $blockStart->diffInMinutes($blockEnd);
+                    $bHours = floor($blockDuration / 60);
+                    $bMinutes = $blockDuration % 60;
+
+                    // Filter logs yang berada di rentang blok ini
+                    $blockLogs = array_values(array_filter($sessionLogs, function ($l) use ($blockStart, $blockEnd) {
+                        /** @var Carbon $ts */
+                        $ts = $l['timestamp'];
+                        return $ts->gte($blockStart) && $ts->lte($blockEnd);
+                    }));
+
+                    $shiftBlocks[] = [
+                        'shift_number' => $shiftNumber++,
+                        'start_time' => $blockStart->format('Y-m-d H:i:s'),
+                        'end_time' => $blockEnd->format('Y-m-d H:i:s'),
+                        'duration_minutes' => $blockDuration,
+                        'duration_formatted' => "{$bHours} Jam {$bMinutes} Menit",
+                        'shifts_billed' => 1,
+                        'log_count' => count($blockLogs),
+                        'logs' => $blockLogs,
+                    ];
+                }
+            }
+        }
 
         // Rekonsiliasi durasi idle jika ada selisih
         $calculatedIdle = max(0, $totalDurationMinutes - $totalActiveMinutes);
@@ -289,51 +399,15 @@ class ReeferShiftCalculationService
     }
 
     /**
-     * Membentuk array data blok shift dengan perhitungan kuota shift.
-     */
-    protected function finalizeShiftBlock(
-        int $shiftNumber,
-        Carbon $start,
-        Carbon $end,
-        array $logs,
-        int $maxShiftMinutes
-    ): array {
-        $durationMinutes = (int) $start->diffInMinutes($end);
-        
-        // 1 Shift jika durasi <= 525 menit (8 jam 45 menit)
-        // Jika durasi tanpa putus melebihi batas toleransi, dihitung kelipatan shift
-        $shiftsBilled = $durationMinutes > 0 
-            ? (int) ceil($durationMinutes / $maxShiftMinutes) 
-            : 1;
-
-        $hours = floor($durationMinutes / 60);
-        $minutes = $durationMinutes % 60;
-
-        return [
-            'shift_number' => $shiftNumber,
-            'start_time' => $start->format('Y-m-d H:i:s'),
-            'end_time' => $end->format('Y-m-d H:i:s'),
-            'duration_minutes' => $durationMinutes,
-            'duration_formatted' => "{$hours} Jam {$minutes} Menit",
-            'shifts_billed' => max(1, $shiftsBilled),
-            'log_count' => count($logs),
-            'logs' => $logs,
-        ];
-    }
-
-    /**
      * Fallback kalkulasi jika data log suhu kosong.
-     * Menggunakan selisih waktu plug-in ke plug-out dibagi durasi shift toleransi.
+     * Menggunakan durasi menit plug-in ke plug-out dengan formula shift resmi.
      */
     protected function calculateRawFallback(
         Carbon $plugIn,
         Carbon $plugOut,
-        int $totalDurationMinutes,
-        int $maxShiftMinutes
+        int $totalDurationMinutes
     ): ShiftCalculationResult {
-        $totalShifts = $totalDurationMinutes > 0 
-            ? (int) ceil($totalDurationMinutes / $maxShiftMinutes) 
-            : 1;
+        $totalShifts = $this->calculateShiftsFromMinutes($totalDurationMinutes);
 
         $hours = floor($totalDurationMinutes / 60);
         $minutes = $totalDurationMinutes % 60;

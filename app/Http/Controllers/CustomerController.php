@@ -42,7 +42,7 @@ class CustomerController extends Controller
             'phone' => 'nullable|string',
             'email' => 'nullable|email|unique:customers,email',
 
-            // Produk + Harga Custom
+            // Produk + Harga Custom (opsional untuk backward-compatibility)
             'product_prices' => 'array|nullable',
             'product_prices.*.product_id' => 'exists:products,id',
             'product_prices.*.price_20ft' => 'numeric|nullable',
@@ -77,27 +77,11 @@ class CustomerController extends Controller
 
     public function edit(Request $request, Customer $customer)
     {
-        // Ambil semua produk (untuk pencarian)
-        $products = Product::select('id', 'service_type as name')->get();
-
-        // Ambil harga custom per produk untuk customer ini
-        $productPrices = $customer->products()
-            ->withPivot('custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price')
-            ->get()
-            ->map(function ($product) {
-                return [
-                    'product_id' => $product->id,
-                    'price_20ft' => $product->pivot->custom_price_20ft,
-                    'price_40ft' => $product->pivot->custom_price_40ft,
-                    'price_45ft' => $product->pivot->custom_price_45ft,
-                    'price_global' => $product->pivot->custom_global_price,
-                ];
-            });
+        $specialPricesCount = $customer->products()->count();
 
         return Inertia::render('customers/edit', [
             'customer' => $customer,
-            'products' => $products,
-            'product_prices' => $productPrices,
+            'special_prices_count' => $specialPricesCount,
             'return_url' => $request->input('return_url') ?: session('customers_index_url', route('customers.index')),
         ]);
     }
@@ -112,7 +96,7 @@ class CustomerController extends Controller
             'phone' => 'nullable|string',
             'email' => "nullable|email|unique:customers,email,{$customer->id}",
 
-            // Produk + Harga Custom
+            // Produk + Harga Custom (opsional)
             'product_prices' => 'array|nullable',
             'product_prices.*.product_id' => 'exists:products,id',
             'product_prices.*.price_20ft' => 'numeric|nullable',
@@ -130,10 +114,8 @@ class CustomerController extends Controller
             'email' => $validated['email'] ?? null,
         ]);
 
-        if (!empty($validated['product_prices'])) {
-            // Kosongkan dulu lalu isi ulang
+        if ($request->has('product_prices') && is_array($validated['product_prices'])) {
             $customer->products()->detach();
-
             foreach ($validated['product_prices'] as $item) {
                 $customer->products()->attach($item['product_id'], [
                     'custom_price_20ft' => $item['price_20ft'] ?? null,
@@ -155,16 +137,47 @@ class CustomerController extends Controller
         return redirect()->to($returnUrl)->with('success', 'Customer deleted successfully.');
     }
 
-    // API: Produk milik customer tertentu
+    // API: Seluruh produk yang tersedia untuk customer beserta resolusi harga (khusus vs master)
     public function productsForCustomer(Customer $customer)
     {
-        // Ambil produk yang sudah di-assign ke customer (relasi many-to-many)
-        $products = $customer->products()
-            ->select('products.id', 'products.service_type', 'products.requires_temperature',
-                'customer_product.custom_price_20ft', 'customer_product.custom_price_40ft', 'customer_product.custom_price_45ft', 'customer_product.custom_global_price'
-            )
-            ->get();
+        // Ambil seluruh produk master aktif
+        $allProducts = Product::orderBy('service_type')->get();
 
-        return response()->json($products);
+        // Ambil mapping harga khusus untuk customer ini jika ada di customer_product
+        $customPrices = $customer->products()->keyBy('id');
+
+        $result = $allProducts->map(function ($product) use ($customPrices) {
+            $custom = $customPrices->get($product->id);
+            $hasCustom = $custom !== null;
+
+            $p20 = ($hasCustom && $custom->pivot->custom_price_20ft !== null && $custom->pivot->custom_price_20ft !== '')
+                ? $custom->pivot->custom_price_20ft
+                : $product->price_20ft;
+
+            $p40 = ($hasCustom && $custom->pivot->custom_price_40ft !== null && $custom->pivot->custom_price_40ft !== '')
+                ? $custom->pivot->custom_price_40ft
+                : $product->price_40ft;
+
+            $p45 = ($hasCustom && $custom->pivot->custom_price_45ft !== null && $custom->pivot->custom_price_45ft !== '')
+                ? $custom->pivot->custom_price_45ft
+                : $product->price_45ft;
+
+            $pGlobal = ($hasCustom && $custom->pivot->custom_global_price !== null && $custom->pivot->custom_global_price !== '')
+                ? $custom->pivot->custom_global_price
+                : $product->price_global;
+
+            return [
+                'id' => $product->id,
+                'service_type' => $product->service_type,
+                'requires_temperature' => (bool) $product->requires_temperature,
+                'custom_price_20ft' => $p20 !== null ? (string)$p20 : null,
+                'custom_price_40ft' => $p40 !== null ? (string)$p40 : null,
+                'custom_price_45ft' => $p45 !== null ? (string)$p45 : null,
+                'custom_global_price' => $pGlobal !== null ? (string)$pGlobal : null,
+                'is_special_price' => $hasCustom,
+            ];
+        });
+
+        return response()->json($result);
     }
 }

@@ -18,7 +18,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Trash2, Pencil, Plus, Search, Users } from 'lucide-react';
+import { Trash2, Pencil, Plus, Search, Users, Tag } from 'lucide-react';
 
 // Types
 interface FlashProps {
@@ -222,6 +222,13 @@ export default function CustomersIndex({ customers, filters }: Props) {
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right whitespace-nowrap">
                                                     <div className="inline-flex items-center gap-1.5">
+                                                        <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5 text-blue-600 hover:text-blue-700 hover:bg-blue-50 border-blue-200" title="Atur Harga Khusus">
+                                                            <Link href={`/special-prices?customer_id=${customer.id}`}>
+                                                                <Tag className="h-3.5 w-3.5 mr-1" />
+                                                                Harga Khusus
+                                                            </Link>
+                                                        </Button>
+
                                                         <Button size="sm" variant="outline" asChild className="h-8 text-xs px-2.5">
                                                             <Link href={`/customers/${customer.id}/edit?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                                                 <Pencil className="h-3.5 w-3.5 mr-1 text-gray-500" />

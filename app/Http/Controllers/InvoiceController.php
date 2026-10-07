@@ -263,6 +263,9 @@ class InvoiceController extends Controller
             'order_item_quantities' => ['nullable','array'],
             'order_item_quantities.*.order_item_id' => ['required','integer'],
             'order_item_quantities.*.quantity' => ['required','integer','min:1'],
+            'order_item_prices' => ['nullable','array'],
+            'order_item_prices.*.order_item_id' => ['required','integer'],
+            'order_item_prices.*.price_value' => ['required','numeric','min:0'],
             'subtotal'      => ['required','integer','min:0'],
             'discount'      => ['nullable','integer','min:0'],
             'ppn'           => ['required','integer','min:0'],
@@ -272,6 +275,10 @@ class InvoiceController extends Controller
             'additional_product_quantities.*.order_item_id' => ['required','integer'],
             'additional_product_quantities.*.additional_product_id' => ['required','integer'],
             'additional_product_quantities.*.quantity' => ['required','integer','min:0'],
+            'additional_product_prices' => ['nullable','array'],
+            'additional_product_prices.*.order_item_id' => ['required','integer'],
+            'additional_product_prices.*.additional_product_id' => ['required','integer'],
+            'additional_product_prices.*.price_value' => ['required','numeric','min:0'],
             'show_period'   => ['boolean'],
         ]);
 
@@ -281,9 +288,19 @@ class InvoiceController extends Controller
                 $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
             }
 
+            $itemPriceMap = [];
+            foreach (($data['order_item_prices'] ?? []) as $row) {
+                $itemPriceMap[$row['order_item_id']] = (int) $row['price_value'];
+            }
+
             $qtyMap = [];
             foreach (($data['additional_product_quantities'] ?? []) as $row) {
                 $qtyMap[$row['order_item_id'].':'.$row['additional_product_id']] = (int) $row['quantity'];
+            }
+
+            $addPriceMap = [];
+            foreach (($data['additional_product_prices'] ?? []) as $row) {
+                $addPriceMap[$row['order_item_id'].':'.$row['additional_product_id']] = (int) $row['price_value'];
             }
 
             $orderItems = OrderItem::with([
@@ -309,6 +326,7 @@ class InvoiceController extends Controller
             // Hitung ulang subtotal, ppn, grand_total
             $subtotal = 0;
             $itemQtyValues = [];
+            $itemPriceValues = [];
             foreach ($orderItems as $oi) {
                 $isPlug = false;
                 if ($oi->product) {
@@ -320,10 +338,14 @@ class InvoiceController extends Controller
                 if ($oiQty <= 0) $oiQty = 1;
                 $itemQtyValues[$oi->id] = $oiQty;
 
-                $subtotal += (int) ($oi->price_value ?? 0) * $oiQty;
+                $oiPrice = isset($itemPriceMap[$oi->id]) ? (int) $itemPriceMap[$oi->id] : (int) ($oi->price_value ?? 0);
+                $itemPriceValues[$oi->id] = $oiPrice;
+
+                $subtotal += $oiPrice * $oiQty;
                 foreach ($oi->additionalProducts as $ap) {
-                    $price = (int) ($ap->pivot->price_value ?? 0);
-                    $qty = (int) ($qtyMap[$oi->id.':'.$ap->id] ?? 0);
+                    $key = $oi->id.':'.$ap->id;
+                    $price = isset($addPriceMap[$key]) ? (int) $addPriceMap[$key] : (int) ($ap->pivot->price_value ?? 0);
+                    $qty = (int) ($qtyMap[$key] ?? 0);
                     $subtotal += $price * $qty;
                 }
             }
@@ -399,12 +421,13 @@ class InvoiceController extends Controller
 
             foreach ($orderItems as $oi) {
                 $oiQty = $itemQtyValues[$oi->id] ?? 1;
+                $oiPrice = $itemPriceValues[$oi->id] ?? (int) ($oi->price_value ?? 0);
                 $invItem = $invoice->items()->create([
                     'order_item_id'    => $oi->id,
                     'product_id'       => $oi->product_id,
                     'container_number' => $oi->container_number,
                     'price_type'       => $oi->price_type,
-                    'price_value'      => $oi->price_value,
+                    'price_value'      => $oiPrice,
                     'quantity'         => $oiQty,
                 ]);
 
@@ -412,11 +435,12 @@ class InvoiceController extends Controller
                 foreach ($oi->additionalProducts as $ap) {
                     $key = $oi->id.':'.$ap->id;
                     $qty = (int) ($qtyMap[$key] ?? 1);
+                    $price = isset($addPriceMap[$key]) ? (int) $addPriceMap[$key] : (int) ($ap->pivot->price_value ?? 0);
                     $adds[] = [
                         'id'           => $ap->id,
                         'service_type' => $ap->service_type,
                         'pivot'        => [
-                            'price_value' => (int) ($ap->pivot->price_value ?? 0),
+                            'price_value' => $price,
                             'quantity'    => $qty,
                         ],
                     ];
@@ -1077,6 +1101,9 @@ class InvoiceController extends Controller
             'order_item_quantities' => ['nullable','array'],
             'order_item_quantities.*.order_item_id' => ['required','integer'],
             'order_item_quantities.*.quantity' => ['required','integer','min:1'],
+            'order_item_prices' => ['nullable','array'],
+            'order_item_prices.*.order_item_id' => ['required','integer'],
+            'order_item_prices.*.price_value' => ['required','numeric','min:0'],
             'period_start'   => ['required','date'],
             'period_end'     => ['required','date','after_or_equal:period_start'],
             'applyMaterai'   => ['boolean'],
@@ -1086,6 +1113,10 @@ class InvoiceController extends Controller
             'additional_product_quantities.*.order_item_id' => ['required','integer'],
             'additional_product_quantities.*.additional_product_id' => ['required','integer'],
             'additional_product_quantities.*.quantity' => ['required','integer','min:0'],
+            'additional_product_prices' => ['nullable','array'],
+            'additional_product_prices.*.order_item_id' => ['required','integer'],
+            'additional_product_prices.*.additional_product_id' => ['required','integer'],
+            'additional_product_prices.*.price_value' => ['required','numeric','min:0'],
             'show_period'    => ['boolean'],
         ]);
 
@@ -1094,10 +1125,21 @@ class InvoiceController extends Controller
             $itemQtyMap[$row['order_item_id']] = (int) $row['quantity'];
         }
 
+        $itemPriceMap = [];
+        foreach (($validated['order_item_prices'] ?? []) as $row) {
+            $itemPriceMap[$row['order_item_id']] = (int) $row['price_value'];
+        }
+
         $qtyMap = [];
         foreach (($validated['additional_product_quantities'] ?? []) as $row) {
             $key = $row['order_item_id'].':'.$row['additional_product_id'];
             $qtyMap[$key] = (int) $row['quantity'];
+        }
+
+        $addPriceMap = [];
+        foreach (($validated['additional_product_prices'] ?? []) as $row) {
+            $key = $row['order_item_id'].':'.$row['additional_product_id'];
+            $addPriceMap[$key] = (int) $row['price_value'];
         }
 
         $customer = Customer::findOrFail($validated['customer_id']);
@@ -1143,12 +1185,20 @@ class InvoiceController extends Controller
             $itemQty = (int) ($itemQtyMap[$item->id] ?? $defaultQty);
             if ($itemQty <= 0) $itemQty = 1;
 
+            if (isset($itemPriceMap[$item->id])) {
+                $item->price_value = $itemPriceMap[$item->id];
+            }
+
             $item->quantity = $itemQty;
             $subtotal += (int) ($item->price_value ?? 0) * $itemQty;
 
-            $item->additionalProducts->transform(function ($ap) use ($item, $qtyMap, &$subtotal) {
+            $item->additionalProducts->transform(function ($ap) use ($item, $qtyMap, $addPriceMap, &$subtotal) {
+                $key = $item->id.':'.$ap->id;
+                if (isset($addPriceMap[$key])) {
+                    $ap->pivot->price_value = $addPriceMap[$key];
+                }
                 $price = (int) ($ap->pivot->price_value ?? 0);
-                $qty   = (int) ($qtyMap[$item->id.':'.$ap->id] ?? 0);
+                $qty   = (int) ($qtyMap[$key] ?? 0);
                 $ap->pivot->quantity = $qty;
                 $subtotal += $price * $qty;
                 return $ap;

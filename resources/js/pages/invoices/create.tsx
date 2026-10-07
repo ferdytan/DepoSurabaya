@@ -166,8 +166,14 @@ export default function CreateInvoice() {
     // Quantity Layanan Pokok Kontainer: key order_item_id
     const [itemQty, setItemQty] = useState<Record<number, number>>({});
 
+    // Custom Price Layanan Pokok Kontainer: key order_item_id
+    const [itemCustomPrices, setItemCustomPrices] = useState<Record<number, number>>({});
+
     // Quantity Additional Products: key `${order_item_id}:${additional_product_id}`
     const [addQty, setAddQty] = useState<Record<string, number>>({});
+
+    // Custom Price Additional Products: key `${order_item_id}:${additional_product_id}`
+    const [addCustomPrices, setAddCustomPrices] = useState<Record<string, number>>({});
 
     const [errors, setErrors] = useState<Record<string, string[]>>({});
     const [generalError, setGeneralError] = useState<string | null>(null);
@@ -278,6 +284,31 @@ export default function CreateInvoice() {
         setItemQty((prev) => ({ ...prev, [itemId]: v }));
     };
 
+    const getItemPrice = (item: OrderItem) => {
+        if (itemCustomPrices[item.id] !== undefined) {
+            return itemCustomPrices[item.id];
+        }
+        return Number(item.price_value || 0);
+    };
+
+    const updateItemPrice = (itemId: number, val: number) => {
+        const v = Math.max(0, Math.floor(val || 0));
+        setItemCustomPrices((prev) => ({ ...prev, [itemId]: v }));
+    };
+
+    const getAddPrice = (itemId: number, prodId: number, defaultPrice: number) => {
+        const key = `${itemId}:${prodId}`;
+        if (addCustomPrices[key] !== undefined) {
+            return addCustomPrices[key];
+        }
+        return defaultPrice;
+    };
+
+    const updateAddPrice = (itemId: number, prodId: number, val: number) => {
+        const v = Math.max(0, Math.floor(val || 0));
+        setAddCustomPrices((prev) => ({ ...prev, [`${itemId}:${prodId}`]: v }));
+    };
+
     // Handle Customer Change
     const handleCustomerChange = (val: string) => {
         setSelectedCustomerId(val);
@@ -285,6 +316,8 @@ export default function CreateInvoice() {
         setSelectedContainers(new Set());
         setAddQty({});
         setItemQty({});
+        setItemCustomPrices({});
+        setAddCustomPrices({});
         setErrors({});
     };
 
@@ -476,11 +509,13 @@ export default function CreateInvoice() {
                 if (selectedContainers.has(item.id)) {
                     // Harga pokok kontainer * qty
                     const mQty = getItemQty(item);
-                    subtotal += Number(item.price_value || 0) * mQty;
+                    const mPrice = getItemPrice(item);
+                    subtotal += mPrice * mQty;
 
                     // Layanan tambahan
                     item.additional_products?.forEach((ap) => {
-                        const price = Number(ap.pivot?.price_value || 0);
+                        const defaultPrice = Number(ap.pivot?.price_value || 0);
+                        const price = getAddPrice(item.id, ap.id, defaultPrice);
                         const qty = getQty(item.id, ap.id);
                         subtotal += price * qty;
                     });
@@ -508,7 +543,7 @@ export default function CreateInvoice() {
             terbilang: liveTerbilang,
             isEligibleMaterai,
         };
-    }, [activeOrders, selectedContainers, discount, applyMaterai, addQty, itemQty]);
+    }, [activeOrders, selectedContainers, discount, applyMaterai, addQty, itemQty, itemCustomPrices, addCustomPrices]);
 
     // Ref untuk mencatat status eligibility sebelumnya agar tidak menimpa aksi manual user
     const prevEligibleRef = useRef<boolean | null>(null);
@@ -559,12 +594,32 @@ export default function CreateInvoice() {
                 ),
         );
 
+        const additionalPrices = activeOrders.flatMap((order) =>
+            (order.order_items || [])
+                .filter((it) => selectedContainers.has(it.id))
+                .flatMap((it) =>
+                    (it.additional_products ?? []).map((ap) => ({
+                        order_item_id: it.id,
+                        additional_product_id: ap.id,
+                        price_value: getAddPrice(it.id, ap.id, Number(ap.pivot?.price_value || 0)),
+                    })),
+                ),
+        );
+
         // Susun daftar order items (kontainer) dengan quantity
         const orderItemSelections = Array.from(selectedContainers).map((id) => {
             const it = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === id);
             return {
                 order_item_id: id,
                 quantity: it ? getItemQty(it) : 1,
+            };
+        });
+
+        const orderItemPriceSelections = Array.from(selectedContainers).map((id) => {
+            const it = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === id);
+            return {
+                order_item_id: id,
+                price_value: it ? getItemPrice(it) : 0,
             };
         });
 
@@ -591,6 +646,7 @@ export default function CreateInvoice() {
             order_ids: selectedOrderIds,
             order_item_ids: Array.from(selectedContainers),
             order_item_quantities: orderItemSelections,
+            order_item_prices: orderItemPriceSelections,
             period_start: showPeriod ? periodStart : effectiveDate,
             period_end: showPeriod ? periodEnd : effectiveDate,
             show_period: showPeriod,
@@ -602,6 +658,7 @@ export default function CreateInvoice() {
             terbilang: calculations.terbilang,
             applyMaterai,
             additional_product_quantities: additionalSelections,
+            additional_product_prices: additionalPrices,
             return_url: returnUrl,
         };
 
@@ -1019,14 +1076,14 @@ export default function CreateInvoice() {
                                                         order.order_items.map((item) => {
                                                             const isSelected = selectedContainers.has(item.id);
                                                             const isDisabled = disabledOrders.has(item.id);
-                                                            const priceValue = Number(item.price_value || 0);
+                                                            const priceValue = getItemPrice(item);
                                                             const isMainPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
                                                             const currentItemQty = getItemQty(item);
 
                                                             // Subtotal item
                                                             const addSum = (item.additional_products || []).reduce(
                                                                 (acc, ap) => {
-                                                                    const p = Number(ap.pivot?.price_value || 0);
+                                                                    const p = getAddPrice(item.id, ap.id, Number(ap.pivot?.price_value || 0));
                                                                     const q = getQty(item.id, ap.id);
                                                                     return acc + p * q;
                                                                 },
@@ -1096,22 +1153,36 @@ export default function CreateInvoice() {
 
                                                                         {/* Harga Pokok & Subtotal Kontainer */}
                                                                         <div className="text-right shrink-0">
-                                                                            <div className="flex items-center justify-end gap-1.5 mb-1">
-                                                                                <span className="text-gray-400 text-xs">Qty:</span>
-                                                                                <input
-                                                                                    type="number"
-                                                                                    min={1}
-                                                                                    step={1}
-                                                                                    value={currentItemQty}
-                                                                                    disabled={!isSelected || isDisabled}
-                                                                                    onChange={(e) =>
-                                                                                        updateItemQty(
-                                                                                            item.id,
-                                                                                            Number(e.target.value),
-                                                                                        )
-                                                                                    }
-                                                                                    className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
-                                                                                />
+                                                                            <div className="flex flex-wrap items-center justify-end gap-2 mb-1">
+                                                                                <div className="flex items-center gap-1">
+                                                                                    <span className="text-gray-400 text-xs">Tarif:</span>
+                                                                                    <input
+                                                                                        type="number"
+                                                                                        min={0}
+                                                                                        step={1000}
+                                                                                        value={priceValue}
+                                                                                        disabled={!isSelected || isDisabled}
+                                                                                        onChange={(e) => updateItemPrice(item.id, Number(e.target.value))}
+                                                                                        className="h-6 w-24 rounded border border-gray-300 bg-white px-1.5 text-right text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                    />
+                                                                                </div>
+                                                                                <div className="flex items-center gap-1">
+                                                                                    <span className="text-gray-400 text-xs">Qty:</span>
+                                                                                    <input
+                                                                                        type="number"
+                                                                                        min={1}
+                                                                                        step={1}
+                                                                                        value={currentItemQty}
+                                                                                        disabled={!isSelected || isDisabled}
+                                                                                        onChange={(e) =>
+                                                                                            updateItemQty(
+                                                                                                item.id,
+                                                                                                Number(e.target.value),
+                                                                                            )
+                                                                                        }
+                                                                                        className="h-6 w-14 rounded border border-gray-300 bg-white px-1.5 text-center text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                    />
+                                                                                </div>
                                                                                 {isMainPlug &&
                                                                                     item.total_shifts &&
                                                                                     item.total_shifts > 0 && (
@@ -1145,7 +1216,8 @@ export default function CreateInvoice() {
                                                                             </div>
                                                                             <div className="space-y-1.5">
                                                                                 {item.additional_products.map((prod) => {
-                                                                                    const price = Number(prod.pivot?.price_value || 0);
+                                                                                    const defaultPrice = Number(prod.pivot?.price_value || 0);
+                                                                                    const price = getAddPrice(item.id, prod.id, defaultPrice);
                                                                                     const qty = getQty(item.id, prod.id);
                                                                                     const lineTotal = price * qty;
 
@@ -1158,6 +1230,24 @@ export default function CreateInvoice() {
                                                                                                 <span className="font-medium text-gray-800">
                                                                                                     {prod.service_type || `Layanan Tambahan #${prod.id}`}
                                                                                                 </span>
+                                                                                                <div className="flex items-center gap-1.5">
+                                                                                                    <span className="text-gray-400">Tarif:</span>
+                                                                                                    <input
+                                                                                                        type="number"
+                                                                                                        min={0}
+                                                                                                        step={1000}
+                                                                                                        value={price}
+                                                                                                        disabled={!isSelected || isDisabled}
+                                                                                                        onChange={(e) =>
+                                                                                                            updateAddPrice(
+                                                                                                                item.id,
+                                                                                                                prod.id,
+                                                                                                                Number(e.target.value),
+                                                                                                            )
+                                                                                                        }
+                                                                                                        className="h-6 w-24 rounded border border-gray-300 bg-white px-1.5 text-right text-xs font-semibold text-gray-800 focus:border-gray-900 focus:outline-none disabled:bg-gray-100 disabled:opacity-50"
+                                                                                                    />
+                                                                                                </div>
                                                                                                 <div className="flex items-center gap-1.5">
                                                                                                     <span className="text-gray-400">Qty:</span>
                                                                                                     <input

@@ -1,66 +1,72 @@
-import AppLayout from '@/layouts/app-layout';
-import OrdersLayout from '@/layouts/orders/layout';
-import { type BreadcrumbItem } from '@/types';
+import React, { useState, useEffect } from 'react';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { useEffect, useState } from 'react';
-
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ArrowDown, ArrowUp, ArrowUpDown, ChevronDown, PlusCircle, PrinterIcon, Search, X } from 'lucide-react';
-
-// UI Components
-import Heading from '@/components/heading';
+import AppLayout from '@/layouts/app-layout';
+import { type BreadcrumbItem } from '@/types';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import DateRangePicker from '@/components/date-range-picker';
-import DateTimePicker from '@/components/date-time-picker';
+import {
+    Printer,
+    Filter,
+    RotateCcw,
+    Search,
+    ChevronDown,
+    ChevronUp,
+    X,
+    ArrowUpDown,
+    ArrowUp,
+    ArrowDown,
+    Shield,
+    Check,
+} from 'lucide-react';
 
-// Types
 interface FlashProps {
     success?: string;
     error?: string;
 }
 
-type Customer = {
+interface Customer {
     id: number;
     name: string;
-};
+}
 
-type Product = {
+interface Shipper {
+    id: number;
+    name: string;
+}
+
+interface Product {
     id: number;
     service_type: string;
     requires_temperature?: boolean;
-};
+}
 
-type Shipper = {
-    id: number;
-    name: string;
-};
-
-type OrderParent = {
+interface OrderParent {
     id: number;
     no_aju: string | null;
     order_id: string;
-    customer: Customer;
-    shipper: { id: number; name: string };
+    customer?: Customer;
+    shipper?: Shipper;
     fumigasi: string | null;
-};
+}
 
-type Order = {
+interface OrderItemData {
     id: number;
     order_id: string;
     customer_id: number;
     product_id: number;
     shipper_id: number;
     container_number: string;
-    order: OrderParent;
+    order?: OrderParent;
     entry_date: string | null;
     eir_date: string | null;
     exit_date: string | null;
@@ -68,45 +74,44 @@ type Order = {
     commodity: string | null;
     country?: string | null;
     no_aju: string | null;
-    deleted_reason: string | null;
-    deleted_at: string | null;
-    customer: Customer;
-    product: Product;
-    shipper: Shipper;
-    temperature?: {
-        [date: string]: { [hour: string]: string };
-    };
-};
+    customer?: Customer;
+    product?: Product;
+    shipper?: Shipper;
+    fumigasi?: string | null;
+    customer_name?: string;
+    shipper_name?: string;
+}
 
-type Props = {
+interface Props {
     orders: {
-        data: Order[];
+        data: OrderItemData[];
         links: Array<{ url: string | null; label: string; active: boolean }>;
         current_page?: number;
-        first_page_url?: string;
         from?: number | null;
         last_page?: number;
-        last_page_url?: string;
-        next_page_url?: string | null;
-        path?: string;
         per_page?: number;
-        prev_page_url?: string | null;
         to?: number | null;
         total?: number;
     };
     customers: Customer[];
+    shippers: Shipper[];
     products?: Product[];
     filters: {
-        customer?: string;
+        customer_id?: string;
+        shipper_id?: string;
+        fumigator?: string;
+        product_ids?: number[];
+        exclude_status?: string;
+        date_from?: string;
+        date_to?: string;
+        date_type?: string;
         search?: string;
-        trashed?: string;
+        per_page?: number;
         sort_by?: string;
         sort_dir?: string;
-        start_date?: string;
-        end_date?: string;
-        product_ids?: number[];
+        trashed?: string;
     };
-};
+}
 
 const MONTH_NAMES_ID = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
 
@@ -123,8 +128,8 @@ function formatKarantinaDateTime(dateStr?: string | null) {
 
     return (
         <div className="flex flex-col leading-tight whitespace-nowrap">
-            <span className="font-medium text-slate-800 text-[13px]">{day} {month}</span>
-            <span className="text-[12px] text-slate-500 font-normal">{year}, {hours}:{minutes}</span>
+            <span className="font-semibold text-slate-800 text-xs">{day} {month} {year}</span>
+            <span className="text-[11px] text-slate-500 font-normal">{hours}:{minutes} WIB</span>
         </div>
     );
 }
@@ -143,39 +148,6 @@ function formatKarantinaDateTimeString(dateStr?: string | null): string {
     return `${day} ${month} ${year}, ${hours}:${minutes}`;
 }
 
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Karantina',
-        href: '/karantina',
-    },
-];
-
-type TemperatureRecord = {
-    date: string;
-    temps: { [hour: string]: string };
-};
-
-type PageProps = {
-    [key: string]: unknown;
-    flash?: FlashProps;
-    auth: {
-        user: {
-            id: number;
-            name: string;
-            email: string;
-            role_id: number;
-        };
-    };
-};
-
-interface SortButtonProps {
-    label: string;
-    field: string;
-    currentSort?: string;
-    currentDir?: string;
-    routeName?: string;
-}
-
 function formatContainerSize(priceType?: string | null, fallback?: string): string {
     if (!priceType) return fallback || '-';
     const val = String(priceType).trim();
@@ -184,326 +156,134 @@ function formatContainerSize(priceType?: string | null, fallback?: string): stri
     return val || fallback || '-';
 }
 
-export default function OrdersIndex({ orders, products = [], filters: rawFilters }: Props) {
-    const filters = rawFilters || {};
-    const [search, setSearch] = useState(filters.search ?? '');
-    const [startDate, setStartDate] = useState<string>(filters.start_date ?? '');
-    const [endDate, setEndDate] = useState<string>(filters.end_date ?? '');
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: 'Dashboard',
+        href: '/dashboard',
+    },
+    {
+        title: 'Karantina & Fumigasi',
+        href: '/karantina',
+    },
+];
 
+export default function KarantinaIndex({
+    orders,
+    customers = [],
+    shippers = [],
+    products = [],
+    filters: rawFilters,
+}: Props) {
+    const filters = rawFilters || {};
+
+    // Filter Local States
+    const [customerId, setCustomerId] = useState<string>(filters.customer_id || 'all');
+    const [shipperId, setShipperId] = useState<string>(filters.shipper_id || 'all');
+    const [fumigator, setFumigator] = useState<string>(filters.fumigator || '');
+    const [excludeStatus, setExcludeStatus] = useState<string>(filters.exclude_status || 'active');
+    const [dateFrom, setDateFrom] = useState<string>(filters.date_from || '');
+    const [dateTo, setDateTo] = useState<string>(filters.date_to || '');
+    const [dateType, setDateType] = useState<string>(filters.date_type || 'entry_date');
+    const [search, setSearch] = useState<string>(filters.search || '');
+    const [perPage, setPerPage] = useState<string>(String(filters.per_page || 25));
+
+    // Multi-Select Produk / Layanan
     const initialProductIds: number[] = Array.isArray(rawFilters?.product_ids)
         ? rawFilters.product_ids.map(Number).filter((n) => !isNaN(n))
         : [];
     const [selectedProductIds, setSelectedProductIds] = useState<number[]>(initialProductIds);
-
-    // Sinkronkan state input jika URL / filter berubah dari navigasi atau pagination
-    useEffect(() => {
-        setSearch(rawFilters?.search ?? '');
-        setStartDate(rawFilters?.start_date ?? '');
-        setEndDate(rawFilters?.end_date ?? '');
-        const pIds = Array.isArray(rawFilters?.product_ids)
-            ? rawFilters.product_ids.map(Number).filter((n) => !isNaN(n))
-            : [];
-        setSelectedProductIds(pIds);
-    }, [rawFilters?.search, rawFilters?.start_date, rawFilters?.end_date, rawFilters?.product_ids]);
-
-    const [isTempDialogOpen, setIsTempDialogOpen] = useState(false);
-    const [tempOrder, setTempOrder] = useState<Order | null>(null);
-    const [tempRecords, setTempRecords] = useState<TemperatureRecord[]>([]);
-
-    // Data kontainer diambil langsung dari hasil query backend ter-paginasi
-    const filteredOrders = orders.data;
-
-    const updateDate = (recordIdx: number, date: string) => {
-        setTempRecords((prev) => {
-            const next = [...prev];
-            next[recordIdx].date = date;
-            return next;
-        });
-    };
-
-    const updateTemp = (recordIdx: number, hour: number, value: string) => {
-        setTempRecords((prev) => {
-            const next = [...prev];
-            next[recordIdx].temps = {
-                ...(next[recordIdx].temps || {}),
-                [hour.toString().padStart(2, '0')]: value,
-            };
-            return next;
-        });
-    };
-
-    const addDateRecord = () => {
-        setTempRecords((prev) => [...prev, { date: '', temps: {} }]);
-    };
-
-    const removeDateRecord = (recordIdx: number) => {
-        setTempRecords((prev) => prev.filter((_, i) => i !== recordIdx));
-    };
-
-    const handleSaveTemp = () => {
-        if (!tempOrder) return;
-        const formatted: { [date: string]: { [hour: string]: string } } = {};
-        tempRecords.forEach((rec) => {
-            if (rec.date) formatted[rec.date] = rec.temps;
-        });
-        console.log('Data yang dikirim ke backend:', formatted);
-        router.patch(
-            route('orders.update-temperature', tempOrder.id),
-            { temperature: formatted },
-            {
-                onSuccess: () => {
-                    setIsTempDialogOpen(false);
-                    setTempOrder(null);
-                    setTempRecords([]);
-                    router.reload({ only: ['orders'] });
-                },
-                onError: (errors) => {
-                    alert('Terjadi error saat menyimpan data suhu.');
-                    console.error(errors);
-                },
-            },
-        );
-    };
-    useEffect(() => {
-        console.log('Semua data orders:', orders.data);
-    }, [orders.data]);
-
-    const [isPrinting, setIsPrinting] = useState(false);
-
-    const handlePrint = async () => {
-        // Buka jendela cetak segera agar tidak diblokir browser popup blocker
-        const printWindow = window.open('', '_blank');
-        if (!printWindow) {
-            alert('Gagal membuka jendela cetak. Pastikan popup tidak diblokir.');
-            return;
-        }
-
-        printWindow.document.write(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <title>Menyiapkan Billing Statement...</title>
-                <style>
-                    body {
-                        font-family: 'Segoe UI', Arial, sans-serif;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        height: 70vh;
-                        color: #334155;
-                        margin: 0;
-                    }
-                    .spinner {
-                        width: 36px;
-                        height: 36px;
-                        border: 3px solid #e2e8f0;
-                        border-top-color: #059669;
-                        border-radius: 50%;
-                        animation: spin 0.8s linear infinite;
-                        margin-bottom: 14px;
-                    }
-                    @keyframes spin {
-                        to { transform: rotate(360deg); }
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="spinner"></div>
-                <div style="font-size: 15px; font-weight: 600;">Memuat semua data kontainer untuk dicetak...</div>
-                <div style="font-size: 12px; color: #64748b; margin-top: 5px;">Total data: ${orders.total ?? filteredOrders.length} kontainer</div>
-            </body>
-            </html>
-        `);
-        printWindow.document.close();
-
-        setIsPrinting(true);
-
-        try {
-            // Ambil semua data kontainer yang sesuai filter aktif dari backend
-            const params = new URLSearchParams();
-            if (search) params.append('search', search);
-            if (startDate) params.append('start_date', startDate);
-            if (endDate) params.append('end_date', endDate);
-            if (filters.trashed) params.append('trashed', filters.trashed);
-            if (filters.sort_by) params.append('sort_by', filters.sort_by);
-            if (filters.sort_dir) params.append('sort_dir', filters.sort_dir);
-            if (selectedProductIds.length > 0) {
-                selectedProductIds.forEach((pid) => params.append('product_ids[]', pid.toString()));
-            }
-
-            const res = await fetch(`/karantina/print-data?${params.toString()}`);
-            if (!res.ok) throw new Error('Gagal mengambil data dari server');
-            const json = await res.json();
-            const allPrintData = json.data || [];
-
-            if (allPrintData.length === 0) {
-                printWindow.document.body.innerHTML = `
-                    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-                        <p style="color: #ef4444; font-weight: 600;">Tidak ada data yang sesuai filter untuk dicetak.</p>
-                        <button onclick="window.close()" style="padding: 6px 12px; cursor: pointer;">Tutup</button>
-                    </div>
-                `;
-                return;
-            }
-
-            // Format label periode
-            const startLabel = startDate ? new Date(startDate).toLocaleDateString('id-ID') : 'Semua';
-            const endLabel = endDate ? new Date(endDate).toLocaleDateString('id-ID') : 'Semua';
-            const periodLabel = `${startLabel} s/d ${endLabel}`;
-            const logoUrl = '/logo.png';
-
-            const html = `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <meta charset="utf-8">
-                <title>Billing Statement</title>
-                <style>
-                    body {
-                        font-family: 'Segoe UI', Arial, sans-serif;
-                        margin: 20px;
-                        color: #333;
-                    }
-                    .header {
-                        display: flex;
-                        align-items: center;
-                        gap: 15px;
-                        margin-bottom: 20px;
-                    }
-                    .logo {
-                        width: 70px;
-                        height: 70px;
-                        object-fit: contain;
-                    }
-                    .company-info {
-                        font-size: 14px;
-                    }
-                    .company-info strong {
-                        font-size: 16px;
-                    }
-                    .customer-info {
-                        margin-top: 10px;
-                        font-size: 14px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
-                    }
-                    table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        margin-top: 15px;
-                        font-size: 12px;
-                    }
-                    th, td {
-                        border: 1px solid #000;
-                        padding: 7px 8px;
-                        text-align: left;
-                    }
-                    th {
-                        background-color: #f0f0f0;
-                        font-weight: 600;
-                    }
-                    .text-gray-400 {
-                        color: #9ca3af;
-                    }
-                    @media print {
-                        @page {
-                            margin: 1cm;
-                        }
-                        body {
-                            -webkit-print-color-adjust: exact;
-                            print-color-adjust: exact;
-                        }
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="header">
-                    <img src="${logoUrl}" alt="Logo" class="logo">
-                    <div class="company-info">
-                        <strong>PT. DEPO SURABAYA SEJAHTERA</strong><br>
-                        Tanjung Sadari No. 90<br>
-                        Surabaya<br>
-                        Jawa Timur - Indonesia
-                    </div>
-                </div>
-
-                <div class="customer-info">
-                    <div>
-                        <strong>Periode:</strong> ${periodLabel}
-                    </div>
-                    <div style="font-size: 12px; color: #555;">
-                        Total: <strong>${allPrintData.length}</strong> Kontainer
-                    </div>
-                </div>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 35px; text-align: center;">No</th>
-                            <th>Nomor Kontainer</th>
-                            <th>Nama Shipper</th>
-                            <th>Size</th>
-                            <th>Tanggal Masuk</th>
-                            <th>Tanggal Keluar</th>
-                            <th>Komoditi</th>
-                            <th>Negara Tujuan</th>
-                            <th>Fumigator</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${allPrintData
-                            .map(
-                                (item: any, idx: number) => `
-                            <tr>
-                                <td style="text-align: center;">${idx + 1}</td>
-                                <td style="font-weight: 600;">${item.container_number}</td>
-                                <td>${item.shipper_name ?? '-'}</td>
-                                <td>${formatContainerSize(item.price_type)}</td>
-                                <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${item.exit_date ? formatKarantinaDateTimeString(item.exit_date) : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${item.commodity ?? '-'}</td>
-                                <td>${item.country ?? '-'}</td>
-                                <td>
-                                    ${item.fumigasi ? (item.fumigasi.length > 50 ? item.fumigasi.substring(0, 50) + '...' : item.fumigasi) : '–'}
-                                </td>
-                            </tr>
-                        `,
-                            )
-                            .join('')}
-                    </tbody>
-                </table>
-            </body>
-            </html>
-            `;
-
-            printWindow.document.open();
-            printWindow.document.write(html);
-            printWindow.document.close();
-
-            setTimeout(() => {
-                printWindow.focus();
-                printWindow.print();
-            }, 300);
-        } catch (err) {
-            console.error('Error saat cetak billing statement:', err);
-            printWindow.document.body.innerHTML = `
-                <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-                    <p style="color: #ef4444; font-weight: 600;">Terjadi kesalahan saat memuat seluruh data kontainer.</p>
-                    <button onclick="window.close()" style="padding: 6px 12px; cursor: pointer;">Tutup</button>
-                </div>
-            `;
-        } finally {
-            setIsPrinting(false);
-        }
-    };
-
-    const { props } = usePage<PageProps>();
-
     const [productSearchQuery, setProductSearchQuery] = useState('');
 
+    const [showFilterPanel, setShowFilterPanel] = useState(true);
+    const [isPrinting, setIsPrinting] = useState(false);
+
+    // Sinkronisasi filter saat URL / navigasi Inertia berubah
+    useEffect(() => {
+        setCustomerId(filters.customer_id || 'all');
+        setShipperId(filters.shipper_id || 'all');
+        setFumigator(filters.fumigator || '');
+        setExcludeStatus(filters.exclude_status || 'active');
+        setDateFrom(filters.date_from || '');
+        setDateTo(filters.date_to || '');
+        setDateType(filters.date_type || 'entry_date');
+        setSearch(filters.search || '');
+        setPerPage(String(filters.per_page || 25));
+
+        const pIds = Array.isArray(filters.product_ids)
+            ? filters.product_ids.map(Number).filter((n) => !isNaN(n))
+            : [];
+        setSelectedProductIds(pIds);
+    }, [
+        filters.customer_id,
+        filters.shipper_id,
+        filters.fumigator,
+        filters.exclude_status,
+        filters.date_from,
+        filters.date_to,
+        filters.date_type,
+        filters.search,
+        filters.per_page,
+        filters.product_ids,
+    ]);
+
+    const applyFilters = (overrides?: Partial<typeof filters>) => {
+        const cId = overrides?.customer_id !== undefined ? overrides.customer_id : customerId;
+        const sId = overrides?.shipper_id !== undefined ? overrides.shipper_id : shipperId;
+        const fum = overrides?.fumigator !== undefined ? overrides.fumigator : fumigator;
+        const pIds = overrides?.product_ids !== undefined ? overrides.product_ids : selectedProductIds;
+        const exc = overrides?.exclude_status !== undefined ? overrides.exclude_status : excludeStatus;
+        const dFrom = overrides?.date_from !== undefined ? overrides.date_from : dateFrom;
+        const dTo = overrides?.date_to !== undefined ? overrides.date_to : dateTo;
+        const dType = overrides?.date_type !== undefined ? overrides.date_type : dateType;
+        const qSearch = overrides?.search !== undefined ? overrides.search : search;
+        const pPage = overrides?.per_page !== undefined ? overrides.per_page : perPage;
+
+        router.get(
+            route('index_karantina'),
+            {
+                customer_id: cId === 'all' ? undefined : cId,
+                shipper_id: sId === 'all' ? undefined : sId,
+                fumigator: fum ? fum.trim() : undefined,
+                product_ids: pIds.length > 0 ? pIds : undefined,
+                exclude_status: exc,
+                date_from: dFrom || undefined,
+                date_to: dTo || undefined,
+                date_type: dType,
+                search: qSearch ? qSearch.trim() : undefined,
+                per_page: pPage,
+                sort_by: filters.sort_by || undefined,
+                sort_dir: filters.sort_dir || undefined,
+                trashed: filters.trashed || undefined,
+            },
+            {
+                preserveState: true,
+                preserveScroll: true,
+            }
+        );
+    };
+
+    const resetFilters = () => {
+        setCustomerId('all');
+        setShipperId('all');
+        setFumigator('');
+        setSelectedProductIds([]);
+        setExcludeStatus('active');
+        setDateFrom('');
+        setDateTo('');
+        setDateType('entry_date');
+        setSearch('');
+        setPerPage('25');
+        router.get(route('index_karantina'), {}, { preserveScroll: true });
+    };
+
+    const handleKeyDownSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            applyFilters();
+        }
+    };
+
+    // Helper Multi-select Product
     const toggleProduct = (id: number) => {
         setSelectedProductIds((prev) =>
             prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
@@ -521,395 +301,747 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
     const toggleAllFiltered = () => {
         const filteredIds = filteredProductsList.map((p) => p.id);
         if (isAllFilteredSelected) {
-            // Batalkan pilihan semua item di hasil pencarian
             const filteredSet = new Set(filteredIds);
             setSelectedProductIds((prev) => prev.filter((id) => !filteredSet.has(id)));
         } else {
-            // Centang semua item di hasil pencarian
             setSelectedProductIds((prev) => Array.from(new Set([...prev, ...filteredIds])));
         }
     };
 
-    const handleApplyFilter = (customParams?: {
-        search?: string;
-        start_date?: string;
-        end_date?: string;
-        product_ids?: number[];
+    // Cetak Billing Statement (A atau B)
+    const handlePrint = async (statementType: 'A' | 'B' = 'A') => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+            alert('Gagal membuka jendela cetak. Pastikan izin popup browser diaktifkan.');
+            return;
+        }
+
+        const titleText = statementType === 'B' ? 'Billing Statement B' : 'Billing Statement A';
+
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Menyiapkan ${titleText}...</title>
+                <style>
+                    body {
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 70vh;
+                        color: #334155;
+                        margin: 0;
+                    }
+                    .spinner {
+                        width: 36px;
+                        height: 36px;
+                        border: 3px solid #e2e8f0;
+                        border-top-color: #0f172a;
+                        border-radius: 50%;
+                        animation: spin 0.8s linear infinite;
+                        margin-bottom: 14px;
+                    }
+                    @keyframes spin {
+                        to { transform: rotate(360deg); }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="spinner"></div>
+                <div style="font-size: 15px; font-weight: 600;">Menyiapkan data ${titleText}...</div>
+                <div style="font-size: 12px; color: #64748b; margin-top: 5px;">Total data: ${orders.total ?? orders.data.length} kontainer</div>
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+
+        setIsPrinting(true);
+
+        try {
+            const params = new URLSearchParams();
+            if (customerId && customerId !== 'all') params.append('customer_id', customerId);
+            if (shipperId && shipperId !== 'all') params.append('shipper_id', shipperId);
+            if (fumigator) params.append('fumigator', fumigator);
+            if (excludeStatus) params.append('exclude_status', excludeStatus);
+            if (dateFrom) params.append('date_from', dateFrom);
+            if (dateTo) params.append('date_to', dateTo);
+            if (dateType) params.append('date_type', dateType);
+            if (search) params.append('search', search);
+            if (filters.trashed) params.append('trashed', filters.trashed);
+            if (filters.sort_by) params.append('sort_by', filters.sort_by);
+            if (filters.sort_dir) params.append('sort_dir', filters.sort_dir);
+            if (selectedProductIds.length > 0) {
+                selectedProductIds.forEach((pid) => params.append('product_ids[]', pid.toString()));
+            }
+
+            const res = await fetch(`/karantina/print-data?${params.toString()}`);
+            if (!res.ok) throw new Error('Gagal mengambil data dari server');
+            const json = await res.json();
+            const allPrintData = json.data || [];
+
+            if (allPrintData.length === 0) {
+                printWindow.document.body.innerHTML = `
+                    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+                        <p style="color: #ef4444; font-weight: 600;">Tidak ada data yang sesuai filter untuk dicetak.</p>
+                        <button onclick="window.close()" style="padding: 6px 14px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc;">Tutup</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const startLabel = dateFrom ? new Date(dateFrom).toLocaleDateString('id-ID') : 'Semua';
+            const endLabel = dateTo ? new Date(dateTo).toLocaleDateString('id-ID') : 'Semua';
+            const periodLabel = `${startLabel} s/d ${endLabel}`;
+            const logoUrl = '/logo.png';
+            const printDateStr = new Date().toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+            });
+
+            const html = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>${titleText} - PT. Depo Surabaya Sejahtera</title>
+                <style>
+                    @page {
+                        size: A4 landscape;
+                        margin: 10mm;
+                    }
+                    * {
+                        box-sizing: border-box;
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: #111;
+                    }
+                    body {
+                        margin: 0;
+                        padding: 10px;
+                        font-size: 11px;
+                    }
+                    .header-table {
+                        width: 100%;
+                        border-bottom: 2px solid #000;
+                        padding-bottom: 8px;
+                        margin-bottom: 12px;
+                    }
+                    .company-name {
+                        font-size: 16pt;
+                        font-weight: 800;
+                        margin-bottom: 2px;
+                    }
+                    .company-address {
+                        font-size: 9pt;
+                        color: #444;
+                    }
+                    .report-title {
+                        text-align: right;
+                        font-size: 16pt;
+                        font-weight: 900;
+                        color: #0f172a;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    .filter-info {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 9pt;
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        padding: 8px 12px;
+                        border-radius: 4px;
+                        margin-bottom: 12px;
+                    }
+                    table.data-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 9pt;
+                    }
+                    table.data-table th, table.data-table td {
+                        border: 1px solid #333;
+                        padding: 6px 8px;
+                        vertical-align: middle;
+                    }
+                    table.data-table th {
+                        background-color: #f1f5f9;
+                        font-weight: 700;
+                        text-align: left;
+                    }
+                    .text-center { text-align: center; }
+                    .text-gray-400 { color: #94a3b8; }
+                    @media print {
+                        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    }
+                </style>
+            </head>
+            <body>
+                <table class="header-table">
+                    <tr>
+                        <td style="width: 70px; vertical-align: middle;">
+                            <img src="${logoUrl}" alt="Logo" style="width: 55px; height: 55px; object-fit: contain;">
+                        </td>
+                        <td style="vertical-align: middle;">
+                            <div class="company-name">PT. DEPO SURABAYA SEJAHTERA</div>
+                            <div class="company-address">
+                                Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) | Telp. 031-353 9484, 031-3539485 | Fax. 031-3539482
+                            </div>
+                        </td>
+                        <td style="text-align: right; vertical-align: middle;">
+                            <div class="report-title">${titleText}</div>
+                            <div style="font-size: 10pt; color: #475569; font-weight: 600;">Layanan Karantina & Fumigasi</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="filter-info">
+                    <div>
+                        <strong>Periode:</strong> ${periodLabel} &nbsp;|&nbsp;
+                        <strong>Total:</strong> ${allPrintData.length} Kontainer
+                    </div>
+                    <div>
+                        <strong>Dicetak pada:</strong> ${printDateStr} WIB
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px; text-align: center;">No</th>
+                            <th>Nomor Kontainer</th>
+                            <th>Nama Shipper</th>
+                            <th style="text-align: center; width: 60px;">Size</th>
+                            <th>Tanggal Masuk</th>
+                            <th>Tanggal EIR</th>
+                            <th>Tanggal Keluar</th>
+                            <th>Komoditi</th>
+                            <th>Negara Tujuan</th>
+                            <th>Fumigator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${allPrintData
+                            .map(
+                                (item: any, idx: number) => `
+                            <tr>
+                                <td class="text-center">${idx + 1}</td>
+                                <td style="font-weight: 700; font-family: monospace;">${item.container_number}</td>
+                                <td>${item.shipper_name ?? '-'}</td>
+                                <td class="text-center">${formatContainerSize(item.price_type)}</td>
+                                <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${item.eir_date ? formatKarantinaDateTimeString(item.eir_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${item.exit_date ? formatKarantinaDateTimeString(item.exit_date) : '<span class="text-gray-400">–</span>'}</td>
+                                <td>${item.commodity ?? '-'}</td>
+                                <td>${item.country ?? '-'}</td>
+                                <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
+                            </tr>
+                        `
+                            )
+                            .join('')}
+                    </tbody>
+                </table>
+            </body>
+            </html>
+            `;
+
+            printWindow.document.open();
+            printWindow.document.write(html);
+            printWindow.document.close();
+
+            setTimeout(() => {
+                printWindow.focus();
+                printWindow.print();
+            }, 300);
+        } catch (err) {
+            console.error('Error saat mencetak billing statement:', err);
+            printWindow.document.body.innerHTML = `
+                <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+                    <p style="color: #ef4444; font-weight: 600;">Terjadi kesalahan saat memuat seluruh data kontainer.</p>
+                    <button onclick="window.close()" style="padding: 6px 14px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc;">Tutup</button>
+                </div>
+            `;
+        } finally {
+            setIsPrinting(false);
+        }
+    };
+
+    // Sort Button Component
+    const SortButton = ({
+        label,
+        field,
+        currentSort,
+        currentDir,
+    }: {
+        label: string;
+        field: string;
+        currentSort?: string;
+        currentDir?: string;
     }) => {
-        const s = customParams?.search !== undefined ? customParams.search : search;
-        const start = customParams?.start_date !== undefined ? customParams.start_date : startDate;
-        const end = customParams?.end_date !== undefined ? customParams.end_date : endDate;
-        const pIds = customParams?.product_ids !== undefined ? customParams.product_ids : selectedProductIds;
-
-        router.get(
-            '/karantina',
-            {
-                search: s || undefined,
-                trashed: filters.trashed || undefined,
-                start_date: start || undefined,
-                end_date: end || undefined,
-                product_ids: pIds.length > 0 ? pIds : undefined,
-                sort_by: filters.sort_by || undefined,
-                sort_dir: filters.sort_dir || undefined,
-            },
-            {
-                preserveState: true,
-                preserveScroll: true,
-            },
-        );
-    };
-
-    const handleReset = () => {
-        setSearch('');
-        setStartDate('');
-        setEndDate('');
-        setSelectedProductIds([]);
-        setProductSearchQuery('');
-        router.get('/karantina');
-    };
-
-    // Di dalam komponen SortButton
-    const SortButton = ({ label, field, currentSort, currentDir, routeName = 'index_karantina' }: SortButtonProps) => {
         const direction = currentSort === field ? (currentDir === 'asc' ? 'desc' : 'asc') : 'asc';
 
         return (
             <Link
-                href={route(routeName, {
+                href={route('index_karantina', {
+                    customer_id: customerId === 'all' ? undefined : customerId,
+                    shipper_id: shipperId === 'all' ? undefined : shipperId,
+                    fumigator: fumigator ? fumigator.trim() : undefined,
+                    exclude_status: excludeStatus,
+                    date_from: dateFrom || undefined,
+                    date_to: dateTo || undefined,
+                    date_type: dateType,
+                    product_ids: selectedProductIds.length > 0 ? selectedProductIds : undefined,
+                    search: search || undefined,
+                    per_page: perPage,
                     sort_by: field,
                     sort_dir: direction,
-                    search: search || undefined,
-                    start_date: startDate || undefined,
-                    end_date: endDate || undefined,
-                    product_ids: selectedProductIds.length > 0 ? selectedProductIds : undefined,
                 })}
                 preserveState
                 preserveScroll
-                className="flex items-center gap-1 font-semibold text-gray-700 hover:text-black"
+                className="inline-flex items-center gap-1 font-semibold text-slate-700 hover:text-black transition-colors"
             >
-                {label}
+                <span>{label}</span>
                 {currentSort === field ? (
                     direction === 'asc' ? (
-                        <ArrowUp className="h-4 w-4" />
+                        <ArrowUp className="h-3.5 w-3.5 text-blue-600" />
                     ) : (
-                        <ArrowDown className="h-4 w-4" />
+                        <ArrowDown className="h-3.5 w-3.5 text-blue-600" />
                     )
                 ) : (
-                    <ArrowUpDown className="h-4 w-4 text-gray-400" />
+                    <ArrowUpDown className="h-3.5 w-3.5 text-gray-400 opacity-60 hover:opacity-100" />
                 )}
             </Link>
         );
     };
 
-    // Kelompokkan data orders berdasarkan `no_aju` jika ada, jika tidak gunakan `order_id`
-    const groupKeys: string[] = [];
-    const groupedOrders: Record<string, Order[]> = {};
-    for (const order of filteredOrders) {
-        const groupKey = order.no_aju ?? order.order_id;
-        if (!groupedOrders[groupKey]) {
-            groupedOrders[groupKey] = [];
-            groupKeys.push(groupKey);
-        }
-        groupedOrders[groupKey].push(order);
-    }
+    const { props } = usePage<{ flash?: FlashProps }>();
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Karantina & Fumigasi - Depo Surabaya" />
 
-            <div className="flex flex-1 flex-col gap-6 bg-[#f8fafc] p-4 md:p-6 min-h-screen">
-                {/* Flash Message */}
+            <div className="w-full space-y-6 px-4 py-6 sm:px-6 lg:px-8 bg-slate-50/50 min-h-screen">
+                {/* Flash Notification */}
                 {props.flash?.success && (
-                    <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-800 shadow-sm">
-                        {props.flash.success}
+                    <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold text-emerald-800 shadow-2xs">
+                        <Check className="h-4 w-4 text-emerald-600 shrink-0" />
+                        <span>{props.flash.success}</span>
                     </div>
                 )}
                 {props.flash?.error && (
-                    <div className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-800 shadow-sm">
-                        {props.flash.error}
+                    <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs font-semibold text-rose-800 shadow-2xs">
+                        <X className="h-4 w-4 text-rose-600 shrink-0" />
+                        <span>{props.flash.error}</span>
                     </div>
                 )}
 
-                {/* Header Karantina */}
-                <div className="flex flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+                {/* Header Title & Top Action Buttons */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                         <div className="flex items-center gap-2.5">
-                            <h1 className="text-2xl font-bold tracking-tight text-gray-800">
+                            <Shield className="h-7 w-7 text-gray-900" />
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-900">
                                 Karantina & Fumigasi
                             </h1>
-                            <span className="inline-flex items-center rounded-full bg-rose-50 px-3 py-0.5 text-xs font-semibold text-rose-700 border border-rose-200">
-                                Petugas Karantina
+                            <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700 border border-slate-200">
+                                Billing & Monitoring
                             </span>
                         </div>
-                        <p className="mt-1 text-sm text-gray-500">
-                            Kelola data kontainer karantina, filter pencarian per periode, dan cetak billing statement resmi.
+                        <p className="text-xs text-gray-500 mt-1">
+                            Kelola data pergerakan kontainer karantina, filter multi-parameter, dan cetak billing statement resmi.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-2">
-                        <Button
-                            type="button"
-                            disabled={isPrinting}
-                            onClick={handlePrint}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm disabled:opacity-75"
-                        >
-                            <PrinterIcon className={`mr-2 h-4 w-4 ${isPrinting ? 'animate-spin' : ''}`} />
-                            {isPrinting ? 'Menyiapkan Data...' : 'Cetak Billing Statement'}
-                        </Button>
-                    </div>
-                </div>
-
-                {/* Filter Section Card */}
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                    <div className="mb-3 flex items-center justify-between">
-                        <h2 className="text-sm font-bold text-gray-800 uppercase tracking-wide">
-                            Filter & Pencarian Kontainer
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
-                        {/* Search Input */}
-                        <div className="md:col-span-5 space-y-1">
-                            <Label htmlFor="search" className="text-xs font-medium text-gray-600">
-                                Cari (Fumigator, Shipper, Customer, Kontainer)
-                            </Label>
-                            <Input
-                                id="search"
-                                type="text"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                        e.preventDefault();
-                                        handleApplyFilter();
-                                    }
-                                }}
-                                placeholder="Cari fumigator, shipper, customer, atau nomor kontainer..."
-                                className="w-full rounded-lg border-gray-300 py-2 text-sm text-gray-800 shadow-sm focus:border-blue-500"
-                            />
-                        </div>
-
-                        {/* Multi-Select Products Filter */}
-                        <div className="md:col-span-3 space-y-1">
-                            <Label className="text-xs font-medium text-gray-600 flex items-center justify-between">
-                                <span>Filter Produk</span>
-                                {selectedProductIds.length > 0 && (
-                                    <span className="text-[11px] text-blue-600 font-semibold">
-                                        {selectedProductIds.length} dipilih
-                                    </span>
-                                )}
-                            </Label>
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button
-                                        variant="outline"
-                                        type="button"
-                                        className="w-full justify-between border-gray-300 py-2 text-sm font-normal text-gray-800 shadow-sm hover:bg-gray-50 focus:border-blue-500 h-9"
-                                    >
-                                        <span className="truncate">
-                                            {selectedProductIds.length === 0
-                                                ? 'Semua Produk'
-                                                : selectedProductIds.length === 1
-                                                ? (products.find((p) => p.id === selectedProductIds[0])?.service_type || '1 Produk')
-                                                : `${selectedProductIds.length} Produk Dipilih`}
-                                        </span>
-                                        <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="w-80 p-2 shadow-lg" align="start">
-                                    <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-2">
-                                        <span className="text-xs font-semibold text-gray-700">Pilih Produk</span>
-                                        <div className="flex gap-2 text-[11px]">
-                                            <button
-                                                type="button"
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    setSelectedProductIds(products.map((p) => p.id));
-                                                }}
-                                                className="text-blue-600 hover:underline font-medium"
-                                            >
-                                                Pilih Semua ({products.length})
-                                            </button>
-                                            <span className="text-gray-300">|</span>
-                                            <button
-                                                type="button"
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    setSelectedProductIds([]);
-                                                }}
-                                                className="text-gray-500 hover:underline"
-                                            >
-                                                Reset
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    {/* Search Input di dalam Dropdown */}
-                                    <div className="relative mb-2 px-1">
-                                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-gray-400" />
-                                        <Input
-                                            type="text"
-                                            placeholder="Cari produk (misal: fumigasi)..."
-                                            value={productSearchQuery}
-                                            onChange={(e) => setProductSearchQuery(e.target.value)}
-                                            onKeyDown={(e) => e.stopPropagation()}
-                                            className="h-8 pl-8 pr-7 text-xs rounded-md border-gray-200 focus:border-blue-500"
-                                        />
-                                        {productSearchQuery && (
-                                            <button
-                                                type="button"
-                                                onClick={() => setProductSearchQuery('')}
-                                                className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
-                                            >
-                                                <X className="h-3.5 w-3.5" />
-                                            </button>
-                                        )}
-                                    </div>
-
-                                    {/* Opsi Centang Semua Hasil Filter */}
-                                    {filteredProductsList.length > 0 && (
-                                        <div
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                toggleAllFiltered();
-                                            }}
-                                            className="flex items-center gap-2 px-2 py-1.5 mb-1.5 rounded bg-slate-50 hover:bg-slate-100 cursor-pointer text-xs font-medium text-slate-700 border border-slate-200 transition-colors"
-                                        >
-                                            <Checkbox
-                                                checked={isAllFilteredSelected}
-                                                onCheckedChange={toggleAllFiltered}
-                                                className="h-3.5 w-3.5"
-                                            />
-                                            <span className="truncate">
-                                                {productSearchQuery
-                                                    ? `Centang Semua Hasil ("${productSearchQuery}") (${filteredProductsList.length})`
-                                                    : `Centang Semua (${filteredProductsList.length})`}
-                                            </span>
-                                        </div>
-                                    )}
-
-                                    {/* List Produk */}
-                                    <div className="space-y-0.5 max-h-56 overflow-y-auto">
-                                        {filteredProductsList.length === 0 ? (
-                                            <div className="py-4 text-center text-xs text-gray-400">
-                                                Tidak ada produk cocok dengan "{productSearchQuery}"
-                                            </div>
-                                        ) : (
-                                            filteredProductsList.map((product) => {
-                                                const isSelected = selectedProductIds.includes(product.id);
-                                                return (
-                                                    <div
-                                                        key={product.id}
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            toggleProduct(product.id);
-                                                        }}
-                                                        className={`flex items-center gap-2 px-2 py-1.5 rounded-md cursor-pointer text-xs transition-colors ${
-                                                            isSelected ? 'bg-blue-50 text-blue-900 font-medium' : 'hover:bg-gray-100 text-gray-700'
-                                                        }`}
-                                                    >
-                                                        <Checkbox
-                                                            checked={isSelected}
-                                                            onCheckedChange={() => toggleProduct(product.id)}
-                                                            className="h-3.5 w-3.5"
-                                                        />
-                                                        <span className="truncate">{product.service_type}</span>
-                                                    </div>
-                                                );
-                                            })
-                                        )}
-                                    </div>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </div>
-
-                        {/* Date Range Picker */}
-                        <div className="md:col-span-4 space-y-1">
-                            <Label className="text-xs font-medium text-gray-600">
-                                Rentang Tanggal
-                            </Label>
-                            <DateRangePicker
-                                startDate={startDate}
-                                endDate={endDate}
-                                onChange={({ startDate: s, endDate: e }) => {
-                                    setStartDate(s);
-                                    setEndDate(e);
-                                }}
-                                onApply={({ startDate: s, endDate: e }) => {
-                                    setStartDate(s);
-                                    setEndDate(e);
-                                    handleApplyFilter({ start_date: s, end_date: e });
-                                }}
-                                placeholder="Pilih rentang tanggal filter..."
-                                className="w-full"
-                                align="right"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Chips untuk produk terpilih jika ada */}
-                    {selectedProductIds.length > 0 && (
-                        <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-gray-100 pt-2.5">
-                            <span className="text-[11px] text-gray-500 font-medium">Produk Terpilih:</span>
-                            {selectedProductIds.map((id) => {
-                                const prod = products.find((p) => p.id === id);
-                                if (!prod) return null;
-                                return (
-                                    <span
-                                        key={id}
-                                        className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 border border-blue-200"
-                                    >
-                                        {prod.service_type}
-                                        <button
-                                            type="button"
-                                            onClick={() => toggleProduct(id)}
-                                            className="hover:text-blue-900 focus:outline-none"
-                                        >
-                                            <X className="h-3 w-3" />
-                                        </button>
-                                    </span>
-                                );
-                            })}
-                            <button
-                                type="button"
-                                onClick={() => setSelectedProductIds([])}
-                                className="text-[11px] text-gray-500 hover:text-rose-600 underline ml-1"
-                            >
-                                Hapus Semua
-                            </button>
-                        </div>
-                    )}
-
-                    {/* Action buttons for search */}
-                    <div className="mt-4 flex items-center justify-end gap-2 border-t border-gray-100 pt-3">
+                        {/* Toggle Panel Filter */}
                         <Button
                             variant="outline"
-                            onClick={handleReset}
-                            className="text-xs font-medium"
+                            size="sm"
+                            onClick={() => setShowFilterPanel(!showFilterPanel)}
+                            className="gap-1.5 h-9 text-xs border-gray-300 bg-white shadow-2xs"
                         >
-                            Reset
+                            <Filter className="h-3.5 w-3.5 text-blue-600" />
+                            <span>Filter</span>
+                            {showFilterPanel ? (
+                                <ChevronUp className="h-3.5 w-3.5 text-gray-500" />
+                            ) : (
+                                <ChevronDown className="h-3.5 w-3.5 text-gray-500" />
+                            )}
                         </Button>
-                        <Button onClick={() => handleApplyFilter()} className="text-xs font-semibold bg-gray-900 hover:bg-black text-white">
-                            Terapkan Filter
+
+                        {/* Button Billing Statement A */}
+                        <Button
+                            type="button"
+                            size="sm"
+                            disabled={isPrinting}
+                            onClick={() => handlePrint('A')}
+                            className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
+                            title="Cetak Billing Statement Format A"
+                        >
+                            <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : ''}`} />
+                            <span>Billing Statement A</span>
+                        </Button>
+
+                        {/* Button Billing Statement B */}
+                        <Button
+                            type="button"
+                            size="sm"
+                            disabled={isPrinting}
+                            onClick={() => handlePrint('B')}
+                            variant="outline"
+                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
+                            title="Cetak Billing Statement Format B"
+                        >
+                            <Printer className="h-3.5 w-3.5 text-gray-600" />
+                            <span>Billing Statement B</span>
                         </Button>
                     </div>
                 </div>
 
-                {/* Data Table Card */}
-                <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-5">
-                    <div className="mb-4">
-                        <h2 className="text-lg font-bold text-gray-800">
-                            Daftar Kontainer Karantina & Fumigasi
-                        </h2>
-                        <p className="text-xs text-gray-500">
-                            Total <span className="font-semibold text-gray-700">{orders.total ?? filteredOrders.length}</span> kontainer sesuai kriteria filter.
-                        </p>
+                {/* Panel Parameter Filter (Mirip Persis Panel Report Tanpa Infografis) */}
+                {showFilterPanel && (
+                    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs space-y-4">
+                        {/* Header Panel Filter */}
+                        <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                            <span className="text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <Filter className="h-4 w-4 text-blue-600" />
+                                Parameter Filter
+                            </span>
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={resetFilters}
+                                className="text-xs text-gray-500 hover:text-rose-600 gap-1.5 h-8 px-2"
+                            >
+                                <RotateCcw className="h-3.5 w-3.5" />
+                                <span>Reset Filter</span>
+                            </Button>
+                        </div>
+
+                        {/* Grid Input Filter */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {/* 1. Filter Customer */}
+                            <div className="space-y-1.5">
+                                <Label className="text-xs font-semibold text-gray-700">Customer</Label>
+                                <Select value={customerId} onValueChange={setCustomerId}>
+                                    <SelectTrigger className="w-full text-xs h-9 bg-white border-gray-200">
+                                        <SelectValue placeholder="Semua Customer" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="all">Semua Customer</SelectItem>
+                                        {customers.map((c) => (
+                                            <SelectItem key={c.id} value={String(c.id)}>
+                                                {c.name}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            {/* 2. Filter Shipper */}
+                            <div className="space-y-1.5">
+                                <Label className="text-xs font-semibold text-gray-700">Shipper</Label>
+                                <Select value={shipperId} onValueChange={setShipperId}>
+                                    <SelectTrigger className="w-full text-xs h-9 bg-white border-gray-200">
+                                        <SelectValue placeholder="Semua Shipper" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="all">Semua Shipper</SelectItem>
+                                        {shippers.map((s) => (
+                                            <SelectItem key={s.id} value={String(s.id)}>
+                                                {s.name}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            {/* 3. Filter Fumigator (Field Text Biasa) */}
+                            <div className="space-y-1.5">
+                                <Label className="text-xs font-semibold text-gray-700">Fumigator</Label>
+                                <Input
+                                    type="text"
+                                    value={fumigator}
+                                    onChange={(e) => setFumigator(e.target.value)}
+                                    onKeyDown={handleKeyDownSearch}
+                                    placeholder="Ketik nama fumigator..."
+                                    className="text-xs h-9 bg-white border-gray-200"
+                                />
+                            </div>
+
+                            {/* 4. Filter Jenis Layanan (Multi-Select) */}
+                            <div className="space-y-1.5">
+                                <div className="flex items-center justify-between">
+                                    <Label className="text-xs font-semibold text-gray-700">Jenis Layanan</Label>
+                                    {selectedProductIds.length > 0 && (
+                                        <span className="text-[10px] text-blue-600 font-bold bg-blue-50 px-1.5 py-0.2 rounded border border-blue-200">
+                                            {selectedProductIds.length} dipilih
+                                        </span>
+                                    )}
+                                </div>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button
+                                            variant="outline"
+                                            type="button"
+                                            className="w-full justify-between border-gray-200 bg-white text-xs font-normal text-gray-800 shadow-2xs hover:bg-gray-50 h-9"
+                                        >
+                                            <span className="truncate">
+                                                {selectedProductIds.length === 0
+                                                    ? 'Semua Layanan'
+                                                    : selectedProductIds.length === 1
+                                                    ? (products.find((p) => p.id === selectedProductIds[0])?.service_type || '1 Layanan')
+                                                    : `${selectedProductIds.length} Layanan Dipilih`}
+                                            </span>
+                                            <ChevronDown className="ml-1.5 h-3.5 w-3.5 shrink-0 opacity-50" />
+                                        </Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent className="w-80 p-2 shadow-lg" align="start">
+                                        <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-2">
+                                            <span className="text-xs font-semibold text-gray-700">Pilih Layanan</span>
+                                            <div className="flex gap-2 text-[11px]">
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        setSelectedProductIds(products.map((p) => p.id));
+                                                    }}
+                                                    className="text-blue-600 hover:underline font-medium"
+                                                >
+                                                    Semua ({products.length})
+                                                </button>
+                                                <span className="text-gray-300">|</span>
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        setSelectedProductIds([]);
+                                                    }}
+                                                    className="text-gray-500 hover:underline"
+                                                >
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        {/* Search Input di dalam Dropdown */}
+                                        <div className="relative mb-2 px-1">
+                                            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-gray-400" />
+                                            <Input
+                                                type="text"
+                                                placeholder="Cari layanan..."
+                                                value={productSearchQuery}
+                                                onChange={(e) => setProductSearchQuery(e.target.value)}
+                                                onKeyDown={(e) => e.stopPropagation()}
+                                                className="h-8 pl-8 pr-7 text-xs rounded-md border-gray-200"
+                                            />
+                                            {productSearchQuery && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setProductSearchQuery('')}
+                                                    className="absolute right-3 top-2 text-gray-400 hover:text-gray-600"
+                                                >
+                                                    <X className="h-3.5 w-3.5" />
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        {/* Toggle Centang Semua Filter */}
+                                        {filteredProductsList.length > 0 && (
+                                            <div
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    toggleAllFiltered();
+                                                }}
+                                                className="flex items-center gap-2 px-2 py-1.5 mb-1.5 rounded bg-slate-50 hover:bg-slate-100 cursor-pointer text-xs font-medium text-slate-700 border border-slate-200 transition-colors"
+                                            >
+                                                <Checkbox
+                                                    checked={isAllFilteredSelected}
+                                                    onCheckedChange={toggleAllFiltered}
+                                                    className="h-3.5 w-3.5"
+                                                />
+                                                <span className="truncate text-xs">
+                                                    {productSearchQuery
+                                                        ? `Centang Semua ("${productSearchQuery}")`
+                                                        : `Centang Semua (${filteredProductsList.length})`}
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        {/* List Produk */}
+                                        <div className="space-y-0.5 max-h-56 overflow-y-auto">
+                                            {filteredProductsList.length === 0 ? (
+                                                <div className="py-4 text-center text-xs text-gray-400">
+                                                    Tidak ada layanan cocok
+                                                </div>
+                                            ) : (
+                                                filteredProductsList.map((product) => {
+                                                    const isSelected = selectedProductIds.includes(product.id);
+                                                    return (
+                                                        <div
+                                                            key={product.id}
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                toggleProduct(product.id);
+                                                            }}
+                                                            className={`flex items-center gap-2 px-2 py-1.5 rounded-md cursor-pointer text-xs transition-colors ${
+                                                                isSelected
+                                                                    ? 'bg-blue-50 text-blue-900 font-medium'
+                                                                    : 'hover:bg-gray-100 text-gray-700'
+                                                            }`}
+                                                        >
+                                                            <Checkbox
+                                                                checked={isSelected}
+                                                                onCheckedChange={() => toggleProduct(product.id)}
+                                                                className="h-3.5 w-3.5"
+                                                            />
+                                                            <span className="truncate">{product.service_type}</span>
+                                                        </div>
+                                                    );
+                                                })
+                                            )}
+                                        </div>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </div>
+                        </div>
+
+                        {/* Baris 2: Status Exclude & Rentang Tanggal */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+                            {/* 5. Status Exclude */}
+                            <div className="space-y-1.5">
+                                <Label className="text-xs font-semibold text-gray-700">Status Exclude</Label>
+                                <Select value={excludeStatus} onValueChange={setExcludeStatus}>
+                                    <SelectTrigger className="w-full text-xs h-9 bg-white border-gray-200">
+                                        <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="active">Hanya yang Diikutsertakan (Default)</SelectItem>
+                                        <SelectItem value="all">Semua (Termasuk yang di-exclude)</SelectItem>
+                                        <SelectItem value="excluded">Hanya yang Di-exclude</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            {/* 6. Rentang Tanggal dengan Opsi Berdasarkan */}
+                            <div className="space-y-1.5 sm:col-span-2 lg:col-span-3">
+                                <div className="flex items-center justify-between">
+                                    <Label className="text-xs font-semibold text-gray-700">Rentang Tanggal</Label>
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="text-[11px] text-gray-500">Berdasarkan:</span>
+                                        <select
+                                            value={dateType}
+                                            onChange={(e) => setDateType(e.target.value)}
+                                            className="text-[11px] font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded px-1.5 py-0.5 cursor-pointer focus:ring-0"
+                                        >
+                                            <option value="entry_date">Tgl Masuk</option>
+                                            <option value="eir_date">Tgl EIR</option>
+                                            <option value="exit_date">Tgl Keluar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <DateRangePicker
+                                    startDate={dateFrom}
+                                    endDate={dateTo}
+                                    onChange={({ startDate, endDate }) => {
+                                        setDateFrom(startDate);
+                                        setDateTo(endDate);
+                                    }}
+                                    onApply={({ startDate, endDate }) => {
+                                        setDateFrom(startDate);
+                                        setDateTo(endDate);
+                                        applyFilters({ date_from: startDate, date_to: endDate });
+                                    }}
+                                    placeholder="Semua rentang tanggal..."
+                                    className="w-full"
+                                    align="right"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Chips Layanan Terpilih jika ada */}
+                        {selectedProductIds.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-1.5 border-t border-gray-100 pt-2.5">
+                                <span className="text-[11px] text-gray-500 font-medium">Layanan Terpilih:</span>
+                                {selectedProductIds.map((id) => {
+                                    const prod = products.find((p) => p.id === id);
+                                    if (!prod) return null;
+                                    return (
+                                        <span
+                                            key={id}
+                                            className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 border border-blue-200"
+                                        >
+                                            {prod.service_type}
+                                            <button
+                                                type="button"
+                                                onClick={() => toggleProduct(id)}
+                                                className="hover:text-blue-900 focus:outline-none"
+                                            >
+                                                <X className="h-3 w-3" />
+                                            </button>
+                                        </span>
+                                    );
+                                })}
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedProductIds([])}
+                                    className="text-[11px] text-gray-500 hover:text-rose-600 underline ml-1"
+                                >
+                                    Hapus Semua
+                                </button>
+                            </div>
+                        )}
+
+                        {/* Search Bar & Apply Action (Baris Bawah) */}
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-gray-100">
+                            <div className="relative w-full sm:max-w-md">
+                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                <Input
+                                    type="text"
+                                    placeholder="Cari nomor kontainer, customer, shipper, atau komoditi... (Tekan Enter)"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    onKeyDown={handleKeyDownSearch}
+                                    className="pl-9 text-xs h-9 bg-white border-gray-200"
+                                />
+                            </div>
+
+                            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+                                <Button
+                                    size="sm"
+                                    onClick={() => applyFilters()}
+                                    className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-5 shadow-2xs"
+                                >
+                                    Terapkan Filter
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Table Data Card (Susunan Kolom Persis Sama) */}
+                <div className="rounded-xl border border-gray-200 bg-white shadow-xs p-5 space-y-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                        <div>
+                            <h2 className="text-base font-bold text-gray-900">
+                                Daftar Kontainer Karantina & Fumigasi
+                            </h2>
+                            <p className="text-xs text-gray-500 mt-0.5">
+                                Menampilkan total <span className="font-bold text-gray-800">{orders.total ?? orders.data.length}</span> kontainer sesuai kriteria filter aktif.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="overflow-x-auto rounded-lg border border-gray-200">
                         <Table>
-                            <TableHeader className="bg-slate-50 text-xs font-semibold uppercase tracking-wider text-slate-600 border-b border-gray-200">
-                                <TableRow>
-                                    <TableHead className="px-4 py-3">
+                            <TableHeader className="bg-slate-50 text-xs font-semibold text-slate-700 border-b border-gray-200">
+                                <TableRow className="hover:bg-transparent">
+                                    {/* 1. Nomor Kontainer */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Nomor Kontainer"
                                             field="container_number"
@@ -917,7 +1049,9 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                             currentDir={filters.sort_dir}
                                         />
                                     </TableHead>
-                                    <TableHead className="px-4 py-3">
+
+                                    {/* 2. Nama Shipper */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Nama Shipper"
                                             field="shippers.name"
@@ -925,57 +1059,125 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                             currentDir={filters.sort_dir}
                                         />
                                     </TableHead>
-                                    <TableHead className="px-4 py-3">Size</TableHead>
-                                    <TableHead className="px-4 py-3">Tanggal Masuk</TableHead>
-                                    <TableHead className="px-4 py-3">Tanggal EIR</TableHead>
-                                    <TableHead className="px-4 py-3">Tanggal Keluar</TableHead>
-                                    <TableHead className="px-4 py-3">Komoditi</TableHead>
-                                    <TableHead className="px-4 py-3">Negara Tujuan</TableHead>
-                                    <TableHead className="px-4 py-3">
-                                        <SortButton label="Fumigasi" field="fumigasi" currentSort={filters.sort_by} currentDir={filters.sort_dir} />
+
+                                    {/* 3. Size */}
+                                    <TableHead className="px-4 py-3.5 text-center whitespace-nowrap">
+                                        Size
+                                    </TableHead>
+
+                                    {/* 4. Tanggal Masuk */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        <SortButton
+                                            label="Tanggal Masuk"
+                                            field="entry_date"
+                                            currentSort={filters.sort_by}
+                                            currentDir={filters.sort_dir}
+                                        />
+                                    </TableHead>
+
+                                    {/* 5. Tanggal EIR */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        <SortButton
+                                            label="Tanggal EIR"
+                                            field="eir_date"
+                                            currentSort={filters.sort_by}
+                                            currentDir={filters.sort_dir}
+                                        />
+                                    </TableHead>
+
+                                    {/* 6. Tanggal Keluar */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        <SortButton
+                                            label="Tanggal Keluar"
+                                            field="exit_date"
+                                            currentSort={filters.sort_by}
+                                            currentDir={filters.sort_dir}
+                                        />
+                                    </TableHead>
+
+                                    {/* 7. Komoditi */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        Komoditi
+                                    </TableHead>
+
+                                    {/* 8. Negara Tujuan */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        Negara Tujuan
+                                    </TableHead>
+
+                                    {/* 9. Fumigator */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        <SortButton
+                                            label="Fumigator"
+                                            field="fumigasi"
+                                            currentSort={filters.sort_by}
+                                            currentDir={filters.sort_dir}
+                                        />
                                     </TableHead>
                                 </TableRow>
                             </TableHeader>
+
                             <TableBody className="divide-y divide-gray-100 bg-white">
-                                {filteredOrders.length === 0 ? (
+                                {orders.data.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={9} className="py-10 text-center text-sm text-gray-400">
-                                            Tidak ada data yang sesuai filter.
+                                        <TableCell colSpan={9} className="py-12 text-center text-sm text-gray-500">
+                                            <div className="flex flex-col items-center justify-center gap-1.5">
+                                                <Filter className="h-6 w-6 text-gray-300" />
+                                                <span className="font-semibold text-gray-700">Tidak ada data kontainer yang sesuai filter.</span>
+                                                <span className="text-xs text-gray-400">Silakan ubah parameter filter atau klik Reset Filter.</span>
+                                            </div>
                                         </TableCell>
                                     </TableRow>
                                 ) : (
-                                    filteredOrders.map((order) => (
-                                        <TableRow key={order.id} className="hover:bg-slate-50/80 transition-colors">
-                                            <TableCell className="px-4 py-3 text-sm font-semibold text-slate-900">
-                                                {order.container_number}
+                                    orders.data.map((item) => (
+                                        <TableRow key={item.id} className="hover:bg-slate-50/70 transition-colors">
+                                            {/* 1. Nomor Kontainer */}
+                                            <TableCell className="px-4 py-3 text-sm font-bold text-slate-900 font-mono">
+                                                {item.container_number}
                                             </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.order?.shipper?.name ?? '-'}
+
+                                            {/* 2. Nama Shipper */}
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800">
+                                                {item.order?.shipper?.name ?? item.shipper_name ?? '-'}
                                             </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm">
-                                                <span className="inline-flex rounded bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-700 border border-slate-200">
-                                                    {formatContainerSize(order.price_type)}
+
+                                            {/* 3. Size */}
+                                            <TableCell className="px-4 py-3 text-sm text-center">
+                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                                                    {formatContainerSize(item.price_type)}
                                                 </span>
                                             </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {formatKarantinaDateTime(order.entry_date)}
-                                            </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {formatKarantinaDateTime(order.eir_date)}
-                                            </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {formatKarantinaDateTime(order.exit_date)}
-                                            </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.commodity ?? '-'}
-                                            </TableCell>
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800 font-normal">
-                                                {order.country ?? '-'}
-                                            </TableCell>
+
+                                            {/* 4. Tanggal Masuk */}
                                             <TableCell className="px-4 py-3 text-sm">
-                                                {order.order?.fumigasi ? (
+                                                {formatKarantinaDateTime(item.entry_date)}
+                                            </TableCell>
+
+                                            {/* 5. Tanggal EIR */}
+                                            <TableCell className="px-4 py-3 text-sm">
+                                                {formatKarantinaDateTime(item.eir_date)}
+                                            </TableCell>
+
+                                            {/* 6. Tanggal Keluar */}
+                                            <TableCell className="px-4 py-3 text-sm">
+                                                {formatKarantinaDateTime(item.exit_date)}
+                                            </TableCell>
+
+                                            {/* 7. Komoditi */}
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800">
+                                                {item.commodity ?? '-'}
+                                            </TableCell>
+
+                                            {/* 8. Negara Tujuan */}
+                                            <TableCell className="px-4 py-3 text-sm text-slate-800">
+                                                {item.country ?? '-'}
+                                            </TableCell>
+
+                                            {/* 9. Fumigator */}
+                                            <TableCell className="px-4 py-3 text-sm">
+                                                {item.order?.fumigasi ?? item.fumigasi ? (
                                                     <span className="inline-flex items-center rounded-md bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800 border border-amber-200">
-                                                        {order.order.fumigasi}
+                                                        {item.order?.fumigasi ?? item.fumigasi}
                                                     </span>
                                                 ) : (
                                                     <span className="text-gray-400">–</span>
@@ -989,11 +1191,11 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                     </div>
 
                     {/* Pagination */}
-                    <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
                         <p className="text-xs text-gray-500">
-                            Menampilkan <span className="font-semibold text-gray-700">{orders.from ?? 0}</span> sampai{' '}
-                            <span className="font-semibold text-gray-700">{orders.to ?? 0}</span> dari{' '}
-                            <span className="font-semibold text-gray-700">{orders.total ?? orders.data.length}</span> kontainer
+                            Menampilkan <span className="font-semibold text-gray-800">{orders.from ?? 0}</span> sampai{' '}
+                            <span className="font-semibold text-gray-800">{orders.to ?? 0}</span> dari{' '}
+                            <span className="font-semibold text-gray-800">{orders.total ?? orders.data.length}</span> kontainer
                         </p>
                         <div className="flex flex-wrap justify-center gap-1">
                             {orders.links.map((link, i) =>
@@ -1003,7 +1205,11 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                         variant={link.active ? 'default' : 'outline'}
                                         disabled={!link.url}
                                         onClick={() => router.get(link.url!, {}, { preserveState: true, preserveScroll: true })}
-                                        className="px-3 py-1 whitespace-nowrap text-xs font-medium"
+                                        className={`px-3 py-1 text-xs font-medium h-8 ${
+                                            link.active
+                                                ? 'bg-gray-900 text-white hover:bg-black'
+                                                : 'text-gray-700 bg-white border-gray-200'
+                                        }`}
                                     >
                                         {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
                                             if (match.includes('Previous')) return '← Prev';
@@ -1012,78 +1218,14 @@ export default function OrdersIndex({ orders, products = [], filters: rawFilters
                                         })}
                                     </Button>
                                 ) : (
-                                    <span key={i} className="px-3 py-1 text-xs text-gray-400">
+                                    <span key={i} className="px-2.5 py-1 text-xs text-gray-400">
                                         ...
                                     </span>
-                                ),
+                                )
                             )}
                         </div>
                     </div>
                 </div>
-
-                <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
-                    <DialogContent className="max-w-3xl">
-                        <DialogHeader>
-                            <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
-                        </DialogHeader>
-                        <div className="max-h-[60vh] space-y-6 overflow-y-auto pr-2">
-                            {tempRecords.map((rec, rIdx) => (
-                                <div key={rIdx} className="space-y-2 rounded border p-4">
-                                    {/* Input Tanggal */}
-                                    <div className="flex items-center gap-2">
-                                        <Label htmlFor={`date_${rIdx}`}>Tanggal</Label>
-                                        <DateTimePicker
-                                            id={`date_${rIdx}`}
-                                            value={rec.date}
-                                            onChange={(val) => updateDate(rIdx, val)}
-                                            withTime={false}
-                                            inModal={true}
-                                            placeholder="Pilih tanggal..."
-                                            className="w-[180px]"
-                                        />
-                                        {tempRecords.length > 1 && (
-                                            <Button
-                                                type="button"
-                                                size="icon"
-                                                variant="destructive"
-                                                className="ml-auto"
-                                                onClick={() => removeDateRecord(rIdx)}
-                                            >
-                                                <X className="h-4 w-4" />
-                                            </Button>
-                                        )}
-                                    </div>
-                                    {/* Input Suhu per Jam */}
-                                    <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto">
-                                        {[...Array(24)].map((_, h) => (
-                                            <div key={h} className="flex items-center gap-2">
-                                                <Label htmlFor={`temp_${rIdx}_${h}`}>{h.toString().padStart(2, '0')}:00</Label>
-                                                <Input
-                                                    id={`temp_${rIdx}_${h}`}
-                                                    type="number"
-                                                    step="0.1"
-                                                    value={rec.temps[h.toString().padStart(2, '0')] || ''}
-                                                    onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                    className="w-24"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                            {/* Tombol tambah tanggal baru */}
-                            <Button type="button" variant="outline" onClick={addDateRecord} className="flex items-center gap-2">
-                                <PlusCircle className="h-4 w-4" /> Tambah Tanggal
-                            </Button>
-                        </div>
-                        <DialogFooter className="gap-2">
-                            <Button variant="outline" onClick={() => setIsTempDialogOpen(false)}>
-                                Batal
-                            </Button>
-                            <Button onClick={handleSaveTemp}>Simpan</Button>
-                        </DialogFooter>
-                    </DialogContent>
-                </Dialog>
             </div>
         </AppLayout>
     );

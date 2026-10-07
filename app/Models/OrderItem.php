@@ -66,14 +66,14 @@ class OrderItem extends Model
             }
             $durationMinutes = (int) $startNorm->diffInMinutes($outNorm);
             $shiftHours = (int) Setting::get('shift_duration_hours', 8);
-            $shiftMinutes = $shiftHours > 0 ? $shiftHours * 60 : 480;
-            $totalShifts = max(1, (int) ceil($durationMinutes / $shiftMinutes));
+            $compMinutes = (int) Setting::get('shift_compensation_minutes', 45);
+            $totalShifts = \App\Services\ReeferShiftCalculationService::calculateShiftsFromDuration($durationMinutes, $shiftHours, $compMinutes);
 
             return [
                 'duration_minutes' => $durationMinutes,
                 'total_shifts' => $totalShifts,
                 'is_valid' => true,
-                'shift_minutes' => $shiftMinutes,
+                'shift_minutes' => ($shiftHours > 0 ? $shiftHours : 8) * 60,
             ];
         }
     }

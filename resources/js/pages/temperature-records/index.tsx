@@ -1249,7 +1249,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                                 <div className="rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-[11px] text-gray-600 space-y-1">
                                     <span className="font-semibold text-gray-800 block">Aturan Penagihan Shift:</span>
-                                    <span>Perhitungan shift dihitung otomatis dengan pembulatan ke atas (CEILING).</span>
+                                    <span>Standar 1 shift = 8 jam (toleransi keterlambatan 45 menit). Kelebihan waktu di atas kelipatan 8 jam yang melebihi 45 menit langsung dihitung sebagai 1 shift baru.</span>
                                 </div>
 
                                 <DialogFooter className="gap-2 pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between sm:justify-between">

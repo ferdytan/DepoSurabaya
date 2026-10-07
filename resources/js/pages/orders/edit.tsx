@@ -55,6 +55,7 @@ interface Product {
     custom_price_40ft?: string;
     custom_price_45ft?: string;
     custom_global_price?: string;
+    is_special_price?: boolean;
 }
 
 interface Shipper {
@@ -863,8 +864,13 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                     </span>
                                                 )}
                                                 {product && (
-                                                    <span className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded border border-gray-200">
+                                                    <span className={`text-xs px-2 py-0.5 rounded border ${
+                                                        product.is_special_price
+                                                            ? 'bg-blue-50 text-blue-700 border-blue-200 font-medium'
+                                                            : 'bg-gray-100 text-gray-700 border-gray-200'
+                                                    }`}>
                                                         {product.service_type}
+                                                        {product.is_special_price ? ' ★ Harga Khusus' : ''}
                                                     </span>
                                                 )}
                                                 {hasCardError && (
@@ -999,6 +1005,7 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                                         {o.price
                                                                             ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
                                                                             : ''}
+                                                                        {product?.is_special_price ? ' (Khusus)' : ''}
                                                                     </SelectItem>
                                                                 ))}
                                                             </SelectContent>

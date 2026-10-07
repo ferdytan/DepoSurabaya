@@ -182,8 +182,13 @@ class OrderController extends Controller
     {
         $trashed = $request->input('trashed');
         $search = $request->input('search');
-        $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
+        $customerId = $request->input('customer_id');
+        $shipperId = $request->input('shipper_id');
+        $fumigator = $request->input('fumigator');
+        $excludeStatus = $request->input('exclude_status', 'active');
+        $dateFrom = $request->input('date_from', $request->input('start_date'));
+        $dateTo = $request->input('date_to', $request->input('end_date'));
+        $dateType = $request->input('date_type', 'entry_date');
 
         // Multi-select product filter
         $productParam = $request->input('product_ids', $request->input('products'));
@@ -195,7 +200,7 @@ class OrderController extends Controller
         }
 
         $query = OrderItem::with([
-            'order:id,customer_id,shipper_id,fumigasi,no_aju,order_id',
+            'order:id,customer_id,shipper_id,fumigasi,no_aju,order_id,is_excluded_from_report',
             'order.customer:id,name',
             'order.shipper:id,name',
             'product:id,service_type',
@@ -210,6 +215,44 @@ class OrderController extends Controller
             $query->onlyTrashed();
         }
 
+        // Filter Customer
+        if (!empty($customerId) && $customerId !== 'all') {
+            $query->whereHas('order', function ($q) use ($customerId) {
+                $q->where('customer_id', $customerId);
+            });
+        }
+
+        // Filter Shipper
+        if (!empty($shipperId) && $shipperId !== 'all') {
+            $query->whereHas('order', function ($q) use ($shipperId) {
+                $q->where('shipper_id', $shipperId);
+            });
+        }
+
+        // Filter Fumigator (text biasa)
+        if (!empty($fumigator)) {
+            $query->whereHas('order', function ($q) use ($fumigator) {
+                $q->where('fumigasi', 'like', "%{$fumigator}%");
+            });
+        }
+
+        // Filter Status Exclude
+        if ($excludeStatus === 'active') {
+            $query->where(function ($q) {
+                $q->where('is_excluded_from_report', false)
+                  ->whereHas('order', function ($oq) {
+                      $oq->where('is_excluded_from_report', false);
+                  });
+            });
+        } elseif ($excludeStatus === 'excluded') {
+            $query->where(function ($q) {
+                $q->where('is_excluded_from_report', true)
+                  ->orWhereHas('order', function ($oq) {
+                      $oq->where('is_excluded_from_report', true);
+                  });
+            });
+        }
+
         // Filter produk (multi-select: utama atau additional products)
         if (!empty($productIds)) {
             $query->where(function ($q) use ($productIds) {
@@ -220,43 +263,41 @@ class OrderController extends Controller
             });
         }
 
-        // Tambahkan filter pencarian (fumigator, shipper, customer, container number, no_aju, order_id)
+        // Filter pencarian teks bebas (nomor kontainer, komoditi, negara, fumigasi, no_aju, order_id, customer, shipper)
         if ($search) {
             $query->where(function ($q) use ($search) {
-                $q->whereHas('order', function ($q) use ($search) {
-                    $q->where('fumigasi', 'like', "%{$search}%")
-                      ->orWhere('no_aju', 'like', "%{$search}%")
-                      ->orWhere('order_id', 'like', "%{$search}%")
-                      ->orWhereHas('shipper', fn($q) => $q->where('name', 'like', "%{$search}%"))
-                      ->orWhereHas('customer', fn($q) => $q->where('name', 'like', "%{$search}%"));
-                })
-                ->orWhere('container_number', 'like', "%{$search}%");
+                $q->where('container_number', 'like', "%{$search}%")
+                  ->orWhere('commodity', 'like', "%{$search}%")
+                  ->orWhere('country', 'like', "%{$search}%")
+                  ->orWhereHas('order', function ($q) use ($search) {
+                      $q->where('fumigasi', 'like', "%{$search}%")
+                        ->orWhere('no_aju', 'like', "%{$search}%")
+                        ->orWhere('order_id', 'like', "%{$search}%")
+                        ->orWhereHas('shipper', fn($sq) => $sq->where('name', 'like', "%{$search}%"))
+                        ->orWhereHas('customer', fn($cq) => $cq->where('name', 'like', "%{$search}%"));
+                  });
             });
         }
 
-        // Filter date range
-        if ($startDate && $endDate) {
-            $startDateStart = strlen($startDate) === 10 ? $startDate . ' 00:00:00' : $startDate;
-            $endDateEnd = strlen($endDate) === 10 ? $endDate . ' 23:59:59' : $endDate;
-            $query->where(function ($q) use ($startDateStart, $endDateEnd) {
-                $q->whereBetween('entry_date', [$startDateStart, $endDateEnd])
-                  ->orWhereBetween('eir_date', [$startDateStart, $endDateEnd])
-                  ->orWhereBetween('exit_date', [$startDateStart, $endDateEnd]);
-            });
-        } elseif ($startDate) {
-            $startDateStart = strlen($startDate) === 10 ? $startDate . ' 00:00:00' : $startDate;
-            $query->where(function ($q) use ($startDateStart) {
-                $q->where('entry_date', '>=', $startDateStart)
-                  ->orWhere('eir_date', '>=', $startDateStart)
-                  ->orWhere('exit_date', '>=', $startDateStart);
-            });
-        } elseif ($endDate) {
-            $endDateEnd = strlen($endDate) === 10 ? $endDate . ' 23:59:59' : $endDate;
-            $query->where(function ($q) use ($endDateEnd) {
-                $q->where('entry_date', '<=', $endDateEnd)
-                  ->orWhere('eir_date', '<=', $endDateEnd)
-                  ->orWhere('exit_date', '<=', $endDateEnd);
-            });
+        // Filter rentang tanggal berdasarkan tipe tanggal yang dipilih
+        if (!empty($dateFrom)) {
+            if ($dateType === 'exit_date') {
+                $query->whereDate('exit_date', '>=', $dateFrom);
+            } elseif ($dateType === 'eir_date') {
+                $query->whereDate('eir_date', '>=', $dateFrom);
+            } else {
+                $query->whereDate('entry_date', '>=', $dateFrom);
+            }
+        }
+
+        if (!empty($dateTo)) {
+            if ($dateType === 'exit_date') {
+                $query->whereDate('exit_date', '<=', $dateTo);
+            } elseif ($dateType === 'eir_date') {
+                $query->whereDate('eir_date', '<=', $dateTo);
+            } else {
+                $query->whereDate('entry_date', '<=', $dateTo);
+            }
         }
 
         $sortBy = $request->input('sort_by');
@@ -284,8 +325,13 @@ class OrderController extends Controller
     {
         $trashed = $request->input('trashed');
         $search = $request->input('search');
-        $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
+        $customerId = $request->input('customer_id');
+        $shipperId = $request->input('shipper_id');
+        $fumigator = $request->input('fumigator');
+        $excludeStatus = $request->input('exclude_status', 'active');
+        $dateFrom = $request->input('date_from', $request->input('start_date'));
+        $dateTo = $request->input('date_to', $request->input('end_date'));
+        $dateType = $request->input('date_type', 'entry_date');
         $sortBy = $request->input('sort_by');
         $sortDir = strtolower($request->input('sort_dir', 'asc')) === 'desc' ? 'desc' : 'asc';
 
@@ -297,10 +343,16 @@ class OrderController extends Controller
             $productIds = array_values(array_filter(array_map('intval', explode(',', $productParam))));
         }
 
+        $defaultPagination = (int) Setting::get('default_pagination', 25);
+        $perPage = (int) $request->input('per_page', $defaultPagination);
+        if (!in_array($perPage, [10, 25, 50, 100, 200])) {
+            $perPage = $defaultPagination;
+        }
+
         $query = $this->getKarantinaQuery($request)
             ->with(['additionalProducts', 'rekamSuhu']);
 
-        $orders = $query->paginate(25)->withQueryString();
+        $orders = $query->paginate($perPage)->withQueryString();
 
         $orders->getCollection()->transform(function ($item) {
             $data = $item->toArray();
@@ -322,14 +374,21 @@ class OrderController extends Controller
             'orders' => $orders,
             'products' => Product::orderBy('service_type')->get(['id', 'service_type']),
             'customers' => Customer::orderBy('name')->get(['id', 'name']),
+            'shippers' => Shipper::orderBy('name')->get(['id', 'name']),
             'filters' => [
-                'search' => $search,
+                'customer_id' => $customerId ? (string) $customerId : 'all',
+                'shipper_id' => $shipperId ? (string) $shipperId : 'all',
+                'fumigator' => $fumigator ?? '',
+                'exclude_status' => $excludeStatus,
+                'search' => $search ?? '',
                 'trashed' => $trashed,
-                'start_date' => $startDate,
-                'end_date' => $endDate,
+                'date_from' => $dateFrom ?? '',
+                'date_to' => $dateTo ?? '',
+                'date_type' => $dateType,
                 'sort_by' => $sortBy,
                 'sort_dir' => $sortDir,
                 'product_ids' => $productIds,
+                'per_page' => $perPage,
             ],
             'flash' => [
                 'success' => session('success'),
@@ -351,6 +410,7 @@ class OrderController extends Controller
                 'customer_name' => $item->order?->customer?->name ?? '-',
                 'price_type' => $item->price_type,
                 'entry_date' => $item->entry_date ? (string) $item->entry_date : null,
+                'eir_date' => $item->eir_date ? (string) $item->eir_date : null,
                 'exit_date' => $item->exit_date ? (string) $item->exit_date : null,
                 'commodity' => $item->commodity ?? '-',
                 'country' => $item->country ?? '-',
@@ -1193,33 +1253,46 @@ public function updateTemperature(Request $request, $id)
 
 private function getPriceForType($product, $priceType, $order)
 {
-    if (!$order) return 0;
+    if (!$order || !$product) return 0;
 
     // Ambil customer_id dari order
     $customerId = $order->customer_id;
 
-    // Cari harga khusus untuk produk ini berdasarkan customer_id
+    // 1. Cari harga khusus untuk produk ini berdasarkan customer_id
     $customerProduct = \App\Models\CustomerProduct::where('customer_id', $customerId)
         ->where('product_id', $product->id)
         ->first();
 
     if ($customerProduct) {
-        if ($priceType === '20ft' && isset($customerProduct->custom_price_20ft) && $customerProduct->custom_price_20ft > 0) {
+        if ($priceType === '20ft' && !empty($customerProduct->custom_price_20ft) && (float)$customerProduct->custom_price_20ft > 0) {
             return (float)$customerProduct->custom_price_20ft;
         }
-        if ($priceType === '40ft' && isset($customerProduct->custom_price_40ft) && $customerProduct->custom_price_40ft > 0) {
+        if ($priceType === '40ft' && !empty($customerProduct->custom_price_40ft) && (float)$customerProduct->custom_price_40ft > 0) {
             return (float)$customerProduct->custom_price_40ft;
         }
-        if ($priceType === '45ft' && isset($customerProduct->custom_price_45ft) && $customerProduct->custom_price_45ft > 0) {
+        if ($priceType === '45ft' && !empty($customerProduct->custom_price_45ft) && (float)$customerProduct->custom_price_45ft > 0) {
             return (float)$customerProduct->custom_price_45ft;
         }
-        if (isset($customerProduct->custom_global_price) && $customerProduct->custom_global_price > 0) {
+        if (!empty($customerProduct->custom_global_price) && (float)$customerProduct->custom_global_price > 0) {
             return (float)$customerProduct->custom_global_price;
         }
     }
 
-    // Jika tidak ada harga khusus, gunakan harga global dari produk
-    return (float)($product->price_global ?? 0);
+    // 2. Jika tidak ada harga khusus, fallback ke tarif master produk sesuai tipe
+    if ($priceType === '20ft' && !empty($product->price_20ft) && (float)$product->price_20ft > 0) {
+        return (float)$product->price_20ft;
+    }
+    if ($priceType === '40ft' && !empty($product->price_40ft) && (float)$product->price_40ft > 0) {
+        return (float)$product->price_40ft;
+    }
+    if ($priceType === '45ft' && !empty($product->price_45ft) && (float)$product->price_45ft > 0) {
+        return (float)$product->price_45ft;
+    }
+    if (!empty($product->price_global) && (float)$product->price_global > 0) {
+        return (float)$product->price_global;
+    }
+
+    return 0;
 }
 
     public function toggleExcludeReport(\App\Models\Order $order)

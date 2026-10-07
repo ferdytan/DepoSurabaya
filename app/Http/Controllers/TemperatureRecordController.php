@@ -85,16 +85,25 @@ class TemperatureRecordController extends Controller
         ->paginate($perPage)
         ->withQueryString();
 
-        // Pastikan setiap record yang sudah memiliki start_plug_in terisi total_shifts minimal 1 (menit pertama di plug s/d 8 jam = 1 shift)
+        // Pastikan setiap record yang sudah memiliki start_plug_in tersinkronisasi total_shifts sesuai aturan terbaru
         $records->getCollection()->transform(function ($item) {
-            if ($item->start_plug_in && (!$item->total_shifts || $item->total_shifts < 1)) {
+            if ($item->start_plug_in) {
                 $calc = OrderItem::calculateShifts(
                     Carbon::parse($item->start_plug_in),
                     $item->plug_out ? Carbon::parse($item->plug_out) : null
                 );
-                $item->total_shifts = $calc['total_shifts'];
-                if ($item->plug_out && !$item->plug_duration_minutes) {
-                    $item->plug_duration_minutes = $calc['duration_minutes'];
+                $newShifts = $calc['total_shifts'] ?? 1;
+                $newDuration = $calc['duration_minutes'] ?? null;
+
+                if ($item->plug_out) {
+                    if ($item->total_shifts !== $newShifts || $item->plug_duration_minutes !== $newDuration) {
+                        $item->total_shifts = $newShifts;
+                        $item->plug_duration_minutes = $newDuration;
+                        $item->saveQuietly();
+                    }
+                } elseif (!$item->total_shifts || $item->total_shifts < 1) {
+                    $item->total_shifts = max(1, $newShifts);
+                    $item->saveQuietly();
                 }
             }
             return $item;

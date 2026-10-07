@@ -267,7 +267,18 @@ export default function InvoicePreview({
             order_item_id: item.id,
             quantity: getMainQty(item.id),
         })),
+        order_item_prices: order.order_items.map((item) => ({
+            order_item_id: item.id,
+            price_value: Number(item.price_value ?? 0),
+        })),
         additional_product_quantities: additionalSelections,
+        additional_product_prices: order.order_items.flatMap((item) =>
+            (item.additional_products ?? []).map((ap) => ({
+                order_item_id: item.id,
+                additional_product_id: ap.id,
+                price_value: Number(ap.pivot?.price_value ?? ap.price_value ?? 0),
+            })),
+        ),
         show_period,
         return_url: returnUrl,
     };

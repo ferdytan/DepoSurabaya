@@ -23,6 +23,10 @@ export default function CreateProduct() {
         service_type: '',
         description: '',
         requires_temperature: 0,
+        price_20ft: '',
+        price_40ft: '',
+        price_45ft: '',
+        price_global: '',
         return_url: returnUrl,
     });
 
@@ -137,6 +141,92 @@ export default function CreateProduct() {
                                     disabled={processing}
                                 />
                                 <InputError message={errors.description} />
+                            </div>
+
+                            {/* Tarif Standar Layanan */}
+                            <div className="rounded-xl border border-gray-200 bg-gray-50/50 p-5 space-y-4">
+                                <div>
+                                    <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                                        Tarif Standar Master Layanan (Opsional)
+                                    </h4>
+                                    <p className="text-[11px] text-gray-500 mt-0.5">
+                                        Tarif dasar default yang berlaku untuk seluruh customer. Jika customer memiliki harga khusus, harga khusus tersebut yang akan dipakai.
+                                    </p>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="price_20ft" className="text-xs font-semibold text-gray-700">
+                                            Tarif 20' (Rp)
+                                        </Label>
+                                        <Input
+                                            id="price_20ft"
+                                            name="price_20ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_20ft}
+                                            onChange={(e) => setData('price_20ft', e.target.value)}
+                                            placeholder="Contoh: 450000"
+                                            className="h-10 text-xs font-mono"
+                                            disabled={processing}
+                                        />
+                                        <InputError message={errors.price_20ft} />
+                                    </div>
+
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="price_40ft" className="text-xs font-semibold text-gray-700">
+                                            Tarif 40' (Rp)
+                                        </Label>
+                                        <Input
+                                            id="price_40ft"
+                                            name="price_40ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_40ft}
+                                            onChange={(e) => setData('price_40ft', e.target.value)}
+                                            placeholder="Contoh: 700000"
+                                            className="h-10 text-xs font-mono"
+                                            disabled={processing}
+                                        />
+                                        <InputError message={errors.price_40ft} />
+                                    </div>
+
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="price_45ft" className="text-xs font-semibold text-gray-700">
+                                            Tarif 45' (Rp)
+                                        </Label>
+                                        <Input
+                                            id="price_45ft"
+                                            name="price_45ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_45ft}
+                                            onChange={(e) => setData('price_45ft', e.target.value)}
+                                            placeholder="Contoh: 850000"
+                                            className="h-10 text-xs font-mono"
+                                            disabled={processing}
+                                        />
+                                        <InputError message={errors.price_45ft} />
+                                    </div>
+
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="price_global" className="text-xs font-semibold text-gray-700">
+                                            Tarif Global Flat (Rp)
+                                        </Label>
+                                        <Input
+                                            id="price_global"
+                                            name="price_global"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_global}
+                                            onChange={(e) => setData('price_global', e.target.value)}
+                                            placeholder="Contoh: 150000"
+                                            className="h-10 text-xs font-mono"
+                                            disabled={processing}
+                                        />
+                                        <InputError message={errors.price_global} />
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Submit & Cancel Actions */}

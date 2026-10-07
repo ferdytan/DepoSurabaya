@@ -1,0 +1,135 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Customer;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+class SpecialPriceController extends Controller
+{
+    /**
+     * Display special prices management page.
+     */
+    public function index(Request $request)
+    {
+        $selectedCustomerId = $request->query('customer_id');
+
+        // Ambil semua customer untuk dropdown / selector
+        $allCustomers = Customer::select('id', 'name', 'city', 'phone')
+            ->orderBy('name')
+            ->get();
+
+        // Customer yang terpilih
+        $selectedCustomer = null;
+        $customerProducts = [];
+
+        if ($selectedCustomerId) {
+            $selectedCustomer = Customer::find($selectedCustomerId);
+        }
+
+        // Jika tidak ada customer_id di query, pilih customer pertama jika tersedia
+        if (!$selectedCustomer && $allCustomers->isNotEmpty()) {
+            $selectedCustomer = $allCustomers->first();
+            $selectedCustomerId = $selectedCustomer->id;
+        }
+
+        if ($selectedCustomer) {
+            // Ambil semua produk master
+            $masterProducts = Product::select('id', 'service_type', 'description', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global')
+                ->orderBy('service_type')
+                ->get();
+
+            // Ambil harga khusus customer ini
+            $customMap = $selectedCustomer->products()
+                ->withPivot(['id as pivot_id', 'custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price', 'updated_at'])
+                ->get()
+                ->keyBy('id');
+
+            $customerProducts = $masterProducts->map(function ($p) use ($customMap) {
+                $custom = $customMap->get($p->id);
+                $hasCustom = $custom !== null;
+
+                return [
+                    'id' => $p->id,
+                    'service_type' => $p->service_type,
+                    'description' => $p->description,
+                    'requires_temperature' => (bool) $p->requires_temperature,
+                    'master_price_20ft' => $p->price_20ft,
+                    'master_price_40ft' => $p->price_40ft,
+                    'master_price_45ft' => $p->price_45ft,
+                    'master_price_global' => $p->price_global,
+                    'has_custom_price' => $hasCustom,
+                    'custom_price_20ft' => $hasCustom ? $custom->pivot->custom_price_20ft : null,
+                    'custom_price_40ft' => $hasCustom ? $custom->pivot->custom_price_40ft : null,
+                    'custom_price_45ft' => $hasCustom ? $custom->pivot->custom_price_45ft : null,
+                    'custom_global_price' => $hasCustom ? $custom->pivot->custom_global_price : null,
+                    'custom_updated_at' => $hasCustom ? $custom->pivot->updated_at?->format('d M Y H:i') : null,
+                ];
+            });
+        }
+
+        // Summary: customer-customer yang memiliki harga khusus
+        $customersWithSpecialPrices = Customer::has('products')
+            ->withCount('products')
+            ->select('id', 'name', 'city')
+            ->orderBy('name')
+            ->get();
+
+        return Inertia::render('special-prices/index', [
+            'all_customers' => $allCustomers,
+            'selected_customer' => $selectedCustomer,
+            'products' => $customerProducts,
+            'customers_with_special_prices' => $customersWithSpecialPrices,
+        ]);
+    }
+
+    /**
+     * Store or update special prices for a product belonging to a customer.
+     */
+    public function store(Request $request, Customer $customer)
+    {
+        $validated = $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'price_20ft' => 'nullable|numeric|min:0',
+            'price_40ft' => 'nullable|numeric|min:0',
+            'price_45ft' => 'nullable|numeric|min:0',
+            'price_global' => 'nullable|numeric|min:0',
+        ]);
+
+        $productId = (int) $validated['product_id'];
+
+        $hasAnyPrice = ($validated['price_20ft'] !== null && $validated['price_20ft'] !== '') ||
+                       ($validated['price_40ft'] !== null && $validated['price_40ft'] !== '') ||
+                       ($validated['price_45ft'] !== null && $validated['price_45ft'] !== '') ||
+                       ($validated['price_global'] !== null && $validated['price_global'] !== '');
+
+        if (!$hasAnyPrice) {
+            // Jika semua harga dikosongkan, hapus harga khusus agar fallback ke master
+            $customer->products()->detach($productId);
+            return back()->with('success', 'Harga khusus telah dihapus. Produk kembali menggunakan tarif master.');
+        }
+
+        $customer->products()->syncWithoutDetaching([
+            $productId => [
+                'custom_price_20ft' => $validated['price_20ft'] !== null && $validated['price_20ft'] !== '' ? $validated['price_20ft'] : null,
+                'custom_price_40ft' => $validated['price_40ft'] !== null && $validated['price_40ft'] !== '' ? $validated['price_40ft'] : null,
+                'custom_price_45ft' => $validated['price_45ft'] !== null && $validated['price_45ft'] !== '' ? $validated['price_45ft'] : null,
+                'custom_global_price' => $validated['price_global'] !== null && $validated['price_global'] !== '' ? $validated['price_global'] : null,
+            ]
+        ]);
+
+        return back()->with('success', 'Harga khusus berhasil disimpan.');
+    }
+
+    /**
+     * Remove special price for a product, reverting to master prices.
+     */
+    public function destroy(Customer $customer, Product $product)
+    {
+        $customer->products()->detach($product->id);
+
+        return back()->with('success', "Harga khusus untuk '{$product->service_type}' telah dihapus. Layanan kini menggunakan tarif master.");
+    }
+}

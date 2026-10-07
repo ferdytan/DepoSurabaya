@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Thermometer, Truck, User } from 'lucide-react';
+import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Tag, Thermometer, Truck, User } from 'lucide-react';
 import AppLogo from './app-logo';
 
 // Definisikan item menu utama TANPA menu Karantina
@@ -33,6 +33,11 @@ const baseNavItems: NavItem[] = [
         title: 'Products',
         href: '/products',
         icon: Package,
+    },
+    {
+        title: 'Harga Khusus',
+        href: '/special-prices',
+        icon: Tag,
     },
     {
         title: 'Orders',

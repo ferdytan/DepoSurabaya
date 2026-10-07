@@ -1,3 +1,4 @@
+import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -5,25 +6,10 @@ import AppLayout from '@/layouts/app-layout';
 import CustomersLayout from '@/layouts/customers/layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
-import { ArrowLeft, Building2, DollarSign, Search, Trash2, Users } from 'lucide-react';
-import { useEffect, useState } from 'react';
-
-type Product = {
-    id: number;
-    name: string;
-};
-
-type ProductPrice = {
-    product_id: number;
-    price_20ft: string;
-    price_40ft: string;
-    price_45ft: string;
-    price_global: string;
-};
+import { ArrowLeft, Edit2, ExternalLink, Tag, Users } from 'lucide-react';
+import React from 'react';
 
 interface PageProps {
-    product_prices: ProductPrice[];
-    products: Product[];
     customer: {
         id: number;
         name: string;
@@ -33,13 +19,14 @@ interface PageProps {
         phone: string | null;
         email: string | null;
     };
+    special_prices_count?: number;
     return_url?: string;
     [key: string]: unknown;
 }
 
 export default function EditCustomer() {
     const pageProps = usePage<PageProps>().props;
-    const { customer, products, product_prices } = pageProps;
+    const { customer, special_prices_count = 0 } = pageProps;
     const returnUrl = pageProps.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/customers';
 
     const { data, setData, put, processing, errors } = useForm({
@@ -49,92 +36,25 @@ export default function EditCustomer() {
         province: customer.province ?? '',
         phone: customer.phone ?? '',
         email: customer.email ?? '',
-        product_prices: product_prices ?? [],
         return_url: returnUrl,
     });
-
-    const [searchTerm, setSearchTerm] = useState('');
-    const [availableProducts, setAvailableProducts] = useState<Product[]>([]);
-    const [selectedProducts, setSelectedProducts] = useState<number[]>(product_prices.map((p) => p.product_id));
 
     const breadcrumbs: BreadcrumbItem[] = [
         { title: 'Customer Management', href: returnUrl },
         { title: `Edit ${customer.name}`, href: `/customers/${customer.id}/edit` },
     ];
 
-    const fetchProducts = async (keyword: string) => {
-        try {
-            const res = await fetch(route('products.search', { search: keyword }));
-            const result = await res.json();
-            setAvailableProducts(result);
-        } catch (error) {
-            console.error('Gagal mengambil produk:', error);
-        }
-    };
-
-    useEffect(() => {
-        fetchProducts('');
-    }, []);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            fetchProducts(searchTerm);
-        }, 300);
-        return () => clearTimeout(timeout);
-    }, [searchTerm]);
-
-    const handleAddProduct = (product: Product) => {
-        if (selectedProducts.includes(product.id)) return;
-        setSelectedProducts([...selectedProducts, product.id]);
-        setData('product_prices', [
-            ...data.product_prices,
-            {
-                product_id: product.id,
-                price_20ft: '',
-                price_40ft: '',
-                price_45ft: '',
-                price_global: '',
-            },
-        ]);
-    };
-
-    const handleRemoveProduct = (productId: number) => {
-        if (!confirm('Yakin ingin menghapus produk ini dari daftar harga custom?')) return;
-        setSelectedProducts(selectedProducts.filter((id) => id !== productId));
-        setData(
-            'product_prices',
-            data.product_prices.filter((item) => item.product_id !== productId),
-        );
-    };
-
-    const handlePriceChange = (index: number, field: 'price_20ft' | 'price_40ft' | 'price_45ft' | 'price_global', value: string) => {
-        const updated = [...data.product_prices];
-        updated[index][field] = value;
-        setData('product_prices', updated);
-    };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         put(route('customers.update', customer.id));
     };
-
-    function formatNumber(value: string | number): string {
-        if (!value) return '';
-        const num = typeof value === 'number' ? value : parseInt(value.replace(/\D/g, ''), 10);
-        if (isNaN(num)) return '';
-        return num.toLocaleString('id-ID');
-    }
-
-    function parseNumber(value: string): string {
-        return value.replace(/\D/g, '');
-    }
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title={`Edit Customer: ${customer.name}`} />
 
             <CustomersLayout>
-                <div className="w-full space-y-6 pb-12">
+                <div className="w-full max-w-4xl space-y-6 pb-12">
                     {/* Header Toolbar */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
@@ -145,302 +65,189 @@ export default function EditCustomer() {
                                 </h1>
                             </div>
                             <p className="text-sm text-gray-500 mt-1">
-                                Perbarui data profil customer dan penyesuaian tarif khusus per produk.
+                                Perbarui data profil customer dan kontak perusahaan.
                             </p>
                         </div>
 
-                        <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5 self-start sm:self-auto">
-                            <Link href={returnUrl}>
-                                <ArrowLeft className="h-4 w-4" />
-                                Kembali
+                        <div className="flex items-center gap-2.5 self-start sm:self-auto">
+                            <Button variant="outline" size="sm" asChild className="h-9 text-xs gap-1.5">
+                                <Link href={returnUrl}>
+                                    <ArrowLeft className="h-4 w-4" />
+                                    Kembali
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Special Price Quick Action Card */}
+                    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div className="flex items-start sm:items-center gap-3">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700 border border-blue-100">
+                                <Tag className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <h4 className="text-sm font-bold text-gray-900">
+                                        Pengaturan Harga Khusus
+                                    </h4>
+                                    <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-100 text-blue-800">
+                                        {special_prices_count} Produk Khusus
+                                    </span>
+                                </div>
+                                <p className="text-xs text-gray-500 mt-0.5">
+                                    {special_prices_count > 0
+                                        ? 'Customer ini memiliki tarif kesepakatan khusus yang berbeda dari Master Produk.'
+                                        : 'Customer ini saat ini menggunakan tarif standar dari Master Produk untuk seluruh layanan.'}
+                                </p>
+                            </div>
+                        </div>
+
+                        <Button size="sm" asChild className="h-9 text-xs px-4 bg-gray-900 hover:bg-black text-white font-medium gap-1.5 shrink-0">
+                            <Link href={`/special-prices?customer_id=${customer.id}`}>
+                                <Tag className="h-3.5 w-3.5" />
+                                Kelola Harga Khusus
+                                <ExternalLink className="h-3 w-3 ml-0.5 opacity-60" />
                             </Link>
                         </Button>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* 2-Column Grid Layout: Customer Info (4 cols) & Pricelist (8 cols) */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                            {/* Kolom Kiri (4 Kolom): Informasi Master Customer */}
-                            <div className="lg:col-span-4 space-y-6">
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
-                                    <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-                                        <Building2 className="h-5 w-5 text-gray-700" />
-                                        <h2 className="text-base font-bold text-gray-900">Informasi Customer</h2>
-                                    </div>
-
-                                    {/* Nama & Email */}
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="name" className="text-xs font-semibold text-gray-700">
-                                            Nama Customer <span className="text-red-500">*</span>
-                                        </Label>
-                                        <Input
-                                            id="name"
-                                            name="name"
-                                            value={data.name}
-                                            onChange={(e) => setData('name', e.target.value)}
-                                            placeholder="Contoh: PT. Sejuta Rasa"
-                                            required
-                                            className="h-10 text-xs"
-                                        />
-                                        {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
-                                    </div>
-
-                                    {/* Alamat Email */}
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="email" className="text-xs font-semibold text-gray-700">
-                                            Alamat Email
-                                        </Label>
-                                        <Input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            value={data.email ?? ''}
-                                            onChange={(e) => setData('email', e.target.value)}
-                                            placeholder="Contoh: order@perusahaan.com"
-                                            className="h-10 text-xs"
-                                        />
-                                        {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
-                                    </div>
-
-                                    {/* Alamat Lengkap */}
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="address" className="text-xs font-semibold text-gray-700">
-                                            Alamat Lengkap
-                                        </Label>
-                                        <Input
-                                            id="address"
-                                            name="address"
-                                            value={data.address ?? ''}
-                                            onChange={(e) => setData('address', e.target.value)}
-                                            placeholder="Contoh: Jl. Kalianak Barat No. 12"
-                                            className="h-10 text-xs"
-                                        />
-                                        {errors.address && <p className="text-xs text-red-500">{errors.address}</p>}
-                                    </div>
-
-                                    {/* Kota & Provinsi */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                                        <div className="space-y-1.5">
-                                            <Label htmlFor="city" className="text-xs font-semibold text-gray-700">
-                                                Kota
-                                            </Label>
-                                            <Input
-                                                id="city"
-                                                name="city"
-                                                value={data.city ?? ''}
-                                                onChange={(e) => setData('city', e.target.value)}
-                                                placeholder="Contoh: Surabaya"
-                                                className="h-10 text-xs"
-                                            />
-                                            {errors.city && <p className="text-xs text-red-500">{errors.city}</p>}
-                                        </div>
-
-                                        <div className="space-y-1.5">
-                                            <Label htmlFor="province" className="text-xs font-semibold text-gray-700">
-                                                Provinsi
-                                            </Label>
-                                            <Input
-                                                id="province"
-                                                name="province"
-                                                value={data.province ?? ''}
-                                                onChange={(e) => setData('province', e.target.value)}
-                                                placeholder="Contoh: Jawa Timur"
-                                                className="h-10 text-xs"
-                                            />
-                                            {errors.province && <p className="text-xs text-red-500">{errors.province}</p>}
-                                        </div>
-                                    </div>
-
-                                    {/* Nomor Telepon */}
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="phone" className="text-xs font-semibold text-gray-700">
-                                            Nomor Telepon
-                                        </Label>
-                                        <Input
-                                            id="phone"
-                                            name="phone"
-                                            value={data.phone ?? ''}
-                                            onChange={(e) => setData('phone', e.target.value)}
-                                            placeholder="Contoh: 081234567890"
-                                            className="h-10 text-xs"
-                                        />
-                                        {errors.phone && <p className="text-xs text-red-500">{errors.phone}</p>}
-                                    </div>
-                                </div>
+                    {/* Form Card */}
+                    <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-xs">
+                        <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100 mb-6">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-gray-900">
+                                <Edit2 className="h-5 w-5" />
                             </div>
-
-                            {/* Kolom Kanan (8 Kolom): Pengaturan Tarif Khusus Produk */}
-                            <div className="lg:col-span-8 space-y-6">
-                                <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-5">
-                                    <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-                                        <DollarSign className="h-5 w-5 text-gray-700" />
-                                        <div>
-                                            <h2 className="text-base font-bold text-gray-900">
-                                                Tarif Kustom Produk (Opsional)
-                                            </h2>
-                                            <p className="text-xs text-gray-500 mt-0.5">
-                                                Atur harga khusus customer ini per produk. Kolom 20', 40', dan 45' untuk layanan kontainer; kolom Global (Flat) untuk tarif flat.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Pencarian Produk */}
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="product-search" className="text-xs font-semibold text-gray-700">
-                                            Cari & Tambah Produk
-                                        </Label>
-                                        <div className="relative">
-                                            <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                                            <Input
-                                                id="product-search"
-                                                placeholder="Ketik nama produk / layanan untuk ditambahkan ke tarif khusus..."
-                                                value={searchTerm}
-                                                onChange={(e) => setSearchTerm(e.target.value)}
-                                                className="pl-9 h-10 text-xs"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Daftar Hasil Pencarian Produk */}
-                                    <div className="max-h-48 overflow-y-auto rounded-xl border border-gray-200 bg-gray-50/50 p-2 divide-y divide-gray-100">
-                                        {availableProducts.length > 0 ? (
-                                            availableProducts.map((product) => {
-                                                const isAdded = selectedProducts.includes(product.id);
-                                                return (
-                                                    <div
-                                                        key={product.id}
-                                                        className="flex items-center justify-between p-2 hover:bg-white rounded-lg transition-colors"
-                                                    >
-                                                        <span className="text-xs font-semibold text-gray-800">
-                                                            {product.name}
-                                                        </span>
-                                                        <Button
-                                                            type="button"
-                                                            size="sm"
-                                                            variant={isAdded ? 'destructive' : 'default'}
-                                                            onClick={() => (isAdded ? handleRemoveProduct(product.id) : handleAddProduct(product))}
-                                                            className={`h-7 text-xs px-3 font-semibold ${
-                                                                !isAdded ? 'bg-gray-900 hover:bg-black text-white' : ''
-                                                            }`}
-                                                        >
-                                                            {isAdded ? 'Hapus' : '+ Tambah'}
-                                                        </Button>
-                                                    </div>
-                                                );
-                                            })
-                                        ) : (
-                                            <div className="p-3 text-center text-xs text-gray-400">
-                                                {searchTerm ? 'Produk tidak ditemukan.' : 'Ketik nama produk untuk mencari.'}
-                                            </div>
-                                        )}
-                                    </div>
-
-                                    {/* Tabel Tarif Khusus Terpilih */}
-                                    {data.product_prices.length > 0 && (
-                                        <div className="space-y-2 pt-2">
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-xs font-bold text-gray-800">
-                                                    Daftar Tarif Produk Khusus ({data.product_prices.length} Produk)
-                                                </span>
-                                            </div>
-                                            <div className="overflow-x-auto rounded-xl border border-gray-200">
-                                                <table className="min-w-full divide-y divide-gray-200">
-                                                    <thead className="bg-gray-50/75">
-                                                        <tr>
-                                                            <th className="px-3.5 py-3 text-left text-xs font-semibold text-gray-700">Produk</th>
-                                                            <th className="px-3.5 py-3 text-right text-xs font-semibold text-gray-700">20' (Rp)</th>
-                                                            <th className="px-3.5 py-3 text-right text-xs font-semibold text-gray-700">40' (Rp)</th>
-                                                            <th className="px-3.5 py-3 text-right text-xs font-semibold text-gray-700">45' (Rp)</th>
-                                                            <th className="px-3.5 py-3 text-right text-xs font-semibold text-gray-700">Global Flat (Rp)</th>
-                                                            <th className="px-3.5 py-3 text-center text-xs font-semibold text-gray-700 w-12">Aksi</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody className="divide-y divide-gray-100 bg-white">
-                                                        {data.product_prices.map((item, index) => (
-                                                            <tr key={item.product_id} className="hover:bg-gray-50/50">
-                                                                <td className="px-3.5 py-2.5 text-xs font-semibold text-gray-900 whitespace-nowrap">
-                                                                    {products.find((p) => p.id === item.product_id)?.name ||
-                                                                        `Produk ID ${item.product_id}`}
-                                                                </td>
-                                                                <td className="px-2 py-2 text-right">
-                                                                    <Input
-                                                                        type="text"
-                                                                        inputMode="numeric"
-                                                                        value={formatNumber(item.price_20ft)}
-                                                                        onChange={(e) => handlePriceChange(index, 'price_20ft', parseNumber(e.target.value))}
-                                                                        placeholder="0"
-                                                                        className="h-8 text-xs text-right font-medium"
-                                                                    />
-                                                                </td>
-                                                                <td className="px-2 py-2 text-right">
-                                                                    <Input
-                                                                        type="text"
-                                                                        inputMode="numeric"
-                                                                        value={formatNumber(item.price_40ft)}
-                                                                        onChange={(e) => handlePriceChange(index, 'price_40ft', parseNumber(e.target.value))}
-                                                                        placeholder="0"
-                                                                        className="h-8 text-xs text-right font-medium"
-                                                                    />
-                                                                </td>
-                                                                <td className="px-2 py-2 text-right">
-                                                                    <Input
-                                                                        type="text"
-                                                                        inputMode="numeric"
-                                                                        value={formatNumber(item.price_45ft)}
-                                                                        onChange={(e) => handlePriceChange(index, 'price_45ft', parseNumber(e.target.value))}
-                                                                        placeholder="0"
-                                                                        className="h-8 text-xs text-right font-medium"
-                                                                    />
-                                                                </td>
-                                                                <td className="px-2 py-2 text-right">
-                                                                    <Input
-                                                                        type="text"
-                                                                        inputMode="numeric"
-                                                                        value={formatNumber(item.price_global)}
-                                                                        onChange={(e) => handlePriceChange(index, 'price_global', parseNumber(e.target.value))}
-                                                                        placeholder="0"
-                                                                        className="h-8 text-xs text-right font-medium"
-                                                                    />
-                                                                </td>
-                                                                <td className="px-2 py-2 text-center">
-                                                                    <button
-                                                                        type="button"
-                                                                        onClick={() => handleRemoveProduct(item.product_id)}
-                                                                        title="Hapus tarif produk ini"
-                                                                        className="text-gray-400 hover:text-red-600 p-1 rounded transition-colors"
-                                                                    >
-                                                                        <Trash2 className="h-4 w-4" />
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        ))}
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+                            <div>
+                                <h3 className="text-sm font-bold text-gray-900">Profil & Informasi Kontak Customer</h3>
+                                <p className="text-xs text-gray-500">Sesuaikan data identitas dan kontak customer sesuai kebutuhan</p>
                             </div>
                         </div>
 
-                        {/* Submit & Batal Actions */}
-                        <div className="flex items-center justify-end gap-3 pt-2">
-                            <Button variant="outline" asChild className="h-9 text-xs px-4">
-                                <Link href={returnUrl}>Batal</Link>
-                            </Button>
-                            <Button
-                                type="submit"
-                                disabled={processing}
-                                className="h-9 text-xs px-6 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm"
-                            >
-                                {processing && <span className="mr-1 animate-spin">●</span>}
-                                {processing ? 'Memperbarui...' : 'Simpan Perubahan'}
-                            </Button>
-                        </div>
-                    </form>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Nama Customer */}
+                            <div className="space-y-1.5">
+                                <Label htmlFor="name" className="text-xs font-semibold text-gray-700">
+                                    Nama Customer / Perusahaan <span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="name"
+                                    name="name"
+                                    value={data.name}
+                                    onChange={(e) => setData('name', e.target.value)}
+                                    placeholder="Contoh: PT Samudera Logistik Indonesia"
+                                    required
+                                    className="h-10 text-xs"
+                                    disabled={processing}
+                                />
+                                <InputError message={errors.name} />
+                            </div>
+
+                            {/* Alamat */}
+                            <div className="space-y-1.5">
+                                <Label htmlFor="address" className="text-xs font-semibold text-gray-700">
+                                    Alamat Lengkap
+                                </Label>
+                                <Input
+                                    id="address"
+                                    name="address"
+                                    value={data.address}
+                                    onChange={(e) => setData('address', e.target.value)}
+                                    placeholder="Contoh: Jl. Tanjung Perak Timur No. 123"
+                                    className="h-10 text-xs"
+                                    disabled={processing}
+                                />
+                                <InputError message={errors.address} />
+                            </div>
+
+                            {/* Kota & Provinsi */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="city" className="text-xs font-semibold text-gray-700">
+                                        Kota
+                                    </Label>
+                                    <Input
+                                        id="city"
+                                        name="city"
+                                        value={data.city}
+                                        onChange={(e) => setData('city', e.target.value)}
+                                        placeholder="Contoh: Surabaya"
+                                        className="h-10 text-xs"
+                                        disabled={processing}
+                                    />
+                                    <InputError message={errors.city} />
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="province" className="text-xs font-semibold text-gray-700">
+                                        Provinsi
+                                    </Label>
+                                    <Input
+                                        id="province"
+                                        name="province"
+                                        value={data.province}
+                                        onChange={(e) => setData('province', e.target.value)}
+                                        placeholder="Contoh: Jawa Timur"
+                                        className="h-10 text-xs"
+                                        disabled={processing}
+                                    />
+                                    <InputError message={errors.province} />
+                                </div>
+                            </div>
+
+                            {/* Telepon & Email */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="phone" className="text-xs font-semibold text-gray-700">
+                                        Nomor Telepon
+                                    </Label>
+                                    <Input
+                                        id="phone"
+                                        name="phone"
+                                        value={data.phone}
+                                        onChange={(e) => setData('phone', e.target.value)}
+                                        placeholder="Contoh: 081234567890 / 031-123456"
+                                        className="h-10 text-xs"
+                                        disabled={processing}
+                                    />
+                                    <InputError message={errors.phone} />
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="email" className="text-xs font-semibold text-gray-700">
+                                        Alamat Email
+                                    </Label>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        value={data.email}
+                                        onChange={(e) => setData('email', e.target.value)}
+                                        placeholder="Contoh: contact@samudera.com"
+                                        className="h-10 text-xs"
+                                        disabled={processing}
+                                    />
+                                    <InputError message={errors.email} />
+                                </div>
+                            </div>
+
+                            {/* Submit & Cancel Actions */}
+                            <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-6 border-t border-gray-100">
+                                <Button variant="outline" asChild className="h-10 sm:h-9 text-xs font-semibold px-4 w-full sm:w-auto justify-center">
+                                    <Link href={returnUrl}>Batal</Link>
+                                </Button>
+                                <Button
+                                    type="submit"
+                                    disabled={processing}
+                                    className="h-10 sm:h-9 text-xs px-6 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm w-full sm:w-auto justify-center"
+                                >
+                                    {processing && <span className="mr-1 animate-spin">●</span>}
+                                    {processing ? 'Menyimpan Perubahan...' : 'Simpan Perubahan'}
+                                </Button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </CustomersLayout>
         </AppLayout>
     );
 }
-

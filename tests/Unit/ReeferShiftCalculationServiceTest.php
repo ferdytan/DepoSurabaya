@@ -287,9 +287,129 @@ class ReeferShiftCalculationServiceTest extends TestCase
         $res8h = $this->service->calculate($plugIn2h, $plugOut8h, []);
         $this->assertSame(1, $res8h->totalShifts, 'Durasi tepat 8 jam wajib terhitung 1 shift.');
 
-        // 5. Durasi 8 jam 1 menit (481 menit) -> 2 shift
+        // 5. Durasi 8 jam 1 menit (481 menit) dengan kompensasi 0 menit -> 2 shift
         $plugOut8h1m = Carbon::parse('2026-10-01 16:01:00', 'Asia/Jakarta');
         $res8h1m = $this->service->calculate($plugIn2h, $plugOut8h1m, []);
-        $this->assertSame(2, $res8h1m->totalShifts, 'Durasi 8 jam 1 menit wajib masuk shift ke-2.');
+        $this->assertSame(2, $res8h1m->totalShifts, 'Durasi 8 jam 1 menit dengan kompensasi 0 menit wajib masuk shift ke-2.');
+    }
+
+    /**
+     * Pengujian Unit: Static Method calculateShiftsFromDuration
+     * Memverifikasi aturan bisnis dasar 8 jam + toleransi 45 menit.
+     */
+    public function test_calculate_shifts_from_duration_static_method_business_rules(): void
+    {
+        // 1. Durasi 0 atau negatif -> minimal 1 shift
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(0, 8, 45));
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(-10, 8, 45));
+
+        // 2. Durasi singkat (1 menit s.d. 8 jam) -> 1 shift
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(1, 8, 45));
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(60, 8, 45));
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(480, 8, 45)); // 8 jam
+
+        // 3. Batas toleransi shift 1 (8 jam 1 mnt s.d. 8 jam 45 mnt) -> 1 shift
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(481, 8, 45));
+        $this->assertSame(1, ReeferShiftCalculationService::calculateShiftsFromDuration(525, 8, 45)); // 8 jam 45 mnt
+
+        // 4. Melewati toleransi (8 jam 46 mnt s.d. 16 jam 45 mnt) -> 2 shift
+        $this->assertSame(2, ReeferShiftCalculationService::calculateShiftsFromDuration(526, 8, 45)); // 8 jam 46 mnt
+        $this->assertSame(2, ReeferShiftCalculationService::calculateShiftsFromDuration(960, 8, 45)); // 16 jam
+        $this->assertSame(2, ReeferShiftCalculationService::calculateShiftsFromDuration(1005, 8, 45)); // 16 jam 45 mnt
+
+        // 5. Shift ke-3 (16 jam 46 mnt) -> 3 shift
+        $this->assertSame(3, ReeferShiftCalculationService::calculateShiftsFromDuration(1006, 8, 45));
+
+        // 6. Kasus Uji Permintaan Pengguna: 152 Jam (19 Shift x 8 Jam)
+        $this->assertSame(19, ReeferShiftCalculationService::calculateShiftsFromDuration(152 * 60, 8, 45)); // 152 jam 00 mnt -> 19 shift
+        $this->assertSame(19, ReeferShiftCalculationService::calculateShiftsFromDuration((152 * 60) + 45, 8, 45)); // 152 jam 45 mnt -> 19 shift (masih toleransi)
+        $this->assertSame(20, ReeferShiftCalculationService::calculateShiftsFromDuration((152 * 60) + 46, 8, 45)); // 152 jam 46 mnt -> 20 shift! (lewat 45 mnt)
+
+        // 7. Kasus Nyata Kontainer User: 159 Jam 34 Menit
+        // 159 jam 34 menit = (159 * 60) + 34 = 9.574 menit
+        $this->assertSame(20, ReeferShiftCalculationService::calculateShiftsFromDuration((159 * 60) + 34, 8, 45));
+
+        // 8. Akhir siklus shift 20 (160 Jam 45 Menit) -> 20 shift, 160 Jam 46 Menit -> 21 shift
+        $this->assertSame(20, ReeferShiftCalculationService::calculateShiftsFromDuration((160 * 60) + 45, 8, 45));
+        $this->assertSame(21, ReeferShiftCalculationService::calculateShiftsFromDuration((160 * 60) + 46, 8, 45));
+    }
+
+    /**
+     * Kasus Nyata Permintaan User:
+     * Kontainer di-plug 159 jam 34 menit wajib terhitung 20 Shift (bukan 19 shift).
+     * Kontainer di-plug 152 jam 46 menit wajib terhitung 20 Shift.
+     * Kontainer di-plug 152 jam 45 menit tetap terhitung 19 Shift.
+     */
+    public function test_kasus_nyata_159_jam_34_menit_produces_20_shifts(): void
+    {
+        $serviceDefault = new ReeferShiftCalculationService(
+            shiftDurationHours: 8,
+            shiftCompensationMinutes: 45,
+            idleGapThresholdMinutes: 150,
+            timezone: 'Asia/Jakarta'
+        );
+
+        $plugIn = Carbon::parse('2026-10-01 00:00:00', 'Asia/Jakarta');
+
+        // 1. Kasus 152 jam 45 menit -> 19 shift (toleransi 45 menit)
+        $plugOut152h45m = $plugIn->copy()->addHours(152)->addMinutes(45);
+        $res152h45m = $serviceDefault->calculate($plugIn, $plugOut152h45m, []);
+        $this->assertSame(19, $res152h45m->totalShifts, 'Durasi 152 jam 45 menit wajib terhitung 19 Shift.');
+
+        // 2. Kasus 152 jam 46 menit -> 20 shift (lewat 45 menit langsung 1 shift baru)
+        $plugOut152h46m = $plugIn->copy()->addHours(152)->addMinutes(46);
+        $res152h46m = $serviceDefault->calculate($plugIn, $plugOut152h46m, []);
+        $this->assertSame(20, $res152h46m->totalShifts, 'Durasi 152 jam 46 menit wajib terhitung 20 Shift.');
+
+        // 3. Kasus nyata kontainer user: 159 jam 34 menit -> 20 shift!
+        $plugOut159h34m = $plugIn->copy()->addHours(159)->addMinutes(34);
+        $res159h34m = $serviceDefault->calculate($plugIn, $plugOut159h34m, []);
+        $this->assertSame(20, $res159h34m->totalShifts, 'Durasi 159 jam 34 menit wajib terhitung 20 Shift (BUKAN 19 Shift)!');
+        $this->assertSame((159 * 60) + 34, $res159h34m->totalDurationMinutes);
+    }
+
+    /**
+     * Kasus Monitoring Suhu Berkelanjutan (Continuous) 159 Jam 34 Menit dengan Log Suhu
+     * Memastikan 20 blok shift terbentuk rapi: blok 1-19 masing-masing 8 jam (1 shift),
+     * dan blok 20 berdurasi sisa 7 jam 34 menit (1 shift), total 20 shift.
+     */
+    public function test_continuous_monitoring_159_hours_produces_20_blocks(): void
+    {
+        $serviceDefault = new ReeferShiftCalculationService(
+            shiftDurationHours: 8,
+            shiftCompensationMinutes: 45,
+            idleGapThresholdMinutes: 150,
+            timezone: 'Asia/Jakarta'
+        );
+
+        $plugIn = Carbon::parse('2026-10-01 00:00:00', 'Asia/Jakarta');
+        $plugOut = $plugIn->copy()->addHours(159)->addMinutes(34);
+
+        // Buat log suhu setiap 2 jam secara kontinu tanpa gap
+        $logs = [];
+        $current = $plugIn->copy()->addHours(2);
+        while ($current->lt($plugOut)) {
+            $logs[] = $current->format('Y-m-d H:i:s');
+            $current->addHours(2);
+        }
+
+        $result = $serviceDefault->calculate($plugIn, $plugOut, $logs);
+
+        $this->assertTrue($result->isValid);
+        $this->assertSame(20, $result->totalShifts, 'Total shift wajib 20!');
+        $this->assertCount(20, $result->shiftBlocks, 'Wajib menghasilkan tepat 20 blok shift.');
+
+        // Cek blok 1 s.d. 19
+        for ($i = 0; $i < 19; $i++) {
+            $block = $result->shiftBlocks[$i];
+            $this->assertSame(1, $block['shifts_billed']);
+            $this->assertSame(480, $block['duration_minutes'], "Blok shift ke-" . ($i + 1) . " wajib berdurasi 480 menit (8 jam).");
+        }
+
+        // Cek blok 20 (sisa waktu: 159j 34m - 152j = 7j 34m = 454 menit)
+        $block20 = $result->shiftBlocks[19];
+        $this->assertSame(20, $block20['shift_number']);
+        $this->assertSame(1, $block20['shifts_billed']);
+        $this->assertSame(454, $block20['duration_minutes'], 'Blok shift ke-20 wajib berdurasi 454 menit (7 jam 34 menit).');
     }
 }

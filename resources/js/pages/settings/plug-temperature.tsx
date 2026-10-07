@@ -122,31 +122,41 @@ export default function PlugTemperatureSettings({ settings, status }: PlugTemper
                             {(() => {
                                 const hours = Number(data.shift_duration_hours) || 8;
                                 const comp = Number(data.shift_compensation_minutes) || 0;
-                                const totalMins = (hours * 60) + comp;
+                                const shiftMins = hours * 60;
+                                const maxShiftMins = shiftMins + comp;
 
                                 return (
-                                    <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50/70 p-4 max-w-2xl space-y-2">
+                                    <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50/70 p-4 max-w-2xl space-y-2.5">
                                         <div className="flex items-center justify-between">
                                             <span className="text-xs font-bold text-gray-800 flex items-center gap-1.5">
                                                 <Clock className="h-3.5 w-3.5 text-gray-600" />
-                                                Total Waktu 1 Shift (dengan Toleransi):
+                                                Aturan Durasi & Toleransi Shift:
                                             </span>
                                             <span className="text-xs font-extrabold text-gray-900 bg-white px-2 py-0.5 rounded border border-gray-200 shadow-2xs">
-                                                {hours} Jam {comp > 0 ? `+ ${comp} Menit ` : ''}= {totalMins} Menit
+                                                1 Shift = {hours} Jam (Toleransi +{comp} Mnt)
                                             </span>
                                         </div>
-                                        <div className="text-[11px] text-gray-600">
-                                            Formula Penagihan: <code className="font-mono font-semibold text-gray-900 bg-white px-1.5 py-0.5 rounded border border-gray-200">Total Shift = CEILING(Durasi Menit / {totalMins})</code>
+                                        <div className="text-[11px] text-gray-600 leading-relaxed">
+                                            Menit pertama s.d. <strong>{hours} Jam</strong> dihitung 1 shift. Kelebihan waktu setelah kelipatan {hours} jam yang <strong>lewat dari {comp} menit</strong> langsung dihitung sebagai 1 shift baru (berlaku hingga {hours} jam berikutnya). Sisa waktu &le; {comp} menit masih dalam toleransi.
                                         </div>
-                                        <div className="flex flex-wrap gap-1.5 pt-1 text-[10px] text-gray-500">
+                                        <div className="flex flex-wrap gap-1.5 pt-1 text-[10px] text-gray-600">
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
-                                                {hours} Jam ({hours * 60} mnt) &rarr; <strong>1 Shift</strong>
+                                                &le; {hours} Jam ({shiftMins} mnt) &rarr; <strong className="text-gray-900">1 Shift</strong>
                                             </span>
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
-                                                {hours}j {comp}m ({totalMins} mnt) &rarr; <strong>1 Shift</strong>
+                                                {hours}j {comp}m ({maxShiftMins} mnt) &rarr; <strong className="text-gray-900">1 Shift</strong>
                                             </span>
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
-                                                {totalMins + 5} mnt &rarr; <strong>2 Shift</strong>
+                                                {hours}j {comp + 1}m ({maxShiftMins + 1} mnt) &rarr; <strong className="text-gray-900">2 Shift</strong>
+                                            </span>
+                                            <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
+                                                152j 45m &rarr; <strong className="text-gray-900">19 Shift</strong>
+                                            </span>
+                                            <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
+                                                152j 46m &rarr; <strong className="text-gray-900">20 Shift</strong>
+                                            </span>
+                                            <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
+                                                159j 34m &rarr; <strong className="text-gray-900">20 Shift</strong>
                                             </span>
                                         </div>
                                     </div>

@@ -216,7 +216,7 @@ export default function SpecialPricesIndex({
                             className="h-9 text-xs px-4 bg-gray-900 hover:bg-black text-white font-semibold gap-1.5 shadow-sm self-start sm:self-auto"
                         >
                             <Plus className="h-4 w-4" />
-                            + Tambah Tarif Khusus
+                            Tambah Tarif Khusus
                         </Button>
                     )}
                 </div>
@@ -299,25 +299,25 @@ export default function SpecialPricesIndex({
                                 <Table>
                                     <TableHeader className="bg-gray-50/75">
                                         <TableRow>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5">
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5 min-w-[200px]">
                                                 Layanan Produk
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-center w-24">
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-center w-28">
                                                 Status
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
-                                                Tarif 20' (Rp)
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right w-32 px-4">
+                                                Tarif 20'
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
-                                                Tarif 40' (Rp)
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right w-32 px-4">
+                                                Tarif 40'
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
-                                                Tarif 45' (Rp)
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right w-32 px-4">
+                                                Tarif 45'
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
-                                                Tarif Global Flat (Rp)
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right w-36 px-4">
+                                                Tarif Global
                                             </TableHead>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right pr-5 w-28">
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right pr-5 w-24">
                                                 Aksi
                                             </TableHead>
                                         </TableRow>
@@ -348,7 +348,7 @@ export default function SpecialPricesIndex({
                                                                 {p.service_type}
                                                             </div>
                                                             {p.description && (
-                                                                <div className="text-[11px] text-gray-500 line-clamp-1">
+                                                                <div className="text-[11px] text-gray-500 line-clamp-1 mt-0.5">
                                                                     {p.description}
                                                                 </div>
                                                             )}
@@ -367,74 +367,82 @@ export default function SpecialPricesIndex({
                                                         </TableCell>
 
                                                         {/* Tarif 20ft */}
-                                                        <TableCell className="py-3.5 text-right font-mono text-xs">
+                                                        <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_20ft ? (
-                                                                <div>
-                                                                    <div className="font-bold text-blue-700">
+                                                                <div className="flex flex-col items-end">
+                                                                    <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_20ft)}
-                                                                    </div>
-                                                                    <div className="text-[10px] text-gray-400 line-through">
+                                                                    </span>
+                                                                    <span className="text-[10px] text-gray-400 line-through">
                                                                         {formatRupiah(p.master_price_20ft)}
-                                                                    </div>
+                                                                    </span>
                                                                 </div>
-                                                            ) : (
-                                                                <div className="text-gray-700">
+                                                            ) : p.master_price_20ft && Number(p.master_price_20ft) > 0 ? (
+                                                                <span className="font-semibold text-gray-800">
                                                                     {formatRupiah(p.master_price_20ft)}
-                                                                </div>
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-gray-300 font-normal">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif 40ft */}
-                                                        <TableCell className="py-3.5 text-right font-mono text-xs">
+                                                        <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_40ft ? (
-                                                                <div>
-                                                                    <div className="font-bold text-blue-700">
+                                                                <div className="flex flex-col items-end">
+                                                                    <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_40ft)}
-                                                                    </div>
-                                                                    <div className="text-[10px] text-gray-400 line-through">
+                                                                    </span>
+                                                                    <span className="text-[10px] text-gray-400 line-through">
                                                                         {formatRupiah(p.master_price_40ft)}
-                                                                    </div>
+                                                                    </span>
                                                                 </div>
-                                                            ) : (
-                                                                <div className="text-gray-700">
+                                                            ) : p.master_price_40ft && Number(p.master_price_40ft) > 0 ? (
+                                                                <span className="font-semibold text-gray-800">
                                                                     {formatRupiah(p.master_price_40ft)}
-                                                                </div>
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-gray-300 font-normal">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif 45ft */}
-                                                        <TableCell className="py-3.5 text-right font-mono text-xs">
+                                                        <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_45ft ? (
-                                                                <div>
-                                                                    <div className="font-bold text-blue-700">
+                                                                <div className="flex flex-col items-end">
+                                                                    <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_45ft)}
-                                                                    </div>
-                                                                    <div className="text-[10px] text-gray-400 line-through">
+                                                                    </span>
+                                                                    <span className="text-[10px] text-gray-400 line-through">
                                                                         {formatRupiah(p.master_price_45ft)}
-                                                                    </div>
+                                                                    </span>
                                                                 </div>
-                                                            ) : (
-                                                                <div className="text-gray-700">
+                                                            ) : p.master_price_45ft && Number(p.master_price_45ft) > 0 ? (
+                                                                <span className="font-semibold text-gray-800">
                                                                     {formatRupiah(p.master_price_45ft)}
-                                                                </div>
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-gray-300 font-normal">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif Global */}
-                                                        <TableCell className="py-3.5 text-right font-mono text-xs">
+                                                        <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_global_price ? (
-                                                                <div>
-                                                                    <div className="font-bold text-blue-700">
+                                                                <div className="flex flex-col items-end">
+                                                                    <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_global_price)}
-                                                                    </div>
-                                                                    <div className="text-[10px] text-gray-400 line-through">
+                                                                    </span>
+                                                                    <span className="text-[10px] text-gray-400 line-through">
                                                                         {formatRupiah(p.master_price_global)}
-                                                                    </div>
+                                                                    </span>
                                                                 </div>
-                                                            ) : (
-                                                                <div className="text-gray-700">
+                                                            ) : p.master_price_global && Number(p.master_price_global) > 0 ? (
+                                                                <span className="font-semibold text-gray-800">
                                                                     {formatRupiah(p.master_price_global)}
-                                                                </div>
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-gray-300 font-normal">-</span>
                                                             )}
                                                         </TableCell>
 
@@ -525,11 +533,16 @@ export default function SpecialPricesIndex({
 
             {/* Modal Add / Edit Special Price */}
             <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-                <DialogContent className="sm:max-w-md">
-                    <DialogHeader>
-                        <DialogTitle className="text-base font-bold text-gray-900">
-                            {editingProduct ? `Edit Harga Khusus: ${editingProduct.service_type}` : 'Tambah Harga Khusus Produk'}
-                        </DialogTitle>
+                <DialogContent className="sm:max-w-xl p-6">
+                    <DialogHeader className="pb-3 border-b border-gray-100">
+                        <div>
+                            <DialogTitle className="text-base font-bold text-gray-900">
+                                {editingProduct ? 'Edit Tarif Khusus Customer' : 'Tambah Tarif Khusus Customer'}
+                            </DialogTitle>
+                            <p className="text-xs text-gray-500 mt-0.5">
+                                Customer: <strong className="text-gray-800">{selected_customer?.name}</strong>
+                            </p>
+                        </div>
                     </DialogHeader>
 
                     <form onSubmit={handleSubmitSpecialPrice} className="space-y-4 pt-2">
@@ -563,95 +576,163 @@ export default function SpecialPricesIndex({
                                 />
                                 {errors.product_id && <p className="text-xs text-red-500">{errors.product_id}</p>}
                             </div>
-                        ) : null}
-
-                        {/* Info Tarif Master sebagai referensi */}
-                        {targetProductForModal && (
-                            <div className="rounded-lg border border-gray-100 bg-gray-50/70 p-3 text-xs space-y-1">
-                                <div className="font-semibold text-gray-700 text-[11px] uppercase tracking-wider">
-                                    Tarif Master Saat Ini (Acuan Standar):
+                        ) : (
+                            <div className="rounded-lg border border-gray-200 bg-gray-50/70 p-3 flex items-center justify-between">
+                                <div>
+                                    <div className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold">Produk Layanan</div>
+                                    <div className="text-sm font-bold text-gray-900 mt-0.5">{editingProduct.service_type}</div>
+                                    {editingProduct.description && (
+                                        <div className="text-xs text-gray-500 mt-0.5">{editingProduct.description}</div>
+                                    )}
                                 </div>
-                                <div className="grid grid-cols-2 gap-2 text-gray-600 font-mono text-[11px] pt-1">
-                                    <div>20': {formatRupiah(targetProductForModal.master_price_20ft)}</div>
-                                    <div>40': {formatRupiah(targetProductForModal.master_price_40ft)}</div>
-                                    <div>45': {formatRupiah(targetProductForModal.master_price_45ft)}</div>
-                                    <div>Global: {formatRupiah(targetProductForModal.master_price_global)}</div>
-                                </div>
+                                {editingProduct.requires_temperature ? (
+                                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                        <Check className="h-3 w-3" /> Rekam Suhu
+                                    </span>
+                                ) : null}
                             </div>
                         )}
 
-                        {/* Input Tarif Khusus */}
-                        <div className="grid grid-cols-2 gap-3 pt-1">
-                            <div className="space-y-1">
-                                <Label htmlFor="modal_price_20ft" className="text-xs font-semibold text-gray-700">
-                                    Tarif Khusus 20' (Rp)
-                                </Label>
-                                <Input
-                                    id="modal_price_20ft"
-                                    type="number"
-                                    min={0}
-                                    value={data.price_20ft}
-                                    onChange={(e) => setData('price_20ft', e.target.value)}
-                                    placeholder="Contoh: 400000"
-                                    className="h-9 text-xs font-mono"
-                                    disabled={processing}
-                                />
-                                {errors.price_20ft && <p className="text-xs text-red-500">{errors.price_20ft}</p>}
+                        {/* Card Section: Tarif Berdasarkan Ukuran Kontainer */}
+                        <div className="rounded-xl border border-gray-200 bg-gray-50/40 p-4 space-y-3">
+                            <div className="flex items-center justify-between border-b border-gray-200/60 pb-2">
+                                <div className="text-xs font-bold text-gray-800 flex items-center gap-1.5">
+                                    <Package className="h-4 w-4 text-blue-600" />
+                                    <span>Tarif Berdasarkan Ukuran Kontainer</span>
+                                </div>
+                                <span className="text-[11px] text-gray-400">Kosongkan jika tidak berlaku</span>
                             </div>
 
-                            <div className="space-y-1">
-                                <Label htmlFor="modal_price_40ft" className="text-xs font-semibold text-gray-700">
-                                    Tarif Khusus 40' (Rp)
-                                </Label>
-                                <Input
-                                    id="modal_price_40ft"
-                                    type="number"
-                                    min={0}
-                                    value={data.price_40ft}
-                                    onChange={(e) => setData('price_40ft', e.target.value)}
-                                    placeholder="Contoh: 650000"
-                                    className="h-9 text-xs font-mono"
-                                    disabled={processing}
-                                />
-                                {errors.price_40ft && <p className="text-xs text-red-500">{errors.price_40ft}</p>}
-                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                {/* Field 20ft */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="modal_price_20ft" className="text-xs font-semibold text-gray-700">
+                                        Ukuran 20'
+                                    </Label>
+                                    <div className="relative">
+                                        <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
+                                            Rp
+                                        </span>
+                                        <Input
+                                            id="modal_price_20ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_20ft}
+                                            onChange={(e) => setData('price_20ft', e.target.value)}
+                                            placeholder="0"
+                                            className="h-9 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <div className="text-[11px] text-gray-500 flex items-center justify-between">
+                                        <span>Master:</span>
+                                        <span className="font-semibold text-gray-700">
+                                            {formatRupiah(targetProductForModal?.master_price_20ft)}
+                                        </span>
+                                    </div>
+                                    {errors.price_20ft && <p className="text-[11px] text-red-500">{errors.price_20ft}</p>}
+                                </div>
 
-                            <div className="space-y-1">
-                                <Label htmlFor="modal_price_45ft" className="text-xs font-semibold text-gray-700">
-                                    Tarif Khusus 45' (Rp)
-                                </Label>
-                                <Input
-                                    id="modal_price_45ft"
-                                    type="number"
-                                    min={0}
-                                    value={data.price_45ft}
-                                    onChange={(e) => setData('price_45ft', e.target.value)}
-                                    placeholder="Contoh: 750000"
-                                    className="h-9 text-xs font-mono"
-                                    disabled={processing}
-                                />
-                                {errors.price_45ft && <p className="text-xs text-red-500">{errors.price_45ft}</p>}
-                            </div>
+                                {/* Field 40ft */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="modal_price_40ft" className="text-xs font-semibold text-gray-700">
+                                        Ukuran 40'
+                                    </Label>
+                                    <div className="relative">
+                                        <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
+                                            Rp
+                                        </span>
+                                        <Input
+                                            id="modal_price_40ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_40ft}
+                                            onChange={(e) => setData('price_40ft', e.target.value)}
+                                            placeholder="0"
+                                            className="h-9 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <div className="text-[11px] text-gray-500 flex items-center justify-between">
+                                        <span>Master:</span>
+                                        <span className="font-semibold text-gray-700">
+                                            {formatRupiah(targetProductForModal?.master_price_40ft)}
+                                        </span>
+                                    </div>
+                                    {errors.price_40ft && <p className="text-[11px] text-red-500">{errors.price_40ft}</p>}
+                                </div>
 
-                            <div className="space-y-1">
-                                <Label htmlFor="modal_price_global" className="text-xs font-semibold text-gray-700">
-                                    Tarif Khusus Global (Rp)
-                                </Label>
-                                <Input
-                                    id="modal_price_global"
-                                    type="number"
-                                    min={0}
-                                    value={data.price_global}
-                                    onChange={(e) => setData('price_global', e.target.value)}
-                                    placeholder="Contoh: 120000"
-                                    className="h-9 text-xs font-mono"
-                                    disabled={processing}
-                                />
-                                {errors.price_global && <p className="text-xs text-red-500">{errors.price_global}</p>}
+                                {/* Field 45ft */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="modal_price_45ft" className="text-xs font-semibold text-gray-700">
+                                        Ukuran 45'
+                                    </Label>
+                                    <div className="relative">
+                                        <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
+                                            Rp
+                                        </span>
+                                        <Input
+                                            id="modal_price_45ft"
+                                            type="number"
+                                            min={0}
+                                            value={data.price_45ft}
+                                            onChange={(e) => setData('price_45ft', e.target.value)}
+                                            placeholder="0"
+                                            className="h-9 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
+                                            disabled={processing}
+                                        />
+                                    </div>
+                                    <div className="text-[11px] text-gray-500 flex items-center justify-between">
+                                        <span>Master:</span>
+                                        <span className="font-semibold text-gray-700">
+                                            {formatRupiah(targetProductForModal?.master_price_45ft)}
+                                        </span>
+                                    </div>
+                                    {errors.price_45ft && <p className="text-[11px] text-red-500">{errors.price_45ft}</p>}
+                                </div>
                             </div>
                         </div>
 
-                        <DialogFooter className="pt-4 border-t border-gray-100">
+                        {/* Card Section: Tarif Global / Flat */}
+                        <div className="rounded-xl border border-gray-200 bg-gray-50/40 p-4 space-y-3">
+                            <div className="flex items-center justify-between border-b border-gray-200/60 pb-2">
+                                <div className="text-xs font-bold text-gray-800 flex items-center gap-1.5">
+                                    <Coins className="h-4 w-4 text-emerald-600" />
+                                    <span>Tarif Global / Flat (Semua Ukuran)</span>
+                                </div>
+                                <span className="text-[11px] text-gray-400">Untuk layanan tanpa ukuran</span>
+                            </div>
+
+                            <div className="space-y-1.5 max-w-xs">
+                                <Label htmlFor="modal_price_global" className="text-xs font-semibold text-gray-700">
+                                    Tarif Global Flat
+                                </Label>
+                                <div className="relative">
+                                    <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
+                                        Rp
+                                    </span>
+                                    <Input
+                                        id="modal_price_global"
+                                        type="number"
+                                        min={0}
+                                        value={data.price_global}
+                                        onChange={(e) => setData('price_global', e.target.value)}
+                                        placeholder="0"
+                                        className="h-9 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
+                                        disabled={processing}
+                                    />
+                                </div>
+                                <div className="text-[11px] text-gray-500 flex items-center justify-between">
+                                    <span>Master:</span>
+                                    <span className="font-semibold text-gray-700">
+                                        {formatRupiah(targetProductForModal?.master_price_global)}
+                                    </span>
+                                </div>
+                                {errors.price_global && <p className="text-[11px] text-red-500">{errors.price_global}</p>}
+                            </div>
+                        </div>
+
+                        <DialogFooter className="pt-4 border-t border-gray-100 flex items-center justify-end gap-2">
                             <Button
                                 type="button"
                                 variant="outline"
@@ -663,7 +744,7 @@ export default function SpecialPricesIndex({
                             <Button
                                 type="submit"
                                 disabled={processing || !data.product_id}
-                                className="h-9 text-xs bg-gray-900 hover:bg-black text-white font-semibold"
+                                className="h-9 text-xs bg-gray-900 hover:bg-black text-white font-semibold shadow-xs"
                             >
                                 {processing ? 'Menyimpan...' : 'Simpan Harga Khusus'}
                             </Button>

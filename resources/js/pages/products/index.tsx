@@ -45,6 +45,7 @@ type SortButtonProps = {
     currentDir?: string;
     trashed?: string;
     search?: string;
+    align?: 'left' | 'right' | 'center';
 };
 
 type Product = {
@@ -84,7 +85,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const SortButton = ({ label, field, currentSort, currentDir, trashed, search }: SortButtonProps) => {
+const SortButton = ({ label, field, currentSort, currentDir, trashed, search, align = 'left' }: SortButtonProps) => {
     const direction = currentSort === field ? (currentDir === 'asc' ? 'desc' : 'asc') : 'asc';
 
     return (
@@ -95,17 +96,19 @@ const SortButton = ({ label, field, currentSort, currentDir, trashed, search }: 
                 trashed,
                 search,
             })}
-            className="flex items-center gap-1 font-semibold text-xs text-gray-700 hover:text-black"
+            className={`inline-flex items-center gap-1 font-semibold text-xs text-gray-700 hover:text-black transition-colors ${
+                align === 'right' ? 'justify-end w-full' : align === 'center' ? 'justify-center w-full' : 'justify-start'
+            }`}
         >
-            {label}
+            <span>{label}</span>
             {currentSort === field ? (
                 currentDir === 'asc' ? (
-                    <ArrowUp className="h-3.5 w-3.5" />
+                    <ArrowUp className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                 ) : (
-                    <ArrowDown className="h-3.5 w-3.5" />
+                    <ArrowDown className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                 )
             ) : (
-                <ArrowUpDown className="h-3.5 w-3.5 text-gray-400" />
+                <ArrowUpDown className="h-3.5 w-3.5 text-gray-400 shrink-0" />
             )}
         </Link>
     );
@@ -242,7 +245,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                             <Table>
                                 <TableHeader className="bg-gray-50/75">
                                     <TableRow>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5 min-w-[180px]">
                                             <SortButton
                                                 label="Jenis Layanan"
                                                 field="service_type"
@@ -251,52 +254,57 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 search={filters.search}
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-28 text-center">
                                             <SortButton
                                                 label="Rekam Suhu"
                                                 field="requires_temperature"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
+                                                align="center"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
                                             <SortButton
                                                 label="Tarif 20'"
                                                 field="price_20ft"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
+                                                align="right"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
                                             <SortButton
                                                 label="Tarif 40'"
                                                 field="price_40ft"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
+                                                align="right"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
                                             <SortButton
                                                 label="Tarif 45'"
                                                 field="price_45ft"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
+                                                align="right"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-36 text-right px-4">
                                             <SortButton
                                                 label="Tarif Global"
                                                 field="price_global"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
+                                                align="right"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 min-w-[160px] pl-6">
                                             <SortButton
                                                 label="Keterangan"
                                                 field="description"
@@ -305,7 +313,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 search={filters.search}
                                             />
                                         </TableHead>
-                                        <TableHead className="text-right font-semibold text-xs text-gray-700 py-3.5 pr-5">
+                                        <TableHead className="text-right font-semibold text-xs text-gray-700 py-3.5 pr-5 w-24">
                                             Aksi
                                         </TableHead>
                                     </TableRow>
@@ -326,32 +334,56 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 <TableCell className="py-3.5 pl-5 font-semibold text-xs text-gray-900">
                                                     {product.service_type}
                                                 </TableCell>
-                                                <TableCell className="py-3.5">
+                                                <TableCell className="py-3.5 text-center">
                                                     {product.requires_temperature === 1 ? (
                                                         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                                                             <Check className="h-3 w-3 text-emerald-600" />
-                                                             Wajib Suhu
+                                                            <Check className="h-3 w-3 text-emerald-600" />
+                                                            Wajib Suhu
                                                         </span>
                                                     ) : (
                                                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
-                                                             Tidak
+                                                            Tidak
                                                         </span>
                                                     )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
-                                                    {formatRupiah(product.price_20ft)}
+                                                <TableCell className="py-3.5 text-right px-4 text-xs">
+                                                    {product.price_20ft && Number(product.price_20ft) > 0 ? (
+                                                        <span className="font-semibold text-gray-800">
+                                                            {formatRupiah(product.price_20ft)}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-gray-300 font-normal">-</span>
+                                                    )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
-                                                    {formatRupiah(product.price_40ft)}
+                                                <TableCell className="py-3.5 text-right px-4 text-xs">
+                                                    {product.price_40ft && Number(product.price_40ft) > 0 ? (
+                                                        <span className="font-semibold text-gray-800">
+                                                            {formatRupiah(product.price_40ft)}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-gray-300 font-normal">-</span>
+                                                    )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
-                                                    {formatRupiah(product.price_45ft)}
+                                                <TableCell className="py-3.5 text-right px-4 text-xs">
+                                                    {product.price_45ft && Number(product.price_45ft) > 0 ? (
+                                                        <span className="font-semibold text-gray-800">
+                                                            {formatRupiah(product.price_45ft)}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-gray-300 font-normal">-</span>
+                                                    )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-right font-mono text-xs text-gray-800">
-                                                    {formatRupiah(product.price_global)}
+                                                <TableCell className="py-3.5 text-right px-4 text-xs">
+                                                    {product.price_global && Number(product.price_global) > 0 ? (
+                                                        <span className="font-semibold text-gray-800">
+                                                            {formatRupiah(product.price_global)}
+                                                        </span>
+                                                    ) : (
+                                                        <span className="text-gray-300 font-normal">-</span>
+                                                    )}
                                                 </TableCell>
-                                                <TableCell className="py-3.5 text-xs text-gray-600 max-w-[200px] truncate">
-                                                    {product.description || '-'}
+                                                <TableCell className="py-3.5 pl-6 text-xs text-gray-600 max-w-[200px] truncate">
+                                                    {product.description || <span className="text-gray-300 font-normal">-</span>}
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right pr-5">
                                                     <div className="flex items-center justify-end gap-1.5">

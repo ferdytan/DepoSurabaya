@@ -195,7 +195,7 @@ export default function SpecialPricesIndex({
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Manajemen Harga Khusus Customer" />
 
-            <div className="w-full space-y-6 pb-16">
+            <div className="w-full space-y-6 px-4 py-6 sm:px-6 lg:px-8 pb-16">
                 {/* Header Toolbar */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
@@ -299,7 +299,7 @@ export default function SpecialPricesIndex({
                                 <Table>
                                     <TableHeader className="bg-gray-50/75">
                                         <TableRow>
-                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5 min-w-[200px]">
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 pl-5 min-w-[180px]">
                                                 Layanan Produk
                                             </TableHead>
                                             <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-center w-28">
@@ -317,6 +317,9 @@ export default function SpecialPricesIndex({
                                             <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right w-36 px-4">
                                                 Tarif Global
                                             </TableHead>
+                                            <TableHead className="font-semibold text-xs text-gray-700 py-3.5 min-w-[160px] pl-6">
+                                                Keterangan
+                                            </TableHead>
                                             <TableHead className="font-semibold text-xs text-gray-700 py-3.5 text-right pr-5 w-24">
                                                 Aksi
                                             </TableHead>
@@ -325,7 +328,7 @@ export default function SpecialPricesIndex({
                                     <TableBody>
                                         {filteredProducts.length === 0 ? (
                                             <TableRow>
-                                                <TableCell colSpan={7} className="py-12 text-center text-xs text-gray-500">
+                                                <TableCell colSpan={8} className="py-12 text-center text-xs text-gray-500">
                                                     <div className="flex flex-col items-center justify-center space-y-2">
                                                         <Package className="h-8 w-8 text-gray-300" />
                                                         <span>Tidak ada produk yang sesuai dengan filter.</span>
@@ -343,15 +346,8 @@ export default function SpecialPricesIndex({
                                                                 : 'hover:bg-gray-50/60'
                                                         }`}
                                                     >
-                                                        <TableCell className="py-3.5 pl-5">
-                                                            <div className="font-semibold text-xs text-gray-900">
-                                                                {p.service_type}
-                                                            </div>
-                                                            {p.description && (
-                                                                <div className="text-[11px] text-gray-500 line-clamp-1 mt-0.5">
-                                                                    {p.description}
-                                                                </div>
-                                                            )}
+                                                        <TableCell className="py-3.5 pl-5 font-semibold text-xs text-gray-900">
+                                                            {p.service_type}
                                                         </TableCell>
                                                         <TableCell className="py-3.5 text-center">
                                                             {p.has_custom_price ? (
@@ -360,7 +356,7 @@ export default function SpecialPricesIndex({
                                                                     Khusus
                                                                 </span>
                                                             ) : (
-                                                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                                                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
                                                                     Master
                                                                 </span>
                                                             )}
@@ -369,7 +365,7 @@ export default function SpecialPricesIndex({
                                                         {/* Tarif 20ft */}
                                                         <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_20ft ? (
-                                                                <div className="flex flex-col items-end">
+                                                                <div className="flex flex-col items-end gap-0.5">
                                                                     <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_20ft)}
                                                                     </span>
@@ -382,14 +378,14 @@ export default function SpecialPricesIndex({
                                                                     {formatRupiah(p.master_price_20ft)}
                                                                 </span>
                                                             ) : (
-                                                                <span className="text-gray-300 font-normal">-</span>
+                                                                <span className="text-gray-300 font-normal select-none">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif 40ft */}
                                                         <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_40ft ? (
-                                                                <div className="flex flex-col items-end">
+                                                                <div className="flex flex-col items-end gap-0.5">
                                                                     <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_40ft)}
                                                                     </span>
@@ -402,14 +398,14 @@ export default function SpecialPricesIndex({
                                                                     {formatRupiah(p.master_price_40ft)}
                                                                 </span>
                                                             ) : (
-                                                                <span className="text-gray-300 font-normal">-</span>
+                                                                <span className="text-gray-300 font-normal select-none">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif 45ft */}
                                                         <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_price_45ft ? (
-                                                                <div className="flex flex-col items-end">
+                                                                <div className="flex flex-col items-end gap-0.5">
                                                                     <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_price_45ft)}
                                                                     </span>
@@ -422,14 +418,14 @@ export default function SpecialPricesIndex({
                                                                     {formatRupiah(p.master_price_45ft)}
                                                                 </span>
                                                             ) : (
-                                                                <span className="text-gray-300 font-normal">-</span>
+                                                                <span className="text-gray-300 font-normal select-none">-</span>
                                                             )}
                                                         </TableCell>
 
                                                         {/* Tarif Global */}
                                                         <TableCell className="py-3.5 text-right px-4 text-xs">
                                                             {p.has_custom_price && p.custom_global_price ? (
-                                                                <div className="flex flex-col items-end">
+                                                                <div className="flex flex-col items-end gap-0.5">
                                                                     <span className="font-bold text-blue-700">
                                                                         {formatRupiah(p.custom_global_price)}
                                                                     </span>
@@ -442,8 +438,13 @@ export default function SpecialPricesIndex({
                                                                     {formatRupiah(p.master_price_global)}
                                                                 </span>
                                                             ) : (
-                                                                <span className="text-gray-300 font-normal">-</span>
+                                                                <span className="text-gray-300 font-normal select-none">-</span>
                                                             )}
+                                                        </TableCell>
+
+                                                        {/* Keterangan */}
+                                                        <TableCell className="py-3.5 pl-6 text-xs text-gray-600 max-w-[200px] truncate">
+                                                            {p.description || <span className="text-gray-300 font-normal select-none">-</span>}
                                                         </TableCell>
 
                                                         {/* Aksi */}

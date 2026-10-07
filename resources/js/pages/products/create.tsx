@@ -238,7 +238,16 @@ export default function CreateProduct() {
                                                 type="number"
                                                 min={0}
                                                 value={data.price_global}
-                                                onChange={(e) => setData('price_global', e.target.value)}
+                                                onChange={(e) => {
+                                                    const val = e.target.value;
+                                                    setData((prev) => ({
+                                                        ...prev,
+                                                        price_global: val,
+                                                        price_20ft: val,
+                                                        price_40ft: val,
+                                                        price_45ft: val,
+                                                    }));
+                                                }}
                                                 placeholder="150000"
                                                 className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
                                                 disabled={processing}

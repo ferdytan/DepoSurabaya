@@ -685,6 +685,14 @@ export function DateTimePicker({
 
             {/* Dropdown Calendar / Time Panel */}
             {isOpen && (() => {
+                const currentYear = new Date().getFullYear();
+                const minYear = Math.min(2015, viewYear - 5);
+                const maxYear = Math.max(currentYear + 10, viewYear + 5);
+                const yearOptions: number[] = [];
+                for (let y = minYear; y <= maxYear; y++) {
+                    yearOptions.push(y);
+                }
+
                 const panelContent = (
                     <>
                         {/* Quick Preset Buttons Header */}
@@ -719,7 +727,7 @@ export function DateTimePicker({
                             </div>
                         </div>
 
-                        {/* Month Header Navigation */}
+                        {/* Month & Year Header Navigation */}
                         <div className="flex items-center justify-between mb-3 px-1 shrink-0">
                             <button
                                 type="button"
@@ -729,9 +737,45 @@ export function DateTimePicker({
                             >
                                 <ChevronLeft className="h-4 w-4" />
                             </button>
-                            <span className="text-xs font-bold text-gray-800">
-                                {MONTH_NAMES[viewMonth]} {viewYear}
-                            </span>
+
+                            <div className="flex items-center gap-1.5">
+                                {/* Month Selector */}
+                                <div className="relative">
+                                    <select
+                                        value={viewMonth}
+                                        onChange={(e) => setViewMonth(Number(e.target.value))}
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="h-7 text-xs font-bold text-gray-800 bg-gray-100 hover:bg-gray-200/80 border border-gray-200/70 rounded-md pl-2 pr-6 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 transition"
+                                        title="Pilih Bulan"
+                                    >
+                                        {MONTH_NAMES.map((name, idx) => (
+                                            <option key={name} value={idx}>
+                                                {name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2 pointer-events-none" />
+                                </div>
+
+                                {/* Year Selector */}
+                                <div className="relative">
+                                    <select
+                                        value={viewYear}
+                                        onChange={(e) => setViewYear(Number(e.target.value))}
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="h-7 text-xs font-bold text-gray-800 bg-gray-100 hover:bg-gray-200/80 border border-gray-200/70 rounded-md pl-2 pr-5 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 transition"
+                                        title="Pilih Tahun"
+                                    >
+                                        {yearOptions.map((y) => (
+                                            <option key={y} value={y}>
+                                                {y}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2 pointer-events-none" />
+                                </div>
+                            </div>
+
                             <button
                                 type="button"
                                 onClick={nextMonth}

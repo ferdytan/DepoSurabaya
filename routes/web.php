@@ -231,6 +231,14 @@ Route::middleware(['auth', 'superadmin'])->group(function () {
         ->name('bckp.cleanup.run');
     Route::post('/bckp/import', [\App\Http\Controllers\DatabaseBackupController::class, 'importSql'])
         ->name('bckp.import');
+
+    // Excel / CSV Master Data Sync (Import, Export, Template)
+    Route::get('/bckp/excel/template/{entity}', [\App\Http\Controllers\DatabaseBackupController::class, 'downloadTemplate'])
+        ->name('bckp.excel.template');
+    Route::get('/bckp/excel/export/{entity}', [\App\Http\Controllers\DatabaseBackupController::class, 'exportExcel'])
+        ->name('bckp.excel.export');
+    Route::post('/bckp/excel/import/{entity}', [\App\Http\Controllers\DatabaseBackupController::class, 'importExcel'])
+        ->name('bckp.excel.import');
 });
 
 /* =====================================================

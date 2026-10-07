@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use App\Services\DatabaseBackupService;
 use App\Services\DataSelectiveBackupService;
+use App\Services\ExcelDataSyncService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -15,7 +16,8 @@ class DatabaseBackupController extends Controller
 {
     public function __construct(
         protected DatabaseBackupService $backupService,
-        protected DataSelectiveBackupService $selectiveService
+        protected DataSelectiveBackupService $selectiveService,
+        protected ExcelDataSyncService $excelSyncService
     ) {}
 
     /**
@@ -341,6 +343,80 @@ class DatabaseBackupController extends Controller
         } finally {
             if ($isUploaded && $filePath && file_exists($filePath)) {
                 @unlink($filePath);
+            }
+        }
+    }
+
+    /**
+     * Unduh template file Excel/CSV resmi untuk entitas master data tertentu.
+     */
+    public function downloadTemplate(Request $request, string $entity)
+    {
+        try {
+            $template = $this->excelSyncService->getTemplate($entity);
+            return response($template['content'], 200, [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"{$template['filename']}\"",
+                'Pragma' => 'no-cache',
+                'Expires' => '0',
+            ]);
+        } catch (\Throwable $e) {
+            return back()->with('error', "Gagal mengunduh template: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Export seluruh data entitas master ke file Excel/CSV.
+     */
+    public function exportExcel(Request $request, string $entity)
+    {
+        try {
+            $export = $this->excelSyncService->export($entity);
+            return response($export['content'], 200, [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"{$export['filename']}\"",
+                'Pragma' => 'no-cache',
+                'Expires' => '0',
+            ]);
+        } catch (\Throwable $e) {
+            return back()->with('error', "Gagal mengekspor data: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Import berkas Excel (.csv / .xlsx) untuk entitas master tertentu.
+     */
+    public function importExcel(Request $request, string $entity): RedirectResponse
+    {
+        $request->validate([
+            'file' => ['required', 'file', 'max:20480'], // max 20MB
+        ], [
+            'file.required' => 'Pilih berkas Excel / CSV untuk diimpor.',
+            'file.file' => 'Berkas yang diunggah tidak valid.',
+        ]);
+
+        $file = $request->file('file');
+        $ext = strtolower($file->getClientOriginalExtension());
+        if (!in_array($ext, ['csv', 'xlsx', 'xls', 'txt'])) {
+            return back()->with('error', 'Format file tidak didukung. Harap unggah berkas .csv atau .xlsx.');
+        }
+
+        $tempPath = $file->storeAs('private/temp_imports', 'import_excel_' . time() . '_' . $file->getClientOriginalName());
+        $fullPath = storage_path('app/' . $tempPath);
+
+        try {
+            $result = $this->excelSyncService->import($entity, $fullPath);
+            $entityName = $result['entity'];
+            $msg = "Import {$entityName} sukses! Total {$result['total']} baris data diproses: {$result['created']} data baru ditambahkan, {$result['updated']} data diperbarui.";
+            if ($result['failed'] > 0) {
+                $msg .= " ({$result['failed']} baris dilewati/gagal).";
+            }
+            return back()->with('success', $msg);
+        } catch (\Throwable $e) {
+            return back()->with('error', "Gagal mengimpor data: " . $e->getMessage());
+        } finally {
+            if (file_exists($fullPath)) {
+                @unlink($fullPath);
             }
         }
     }

@@ -41,6 +41,7 @@ import {
     Database,
     Download,
     FileArchive,
+    FileSpreadsheet,
     FileUp,
     Filter,
     Globe,
@@ -64,6 +65,7 @@ import {
     Truck,
     Upload,
     UserCheck,
+    Users,
 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -192,12 +194,58 @@ const MASTER_DATA_MODULE_OPTIONS = [
     },
 ];
 
+const EXCEL_SYNC_ENTITIES = [
+    {
+        id: 'customer' as const,
+        title: 'Master Customer',
+        description: 'Data pelanggan depo, kontak telepon, email, alamat kantor, kota, dan provinsi.',
+        icon: Users,
+        iconBg: 'bg-blue-50 text-blue-700 border-blue-200',
+        badge: 'Pelanggan',
+        columns: ['name', 'phone', 'email', 'address', 'city', 'province'],
+    },
+    {
+        id: 'shipper' as const,
+        title: 'Master Shipper',
+        description: 'Data pengirim muatan / ekspedisi, kontak telepon, email, dan alamat operasional.',
+        icon: Truck,
+        iconBg: 'bg-amber-50 text-amber-700 border-amber-200',
+        badge: 'Ekspedisi',
+        columns: ['name', 'phone', 'email', 'address', 'city', 'province'],
+    },
+    {
+        id: 'product' as const,
+        title: 'Master Produk Layanan',
+        description: 'Daftar layanan depo, status rekam suhu (Ya/Tidak), tarif kontainer 20ft, 40ft, 45ft, tarif global, dan keterangan.',
+        icon: Package,
+        iconBg: 'bg-purple-50 text-purple-700 border-purple-200',
+        badge: 'Tarif & Layanan',
+        columns: ['service_type', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global', 'description'],
+    },
+    {
+        id: 'user' as const,
+        title: 'Data Pengguna (User)',
+        description: 'Daftar akun staf, checker, ops checker, dan admin sistem beserta peran dan email.',
+        icon: UserCheck,
+        iconBg: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+        badge: 'Akun Pengguna',
+        columns: ['name', 'username', 'email', 'role', 'password'],
+    },
+];
+
 export default function BackupIndex({ backups, stats, auto_backup, flash }: Props) {
-    // Tab State: 'overview' | 'selective_backup' | 'cleanup' | 'import'
-    const [activeTab, setActiveTab] = useState<'overview' | 'selective_backup' | 'cleanup' | 'import'>('overview');
+    // Tab State: 'overview' | 'selective_backup' | 'excel_sync' | 'cleanup' | 'import'
+    const [activeTab, setActiveTab] = useState<'overview' | 'selective_backup' | 'excel_sync' | 'cleanup' | 'import'>('overview');
 
     const [isRunningBackup, setIsRunningBackup] = useState(false);
     const [copiedCurl, setCopiedCurl] = useState(false);
+
+    // State untuk Import Excel
+    const [isExcelModalOpen, setIsExcelModalOpen] = useState(false);
+    const [excelTargetEntity, setExcelTargetEntity] = useState<'customer' | 'shipper' | 'product' | 'user'>('customer');
+    const [excelFile, setExcelFile] = useState<File | null>(null);
+    const [isUploadingExcel, setIsUploadingExcel] = useState(false);
+    const excelFileInputRef = useRef<HTMLInputElement>(null);
 
     // Form Pengaturan Jadwal
     const { data, setData, post, processing, errors, recentlySuccessful } = useForm({
@@ -433,6 +481,41 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
         });
     };
 
+    // Handlers Import Excel Master Data
+    const handleOpenExcelModal = (entity: 'customer' | 'shipper' | 'product' | 'user') => {
+        setExcelTargetEntity(entity);
+        setExcelFile(null);
+        if (excelFileInputRef.current) {
+            excelFileInputRef.current.value = '';
+        }
+        setIsExcelModalOpen(true);
+    };
+
+    const handleSubmitExcelImport = () => {
+        if (!excelFile) {
+            alert('Silakan pilih berkas Excel atau CSV terlebih dahulu.');
+            return;
+        }
+
+        setIsUploadingExcel(true);
+        const formData = new FormData();
+        formData.append('file', excelFile);
+
+        router.post(`/bckp/excel/import/${excelTargetEntity}`, formData, {
+            preserveScroll: true,
+            onSuccess: () => {
+                setIsExcelModalOpen(false);
+                setExcelFile(null);
+                if (excelFileInputRef.current) {
+                    excelFileInputRef.current.value = '';
+                }
+            },
+            onFinish: () => {
+                setIsUploadingExcel(false);
+            },
+        });
+    };
+
     const curlCommand = `curl -s "${auto_backup.cron_url}" > /dev/null 2>&1`;
 
     return (
@@ -505,6 +588,18 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                     >
                         <ArrowDownToLine className="h-4 w-4 text-blue-600" />
                         <span>Backup Selektif (Date & Master)</span>
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setActiveTab('excel_sync')}
+                        className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold border-b-2 -mb-px transition-colors cursor-pointer shrink-0 ${
+                            activeTab === 'excel_sync'
+                                ? 'border-emerald-600 text-emerald-700'
+                                : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
+                        }`}
+                    >
+                        <FileSpreadsheet className="h-4 w-4 text-emerald-600" />
+                        <span>Import & Export Excel</span>
                     </button>
                     <button
                         type="button"
@@ -1405,6 +1500,141 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                     </div>
                 )}
 
+                {/* =================================================================== */}
+                {/* TAB: IMPORT & EXPORT EXCEL MASTER DATA */}
+                {/* =================================================================== */}
+                {activeTab === 'excel_sync' && (
+                    <div className="space-y-6">
+                        {/* Intro Banner */}
+                        <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5 shadow-xs">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div className="space-y-1">
+                                    <div className="flex items-center gap-2">
+                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                            <FileSpreadsheet className="h-3.5 w-3.5" />
+                                            Excel / CSV Master Data Sync
+                                        </span>
+                                        <span className="text-xs text-emerald-700 font-medium hidden sm:inline">• Format Identik & Janjian</span>
+                                    </div>
+                                    <h3 className="text-base font-bold text-gray-900">
+                                        Sinkronisasi Cepat Master Data via Excel
+                                    </h3>
+                                    <p className="text-xs text-gray-600 max-w-3xl leading-relaxed">
+                                        Unduh template Excel resmi untuk format yang pasti sesuai, lengkapi data, lalu import kembali ke sistem. Sistem otomatis memperbarui data yang sudah ada dan menambahkan data baru tanpa duplikasi (Upsert). Seluruh data yang di-export juga dapat langsung di-import kembali.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Grid 4 Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            {EXCEL_SYNC_ENTITIES.map((ent) => {
+                                const IconComponent = ent.icon;
+                                return (
+                                    <div
+                                        key={ent.id}
+                                        className="rounded-xl border border-gray-200 bg-white p-5 shadow-xs hover:border-gray-300 transition-all flex flex-col justify-between"
+                                    >
+                                        <div className="space-y-4">
+                                            {/* Card Header */}
+                                            <div className="flex items-start justify-between gap-3">
+                                                <div className="flex items-center gap-3">
+                                                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl border ${ent.iconBg}`}>
+                                                        <IconComponent className="h-5 w-5" />
+                                                    </div>
+                                                    <div>
+                                                        <div className="flex items-center gap-2">
+                                                            <h4 className="text-sm font-bold text-gray-900">{ent.title}</h4>
+                                                            <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-700 border border-gray-200">
+                                                                {ent.badge}
+                                                            </span>
+                                                        </div>
+                                                        <p className="text-xs text-gray-500 mt-0.5">{ent.description}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Column tags */}
+                                            <div className="rounded-lg bg-gray-50/70 p-3 border border-gray-100 space-y-1.5">
+                                                <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
+                                                    Kolom Spreadsheet:
+                                                </div>
+                                                <div className="flex flex-wrap gap-1.5">
+                                                    {ent.columns.map((col) => (
+                                                        <span
+                                                            key={col}
+                                                            className="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-white border border-gray-200 text-gray-700 shadow-2xs"
+                                                        >
+                                                            {col}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Action Buttons */}
+                                        <div className="pt-5 mt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
+                                            <a
+                                                href={`/bckp/excel/template/${ent.id}`}
+                                                download
+                                                className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-700 transition cursor-pointer"
+                                                title="Unduh template Excel dengan contoh data"
+                                            >
+                                                <Download className="h-3.5 w-3.5 text-gray-500" />
+                                                <span>Template Excel</span>
+                                            </a>
+
+                                            <div className="flex items-center gap-2">
+                                                <a
+                                                    href={`/bckp/excel/export/${ent.id}`}
+                                                    download
+                                                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-lg border border-blue-200 bg-blue-50/80 hover:bg-blue-100/80 text-blue-800 transition cursor-pointer"
+                                                    title="Export seluruh data saat ini ke Excel"
+                                                >
+                                                    <ArrowDownToLine className="h-3.5 w-3.5 text-blue-600" />
+                                                    <span>Export Excel</span>
+                                                </a>
+
+                                                <Button
+                                                    type="button"
+                                                    size="sm"
+                                                    onClick={() => handleOpenExcelModal(ent.id)}
+                                                    className="h-8.5 px-3.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white gap-1.5 shadow-xs cursor-pointer"
+                                                >
+                                                    <Upload className="h-3.5 w-3.5" />
+                                                    <span>Import Data</span>
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Petunjuk Kompatibilitas */}
+                        <div className="rounded-xl border border-gray-200 bg-gray-50/50 p-4 text-xs text-gray-600 space-y-2">
+                            <div className="font-bold text-gray-800 flex items-center gap-1.5">
+                                <Info className="h-4 w-4 text-blue-600" />
+                                <span>Petunjuk Format Import & Export</span>
+                            </div>
+                            <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                                <li>
+                                    <strong>Format File:</strong> Sistem mendukung berkas <code>.csv</code> (kompatibel UTF-8) dan <code>.xlsx</code>.
+                                </li>
+                                <li>
+                                    <strong>Sinkronisasi Janjian:</strong> Seluruh berkas yang dihasilkan dari tombol <strong>Export Excel</strong> memiliki struktur kolom yang persis sama dengan template dan dapat langsung di-import kembali setelah diedit.
+                                </li>
+                                <li>
+                                    <strong>Master Produk:</strong> Kolom <code>requires_temperature</code> dapat diisi <code>Ya</code> atau <code>Tidak</code>. Jika <code>price_global</code> diisi, ukuran kontainer otomatis mengikuti bila dikosongkan.
+                                </li>
+                                <li>
+                                    <strong>Pengguna (User):</strong> Kolom <code>role</code> dapat diisi nama peran (misal: <em>Super User, Admin, Checker, Ops Checker, Karantina</em>). Password bersifat opsional; jika dikosongkan pada user baru, default password adalah <code>password123</code>.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                )}
+
                 {/* Footer Note */}
                 <div className="rounded-lg bg-gray-50 p-3.5 border border-gray-200 text-center text-xs text-gray-500">
                     Sistem perlindungan data aktif: Seluruh file backup tersimpan dalam direktori privat server dan dilindungi autentikasi Super Admin.
@@ -1557,6 +1787,129 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                 <Upload className="h-3.5 w-3.5" />
                             )}
                             <span>{isImporting ? 'Sedang Meng-import...' : 'Konfirmasi & Eksekusi Import'}</span>
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
+
+            {/* Modal Dialog Import Excel */}
+            <Dialog open={isExcelModalOpen} onOpenChange={setIsExcelModalOpen}>
+                <DialogContent className="sm:max-w-lg">
+                    <DialogHeader>
+                        <DialogTitle className="flex items-center gap-2 text-emerald-700 text-base">
+                            <FileSpreadsheet className="h-5 w-5" />
+                            <span>
+                                Import Data {EXCEL_SYNC_ENTITIES.find((e) => e.id === excelTargetEntity)?.title}
+                            </span>
+                        </DialogTitle>
+                        <DialogDescription className="text-xs text-gray-600 pt-1 leading-relaxed">
+                            Pilih file Excel (.xlsx) atau CSV (.csv) untuk memperbarui atau menambahkan data secara massal.
+                        </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="space-y-4 py-2 text-xs">
+                        {/* Template Callout */}
+                        <div className="rounded-lg bg-emerald-50/70 p-3.5 border border-emerald-200 flex items-center justify-between gap-3">
+                            <div className="space-y-0.5">
+                                <div className="font-bold text-emerald-900">Belum memiliki format template?</div>
+                                <div className="text-[11px] text-emerald-700">
+                                    Unduh template resmi dengan contoh data siap edit agar format kolom cocok.
+                                </div>
+                            </div>
+                            <a
+                                href={`/bckp/excel/template/${excelTargetEntity}`}
+                                download
+                                className="inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-md bg-white border border-emerald-300 text-emerald-800 hover:bg-emerald-100 transition shrink-0"
+                            >
+                                <Download className="h-3 w-3" />
+                                Unduh Template
+                            </a>
+                        </div>
+
+                        {/* File Input Dropzone */}
+                        <div className="space-y-2">
+                            <Label className="text-xs font-bold text-gray-800">
+                                Pilih File Excel / CSV <span className="text-red-500">*</span>
+                            </Label>
+                            <div
+                                onClick={() => excelFileInputRef.current?.click()}
+                                className={`border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-all ${
+                                    excelFile
+                                        ? 'border-emerald-400 bg-emerald-50/30'
+                                        : 'border-gray-200 hover:border-gray-300 bg-gray-50/50 hover:bg-gray-50'
+                                }`}
+                            >
+                                <input
+                                    ref={excelFileInputRef}
+                                    type="file"
+                                    accept=".csv, .xlsx, .xls, .txt, text/csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                    onChange={(e) => {
+                                        if (e.target.files && e.target.files[0]) {
+                                            setExcelFile(e.target.files[0]);
+                                        }
+                                    }}
+                                    className="hidden"
+                                />
+
+                                {excelFile ? (
+                                    <div className="flex flex-col items-center justify-center space-y-2">
+                                        <div className="h-10 w-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                            <FileSpreadsheet className="h-5 w-5" />
+                                        </div>
+                                        <div className="font-semibold text-gray-900 text-xs">{excelFile.name}</div>
+                                        <div className="text-[11px] text-gray-500">
+                                            {(excelFile.size / 1024).toFixed(1)} KB • Klik untuk mengganti berkas
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="flex flex-col items-center justify-center space-y-2">
+                                        <div className="h-10 w-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center">
+                                            <Upload className="h-5 w-5" />
+                                        </div>
+                                        <div className="text-xs font-semibold text-gray-700">
+                                            Klik untuk memilih file Excel atau CSV
+                                        </div>
+                                        <div className="text-[11px] text-gray-400">
+                                            Format didukung: .xlsx, .csv (Maksimal 20MB)
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Notice Upsert */}
+                        <div className="rounded-lg bg-gray-50 p-3 border border-gray-200 text-[11px] text-gray-600 flex items-start gap-2">
+                            <Info className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
+                            <span>
+                                <strong>Aturan Sinkronisasi:</strong> Data yang sudah memiliki kesamaan nama/email/username akan diperbarui secara otomatis, dan data yang belum ada akan dibuatkan data baru.
+                            </span>
+                        </div>
+                    </div>
+
+                    <DialogFooter className="gap-2 sm:gap-0 pt-2 border-t border-gray-100">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setIsExcelModalOpen(false)}
+                            disabled={isUploadingExcel}
+                            className="text-xs"
+                        >
+                            Batal
+                        </Button>
+                        <Button
+                            type="button"
+                            size="sm"
+                            onClick={handleSubmitExcelImport}
+                            disabled={!excelFile || isUploadingExcel}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold gap-1.5 cursor-pointer"
+                        >
+                            {isUploadingExcel ? (
+                                <LoaderCircle className="h-3.5 w-3.5 animate-spin" />
+                            ) : (
+                                <Upload className="h-3.5 w-3.5" />
+                            )}
+                            <span>{isUploadingExcel ? 'Sedang Memproses Import...' : 'Mulai Import Data'}</span>
                         </Button>
                     </DialogFooter>
                 </DialogContent>

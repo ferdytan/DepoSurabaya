@@ -26,6 +26,7 @@ import {
     Plus,
     PlusCircle,
     Ship,
+    Search,
     Thermometer,
     Trash2,
     X,
@@ -168,6 +169,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
     //  Dynamic Order Item & Mobile Collapse helpers
     // ==================================
     const [collapsedItems, setCollapsedItems] = useState<Record<number, boolean>>({});
+    const [additionalSearch, setAdditionalSearch] = useState<Record<number, string>>({});
 
     const toggleCollapse = (index: number) => {
         setCollapsedItems((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -1049,20 +1051,92 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
 
                                                 {/* Row 2: Additional Products */}
                                                 <div className="space-y-2 pt-2 border-t border-gray-100">
-                                                    <div className="flex items-center justify-between">
-                                                        <Label className="text-xs font-semibold text-gray-700">
-                                                            Additional Produk (Produk Tambahan)
-                                                        </Label>
-                                                        <span className="text-[11px] text-gray-400">
-                                                            {item.additional_product_ids?.length || 0} dipilih
-                                                        </span>
+                                                    <div className="flex flex-wrap items-center justify-between gap-2">
+                                                        <div className="flex items-center gap-2">
+                                                            <Label className="text-xs font-semibold text-gray-700">
+                                                                Additional Produk (Produk Tambahan)
+                                                            </Label>
+                                                            <span className="text-[11px] text-gray-400 font-medium">
+                                                                ({item.additional_product_ids?.length || 0} dipilih)
+                                                            </span>
+                                                        </div>
+
+                                                        {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 && (
+                                                            <div className="relative w-full sm:w-64">
+                                                                <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-gray-400" />
+                                                                <Input
+                                                                    type="text"
+                                                                    value={additionalSearch[idx] || ''}
+                                                                    onChange={(e) =>
+                                                                        setAdditionalSearch((prev) => ({
+                                                                            ...prev,
+                                                                            [idx]: e.target.value,
+                                                                        }))
+                                                                    }
+                                                                    placeholder="Cari produk tambahan..."
+                                                                    className="h-8 pl-8 pr-7 text-xs bg-white"
+                                                                />
+                                                                {additionalSearch[idx] && (
+                                                                    <button
+                                                                        type="button"
+                                                                        onClick={() =>
+                                                                            setAdditionalSearch((prev) => ({
+                                                                                ...prev,
+                                                                                [idx]: '',
+                                                                            }))
+                                                                        }
+                                                                        className="absolute right-2 top-2 text-gray-400 hover:text-gray-600 cursor-pointer"
+                                                                        title="Hapus pencarian"
+                                                                    >
+                                                                        <X className="h-3.5 w-3.5" />
+                                                                    </button>
+                                                                )}
+                                                            </div>
+                                                        )}
                                                     </div>
 
-                                                    {customerProducts.filter((p) => p.id.toString() !== item.product_id).length > 0 ? (
-                                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-40 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
-                                                            {customerProducts
-                                                                .filter((p) => p.id.toString() !== item.product_id)
-                                                                .map((p) => {
+                                                    {(() => {
+                                                        const query = (additionalSearch[idx] || '').trim().toLowerCase();
+                                                        const availableProducts = customerProducts.filter(
+                                                            (p) => p.id.toString() !== item.product_id,
+                                                        );
+                                                        const filteredProducts = availableProducts.filter(
+                                                            (p) => !query || p.service_type.toLowerCase().includes(query),
+                                                        );
+
+                                                        if (availableProducts.length === 0) {
+                                                            return (
+                                                                <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                                    {data.customer_id
+                                                                        ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
+                                                                        : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
+                                                                </div>
+                                                            );
+                                                        }
+
+                                                        if (filteredProducts.length === 0) {
+                                                            return (
+                                                                <div className="text-xs text-gray-500 italic py-3 px-3 bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-between">
+                                                                    <span>Tidak ada produk tambahan yang cocok dengan "{query}".</span>
+                                                                    <button
+                                                                        type="button"
+                                                                        onClick={() =>
+                                                                            setAdditionalSearch((prev) => ({
+                                                                                ...prev,
+                                                                                [idx]: '',
+                                                                            }))
+                                                                        }
+                                                                        className="text-xs font-semibold text-blue-600 hover:underline cursor-pointer"
+                                                                    >
+                                                                        Reset pencarian
+                                                                    </button>
+                                                                </div>
+                                                            );
+                                                        }
+
+                                                        return (
+                                                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-48 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
+                                                                {filteredProducts.map((p) => {
                                                                     const isChecked = item.additional_product_ids?.includes(p.id.toString());
                                                                     return (
                                                                         <label
@@ -1088,7 +1162,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                                     updateOrderItem(idx, 'additional_product_ids', updated);
                                                                                     const prices = getAdditionalProductPrices(
                                                                                         updated,
-                                                                                        item.price_type as '20ft' | '40ft' | '45ft' | 'global' | undefined,
+                                                                                        item.price_type,
                                                                                     );
                                                                                     updateOrderItem(idx, 'additional_product_prices', prices);
                                                                                 }}
@@ -1098,14 +1172,9 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                         </label>
                                                                     );
                                                                 })}
-                                                        </div>
-                                                    ) : (
-                                                        <div className="text-xs text-gray-400 italic py-2 px-3 bg-gray-50 rounded-lg border border-gray-100">
-                                                            {data.customer_id
-                                                                ? 'Tidak ada produk tambahan yang tersedia untuk customer ini.'
-                                                                : 'Pilih customer terlebih dahulu untuk memuat produk tambahan.'}
-                                                        </div>
-                                                    )}
+                                                            </div>
+                                                        );
+                                                    })()}
                                                 </div>
 
                                                 {/* Row 3: Negara, Kapal, Komoditi */}

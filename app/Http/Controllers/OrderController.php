@@ -400,9 +400,46 @@ class OrderController extends Controller
     public function karantina_print_data(Request $request)
     {
         @ini_set('memory_limit', '512M');
-        $query = $this->getKarantinaQuery($request);
+        $query = $this->getKarantinaQuery($request)->with([
+            'order.customer',
+            'order.shipper',
+            'product',
+            'additionalProducts',
+        ]);
 
         $items = $query->get()->map(function ($item) {
+            // Hitung harga produk utama
+            $basePrice = 0;
+            if (!empty($item->price_value) && (float)$item->price_value > 0) {
+                $basePrice = (float)$item->price_value;
+            } elseif ($item->product) {
+                $basePrice = $this->getPriceForType($item->product, $item->price_type ?? 'global', $item->order);
+            }
+
+            // Hitung harga additional products (jika ada)
+            $additionalTotal = 0;
+            if ($item->additionalProducts && $item->additionalProducts->isNotEmpty()) {
+                foreach ($item->additionalProducts as $addon) {
+                    $addonPrice = 0;
+                    if (!empty($addon->pivot?->price_value) && (float)$addon->pivot->price_value > 0) {
+                        $addonPrice = (float)$addon->pivot->price_value;
+                    } else {
+                        $addonPrice = $this->getPriceForType($addon, $item->price_type ?? 'global', $item->order);
+                    }
+                    $additionalTotal += $addonPrice;
+                }
+            }
+
+            $totalPrice = $basePrice + $additionalTotal;
+            $ppn = (float) round($totalPrice * 0.11);
+            $grandItemTotal = $totalPrice + $ppn;
+
+            // Tentukan nama jasa / layanan
+            $serviceType = $item->product?->service_type;
+            if (empty($serviceType)) {
+                $serviceType = $item->order?->fumigasi ?: 'Fumigasi';
+            }
+
             return [
                 'id' => $item->id,
                 'container_number' => $item->container_number,
@@ -416,6 +453,10 @@ class OrderController extends Controller
                 'country' => $item->country ?? '-',
                 'fumigasi' => $item->order?->fumigasi ?? null,
                 'no_aju' => $item->order?->no_aju ?? null,
+                'service_type' => $serviceType,
+                'price' => $totalPrice,
+                'ppn' => $ppn,
+                'total' => $grandItemTotal,
             ];
         });
 

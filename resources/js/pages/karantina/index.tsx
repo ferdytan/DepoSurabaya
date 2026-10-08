@@ -156,6 +156,38 @@ function formatContainerSize(priceType?: string | null, fallback?: string): stri
     return val || fallback || '-';
 }
 
+function formatStatementBDateTime(dateStr?: string | null): string {
+    if (!dateStr) return '-';
+    try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return String(dateStr);
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year = d.getFullYear();
+        const hours = String(d.getHours()).padStart(2, '0');
+        const mins = String(d.getMinutes()).padStart(2, '0');
+        return `${day}-${month}-${year} / ${hours}.${mins}`;
+    } catch {
+        return String(dateStr);
+    }
+}
+
+function formatStatementBSize(priceType?: string | null): string {
+    if (!priceType) return '-';
+    const s = String(priceType).toLowerCase();
+    if (s.includes('20')) return "20'";
+    if (s.includes('40')) return "40'";
+    if (s.includes('45')) return "45'";
+    return priceType;
+}
+
+function formatRupiahNumber(num: number): string {
+    return new Intl.NumberFormat('id-ID', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    }).format(num);
+}
+
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
@@ -395,7 +427,7 @@ export default function KarantinaIndex({
             const startLabel = dateFrom ? new Date(dateFrom).toLocaleDateString('id-ID') : 'Semua';
             const endLabel = dateTo ? new Date(dateTo).toLocaleDateString('id-ID') : 'Semua';
             const periodLabel = `${startLabel} s/d ${endLabel}`;
-            const logoUrl = '/logo.png';
+            const logoUrl = '/logo-dss.png';
             const printDateStr = new Date().toLocaleDateString('id-ID', {
                 day: 'numeric',
                 month: 'long',
@@ -404,7 +436,260 @@ export default function KarantinaIndex({
                 minute: '2-digit',
             });
 
-            const html = `
+            // Persiapkan data khusus Billing Statement B
+            let customerNameLabel = '-';
+            if (customerId && customerId !== 'all') {
+                const c = customers.find((item) => String(item.id) === String(customerId));
+                customerNameLabel = c ? c.name : customerId;
+            } else {
+                const uniqueCustomers = Array.from(new Set(allPrintData.map((it: any) => it.customer_name).filter(Boolean)));
+                if (uniqueCustomers.length === 1 && uniqueCustomers[0] !== '-') {
+                    customerNameLabel = uniqueCustomers[0] as string;
+                } else if (uniqueCustomers.length > 1) {
+                    customerNameLabel = 'Semua Customer';
+                }
+            }
+
+            const formatShortDate = (d: string) => {
+                const dt = new Date(d);
+                const dd = String(dt.getDate()).padStart(2, '0');
+                const mm = String(dt.getMonth() + 1).padStart(2, '0');
+                const yy = String(dt.getFullYear()).slice(-2);
+                return `${dd}/${mm}/${yy}`;
+            };
+            const periodB = (dateFrom && dateTo)
+                ? `${formatShortDate(dateFrom)} - ${formatShortDate(dateTo)}`
+                : (dateFrom || dateTo)
+                ? `${dateFrom ? formatShortDate(dateFrom) : ''} - ${dateTo ? formatShortDate(dateTo) : ''}`
+                : periodLabel;
+
+            const grandTotalSum = allPrintData.reduce((sum: number, item: any) => {
+                const itemTotal = typeof item.total === 'number'
+                    ? item.total
+                    : ((item.price || 0) + Math.round((item.price || 0) * 0.11));
+                return sum + itemTotal;
+            }, 0);
+
+            const html = statementType === 'B' ? `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Billing Statement B - PT. Depo Surabaya Sejahtera</title>
+                <style>
+                    @page {
+                        size: A4 portrait;
+                        margin: 12mm 10mm;
+                    }
+                    * {
+                        box-sizing: border-box;
+                        font-family: Arial, Helvetica, sans-serif;
+                        color: #000;
+                    }
+                    body {
+                        margin: 0;
+                        padding: 4px;
+                        font-size: 8.5pt;
+                    }
+                    .header-box {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                        margin-bottom: 22px;
+                    }
+                    .header-logo {
+                        width: 58px;
+                        height: 58px;
+                        object-fit: contain;
+                    }
+                    .header-company {
+                        line-height: 1.35;
+                    }
+                    .company-name {
+                        font-size: 11pt;
+                        font-weight: 800;
+                        color: #000;
+                    }
+                    .company-address {
+                        font-size: 8.5pt;
+                        color: #222;
+                    }
+                    .statement-title-section {
+                        margin-bottom: 14px;
+                    }
+                    .statement-title {
+                        font-size: 11pt;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 8px;
+                    }
+                    .meta-table {
+                        border-collapse: collapse;
+                        font-size: 8.5pt;
+                    }
+                    .meta-table td {
+                        padding: 2px 0;
+                        vertical-align: top;
+                    }
+                    .meta-label {
+                        width: 75px;
+                        font-weight: 700;
+                    }
+                    .meta-sep {
+                        width: 14px;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+                    .meta-value {
+                        font-weight: 700;
+                    }
+                    table.b-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 8.5pt;
+                        border: 1px solid #000;
+                    }
+                    table.b-table th {
+                        border: 1px solid #000;
+                        padding: 5px 4px;
+                        font-weight: 700;
+                        text-align: center;
+                        background-color: #fff;
+                        vertical-align: middle;
+                    }
+                    table.b-table td {
+                        border-left: 1px solid #000;
+                        border-right: 1px solid #000;
+                        padding: 5px 4px;
+                        vertical-align: middle;
+                    }
+                    .row-dashed td {
+                        border-bottom: 1px dashed #000;
+                    }
+                    .row-solid-bottom td {
+                        border-bottom: 1px solid #000;
+                    }
+                    .text-center { text-align: center; }
+                    .currency-cell {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 4px;
+                        font-variant-numeric: tabular-nums;
+                    }
+                    .grand-total-row td {
+                        border: none;
+                        padding: 0;
+                    }
+                    .grand-total-cell {
+                        border: 2px solid #000 !important;
+                        padding: 5px 4px !important;
+                        font-weight: 800 !important;
+                        background-color: #fff;
+                    }
+                    @media print {
+                        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="header-box">
+                    <img src="${logoUrl}" alt="DSS Logo" class="header-logo" onerror="this.onerror=null;this.src='/logo.png'">
+                    <div class="header-company">
+                        <div class="company-name">PT. DEPO SURABAYA SEJAHTERA</div>
+                        <div class="company-address">Tanjung Sadari No. 90</div>
+                        <div class="company-address">Surabaya</div>
+                        <div class="company-address">Jawa Timur - Indonesia</div>
+                    </div>
+                </div>
+
+                <div class="statement-title-section">
+                    <div class="statement-title">BILLING STATEMENT</div>
+                    <table class="meta-table">
+                        <tr>
+                            <td class="meta-label">Customer</td>
+                            <td class="meta-sep">:</td>
+                            <td class="meta-value">${customerNameLabel}</td>
+                        </tr>
+                        <tr>
+                            <td class="meta-label">Periode</td>
+                            <td class="meta-sep">:</td>
+                            <td class="meta-value">${periodB}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <table class="b-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 32px;">No.</th>
+                            <th rowspan="2" style="width: 140px;">No. Container</th>
+                            <th rowspan="2" style="width: 125px;">Shipper</th>
+                            <th colspan="2">Date / Time</th>
+                            <th rowspan="2" style="width: 55px;">Ukuran</th>
+                            <th rowspan="2" style="width: 85px;">Jasa</th>
+                            <th rowspan="2" style="width: 110px;">Price</th>
+                            <th rowspan="2" style="width: 100px;">PPN 11 %</th>
+                            <th rowspan="2" style="width: 110px;">Total</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 130px;">In</th>
+                            <th style="width: 130px;">Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${allPrintData.map((item: any, idx: number) => {
+                            const isLast = idx === allPrintData.length - 1;
+                            const rowClass = isLast ? 'row-solid-bottom' : 'row-dashed';
+                            const priceVal = typeof item.price === 'number' ? item.price : 0;
+                            const ppnVal = typeof item.ppn === 'number' ? item.ppn : Math.round(priceVal * 0.11);
+                            const totalVal = typeof item.total === 'number' ? item.total : (priceVal + ppnVal);
+
+                            return `
+                            <tr class="${rowClass}">
+                                <td class="text-center">${idx + 1}</td>
+                                <td class="text-center" style="font-weight: 700;">${item.container_number}</td>
+                                <td class="text-center">${item.shipper_name ?? '-'}</td>
+                                <td class="text-center">${formatStatementBDateTime(item.entry_date)}</td>
+                                <td class="text-center">${formatStatementBDateTime(item.exit_date)}</td>
+                                <td class="text-center">${formatStatementBSize(item.price_type)}</td>
+                                <td class="text-center">${item.service_type ?? item.fumigasi ?? 'Fumigasi'}</td>
+                                <td>
+                                    <div class="currency-cell">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(priceVal)}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency-cell">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(ppnVal)}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency-cell">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(totalVal)}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            `;
+                        }).join('')}
+                        <tr class="grand-total-row">
+                            <td colspan="9" style="border: none; background: transparent;"></td>
+                            <td class="grand-total-cell">
+                                <div class="currency-cell" style="font-weight: 800;">
+                                    <span>Rp</span>
+                                    <span>${formatRupiahNumber(grandTotalSum)}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+            </html>
+            ` : `
             <!DOCTYPE html>
             <html>
             <head>
@@ -484,7 +769,7 @@ export default function KarantinaIndex({
                 <table class="header-table">
                     <tr>
                         <td style="width: 70px; vertical-align: middle;">
-                            <img src="${logoUrl}" alt="Logo" style="width: 55px; height: 55px; object-fit: contain;">
+                            <img src="${logoUrl}" alt="Logo" style="width: 55px; height: 55px; object-fit: contain;" onerror="this.onerror=null;this.src='/logo.png'">
                         </td>
                         <td style="vertical-align: middle;">
                             <div class="company-name">PT. DEPO SURABAYA SEJAHTERA</div>

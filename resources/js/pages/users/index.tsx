@@ -58,6 +58,7 @@ type User = {
     name: string;
     username: string;
     email: string;
+    is_active?: boolean;
     role: {
         id: number;
         name: string;
@@ -105,6 +106,42 @@ export default function UsersIndex({ users, filters }: Props) {
 
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [userToDelete, setUserToDelete] = useState<User | null>(null);
+
+    const [toggleModalOpen, setToggleModalOpen] = useState(false);
+    const [userToToggle, setUserToToggle] = useState<User | null>(null);
+
+    const [bulkModalOpen, setBulkModalOpen] = useState(false);
+    const [bulkAction, setBulkAction] = useState<'enable' | 'disable' | null>(null);
+
+    const handleToggleStatusClick = (user: User) => {
+        setUserToToggle(user);
+        setToggleModalOpen(true);
+    };
+
+    const confirmToggleStatus = () => {
+        if (userToToggle) {
+            router.post(`/users/${userToToggle.id}/toggle-status`, {}, {
+                preserveScroll: true,
+            });
+        }
+        setToggleModalOpen(false);
+    };
+
+    const handleBulkStatusClick = (action: 'enable' | 'disable') => {
+        setBulkAction(action);
+        setBulkModalOpen(true);
+    };
+
+    const confirmBulkStatus = () => {
+        if (bulkAction) {
+            router.post('/users/bulk-status', {
+                status: bulkAction === 'enable',
+            }, {
+                preserveScroll: true,
+            });
+        }
+        setBulkModalOpen(false);
+    };
 
     const handleSearch = () => {
         router.get('/users', {
@@ -240,8 +277,30 @@ export default function UsersIndex({ users, filters }: Props) {
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
-                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm w-full sm:w-auto justify-center">
+                        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto shrink-0">
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                type="button"
+                                onClick={() => handleBulkStatusClick('enable')}
+                                className="h-9 text-xs font-semibold px-3 border-emerald-300 text-emerald-700 hover:bg-emerald-50 hover:text-emerald-800 shadow-2xs gap-1.5 cursor-pointer"
+                                title="Aktifkan semua pengguna"
+                            >
+                                <UserCheck className="h-4 w-4 text-emerald-600" />
+                                <span>Aktifkan Semua</span>
+                            </Button>
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                type="button"
+                                onClick={() => handleBulkStatusClick('disable')}
+                                className="h-9 text-xs font-semibold px-3 border-red-300 text-red-700 hover:bg-red-50 hover:text-red-800 shadow-2xs gap-1.5 cursor-pointer"
+                                title="Nonaktifkan semua pengguna lain"
+                            >
+                                <UserX className="h-4 w-4 text-red-600" />
+                                <span>Nonaktifkan Semua</span>
+                            </Button>
+                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold px-4 shadow-sm w-full sm:w-auto justify-center cursor-pointer">
                                 <Link href={`/users/create?return_url=${encodeURIComponent(getCurrentPageUrl())}`}>
                                     <Plus className="h-4 w-4" />
                                     <span>Tambah User Baru</span>
@@ -331,6 +390,7 @@ export default function UsersIndex({ users, filters }: Props) {
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5 pl-5">Pengguna</TableHead>
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5">Email</TableHead>
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5">Peran (Role)</TableHead>
+                                    <TableHead className="text-xs font-bold text-gray-700 py-3.5">Status Akun</TableHead>
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5">Status Verifikasi</TableHead>
                                     <TableHead className="text-xs font-bold text-gray-700 py-3.5 text-right pr-5">Aksi</TableHead>
                                 </TableRow>
@@ -338,7 +398,7 @@ export default function UsersIndex({ users, filters }: Props) {
                             <TableBody>
                                 {users.data.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={5} className="py-12 text-center text-xs text-gray-500">
+                                        <TableCell colSpan={6} className="py-12 text-center text-xs text-gray-500">
                                             <div className="flex flex-col items-center justify-center space-y-2">
                                                 <Users className="h-8 w-8 text-gray-300" />
                                                 <span>Tidak ada pengguna yang sesuai dengan pencarian.</span>
@@ -386,6 +446,21 @@ export default function UsersIndex({ users, filters }: Props) {
                                                     {getRoleBadge(user.role?.name)}
                                                 </TableCell>
 
+                                                {/* Status Akun */}
+                                                <TableCell className="py-3.5">
+                                                    {user.is_active !== false ? (
+                                                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                                            <CheckCircle2 className="h-3 w-3 text-emerald-600" />
+                                                            Aktif
+                                                        </span>
+                                                    ) : (
+                                                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-red-50 text-red-700 border border-red-200">
+                                                            <UserX className="h-3 w-3 text-red-600" />
+                                                            Nonaktif
+                                                        </span>
+                                                    )}
+                                                </TableCell>
+
                                                 {/* Status Verifikasi */}
                                                 <TableCell className="py-3.5">
                                                     {isVerified ? (
@@ -414,6 +489,33 @@ export default function UsersIndex({ users, filters }: Props) {
                                                 {/* Actions */}
                                                 <TableCell className="py-3.5 text-right pr-5">
                                                     <div className="flex items-center justify-end gap-1.5">
+                                                        {!isSelf && (
+                                                            <Button
+                                                                size="sm"
+                                                                variant="outline"
+                                                                type="button"
+                                                                onClick={() => handleToggleStatusClick(user)}
+                                                                className={`h-8 px-2.5 text-xs font-semibold gap-1 cursor-pointer transition-colors ${
+                                                                    user.is_active !== false
+                                                                        ? 'border-amber-300 text-amber-800 hover:bg-amber-50 hover:border-amber-400'
+                                                                        : 'border-emerald-300 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-400'
+                                                                }`}
+                                                                title={user.is_active !== false ? 'Nonaktifkan akun pengguna ini' : 'Aktifkan kembali akun pengguna ini'}
+                                                            >
+                                                                {user.is_active !== false ? (
+                                                                    <>
+                                                                        <UserX className="h-3.5 w-3.5 text-amber-600" />
+                                                                        <span>Nonaktifkan</span>
+                                                                    </>
+                                                                ) : (
+                                                                    <>
+                                                                        <UserCheck className="h-3.5 w-3.5 text-emerald-600" />
+                                                                        <span>Aktifkan</span>
+                                                                    </>
+                                                                )}
+                                                            </Button>
+                                                        )}
+
                                                         <Button
                                                             size="sm"
                                                             variant="outline"
@@ -533,6 +635,94 @@ export default function UsersIndex({ users, filters }: Props) {
                                 </AlertDialogCancel>
                                 <AlertDialogAction onClick={confirmDelete} className="bg-red-600 hover:bg-red-700 text-white text-xs">
                                     Ya, Hapus Pengguna
+                                </AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+
+                    {/* Dialog Toggle Status User */}
+                    <AlertDialog open={toggleModalOpen} onOpenChange={setToggleModalOpen}>
+                        <AlertDialogContent className="max-w-md">
+                            <AlertDialogHeader>
+                                <div className={`flex items-center gap-2.5 pb-1 ${
+                                    (userToToggle?.is_active ?? true) ? 'text-amber-600' : 'text-emerald-600'
+                                }`}>
+                                    {(userToToggle?.is_active ?? true) ? (
+                                        <UserX className="h-5 w-5" />
+                                    ) : (
+                                        <UserCheck className="h-5 w-5" />
+                                    )}
+                                    <AlertDialogTitle className="text-base">
+                                        {(userToToggle?.is_active ?? true) ? 'Nonaktifkan Akun Pengguna' : 'Aktifkan Akun Pengguna'}
+                                    </AlertDialogTitle>
+                                </div>
+                                <AlertDialogDescription className="text-xs text-gray-600">
+                                    {(userToToggle?.is_active ?? true) ? (
+                                        <>
+                                            Apakah Anda yakin ingin menonaktifkan akun <strong>{userToToggle?.name}</strong> ({userToToggle?.email})? Pengguna ini tidak akan dapat login ke dalam sistem sampai diaktifkan kembali.
+                                        </>
+                                    ) : (
+                                        <>
+                                            Apakah Anda yakin ingin mengaktifkan akun <strong>{userToToggle?.name}</strong> ({userToToggle?.email})? Pengguna ini akan dapat kembali masuk (login) ke dalam sistem.
+                                        </>
+                                    )}
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter className="gap-2 pt-3">
+                                <AlertDialogCancel onClick={() => setToggleModalOpen(false)} className="text-xs">
+                                    Batal
+                                </AlertDialogCancel>
+                                <AlertDialogAction
+                                    onClick={confirmToggleStatus}
+                                    className={`text-white text-xs ${
+                                        (userToToggle?.is_active ?? true)
+                                            ? 'bg-amber-600 hover:bg-amber-700'
+                                            : 'bg-emerald-600 hover:bg-emerald-700'
+                                    }`}
+                                >
+                                    {(userToToggle?.is_active ?? true) ? 'Ya, Nonaktifkan Akun' : 'Ya, Aktifkan Akun'}
+                                </AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+
+                    {/* Dialog Bulk Status Users */}
+                    <AlertDialog open={bulkModalOpen} onOpenChange={setBulkModalOpen}>
+                        <AlertDialogContent className="max-w-md">
+                            <AlertDialogHeader>
+                                <div className={`flex items-center gap-2.5 pb-1 ${
+                                    bulkAction === 'enable' ? 'text-emerald-600' : 'text-rose-600'
+                                }`}>
+                                    <Users className="h-5 w-5" />
+                                    <AlertDialogTitle className="text-base">
+                                        {bulkAction === 'enable' ? 'Aktifkan Semua Pengguna' : 'Nonaktifkan Semua Pengguna'}
+                                    </AlertDialogTitle>
+                                </div>
+                                <AlertDialogDescription className="text-xs text-gray-600">
+                                    {bulkAction === 'enable' ? (
+                                        <>
+                                            Apakah Anda yakin ingin <strong>mengaktifkan semua akun pengguna</strong>? Semua pengguna yang sebelumnya berstatus nonaktif akan dapat kembali login ke dalam sistem.
+                                        </>
+                                    ) : (
+                                        <>
+                                            Apakah Anda yakin ingin <strong>menonaktifkan semua akun pengguna</strong>? Semua akun pengguna lain tidak akan dapat login ke sistem. Akun Anda sendiri yang sedang aktif akan tetap dipertahankan agar tidak terkunci keluar.
+                                        </>
+                                    )}
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter className="gap-2 pt-3">
+                                <AlertDialogCancel onClick={() => setBulkModalOpen(false)} className="text-xs">
+                                    Batal
+                                </AlertDialogCancel>
+                                <AlertDialogAction
+                                    onClick={confirmBulkStatus}
+                                    className={`text-white text-xs ${
+                                        bulkAction === 'enable'
+                                            ? 'bg-emerald-600 hover:bg-emerald-700'
+                                            : 'bg-rose-600 hover:bg-rose-700'
+                                    }`}
+                                >
+                                    {bulkAction === 'enable' ? 'Ya, Aktifkan Semua' : 'Ya, Nonaktifkan Semua'}
                                 </AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>

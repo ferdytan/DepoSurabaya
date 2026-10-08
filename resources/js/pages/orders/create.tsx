@@ -1179,15 +1179,17 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                 {filteredProducts.map((p) => {
                                                                     const isChecked = item.additional_product_ids?.includes(p.id.toString());
                                                                     const addonSize = parseContainerSizeFromName(p.service_type);
-                                                                    const currentContainerSize = item.price_type || '20ft';
-                                                                    const isSizeIncompatible = Boolean(addonSize && addonSize !== currentContainerSize);
+                                                                    // Hanya nonaktifkan jika produk utama SUDAH dipilih dan memiliki klasifikasi ukuran
+                                                                    const isSizeIncompatible = Boolean(
+                                                                        item.product_id && item.price_type && addonSize && addonSize !== item.price_type
+                                                                    );
 
                                                                     return (
                                                                         <label
                                                                             key={p.id}
                                                                             title={
                                                                                 isSizeIncompatible
-                                                                                    ? `Khusus ukuran ${addonSize?.replace('ft', "'")} (tidak dapat dipilih untuk kontainer ${currentContainerSize.replace('ft', "'")})`
+                                                                                    ? `Khusus ukuran ${addonSize?.replace('ft', "'")} (tidak dapat dipilih untuk kontainer ${(item.price_type as string).replace('ft', "'")})`
                                                                                     : undefined
                                                                             }
                                                                             className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-xs transition-all ${

@@ -198,4 +198,39 @@ class UserController extends Controller
 
         return redirect()->to($returnUrl)->with('success', "User {$userName} berhasil dihapus.");
     }
+
+    public function toggleStatus(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        // Prevent disabling own account
+        if (auth()->id() === $user->id) {
+            return back()->with('error', 'Anda tidak dapat mengubah status akun Anda sendiri.');
+        }
+
+        $newStatus = !($user->is_active ?? true);
+        $user->update(['is_active' => $newStatus]);
+
+        $statusText = $newStatus ? 'diaktifkan' : 'dinonaktifkan';
+        return back()->with('success', "Pengguna {$user->name} berhasil {$statusText}.");
+    }
+
+    public function bulkStatus(Request $request)
+    {
+        $validated = $request->validate([
+            'status' => 'required|boolean',
+        ]);
+
+        $status = $validated['status'];
+        $currentUserId = auth()->id();
+
+        // Update all other users except current user
+        User::where('id', '!=', $currentUserId)->update(['is_active' => $status]);
+
+        if ($status) {
+            return back()->with('success', 'Semua akun pengguna berhasil diaktifkan.');
+        } else {
+            return back()->with('success', 'Semua akun pengguna berhasil dinonaktifkan (akun Anda tetap aktif).');
+        }
+    }
 }

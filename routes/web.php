@@ -51,8 +51,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
         Route::get('/create', [UserController::class, 'create'])->name('create');
         Route::post('/', [UserController::class, 'store'])->name('store');
+        Route::post('/bulk-status', [UserController::class, 'bulkStatus'])->name('bulk_status');
         Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit')->whereNumber('user');
         Route::put('/{user}', [UserController::class, 'update'])->name('update')->whereNumber('user');
+        Route::post('/{user}/toggle-status', [UserController::class, 'toggleStatus'])->name('toggle_status')->whereNumber('user');
         Route::post('/{user}/verify', [UserController::class, 'verify'])->name('verify')->whereNumber('user');
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy')->whereNumber('user');
     });

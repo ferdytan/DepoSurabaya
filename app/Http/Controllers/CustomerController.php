@@ -144,7 +144,15 @@ class CustomerController extends Controller
         $allProducts = Product::orderBy('service_type')->get();
 
         // Ambil mapping harga khusus untuk customer ini jika ada di customer_product
-        $customPrices = $customer->products()->keyBy('id');
+        $customPrices = collect();
+        try {
+            $customPrices = $customer->products()
+                ->withPivot(['custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price'])
+                ->get()
+                ->keyBy('id');
+        } catch (\Throwable $e) {
+            \Log::error('Error fetching customer special prices: ' . $e->getMessage());
+        }
 
         $result = $allProducts->map(function ($product) use ($customPrices) {
             $custom = $customPrices->get($product->id);
@@ -159,7 +167,7 @@ class CustomerController extends Controller
 
             // Prioritas harga khusus customer
             $customPriceVal = null;
-            if ($hasCustom) {
+            if ($hasCustom && $custom->pivot) {
                 $customPriceVal = $custom->pivot->custom_global_price 
                     ?? $custom->pivot->custom_price_20ft 
                     ?? $custom->pivot->custom_price_40ft 

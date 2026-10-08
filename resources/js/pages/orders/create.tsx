@@ -419,6 +419,9 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                         })),
                     );
                 })
+                .catch((err) => {
+                    console.error('Failed to load customer products:', err);
+                })
                 .finally(() => setProductsLoading(false));
         } else {
             setCustomerProducts([]);
@@ -515,7 +518,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Buat Order Baru" />
             <OrdersLayout>
-                <div className="mx-auto max-w-5xl space-y-6 pb-12">
+                <div className="w-full space-y-6 pb-12">
                     {/* Header */}
                     <div>
                         <Heading
@@ -638,7 +641,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                 {/* Active Input Field with generous spacing */}
                                 <div className="pt-1">
                                     {useOrderId ? (
-                                        <div className="space-y-1.5 max-w-md">
+                                        <div className="space-y-1.5 max-w-xl">
                                             <Label htmlFor="order_id_display" className="text-xs font-semibold text-gray-700">
                                                 Nomor Order yang Digenerate
                                             </Label>
@@ -656,7 +659,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                             </p>
                                         </div>
                                     ) : (
-                                        <div className="space-y-1.5 max-w-md">
+                                        <div className="space-y-1.5 max-w-xl">
                                             <Label htmlFor="no_aju" className="text-xs font-semibold text-gray-700">
                                                 Nomor AJU <span className="text-red-500">*</span>
                                             </Label>

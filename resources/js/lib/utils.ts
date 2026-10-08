@@ -5,8 +5,8 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-export function detectContainerSizeFromName(serviceType?: string | null): '20ft' | '40ft' | '45ft' | 'global' {
-    if (!serviceType) return 'global';
+export function detectContainerSizeFromName(serviceType?: string | null): '20ft' | '40ft' | '45ft' {
+    if (!serviceType) return '20ft';
     const s = serviceType.toLowerCase();
 
     if (/\b45\b|45'|45\s*ft|45\s*feet/i.test(s)) {
@@ -19,5 +19,5 @@ export function detectContainerSizeFromName(serviceType?: string | null): '20ft'
         return '20ft';
     }
 
-    return 'global';
+    return '20ft';
 }

@@ -932,7 +932,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                     onChange={(val) => {
                                                                         const prodId = val ? Number(val) : '';
                                                                         const selectedProd = customerProducts.find((p) => p.id.toString() === String(val));
-                                                                        const detectedSize = selectedProd ? detectContainerSizeFromName(selectedProd.service_type) : 'global';
+                                                                        const detectedSize = selectedProd ? detectContainerSizeFromName(selectedProd.service_type) : '20ft';
                                                                         const effectivePrice = selectedProd ? (selectedProd.effective_price ?? selectedProd.price ?? 0) : undefined;
 
                                                                         const newItems = [...data.order_items];
@@ -985,13 +985,12 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                     )}
                                                                 </div>
 
-                                                                <div className="grid grid-cols-4 gap-1.5">
+                                                                <div className="grid grid-cols-3 gap-2">
                                                                     {(
                                                                         [
                                                                             { label: "20'", value: '20ft' },
                                                                             { label: "40'", value: '40ft' },
                                                                             { label: "45'", value: '45ft' },
-                                                                            { label: 'Global', value: 'global' },
                                                                         ] as const
                                                                     ).map((size) => {
                                                                         const isSelected = item.price_type === size.value;
@@ -1001,9 +1000,9 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                                 type="button"
                                                                                 disabled={!item.product_id}
                                                                                 onClick={() => updateOrderItem(idx, 'price_type', size.value)}
-                                                                                className={`h-10 text-xs rounded-lg border transition-all flex items-center justify-center font-medium cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
+                                                                                className={`h-10 text-xs rounded-lg border transition-all flex items-center justify-center font-semibold cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
                                                                                     isSelected
-                                                                                        ? 'bg-blue-600 border-blue-600 text-white shadow-xs font-bold'
+                                                                                        ? 'bg-gray-900 border-gray-900 text-white shadow-xs font-bold'
                                                                                         : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'
                                                                                 }`}
                                                                             >
@@ -1031,7 +1030,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                                                     }
                                                                     placeholder="Contoh: EMCU1234567"
                                                                     maxLength={11}
-                                                                    className="h-10 font-mono text-sm tracking-wider"
+                                                                    className="h-10 text-sm"
                                                                 />
                                                                 {hasDuplicateContainer(idx) && (
                                                                     <p className="text-[11px] text-red-500 font-medium">

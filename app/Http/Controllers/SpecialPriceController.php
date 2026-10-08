@@ -37,7 +37,7 @@ class SpecialPriceController extends Controller
 
         if ($selectedCustomer) {
             // Ambil semua produk master
-            $masterProducts = Product::select('id', 'service_type', 'description', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global')
+            $masterProducts = Product::select('id', 'service_type', 'description', 'requires_temperature', 'price')
                 ->orderBy('service_type')
                 ->get();
 
@@ -50,21 +50,32 @@ class SpecialPriceController extends Controller
             $customerProducts = $masterProducts->map(function ($p) use ($customMap) {
                 $custom = $customMap->get($p->id);
                 $hasCustom = $custom !== null;
+                $customPriceVal = null;
+                if ($hasCustom) {
+                    $customPriceVal = $custom->pivot->custom_global_price 
+                        ?? $custom->pivot->custom_price_20ft 
+                        ?? $custom->pivot->custom_price_40ft 
+                        ?? $custom->pivot->custom_price_45ft;
+                }
+
+                $masterPrice = $p->price ?? 0;
 
                 return [
                     'id' => $p->id,
                     'service_type' => $p->service_type,
                     'description' => $p->description,
                     'requires_temperature' => (bool) $p->requires_temperature,
-                    'master_price_20ft' => $p->price_20ft,
-                    'master_price_40ft' => $p->price_40ft,
-                    'master_price_45ft' => $p->price_45ft,
-                    'master_price_global' => $p->price_global,
-                    'has_custom_price' => $hasCustom,
-                    'custom_price_20ft' => $hasCustom ? $custom->pivot->custom_price_20ft : null,
-                    'custom_price_40ft' => $hasCustom ? $custom->pivot->custom_price_40ft : null,
-                    'custom_price_45ft' => $hasCustom ? $custom->pivot->custom_price_45ft : null,
-                    'custom_global_price' => $hasCustom ? $custom->pivot->custom_global_price : null,
+                    'master_price' => $masterPrice,
+                    'master_price_20ft' => $masterPrice,
+                    'master_price_40ft' => $masterPrice,
+                    'master_price_45ft' => $masterPrice,
+                    'master_price_global' => $masterPrice,
+                    'has_custom_price' => $hasCustom && $customPriceVal !== null && (float)$customPriceVal > 0,
+                    'custom_price' => $hasCustom ? $customPriceVal : null,
+                    'custom_price_20ft' => $hasCustom ? $customPriceVal : null,
+                    'custom_price_40ft' => $hasCustom ? $customPriceVal : null,
+                    'custom_price_45ft' => $hasCustom ? $customPriceVal : null,
+                    'custom_global_price' => $hasCustom ? $customPriceVal : null,
                     'custom_updated_at' => $hasCustom ? $custom->pivot->updated_at?->format('d M Y H:i') : null,
                 ];
             });
@@ -92,6 +103,7 @@ class SpecialPriceController extends Controller
     {
         $validated = $request->validate([
             'product_id' => 'required|exists:products,id',
+            'price' => 'nullable|numeric|min:0',
             'price_20ft' => 'nullable|numeric|min:0',
             'price_40ft' => 'nullable|numeric|min:0',
             'price_45ft' => 'nullable|numeric|min:0',
@@ -100,23 +112,28 @@ class SpecialPriceController extends Controller
 
         $productId = (int) $validated['product_id'];
 
-        $hasAnyPrice = ($validated['price_20ft'] !== null && $validated['price_20ft'] !== '') ||
-                       ($validated['price_40ft'] !== null && $validated['price_40ft'] !== '') ||
-                       ($validated['price_45ft'] !== null && $validated['price_45ft'] !== '') ||
-                       ($validated['price_global'] !== null && $validated['price_global'] !== '');
+        // Ambil harga dari 'price' atau fallback
+        $customPrice = $validated['price'] 
+            ?? $validated['price_global'] 
+            ?? $validated['price_20ft'] 
+            ?? $validated['price_40ft'] 
+            ?? $validated['price_45ft'] 
+            ?? null;
 
-        if (!$hasAnyPrice) {
-            // Jika semua harga dikosongkan, hapus harga khusus agar fallback ke master
+        $hasPrice = ($customPrice !== null && $customPrice !== '' && (float)$customPrice > 0);
+
+        if (!$hasPrice) {
+            // Jika harga dikosongkan, hapus harga khusus agar fallback ke master
             $customer->products()->detach($productId);
-            return back()->with('success', 'Harga khusus telah dihapus. Produk kembali menggunakan tarif master.');
+            return back()->with('success', 'Harga khusus telah dihapus. Layanan kembali menggunakan tarif master.');
         }
 
         $customer->products()->syncWithoutDetaching([
             $productId => [
-                'custom_price_20ft' => $validated['price_20ft'] !== null && $validated['price_20ft'] !== '' ? $validated['price_20ft'] : null,
-                'custom_price_40ft' => $validated['price_40ft'] !== null && $validated['price_40ft'] !== '' ? $validated['price_40ft'] : null,
-                'custom_price_45ft' => $validated['price_45ft'] !== null && $validated['price_45ft'] !== '' ? $validated['price_45ft'] : null,
-                'custom_global_price' => $validated['price_global'] !== null && $validated['price_global'] !== '' ? $validated['price_global'] : null,
+                'custom_price_20ft' => $customPrice,
+                'custom_price_40ft' => $customPrice,
+                'custom_price_45ft' => $customPrice,
+                'custom_global_price' => $customPrice,
             ]
         ]);
 

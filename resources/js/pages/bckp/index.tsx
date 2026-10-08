@@ -216,11 +216,11 @@ const EXCEL_SYNC_ENTITIES = [
     {
         id: 'product' as const,
         title: 'Master Produk Layanan',
-        description: 'Daftar layanan depo, status rekam suhu (Ya/Tidak), tarif kontainer 20ft, 40ft, 45ft, tarif global, dan keterangan.',
+        description: 'Daftar layanan depo, status rekam suhu (Ya/Tidak), tarif / harga layanan, dan keterangan.',
         icon: Package,
         iconBg: 'bg-purple-50 text-purple-700 border-purple-200',
         badge: 'Tarif & Layanan',
-        columns: ['service_type', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global', 'description'],
+        columns: ['service_type', 'requires_temperature', 'price', 'description'],
     },
     {
         id: 'user' as const,
@@ -1625,7 +1625,7 @@ export default function BackupIndex({ backups, stats, auto_backup, flash }: Prop
                                     <strong>Sinkronisasi Janjian:</strong> Seluruh berkas yang dihasilkan dari tombol <strong>Export Excel</strong> memiliki struktur kolom yang persis sama dengan template dan dapat langsung di-import kembali setelah diedit.
                                 </li>
                                 <li>
-                                    <strong>Master Produk:</strong> Kolom <code>requires_temperature</code> dapat diisi <code>Ya</code> atau <code>Tidak</code>. Jika <code>price_global</code> diisi, ukuran kontainer otomatis mengikuti bila dikosongkan.
+                                    <strong>Master Produk:</strong> Kolom <code>requires_temperature</code> dapat diisi <code>Ya</code> atau <code>Tidak</code>. Kolom <code>price</code> diisi tarif standar layanan. Ukuran kontainer dapat dicantumkan pada nama layanan (misal: <em>Jasa LoLo 20'</em> atau <em>Jasa LoLo 40'</em>).
                                 </li>
                                 <li>
                                     <strong>Pengguna (User):</strong> Kolom <code>role</code> dapat diisi nama peran (misal: <em>Super User, Admin, Checker, Ops Checker, Karantina</em>). Password bersifat opsional; jika dikosongkan pada user baru, default password adalah <code>password123</code>.

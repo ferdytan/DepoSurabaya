@@ -53,6 +53,7 @@ type Product = {
     service_type: string;
     description: string | null;
     requires_temperature: number;
+    price?: number | string | null;
     price_20ft?: number | string | null;
     price_40ft?: number | string | null;
     price_45ft?: number | string | null;
@@ -264,40 +265,10 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                 align="center"
                                             />
                                         </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
+                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-44 text-right px-4">
                                             <SortButton
-                                                label="Tarif 20'"
-                                                field="price_20ft"
-                                                currentSort={filters.sort_by}
-                                                currentDir={filters.sort_dir}
-                                                search={filters.search}
-                                                align="right"
-                                            />
-                                        </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
-                                            <SortButton
-                                                label="Tarif 40'"
-                                                field="price_40ft"
-                                                currentSort={filters.sort_by}
-                                                currentDir={filters.sort_dir}
-                                                search={filters.search}
-                                                align="right"
-                                            />
-                                        </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-32 text-right px-4">
-                                            <SortButton
-                                                label="Tarif 45'"
-                                                field="price_45ft"
-                                                currentSort={filters.sort_by}
-                                                currentDir={filters.sort_dir}
-                                                search={filters.search}
-                                                align="right"
-                                            />
-                                        </TableHead>
-                                        <TableHead className="font-semibold text-xs text-gray-700 py-3.5 w-36 text-right px-4">
-                                            <SortButton
-                                                label="Tarif Global"
-                                                field="price_global"
+                                                label="Tarif / Harga"
+                                                field="price"
                                                 currentSort={filters.sort_by}
                                                 currentDir={filters.sort_dir}
                                                 search={filters.search}
@@ -321,7 +292,7 @@ export default function ProductsIndex({ products, filters }: Props) {
                                 <TableBody>
                                     {products.data.length === 0 ? (
                                         <TableRow>
-                                            <TableCell colSpan={8} className="py-12 text-center text-xs text-gray-500">
+                                            <TableCell colSpan={5} className="py-12 text-center text-xs text-gray-500">
                                                 <div className="flex flex-col items-center justify-center space-y-2">
                                                     <Package className="h-8 w-8 text-gray-300" />
                                                     <span>Tidak ada produk layanan yang ditemukan.</span>
@@ -347,36 +318,9 @@ export default function ProductsIndex({ products, filters }: Props) {
                                                     )}
                                                 </TableCell>
                                                 <TableCell className="py-3.5 text-right px-4 text-xs">
-                                                    {product.price_20ft && Number(product.price_20ft) > 0 ? (
-                                                        <span className="font-semibold text-gray-800">
-                                                            {formatRupiah(product.price_20ft)}
-                                                        </span>
-                                                    ) : (
-                                                        <span className="text-gray-300 font-normal">-</span>
-                                                    )}
-                                                </TableCell>
-                                                <TableCell className="py-3.5 text-right px-4 text-xs">
-                                                    {product.price_40ft && Number(product.price_40ft) > 0 ? (
-                                                        <span className="font-semibold text-gray-800">
-                                                            {formatRupiah(product.price_40ft)}
-                                                        </span>
-                                                    ) : (
-                                                        <span className="text-gray-300 font-normal">-</span>
-                                                    )}
-                                                </TableCell>
-                                                <TableCell className="py-3.5 text-right px-4 text-xs">
-                                                    {product.price_45ft && Number(product.price_45ft) > 0 ? (
-                                                        <span className="font-semibold text-gray-800">
-                                                            {formatRupiah(product.price_45ft)}
-                                                        </span>
-                                                    ) : (
-                                                        <span className="text-gray-300 font-normal">-</span>
-                                                    )}
-                                                </TableCell>
-                                                <TableCell className="py-3.5 text-right px-4 text-xs">
-                                                    {product.price_global && Number(product.price_global) > 0 ? (
-                                                        <span className="font-semibold text-gray-800">
-                                                            {formatRupiah(product.price_global)}
+                                                    {(product.price && Number(product.price) > 0) || (product.price_global && Number(product.price_global) > 0) ? (
+                                                        <span className="font-semibold text-gray-900">
+                                                            {formatRupiah(product.price ?? product.price_global)}
                                                         </span>
                                                     ) : (
                                                         <span className="text-gray-300 font-normal">-</span>

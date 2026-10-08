@@ -26,6 +26,7 @@ import {
     Trash2,
     X,
 } from 'lucide-react';
+import { detectContainerSizeFromName } from '@/lib/utils';
 import React, { useEffect, useRef, useState } from 'react';
 
 
@@ -51,6 +52,8 @@ interface Product {
     id: number;
     service_type: string;
     requires_temperature: boolean;
+    price?: number | string;
+    effective_price?: string;
     custom_price_20ft?: string;
     custom_price_40ft?: string;
     custom_price_45ft?: string;
@@ -136,15 +139,12 @@ export default function EditOrder({ order, customers, shippers, return_url: init
         };
     });
 
-    const getAdditionalProductPrices = (product_ids: string[], price_type: PriceType, productsList: Product[]): string[] => {
+    const getAdditionalProductPrices = (product_ids: string[], _price_type: PriceType, productsList: Product[]): string[] => {
         return product_ids.map((id) => {
             const p = productsList.find((x) => x.id.toString() === id);
             let price = '0';
             if (p) {
-                if (price_type === '20ft') price = p.custom_price_20ft ?? '0';
-                else if (price_type === '40ft') price = p.custom_price_40ft ?? '0';
-                else if (price_type === '45ft') price = p.custom_price_45ft ?? '0';
-                else price = p.custom_global_price ?? '0';
+                price = (p.effective_price ?? p.price ?? p.custom_global_price ?? '0').toString();
             }
             return `${id}:${price}`;
         });
@@ -344,10 +344,7 @@ export default function EditOrder({ order, customers, shippers, return_url: init
             const selectedProduct = getSelectedProduct(newItems[index].product_id);
             let price_value;
             if (selectedProduct) {
-                if (value === '20ft') price_value = selectedProduct.custom_price_20ft;
-                else if (value === '40ft') price_value = selectedProduct.custom_price_40ft;
-                else if (value === '45ft') price_value = selectedProduct.custom_price_45ft;
-                else price_value = selectedProduct.custom_global_price;
+                price_value = selectedProduct.effective_price ?? selectedProduct.price ?? selectedProduct.custom_global_price ?? selectedProduct.custom_price_20ft;
             }
             newItems[index]['price_value'] = price_value;
 
@@ -816,29 +813,6 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                 const hasCardError = itemErrorEntries.length > 0;
                                 const isCollapsed = Boolean(collapsedItems[idx]);
 
-                                const priceOptions = [
-                                    {
-                                        label: 'Harga 20ft',
-                                        value: '20ft',
-                                        price: product?.custom_price_20ft,
-                                    },
-                                    {
-                                        label: 'Harga 40ft',
-                                        value: '40ft',
-                                        price: product?.custom_price_40ft,
-                                    },
-                                    {
-                                        label: 'Harga 45ft',
-                                        value: '45ft',
-                                        price: product?.custom_price_45ft,
-                                    },
-                                    {
-                                        label: 'Harga Global',
-                                        value: 'global',
-                                        price: product?.custom_global_price,
-                                    },
-                                ].filter((o) => o.price !== undefined && o.price !== null && o.price !== '');
-
                                 return (
                                     <div
                                         key={idx}
@@ -962,8 +936,25 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                             }))}
                                                             value={item.product_id}
                                                             onChange={(val) => {
-                                                                updateOrderItem(idx, 'product_id', val);
-                                                                updateOrderItem(idx, 'price_type', undefined);
+                                                                const prodId = val ? val : '';
+                                                                const selectedProd = customerProducts.find((p) => p.id.toString() === String(val));
+                                                                const detectedSize = selectedProd ? detectContainerSizeFromName(selectedProd.service_type) : 'global';
+                                                                const effectivePrice = selectedProd ? (selectedProd.effective_price ?? selectedProd.price ?? 0) : undefined;
+
+                                                                const newItems = [...data.order_items];
+                                                                newItems[idx] = {
+                                                                    ...newItems[idx],
+                                                                    // @ts-ignore
+                                                                    product_id: prodId,
+                                                                    price_type: detectedSize,
+                                                                    price_value: effectivePrice,
+                                                                    additional_product_prices: getAdditionalProductPrices(
+                                                                        (newItems[idx].additional_product_ids || []) as string[],
+                                                                        detectedSize,
+                                                                        customerProducts,
+                                                                    ),
+                                                                };
+                                                                setData('order_items', newItems);
                                                             }}
                                                             placeholder={
                                                                 productsLoading
@@ -983,38 +974,53 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                         )}
                                                     </div>
 
-                                                    {/* Pilih Harga */}
+                                                    {/* Ukuran Kontainer & Tarif */}
                                                     <div className="space-y-1.5">
-                                                        <Label className="text-xs font-semibold text-gray-700">
-                                                            Pilih Harga <span className="text-red-500">*</span>
-                                                        </Label>
-                                                        <Select
-                                                            value={item.price_type}
-                                                            onValueChange={(val) =>
-                                                                updateOrderItem(idx, 'price_type', val as '20ft' | '40ft' | '45ft' | 'global')
-                                                            }
-                                                            disabled={!item.product_id || priceOptions.length === 0}
-                                                        >
-                                                            <SelectTrigger className="h-10">
-                                                                <SelectValue placeholder="Pilih Tipe Harga" />
-                                                            </SelectTrigger>
-                                                            <SelectContent>
-                                                                {priceOptions.map((o) => (
-                                                                    <SelectItem key={o.value} value={o.value}>
-                                                                        {o.label}{' '}
-                                                                        {o.price
-                                                                            ? `: Rp${Number(o.price).toLocaleString('id-ID')}`
-                                                                            : ''}
-                                                                        {product?.is_special_price ? ' (Khusus)' : ''}
-                                                                    </SelectItem>
-                                                                ))}
-                                                            </SelectContent>
-                                                        </Select>
-                                                        {item.product_id && priceOptions.length === 0 && (
-                                                            <p className="text-[11px] text-red-500">
-                                                                Tidak ada harga terdaftar untuk produk ini
-                                                            </p>
-                                                        )}
+                                                        <div className="flex items-center justify-between">
+                                                            <Label className="text-xs font-semibold text-gray-700">
+                                                                Ukuran Kontainer <span className="text-red-500">*</span>
+                                                            </Label>
+                                                            {product && (
+                                                                <div className="flex items-center gap-1.5">
+                                                                    <span className="text-xs font-bold text-gray-900">
+                                                                        Rp {Number(product.effective_price ?? product.price ?? 0).toLocaleString('id-ID')}
+                                                                    </span>
+                                                                    {product.is_special_price && (
+                                                                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                                                                            Khusus
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                            )}
+                                                        </div>
+
+                                                        <div className="grid grid-cols-4 gap-1.5">
+                                                            {(
+                                                                [
+                                                                    { label: "20'", value: '20ft' },
+                                                                    { label: "40'", value: '40ft' },
+                                                                    { label: "45'", value: '45ft' },
+                                                                    { label: 'Global', value: 'global' },
+                                                                ] as const
+                                                            ).map((size) => {
+                                                                const isSelected = item.price_type === size.value;
+                                                                return (
+                                                                    <button
+                                                                        key={size.value}
+                                                                        type="button"
+                                                                        disabled={!item.product_id}
+                                                                        onClick={() => updateOrderItem(idx, 'price_type', size.value)}
+                                                                        className={`h-10 text-xs rounded-lg border transition-all flex items-center justify-center font-medium cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
+                                                                            isSelected
+                                                                                ? 'bg-blue-600 border-blue-600 text-white shadow-xs font-bold'
+                                                                                : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'
+                                                                        }`}
+                                                                    >
+                                                                        {size.label}
+                                                                    </button>
+                                                                );
+                                                            })}
+                                                        </div>
                                                         {errors[`order_items.${idx}.price_type` as keyof typeof errors] && (
                                                             <p className="text-xs text-red-500">
                                                                 {errors[`order_items.${idx}.price_type` as keyof typeof errors]}

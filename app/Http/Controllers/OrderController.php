@@ -1264,6 +1264,9 @@ private function getPriceForType($product, $priceType, $order)
         ->first();
 
     if ($customerProduct) {
+        if (!empty($customerProduct->custom_global_price) && (float)$customerProduct->custom_global_price > 0) {
+            return (float)$customerProduct->custom_global_price;
+        }
         if ($priceType === '20ft' && !empty($customerProduct->custom_price_20ft) && (float)$customerProduct->custom_price_20ft > 0) {
             return (float)$customerProduct->custom_price_20ft;
         }
@@ -1273,12 +1276,15 @@ private function getPriceForType($product, $priceType, $order)
         if ($priceType === '45ft' && !empty($customerProduct->custom_price_45ft) && (float)$customerProduct->custom_price_45ft > 0) {
             return (float)$customerProduct->custom_price_45ft;
         }
-        if (!empty($customerProduct->custom_global_price) && (float)$customerProduct->custom_global_price > 0) {
-            return (float)$customerProduct->custom_global_price;
-        }
     }
 
-    // 2. Jika tidak ada harga khusus, fallback ke tarif master produk sesuai tipe
+    // 2. Jika tidak ada harga khusus, gunakan tarif master produk (price)
+    if (isset($product->price) && !empty($product->price) && (float)$product->price > 0) {
+        return (float)$product->price;
+    }
+    if (!empty($product->price_global) && (float)$product->price_global > 0) {
+        return (float)$product->price_global;
+    }
     if ($priceType === '20ft' && !empty($product->price_20ft) && (float)$product->price_20ft > 0) {
         return (float)$product->price_20ft;
     }
@@ -1287,9 +1293,6 @@ private function getPriceForType($product, $priceType, $order)
     }
     if ($priceType === '45ft' && !empty($product->price_45ft) && (float)$product->price_45ft > 0) {
         return (float)$product->price_45ft;
-    }
-    if (!empty($product->price_global) && (float)$product->price_global > 0) {
-        return (float)$product->price_global;
     }
 
     return 0;

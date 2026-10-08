@@ -150,31 +150,37 @@ class CustomerController extends Controller
             $custom = $customPrices->get($product->id);
             $hasCustom = $custom !== null;
 
-            $p20 = ($hasCustom && $custom->pivot->custom_price_20ft !== null && $custom->pivot->custom_price_20ft !== '')
-                ? $custom->pivot->custom_price_20ft
-                : $product->price_20ft;
+            $masterPrice = $product->price 
+                ?? $product->price_global 
+                ?? $product->price_20ft 
+                ?? $product->price_40ft 
+                ?? $product->price_45ft 
+                ?? 0;
 
-            $p40 = ($hasCustom && $custom->pivot->custom_price_40ft !== null && $custom->pivot->custom_price_40ft !== '')
-                ? $custom->pivot->custom_price_40ft
-                : $product->price_40ft;
+            // Prioritas harga khusus customer
+            $customPriceVal = null;
+            if ($hasCustom) {
+                $customPriceVal = $custom->pivot->custom_global_price 
+                    ?? $custom->pivot->custom_price_20ft 
+                    ?? $custom->pivot->custom_price_40ft 
+                    ?? $custom->pivot->custom_price_45ft;
+            }
 
-            $p45 = ($hasCustom && $custom->pivot->custom_price_45ft !== null && $custom->pivot->custom_price_45ft !== '')
-                ? $custom->pivot->custom_price_45ft
-                : $product->price_45ft;
-
-            $pGlobal = ($hasCustom && $custom->pivot->custom_global_price !== null && $custom->pivot->custom_global_price !== '')
-                ? $custom->pivot->custom_global_price
-                : $product->price_global;
+            $effectivePrice = ($hasCustom && $customPriceVal !== null && $customPriceVal !== '')
+                ? $customPriceVal
+                : $masterPrice;
 
             return [
                 'id' => $product->id,
                 'service_type' => $product->service_type,
                 'requires_temperature' => (bool) $product->requires_temperature,
-                'custom_price_20ft' => $p20 !== null ? (string)$p20 : null,
-                'custom_price_40ft' => $p40 !== null ? (string)$p40 : null,
-                'custom_price_45ft' => $p45 !== null ? (string)$p45 : null,
-                'custom_global_price' => $pGlobal !== null ? (string)$pGlobal : null,
-                'is_special_price' => $hasCustom,
+                'price' => $masterPrice,
+                'effective_price' => (string) $effectivePrice,
+                'custom_price_20ft' => (string) $effectivePrice,
+                'custom_price_40ft' => (string) $effectivePrice,
+                'custom_price_45ft' => (string) $effectivePrice,
+                'custom_global_price' => (string) $effectivePrice,
+                'is_special_price' => $hasCustom && $customPriceVal !== null && (float)$customPriceVal > 0,
             ];
         });
 

@@ -61,10 +61,11 @@ class ExcelDataSyncService
             'product' => [
                 'filename' => 'template_import_product.csv',
                 'content'  => $this->buildCsv([
-                    ['service_type', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global', 'description'],
-                    ['Biaya LoLo Full', 'Tidak', '450000', '700000', '850000', '0', 'Lift On & Lift Off Kontainer Muatan Penuh'],
-                    ['Plug In Temperature Monitoring', 'Ya', '150000', '150000', '150000', '150000', 'Layanan Monitoring & Perekaman Suhu Berkala'],
-                    ['Pemasangan Terpal Pelindung', 'Tidak', '200000', '300000', '350000', '0', 'Jasa Pemasangan Cover Terpal Kontainer'],
+                    ['service_type', 'requires_temperature', 'price', 'description'],
+                    ['Biaya LoLo Full 20\'', 'Tidak', '450000', 'Lift On & Lift Off Kontainer 20ft'],
+                    ['Biaya LoLo Full 40\'', 'Tidak', '700000', 'Lift On & Lift Off Kontainer 40ft'],
+                    ['Plug In Temperature Monitoring', 'Ya', '150000', 'Layanan Monitoring & Perekaman Suhu Berkala'],
+                    ['Pemasangan Terpal Pelindung', 'Tidak', '200000', 'Jasa Pemasangan Cover Terpal Kontainer'],
                 ]),
             ],
             'user' => [
@@ -162,18 +163,22 @@ class ExcelDataSyncService
     protected function exportProducts(): string
     {
         $rows = [
-            ['service_type', 'requires_temperature', 'price_20ft', 'price_40ft', 'price_45ft', 'price_global', 'description']
+            ['service_type', 'requires_temperature', 'price', 'description']
         ];
 
         $products = Product::orderBy('service_type')->get();
         foreach ($products as $p) {
+            $productPrice = $p->price 
+                ?? $p->price_global 
+                ?? $p->price_20ft 
+                ?? $p->price_40ft 
+                ?? $p->price_45ft 
+                ?? 0;
+
             $rows[] = [
                 $p->service_type,
                 $p->requires_temperature == 1 ? 'Ya' : 'Tidak',
-                $p->price_20ft !== null ? (string) $p->price_20ft : '0',
-                $p->price_40ft !== null ? (string) $p->price_40ft : '0',
-                $p->price_45ft !== null ? (string) $p->price_45ft : '0',
-                $p->price_global !== null ? (string) $p->price_global : '0',
+                $productPrice !== null ? (string) $productPrice : '0',
                 $p->description ?? '',
             ];
         }
@@ -394,17 +399,14 @@ class ExcelDataSyncService
             ])));
             $requiresTemperature = in_array($reqTempRaw, ['1', 'ya', 'yes', 'y', 'true', 'wajib suhu']) ? 1 : 0;
 
+            $price   = $this->parseNumber($this->getVal($row, $headerMap, ['price', 'tarif', 'harga', 'price_global', 'tarif_global', 'harga_global']));
             $p20     = $this->parseNumber($this->getVal($row, $headerMap, ['price_20ft', 'tarif_20ft', 'harga_20ft', '20ft']));
             $p40     = $this->parseNumber($this->getVal($row, $headerMap, ['price_40ft', 'tarif_40ft', 'harga_40ft', '40ft']));
             $p45     = $this->parseNumber($this->getVal($row, $headerMap, ['price_45ft', 'tarif_45ft', 'harga_45ft', '45ft']));
-            $pGlobal = $this->parseNumber($this->getVal($row, $headerMap, ['price_global', 'tarif_global', 'harga_global', 'global']));
             $desc    = trim($this->getVal($row, $headerMap, ['description', 'keterangan', 'deskripsi']));
 
-            // Jika tarif global diisi dan tarif ukuran 20-45 masih 0 / kosong, ikuti tarif global
-            if ($pGlobal > 0) {
-                if ($p20 === 0.0) $p20 = $pGlobal;
-                if ($p40 === 0.0) $p40 = $pGlobal;
-                if ($p45 === 0.0) $p45 = $pGlobal;
+            if ($price === 0.0) {
+                $price = max($p20, $p40, $p45);
             }
 
             try {
@@ -413,10 +415,7 @@ class ExcelDataSyncService
                 $data = [
                     'service_type'         => $serviceType,
                     'requires_temperature' => $requiresTemperature,
-                    'price_20ft'           => $p20 > 0 ? $p20 : null,
-                    'price_40ft'           => $p40 > 0 ? $p40 : null,
-                    'price_45ft'           => $p45 > 0 ? $p45 : null,
-                    'price_global'         => $pGlobal > 0 ? $pGlobal : null,
+                    'price'                => $price > 0 ? $price : 0,
                     'description'          => $desc ?: null,
                 ];
 

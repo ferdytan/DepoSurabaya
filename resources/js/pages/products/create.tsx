@@ -23,10 +23,7 @@ export default function CreateProduct() {
         service_type: '',
         description: '',
         requires_temperature: 0,
-        price_20ft: '',
-        price_40ft: '',
-        price_45ft: '',
-        price_global: '',
+        price: '',
         return_url: returnUrl,
     });
 
@@ -147,114 +144,34 @@ export default function CreateProduct() {
                             <div className="rounded-xl border border-gray-200 bg-gray-50/50 p-5 space-y-4">
                                 <div>
                                     <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
-                                        Tarif Standar Master Layanan (Opsional)
+                                        Tarif / Harga Standar Layanan (Opsional)
                                     </h4>
                                     <p className="text-[11px] text-gray-500 mt-0.5">
-                                        Tarif dasar default yang berlaku untuk seluruh customer. Jika customer memiliki harga khusus, harga khusus tersebut yang akan dipakai.
+                                        Tarif dasar master yang berlaku untuk layanan ini. Jika ukuran kontainer spesifik (misal: <em>20'</em> atau <em>40'</em>), cantumkan pada Nama Layanan di atas agar ukuran kontainer terdeteksi otomatis saat pembuatan order.
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="price_20ft" className="text-xs font-semibold text-gray-700">
-                                            Tarif 20' (Rp)
-                                        </Label>
-                                        <div className="relative">
-                                            <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
-                                                Rp
-                                            </span>
-                                            <Input
-                                                id="price_20ft"
-                                                name="price_20ft"
-                                                type="number"
-                                                min={0}
-                                                value={data.price_20ft}
-                                                onChange={(e) => setData('price_20ft', e.target.value)}
-                                                placeholder="450000"
-                                                className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
-                                                disabled={processing}
-                                            />
-                                        </div>
-                                        <InputError message={errors.price_20ft} />
+                                <div className="max-w-md space-y-1.5">
+                                    <Label htmlFor="price" className="text-xs font-semibold text-gray-700">
+                                        Tarif / Harga (Rp)
+                                    </Label>
+                                    <div className="relative">
+                                        <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
+                                            Rp
+                                        </span>
+                                        <Input
+                                            id="price"
+                                            name="price"
+                                            type="number"
+                                            min={0}
+                                            value={data.price}
+                                            onChange={(e) => setData('price', e.target.value)}
+                                            placeholder="Contoh: 450000"
+                                            className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
+                                            disabled={processing}
+                                        />
                                     </div>
-
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="price_40ft" className="text-xs font-semibold text-gray-700">
-                                            Tarif 40' (Rp)
-                                        </Label>
-                                        <div className="relative">
-                                            <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
-                                                Rp
-                                            </span>
-                                            <Input
-                                                id="price_40ft"
-                                                name="price_40ft"
-                                                type="number"
-                                                min={0}
-                                                value={data.price_40ft}
-                                                onChange={(e) => setData('price_40ft', e.target.value)}
-                                                placeholder="700000"
-                                                className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
-                                                disabled={processing}
-                                            />
-                                        </div>
-                                        <InputError message={errors.price_40ft} />
-                                    </div>
-
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="price_45ft" className="text-xs font-semibold text-gray-700">
-                                            Tarif 45' (Rp)
-                                        </Label>
-                                        <div className="relative">
-                                            <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
-                                                Rp
-                                            </span>
-                                            <Input
-                                                id="price_45ft"
-                                                name="price_45ft"
-                                                type="number"
-                                                min={0}
-                                                value={data.price_45ft}
-                                                onChange={(e) => setData('price_45ft', e.target.value)}
-                                                placeholder="850000"
-                                                className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
-                                                disabled={processing}
-                                            />
-                                        </div>
-                                        <InputError message={errors.price_45ft} />
-                                    </div>
-
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="price_global" className="text-xs font-semibold text-gray-700">
-                                            Tarif Global Flat (Rp)
-                                        </Label>
-                                        <div className="relative">
-                                            <span className="absolute left-3 top-2.5 text-xs font-semibold text-gray-400 select-none">
-                                                Rp
-                                            </span>
-                                            <Input
-                                                id="price_global"
-                                                name="price_global"
-                                                type="number"
-                                                min={0}
-                                                value={data.price_global}
-                                                onChange={(e) => {
-                                                    const val = e.target.value;
-                                                    setData((prev) => ({
-                                                        ...prev,
-                                                        price_global: val,
-                                                        price_20ft: val,
-                                                        price_40ft: val,
-                                                        price_45ft: val,
-                                                    }));
-                                                }}
-                                                placeholder="150000"
-                                                className="h-10 text-xs pl-9 font-semibold text-gray-900 focus:border-blue-500"
-                                                disabled={processing}
-                                            />
-                                        </div>
-                                        <InputError message={errors.price_global} />
-                                    </div>
+                                    <InputError message={errors.price} />
                                 </div>
                             </div>
 

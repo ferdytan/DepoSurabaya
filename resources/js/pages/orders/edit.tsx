@@ -27,7 +27,7 @@ import {
     Search,
     X,
 } from 'lucide-react';
-import { detectContainerSizeFromName } from '@/lib/utils';
+import { detectContainerSizeFromName, parseContainerSizeFromName } from '@/lib/utils';
 import React, { useEffect, useRef, useState } from 'react';
 
 
@@ -353,7 +353,15 @@ export default function EditOrder({ order, customers, shippers, return_url: init
             }
             newItems[index]['price_value'] = price_value;
 
-            const addIds = (newItems[index].additional_product_ids || []) as string[];
+            let addIds = (newItems[index].additional_product_ids || []) as string[];
+            addIds = addIds.filter((id) => {
+                const addProd = customerProducts.find((p) => p.id.toString() === id.toString());
+                if (!addProd) return true;
+                const addSize = parseContainerSizeFromName(addProd.service_type);
+                return !addSize || addSize === value;
+            });
+            newItems[index]['additional_product_ids'] = addIds;
+
             newItems[index]['additional_product_prices'] = getAdditionalProductPrices(
                 addIds,
                 value as '20ft' | '40ft' | '45ft' | 'global' | undefined,
@@ -947,14 +955,23 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                                 const effectivePrice = selectedProd ? (selectedProd.effective_price ?? selectedProd.price ?? 0) : undefined;
 
                                                                 const newItems = [...data.order_items];
+                                                                let addIds = (newItems[idx].additional_product_ids || []) as string[];
+                                                                addIds = addIds.filter((id) => {
+                                                                    const addProd = customerProducts.find((p) => p.id.toString() === id.toString());
+                                                                    if (!addProd) return true;
+                                                                    const addSize = parseContainerSizeFromName(addProd.service_type);
+                                                                    return !addSize || addSize === detectedSize;
+                                                                });
+
                                                                 newItems[idx] = {
                                                                     ...newItems[idx],
                                                                     // @ts-ignore
                                                                     product_id: prodId,
                                                                     price_type: detectedSize,
                                                                     price_value: effectivePrice,
+                                                                    additional_product_ids: addIds,
                                                                     additional_product_prices: getAdditionalProductPrices(
-                                                                        (newItems[idx].additional_product_ids || []) as string[],
+                                                                        addIds,
                                                                         detectedSize,
                                                                         customerProducts,
                                                                     ),
@@ -1008,6 +1025,10 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                                 ] as const
                                                             ).map((size) => {
                                                                 const isSelected = item.price_type === size.value;
+                                                                const productSize = parseContainerSizeFromName(product?.service_type);
+                                                                const isMismatch = Boolean(productSize && item.price_type && productSize !== item.price_type);
+                                                                const isMismatchSelection = isSelected && isMismatch;
+
                                                                 return (
                                                                     <button
                                                                         key={size.value}
@@ -1015,7 +1036,9 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                                         disabled={!item.product_id}
                                                                         onClick={() => updateOrderItem(idx, 'price_type', size.value)}
                                                                         className={`h-10 text-xs rounded-lg border transition-all flex items-center justify-center font-semibold cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
-                                                                            isSelected
+                                                                            isMismatchSelection
+                                                                                ? 'bg-red-600 border-red-600 text-white shadow-xs font-bold ring-2 ring-red-400'
+                                                                                : isSelected
                                                                                 ? 'bg-gray-900 border-gray-900 text-white shadow-xs font-bold'
                                                                                 : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'
                                                                         }`}
@@ -1025,6 +1048,22 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                                 );
                                                             })}
                                                         </div>
+                                                        {(() => {
+                                                            const productSize = parseContainerSizeFromName(product?.service_type);
+                                                            const hasSizeMismatch = Boolean(productSize && item.price_type && productSize !== item.price_type);
+                                                            if (!hasSizeMismatch) return null;
+                                                            return (
+                                                                <div className="flex items-start gap-2 p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs mt-2 animate-in fade-in duration-200">
+                                                                    <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
+                                                                    <div className="space-y-0.5">
+                                                                        <p className="font-semibold text-red-800">Peringatan Ketidaksesuaian Ukuran</p>
+                                                                        <p className="text-[11px] text-red-700 leading-relaxed">
+                                                                            Nama produk mengindikasikan ukuran <span className="font-bold underline">{productSize?.replace('ft', "'")}</span>, namun klasifikasi yang dipilih adalah <span className="font-bold underline">{item.price_type?.replace('ft', "'")}</span>. Mohon pastikan ukuran kontainer sudah sesuai.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            );
+                                                        })()}
                                                         {errors[`order_items.${idx}.price_type` as keyof typeof errors] && (
                                                             <p className="text-xs text-red-500">
                                                                 {errors[`order_items.${idx}.price_type` as keyof typeof errors]}
@@ -1148,36 +1187,62 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 max-h-48 overflow-y-auto p-2.5 rounded-lg border border-gray-200 bg-gray-50/50">
                                                                 {filteredProducts.map((p) => {
                                                                     const isChecked = item.additional_product_ids?.includes(p.id.toString());
+                                                                    const addonSize = parseContainerSizeFromName(p.service_type);
+                                                                    const currentContainerSize = item.price_type || '20ft';
+                                                                    const isSizeIncompatible = Boolean(addonSize && addonSize !== currentContainerSize);
+
                                                                     return (
                                                                         <label
                                                                             key={p.id}
-                                                                            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border text-xs font-medium cursor-pointer transition-all ${
-                                                                                isChecked
-                                                                                    ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold'
-                                                                                    : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+                                                                            title={
+                                                                                isSizeIncompatible
+                                                                                    ? `Khusus ukuran ${addonSize?.replace('ft', "'")} (tidak dapat dipilih untuk kontainer ${currentContainerSize.replace('ft', "'")})`
+                                                                                    : undefined
+                                                                            }
+                                                                            className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-xs transition-all ${
+                                                                                isSizeIncompatible
+                                                                                    ? 'border-gray-200 bg-gray-100/70 text-gray-400 opacity-50 cursor-not-allowed select-none'
+                                                                                    : isChecked
+                                                                                    ? 'border-blue-300 bg-blue-50/80 text-blue-900 shadow-2xs font-semibold cursor-pointer'
+                                                                                    : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 cursor-pointer'
                                                                             }`}
                                                                         >
-                                                                            <input
-                                                                                type="checkbox"
-                                                                                checked={isChecked}
-                                                                                onChange={(e) => {
-                                                                                    const checked = e.target.checked;
-                                                                                    const val = p.id.toString();
-                                                                                    let next = item.additional_product_ids?.slice() || [];
+                                                                            <div className="flex items-center gap-2.5 min-w-0">
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    disabled={isSizeIncompatible}
+                                                                                    checked={isChecked && !isSizeIncompatible}
+                                                                                    onChange={(e) => {
+                                                                                        if (isSizeIncompatible) return;
+                                                                                        const checked = e.target.checked;
+                                                                                        const val = p.id.toString();
+                                                                                        let next = item.additional_product_ids?.slice() || [];
 
-                                                                                    if (checked) {
-                                                                                        if (!next.includes(val)) next.push(val);
-                                                                                    } else {
-                                                                                        next = next.filter((v) => v !== val);
-                                                                                    }
+                                                                                        if (checked) {
+                                                                                            if (!next.includes(val)) next.push(val);
+                                                                                        } else {
+                                                                                            next = next.filter((v) => v !== val);
+                                                                                        }
 
-                                                                                    updateOrderItem(idx, 'additional_product_ids', next);
-                                                                                    const additionalPrices = getAdditionalProductPrices(next, item.price_type, customerProducts);
-                                                                                    updateOrderItem(idx, 'additional_product_prices', additionalPrices);
-                                                                                }}
-                                                                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                                                                            />
-                                                                            <span className="truncate">{p.service_type}</span>
+                                                                                        updateOrderItem(idx, 'additional_product_ids', next);
+                                                                                        const additionalPrices = getAdditionalProductPrices(next, item.price_type, customerProducts);
+                                                                                        updateOrderItem(idx, 'additional_product_prices', additionalPrices);
+                                                                                    }}
+                                                                                    className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 disabled:opacity-40 disabled:cursor-not-allowed"
+                                                                                />
+                                                                                <span className="truncate">{p.service_type}</span>
+                                                                            </div>
+                                                                            {addonSize && (
+                                                                                <span
+                                                                                    className={`text-[10px] px-1.5 py-0.5 rounded font-medium shrink-0 ${
+                                                                                        isSizeIncompatible
+                                                                                            ? 'bg-amber-100/70 text-amber-800 border border-amber-200/60'
+                                                                                            : 'bg-gray-100 text-gray-600'
+                                                                                    }`}
+                                                                                >
+                                                                                    {addonSize.replace('ft', "'")}
+                                                                                </span>
+                                                                            )}
                                                                         </label>
                                                                     );
                                                                 })}

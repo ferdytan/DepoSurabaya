@@ -565,13 +565,6 @@ export default function KarantinaIndex({
                         letter-spacing: 1px;
                         margin-bottom: 2px;
                     }
-                    .statement-subtitle {
-                        font-size: 8.5pt;
-                        font-weight: 700;
-                        color: #64748b;
-                        letter-spacing: 0.5px;
-                        text-transform: uppercase;
-                    }
 
                     /* Meta Info Panel */
                     .meta-panel {
@@ -638,9 +631,7 @@ export default function KarantinaIndex({
                     .text-center { text-align: center; }
                     .text-right { text-align: right; }
                     .container-code {
-                        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
                         font-weight: 700;
-                        letter-spacing: 0.5px;
                         color: #0f172a;
                     }
                     .currency-cell {
@@ -669,9 +660,6 @@ export default function KarantinaIndex({
                         margin-top: 14px;
                         page-break-inside: avoid;
                     }
-                    .footer-left {
-                        width: 100%;
-                    }
                     .terbilang-card {
                         background: #f8fafc;
                         border: 1px solid #e2e8f0;
@@ -679,17 +667,11 @@ export default function KarantinaIndex({
                         padding: 6px 12px;
                         border-radius: 4px;
                         font-size: 8pt;
-                        margin-bottom: 8px;
                     }
                     .terbilang-text {
                         font-weight: 700;
                         font-style: italic;
                         color: #0f172a;
-                    }
-                    .payment-note {
-                        font-size: 7.5pt;
-                        color: #64748b;
-                        line-height: 1.45;
                     }
                     @media print {
                         body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -710,7 +692,6 @@ export default function KarantinaIndex({
                     </div>
                     <div class="header-right">
                         <div class="statement-title">BILLING STATEMENT</div>
-                        <div class="statement-subtitle">LAYANAN KARANTINA & FUMIGASI</div>
                     </div>
                 </div>
 
@@ -824,15 +805,9 @@ export default function KarantinaIndex({
                 </table>
 
                 <div class="footer-wrapper">
-                    <div class="footer-left">
-                        <div class="terbilang-card">
-                            <span style="font-weight: 600; color: #64748b;">Terbilang: </span>
-                            <span class="terbilang-text"># ${terbilangStr} #</span>
-                        </div>
-                        <div class="payment-note">
-                            * Pembayaran harap ditransfer ke rekening resmi <strong>PT. DEPO SURABAYA SEJAHTERA</strong>.<br>
-                            * Bukti transfer mohon dikirimkan kepada bagian Keuangan / Finance Depo Surabaya.
-                        </div>
+                    <div class="terbilang-card">
+                        <span style="font-weight: 600; color: #64748b;">Terbilang: </span>
+                        <span class="terbilang-text"># ${terbilangStr} #</span>
                     </div>
                 </div>
             </body>

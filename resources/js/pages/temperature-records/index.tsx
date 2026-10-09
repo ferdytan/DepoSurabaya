@@ -9,7 +9,7 @@ import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
 import DateTimePicker from '@/components/date-time-picker';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { CheckCircle2, ChevronDown, ChevronUp, Clock, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, Clock, Eye, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
 import { Fragment, useState } from 'react';
 import { executeTemperaturePrint, executeTemperatureRekapPrint } from '@/components/temperature-print-modal';
 
@@ -527,7 +527,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Waktu Masuk</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Plug In/Out</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Suhu Terakhir</TableHead>
-                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700 text-right pr-4">Aksi</TableHead>
+                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700 text-center w-[120px]">Aksi</TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
@@ -754,8 +754,9 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                         </TableCell>
 
                                                         {/* Aksi */}
-                                                        <TableCell className="py-3.5 text-right pr-4">
-                                                            <div className="flex items-center justify-end gap-1.5">
+                                                        <TableCell className="py-3.5 text-center">
+                                                            <div className="flex items-center justify-center gap-1.5">
+                                                                {/* 1. Cetak PDF */}
                                                                 <Button
                                                                     size="sm"
                                                                     variant="outline"
@@ -786,32 +787,41 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             product: item.product,
                                                                         });
                                                                     }}
-                                                                    className="h-8 text-xs px-2.5 text-gray-700 hover:text-black gap-1 border-gray-300 bg-white"
+                                                                    className="h-8 w-8 p-0 text-gray-700 hover:text-black border-gray-300 bg-white hover:bg-gray-50 shadow-2xs inline-flex items-center justify-center rounded-lg"
                                                                     title="Cetak Lembar Pemantauan Suhu & Plugging (PDF)"
                                                                 >
-                                                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
-                                                                    <span>Cetak PDF</span>
+                                                                    <Printer className="h-4 w-4 text-gray-600" />
                                                                 </Button>
+
+                                                                {/* 2. Catat Suhu (+ icon suhu) */}
                                                                 <Button
                                                                     size="sm"
                                                                     onClick={() => openLogModal(item)}
-                                                                    className="h-8 text-xs px-2.5 bg-gray-900 hover:bg-black text-white font-medium gap-1"
+                                                                    className="h-8 w-8 p-0 bg-gray-900 hover:bg-black text-white shadow-2xs inline-flex items-center justify-center rounded-lg"
                                                                     title="Catat Suhu Kontainer"
                                                                 >
-                                                                    <Plus className="h-3.5 w-3.5" />
-                                                                    <span>Catat Suhu</span>
+                                                                    <div className="relative flex items-center justify-center">
+                                                                        <Thermometer className="h-4 w-4 text-white" />
+                                                                        <Plus className="h-2.5 w-2.5 text-emerald-400 absolute -top-1 -right-1.5 stroke-[3]" />
+                                                                    </div>
                                                                 </Button>
+
+                                                                {/* 3. Detail Log (icon mata / chevron) */}
                                                                 <Button
                                                                     size="sm"
                                                                     variant="outline"
                                                                     onClick={() => toggleRow(item.id)}
-                                                                    className="h-8 text-xs px-2.5 text-gray-700 hover:text-black gap-1"
+                                                                    className={`h-8 w-8 p-0 transition-colors shadow-2xs inline-flex items-center justify-center rounded-lg ${
+                                                                        isExpanded
+                                                                            ? 'bg-blue-50 border-blue-300 text-blue-700 hover:bg-blue-100'
+                                                                            : 'text-gray-700 hover:text-black border-gray-300 bg-white hover:bg-gray-50'
+                                                                    }`}
+                                                                    title={isExpanded ? 'Tutup Log 24 Jam' : 'Lihat Detail Log 24 Jam'}
                                                                 >
-                                                                    <span>{isExpanded ? 'Tutup Log' : 'Detail Log'}</span>
                                                                     {isExpanded ? (
-                                                                        <ChevronUp className="h-3.5 w-3.5" />
+                                                                        <ChevronUp className="h-4 w-4 text-blue-600" />
                                                                     ) : (
-                                                                        <ChevronDown className="h-3.5 w-3.5" />
+                                                                        <Eye className="h-4 w-4 text-gray-600" />
                                                                     )}
                                                                 </Button>
                                                             </div>

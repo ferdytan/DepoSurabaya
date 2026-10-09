@@ -3028,13 +3028,12 @@ function KarantinaSimpleDashboard({
                             <th style="width: 30px;">No</th>
                             <th>Nomor Kontainer</th>
                             <th>Nama Shipper</th>
+                            <th>Fumigator</th>
                             <th>Customer</th>
                             <th>Size</th>
                             <th>Tanggal Masuk</th>
-                            <th>Tanggal EIR</th>
                             <th>Tanggal Keluar</th>
                             <th>Komoditi</th>
-                            <th>Fumigator</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -3045,15 +3044,14 @@ function KarantinaSimpleDashboard({
                                 <td>${idx + 1}</td>
                                 <td style="font-weight: bold;">${item.container_number}</td>
                                 <td>${item.order?.shipper?.name ?? '-'}</td>
-                                <td>${item.order?.customer?.name ?? '-'}</td>
-                                <td>${formatContainerSize(item.price_type, item.product?.service_type ?? '-')}</td>
-                                <td>${item.entry_date ? new Date(item.entry_date).toLocaleString('id-ID') : '-'}</td>
-                                <td>${item.eir_date ? new Date(item.eir_date).toLocaleString('id-ID') : '-'}</td>
-                                <td>${item.exit_date ? new Date(item.exit_date).toLocaleString('id-ID') : '-'}</td>
-                                <td>${item.commodity ?? '-'}</td>
                                 <td>
                                     ${item.order?.fumigasi ? `<span class="badge">${item.order.fumigasi}</span>` : '–'}
                                 </td>
+                                <td>${item.order?.customer?.name ?? '-'}</td>
+                                <td>${formatContainerSize(item.price_type, item.product?.service_type ?? '-')}</td>
+                                <td>${item.entry_date ? new Date(item.entry_date).toLocaleString('id-ID') : '-'}</td>
+                                <td>${item.exit_date ? new Date(item.exit_date).toLocaleString('id-ID') : '-'}</td>
+                                <td>${item.commodity ?? '-'}</td>
                             </tr>
                         `,
                             )

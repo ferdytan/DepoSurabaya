@@ -819,13 +819,12 @@ export default function KarantinaIndex({
                             <th style="width: 30px; text-align: center;">No</th>
                             <th>Nomor Kontainer</th>
                             <th>Nama Shipper</th>
+                            <th>Fumigator</th>
                             <th style="text-align: center; width: 60px;">Size</th>
                             <th>Tanggal Masuk</th>
-                            <th>Tanggal EIR</th>
                             <th>Tanggal Keluar</th>
                             <th>Komoditi</th>
                             <th>Negara Tujuan</th>
-                            <th>Fumigator</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -836,13 +835,12 @@ export default function KarantinaIndex({
                                 <td class="text-center">${idx + 1}</td>
                                 <td style="font-weight: 700; font-family: monospace;">${item.container_number}</td>
                                 <td>${item.shipper_name ?? '-'}</td>
+                                <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
                                 <td class="text-center">${formatContainerSize(item.price_type)}</td>
                                 <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
-                                <td>${item.eir_date ? formatKarantinaDateTimeString(item.eir_date) : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${item.exit_date ? formatKarantinaDateTimeString(item.exit_date) : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${item.commodity ?? '-'}</td>
                                 <td>${item.country ?? '-'}</td>
-                                <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
                             </tr>
                         `
                             )

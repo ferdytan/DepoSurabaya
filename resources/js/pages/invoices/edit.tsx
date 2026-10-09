@@ -16,6 +16,8 @@ export interface MasterProduct {
     id: number;
     service_type: string;
     description?: string | null;
+    price?: number | null;
+    custom_price?: number | null;
     custom_price_20ft?: number | null;
     custom_price_40ft?: number | null;
     custom_price_45ft?: number | null;
@@ -251,6 +253,12 @@ export default function EditInvoice() {
 
     // Helper untuk menentukan harga default produk berdasarkan ukuran kontainer dan customer rate
     const resolveProductDefaultPrice = (prod: MasterProduct, priceType: string): number => {
+        if (prod.custom_price !== null && prod.custom_price !== undefined && prod.custom_price > 0) {
+            return prod.custom_price;
+        }
+        if (prod.price !== null && prod.price !== undefined && prod.price > 0) {
+            return prod.price;
+        }
         const is45 = (priceType || '').toLowerCase().includes('45');
         const is40 = (priceType || '').toLowerCase().includes('40');
         const is20 = (priceType || '').toLowerCase().includes('20');

@@ -37,6 +37,7 @@ interface OrderItem {
     additional_products?: { id?: number; service_type: string }[];
     start_plug_in?: string | null;
     plug_out?: string | null;
+    set_point?: number | string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
     rekam_suhu?: { id?: number; tanggal: string; jam_data: Record<string, string> }[];
@@ -327,6 +328,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                         exit_date: orderItem.exit_date,
                                         start_plug_in: orderItem.start_plug_in,
                                         plug_out: orderItem.plug_out,
+                                        set_point: orderItem.set_point,
                                         plug_duration_minutes: orderItem.plug_duration_minutes,
                                         total_shifts: orderItem.total_shifts,
                                         rekam_suhu: orderItem.rekam_suhu,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { SearchableSelect, type OptionItem } from '@/components/ui/searchable-select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
@@ -228,6 +229,22 @@ export default function KarantinaIndex({
 
     const [showFilterPanel, setShowFilterPanel] = useState(true);
     const [isPrinting, setIsPrinting] = useState(false);
+
+    const customerOptions: OptionItem[] = useMemo(() => [
+        { value: 'all', label: 'Semua Customer' },
+        ...customers.map((c) => ({
+            value: String(c.id),
+            label: c.name,
+        })),
+    ], [customers]);
+
+    const shipperOptions: OptionItem[] = useMemo(() => [
+        { value: 'all', label: 'Semua Shipper' },
+        ...shippers.map((s) => ({
+            value: String(s.id),
+            label: s.name,
+        })),
+    ], [shippers]);
 
     // Sinkronisasi filter saat URL / navigasi Inertia berubah
     useEffect(() => {
@@ -623,19 +640,20 @@ export default function KarantinaIndex({
                 <table class="b-table">
                     <thead>
                         <tr>
-                            <th rowspan="2" style="width: 32px;">No.</th>
-                            <th rowspan="2" style="width: 140px;">No. Container</th>
-                            <th rowspan="2" style="width: 125px;">Shipper</th>
+                            <th rowspan="2" style="width: 28px;">No.</th>
+                            <th rowspan="2" style="width: 130px;">No. Container</th>
+                            <th rowspan="2" style="width: 110px;">Shipper</th>
                             <th colspan="2">Date / Time</th>
-                            <th rowspan="2" style="width: 55px;">Ukuran</th>
-                            <th rowspan="2" style="width: 85px;">Jasa</th>
-                            <th rowspan="2" style="width: 110px;">Price</th>
-                            <th rowspan="2" style="width: 100px;">PPN 11 %</th>
-                            <th rowspan="2" style="width: 110px;">Total</th>
+                            <th rowspan="2" style="width: 48px;">Ukuran</th>
+                            <th rowspan="2" style="width: 80px;">Jasa</th>
+                            <th rowspan="2" style="width: 85px;">Fumigator</th>
+                            <th rowspan="2" style="width: 95px;">Price</th>
+                            <th rowspan="2" style="width: 85px;">PPN 11 %</th>
+                            <th rowspan="2" style="width: 100px;">Total</th>
                         </tr>
                         <tr>
-                            <th style="width: 130px;">In</th>
-                            <th style="width: 130px;">Out</th>
+                            <th style="width: 110px;">In</th>
+                            <th style="width: 110px;">Out</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -654,7 +672,8 @@ export default function KarantinaIndex({
                                 <td class="text-center">${formatStatementBDateTime(item.entry_date)}</td>
                                 <td class="text-center">${formatStatementBDateTime(item.exit_date)}</td>
                                 <td class="text-center">${formatStatementBSize(item.price_type)}</td>
-                                <td class="text-center">${item.service_type ?? item.fumigasi ?? 'Fumigasi'}</td>
+                                <td class="text-center">${item.service_type ?? 'Fumigasi'}</td>
+                                <td class="text-center">${item.fumigasi ?? '-'}</td>
                                 <td>
                                     <div class="currency-cell">
                                         <span>Rp</span>
@@ -677,7 +696,7 @@ export default function KarantinaIndex({
                             `;
                         }).join('')}
                         <tr class="grand-total-row">
-                            <td colspan="9" style="border: none; background: transparent;"></td>
+                            <td colspan="10" style="border: none; background: transparent;"></td>
                             <td class="grand-total-cell">
                                 <div class="currency-cell" style="font-weight: 800;">
                                     <span>Rp</span>
@@ -1012,37 +1031,29 @@ export default function KarantinaIndex({
                             {/* 1. Filter Customer */}
                             <div className="space-y-1.5">
                                 <Label className="text-xs font-semibold text-gray-700">Customer</Label>
-                                <Select value={customerId} onValueChange={setCustomerId}>
-                                    <SelectTrigger className="w-full text-xs h-9 bg-white border-gray-200">
-                                        <SelectValue placeholder="Semua Customer" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="all">Semua Customer</SelectItem>
-                                        {customers.map((c) => (
-                                            <SelectItem key={c.id} value={String(c.id)}>
-                                                {c.name}
-                                            </SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
+                                <SearchableSelect
+                                    options={customerOptions}
+                                    value={customerId}
+                                    onChange={(val) => setCustomerId(val || 'all')}
+                                    placeholder="Semua Customer"
+                                    searchPlaceholder="Cari customer..."
+                                    showClear={false}
+                                    className="w-full text-xs h-9 bg-white"
+                                />
                             </div>
 
                             {/* 2. Filter Shipper */}
                             <div className="space-y-1.5">
                                 <Label className="text-xs font-semibold text-gray-700">Shipper</Label>
-                                <Select value={shipperId} onValueChange={setShipperId}>
-                                    <SelectTrigger className="w-full text-xs h-9 bg-white border-gray-200">
-                                        <SelectValue placeholder="Semua Shipper" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="all">Semua Shipper</SelectItem>
-                                        {shippers.map((s) => (
-                                            <SelectItem key={s.id} value={String(s.id)}>
-                                                {s.name}
-                                            </SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
+                                <SearchableSelect
+                                    options={shipperOptions}
+                                    value={shipperId}
+                                    onChange={(val) => setShipperId(val || 'all')}
+                                    placeholder="Semua Shipper"
+                                    searchPlaceholder="Cari shipper..."
+                                    showClear={false}
+                                    className="w-full text-xs h-9 bg-white"
+                                />
                             </div>
 
                             {/* 3. Filter Fumigator (Field Text Biasa) */}

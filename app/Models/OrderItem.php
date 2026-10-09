@@ -22,6 +22,7 @@ class OrderItem extends Model
         'price_type', 'price_value', 'delete_reason',
         'is_excluded_from_report',
         'start_plug_in', 'plug_out', 'plug_duration_minutes', 'total_shifts',
+        'set_point',
         'shift_calculation_mode', 'shift_details', 'last_calculated_at',
     ];
 
@@ -31,6 +32,7 @@ class OrderItem extends Model
         'plug_out' => 'datetime:Y-m-d H:i:s',
         'plug_duration_minutes' => 'integer',
         'total_shifts' => 'integer',
+        'set_point' => 'float',
         'shift_details' => 'array',
         'last_calculated_at' => 'datetime:Y-m-d H:i:s',
     ];

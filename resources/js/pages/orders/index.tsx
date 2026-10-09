@@ -114,6 +114,7 @@ type Order = {
     exit_date: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
+    set_point?: number | string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
     price_type: string | null;
@@ -286,12 +287,14 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
 
     const [plugStartTime, setPlugStartTime] = useState<string>('');
     const [plugOutTime, setPlugOutTime] = useState<string>('');
+    const [tempSetPoint, setTempSetPoint] = useState<string>('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
 
     const handleOpenTempModal = (order: Order) => {
         setTempOrder(order);
         setPlugStartTime(order.start_plug_in ? toLocalISO(order.start_plug_in) : '');
         setPlugOutTime(order.plug_out ? toLocalISO(order.plug_out) : '');
+        setTempSetPoint(order.set_point !== null && order.set_point !== undefined ? String(order.set_point) : '');
         if (order.temperature && Object.keys(order.temperature).length > 0) {
             const records: TemperatureRecord[] = Object.entries(order.temperature).map(([date, temps]) => ({
                 date,
@@ -307,7 +310,9 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
     const handleQuickPlugIn = () => {
         if (!tempOrder) return;
         setIsSubmittingPlug(true);
-        router.post(`/orders/item/${tempOrder.id}/plug-in`, {}, {
+        router.post(`/orders/item/${tempOrder.id}/plug-in`, {
+            set_point: tempSetPoint !== '' ? tempSetPoint : null,
+        }, {
             preserveScroll: true,
             onSuccess: () => {
                 setIsSubmittingPlug(false);
@@ -340,6 +345,7 @@ export default function OrdersIndex({ orders, filters: rawFilters }: Props) {
             {
                 start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : null,
                 plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : null,
+                set_point: tempSetPoint !== '' ? tempSetPoint : null,
             },
             {
                 preserveScroll: true,
@@ -1407,6 +1413,24 @@ function getNowLocalISO(): string {
 
                                 {/* Manual Datetime adjustment */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-200">
+                                    <div className="space-y-1.5 sm:col-span-2">
+                                        <Label htmlFor="plug_set_point_input" className="text-xs font-semibold text-gray-700">
+                                            Set Point Suhu (&deg;C)
+                                        </Label>
+                                        <Input
+                                            id="plug_set_point_input"
+                                            type="number"
+                                            step="0.1"
+                                            value={tempSetPoint}
+                                            onChange={(e) => setTempSetPoint(e.target.value)}
+                                            placeholder="Contoh: -18 atau 4.5"
+                                            className="w-full bg-white text-xs h-9 font-medium"
+                                        />
+                                        <p className="text-[11px] text-gray-500">
+                                            Target acuan suhu kontainer yang diminta (bisa bernilai minus, contoh: -18).
+                                        </p>
+                                    </div>
+
                                     <div className="space-y-1.5">
                                         <div className="flex items-center justify-between">
                                             <Label htmlFor="plug_start_input" className="text-xs font-semibold text-gray-700">
@@ -1558,6 +1582,7 @@ function getNowLocalISO(): string {
                                         exit_date: tempOrder.exit_date,
                                         start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : tempOrder.start_plug_in,
                                         plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : tempOrder.plug_out,
+                                        set_point: tempSetPoint || tempOrder.set_point,
                                         plug_duration_minutes: tempOrder.plug_duration_minutes,
                                         total_shifts: tempOrder.total_shifts,
                                         price_type: tempOrder.price_type,

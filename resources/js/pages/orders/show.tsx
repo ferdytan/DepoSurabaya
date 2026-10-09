@@ -39,6 +39,7 @@ interface OrderItem {
     additional_products?: { id?: number; service_type: string }[];
     start_plug_in?: string | null;
     plug_out?: string | null;
+    set_point?: number | string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
     rekam_suhu?: { id?: number; tanggal: string; jam_data: Record<string, string> }[];
@@ -401,6 +402,7 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                                     exit_date: item.exit_date,
                                                     start_plug_in: item.start_plug_in,
                                                     plug_out: item.plug_out,
+                                                    set_point: item.set_point,
                                                     plug_duration_minutes: item.plug_duration_minutes,
                                                     total_shifts: item.total_shifts,
                                                     rekam_suhu: item.rekam_suhu,

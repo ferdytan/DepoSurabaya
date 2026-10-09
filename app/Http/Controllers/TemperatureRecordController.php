@@ -129,6 +129,11 @@ class TemperatureRecordController extends Controller
      */
     public function recordPlugIn(Request $request, OrderItem $orderItem)
     {
+        $validated = $request->validate([
+            'time' => ['nullable', 'date'],
+            'set_point' => ['nullable', 'numeric', 'between:-99.99,99.99'],
+        ]);
+
         $time = $request->filled('time')
             ? Carbon::parse($request->input('time'), 'Asia/Jakarta')
             : Carbon::now('Asia/Jakarta');
@@ -136,11 +141,15 @@ class TemperatureRecordController extends Controller
         $orderItem->start_plug_in = $time->format('Y-m-d H:i:s');
         $orderItem->plug_out = null;
         $orderItem->plug_duration_minutes = null;
+        if ($request->has('set_point')) {
+            $orderItem->set_point = $request->input('set_point') !== null && $request->input('set_point') !== '' ? (float) $request->input('set_point') : null;
+        }
         // Shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
         $orderItem->total_shifts = 1;
         $orderItem->save();
 
-        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB (Shift 1 aktif).");
+        $setPointMsg = $orderItem->set_point !== null ? " (Set Point: {$orderItem->set_point}°C)" : "";
+        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB{$setPointMsg} (Shift 1 aktif).");
     }
 
     /**
@@ -185,6 +194,7 @@ class TemperatureRecordController extends Controller
         $validated = $request->validate([
             'start_plug_in' => ['nullable', 'date'],
             'plug_out' => ['nullable', 'date'],
+            'set_point' => ['nullable', 'numeric', 'between:-99.99,99.99'],
         ]);
 
         $start = !empty($validated['start_plug_in'])
@@ -204,6 +214,10 @@ class TemperatureRecordController extends Controller
 
         $orderItem->start_plug_in = $start ? $start->format('Y-m-d H:i:s') : null;
         $orderItem->plug_out = $out ? $out->format('Y-m-d H:i:s') : null;
+
+        if ($request->has('set_point')) {
+            $orderItem->set_point = $request->input('set_point') !== null && $request->input('set_point') !== '' ? (float) $request->input('set_point') : null;
+        }
 
         if ($start && $out) {
             $calc = OrderItem::calculateShifts($start, $out);

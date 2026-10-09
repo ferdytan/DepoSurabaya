@@ -22,6 +22,7 @@ type TemperatureRecordItem = {
     exit_date: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
+    set_point?: number | string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
     order: {
@@ -142,7 +143,15 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     const [selectedPlugContainer, setSelectedPlugContainer] = useState<TemperatureRecordItem | null>(null);
     const [plugStartTime, setPlugStartTime] = useState('');
     const [plugOutTime, setPlugOutTime] = useState('');
+    const [plugSetPoint, setPlugSetPoint] = useState('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
+
+    // Modal Plug In Pertama Kali (Minta Set Point)
+    const [isPlugInDialogOpen, setIsPlugInDialogOpen] = useState(false);
+    const [plugInItem, setPlugInItem] = useState<TemperatureRecordItem | null>(null);
+    const [plugInTime, setPlugInTime] = useState('');
+    const [plugInSetPoint, setPlugInSetPoint] = useState('');
+    const [isSubmittingPlugIn, setIsSubmittingPlugIn] = useState(false);
 
     const breadcrumbs: BreadcrumbItem[] = [{ title: 'Monitoring Suhu Kontainer', href: '/temperature-records' }];
 
@@ -240,13 +249,38 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
         setSelectedPlugContainer(item);
         setPlugStartTime(toDateTimeLocalString(item.start_plug_in));
         setPlugOutTime(toDateTimeLocalString(item.plug_out));
+        setPlugSetPoint(item.set_point !== null && item.set_point !== undefined ? String(item.set_point) : '');
         setIsPlugModalOpen(true);
     };
 
-    const handleQuickPlugIn = (orderItemId: number) => {
-        router.post(`/orders/item/${orderItemId}/plug-in`, {}, {
-            preserveScroll: true,
-        });
+    const handleOpenPlugInDialog = (item: TemperatureRecordItem) => {
+        setPlugInItem(item);
+        setPlugInTime(toDateTimeLocalString(new Date()));
+        setPlugInSetPoint(item.set_point !== null && item.set_point !== undefined ? String(item.set_point) : '');
+        setIsPlugInDialogOpen(true);
+    };
+
+    const handleConfirmPlugIn = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!plugInItem) return;
+        setIsSubmittingPlugIn(true);
+        router.post(
+            `/orders/item/${plugInItem.id}/plug-in`,
+            {
+                time: plugInTime ? plugInTime.replace('T', ' ') : null,
+                set_point: plugInSetPoint !== '' ? plugInSetPoint : null,
+            },
+            {
+                onSuccess: () => {
+                    setIsPlugInDialogOpen(false);
+                    setIsSubmittingPlugIn(false);
+                },
+                onError: () => {
+                    setIsSubmittingPlugIn(false);
+                },
+                preserveScroll: true,
+            },
+        );
     };
 
     const handleQuickPlugOut = (orderItemId: number) => {
@@ -264,6 +298,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
             {
                 start_plug_in: plugStartTime ? plugStartTime.replace('T', ' ') : null,
                 plug_out: plugOutTime ? plugOutTime.replace('T', ' ') : null,
+                set_point: plugSetPoint !== '' ? plugSetPoint : null,
             },
             {
                 onSuccess: () => {
@@ -577,11 +612,16 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">
                                                                         Belum Plug In
                                                                     </span>
+                                                                    {item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== '' && (
+                                                                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-800 border border-sky-200">
+                                                                            SP: {item.set_point}&deg;C
+                                                                        </span>
+                                                                    )}
                                                                     <Button
                                                                         size="sm"
-                                                                        onClick={() => handleQuickPlugIn(item.id)}
+                                                                        onClick={() => handleOpenPlugInDialog(item)}
                                                                         className="h-7 text-xs px-2.5 bg-gray-900 hover:bg-black text-white gap-1 font-semibold"
-                                                                        title="Catat Start Plug In Real-Time Sekarang"
+                                                                        title="Catat Start Plug In (Atur Set Point & Waktu)"
                                                                     >
                                                                         <Zap className="h-3 w-3" />
                                                                         Plug In
@@ -599,6 +639,11 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <span className="text-[11px] text-gray-600 font-medium">
                                                                         In: {formatDate(item.start_plug_in)}
                                                                     </span>
+                                                                    {item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== '' && (
+                                                                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-200">
+                                                                            Set Point: {item.set_point}&deg;C
+                                                                        </span>
+                                                                    )}
                                                                     <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
                                                                         Shift {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} (Aktif)
                                                                     </span>
@@ -616,7 +661,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             type="button"
                                                                             onClick={() => openPlugModal(item)}
                                                                             className="p-1 text-gray-400 hover:text-gray-900 rounded border border-gray-200 bg-white"
-                                                                            title="Atur Waktu Plug In/Out"
+                                                                            title="Atur Waktu Plug In/Out & Set Point"
                                                                         >
                                                                             <Pencil className="h-3 w-3" />
                                                                         </button>
@@ -633,7 +678,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             type="button"
                                                                             onClick={() => openPlugModal(item)}
                                                                             className="p-1 text-gray-400 hover:text-gray-900 rounded border border-gray-200 bg-white"
-                                                                            title="Edit Waktu Plug In/Out"
+                                                                            title="Edit Waktu Plug In/Out & Set Point"
                                                                         >
                                                                             <Pencil className="h-3 w-3" />
                                                                         </button>
@@ -641,6 +686,11 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <div className="text-[11px] text-gray-600 leading-tight space-y-0.5">
                                                                         <div>In: {formatDate(item.start_plug_in)}</div>
                                                                         <div>Out: {formatDate(item.plug_out)}</div>
+                                                                        {item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== '' && (
+                                                                            <div className="text-[10px] text-sky-700 font-bold">
+                                                                                SP: {item.set_point}&deg;C
+                                                                            </div>
+                                                                        )}
                                                                         <div className="font-semibold text-gray-800">
                                                                             Durasi: {Math.floor((item.plug_duration_minutes || 0) / 60)}j {(item.plug_duration_minutes || 0) % 60}m
                                                                         </div>
@@ -690,6 +740,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             exit_date: item.exit_date,
                                                                             start_plug_in: item.start_plug_in,
                                                                             plug_out: item.plug_out,
+                                                                            set_point: item.set_point,
                                                                             plug_duration_minutes: item.plug_duration_minutes,
                                                                             total_shifts: item.total_shifts,
                                                                             rekam_suhu: (item.rekam_suhu || []).map((r) => ({
@@ -771,7 +822,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             </div>
                                                                         </div>
 
-                                                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs pt-1">
+                                                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 text-xs pt-1">
                                                                             <div className="rounded-lg bg-gray-50 p-2.5 border border-gray-100">
                                                                                 <span className="text-gray-500 font-medium block text-[11px]">Start Plug In:</span>
                                                                                 <span className="font-bold text-gray-900 text-xs">
@@ -782,6 +833,14 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                 <span className="text-gray-500 font-medium block text-[11px]">Plug Out:</span>
                                                                                 <span className="font-bold text-gray-900 text-xs">
                                                                                     {item.plug_out ? formatDate(item.plug_out) : (item.start_plug_in ? 'Sedang Berjalan' : 'Belum tercatat')}
+                                                                                </span>
+                                                                            </div>
+                                                                            <div className="rounded-lg bg-sky-50 p-2.5 border border-sky-100">
+                                                                                <span className="text-sky-700 font-medium block text-[11px]">Set Point:</span>
+                                                                                <span className="font-bold text-sky-900 text-xs">
+                                                                                    {item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== ''
+                                                                                        ? `${item.set_point} °C`
+                                                                                        : '-'}
                                                                                 </span>
                                                                             </div>
                                                                             <div className="rounded-lg bg-gray-50 p-2.5 border border-gray-100">
@@ -827,6 +886,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                         exit_date: item.exit_date,
                                                                                         start_plug_in: item.start_plug_in,
                                                                                         plug_out: item.plug_out,
+                                                                                        set_point: item.set_point,
                                                                                         plug_duration_minutes: item.plug_duration_minutes,
                                                                                         total_shifts: item.total_shifts,
                                                                                         rekam_suhu: (item.rekam_suhu || []).map((r) => ({
@@ -1197,6 +1257,24 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                 </div>
 
                                 <div className="space-y-1.5">
+                                    <Label htmlFor="plug_set_point" className="text-xs font-semibold text-gray-700">
+                                        Set Point Suhu (&deg;C)
+                                    </Label>
+                                    <Input
+                                        id="plug_set_point"
+                                        type="number"
+                                        step="0.1"
+                                        value={plugSetPoint}
+                                        onChange={(e) => setPlugSetPoint(e.target.value)}
+                                        placeholder="Contoh: -18 atau 4.5"
+                                        className="w-full bg-white text-xs h-9"
+                                    />
+                                    <p className="text-[11px] text-gray-500">
+                                        Target / acuan suhu kontainer yang diminta (bisa bernilai minus, contoh: -18).
+                                    </p>
+                                </div>
+
+                                <div className="space-y-1.5">
                                     <div className="flex items-center justify-between">
                                         <Label htmlFor="start_plug_in" className="text-xs font-semibold text-gray-700">
                                             Waktu Start Plug In
@@ -1282,6 +1360,101 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                             {isSubmittingPlug ? 'Menyimpan...' : 'Simpan Waktu'}
                                         </Button>
                                     </div>
+                                </DialogFooter>
+                            </form>
+                        )}
+                    </DialogContent>
+                </Dialog>
+
+                {/* Dialog Plug In Pertama Kali (Minta Set Point) */}
+                <Dialog open={isPlugInDialogOpen} onOpenChange={setIsPlugInDialogOpen}>
+                    <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                            <DialogTitle className="text-base font-bold flex items-center gap-2">
+                                <Zap className="h-5 w-5 text-amber-500 fill-amber-500" />
+                                <span>Mulai Plug In: {plugInItem?.container_number}</span>
+                            </DialogTitle>
+                        </DialogHeader>
+
+                        {plugInItem && (
+                            <form onSubmit={handleConfirmPlugIn} className="space-y-4 pt-2">
+                                <div className="rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-xs text-gray-700 flex justify-between">
+                                    <div>
+                                        <span className="text-gray-500 block text-[11px]">Customer:</span>
+                                        <span className="font-bold">{plugInItem.order?.customer?.name || '-'}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-gray-500 block text-[11px]">Ukuran:</span>
+                                        <span className="font-bold">{plugInItem.price_type || '-'}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-gray-500 block text-[11px]">Komoditi:</span>
+                                        <span className="font-bold">{plugInItem.commodity || '-'}</span>
+                                    </div>
+                                </div>
+
+                                {/* Input Set Point Suhu */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="quick_set_point" className="text-xs font-semibold text-gray-700">
+                                        Set Point Suhu (&deg;C) <span className="text-rose-500">*</span>
+                                    </Label>
+                                    <Input
+                                        id="quick_set_point"
+                                        type="number"
+                                        step="0.1"
+                                        value={plugInSetPoint}
+                                        onChange={(e) => setPlugInSetPoint(e.target.value)}
+                                        placeholder="Contoh: -18 atau 4.5"
+                                        className="w-full bg-white text-xs h-9 font-medium"
+                                        autoFocus
+                                    />
+                                    <p className="text-[11px] text-gray-500">
+                                        Acuan target suhu kontainer yang di-request (bisa bernilai minus, contoh: -18).
+                                    </p>
+                                </div>
+
+                                {/* Input Waktu Start Plug In */}
+                                <div className="space-y-1.5">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="quick_plug_time" className="text-xs font-semibold text-gray-700">
+                                            Waktu Start Plug In
+                                        </Label>
+                                        <button
+                                            type="button"
+                                            onClick={() => setPlugInTime(toDateTimeLocalString(new Date()))}
+                                            className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
+                                        >
+                                            Set Sekarang
+                                        </button>
+                                    </div>
+                                    <DateTimePicker
+                                        id="quick_plug_time"
+                                        value={plugInTime}
+                                        onChange={(val) => setPlugInTime(val)}
+                                        withTime={true}
+                                        inModal={true}
+                                        placeholder="Pilih tanggal & waktu start plug in..."
+                                        className="w-full bg-white"
+                                    />
+                                </div>
+
+                                <DialogFooter className="gap-2 pt-2">
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        onClick={() => setIsPlugInDialogOpen(false)}
+                                        className="h-9 text-xs"
+                                    >
+                                        Batal
+                                    </Button>
+                                    <Button
+                                        type="submit"
+                                        disabled={isSubmittingPlugIn}
+                                        className="h-9 text-xs bg-gray-900 hover:bg-black text-white font-semibold gap-1.5"
+                                    >
+                                        <Zap className="h-3.5 w-3.5" />
+                                        <span>{isSubmittingPlugIn ? 'Menyimpan...' : 'Simpan & Plug In'}</span>
+                                    </Button>
                                 </DialogFooter>
                             </form>
                         )}

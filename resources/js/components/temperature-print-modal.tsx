@@ -22,6 +22,7 @@ export interface TemperaturePrintData {
     exit_date?: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
+    set_point?: number | string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
     rekam_suhu?: Array<{
@@ -276,6 +277,11 @@ export function generateTemperaturePrintHtml(
     const totalShiftsStr =
         runningShifts !== null && runningShifts !== undefined && runningShifts > 0
             ? `${runningShifts} Shift`
+            : '-';
+
+    const setPointDisplay =
+        data.set_point !== null && data.set_point !== undefined && String(data.set_point).trim() !== ''
+            ? `${data.set_point} &deg;C`
             : '-';
 
     const nowPrinted = new Date().toLocaleString('id-ID', {
@@ -656,14 +662,18 @@ export function generateTemperaturePrintHtml(
                     <td style="width: 36%;">
                         <div class="info-label">Nomor Kontainer</div>
                         <div class="cont-num-hero">${containerNumber}</div>
-                        <div style="margin-top: 1.5mm; display: flex; gap: 2mm;">
+                        <div style="margin-top: 1.5mm; display: flex; gap: 2.5mm; flex-wrap: wrap;">
                             <div>
                                 <span class="info-label">Ukuran / Tipe:</span>
                                 <span class="info-value" style="display: block;">${size}</span>
                             </div>
-                            <div style="margin-left: 2mm;">
+                            <div>
                                 <span class="info-label">Komoditi:</span>
                                 <span class="info-value" style="display: block;">${commodity}</span>
+                            </div>
+                            <div>
+                                <span class="info-label">Set Point:</span>
+                                <span class="info-value" style="display: block; font-weight: 900; color: #0284c7;">${setPointDisplay}</span>
                             </div>
                         </div>
                     </td>
@@ -694,19 +704,23 @@ export function generateTemperaturePrintHtml(
         <table class="plug-card">
             <tbody>
                 <tr>
-                    <td style="width: 25%;">
+                    <td style="width: 22%;">
                         <div class="plug-title">Start Plug In</div>
                         <div class="plug-val">${startPlugStr}</div>
                     </td>
-                    <td style="width: 25%;">
+                    <td style="width: 20%;">
                         <div class="plug-title">Plug Out</div>
                         <div class="plug-val">${plugOutStr}</div>
                     </td>
-                    <td style="width: 25%;">
+                    <td style="width: 16%; background-color: #f0f9ff;">
+                        <div class="plug-title" style="color: #0369a1;">Set Point</div>
+                        <div class="plug-val" style="font-weight: 900; font-size: 9.5pt; color: #0284c7;">${setPointDisplay}</div>
+                    </td>
+                    <td style="width: 22%;">
                         <div class="plug-title">Total Durasi Plug In</div>
                         <div class="plug-val">${durationStr}</div>
                     </td>
-                    <td style="width: 25%; background-color: #f1f5f9;">
+                    <td style="width: 20%; background-color: #f1f5f9;">
                         <div class="plug-title">Total Tagihan Shift</div>
                         <div class="plug-shift-highlight">${totalShiftsStr}</div>
                     </td>
@@ -1086,7 +1100,10 @@ export function generateTemperatureRekapPrintHtml(
                 <tr>
                     <td class="text-center">${idx + 1}</td>
                     <td class="font-bold font-mono" style="font-size: 8.5pt;">${item.container_number}</td>
-                    <td class="text-center">${item.price_type || item.size || '-'}</td>
+                    <td class="text-center">
+                        <div>${item.price_type || item.size || '-'}</div>
+                        ${item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== '' ? `<div style="font-size: 6.5pt; color: #0284c7; font-weight: 800; margin-top: 1px;">SP: ${item.set_point}&deg;C</div>` : ''}
+                    </td>
                     <td>
                         <div class="font-bold">${customer}</div>
                         ${shipper && shipper !== '-' ? `<div style="font-size: 6.5pt; color: #444;">${shipper}</div>` : ''}
@@ -1343,7 +1360,7 @@ export default function TemperaturePrintModal({ isOpen, onClose, data }: Tempera
                         </div>
 
                         {/* Status Plug In & Shift */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 border border-black bg-slate-50/80 divide-x divide-black text-center text-xs">
+                        <div className="grid grid-cols-2 sm:grid-cols-5 border border-black bg-slate-50/80 divide-x divide-black text-center text-xs">
                             <div className="p-2">
                                 <span className="text-[9px] font-bold text-gray-500 uppercase block">Start Plug In</span>
                                 <span className="font-bold text-[11px] mt-0.5 block">{formatDateTimeIndo(data.start_plug_in)}</span>
@@ -1352,6 +1369,14 @@ export default function TemperaturePrintModal({ isOpen, onClose, data }: Tempera
                                 <span className="text-[9px] font-bold text-gray-500 uppercase block">Plug Out</span>
                                 <span className="font-bold text-[11px] mt-0.5 block">
                                     {data.plug_out ? formatDateTimeIndo(data.plug_out) : data.start_plug_in ? 'AKTIF PLUGGED IN' : '-'}
+                                </span>
+                            </div>
+                            <div className="p-2 bg-sky-50/50">
+                                <span className="text-[9px] font-bold text-gray-500 uppercase block">Set Point</span>
+                                <span className="font-bold text-[11px] mt-0.5 block text-sky-700">
+                                    {data.set_point !== null && data.set_point !== undefined && String(data.set_point).trim() !== ''
+                                        ? `${data.set_point} °C`
+                                        : '-'}
                                 </span>
                             </div>
                             <div className="p-2">

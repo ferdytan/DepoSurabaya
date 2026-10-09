@@ -17,10 +17,7 @@ class Customer extends Model
         return $this->belongsToMany(Product::class)
                     ->using(CustomerProduct::class) // Pastikan model ini dibuat jika belum ada
                     ->withPivot([
-                        'custom_price_20ft',
-                        'custom_price_40ft',
-                        'custom_price_45ft',
-                        'custom_global_price'
+                        'price',
                     ])
                     ->withTimestamps();
     }

@@ -642,15 +642,18 @@ class InvoiceController extends Controller
             ->get()
             ->map(function ($p) use ($customerRates) {
                 $custP = $customerRates->get($p->id);
+                $custPrice = $custP ? ($custP->pivot->price ?? $custP->pivot->custom_global_price ?? $custP->pivot->custom_price_20ft ?? null) : null;
                 return [
                     'id' => $p->id,
                     'service_type' => $p->service_type,
                     'description' => $p->description,
                     'requires_temperature' => (bool) $p->requires_temperature,
-                    'custom_price_20ft' => $custP ? (int) $custP->pivot->custom_price_20ft : null,
-                    'custom_price_40ft' => $custP ? (int) $custP->pivot->custom_price_40ft : null,
-                    'custom_price_45ft' => $custP ? (int) $custP->pivot->custom_price_45ft : null,
-                    'custom_global_price' => $custP ? (int) $custP->pivot->custom_global_price : null,
+                    'price' => $custPrice ? (int) $custPrice : null,
+                    'custom_price' => $custPrice ? (int) $custPrice : null,
+                    'custom_price_20ft' => $custPrice ? (int) $custPrice : null,
+                    'custom_price_40ft' => $custPrice ? (int) $custPrice : null,
+                    'custom_price_45ft' => $custPrice ? (int) $custPrice : null,
+                    'custom_global_price' => $custPrice ? (int) $custPrice : null,
                 ];
             });
 

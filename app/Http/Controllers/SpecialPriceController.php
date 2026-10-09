@@ -43,7 +43,7 @@ class SpecialPriceController extends Controller
 
             // Ambil harga khusus customer ini
             $customMap = $selectedCustomer->products()
-                ->withPivot(['id as pivot_id', 'custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price', 'updated_at'])
+                ->withPivot(['id as pivot_id', 'price', 'updated_at'])
                 ->get()
                 ->keyBy('id');
 
@@ -51,11 +51,11 @@ class SpecialPriceController extends Controller
                 $custom = $customMap->get($p->id);
                 $hasCustom = $custom !== null;
                 $customPriceVal = null;
-                if ($hasCustom) {
-                    $customPriceVal = $custom->pivot->custom_global_price 
+                if ($hasCustom && $custom->pivot) {
+                    $customPriceVal = $custom->pivot->price 
+                        ?? $custom->pivot->custom_global_price 
                         ?? $custom->pivot->custom_price_20ft 
-                        ?? $custom->pivot->custom_price_40ft 
-                        ?? $custom->pivot->custom_price_45ft;
+                        ?? null;
                 }
 
                 $masterPrice = $p->price ?? 0;
@@ -130,10 +130,7 @@ class SpecialPriceController extends Controller
 
         $customer->products()->syncWithoutDetaching([
             $productId => [
-                'custom_price_20ft' => $customPrice,
-                'custom_price_40ft' => $customPrice,
-                'custom_price_45ft' => $customPrice,
-                'custom_global_price' => $customPrice,
+                'price' => $customPrice,
             ]
         ]);
 

@@ -62,11 +62,9 @@ class CustomerController extends Controller
 
         if (!empty($validated['product_prices'])) {
             foreach ($validated['product_prices'] as $item) {
+                $price = $item['price'] ?? $item['price_global'] ?? $item['price_20ft'] ?? null;
                 $customer->products()->attach($item['product_id'], [
-                    'custom_price_20ft' => $item['price_20ft'] ?? null,
-                    'custom_price_40ft' => $item['price_40ft'] ?? null,
-                    'custom_price_45ft' => $item['price_45ft'] ?? null,
-                    'custom_global_price' => $item['price_global'] ?? null,
+                    'price' => $price,
                 ]);
             }
         }
@@ -99,6 +97,7 @@ class CustomerController extends Controller
             // Produk + Harga Custom (opsional)
             'product_prices' => 'array|nullable',
             'product_prices.*.product_id' => 'exists:products,id',
+            'product_prices.*.price' => 'numeric|nullable',
             'product_prices.*.price_20ft' => 'numeric|nullable',
             'product_prices.*.price_40ft' => 'numeric|nullable',
             'product_prices.*.price_45ft' => 'numeric|nullable',
@@ -117,11 +116,9 @@ class CustomerController extends Controller
         if ($request->has('product_prices') && is_array($validated['product_prices'])) {
             $customer->products()->detach();
             foreach ($validated['product_prices'] as $item) {
+                $price = $item['price'] ?? $item['price_global'] ?? $item['price_20ft'] ?? null;
                 $customer->products()->attach($item['product_id'], [
-                    'custom_price_20ft' => $item['price_20ft'] ?? null,
-                    'custom_price_40ft' => $item['price_40ft'] ?? null,
-                    'custom_price_45ft' => $item['price_45ft'] ?? null,
-                    'custom_global_price' => $item['price_global'] ?? null,
+                    'price' => $price,
                 ]);
             }
         }
@@ -147,7 +144,7 @@ class CustomerController extends Controller
         $customPrices = collect();
         try {
             $customPrices = $customer->products()
-                ->withPivot(['custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft', 'custom_global_price'])
+                ->withPivot(['price'])
                 ->get()
                 ->keyBy('id');
         } catch (\Throwable $e) {
@@ -168,10 +165,10 @@ class CustomerController extends Controller
             // Prioritas harga khusus customer
             $customPriceVal = null;
             if ($hasCustom && $custom->pivot) {
-                $customPriceVal = $custom->pivot->custom_global_price 
+                $customPriceVal = $custom->pivot->price 
+                    ?? $custom->pivot->custom_global_price 
                     ?? $custom->pivot->custom_price_20ft 
-                    ?? $custom->pivot->custom_price_40ft 
-                    ?? $custom->pivot->custom_price_45ft;
+                    ?? null;
             }
 
             $effectivePrice = ($hasCustom && $customPriceVal !== null && $customPriceVal !== '')
@@ -184,6 +181,7 @@ class CustomerController extends Controller
                 'requires_temperature' => (bool) $product->requires_temperature,
                 'price' => $masterPrice,
                 'effective_price' => (string) $effectivePrice,
+                'custom_price' => (string) $effectivePrice,
                 'custom_price_20ft' => (string) $effectivePrice,
                 'custom_price_40ft' => (string) $effectivePrice,
                 'custom_price_45ft' => (string) $effectivePrice,

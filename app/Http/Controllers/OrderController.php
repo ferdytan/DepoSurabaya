@@ -952,11 +952,11 @@ foreach ($itemData['additional_product_ids'] as $additional_product_id) {
             ->where('product_id', $productId)
             ->first();
 
-        if ($customerProduct && isset($customerProduct->custom_global_price)) {
-            $priceValue = (float)$customerProduct->custom_global_price;
+        if ($customerProduct && (isset($customerProduct->price) || isset($customerProduct->custom_global_price))) {
+            $priceValue = (float)($customerProduct->price ?? $customerProduct->custom_global_price);
         } else {
-            // Jika tidak ada di customer_product, gunakan price_global dari produk
-            $priceValue = (float)($productMain->price_global ?? 0);
+            // Jika tidak ada di customer_product, gunakan price dari produk
+            $priceValue = (float)($productMain->price ?? $productMain->price_global ?? 0);
         }
     }
 
@@ -1305,6 +1305,9 @@ private function getPriceForType($product, $priceType, $order)
         ->first();
 
     if ($customerProduct) {
+        if (!empty($customerProduct->price) && (float)$customerProduct->price > 0) {
+            return (float)$customerProduct->price;
+        }
         if (!empty($customerProduct->custom_global_price) && (float)$customerProduct->custom_global_price > 0) {
             return (float)$customerProduct->custom_global_price;
         }

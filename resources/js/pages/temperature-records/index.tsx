@@ -90,6 +90,20 @@ function formatDate(dateStr: string | null) {
     return `${day} ${month} ${year}, ${hours}:${minutes}`;
 }
 
+function formatSuhuDateTime(tanggal?: string | null, jam?: string | null): string {
+    if (!tanggal) return '-';
+    let timeStr = '00:00';
+    if (jam) {
+        if (jam.includes(':')) {
+            const parts = jam.split(':');
+            timeStr = `${parts[0].padStart(2, '0')}:${parts[1].padStart(2, '0')}`;
+        } else {
+            timeStr = `${jam.padStart(2, '0')}:00`;
+        }
+    }
+    return formatDate(`${tanggal} ${timeStr}`);
+}
+
 function toDateTimeLocalString(dateStr?: string | Date | null): string {
     if (!dateStr) return '';
     if (dateStr instanceof Date) {
@@ -332,10 +346,23 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     // Helper untuk mengambil suhu terakhir
     const getLatestTemp = (rekamList: TemperatureRecordItem['rekam_suhu']) => {
         if (!rekamList || rekamList.length === 0) return null;
+        // Prioritaskan entri yang memiliki input suhu tidak kosong
         for (const rekam of rekamList) {
-            const entries = Object.entries(rekam.jam_data || {});
+            const entries = Object.entries(rekam.jam_data || {})
+                .filter(([_, val]) => val !== null && val !== undefined && String(val).trim() !== '')
+                .sort(([a], [b]) => b.localeCompare(a));
             if (entries.length > 0) {
-                entries.sort(([a], [b]) => b.localeCompare(a));
+                return {
+                    tanggal: rekam.tanggal,
+                    jam: entries[0][0],
+                    suhu: entries[0][1],
+                };
+            }
+        }
+        // Fallback jika ada entri jam tapi nilainya kosong
+        for (const rekam of rekamList) {
+            const entries = Object.entries(rekam.jam_data || {}).sort(([a], [b]) => b.localeCompare(a));
+            if (entries.length > 0) {
                 return {
                     tanggal: rekam.tanggal,
                     jam: entries[0][0],
@@ -497,8 +524,8 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Customer & Order</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Shipper</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Layanan</TableHead>
-                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Waktu Masuk & Status</TableHead>
-                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Plug In/Out & Shift</TableHead>
+                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Waktu Masuk</TableHead>
+                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Plug In/Out</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Suhu Terakhir</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700 text-right pr-4">Aksi</TableHead>
                                     </TableRow>
@@ -521,7 +548,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                     <TableRow className="hover:bg-gray-50/80 transition-colors">
                                                         {/* No. Kontainer */}
                                                         <TableCell className="py-3.5 font-medium">
-                                                            <div className="flex flex-col gap-1">
+                                                            <div className="flex flex-col gap-1 items-start">
                                                                 <div className="flex items-center gap-1.5">
                                                                     <span className="font-bold text-gray-900 text-sm">
                                                                         {item.container_number}
@@ -537,6 +564,17 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                         {item.commodity}
                                                                     </span>
                                                                 )}
+                                                                <div>
+                                                                    {isInDepo ? (
+                                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                                                            Sedang di Depo
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">
+                                                                            Keluar Depo
+                                                                        </span>
+                                                                    )}
+                                                                </div>
                                                             </div>
                                                         </TableCell>
 
@@ -585,27 +623,14 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                             </div>
                                                         </TableCell>
 
-                                                        {/* Waktu Masuk & Status */}
+                                                        {/* Waktu Masuk */}
                                                         <TableCell className="py-3.5">
-                                                            <div className="flex flex-col gap-1">
-                                                                <span className="text-xs text-gray-700">
-                                                                    {formatDate(item.entry_date)}
-                                                                </span>
-                                                                <div>
-                                                                    {isInDepo ? (
-                                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                                                                            Sedang di Depo
-                                                                        </span>
-                                                                    ) : (
-                                                                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-600 border border-gray-200">
-                                                                            Keluar Depo
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-                                                            </div>
+                                                            <span className="text-xs text-gray-700 whitespace-nowrap">
+                                                                {formatDate(item.entry_date)}
+                                                            </span>
                                                         </TableCell>
 
-                                                        {/* Plug In/Out & Shift */}
+                                                        {/* Plug In/Out */}
                                                         <TableCell className="py-3.5">
                                                             {!item.start_plug_in ? (
                                                                 <div className="flex flex-col gap-1.5 items-start">
@@ -644,9 +669,6 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                             Set Point: {item.set_point}&deg;C
                                                                         </span>
                                                                     )}
-                                                                    <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">
-                                                                        Shift {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} (Aktif)
-                                                                    </span>
                                                                     <div className="flex items-center gap-1">
                                                                         <Button
                                                                             size="sm"
@@ -669,10 +691,9 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                 </div>
                                                             ) : (
                                                                 <div className="flex flex-col gap-1 items-start">
-                                                                    <div className="flex items-center gap-1.5">
-                                                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-gray-900 text-white shadow-2xs">
-                                                                            <CheckCircle2 className="h-3 w-3 text-emerald-400" />
-                                                                            {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} Shift
+                                                                    <div className="flex items-center justify-between w-full gap-2">
+                                                                        <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+                                                                            Riwayat Plug
                                                                         </span>
                                                                         <button
                                                                             type="button"
@@ -701,22 +722,35 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                                                         {/* Suhu Terakhir */}
                                                         <TableCell className="py-3.5">
-                                                            {latest ? (
-                                                                <div className="flex items-center gap-2">
-                                                                    <div className="rounded-lg bg-orange-50 border border-orange-200 px-2.5 py-1 text-center">
+                                                            <div className="flex flex-col items-start gap-1.5">
+                                                                {/* Badge Berapa Shift di atas suhu terakhir */}
+                                                                {item.plug_out ? (
+                                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-gray-900 text-white shadow-2xs">
+                                                                        <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+                                                                        {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} Shift
+                                                                    </span>
+                                                                ) : item.start_plug_in ? (
+                                                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                                                                        Shift {item.total_shifts && item.total_shifts > 0 ? item.total_shifts : 1} (Aktif)
+                                                                    </span>
+                                                                ) : null}
+
+                                                                {/* Card Suhu Terakhir */}
+                                                                {latest ? (
+                                                                    <div className="rounded-lg bg-orange-50 border border-orange-200 px-2.5 py-1 text-center min-w-[125px]">
                                                                         <div className="text-sm font-bold text-orange-700 font-mono">
-                                                                            {latest.suhu}°C
+                                                                            {latest.suhu && String(latest.suhu).trim() !== '' ? `${latest.suhu}°C` : '-°C'}
                                                                         </div>
-                                                                        <div className="text-[10px] text-orange-600 font-medium">
-                                                                            {latest.jam}:00 · {latest.tanggal}
+                                                                        <div className="text-[10px] text-orange-600 font-medium whitespace-nowrap">
+                                                                            {formatSuhuDateTime(latest.tanggal, latest.jam)}
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            ) : (
-                                                                <span className="text-xs text-gray-400 italic">
-                                                                    Belum ada catatan
-                                                                </span>
-                                                            )}
+                                                                ) : (
+                                                                    <span className="text-xs text-gray-400 italic">
+                                                                        Belum ada catatan
+                                                                    </span>
+                                                                )}
+                                                            </div>
                                                         </TableCell>
 
                                                         {/* Aksi */}

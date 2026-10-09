@@ -12,6 +12,48 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    protected static ?bool $hasIsActiveColumn = null;
+
+    /**
+     * Pastikan kolom is_active ada di database atau coba tambahkan secara otomatis.
+     */
+    public static function hasIsActiveColumn(): bool
+    {
+        if (static::$hasIsActiveColumn !== null) {
+            return static::$hasIsActiveColumn;
+        }
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+                return static::$hasIsActiveColumn = true;
+            }
+
+            \Illuminate\Support\Facades\Schema::table('users', function (\Illuminate\Database\Schema\Blueprint $table) {
+                if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+                    $table->boolean('is_active')->default(true)->after('role_id');
+                }
+            });
+
+            return static::$hasIsActiveColumn = \Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active');
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning("Could not auto-add 'is_active' to users: " . $e->getMessage());
+            return static::$hasIsActiveColumn = false;
+        }
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            if (array_key_exists('is_active', $model->attributes)) {
+                if (!static::hasIsActiveColumn()) {
+                    unset($model->attributes['is_active']);
+                }
+            }
+        });
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -295,7 +295,7 @@ export function generateTemperaturePrintHtml(
 <html lang="id">
 <head>
     <meta charset="utf-8">
-    <title>Lembar Suhu - ${containerNumber}</title>
+    <title>Log Suhu - [ ${containerNumber} ]</title>
     <style>
         @page {
             size: A4 portrait;
@@ -903,8 +903,13 @@ export function executeTemperaturePrint(
             frameDoc.write(html);
             frameDoc.close();
 
+            const containerNumber = data.container_number || 'Reefer';
+            const logTitle = `Log Suhu - [ ${containerNumber} ]`;
+
             setTimeout(() => {
+                const prevTitle = document.title;
                 try {
+                    document.title = logTitle;
                     iframe.contentWindow?.focus();
                     iframe.contentWindow?.print();
                     resolve();
@@ -913,6 +918,7 @@ export function executeTemperaturePrint(
                     reject(e);
                 } finally {
                     setTimeout(() => {
+                        document.title = prevTitle;
                         if (document.body.contains(iframe)) {
                             iframe.remove();
                         }

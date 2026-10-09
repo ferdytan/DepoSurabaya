@@ -365,7 +365,7 @@ export default function KarantinaIndex({
             return;
         }
 
-        const titleText = statementType === 'B' ? 'Billing Statement B' : 'Billing Statement A';
+        const titleText = statementType === 'B' ? 'Billing Statement B' : 'Billing Statement';
 
         printWindow.document.write(`
             <!DOCTYPE html>
@@ -975,17 +975,17 @@ export default function KarantinaIndex({
                             )}
                         </Button>
 
-                        {/* Button Billing Statement A */}
+                        {/* Button Billing Statement */}
                         <Button
                             type="button"
                             size="sm"
                             disabled={isPrinting}
                             onClick={() => handlePrint('A')}
                             className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
-                            title="Cetak Billing Statement Format A"
+                            title="Cetak Billing Statement"
                         >
                             <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : ''}`} />
-                            <span>Billing Statement A</span>
+                            <span>Billing Statement</span>
                         </Button>
 
                         {/* Button Billing Statement B */}

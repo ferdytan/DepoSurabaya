@@ -294,12 +294,17 @@ export default function InvoicePreview({
 
     // Fungsi cetak A4 (mencetak tampilan asli yang rapi dan presisi)
     const printInvoice = () => {
+        const originalTitle = document.title;
+        document.title = invoice_number || `INV-${order.order_id || order.id}`;
         window.print();
+        setTimeout(() => {
+            document.title = originalTitle;
+        }, 1500);
     };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title={`Preview Invoice - Order #${order.id}`} />
+            <Head title={invoice_number || `Invoice - Order #${order.id}`} />
 
             <style>{`
                 @media print {

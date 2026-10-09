@@ -225,7 +225,12 @@ export default function ShowInvoice() {
 
     // Fungsi cetak A4 (mencetak tampilan asli yang rapi dan presisi)
     const printInvoice = () => {
+        const originalTitle = document.title;
+        document.title = invoice.invoice_number || `INV-${invoice.id}`;
         window.print();
+        setTimeout(() => {
+            document.title = originalTitle;
+        }, 1500);
     };
 
     const markAsPaid = () => router.put(`/invoices/${invoice.id}/pay`);
@@ -233,7 +238,7 @@ export default function ShowInvoice() {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title={`Invoice ${invoice.invoice_number}`} />
+            <Head title={invoice.invoice_number || `Invoice #${invoice.id}`} />
 
             <style>{`
                 @media print {

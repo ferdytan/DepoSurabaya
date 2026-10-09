@@ -14,11 +14,13 @@ class Customer extends Model
 
     public function products()
     {
+        $pivotCols = CustomerProduct::hasPriceColumn()
+            ? ['price']
+            : ['custom_global_price', 'custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft'];
+
         return $this->belongsToMany(Product::class)
-                    ->using(CustomerProduct::class) // Pastikan model ini dibuat jika belum ada
-                    ->withPivot([
-                        'price',
-                    ])
+                    ->using(CustomerProduct::class)
+                    ->withPivot($pivotCols)
                     ->withTimestamps();
     }
 

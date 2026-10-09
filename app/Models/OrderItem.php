@@ -14,6 +14,49 @@ class OrderItem extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected static ?bool $hasSetPointColumn = null;
+
+    /**
+     * Pastikan kolom set_point ada di database atau coba tambahkan secara otomatis.
+     */
+    public static function hasSetPointColumn(): bool
+    {
+        if (static::$hasSetPointColumn !== null) {
+            return static::$hasSetPointColumn;
+        }
+
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasColumn('order_items', 'set_point')) {
+                return static::$hasSetPointColumn = true;
+            }
+
+            \Illuminate\Support\Facades\Schema::table('order_items', function (\Illuminate\Database\Schema\Blueprint $table) {
+                if (!\Illuminate\Support\Facades\Schema::hasColumn('order_items', 'set_point')) {
+                    $table->decimal('set_point', 6, 2)->nullable()->after('start_plug_in');
+                }
+            });
+
+            return static::$hasSetPointColumn = \Illuminate\Support\Facades\Schema::hasColumn('order_items', 'set_point');
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning("Could not auto-add 'set_point' to order_items: " . $e->getMessage());
+            return static::$hasSetPointColumn = false;
+        }
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            // Jika kolom set_point belum ada di tabel database MySQL, jangan biarkan Eloquent menyertakannya agar tidak throw QueryException 1054
+            if (array_key_exists('set_point', $model->attributes)) {
+                if (!static::hasSetPointColumn()) {
+                    unset($model->attributes['set_point']);
+                }
+            }
+        });
+    }
     
     protected $fillable = [
         'order_id', 'product_id', 'container_number',

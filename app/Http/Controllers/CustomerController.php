@@ -115,11 +115,19 @@ class CustomerController extends Controller
 
         if ($request->has('product_prices') && is_array($validated['product_prices'])) {
             $customer->products()->detach();
+            $hasPriceCol = CustomerProduct::hasPriceColumn();
             foreach ($validated['product_prices'] as $item) {
                 $price = $item['price'] ?? $item['price_global'] ?? $item['price_20ft'] ?? null;
-                $customer->products()->attach($item['product_id'], [
-                    'price' => $price,
-                ]);
+                $pivotData = [];
+                if ($hasPriceCol) {
+                    $pivotData['price'] = $price;
+                } else {
+                    $pivotData['custom_global_price'] = $price;
+                    $pivotData['custom_price_20ft'] = $price;
+                    $pivotData['custom_price_40ft'] = $price;
+                    $pivotData['custom_price_45ft'] = $price;
+                }
+                $customer->products()->attach($item['product_id'], $pivotData);
             }
         }
 
@@ -143,8 +151,12 @@ class CustomerController extends Controller
         // Ambil mapping harga khusus untuk customer ini jika ada di customer_product
         $customPrices = collect();
         try {
+            $pivotCols = CustomerProduct::hasPriceColumn()
+                ? ['price']
+                : ['custom_global_price', 'custom_price_20ft', 'custom_price_40ft', 'custom_price_45ft'];
+
             $customPrices = $customer->products()
-                ->withPivot(['price'])
+                ->withPivot($pivotCols)
                 ->get()
                 ->keyBy('id');
         } catch (\Throwable $e) {

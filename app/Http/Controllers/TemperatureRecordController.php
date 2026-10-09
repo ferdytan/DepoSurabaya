@@ -141,14 +141,14 @@ class TemperatureRecordController extends Controller
         $orderItem->start_plug_in = $time->format('Y-m-d H:i:s');
         $orderItem->plug_out = null;
         $orderItem->plug_duration_minutes = null;
-        if ($request->has('set_point')) {
+        if ($request->has('set_point') && OrderItem::hasSetPointColumn()) {
             $orderItem->set_point = $request->input('set_point') !== null && $request->input('set_point') !== '' ? (float) $request->input('set_point') : null;
         }
         // Shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
         $orderItem->total_shifts = 1;
         $orderItem->save();
 
-        $setPointMsg = $orderItem->set_point !== null ? " (Set Point: {$orderItem->set_point}°C)" : "";
+        $setPointMsg = (OrderItem::hasSetPointColumn() && $orderItem->set_point !== null) ? " (Set Point: {$orderItem->set_point}°C)" : "";
         return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB{$setPointMsg} (Shift 1 aktif).");
     }
 
@@ -215,7 +215,7 @@ class TemperatureRecordController extends Controller
         $orderItem->start_plug_in = $start ? $start->format('Y-m-d H:i:s') : null;
         $orderItem->plug_out = $out ? $out->format('Y-m-d H:i:s') : null;
 
-        if ($request->has('set_point')) {
+        if ($request->has('set_point') && OrderItem::hasSetPointColumn()) {
             $orderItem->set_point = $request->input('set_point') !== null && $request->input('set_point') !== '' ? (float) $request->input('set_point') : null;
         }
 

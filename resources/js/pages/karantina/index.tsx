@@ -12,8 +12,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 import {
     DropdownMenu,
     DropdownMenuContent,
+    DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { terbilang } from '@/lib/terbilang';
 import DateRangePicker from '@/components/date-range-picker';
 import {
     Printer,
@@ -358,14 +360,19 @@ export default function KarantinaIndex({
     };
 
     // Cetak Billing Statement (A atau B)
-    const handlePrint = async (statementType: 'A' | 'B' = 'A') => {
+    const handlePrint = async (statementType: 'A' | 'B' | 'B_CLASSIC' = 'A') => {
         const printWindow = window.open('', '_blank');
         if (!printWindow) {
             alert('Gagal membuka jendela cetak. Pastikan izin popup browser diaktifkan.');
             return;
         }
 
-        const titleText = statementType === 'B' ? 'Billing Statement B' : 'Billing Statement';
+        const titleText =
+            statementType === 'B'
+                ? 'Billing Statement B (Versi 2 Modern)'
+                : statementType === 'B_CLASSIC'
+                ? 'Billing Statement B (Versi 1 Klasik)'
+                : 'Billing Statement';
 
         printWindow.document.write(`
             <!DOCTYPE html>
@@ -480,14 +487,23 @@ export default function KarantinaIndex({
                 ? `${dateFrom ? formatShortDate(dateFrom) : ''} - ${dateTo ? formatShortDate(dateTo) : ''}`
                 : periodLabel;
 
-            const grandTotalSum = allPrintData.reduce((sum: number, item: any) => {
-                const itemTotal = typeof item.total === 'number'
-                    ? item.total
-                    : ((item.price || 0) + Math.round((item.price || 0) * 0.11));
-                return sum + itemTotal;
+            const totalPriceSum = allPrintData.reduce((sum: number, item: any) => {
+                return sum + (typeof item.price === 'number' ? item.price : 0);
             }, 0);
+            const totalPpnSum = allPrintData.reduce((sum: number, item: any) => {
+                const price = typeof item.price === 'number' ? item.price : 0;
+                return sum + (typeof item.ppn === 'number' ? item.ppn : Math.round(price * 0.11));
+            }, 0);
+            const grandTotalSum = totalPriceSum + totalPpnSum;
+            const terbilangStr = terbilang(grandTotalSum);
 
-            const html = statementType === 'B' ? `
+            let html = '';
+
+            if (statementType === 'B') {
+                // ==========================================
+                // BILLING STATEMENT B - VERSI 2 (MODERN A4 LANDSCAPE)
+                // ==========================================
+                html = `
             <!DOCTYPE html>
             <html>
             <head>
@@ -495,8 +511,388 @@ export default function KarantinaIndex({
                 <title>Billing Statement B - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
-                        size: A4 portrait;
-                        margin: 12mm 10mm;
+                        size: A4 landscape;
+                        margin: 8mm 10mm;
+                    }
+                    * {
+                        box-sizing: border-box;
+                        font-family: Arial, 'Segoe UI', Helvetica, sans-serif;
+                        color: #0f172a;
+                    }
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 8.5pt;
+                        background: #ffffff;
+                    }
+                    .header-container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 2.5px solid #0f172a;
+                        padding-bottom: 8px;
+                        margin-bottom: 12px;
+                    }
+                    .header-left {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                    }
+                    .header-logo {
+                        width: 58px;
+                        height: 58px;
+                        object-fit: contain;
+                    }
+                    .company-name {
+                        font-size: 14pt;
+                        font-weight: 800;
+                        color: #0f172a;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 2px;
+                    }
+                    .company-address {
+                        font-size: 8.5pt;
+                        color: #475569;
+                        line-height: 1.35;
+                    }
+                    .header-right {
+                        text-align: right;
+                    }
+                    .statement-title {
+                        font-size: 16pt;
+                        font-weight: 900;
+                        color: #0f172a;
+                        letter-spacing: 1px;
+                        margin-bottom: 2px;
+                    }
+                    .statement-subtitle {
+                        font-size: 8.5pt;
+                        font-weight: 700;
+                        color: #64748b;
+                        letter-spacing: 0.5px;
+                        text-transform: uppercase;
+                    }
+
+                    /* Meta Info Panel */
+                    .meta-panel {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        border-left: 4px solid #0f172a;
+                        border-radius: 4px;
+                        padding: 8px 14px;
+                        margin-bottom: 12px;
+                        font-size: 8.5pt;
+                    }
+                    .meta-col {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                    }
+                    .meta-item {
+                        display: flex;
+                        gap: 8px;
+                    }
+                    .meta-label {
+                        width: 95px;
+                        color: #64748b;
+                        font-weight: 600;
+                    }
+                    .meta-value {
+                        color: #0f172a;
+                        font-weight: 700;
+                    }
+
+                    /* Modern Table B */
+                    table.modern-b-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 8.5pt;
+                    }
+                    table.modern-b-table th {
+                        background-color: #f1f5f9;
+                        color: #0f172a;
+                        font-weight: 700;
+                        border-top: 2px solid #0f172a;
+                        border-bottom: 2px solid #0f172a;
+                        border-left: 1px solid #cbd5e1;
+                        border-right: 1px solid #cbd5e1;
+                        padding: 6px 5px;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    table.modern-b-table td {
+                        border-left: 1px solid #e2e8f0;
+                        border-right: 1px solid #e2e8f0;
+                        padding: 5.5px 6px;
+                        vertical-align: middle;
+                    }
+                    .row-dashed td {
+                        border-bottom: 1px dashed #cbd5e1;
+                    }
+                    .row-solid-bottom td {
+                        border-bottom: 2px solid #0f172a;
+                    }
+                    .text-center { text-align: center; }
+                    .text-right { text-align: right; }
+                    .container-code {
+                        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+                        font-weight: 700;
+                        letter-spacing: 0.5px;
+                        color: #0f172a;
+                    }
+                    .currency-cell {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-variant-numeric: tabular-nums;
+                    }
+                    
+                    /* Summary Row */
+                    .summary-row td {
+                        background-color: #f8fafc;
+                        border-top: 2px solid #0f172a;
+                        border-bottom: 2px solid #0f172a;
+                        padding: 7px 6px;
+                        font-weight: 800;
+                    }
+                    .grand-total-highlight {
+                        background-color: #f1f5f9 !important;
+                        border-left: 1px solid #0f172a !important;
+                        border-right: 1px solid #0f172a !important;
+                    }
+
+                    /* Footer and Signatures */
+                    .footer-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        margin-top: 14px;
+                        page-break-inside: avoid;
+                    }
+                    .footer-left {
+                        width: 58%;
+                    }
+                    .terbilang-card {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        border-left: 3px solid #0f172a;
+                        padding: 6px 12px;
+                        border-radius: 4px;
+                        font-size: 8pt;
+                        margin-bottom: 8px;
+                    }
+                    .terbilang-text {
+                        font-weight: 700;
+                        font-style: italic;
+                        color: #0f172a;
+                    }
+                    .payment-note {
+                        font-size: 7.5pt;
+                        color: #64748b;
+                        line-height: 1.45;
+                    }
+                    .signatures-container {
+                        display: flex;
+                        gap: 36px;
+                        text-align: center;
+                    }
+                    .sig-box {
+                        width: 130px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .sig-title {
+                        font-size: 8pt;
+                        font-weight: 600;
+                        color: #475569;
+                        margin-bottom: 45px;
+                    }
+                    .sig-line {
+                        width: 120px;
+                        border-bottom: 1px solid #0f172a;
+                        margin-bottom: 3px;
+                    }
+                    .sig-caption {
+                        font-size: 7.5pt;
+                        color: #64748b;
+                    }
+                    @media print {
+                        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="header-container">
+                    <div class="header-left">
+                        <img src="${logoUrl}" alt="DSS Logo" class="header-logo" onerror="this.onerror=null;this.src='/logo.png'">
+                        <div>
+                            <div class="company-name">PT. DEPO SURABAYA SEJAHTERA</div>
+                            <div class="company-address">
+                                Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) | Telp. 031-353 9484, 031-3539485 | Fax. 031-3539482<br>
+                                Surabaya, Jawa Timur - Indonesia
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="statement-title">BILLING STATEMENT</div>
+                        <div class="statement-subtitle">LAYANAN KARANTINA & FUMIGASI</div>
+                    </div>
+                </div>
+
+                <div class="meta-panel">
+                    <div class="meta-col">
+                        <div class="meta-item">
+                            <span class="meta-label">Customer</span>
+                            <span>:</span>
+                            <span class="meta-value" style="font-size: 9.5pt; color: #0284c7;">${customerNameLabel}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Periode</span>
+                            <span>:</span>
+                            <span class="meta-value">${periodB}</span>
+                        </div>
+                    </div>
+                    <div class="meta-col" style="align-items: flex-end;">
+                        <div class="meta-item">
+                            <span class="meta-label" style="width: auto;">Total Kontainer :</span>
+                            <span class="meta-value">${allPrintData.length} Unit</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label" style="width: auto;">Dicetak :</span>
+                            <span class="meta-value">${printDateStr} WIB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="modern-b-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 28px;">No.</th>
+                            <th rowspan="2" style="width: 135px;">No. Container</th>
+                            <th rowspan="2" style="width: 140px;">Shipper</th>
+                            <th colspan="2">Date / Time</th>
+                            <th rowspan="2" style="width: 50px;">Ukuran</th>
+                            <th rowspan="2" style="width: 85px;">Jasa</th>
+                            <th rowspan="2" style="width: 95px;">Fumigator</th>
+                            <th rowspan="2" style="width: 110px;">Price</th>
+                            <th rowspan="2" style="width: 95px;">PPN 11 %</th>
+                            <th rowspan="2" style="width: 115px;">Total</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 95px;">In</th>
+                            <th style="width: 95px;">Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${allPrintData.map((item: any, idx: number) => {
+                            const isLast = idx === allPrintData.length - 1;
+                            const rowClass = isLast ? 'row-solid-bottom' : 'row-dashed';
+                            const priceVal = typeof item.price === 'number' ? item.price : 0;
+                            const ppnVal = typeof item.ppn === 'number' ? item.ppn : Math.round(priceVal * 0.11);
+                            const totalVal = typeof item.total === 'number' ? item.total : (priceVal + ppnVal);
+
+                            return `
+                            <tr class="${rowClass}">
+                                <td class="text-center">${idx + 1}</td>
+                                <td class="text-center container-code">${item.container_number}</td>
+                                <td>${item.shipper_name ?? '-'}</td>
+                                <td class="text-center">${formatStatementBDateTime(item.entry_date)}</td>
+                                <td class="text-center">${formatStatementBDateTime(item.exit_date)}</td>
+                                <td class="text-center">${formatStatementBSize(item.price_type)}</td>
+                                <td class="text-center">${item.service_type ?? 'Fumigasi'}</td>
+                                <td class="text-center">${item.fumigasi ?? '-'}</td>
+                                <td>
+                                    <div class="currency-cell">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(priceVal)}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency-cell">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(ppnVal)}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency-cell" style="font-weight: 700;">
+                                        <span>Rp</span>
+                                        <span>${formatRupiahNumber(totalVal)}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            `;
+                        }).join('')}
+                        <tr class="summary-row">
+                            <td colspan="7" class="text-right">
+                                TOTAL KESELURUHAN (${allPrintData.length} Kontainer)
+                            </td>
+                            <td>
+                                <div class="currency-cell">
+                                    <span>Rp</span>
+                                    <span>${formatRupiahNumber(totalPriceSum)}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="currency-cell">
+                                    <span>Rp</span>
+                                    <span>${formatRupiahNumber(totalPpnSum)}</span>
+                                </div>
+                            </td>
+                            <td class="grand-total-highlight">
+                                <div class="currency-cell" style="font-weight: 900; font-size: 9pt;">
+                                    <span>Rp</span>
+                                    <span>${formatRupiahNumber(grandTotalSum)}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="footer-wrapper">
+                    <div class="footer-left">
+                        <div class="terbilang-card">
+                            <span style="font-weight: 600; color: #64748b;">Terbilang: </span>
+                            <span class="terbilang-text"># ${terbilangStr} Rupiah #</span>
+                        </div>
+                        <div class="payment-note">
+                            * Pembayaran harap ditransfer ke rekening resmi <strong>PT. DEPO SURABAYA SEJAHTERA</strong>.<br>
+                            * Bukti transfer mohon dikirimkan kepada bagian Keuangan / Finance Depo Surabaya.
+                        </div>
+                    </div>
+                    <div class="signatures-container">
+                        <div class="sig-box">
+                            <div class="sig-title">Dibuat Oleh,</div>
+                            <div class="sig-line"></div>
+                            <div class="sig-caption">Bagian Billing / Kasir</div>
+                        </div>
+                        <div class="sig-box">
+                            <div class="sig-title">Mengetahui,</div>
+                            <div class="sig-line"></div>
+                            <div class="sig-caption">Finance & Accounting</div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+                `;
+            } else if (statementType === 'B_CLASSIC') {
+                // ==========================================
+                // BILLING STATEMENT B - VERSI 1 (KLASIK / RETRO A4 LANDSCAPE)
+                // ==========================================
+                html = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Billing Statement B (Klasik) - PT. Depo Surabaya Sejahtera</title>
+                <style>
+                    @page {
+                        size: A4 landscape;
+                        margin: 8mm 10mm;
                     }
                     * {
                         box-sizing: border-box;
@@ -512,7 +908,7 @@ export default function KarantinaIndex({
                         display: flex;
                         align-items: center;
                         gap: 14px;
-                        margin-bottom: 22px;
+                        margin-bottom: 18px;
                     }
                     .header-logo {
                         width: 58px;
@@ -532,14 +928,14 @@ export default function KarantinaIndex({
                         color: #222;
                     }
                     .statement-title-section {
-                        margin-bottom: 14px;
+                        margin-bottom: 12px;
                     }
                     .statement-title {
                         font-size: 11pt;
                         font-weight: 800;
                         text-transform: uppercase;
                         letter-spacing: 0.5px;
-                        margin-bottom: 8px;
+                        margin-bottom: 6px;
                     }
                     .meta-table {
                         border-collapse: collapse;
@@ -641,19 +1037,19 @@ export default function KarantinaIndex({
                     <thead>
                         <tr>
                             <th rowspan="2" style="width: 28px;">No.</th>
-                            <th rowspan="2" style="width: 130px;">No. Container</th>
-                            <th rowspan="2" style="width: 110px;">Shipper</th>
+                            <th rowspan="2" style="width: 135px;">No. Container</th>
+                            <th rowspan="2" style="width: 140px;">Shipper</th>
                             <th colspan="2">Date / Time</th>
-                            <th rowspan="2" style="width: 48px;">Ukuran</th>
-                            <th rowspan="2" style="width: 80px;">Jasa</th>
-                            <th rowspan="2" style="width: 85px;">Fumigator</th>
-                            <th rowspan="2" style="width: 95px;">Price</th>
-                            <th rowspan="2" style="width: 85px;">PPN 11 %</th>
-                            <th rowspan="2" style="width: 100px;">Total</th>
+                            <th rowspan="2" style="width: 50px;">Ukuran</th>
+                            <th rowspan="2" style="width: 85px;">Jasa</th>
+                            <th rowspan="2" style="width: 95px;">Fumigator</th>
+                            <th rowspan="2" style="width: 110px;">Price</th>
+                            <th rowspan="2" style="width: 95px;">PPN 11 %</th>
+                            <th rowspan="2" style="width: 115px;">Total</th>
                         </tr>
                         <tr>
-                            <th style="width: 110px;">In</th>
-                            <th style="width: 110px;">Out</th>
+                            <th style="width: 95px;">In</th>
+                            <th style="width: 95px;">Out</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -708,7 +1104,12 @@ export default function KarantinaIndex({
                 </table>
             </body>
             </html>
-            ` : `
+                `;
+            } else {
+                // ==========================================
+                // BILLING STATEMENT (FORMAT A)
+                // ==========================================
+                html = `
             <!DOCTYPE html>
             <html>
             <head>
@@ -850,6 +1251,7 @@ export default function KarantinaIndex({
             </body>
             </html>
             `;
+            }
 
             printWindow.document.open();
             printWindow.document.write(html);
@@ -988,19 +1390,49 @@ export default function KarantinaIndex({
                             <span>Billing Statement</span>
                         </Button>
 
-                        {/* Button Billing Statement B */}
-                        <Button
-                            type="button"
-                            size="sm"
-                            disabled={isPrinting}
-                            onClick={() => handlePrint('B')}
-                            variant="outline"
-                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
-                            title="Cetak Billing Statement Format B"
-                        >
-                            <Printer className="h-3.5 w-3.5 text-gray-600" />
-                            <span>Billing Statement B</span>
-                        </Button>
+                        {/* Dropdown Button Billing Statement B */}
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    type="button"
+                                    size="sm"
+                                    disabled={isPrinting}
+                                    variant="outline"
+                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
+                                    title="Pilih dan Cetak Billing Statement Format B"
+                                >
+                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                    <span>Billing Statement B</span>
+                                    <ChevronDown className="h-3 w-3 text-gray-400 ml-0.5" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-72">
+                                <DropdownMenuItem
+                                    onClick={() => handlePrint('B')}
+                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3"
+                                >
+                                    <div className="font-semibold text-xs text-gray-900 flex items-center gap-1.5">
+                                        <Printer className="h-3.5 w-3.5 text-blue-600" />
+                                        <span>Versi 2 (Modern - A4 Landscape)</span>
+                                    </div>
+                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
+                                        Desain modern, rekap total, terbilang resmi & kolom tanda tangan
+                                    </span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                    onClick={() => handlePrint('B_CLASSIC')}
+                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3 border-t border-gray-100"
+                                >
+                                    <div className="font-semibold text-xs text-gray-700 flex items-center gap-1.5">
+                                        <Printer className="h-3.5 w-3.5 text-gray-500" />
+                                        <span>Versi 1 (Klasik - A4 Landscape)</span>
+                                    </div>
+                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
+                                        Format tabel standar klasik / retro
+                                    </span>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { type BreadcrumbItem, type SharedData } from '@/types';
+import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { Fragment, useEffect, useState } from 'react';
 // UI Components
@@ -189,9 +189,17 @@ function splitDateTime(dateStr?: string | null) {
 }
 
 function formatDate(dateStr?: string | null) {
-    const res = splitDateTime(dateStr);
-    if (!res) return '-';
-    return `${res.date}, ${res.time}`;
+    if (!dateStr) return '-';
+    const cleanStr = typeof dateStr === 'string' ? dateStr.replace(' ', 'T') : dateStr;
+    const date = new Date(cleanStr);
+    if (isNaN(date.getTime())) return '-';
+    const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = monthShort[date.getMonth()];
+    const year = date.getFullYear();
+    const hour = date.getHours().toString().padStart(2, '0');
+    const minute = date.getMinutes().toString().padStart(2, '0');
+    return `${day} ${month} ${year}, ${hour}:${minute}`;
 }
 
 function isPlugOrSuhuService(product?: { service_type?: string; requires_temperature?: number | boolean | null } | null): boolean {
@@ -251,7 +259,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
     const [perPage, setPerPage] = useState<string>(String(filters?.per_page || orders?.per_page || 25));
     const [needInvoice, setNeedInvoice] = useState(Boolean(canManageInvoice && filters?.need_invoice));
 
-    // Sinkronkan state lokal jika props filter dari server berubah
+    // Sinkronkan state lokal jika props filter dari server berubah (misal saat kembali dari edit order)
     useEffect(() => {
         setSearch(filters?.search ?? '');
         setIsTrashed(!!filters.trashed);
@@ -282,7 +290,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
     const [deleteOrderReason, setDeleteOrderReason] = useState('');
     const [orderIdToDelete, setOrderIdToDelete] = useState<number | null>(null);
 
-    // Modal cetak Surat Jalan
+    // Modal cetak Surat Jalan (21 x 14 cm)
     const [suratJalanModalOpen, setSuratJalanModalOpen] = useState(false);
     const [selectedSuratJalan, setSelectedSuratJalan] = useState<SuratJalanData | null>(null);
 
@@ -653,12 +661,12 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                 {label}
                 {currentSort === field ? (
                     direction === 'asc' ? (
-                        <ArrowUp className="h-3.5 w-3.5" />
+                        <ArrowUp className="h-4 w-4" />
                     ) : (
-                        <ArrowDown className="h-3.5 w-3.5" />
+                        <ArrowDown className="h-4 w-4" />
                     )
                 ) : (
-                    <ArrowUpDown className="h-3.5 w-3.5 text-gray-400" />
+                    <ArrowUpDown className="h-4 w-4 text-gray-400" />
                 )}
             </Link>
         );
@@ -692,10 +700,10 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
 
     return (
         <div className="min-h-screen bg-slate-50/50 flex flex-col font-sans">
-            <Head title="Order Management v2 (Compact)" />
+            <Head title="Order Management v2" />
 
             {/* Topbar: Standalone without left sidebar menu */}
-            <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-gray-200 bg-white/95 px-4 sm:px-6 backdrop-blur-sm shadow-2xs">
+            <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-gray-200 bg-white/95 px-4 sm:px-6 lg:px-8 backdrop-blur-sm shadow-2xs">
                 {/* Brand & Page Identity */}
                 <div className="flex items-center gap-3">
                     <Link href="/dashboard" className="flex items-center gap-2 hover:opacity-85 transition-opacity" title="Ke Dashboard">
@@ -703,20 +711,20 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                     </Link>
                     <span className="hidden sm:inline-block h-4 w-px bg-gray-200" />
                     <div className="flex items-center gap-2">
-                        <span className="hidden sm:inline-block text-sm font-bold text-gray-900">Order Management</span>
-                        <Badge variant="outline" className="text-[10px] bg-sky-50 text-sky-800 border-sky-300 font-bold px-2 py-0.5">
+                        <span className="hidden sm:inline-block text-sm font-semibold text-gray-900">Order Management</span>
+                        <Badge variant="outline" className="text-xs bg-sky-50 text-sky-800 border-sky-300 font-semibold px-2 py-0.5">
                             v2 Compact
                         </Badge>
                     </div>
                 </div>
 
                 {/* Right Actions: Global Search, Normal View Link, User Profile */}
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-3">
                     <div className="w-48 sm:w-64">
                         <GlobalContainerSearch />
                     </div>
 
-                    <Button variant="outline" size="sm" asChild className="h-9 text-xs font-medium text-gray-700 hover:text-gray-900 border-gray-200 hidden md:inline-flex">
+                    <Button variant="outline" size="sm" asChild className="h-9 text-xs font-semibold text-gray-700 hover:text-gray-900 border-gray-200 hidden md:inline-flex">
                         <Link href="/orders">
                             Tampilan Biasa
                         </Link>
@@ -741,39 +749,31 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                 </div>
             </header>
 
-            {/* Main Content Area - Full Width, No Horizontal Scroll */}
-            <main className="flex-1 w-full px-3 sm:px-6 py-5 max-w-[1720px] mx-auto space-y-4">
-                {/* Flash Messages */}
-                {props.flash?.success && (
-                    <div className="rounded-lg bg-green-50 border border-green-200 p-3.5 text-xs text-green-800 flex items-center justify-between">
-                        <span>{props.flash.success}</span>
-                    </div>
-                )}
-                {props.flash?.error && (
-                    <div className="rounded-lg bg-red-50 border border-red-200 p-3.5 text-xs text-red-800 flex items-center justify-between">
-                        <span>{props.flash.error}</span>
-                    </div>
-                )}
+            {/* Main Content Area - Full Width, Standard Sizing & Typography */}
+            <main className="flex-1 w-full space-y-6 px-4 py-6 sm:px-6 lg:px-8">
+                {/* Flash Message */}
+                {props.flash?.success && <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">{props.flash.success}</div>}
+                {props.flash?.error && <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">{props.flash.error}</div>}
 
-                {/* Header Toolbar */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                {/* Header Toolbar - Styled identically to Order Biasa */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                        <div className="flex items-center gap-2">
-                            <Boxes className="h-6 w-6 text-gray-900" />
-                            <h1 className="text-xl font-bold tracking-tight text-gray-900">Daftar Order (Compact View)</h1>
+                        <div className="flex items-center gap-2.5">
+                            <Boxes className="h-7 w-7 text-gray-900" />
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-900">Order List</h1>
                         </div>
-                        <p className="text-xs text-gray-500 mt-0.5">Tampilan ringkas tanpa scroll samping dengan akses langsung URL.</p>
+                        <p className="text-sm text-gray-500 mt-1">Manage all registered orders and their statuses.</p>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2">
-                        <Button variant="outline" size="sm" onClick={toggleTrashed} className="text-xs h-8.5">
+                    <div className="flex flex-wrap items-center gap-2.5">
+                        <Button variant="outline" size="sm" onClick={toggleTrashed} className="text-xs h-9">
                             {isTrashed ? 'Sembunyikan Order Dihapus' : 'Tampilkan Order Dihapus'}
                         </Button>
 
-                        <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium px-2 py-0.5 bg-white border border-gray-200 rounded-md shadow-2xs h-8.5">
-                            <span className="shrink-0 text-[11px]">Tampilkan:</span>
+                        <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium px-2 py-1 bg-white border border-gray-200 rounded-md shadow-xs h-9">
+                            <span className="shrink-0">Tampilkan:</span>
                             <Select value={perPage} onValueChange={handlePerPageChange}>
-                                <SelectTrigger className="h-7 w-[65px] text-xs font-semibold border-0 focus:ring-0 p-1">
+                                <SelectTrigger className="h-7 w-[70px] text-xs font-semibold border-0 focus:ring-0 p-1">
                                     <SelectValue placeholder="25" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -786,9 +786,9 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                         </div>
 
                         {roleId != 3 && roleId != 5 && (
-                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-8.5 text-xs font-semibold">
+                            <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white gap-1.5 h-9 text-xs font-semibold">
                                 <Link href={`/orders/create${getReturnUrlQuery()}`}>
-                                    <Plus className="h-3.5 w-3.5" />
+                                    <Plus className="h-4 w-4" />
                                     Create Order
                                 </Link>
                             </Button>
@@ -796,23 +796,23 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                     </div>
                 </div>
 
-                {/* Search & Filter Bar */}
-                <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-2xs">
+                {/* Unified Search & Date Filter Card */}
+                <div className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-xs">
                     <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2.5">
                         {/* Search Input */}
-                        <div className="relative flex-1 min-w-[200px]">
+                        <div className="relative flex-1 min-w-[240px]">
                             <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                             <Input
                                 id="search"
-                                placeholder="Cari customer, produk, no kontainer, komoditi... (Enter)"
+                                placeholder="Cari customer, produk, atau kontainer... (Enter)"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 onKeyUp={(e) => e.key === 'Enter' && handleSearch()}
-                                className="pl-9 h-8.5 text-xs"
+                                className="pl-9 h-9 text-xs"
                             />
                         </div>
 
-                        {/* Date Range Picker */}
+                        {/* Modern Date Range Picker */}
                         <DateRangePicker
                             startDate={dateFrom}
                             endDate={dateTo}
@@ -836,13 +836,13 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     { preserveState: true, replace: true }
                                 );
                             }}
-                            placeholder="Filter tanggal masuk..."
-                            className="w-full sm:w-[240px] shrink-0"
+                            placeholder="Filter rentang tanggal masuk..."
+                            className="w-full sm:w-[260px] shrink-0"
                             align="right"
                         />
 
                         {/* Filter Buttons */}
-                        <div className="flex items-center gap-1.5 shrink-0">
+                        <div className="flex items-center gap-2 shrink-0">
                             {canManageInvoice && (
                                 <Button
                                     size="sm"
@@ -859,7 +859,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                             need_invoice: next ? '1' : undefined,
                                         });
                                     }}
-                                    className={`h-8.5 text-xs px-2.5 gap-1.5 font-semibold transition-colors ${
+                                    className={`h-9 text-xs px-3 gap-1.5 font-semibold transition-colors ${
                                         needInvoice
                                             ? 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600 shadow-2xs'
                                             : 'text-blue-700 hover:bg-blue-50 border-blue-200'
@@ -867,10 +867,10 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     title="Filter order yang kontainernya sudah Gate In & Gate Out dan belum dibuatkan invoice"
                                 >
                                     <Receipt className="h-3.5 w-3.5" />
-                                    <span>Perlu Invoice</span>
+                                    <span>Perlu Diinvoicekan</span>
                                 </Button>
                             )}
-                            <Button size="sm" onClick={handleSearch} className="h-8.5 text-xs px-3 bg-gray-900 hover:bg-black text-white gap-1.5">
+                            <Button size="sm" onClick={handleSearch} className="h-9 text-xs px-3.5 bg-gray-900 hover:bg-black text-white gap-1.5">
                                 <Search className="h-3.5 w-3.5" />
                                 Filter
                             </Button>
@@ -887,7 +887,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                         per_page: perPage,
                                     });
                                 }}
-                                className="h-8.5 text-xs px-2.5 text-gray-600 hover:text-red-600 gap-1.5"
+                                className="h-9 text-xs px-3 text-gray-600 hover:text-red-600 gap-1.5"
                                 title="Reset filter"
                             >
                                 <RotateCcw className="h-3.5 w-3.5" />
@@ -899,13 +899,13 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
 
                 {/* Banner Filter Aktif Invoice */}
                 {canManageInvoice && needInvoice && (
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 rounded-lg bg-blue-50 border border-blue-200 p-3 text-xs text-blue-900 shadow-2xs">
-                        <div className="flex items-center gap-2">
-                            <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse shrink-0"></span>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl bg-blue-50 border border-blue-200 p-4 text-xs text-blue-900 shadow-xs">
+                        <div className="flex items-center gap-2.5">
+                            <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600 animate-pulse shrink-0"></span>
                             <div>
-                                <span className="font-bold">Filter Aktif: Perlu Diinvoicekan</span>
+                                <span className="font-bold">Filter Aktif: Order Perlu Diinvoicekan</span>
                                 <span className="text-blue-700 ml-1.5">
-                                    Menampilkan kontainer yang sudah ada Masuk & Keluar serta belum dibuatkan invoice.
+                                    Menampilkan kontainer yang sudah ada <strong>Gate In</strong> dan <strong>Gate Out</strong> serta belum dibuatkan invoice.
                                 </span>
                             </div>
                         </div>
@@ -921,62 +921,54 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     per_page: perPage,
                                 });
                             }}
-                            className="inline-flex items-center gap-1 font-semibold text-blue-700 hover:text-blue-900 underline shrink-0 cursor-pointer text-xs"
+                            className="inline-flex items-center gap-1 font-semibold text-blue-700 hover:text-blue-900 underline shrink-0 cursor-pointer"
                         >
-                            <X className="h-3 w-3" />
-                            Tampilkan Semua
+                            <X className="h-3.5 w-3.5" />
+                            Tampilkan Semua Order
                         </button>
                     </div>
                 )}
 
-                {/* Compact Table (100% Fit, No Horizontal Scrolling) */}
-                <div className="rounded-xl border border-gray-200 bg-white shadow-2xs overflow-hidden">
-                    <Table className="w-full table-fixed text-xs">
-                        <TableHeader className="bg-gray-50/80 border-b border-gray-200">
-                            <TableRow className="hover:bg-transparent">
-                                <TableHead className="w-[20%] font-bold text-gray-700 py-2.5 px-3">
+                {/* Data Table - Same standard font size & font styles as Order Biasa */}
+                <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+                    <Table className="w-full table-fixed">
+                        <TableHeader className="bg-gray-50/75">
+                            <TableRow>
+                                <TableHead className="w-[19%]">
                                     <SortButton
-                                        label="Customer & Shipper"
+                                        label="Nama Customer"
                                         field="customers.name"
                                         currentSort={filters.sort_by}
                                         currentDir={filters.sort_dir}
                                     />
                                 </TableHead>
-                                <TableHead className="w-[14%] font-bold text-gray-700 py-2.5 px-3">
+                                <TableHead className="w-[14%]">
                                     <SortButton
-                                        label="Layanan"
+                                        label="Produk"
                                         field="products.service_type"
                                         currentSort={filters.sort_by}
                                         currentDir={filters.sort_dir}
                                     />
                                 </TableHead>
-                                <TableHead className="w-[17%] font-bold text-gray-700 py-2.5 px-3">
+                                <TableHead className="w-[17%]">
                                     <SortButton
-                                        label="No. Kontainer"
+                                        label="Nomor Kontainer"
                                         field="container_number"
                                         currentSort={filters.sort_by}
                                         currentDir={filters.sort_dir}
                                     />
                                 </TableHead>
-                                <TableHead className="w-[13%] font-bold text-gray-700 py-2.5 px-3">
-                                    Tanggal Masuk
-                                </TableHead>
-                                <TableHead className="w-[13%] font-bold text-gray-700 py-2.5 px-3">
-                                    Tanggal Keluar
-                                </TableHead>
-                                <TableHead className="w-[10%] font-bold text-gray-700 py-2.5 px-3 text-center">
-                                    Temperatur
-                                </TableHead>
-                                <TableHead className="w-[13%] font-bold text-gray-700 py-2.5 px-3">
-                                    Keterangan
-                                </TableHead>
+                                <TableHead className="w-[13%]">Tanggal Masuk</TableHead>
+                                <TableHead className="w-[13%]">Tanggal Keluar</TableHead>
+                                <TableHead className="w-[11%] text-center">Temperatur</TableHead>
+                                <TableHead className="w-[13%]">Keterangan</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {orders.data.length === 0 ? (
                                 <TableRow>
-                                    <TableCell colSpan={7} className="py-12 text-center text-xs text-muted-foreground">
-                                        Tidak ada data order ditemukan.
+                                    <TableCell colSpan={7} className="py-8 text-center text-sm text-muted-foreground">
+                                        No orders found.
                                     </TableCell>
                                 </TableRow>
                             ) : (
@@ -989,7 +981,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                         <Fragment key={groupKey}>
                                             {/* Collapsible Order Group Header Row */}
                                             <TableRow
-                                                className="cursor-pointer bg-slate-100/90 hover:bg-slate-200/90 transition-colors border-y border-gray-200"
+                                                className="cursor-pointer bg-gray-100 hover:bg-gray-200 transition-colors"
                                                 onClick={() =>
                                                     setCollapsedGroups((prev) => ({
                                                         ...prev,
@@ -997,42 +989,42 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                     }))
                                                 }
                                             >
-                                                <TableCell colSpan={7} className="py-2 px-3">
-                                                    <div className="flex items-center justify-between gap-2">
-                                                        {/* Left: Collapse Icon, Order ID, AJU, Exclude, Actions */}
+                                                <TableCell colSpan={7} className="py-2.5 px-3 font-semibold">
+                                                    <div className="flex items-center justify-between gap-3">
+                                                        {/* Left: Order ID, AJU, Exclude badge, AND Action Buttons directly inline */}
                                                         <div className="flex items-center flex-wrap gap-2">
                                                             <button
                                                                 type="button"
-                                                                className="p-1 hover:bg-gray-300/70 rounded text-gray-600 transition-colors"
+                                                                className="p-1 hover:bg-gray-300/60 rounded text-gray-600 transition-colors"
                                                                 title={isCollapsed ? 'Buka grup' : 'Tutup grup'}
                                                             >
                                                                 {isCollapsed ? (
-                                                                    <ArrowDown className="h-3.5 w-3.5" />
+                                                                    <ArrowDown className="h-4 w-4" />
                                                                 ) : (
-                                                                    <ArrowUp className="h-3.5 w-3.5" />
+                                                                    <ArrowUp className="h-4 w-4" />
                                                                 )}
                                                             </button>
 
-                                                            {/* Order ID */}
-                                                            <span className="font-bold text-xs text-gray-900 bg-white px-2 py-0.5 rounded border border-gray-300 shadow-2xs font-mono">
+                                                            {/* Direct Order ID without redundant text */}
+                                                            <span className="font-bold text-sm text-gray-950 bg-white px-2.5 py-0.5 rounded border border-gray-300 shadow-xs">
                                                                 {firstOrder.order?.order_id ?? firstOrder.order_id}
                                                             </span>
 
                                                             {/* AJU */}
                                                             {firstOrder.no_aju && firstOrder.no_aju.trim() !== '' && firstOrder.no_aju !== '-' && (
-                                                                <span className="text-[11px] text-gray-600 font-medium">
-                                                                    AJU: <strong className="text-gray-800">{firstOrder.no_aju}</strong>
+                                                                <span className="text-xs text-gray-500 font-medium">
+                                                                    AJU: {firstOrder.no_aju}
                                                                 </span>
                                                             )}
 
-                                                            {/* Excluded Badge */}
+                                                            {/* Excluded dari Report Badge */}
                                                             {firstOrder.order?.is_excluded_from_report && (
-                                                                <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-100 text-amber-800 border border-amber-300">
                                                                     Excluded dari Report
                                                                 </span>
                                                             )}
 
-                                                            {/* Action Icons directly inline with Order ID */}
+                                                            {/* Action Icons aligned directly with ORD ID */}
                                                             <div className="flex items-center gap-1 ml-1 pl-2 border-l border-gray-300">
                                                                 {isTrashed ? (
                                                                     <Button
@@ -1051,17 +1043,17 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                 },
                                                                             );
                                                                         }}
-                                                                        className="inline-flex items-center gap-1 h-6.5 text-[11px] px-2"
+                                                                        className="inline-flex items-center gap-1 h-7 text-xs px-2"
                                                                         title="Pulihkan Order"
                                                                     >
-                                                                        <RotateCcw className="h-3 w-3" />
+                                                                        <RotateCcw className="h-3.5 w-3.5" />
                                                                         Pulihkan
                                                                     </Button>
                                                                 ) : (
                                                                     <>
                                                                         {roleId != 3 && roleId != 5 && (
                                                                             <>
-                                                                                {/* Shortcut Buat Invoice */}
+                                                                                {/* Action 1: Shortcut Buat Invoice */}
                                                                                 <Link
                                                                                     href={route('invoices.create', {
                                                                                         customer_id: firstOrder.order?.customer?.id ?? firstOrder.customer_id,
@@ -1069,12 +1061,12 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                     })}
                                                                                     title="Buat Invoice untuk Order ini"
                                                                                     onClick={(e) => e.stopPropagation()}
-                                                                                    className="text-emerald-700 hover:text-emerald-900 p-1 rounded hover:bg-emerald-100/80 transition-colors"
+                                                                                    className="text-emerald-700 hover:text-emerald-900 p-1.5 rounded hover:bg-emerald-100/80 transition-colors"
                                                                                 >
-                                                                                    <Receipt className="h-3.5 w-3.5" />
+                                                                                    <Receipt className="h-4 w-4" />
                                                                                 </Link>
 
-                                                                                {/* Exclude dari Report */}
+                                                                                {/* Action 2: Exclude dari Report */}
                                                                                 <button
                                                                                     type="button"
                                                                                     onClick={(e) => {
@@ -1090,16 +1082,16 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                             ? 'Order ini di-exclude dari Report. Klik untuk include kembali'
                                                                                             : 'Klik untuk exclude order ini dari Report'
                                                                                     }
-                                                                                    className={`p-1 rounded transition-colors ${
+                                                                                    className={`p-1.5 rounded transition-colors ${
                                                                                         firstOrder.order?.is_excluded_from_report
                                                                                             ? 'text-amber-600 hover:text-amber-800 bg-amber-100'
                                                                                             : 'text-gray-400 hover:text-amber-600 hover:bg-gray-200'
                                                                                     }`}
                                                                                 >
-                                                                                    <EyeOff className="h-3.5 w-3.5" />
+                                                                                    <EyeOff className="h-4 w-4" />
                                                                                 </button>
 
-                                                                                {/* Cetak Surat Jalan */}
+                                                                                {/* Action 3: Cetak Surat Jalan */}
                                                                                 <button
                                                                                     type="button"
                                                                                     onClick={(e) => {
@@ -1107,9 +1099,9 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                         openSuratJalanModal(firstOrder);
                                                                                     }}
                                                                                     title="Cetak Surat Jalan (21 x 14 cm)"
-                                                                                    className="text-indigo-600 hover:text-indigo-800 p-1 rounded hover:bg-indigo-100/80 transition-colors"
+                                                                                    className="text-indigo-600 hover:text-indigo-800 p-1.5 rounded hover:bg-indigo-100/80 transition-colors"
                                                                                 >
-                                                                                    <Printer className="h-3.5 w-3.5" />
+                                                                                    <Printer className="h-4 w-4" />
                                                                                 </button>
 
                                                                                 {/* Detail Order */}
@@ -1117,9 +1109,9 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                     href={`${route('orders.show', firstOrder.order.id)}${getReturnUrlQuery()}`}
                                                                                     title="Lihat Detail Order"
                                                                                     onClick={(e) => e.stopPropagation()}
-                                                                                    className="text-gray-600 hover:text-gray-900 p-1 rounded hover:bg-gray-200 transition-colors"
+                                                                                    className="text-gray-600 hover:text-gray-900 p-1.5 rounded hover:bg-gray-200 transition-colors"
                                                                                 >
-                                                                                    <Eye className="h-3.5 w-3.5" />
+                                                                                    <Eye className="h-4 w-4" />
                                                                                 </Link>
 
                                                                                 {/* Edit Order */}
@@ -1127,9 +1119,9 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                     href={`${route('orders.edit', firstOrder.order.id)}${getReturnUrlQuery()}`}
                                                                                     title="Edit Order"
                                                                                     onClick={(e) => e.stopPropagation()}
-                                                                                    className="text-blue-600 hover:text-blue-800 p-1 rounded hover:bg-blue-100/80 transition-colors"
+                                                                                    className="text-blue-600 hover:text-blue-800 p-1.5 rounded hover:bg-blue-100/80 transition-colors"
                                                                                 >
-                                                                                    <Pencil className="h-3.5 w-3.5" />
+                                                                                    <Pencil className="h-4 w-4" />
                                                                                 </Link>
 
                                                                                 {/* Delete Order */}
@@ -1141,9 +1133,9 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                             openDeleteOrderModal(firstOrder.order.id);
                                                                                         }}
                                                                                         title="Hapus Order"
-                                                                                        className="text-red-600 hover:text-red-800 p-1 rounded hover:bg-red-100/80 transition-colors"
+                                                                                        className="text-red-600 hover:text-red-800 p-1.5 rounded hover:bg-red-100/80 transition-colors"
                                                                                     >
-                                                                                        <Trash2 className="h-3.5 w-3.5" />
+                                                                                        <Trash2 className="h-4 w-4" />
                                                                                     </button>
                                                                                 )}
                                                                             </>
@@ -1154,7 +1146,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                         </div>
 
                                                         {/* Right: Container count badge */}
-                                                        <div className="text-[11px] text-gray-500 font-medium shrink-0">
+                                                        <div className="text-xs text-gray-500 font-normal shrink-0">
                                                             {groupOrders.length} Kontainer
                                                         </div>
                                                     </div>
@@ -1169,19 +1161,19 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                     const eirDt = splitDateTime(order.eir_date);
 
                                                     return (
-                                                        <TableRow key={order.id} className="hover:bg-slate-50/80 transition-colors group">
+                                                        <TableRow key={order.id} className="group hover:bg-gray-50/50">
                                                             {/* 1. Customer & Shipper */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
+                                                            <TableCell className="py-3">
                                                                 <div className="flex flex-col min-w-0">
                                                                     <span
-                                                                        className="font-semibold text-gray-900 truncate block text-xs"
+                                                                        className="font-medium truncate block"
                                                                         title={order.order?.customer?.name ?? order.customer?.name ?? '-'}
                                                                     >
                                                                         {order.order?.customer?.name ?? order.customer?.name ?? '-'}
                                                                     </span>
                                                                     {(order.order?.shipper?.name || order.shipper?.name) && (
                                                                         <span
-                                                                            className="text-[11px] text-gray-500 truncate block mt-0.5"
+                                                                            className="text-xs text-gray-500 truncate block mt-0.5"
                                                                             title={`Shipper: ${order.order?.shipper?.name ?? order.shipper?.name}`}
                                                                         >
                                                                             {order.order?.shipper?.name ?? order.shipper?.name}
@@ -1191,10 +1183,10 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                             </TableCell>
 
                                                             {/* 2. Layanan / Produk */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
+                                                            <TableCell className="py-3">
                                                                 <div className="flex flex-col min-w-0">
                                                                     <span
-                                                                        className="font-medium text-gray-800 truncate block text-xs"
+                                                                        className="truncate block"
                                                                         title={order.product?.service_type ?? '-'}
                                                                     >
                                                                         {order.product?.service_type ?? '-'}
@@ -1204,7 +1196,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                             {order.additional_products.map((ap) => (
                                                                                 <span
                                                                                     key={ap.id}
-                                                                                    className="inline-block px-1 py-0.2 rounded text-[9px] bg-slate-100 text-slate-700 border border-slate-200 truncate max-w-[120px]"
+                                                                                    className="inline-block px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-700 border border-slate-200 truncate max-w-[130px]"
                                                                                     title={`Addon: ${ap.service_type}`}
                                                                                 >
                                                                                     +{ap.service_type}
@@ -1216,107 +1208,106 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                             </TableCell>
 
                                                             {/* 3. Nomor Kontainer & Size Badge */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
-                                                                <div className="flex items-center gap-1.5 flex-wrap min-w-0">
-                                                                    <span className="font-mono font-bold text-gray-950 text-xs tracking-tight">
-                                                                        {order.container_number}
-                                                                    </span>
+                                                            <TableCell className="py-3">
+                                                                <div className="flex items-center gap-2 flex-wrap min-w-0">
+                                                                    <span>{order.container_number}</span>
                                                                     {order.price_type && (
-                                                                        <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-300 shrink-0">
+                                                                        <Badge variant="outline" className="text-xs px-1.5 py-0 border-gray-300 bg-gray-50 text-gray-700 font-normal shrink-0">
                                                                             {order.price_type}
-                                                                        </span>
+                                                                        </Badge>
                                                                     )}
                                                                 </div>
                                                             </TableCell>
 
-                                                            {/* 4. Tanggal Masuk (Stacked Date + Time) */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
+                                                            {/* 4. Tanggal Masuk (Stacked Date on top, Time underneath) */}
+                                                            <TableCell className="py-3">
                                                                 {inDt ? (
                                                                     <button
                                                                         type="button"
                                                                         onClick={() => handleEditEntryDate(order.id, order.entry_date ?? '')}
-                                                                        className="text-left group/date flex items-start gap-1 hover:opacity-80 transition-opacity"
+                                                                        className="flex items-start gap-1 hover:underline text-left group/date"
                                                                         title="Klik untuk ubah tanggal masuk"
                                                                     >
                                                                         <div className="flex flex-col leading-tight">
-                                                                            <span className="font-semibold text-gray-900 text-xs">{inDt.date}</span>
-                                                                            <span className="text-[11px] text-gray-500 font-mono">{inDt.time}</span>
+                                                                            <span>{inDt.date}</span>
+                                                                            <span className="text-xs text-gray-500">{inDt.time}</span>
                                                                         </div>
-                                                                        <Pencil className="h-3 w-3 text-blue-500 opacity-0 group-hover/date:opacity-100 transition-opacity mt-0.5 shrink-0" />
+                                                                        <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
                                                                     </button>
                                                                 ) : (
                                                                     <button
                                                                         type="button"
                                                                         onClick={() => handleAddEntryDate(order.id)}
-                                                                        className="inline-flex items-center gap-1 text-xs text-emerald-600 hover:text-emerald-700 hover:underline"
+                                                                        className="flex items-center gap-1 hover:underline text-green-600"
                                                                     >
-                                                                        <Plus className="h-3 w-3" />
-                                                                        <span>Masuk</span>
+                                                                        Tambah
+                                                                        <Plus className="h-4 w-4 text-green-500" />
                                                                     </button>
                                                                 )}
                                                             </TableCell>
 
-                                                            {/* 5. Tanggal Keluar (Stacked Date + Time) */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
+                                                            {/* 5. Tanggal Keluar (Stacked Date on top, Time underneath) */}
+                                                            <TableCell className="py-3">
                                                                 {outDt ? (
                                                                     <button
                                                                         type="button"
                                                                         onClick={() => handleEditExitDate(order.id, order.exit_date ?? '')}
-                                                                        className="text-left group/date flex items-start gap-1 hover:opacity-80 transition-opacity"
+                                                                        className="flex items-start gap-1 hover:underline text-left group/date"
                                                                         title="Klik untuk ubah tanggal keluar"
                                                                     >
                                                                         <div className="flex flex-col leading-tight">
-                                                                            <span className="font-semibold text-gray-900 text-xs">{outDt.date}</span>
-                                                                            <span className="text-[11px] text-gray-500 font-mono">{outDt.time}</span>
+                                                                            <span>{outDt.date}</span>
+                                                                            <span className="text-xs text-gray-500">{outDt.time}</span>
                                                                         </div>
-                                                                        <Pencil className="h-3 w-3 text-blue-500 opacity-0 group-hover/date:opacity-100 transition-opacity mt-0.5 shrink-0" />
+                                                                        <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
                                                                     </button>
                                                                 ) : (
                                                                     <button
                                                                         type="button"
                                                                         onClick={() => handleAddExitDate(order.id)}
-                                                                        className="inline-flex items-center gap-1 text-xs text-emerald-600 hover:text-emerald-700 hover:underline"
+                                                                        className="flex items-center gap-1 hover:underline text-green-600"
                                                                     >
-                                                                        <Plus className="h-3 w-3" />
-                                                                        <span>Keluar</span>
+                                                                        Tambah
+                                                                        <Plus className="h-4 w-4 text-green-500" />
                                                                     </button>
                                                                 )}
                                                             </TableCell>
 
                                                             {/* 6. Temperatur & Shift (Cool Pastel Blue Badge) */}
-                                                            <TableCell className="py-2.5 px-3 align-top text-center">
+                                                            <TableCell className="py-3 text-center">
                                                                 {canItemRecordTemperature(order, groupOrders) ? (
-                                                                    <div className="flex flex-col items-center justify-center gap-1">
+                                                                    <div className="flex items-center justify-center">
                                                                         {order.total_shifts && order.total_shifts > 0 ? (
                                                                             <button
                                                                                 type="button"
                                                                                 onClick={() => handleOpenTempModal(order)}
-                                                                                className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold bg-sky-50 text-sky-900 border border-sky-300 hover:bg-sky-100 hover:border-sky-400 transition-colors shadow-2xs cursor-pointer whitespace-nowrap"
-                                                                                title="Klik untuk lihat / input suhu & plug in/out"
+                                                                                className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100 hover:text-sky-900 transition-colors cursor-pointer shadow-2xs whitespace-nowrap"
+                                                                                title="Lihat / input suhu & plug in/out"
                                                                             >
-                                                                                <Thermometer className="h-3.5 w-3.5 text-sky-700 shrink-0" />
+                                                                                <Thermometer className="h-4 w-4 text-sky-600 shrink-0" />
                                                                                 <span>{order.total_shifts} Shift</span>
                                                                             </button>
                                                                         ) : order.start_plug_in ? (
                                                                             <button
                                                                                 type="button"
                                                                                 onClick={() => handleOpenTempModal(order)}
-                                                                                className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold bg-sky-50 text-sky-900 border border-sky-300 hover:bg-sky-100 transition-colors shadow-2xs cursor-pointer animate-pulse whitespace-nowrap"
+                                                                                className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100 transition-colors cursor-pointer shadow-2xs animate-pulse whitespace-nowrap"
                                                                                 title="Plug In aktif - Klik untuk input suhu"
                                                                             >
-                                                                                <Zap className="h-3.5 w-3.5 text-amber-500 fill-amber-500 shrink-0" />
+                                                                                <Zap className="h-4 w-4 text-amber-500 fill-amber-500 shrink-0" />
                                                                                 <span>1 Shift</span>
                                                                             </button>
                                                                         ) : (
-                                                                            <button
-                                                                                type="button"
+                                                                            <Button
+                                                                                size="sm"
+                                                                                variant="ghost"
                                                                                 onClick={() => handleOpenTempModal(order)}
-                                                                                className="inline-flex items-center justify-center gap-1 px-2 py-0.5 rounded text-xs font-semibold text-sky-700 hover:text-sky-900 hover:bg-sky-50 border border-dashed border-sky-300 transition-colors cursor-pointer whitespace-nowrap"
                                                                                 title="Input Suhu & Plug In/Out"
+                                                                                className="h-8 px-2 flex items-center gap-1 cursor-pointer text-sky-700 hover:text-sky-800 hover:bg-sky-50 font-medium"
                                                                             >
-                                                                                <Thermometer className="h-3.5 w-3.5 text-sky-500 shrink-0" />
-                                                                                <span>+ Suhu</span>
-                                                                            </button>
+                                                                                <Thermometer className="h-4 w-4 text-sky-600" />
+                                                                                <span className="text-xs">Suhu</span>
+                                                                            </Button>
                                                                         )}
                                                                     </div>
                                                                 ) : (
@@ -1325,27 +1316,26 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                             </TableCell>
 
                                                             {/* 7. Keterangan (EIR Date, Komoditi, Fumigator, Alasan Dihapus) */}
-                                                            <TableCell className="py-2.5 px-3 align-top">
-                                                                <div className="flex flex-col gap-1 text-[11px] leading-tight min-w-0">
+                                                            <TableCell className="py-3">
+                                                                <div className="flex flex-col gap-1 leading-tight min-w-0">
                                                                     {/* EIR Date inside Keterangan */}
                                                                     {order.eir_date ? (
-                                                                        <div className="inline-flex items-center gap-1 text-indigo-700 bg-indigo-50/80 border border-indigo-200 px-1.5 py-0.5 rounded w-fit">
-                                                                            <span className="font-semibold">EIR:</span>
-                                                                            <span>{eirDt?.date ?? formatDate(order.eir_date)}</span>
+                                                                        <div className="inline-flex items-center gap-1 text-xs text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded w-fit font-medium">
+                                                                            <span>EIR: {eirDt?.date ?? formatDate(order.eir_date)}</span>
                                                                             <button
                                                                                 type="button"
                                                                                 onClick={() => handleEditEirDate(order.id, order.eir_date ?? '')}
                                                                                 title="Edit Tanggal EIR"
                                                                                 className="hover:text-indigo-900 ml-0.5"
                                                                             >
-                                                                                <Pencil className="h-2.5 w-2.5" />
+                                                                                <Pencil className="h-3 w-3 text-indigo-500" />
                                                                             </button>
                                                                         </div>
                                                                     ) : (
                                                                         <button
                                                                             type="button"
                                                                             onClick={() => handleAddEirDate(order.id)}
-                                                                            className="text-[10px] text-gray-400 hover:text-indigo-600 hover:underline w-fit"
+                                                                            className="text-xs text-gray-400 hover:text-indigo-600 hover:underline w-fit"
                                                                         >
                                                                             + Tambah EIR
                                                                         </button>
@@ -1353,23 +1343,23 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
 
                                                                     {/* Komoditi */}
                                                                     {order.commodity && (
-                                                                        <div className="text-gray-700 truncate" title={`Komoditi: ${order.commodity}`}>
-                                                                            <span className="text-gray-400 font-normal">Kom: </span>
-                                                                            <span className="font-medium">{order.commodity}</span>
+                                                                        <div className="text-gray-800 truncate" title={`Komoditi: ${order.commodity}`}>
+                                                                            <span className="text-gray-400">Kom: </span>
+                                                                            <span>{order.commodity}</span>
                                                                         </div>
                                                                     )}
 
                                                                     {/* Fumigator */}
                                                                     {order.order?.fumigasi && (
-                                                                        <div className="text-purple-700 truncate text-[10px]" title={`Fumigasi: ${order.order.fumigasi}`}>
-                                                                            <span className="text-purple-500 font-normal">Fum: </span>
-                                                                            <span className="font-medium">{order.order.fumigasi}</span>
+                                                                        <div className="text-xs text-purple-700 truncate" title={`Fumigasi: ${order.order.fumigasi}`}>
+                                                                            <span className="text-purple-400">Fum: </span>
+                                                                            <span>{order.order.fumigasi}</span>
                                                                         </div>
                                                                     )}
 
                                                                     {/* Alasan Dihapus jika trashed */}
                                                                     {isTrashed && order.deleted_reason && (
-                                                                        <div className="text-red-600 font-medium text-[10px] italic">
+                                                                        <div className="text-xs text-red-600 italic">
                                                                             Alasan: {order.deleted_reason}
                                                                         </div>
                                                                     )}
@@ -1386,8 +1376,8 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                     </Table>
                 </div>
 
-                {/* Pagination Toolbar */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-gray-200">
+                {/* Pagination Toolbar - Exactly as in Order Biasa */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-gray-100">
                     <div className="text-xs text-gray-500 font-medium">
                         Menampilkan <span className="font-semibold text-gray-800">{orders.from || 0}</span> -{' '}
                         <span className="font-semibold text-gray-800">{orders.to || 0}</span> dari{' '}
@@ -1402,7 +1392,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     variant={link.active ? 'default' : 'outline'}
                                     disabled={!link.url}
                                     onClick={() => router.get(link.url!)}
-                                    className="px-2.5 py-1 text-xs whitespace-nowrap h-7.5"
+                                    className="px-3 py-1 text-xs whitespace-nowrap"
                                 >
                                     {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {
                                         if (match.includes('Previous')) return '← Prev';
@@ -1411,7 +1401,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     })}
                                 </Button>
                             ) : (
-                                <span key={i} className="px-2 py-1 text-xs text-gray-400">
+                                <span key={i} className="px-3 py-1 text-xs text-gray-400">
                                     ...
                                 </span>
                             ),
@@ -1537,7 +1527,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                 <DialogContent className="max-w-3xl w-[95vw] sm:w-full p-4 sm:p-6 max-h-[92vh] flex flex-col">
                     <DialogHeader className="pr-8 text-left shrink-0">
                         <DialogTitle className="flex items-center gap-2 text-sm sm:text-base font-bold text-gray-900 break-words">
-                            <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-sky-600 shrink-0" />
+                            <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
                             <span className="leading-tight">Rekam Suhu & Plug In/Out &mdash; Kontainer {tempOrder?.container_number}</span>
                         </DialogTitle>
                     </DialogHeader>
@@ -1566,7 +1556,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                             Sedang Plug In (Aktif)
                                         </Badge>
                                     ) : (
-                                        <Badge variant="outline" className="bg-sky-50 text-sky-800 border-sky-300 text-xs px-2.5 py-0.5 font-bold">
+                                        <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300 text-xs px-2.5 py-0.5 font-bold">
                                             Selesai ({tempOrder.total_shifts ?? 0} Shift)
                                         </Badge>
                                     )}
@@ -1702,7 +1692,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                         <div className="space-y-3">
                             <div className="flex flex-wrap items-center justify-between gap-2 border-b pb-2">
                                 <div className="flex items-center gap-2">
-                                    <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-sky-600 shrink-0" />
+                                    <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
                                     <h4 className="text-xs sm:text-sm font-bold text-gray-900">Rekam Suhu Per Jam</h4>
                                 </div>
                                 <Button type="button" size="sm" variant="outline" onClick={addDateRecord} className="flex items-center gap-1.5 h-7 sm:h-8 text-xs">
@@ -1738,14 +1728,14 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     <div className="grid max-h-60 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 overflow-y-auto pt-1">
                                         {[...Array(24)].map((_, h) => (
                                             <div key={h} className="flex items-center gap-1.5 bg-gray-50/70 p-1 rounded border border-gray-100">
-                                                <Label htmlFor={`temp_v2_${rIdx}_${h}`} className="text-xs text-gray-600 w-11 shrink-0 font-mono">{h.toString().padStart(2, '0')}:00</Label>
+                                                <Label htmlFor={`temp_v2_${h}`} className="text-xs text-gray-600 w-11 shrink-0 font-mono">{h.toString().padStart(2, '0')}:00</Label>
                                                 <Input
-                                                    id={`temp_v2_${rIdx}_${h}`}
+                                                    id={`temp_v2_${h}`}
                                                     type="number"
                                                     step="0.1"
                                                     value={rec.temps[h.toString().padStart(2, '0')] || ''}
                                                     onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                    className="flex-1 min-w-0 h-8 text-xs bg-white text-center font-mono"
+                                                    className="flex-1 min-w-0 h-8 text-xs bg-white text-center"
                                                     placeholder="°C"
                                                 />
                                             </div>
@@ -1799,7 +1789,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                             <Button variant="outline" onClick={() => setIsTempDialogOpen(false)} className="flex-1 sm:flex-initial h-9 text-xs">
                                 Tutup
                             </Button>
-                            <Button onClick={handleSaveTemp} className="flex-1 sm:flex-initial h-9 text-xs bg-sky-600 hover:bg-sky-700 text-white font-medium">
+                            <Button onClick={handleSaveTemp} className="flex-1 sm:flex-initial h-9 text-xs bg-orange-600 hover:bg-orange-700 text-white font-medium">
                                 Simpan Rekam Suhu
                             </Button>
                         </div>

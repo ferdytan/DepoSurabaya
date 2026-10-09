@@ -737,11 +737,11 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                                                                 {/* Card Suhu Terakhir */}
                                                                 {latest ? (
-                                                                    <div className="rounded-lg bg-orange-50 border border-orange-200 px-2.5 py-1 text-center min-w-[125px]">
-                                                                        <div className="text-sm font-bold text-orange-700 font-mono">
+                                                                    <div className="rounded-lg bg-sky-50 border border-sky-300 px-2.5 py-1 text-center min-w-[125px] shadow-2xs">
+                                                                        <div className="text-sm font-bold text-sky-900 font-mono">
                                                                             {latest.suhu && String(latest.suhu).trim() !== '' ? `${latest.suhu}°C` : '-°C'}
                                                                         </div>
-                                                                        <div className="text-[10px] text-orange-600 font-medium whitespace-nowrap">
+                                                                        <div className="text-[10px] text-sky-700 font-medium whitespace-nowrap">
                                                                             {formatSuhuDateTime(latest.tanggal, latest.jam)}
                                                                         </div>
                                                                     </div>
@@ -994,7 +994,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                                         key={h}
                                                                                                         className={`p-1.5 rounded-lg border text-center transition-all ${
                                                                                                             hasVal
-                                                                                                                ? 'bg-orange-50/70 border-orange-200 text-orange-950 font-bold'
+                                                                                                                ? 'bg-sky-50 border-sky-300 text-sky-950 font-bold'
                                                                                                                 : 'bg-gray-50/50 border-gray-100 text-gray-400'
                                                                                                         }`}
                                                                                                     >

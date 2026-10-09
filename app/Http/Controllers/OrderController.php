@@ -16,166 +16,176 @@ use App\Models\Setting;
 class OrderController extends Controller
 {
    
-   public function index(Request $request)
-{
-    $trashed = $request->input('trashed');
-    $search = $request->input('search');
-    $dateFrom = $request->input('date_from');
-    $dateTo = $request->input('date_to');
-
-    $defaultPagination = (int) Setting::get('default_pagination', 25);
-    $perPage = (int) $request->input('per_page', $defaultPagination);
-    if (!in_array($perPage, [10, 25, 50, 100])) {
-        $perPage = $defaultPagination;
+    public function index(Request $request)
+    {
+        return Inertia::render('orders/index', $this->getOrdersListingData($request));
     }
 
-    // Simpan full URL saat ini ke session agar saat edit/update selesai, user kembali ke halaman & filter yang persis sama
-    session(['orders_index_url' => $request->fullUrl()]);
-
-    $query = OrderItem::with([
-        'order.customer',
-        'order.shipper',
-        'order.items.product',
-        'order.items.additionalProducts',
-        'product',
-        'additionalProducts',
-        'rekamSuhu'
-    ]);
-
-    if ($trashed) {
-        $query->onlyTrashed();
+    public function v2(Request $request)
+    {
+        return Inertia::render('orders/v2', $this->getOrdersListingData($request));
     }
 
-    // 🔍 Pencarian hanya pada field yang muncul di tabel
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            // Nama Customer
-            $q->whereHas('order.customer', fn($q) => $q->where('name', 'like', "%{$search}%"))
-              // Produk (service_type)
-              ->orWhereHas('product', fn($q) => $q->where('service_type', 'like', "%{$search}%"))
-              // Nomor Kontainer
-              ->orWhere('container_number', 'like', "%{$search}%")
-              // Size (price_type)
-              ->orWhere('price_type', 'like', "%{$search}%")
-              // Komoditi
-              ->orWhere('commodity', 'like', "%{$search}%")
-              // No. AJU
-              ->orWhereHas('order', fn($q) => $q->where('no_aju', 'like', "%{$search}%"))
-              // Order ID
-              ->orWhereHas('order', fn($q) => $q->where('order_id', 'like', "%{$search}%"));
-        });
-    }
+    protected function getOrdersListingData(Request $request): array
+    {
+        $trashed = $request->input('trashed');
+        $search = $request->input('search');
+        $dateFrom = $request->input('date_from');
+        $dateTo = $request->input('date_to');
 
-    // 📅 Filter Rentang Tanggal (berdasarkan entry_date)
-    if ($dateFrom) {
-        $query->where('entry_date', '>=', $dateFrom);
-    }
-    if ($dateTo) {
-        $query->where('entry_date', '<=', $dateTo . ' 23:59:59');
-    }
-
-    // 🧾 Filter Order yang Perlu Diinvoicekan (Kontainer sudah Gate In & Gate Out, dan belum di-invoice)
-    // Opsi ini hanya dapat diakses oleh Super Admin dan Admin (Checker tidak memiliki opsi ini)
-    $user = $request->user();
-    $canManageInvoice = $user && (
-        in_array((int)$user->role_id, [1, 2]) || 
-        in_array($user->role?->name, ['Super User', 'Admin'])
-    );
-
-    $needInvoice = $canManageInvoice && ($request->boolean('need_invoice') || $request->input('need_invoice') === '1' || $request->input('filter') === 'need_invoice');
-
-    $invoicedOrderItemIds = DB::table('invoice_items')
-        ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')
-        ->whereNull('invoices.deleted_at')
-        ->pluck('invoice_items.order_item_id')
-        ->toArray();
-
-    if ($needInvoice) {
-        $query->whereNotNull('entry_date')
-              ->whereNotNull('exit_date')
-              ->whereNotIn('id', $invoicedOrderItemIds);
-    }
-
-    // Urutkan
-    $orders = $query->latest()->paginate($perPage)->withQueryString();
-
-    // Helper closure untuk mendeteksi apakah suatu produk / layanan adalah layanan suhu / plug
-    $isPlugOrSuhuService = function ($product) {
-        if (!$product) return false;
-        $req = $product->requires_temperature ?? null;
-        if ($req == 1 || $req === true || $req === '1') return true;
-        $st = strtolower($product->service_type ?? '');
-        return str_contains($st, 'plug') || str_contains($st, 'suhu') || str_contains($st, 'reefer');
-    };
-
-    // Transform untuk tambahkan temperature dan status layanan suhu
-    $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService, $invoicedOrderItemIds) {
-        $data = $item->toArray();
-        $data['temperature'] = [];
-        foreach ($item->rekamSuhu as $rekam) {
-            $data['temperature'][$rekam->tanggal] = $rekam->jam_data;
+        $defaultPagination = (int) Setting::get('default_pagination', 25);
+        $perPage = (int) $request->input('per_page', $defaultPagination);
+        if (!in_array($perPage, [10, 25, 50, 100])) {
+            $perPage = $defaultPagination;
         }
 
-        // Cek layanan suhu pada item ini (produk utama atau addon)
-        $itemHasTempService = $isPlugOrSuhuService($item->product);
-        if (!$itemHasTempService && $item->relationLoaded('additionalProducts') && $item->additionalProducts) {
-            foreach ($item->additionalProducts as $ap) {
-                if ($isPlugOrSuhuService($ap)) {
-                    $itemHasTempService = true;
-                    break;
-                }
+        // Simpan full URL saat ini ke session agar saat edit/update selesai, user kembali ke halaman & filter yang persis sama
+        session(['orders_index_url' => $request->fullUrl()]);
+
+        $query = OrderItem::with([
+            'order.customer',
+            'order.shipper',
+            'order.items.product',
+            'order.items.additionalProducts',
+            'product',
+            'additionalProducts',
+            'rekamSuhu'
+        ]);
+
+        if ($trashed) {
+            $query->onlyTrashed();
+        }
+
+        // 🔍 Pencarian hanya pada field yang muncul di tabel
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                // Nama Customer
+                $q->whereHas('order.customer', fn($q) => $q->where('name', 'like', "%{$search}%"))
+                  // Produk (service_type)
+                  ->orWhereHas('product', fn($q) => $q->where('service_type', 'like', "%{$search}%"))
+                  // Nomor Kontainer
+                  ->orWhere('container_number', 'like', "%{$search}%")
+                  // Size (price_type)
+                  ->orWhere('price_type', 'like', "%{$search}%")
+                  // Komoditi
+                  ->orWhere('commodity', 'like', "%{$search}%")
+                  // No. AJU
+                  ->orWhereHas('order', fn($q) => $q->where('no_aju', 'like', "%{$search}%"))
+                  // Order ID
+                  ->orWhereHas('order', fn($q) => $q->where('order_id', 'like', "%{$search}%"));
+            });
+        }
+
+        // 📅 Filter Rentang Tanggal (berdasarkan entry_date)
+        if ($dateFrom) {
+            $query->where('entry_date', '>=', $dateFrom);
+        }
+        if ($dateTo) {
+            $query->where('entry_date', '<=', $dateTo . ' 23:59:59');
+        }
+
+        // 🧾 Filter Order yang Perlu Diinvoicekan (Kontainer sudah Gate In & Gate Out, dan belum di-invoice)
+        // Opsi ini hanya dapat diakses oleh Super Admin dan Admin (Checker tidak memiliki opsi ini)
+        $user = $request->user();
+        $canManageInvoice = $user && (
+            in_array((int)$user->role_id, [1, 2]) || 
+            in_array($user->role?->name, ['Super User', 'Admin'])
+        );
+
+        $needInvoice = $canManageInvoice && ($request->boolean('need_invoice') || $request->input('need_invoice') === '1' || $request->input('filter') === 'need_invoice');
+
+        $invoicedOrderItemIds = DB::table('invoice_items')
+            ->join('invoices', 'invoice_items.invoice_id', '=', 'invoices.id')
+            ->whereNull('invoices.deleted_at')
+            ->pluck('invoice_items.order_item_id')
+            ->toArray();
+
+        if ($needInvoice) {
+            $query->whereNotNull('entry_date')
+                  ->whereNotNull('exit_date')
+                  ->whereNotIn('id', $invoicedOrderItemIds);
+        }
+
+        // Urutkan
+        $orders = $query->latest()->paginate($perPage)->withQueryString();
+
+        // Helper closure untuk mendeteksi apakah suatu produk / layanan adalah layanan suhu / plug
+        $isPlugOrSuhuService = function ($product) {
+            if (!$product) return false;
+            $req = $product->requires_temperature ?? null;
+            if ($req == 1 || $req === true || $req === '1') return true;
+            $st = strtolower($product->service_type ?? '');
+            return str_contains($st, 'plug') || str_contains($st, 'suhu') || str_contains($st, 'reefer');
+        };
+
+        // Transform untuk tambahkan temperature dan status layanan suhu
+        $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService, $invoicedOrderItemIds) {
+            $data = $item->toArray();
+            $data['temperature'] = [];
+            foreach ($item->rekamSuhu as $rekam) {
+                $data['temperature'][$rekam->tanggal] = $rekam->jam_data;
             }
-        }
-        if (!$itemHasTempService && (!empty($data['temperature']) || !empty($item->start_plug_in) || !empty($item->plug_out))) {
-            $itemHasTempService = true;
-        }
 
-        // Cek apakah di dalam order yang sama ada kontainer dengan addon / layanan suhu
-        $orderHasTempService = $itemHasTempService;
-        if (!$orderHasTempService && $item->order && $item->order->relationLoaded('items') && $item->order->items) {
-            foreach ($item->order->items as $sibling) {
-                if ($isPlugOrSuhuService($sibling->product)) {
-                    $orderHasTempService = true;
-                    break;
-                }
-                if ($sibling->relationLoaded('additionalProducts') && $sibling->additionalProducts) {
-                    foreach ($sibling->additionalProducts as $sibAp) {
-                        if ($isPlugOrSuhuService($sibAp)) {
-                            $orderHasTempService = true;
-                            break 2;
-                        }
+            // Cek layanan suhu pada item ini (produk utama atau addon)
+            $itemHasTempService = $isPlugOrSuhuService($item->product);
+            if (!$itemHasTempService && $item->relationLoaded('additionalProducts') && $item->additionalProducts) {
+                foreach ($item->additionalProducts as $ap) {
+                    if ($isPlugOrSuhuService($ap)) {
+                        $itemHasTempService = true;
+                        break;
                     }
                 }
-                if (!empty($sibling->start_plug_in) || !empty($sibling->plug_out)) {
-                    $orderHasTempService = true;
-                    break;
+            }
+            if (!$itemHasTempService && (!empty($data['temperature']) || !empty($item->start_plug_in) || !empty($item->plug_out))) {
+                $itemHasTempService = true;
+            }
+
+            // Cek apakah di dalam order yang sama ada kontainer dengan addon / layanan suhu
+            $orderHasTempService = $itemHasTempService;
+            if (!$orderHasTempService && $item->order && $item->order->relationLoaded('items') && $item->order->items) {
+                foreach ($item->order->items as $sibling) {
+                    if ($isPlugOrSuhuService($sibling->product)) {
+                        $orderHasTempService = true;
+                        break;
+                    }
+                    if ($sibling->relationLoaded('additionalProducts') && $sibling->additionalProducts) {
+                        foreach ($sibling->additionalProducts as $sibAp) {
+                            if ($isPlugOrSuhuService($sibAp)) {
+                                $orderHasTempService = true;
+                                break 2;
+                            }
+                        }
+                    }
+                    if (!empty($sibling->start_plug_in) || !empty($sibling->plug_out)) {
+                        $orderHasTempService = true;
+                        break;
+                    }
                 }
             }
-        }
 
-        $data['has_temperature_service'] = $itemHasTempService;
-        $data['order_has_temperature_service'] = $orderHasTempService;
-        $data['is_invoiced'] = in_array($item->id, $invoicedOrderItemIds);
+            $data['has_temperature_service'] = $itemHasTempService;
+            $data['order_has_temperature_service'] = $orderHasTempService;
+            $data['is_invoiced'] = in_array($item->id, $invoicedOrderItemIds);
 
-        return $data;
-    });
+            return $data;
+        });
 
-    return Inertia::render('orders/index', [
-        'orders' => $orders,
-        'filters' => [
-            'search' => $search,
-            'trashed' => $trashed,
-            'date_from' => $dateFrom,
-            'date_to' => $dateTo,
-            'per_page' => $perPage,
-            'need_invoice' => $needInvoice ? '1' : '',
-        ],
-        'flash' => [
-            'success' => session('success'),
-            'error' => session('error'),
-        ],
-    ]);
-}
+        return [
+            'orders' => $orders,
+            'filters' => [
+                'search' => $search,
+                'trashed' => $trashed,
+                'date_from' => $dateFrom,
+                'date_to' => $dateTo,
+                'per_page' => $perPage,
+                'need_invoice' => $needInvoice ? '1' : '',
+            ],
+            'flash' => [
+                'success' => session('success'),
+                'error' => session('error'),
+            ],
+        ];
+    }
 
 
     protected function getKarantinaQuery(Request $request)

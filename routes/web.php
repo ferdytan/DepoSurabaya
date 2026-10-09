@@ -106,6 +106,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/karantina', [OrderController::class, 'index_karantina'])->name('index_karantina');
     Route::get('/karantina/print-data', [OrderController::class, 'karantina_print_data'])->name('karantina.print_data');
     Route::get('/containers/quick-search', [OrderController::class, 'quickSearchContainers'])->name('containers.quick-search');
+    Route::get('/orderv2', [OrderController::class, 'v2'])->name('orders.v2');
 
     /* ---------- ORDERS ---------- */
      Route::prefix('orders')->name('orders.')->group(function () {

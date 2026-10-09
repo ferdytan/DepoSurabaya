@@ -523,7 +523,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">No. Kontainer</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Customer & Order</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Shipper</TableHead>
-                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Layanan</TableHead>
+                                        <TableHead className="py-3.5 text-xs font-semibold text-gray-700 w-[170px] max-w-[190px]">Layanan</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Waktu Masuk</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Plug In/Out</TableHead>
                                         <TableHead className="py-3.5 text-xs font-semibold text-gray-700">Suhu Terakhir</TableHead>
@@ -603,17 +603,18 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                         </TableCell>
 
                                                         {/* Layanan */}
-                                                        <TableCell className="py-3.5">
-                                                            <div className="flex flex-col gap-1">
-                                                                <span className="inline-flex items-center text-xs font-semibold text-gray-800">
+                                                        <TableCell className="py-3.5 w-[170px] max-w-[190px]">
+                                                            <div className="flex flex-col gap-1 items-start">
+                                                                <span className="inline-flex items-center text-xs font-semibold text-gray-800 break-words" title={item.product?.service_type ?? '-'}>
                                                                     {item.product?.service_type ?? '-'}
                                                                 </span>
                                                                 {item.additional_products && item.additional_products.length > 0 && (
-                                                                    <div className="flex flex-wrap gap-1">
+                                                                    <div className="flex flex-col gap-1 items-start mt-0.5 w-full">
                                                                         {item.additional_products.map((ap) => (
                                                                             <span
                                                                                 key={ap.id}
-                                                                                className="text-[10px] bg-cyan-50 text-cyan-800 font-medium px-1.5 py-0.2 rounded border border-cyan-200"
+                                                                                title={ap.service_type}
+                                                                                className="text-[10px] bg-cyan-50 text-cyan-800 font-medium px-1.5 py-0.5 rounded border border-cyan-200 inline-block max-w-[170px] truncate"
                                                                             >
                                                                                 + {ap.service_type}
                                                                             </span>

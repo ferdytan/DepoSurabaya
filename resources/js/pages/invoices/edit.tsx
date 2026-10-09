@@ -59,10 +59,13 @@ export interface EditableContainerItem {
     price_type: string;
     price_value: number;
     quantity: number;
+    entry_date?: string | null;
+    exit_date?: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
     plug_duration_minutes?: number | null;
     total_shifts?: number | null;
+    product?: { service_type?: string; requires_temperature?: number | boolean | null };
     additional_products: EditableProduct[];
 }
 
@@ -71,6 +74,8 @@ interface OrderItem {
     container_number: string;
     price_value: number;
     price_type?: string;
+    entry_date?: string | null;
+    exit_date?: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
     plug_duration_minutes?: number | null;
@@ -88,6 +93,92 @@ function isPlugService(serviceType?: string, requiresTemperature?: number | bool
     if (requiresTemperature === 1 || requiresTemperature === true) return true;
     const st = (serviceType || '').toLowerCase();
     return st.includes('plug') || st.includes('reefer') || st.includes('suhu');
+}
+
+function isStorageService(serviceType?: string): boolean {
+    if (!serviceType) return false;
+    const st = serviceType.toLowerCase();
+    return st.includes('storage') || st.includes('penumpukan');
+}
+
+function isStorageFumigasiService(serviceType?: string, orderFumigasi?: boolean | number | null): boolean {
+    if (!serviceType) return false;
+    const st = serviceType.toLowerCase();
+    if (!st.includes('storage') && !st.includes('penumpukan')) return false;
+    return st.includes('fumiga') || st.includes('fumi') || Boolean(orderFumigasi);
+}
+
+interface StorageCalcInfo {
+    days: number;
+    totalHours: number;
+    freeHours: number;
+    excessHours: number;
+    title: string;
+}
+
+function getStorageCalcInfo(
+    item: { entry_date?: string | null; exit_date?: string | null },
+    serviceType?: string,
+    storageFreeHours: number = 72,
+    storageFumigasiFreeHours: number = 120,
+    orderFumigasi?: boolean | number | null,
+): StorageCalcInfo {
+    const isFumi = isStorageFumigasiService(serviceType, orderFumigasi);
+    const freeHours = isFumi ? storageFumigasiFreeHours : storageFreeHours;
+
+    if (!item.entry_date) {
+        return {
+            days: 0,
+            totalHours: 0,
+            freeHours,
+            excessHours: 0,
+            title: `Waktu Gate In belum tercatat (Free Time: ${freeHours} jam)`,
+        };
+    }
+
+    const entryTime = new Date(item.entry_date).getTime();
+    if (isNaN(entryTime)) {
+        return {
+            days: 0,
+            totalHours: 0,
+            freeHours,
+            excessHours: 0,
+            title: 'Format Gate In tidak valid',
+        };
+    }
+
+    const exitTime = item.exit_date ? new Date(item.exit_date).getTime() : Date.now();
+    const diffMs = Math.max(0, exitTime - entryTime);
+    const totalHours = diffMs / (1000 * 60 * 60);
+    const excessHours = Math.max(0, totalHours - freeHours);
+    const days = excessHours > 0 ? Math.ceil(excessHours / 24) : 0;
+
+    const entryStr = new Date(item.entry_date).toLocaleString('id-ID', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+    const exitStr = item.exit_date
+        ? new Date(item.exit_date).toLocaleString('id-ID', {
+              day: '2-digit',
+              month: 'short',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+          })
+        : 'Belum Keluar (s.d. sekarang)';
+
+    const title = `Gate In: ${entryStr}\nGate Out: ${exitStr}\nDurasi Depo: ${totalHours.toFixed(1)} Jam\nFree Time: ${freeHours} Jam (${isFumi ? 'Fumigasi' : 'Reguler'})\nKelebihan: ${excessHours.toFixed(1)} Jam\nTagihan Storage: ${days} Hari`;
+
+    return {
+        days,
+        totalHours,
+        freeHours,
+        excessHours,
+        title,
+    };
 }
 
 interface Order {
@@ -153,6 +244,8 @@ interface PageProps {
     availableOrderItems?: OrderItem[];
     allProducts?: MasterProduct[];
     activityLogs?: ActivityLogItem[];
+    storage_free_hours?: number;
+    storage_fumigasi_free_hours?: number;
     flash?: {
         success?: string;
         error?: string;
@@ -168,6 +261,8 @@ export default function EditInvoice() {
         availableOrderItems = [],
         allProducts = [],
         activityLogs = [],
+        storage_free_hours = 72,
+        storage_fumigasi_free_hours = 120,
         flash,
     } = page.props;
 
@@ -209,12 +304,15 @@ export default function EditInvoice() {
             });
 
             const isPlug = isPlugService(item.orderItem?.product?.service_type, item.orderItem?.product?.requires_temperature);
+            const isStorage = isStorageService(item.orderItem?.product?.service_type);
             const defaultQty = Number(
-                item.quantity && item.quantity > 0
+                item.quantity !== undefined && item.quantity !== null
                     ? item.quantity
                     : (isPlug && item.orderItem?.total_shifts && item.orderItem.total_shifts > 0
                         ? item.orderItem.total_shifts
-                        : 1)
+                        : isStorage
+                            ? getStorageCalcInfo(item.orderItem || {}, item.orderItem?.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi).days
+                            : 1)
             );
 
             return {
@@ -224,10 +322,13 @@ export default function EditInvoice() {
                 price_type: item.price_type || '20ft',
                 price_value: Number(item.price_value || 0),
                 quantity: defaultQty,
+                entry_date: (item.orderItem as any)?.entry_date,
+                exit_date: item.orderItem?.exit_date,
                 start_plug_in: item.orderItem?.start_plug_in,
                 plug_out: item.orderItem?.plug_out,
                 plug_duration_minutes: item.orderItem?.plug_duration_minutes,
                 total_shifts: item.orderItem?.total_shifts,
+                product: item.orderItem?.product,
                 additional_products: formattedAdds,
             };
         });
@@ -294,8 +395,12 @@ export default function EditInvoice() {
             const price = resolveProductDefaultPrice(prod, priceType);
             setCustomProductPrice(price > 0 ? String(price) : '0');
             const isPlug = isPlugService(prod.service_type, prod.requires_temperature);
+            const isStorage = isStorageService(prod.service_type);
             if (isPlug && targetItem?.total_shifts && targetItem.total_shifts > 0) {
                 setCustomProductQty(targetItem.total_shifts);
+            } else if (isStorage && targetItem) {
+                const info = getStorageCalcInfo(targetItem, prod.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi);
+                setCustomProductQty(info.days);
             }
         }
     };
@@ -310,7 +415,7 @@ export default function EditInvoice() {
         if (!prod) return;
 
         const price = Number(customProductPrice) || 0;
-        const qty = Math.max(1, Number(customProductQty) || 1);
+        const qty = Math.max(0, Number(customProductQty) || 0);
 
         setItems((prev) =>
             prev.map((it) => {
@@ -354,7 +459,7 @@ export default function EditInvoice() {
 
     // Ubah kuantitas pokok kontainer
     const handleUpdateContainerQty = (itemId: number, newQty: number) => {
-        const val = Number.isFinite(newQty) && newQty >= 1 ? Math.floor(newQty) : 1;
+        const val = Number.isFinite(newQty) && newQty >= 0 ? Math.floor(newQty) : 0;
         setItems((prev) =>
             prev.map((it) => (it.id === itemId ? { ...it, quantity: val } : it))
         );
@@ -425,10 +530,13 @@ export default function EditInvoice() {
 
         const formattedAdds: EditableProduct[] = (orderItem.additional_products || []).map((ap) => {
             const isPlug = isPlugService(ap.service_type, ap.requires_temperature);
+            const isStorage = isStorageService(ap.service_type);
             const defaultQty =
                 isPlug && orderItem.total_shifts && orderItem.total_shifts > 0
                     ? orderItem.total_shifts
-                    : Number(ap.pivot?.quantity ?? 1);
+                    : isStorage
+                        ? getStorageCalcInfo(orderItem, ap.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi).days
+                        : Number(ap.pivot?.quantity ?? 1);
 
             return {
                 id: ap.id,
@@ -439,9 +547,12 @@ export default function EditInvoice() {
         });
 
         const isMainPlug = isPlugService(orderItem.product?.service_type, orderItem.product?.requires_temperature);
+        const isMainStorage = isStorageService(orderItem.product?.service_type);
         const defaultMainQty = isMainPlug && orderItem.total_shifts && orderItem.total_shifts > 0
             ? orderItem.total_shifts
-            : 1;
+            : isMainStorage
+                ? getStorageCalcInfo(orderItem, orderItem.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi).days
+                : 1;
 
         const newEntry: EditableContainerItem = {
             id: -orderItem.id, // ID negatif sementara untuk item baru
@@ -450,10 +561,13 @@ export default function EditInvoice() {
             price_type: orderItem.price_type || '20ft',
             price_value: Number(orderItem.price_value || 0),
             quantity: defaultMainQty,
+            entry_date: orderItem.entry_date,
+            exit_date: orderItem.exit_date,
             start_plug_in: orderItem.start_plug_in,
             plug_out: orderItem.plug_out,
             plug_duration_minutes: orderItem.plug_duration_minutes,
             total_shifts: orderItem.total_shifts,
+            product: orderItem.product,
             additional_products: formattedAdds,
         };
 
@@ -732,7 +846,7 @@ export default function EditInvoice() {
                                                         <span className="font-medium text-gray-700">Qty:</span>
                                                         <input
                                                             type="number"
-                                                            min={1}
+                                                            min={0}
                                                             step={1}
                                                             value={currentContainerQty}
                                                             onChange={(e) => handleUpdateContainerQty(item.id, Number(e.target.value))}
@@ -747,6 +861,21 @@ export default function EditInvoice() {
                                                             Auto: {item.total_shifts} Shift
                                                         </span>
                                                     ) : null}
+                                                    {isStorageService(item.product?.service_type) && (() => {
+                                                        const info = getStorageCalcInfo(item, item.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi);
+                                                        return (
+                                                            <span
+                                                                className={`inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-medium border cursor-help ${
+                                                                    info.days > 0
+                                                                        ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                                                        : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                                                }`}
+                                                                title={info.title}
+                                                            >
+                                                                {info.days > 0 ? `Auto: ${info.days} Hari` : `Auto: 0 Hari (Free)`}
+                                                            </span>
+                                                        );
+                                                    })()}
                                                     <span>=</span>
                                                     <span className="font-bold text-gray-900">{formatRupiah(Number(item.price_value || 0) * currentContainerQty)}</span>
                                                 </div>
@@ -820,6 +949,21 @@ export default function EditInvoice() {
                                                                                 Auto: {item.total_shifts} Shift
                                                                             </span>
                                                                         )}
+                                                                        {isStorageService(prod.service_type) && (() => {
+                                                                            const info = getStorageCalcInfo(item, prod.service_type, storage_free_hours, storage_fumigasi_free_hours, (order as any)?.fumigasi);
+                                                                            return (
+                                                                                <span
+                                                                                    className={`inline-flex items-center gap-1 rounded text-[10px] font-semibold px-1.5 py-0.5 border cursor-help ${
+                                                                                        info.days > 0
+                                                                                            ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                                                                            : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                                                                    }`}
+                                                                                    title={info.title}
+                                                                                >
+                                                                                    {info.days > 0 ? `Auto: ${info.days} Hari` : `Auto: 0 Hari (Free)`}
+                                                                                </span>
+                                                                            );
+                                                                        })()}
                                                                     </div>
                                                                     <div className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
                                                                         <span>Harga satuan:</span>

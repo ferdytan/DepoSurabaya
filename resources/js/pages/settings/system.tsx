@@ -11,6 +11,7 @@ import {
     CalendarX,
     Check,
     CheckCircle2,
+    Clock,
     PanelLeft,
     PanelLeftClose,
     PanelLeftOpen,
@@ -35,6 +36,8 @@ interface SystemSettingsProps {
         default_pagination: number;
         default_sidebar_state?: 'expanded' | 'collapsed';
         default_invoice_show_period?: boolean;
+        storage_free_hours?: number;
+        storage_fumigasi_free_hours?: number;
     };
     status?: string;
 }
@@ -46,6 +49,8 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
         default_pagination: settings.default_pagination || 25,
         default_sidebar_state: settings.default_sidebar_state || 'expanded',
         default_invoice_show_period: settings.default_invoice_show_period ?? true,
+        storage_free_hours: settings.storage_free_hours ?? 72,
+        storage_fumigasi_free_hours: settings.storage_fumigasi_free_hours ?? 120,
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -257,6 +262,79 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                 </button>
                             </div>
                             <InputError message={errors.default_invoice_show_period} />
+                        </div>
+
+                        {/* Section 4: Free Time Storage (Penyimpanan Kontainer) */}
+                        <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-5 sm:p-6 shadow-xs">
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-4 w-4 text-gray-900" />
+                                <Label className="text-sm font-bold text-gray-900">
+                                    Free Time Durasi Storage (Penyimpanan Kontainer)
+                                </Label>
+                            </div>
+                            <p className="text-xs text-gray-500">
+                                Tentukan batas waktu bebas biaya (free hours) sejak kontainer Gate In. Durasi penumpukan dihitung otomatis dari (Gate Out - Gate In) - Free Hours, lalu dibulatkan ke hari penuh (1, 2, dst) saat pembuatan tagihan invoice.
+                            </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 w-full">
+                                <div className="space-y-2 p-4 rounded-xl border border-gray-200 bg-gray-50/50">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="storage_free_hours" className="text-xs font-bold text-gray-800">
+                                            Storage Biasa (20' & 40')
+                                        </Label>
+                                        <span className="text-[11px] text-gray-500 font-medium">
+                                            {Math.floor((Number(data.storage_free_hours) || 0) / 24)} hari {(Number(data.storage_free_hours) || 0) % 24 > 0 ? `${(Number(data.storage_free_hours) || 0) % 24} jam` : ''}
+                                        </span>
+                                    </div>
+                                    <div className="relative">
+                                        <input
+                                            id="storage_free_hours"
+                                            type="number"
+                                            min={0}
+                                            max={720}
+                                            value={data.storage_free_hours}
+                                            onChange={(e) => setData('storage_free_hours', Number(e.target.value))}
+                                            className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 pr-14 focus:border-gray-900 focus:outline-none"
+                                        />
+                                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-xs text-gray-400 font-medium">
+                                            Jam
+                                        </div>
+                                    </div>
+                                    <p className="text-[11px] text-gray-500 leading-relaxed">
+                                        Default: 72 jam (3 hari). Berlaku untuk jenis layanan Storage 20', Storage 40', Storage Empty, dll.
+                                    </p>
+                                    <InputError message={errors.storage_free_hours} />
+                                </div>
+
+                                <div className="space-y-2 p-4 rounded-xl border border-gray-200 bg-gray-50/50">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="storage_fumigasi_free_hours" className="text-xs font-bold text-gray-800">
+                                            Storage Fumigasi (20' & 40')
+                                        </Label>
+                                        <span className="text-[11px] text-gray-500 font-medium">
+                                            {Math.floor((Number(data.storage_fumigasi_free_hours) || 0) / 24)} hari {(Number(data.storage_fumigasi_free_hours) || 0) % 24 > 0 ? `${(Number(data.storage_fumigasi_free_hours) || 0) % 24} jam` : ''}
+                                        </span>
+                                    </div>
+                                    <div className="relative">
+                                        <input
+                                            id="storage_fumigasi_free_hours"
+                                            type="number"
+                                            min={0}
+                                            max={720}
+                                            value={data.storage_fumigasi_free_hours}
+                                            onChange={(e) => setData('storage_fumigasi_free_hours', Number(e.target.value))}
+                                            className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 pr-14 focus:border-gray-900 focus:outline-none"
+                                        />
+                                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3.5 text-xs text-gray-400 font-medium">
+                                            Jam
+                                        </div>
+                                    </div>
+                                    <p className="text-[11px] text-gray-500 leading-relaxed">
+                                        Default: 120 jam (5 hari). Berlaku untuk jenis layanan Storage Fumigasi 20' & 40' atau order fumigasi.
+                                    </p>
+                                    <InputError message={errors.storage_fumigasi_free_hours} />
+                                </div>
+                            </div>
                         </div>
 
                         {/* Submit Button */}

@@ -16,6 +16,7 @@ class OrderItem extends Model
     use SoftDeletes;
 
     protected static ?bool $hasSetPointColumn = null;
+    protected static ?bool $hasStorageDaysColumn = null;
 
     /**
      * Pastikan kolom set_point ada di database atau coba tambahkan secara otomatis.
@@ -44,6 +45,22 @@ class OrderItem extends Model
         }
     }
 
+    /**
+     * Cek apakah kolom storage_days ada di tabel database.
+     */
+    public static function hasStorageDaysColumn(): bool
+    {
+        if (static::$hasStorageDaysColumn !== null) {
+            return static::$hasStorageDaysColumn;
+        }
+
+        try {
+            return static::$hasStorageDaysColumn = \Illuminate\Support\Facades\Schema::hasColumn('order_items', 'storage_days');
+        } catch (\Throwable $e) {
+            return static::$hasStorageDaysColumn = false;
+        }
+    }
+
     protected static function boot()
     {
         parent::boot();
@@ -53,6 +70,13 @@ class OrderItem extends Model
             if (array_key_exists('set_point', $model->attributes)) {
                 if (!static::hasSetPointColumn()) {
                     unset($model->attributes['set_point']);
+                }
+            }
+
+            // Jika kolom storage_days belum ada di tabel database MySQL, jangan biarkan Eloquent menyertakannya
+            if (array_key_exists('storage_days', $model->attributes)) {
+                if (!static::hasStorageDaysColumn()) {
+                    unset($model->attributes['storage_days']);
                 }
             }
         });
@@ -65,7 +89,7 @@ class OrderItem extends Model
         'price_type', 'price_value', 'delete_reason',
         'is_excluded_from_report',
         'start_plug_in', 'plug_out', 'plug_duration_minutes', 'total_shifts',
-        'set_point',
+        'set_point', 'storage_days',
         'shift_calculation_mode', 'shift_details', 'last_calculated_at',
     ];
 
@@ -75,10 +99,48 @@ class OrderItem extends Model
         'plug_out' => 'datetime:Y-m-d H:i:s',
         'plug_duration_minutes' => 'integer',
         'total_shifts' => 'integer',
+        'storage_days' => 'integer',
         'set_point' => 'float',
         'shift_details' => 'array',
         'last_calculated_at' => 'datetime:Y-m-d H:i:s',
     ];
+
+    /**
+     * Hitung hari storage yang dikenakan biaya berdasarkan free hours.
+     */
+    public function calculateStorageDays(?int $freeHours = null): int
+    {
+        if (!$this->entry_date) {
+            return 0;
+        }
+
+        if ($freeHours === null) {
+            $isFumigasi = false;
+            if ($this->relationLoaded('product') && $this->product) {
+                $st = strtolower($this->product->service_type ?? '');
+                $isFumigasi = str_contains($st, 'fumiga') || str_contains($st, 'fumi');
+            }
+            if (!$isFumigasi && $this->relationLoaded('order') && $this->order) {
+                $isFumigasi = !empty($this->order->fumigasi);
+            }
+            $freeHours = $isFumigasi
+                ? (int) Setting::get('storage_fumigasi_free_hours', 120)
+                : (int) Setting::get('storage_free_hours', 72);
+        }
+
+        try {
+            $start = Carbon::parse($this->entry_date);
+            $end = $this->exit_date ? Carbon::parse($this->exit_date) : now();
+            if ($end->lt($start)) {
+                return 0;
+            }
+            $totalHours = $start->diffInMinutes($end) / 60;
+            $excessHours = max(0, $totalHours - $freeHours);
+            return $excessHours > 0 ? (int) ceil($excessHours / 24) : 0;
+        } catch (\Throwable $e) {
+            return 0;
+        }
+    }
 
     /**
      * Hitung durasi dan jumlah shift menggunakan ReeferShiftCalculationService.

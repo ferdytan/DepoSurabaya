@@ -247,6 +247,8 @@ class InvoiceController extends Controller
             'next_in2_number' => $nextIn2,
             'reuse_invoice' => $reuseInvoice,
             'default_show_period' => filter_var(Setting::get('default_invoice_show_period', true), FILTER_VALIDATE_BOOLEAN),
+            'storage_free_hours' => (int) Setting::get('storage_free_hours', 72),
+            'storage_fumigasi_free_hours' => (int) Setting::get('storage_fumigasi_free_hours', 120),
             'return_url' => $returnUrl,
         ]);
     }
@@ -262,7 +264,7 @@ class InvoiceController extends Controller
             'order_item_ids.*' => ['integer'],
             'order_item_quantities' => ['nullable','array'],
             'order_item_quantities.*.order_item_id' => ['required','integer'],
-            'order_item_quantities.*.quantity' => ['required','integer','min:1'],
+            'order_item_quantities.*.quantity' => ['required','integer','min:0'],
             'order_item_prices' => ['nullable','array'],
             'order_item_prices.*.order_item_id' => ['required','integer'],
             'order_item_prices.*.price_value' => ['required','numeric','min:0'],
@@ -327,15 +329,32 @@ class InvoiceController extends Controller
             $subtotal = 0;
             $itemQtyValues = [];
             $itemPriceValues = [];
+
+            $storageFreeHours = (int) Setting::get('storage_free_hours', 72);
+            $storageFumigasiFreeHours = (int) Setting::get('storage_fumigasi_free_hours', 120);
+
             foreach ($orderItems as $oi) {
                 $isPlug = false;
+                $isStorage = false;
+                $isStorageFumigasi = false;
                 if ($oi->product) {
                     $st = strtolower($oi->product->service_type ?? '');
                     $isPlug = $oi->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+                    $isStorage = str_contains($st, 'storage') || str_contains($st, 'penumpukan');
+                    $isStorageFumigasi = $isStorage && (str_contains($st, 'fumiga') || str_contains($st, 'fumi') || !empty($oi->order?->fumigasi));
                 }
-                $defaultQty = ($isPlug && $oi->total_shifts && $oi->total_shifts > 0) ? (int)$oi->total_shifts : 1;
-                $oiQty = (int) ($itemQtyMap[$oi->id] ?? $defaultQty);
-                if ($oiQty <= 0) $oiQty = 1;
+
+                $defaultQty = 1;
+                if ($isPlug && $oi->total_shifts && $oi->total_shifts > 0) {
+                    $defaultQty = (int) $oi->total_shifts;
+                } elseif ($isStorage) {
+                    $freeHours = $isStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                    $defaultQty = $this->calculateStorageDays($oi->entry_date, $oi->exit_date, $freeHours);
+                }
+
+                $oiQty = isset($itemQtyMap[$oi->id]) ? (int) $itemQtyMap[$oi->id] : $defaultQty;
+                if ($oiQty < 0) $oiQty = 0;
+                if (!$isStorage && $oiQty === 0) $oiQty = 1;
                 $itemQtyValues[$oi->id] = $oiQty;
 
                 $oiPrice = isset($itemPriceMap[$oi->id]) ? (int) $itemPriceMap[$oi->id] : (int) ($oi->price_value ?? 0);
@@ -345,7 +364,24 @@ class InvoiceController extends Controller
                 foreach ($oi->additionalProducts as $ap) {
                     $key = $oi->id.':'.$ap->id;
                     $price = isset($addPriceMap[$key]) ? (int) $addPriceMap[$key] : (int) ($ap->pivot->price_value ?? 0);
-                    $qty = (int) ($qtyMap[$key] ?? 0);
+
+                    $apSt = strtolower($ap->service_type ?? '');
+                    $isApPlug = $ap->requires_temperature || str_contains($apSt, 'plug') || str_contains($apSt, 'reefer') || str_contains($apSt, 'suhu');
+                    $isApStorage = str_contains($apSt, 'storage') || str_contains($apSt, 'penumpukan');
+                    $isApStorageFumigasi = $isApStorage && (str_contains($apSt, 'fumiga') || str_contains($apSt, 'fumi') || !empty($oi->order?->fumigasi));
+
+                    $defaultApQty = 1;
+                    if ($isApPlug && $oi->total_shifts && $oi->total_shifts > 0) {
+                        $defaultApQty = (int) $oi->total_shifts;
+                    } elseif ($isApStorage) {
+                        $freeHours = $isApStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                        $defaultApQty = $this->calculateStorageDays($oi->entry_date, $oi->exit_date, $freeHours);
+                    } else {
+                        $defaultApQty = (int) ($ap->pivot->quantity ?? 1);
+                    }
+
+                    $qty = isset($qtyMap[$key]) ? (int) $qtyMap[$key] : $defaultApQty;
+                    if ($qty < 0) $qty = 0;
                     $subtotal += $price * $qty;
                 }
             }
@@ -673,6 +709,8 @@ class InvoiceController extends Controller
             'availableOrderItems' => $availableOrderItems->values(),
             'allProducts' => $allProducts,
             'activityLogs' => $activityLogs,
+            'storage_free_hours' => (int) Setting::get('storage_free_hours', 72),
+            'storage_fumigasi_free_hours' => (int) Setting::get('storage_fumigasi_free_hours', 120),
             'return_url' => $returnUrl,
         ]);
     }
@@ -713,13 +751,27 @@ class InvoiceController extends Controller
                     ->whereIn('id', $newOrderItemIds)
                     ->get();
 
+                $storageFreeHours = (int) Setting::get('storage_free_hours', 72);
+                $storageFumigasiFreeHours = (int) Setting::get('storage_fumigasi_free_hours', 120);
+
                 foreach ($newItems as $orderItem) {
                     $isPlug = false;
+                    $isStorage = false;
+                    $isStorageFumigasi = false;
                     if ($orderItem->product) {
                         $st = strtolower($orderItem->product->service_type ?? '');
                         $isPlug = $orderItem->product->requires_temperature || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+                        $isStorage = str_contains($st, 'storage') || str_contains($st, 'penumpukan');
+                        $isStorageFumigasi = $isStorage && (str_contains($st, 'fumiga') || str_contains($st, 'fumi') || !empty($orderItem->order?->fumigasi));
                     }
-                    $defaultQty = ($isPlug && $orderItem->total_shifts && $orderItem->total_shifts > 0) ? (int)$orderItem->total_shifts : 1;
+
+                    $defaultQty = 1;
+                    if ($isPlug && $orderItem->total_shifts && $orderItem->total_shifts > 0) {
+                        $defaultQty = (int) $orderItem->total_shifts;
+                    } elseif ($isStorage) {
+                        $freeHours = $isStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                        $defaultQty = $this->calculateStorageDays($orderItem->entry_date, $orderItem->exit_date, $freeHours);
+                    }
 
                     $invItem = $invoice->items()->create([
                         'order_item_id' => $orderItem->id,
@@ -732,14 +784,29 @@ class InvoiceController extends Controller
 
                     $adds = [];
                     foreach ($orderItem->additionalProducts as $ap) {
+                        $apSt = strtolower($ap->service_type ?? '');
+                        $isApPlug = $ap->requires_temperature || str_contains($apSt, 'plug') || str_contains($apSt, 'reefer') || str_contains($apSt, 'suhu');
+                        $isApStorage = str_contains($apSt, 'storage') || str_contains($apSt, 'penumpukan');
+                        $isApStorageFumigasi = $isApStorage && (str_contains($apSt, 'fumiga') || str_contains($apSt, 'fumi') || !empty($orderItem->order?->fumigasi));
+
+                        $defaultApQty = 1;
+                        if ($isApPlug && $orderItem->total_shifts && $orderItem->total_shifts > 0) {
+                            $defaultApQty = (int) $orderItem->total_shifts;
+                        } elseif ($isApStorage) {
+                            $freeHours = $isApStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                            $defaultApQty = $this->calculateStorageDays($orderItem->entry_date, $orderItem->exit_date, $freeHours);
+                        } else {
+                            $defaultApQty = (int) ($ap->pivot->quantity ?? 1);
+                        }
+
                         $adds[] = [
                             'id' => $ap->id,
                             'service_type' => $ap->service_type,
                             'price_value' => (int) ($ap->pivot->price_value ?? 0),
-                            'quantity' => 1,
+                            'quantity' => $defaultApQty,
                             'pivot' => [
                                 'price_value' => (int) ($ap->pivot->price_value ?? 0),
-                                'quantity' => 1,
+                                'quantity' => $defaultApQty,
                             ],
                         ];
                     }
@@ -757,7 +824,8 @@ class InvoiceController extends Controller
                             $itemModel->price_value = (int) $reqItem['price_value'];
                         }
                         if (isset($reqItem['quantity'])) {
-                            $itemModel->quantity = max(1, (int) $reqItem['quantity']);
+                            $isStorage = $itemModel->product && (str_contains(strtolower($itemModel->product->service_type ?? ''), 'storage') || str_contains(strtolower($itemModel->product->service_type ?? ''), 'penumpukan'));
+                            $itemModel->quantity = $isStorage ? max(0, (int) $reqItem['quantity']) : max(1, (int) $reqItem['quantity']);
                         }
 
                         $formattedAdds = [];
@@ -1337,6 +1405,28 @@ class InvoiceController extends Controller
             }
         }
         return false;
+    }
+
+    /**
+     * Hitung hari storage yang dikenakan biaya berdasarkan gate in, gate out, dan free hours.
+     */
+    public function calculateStorageDays($entryDate, $exitDate, int $freeHours): int
+    {
+        if (!$entryDate) {
+            return 0;
+        }
+        try {
+            $start = Carbon::parse($entryDate);
+            $end = $exitDate ? Carbon::parse($exitDate) : now();
+            if ($end->lt($start)) {
+                return 0;
+            }
+            $totalHours = $start->diffInMinutes($end) / 60;
+            $excessHours = max(0, $totalHours - $freeHours);
+            return $excessHours > 0 ? (int) ceil($excessHours / 24) : 0;
+        } catch (\Throwable $e) {
+            return 0;
+        }
     }
 
     public function generateInvoiceNumber(bool $hasFumigasi, ?string $date = null): string

@@ -66,6 +66,92 @@ function isPlugService(serviceType?: string, requiresTemperature?: number | bool
     return st.includes('plug') || st.includes('reefer') || st.includes('suhu');
 }
 
+function isStorageService(serviceType?: string): boolean {
+    if (!serviceType) return false;
+    const st = serviceType.toLowerCase();
+    return st.includes('storage') || st.includes('penumpukan');
+}
+
+function isStorageFumigasiService(serviceType?: string, orderFumigasi?: boolean | number | null): boolean {
+    if (!serviceType) return false;
+    const st = serviceType.toLowerCase();
+    if (!st.includes('storage') && !st.includes('penumpukan')) return false;
+    return st.includes('fumiga') || st.includes('fumi') || Boolean(orderFumigasi);
+}
+
+interface StorageCalcInfo {
+    days: number;
+    totalHours: number;
+    freeHours: number;
+    excessHours: number;
+    title: string;
+}
+
+function getStorageCalcInfo(
+    item: { entry_date?: string | null; exit_date?: string | null },
+    serviceType?: string,
+    storageFreeHours: number = 72,
+    storageFumigasiFreeHours: number = 120,
+    orderFumigasi?: boolean | number | null,
+): StorageCalcInfo {
+    const isFumi = isStorageFumigasiService(serviceType, orderFumigasi);
+    const freeHours = isFumi ? storageFumigasiFreeHours : storageFreeHours;
+
+    if (!item.entry_date) {
+        return {
+            days: 0,
+            totalHours: 0,
+            freeHours,
+            excessHours: 0,
+            title: `Waktu Gate In belum tercatat (Free Time: ${freeHours} jam)`,
+        };
+    }
+
+    const entryTime = new Date(item.entry_date).getTime();
+    if (isNaN(entryTime)) {
+        return {
+            days: 0,
+            totalHours: 0,
+            freeHours,
+            excessHours: 0,
+            title: 'Format Gate In tidak valid',
+        };
+    }
+
+    const exitTime = item.exit_date ? new Date(item.exit_date).getTime() : Date.now();
+    const diffMs = Math.max(0, exitTime - entryTime);
+    const totalHours = diffMs / (1000 * 60 * 60);
+    const excessHours = Math.max(0, totalHours - freeHours);
+    const days = excessHours > 0 ? Math.ceil(excessHours / 24) : 0;
+
+    const entryStr = new Date(item.entry_date).toLocaleString('id-ID', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+    const exitStr = item.exit_date
+        ? new Date(item.exit_date).toLocaleString('id-ID', {
+              day: '2-digit',
+              month: 'short',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+          })
+        : 'Belum Keluar (s.d. sekarang)';
+
+    const title = `Gate In: ${entryStr}\nGate Out: ${exitStr}\nDurasi Depo: ${totalHours.toFixed(1)} Jam\nFree Time: ${freeHours} Jam (${isFumi ? 'Fumigasi' : 'Reguler'})\nKelebihan: ${excessHours.toFixed(1)} Jam\nTagihan Storage: ${days} Hari`;
+
+    return {
+        days,
+        totalHours,
+        freeHours,
+        excessHours,
+        title,
+    };
+}
+
 interface Order {
     id: number;
     order_id: string;
@@ -74,6 +160,7 @@ interface Order {
     price_value?: number;
     entry_date?: string | null;
     exit_date?: string | null;
+    fumigasi?: boolean | number | null;
     order_items: OrderItem[];
 }
 
@@ -101,6 +188,8 @@ interface PageProps {
     next_in2_number?: string;
     reuse_invoice?: ReuseInvoiceInfo | null;
     default_show_period?: boolean;
+    storage_free_hours?: number;
+    storage_fumigasi_free_hours?: number;
     return_url?: string;
 }
 
@@ -115,7 +204,16 @@ type AxiosErrorResponse = {
 
 export default function CreateInvoice() {
     const page = usePage<PageProps>();
-    const { customers = [], invoice_number, next_in1_number, next_in2_number, reuse_invoice, default_show_period } = page.props;
+    const {
+        customers = [],
+        invoice_number,
+        next_in1_number,
+        next_in2_number,
+        reuse_invoice,
+        default_show_period,
+        storage_free_hours = 72,
+        storage_fumigasi_free_hours = 120,
+    } = page.props;
     const returnUrl = page.props.return_url || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('return_url') : null) || '/invoices';
 
     const breadcrumbs: BreadcrumbItem[] = [
@@ -276,11 +374,15 @@ export default function CreateInvoice() {
         if (isPlug && item.total_shifts && item.total_shifts > 0) {
             return item.total_shifts;
         }
+        if (isStorageService(item.product?.service_type)) {
+            const info = getStorageCalcInfo(item, item.product?.service_type, storage_free_hours, storage_fumigasi_free_hours);
+            return info.days;
+        }
         return 1;
     };
 
     const updateItemQty = (itemId: number, val: number) => {
-        const v = Math.max(1, Math.floor(val || 1));
+        const v = Math.max(0, Math.floor(val || 0));
         setItemQty((prev) => ({ ...prev, [itemId]: v }));
     };
 
@@ -336,15 +438,27 @@ export default function CreateInvoice() {
                     validIds.add(item.id);
                 }
                 const isPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+                const isStorage = isStorageService(item.product?.service_type);
+
                 if (isPlug && item.total_shifts && item.total_shifts > 0) {
                     initialItemQtys[item.id] = item.total_shifts;
+                } else if (isStorage) {
+                    const info = getStorageCalcInfo(item, item.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                    initialItemQtys[item.id] = info.days;
                 }
+
                 item.additional_products?.forEach((ap) => {
                     const isApPlug = isPlugService(ap.service_type, ap.requires_temperature);
-                    initialQtys[`${item.id}:${ap.id}`] =
-                        isApPlug && item.total_shifts && item.total_shifts > 0
-                            ? item.total_shifts
-                            : (ap.pivot?.quantity ?? 1);
+                    const isApStorage = isStorageService(ap.service_type);
+
+                    if (isApPlug && item.total_shifts && item.total_shifts > 0) {
+                        initialQtys[`${item.id}:${ap.id}`] = item.total_shifts;
+                    } else if (isApStorage) {
+                        const info = getStorageCalcInfo(item, ap.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                        initialQtys[`${item.id}:${ap.id}`] = info.days;
+                    } else {
+                        initialQtys[`${item.id}:${ap.id}`] = ap.pivot?.quantity ?? 1;
+                    }
                 });
             });
 
@@ -380,15 +494,27 @@ export default function CreateInvoice() {
                         order.order_items?.forEach((item) => {
                             validIds.add(item.id);
                             const isPlug = isPlugService(item.product?.service_type, item.product?.requires_temperature);
+                            const isStorage = isStorageService(item.product?.service_type);
+
                             if (isPlug && item.total_shifts && item.total_shifts > 0) {
                                 initialItemQtys[item.id] = item.total_shifts;
+                            } else if (isStorage) {
+                                const info = getStorageCalcInfo(item, item.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                                initialItemQtys[item.id] = info.days;
                             }
+
                             item.additional_products?.forEach((ap) => {
                                 const isApPlug = isPlugService(ap.service_type, ap.requires_temperature);
-                                initialQtys[`${item.id}:${ap.id}`] =
-                                    isApPlug && item.total_shifts && item.total_shifts > 0
-                                        ? item.total_shifts
-                                        : (ap.pivot?.quantity ?? 1);
+                                const isApStorage = isStorageService(ap.service_type);
+
+                                if (isApPlug && item.total_shifts && item.total_shifts > 0) {
+                                    initialQtys[`${item.id}:${ap.id}`] = item.total_shifts;
+                                } else if (isApStorage) {
+                                    const info = getStorageCalcInfo(item, ap.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                                    initialQtys[`${item.id}:${ap.id}`] = info.days;
+                                } else {
+                                    initialQtys[`${item.id}:${ap.id}`] = ap.pivot?.quantity ?? 1;
+                                }
                             });
                         });
                     }
@@ -476,20 +602,27 @@ export default function CreateInvoice() {
 
     // Manage qty
     const getQty = (itemId: number, prodId: number) => {
-        if (addQty[`${itemId}:${prodId}`] !== undefined) {
-            return addQty[`${itemId}:${prodId}`];
+        const key = `${itemId}:${prodId}`;
+        if (addQty[key] !== undefined) {
+            return addQty[key];
         }
         for (const order of activeOrders) {
             const it = order.order_items?.find((i) => i.id === itemId);
             if (it) {
                 const ap = it.additional_products?.find((p) => p.id === prodId);
-                if (
-                    ap &&
-                    isPlugService(ap.service_type, ap.requires_temperature) &&
-                    it.total_shifts &&
-                    it.total_shifts > 0
-                ) {
-                    return it.total_shifts;
+                if (ap) {
+                    if (
+                        isPlugService(ap.service_type, ap.requires_temperature) &&
+                        it.total_shifts &&
+                        it.total_shifts > 0
+                    ) {
+                        return it.total_shifts;
+                    }
+                    if (isStorageService(ap.service_type)) {
+                        const info = getStorageCalcInfo(it, ap.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                        return info.days;
+                    }
+                    return ap.pivot?.quantity ?? 1;
                 }
             }
         }
@@ -1170,7 +1303,7 @@ export default function CreateInvoice() {
                                                                                     <span className="text-gray-400 text-xs">Qty:</span>
                                                                                     <input
                                                                                         type="number"
-                                                                                        min={1}
+                                                                                        min={0}
                                                                                         step={1}
                                                                                         value={currentItemQty}
                                                                                         disabled={!isSelected || isDisabled}
@@ -1198,6 +1331,21 @@ export default function CreateInvoice() {
                                                                                             Auto: {item.total_shifts} Shift
                                                                                         </span>
                                                                                     )}
+                                                                                {isStorageService(item.product?.service_type) && (() => {
+                                                                                    const info = getStorageCalcInfo(item, item.product?.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                                                                                    return (
+                                                                                        <span
+                                                                                            className={`inline-flex items-center gap-1 rounded text-[10px] font-semibold px-1.5 py-0.5 border cursor-help ${
+                                                                                                info.days > 0
+                                                                                                    ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                                                                                    : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                                                                            }`}
+                                                                                            title={info.title}
+                                                                                        >
+                                                                                            {info.days > 0 ? `Auto: ${info.days} Hari` : `Auto: 0 Hari (Free)`}
+                                                                                        </span>
+                                                                                    );
+                                                                                })()}
                                                                             </div>
                                                                             <div className="text-xs text-gray-500">
                                                                                 Pokok: {formatRupiah(priceValue * currentItemQty)}{currentItemQty > 1 ? ` (${formatRupiah(priceValue)} × ${currentItemQty})` : ''}
@@ -1280,6 +1428,21 @@ export default function CreateInvoice() {
                                                                                                                 Auto: {item.total_shifts} Shift
                                                                                                             </span>
                                                                                                         )}
+                                                                                                    {isStorageService(prod.service_type) && (() => {
+                                                                                                        const info = getStorageCalcInfo(item, prod.service_type, storage_free_hours, storage_fumigasi_free_hours, order.fumigasi);
+                                                                                                        return (
+                                                                                                            <span
+                                                                                                                className={`inline-flex items-center gap-1 rounded text-[10px] font-semibold px-1.5 py-0.5 border cursor-help ${
+                                                                                                                    info.days > 0
+                                                                                                                        ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                                                                                                        : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                                                                                                }`}
+                                                                                                                title={info.title}
+                                                                                                            >
+                                                                                                                {info.days > 0 ? `Auto: ${info.days} Hari` : `Auto: 0 Hari (Free)`}
+                                                                                                            </span>
+                                                                                                        );
+                                                                                                    })()}
                                                                                                 </div>
                                                                                             </div>
 

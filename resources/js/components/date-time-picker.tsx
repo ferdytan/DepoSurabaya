@@ -838,9 +838,7 @@ export function DateTimePicker({
 
                 // Modal Popup View (Ketika di dalam Dialog atau di layar kecil)
                 if (shouldCenter && typeof document !== 'undefined') {
-                    const portalTarget =
-                        (containerRef.current ? containerRef.current.closest('[data-slot="dialog-content"], [role="dialog"], [data-radix-dialog-content], .dialog-content') : null) ||
-                        document.body;
+                    const portalTarget = document.body;
 
                     return createPortal(
                         <DismissableLayerBranch asChild>

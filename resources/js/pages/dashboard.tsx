@@ -1901,21 +1901,14 @@ function CheckerMobileApp({
 
                         {/* Input DateTime */}
                         <div className="mt-4 space-y-2">
-                            <div className="flex items-center justify-between">
-                                <label className="text-xs font-bold text-slate-800">Tanggal & Jam Masuk (WIB):</label>
-                                <button
-                                    type="button"
-                                    onClick={() => setGateInDate(getNowIso())}
-                                    className="text-[11px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded hover:bg-blue-100 transition"
-                                >
-                                    🕒 Gunakan Jam Sekarang
-                                </button>
-                            </div>
-                            <input
-                                type="datetime-local"
+                            <label className="text-xs font-bold text-slate-800">Tanggal & Jam Masuk (WIB):</label>
+                            <DateTimePicker
                                 value={gateInDate}
-                                onChange={(e) => setGateInDate(e.target.value)}
-                                className="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 text-sm font-semibold text-slate-900 focus:border-blue-500 focus:outline-none"
+                                onChange={(val) => setGateInDate(val)}
+                                withTime={true}
+                                inModal={true}
+                                placeholder="Pilih tanggal & jam masuk..."
+                                className="w-full"
                             />
                         </div>
 
@@ -2013,21 +2006,14 @@ function CheckerMobileApp({
 
                         {/* Input DateTime */}
                         <div className="mt-4 space-y-2">
-                            <div className="flex items-center justify-between">
-                                <label className="text-xs font-bold text-slate-800">Tanggal & Jam Keluar (WIB):</label>
-                                <button
-                                    type="button"
-                                    onClick={() => setGateOutDate(getNowIso())}
-                                    className="text-[11px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded hover:bg-blue-100 transition"
-                                >
-                                    🕒 Gunakan Jam Sekarang
-                                </button>
-                            </div>
-                            <input
-                                type="datetime-local"
+                            <label className="text-xs font-bold text-slate-800">Tanggal & Jam Keluar (WIB):</label>
+                            <DateTimePicker
                                 value={gateOutDate}
-                                onChange={(e) => setGateOutDate(e.target.value)}
-                                className="w-full h-11 rounded-xl border border-slate-300 bg-white px-3 text-sm font-semibold text-slate-900 focus:border-blue-500 focus:outline-none"
+                                onChange={(val) => setGateOutDate(val)}
+                                withTime={true}
+                                inModal={true}
+                                placeholder="Pilih tanggal & jam keluar..."
+                                className="w-full"
                             />
                         </div>
 

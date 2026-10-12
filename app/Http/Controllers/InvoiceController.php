@@ -315,6 +315,19 @@ class InvoiceController extends Controller
                 abort(422, 'Order item tidak ditemukan.');
             }
 
+            // Urutkan kontainer agar kontainer dari order pertama yang dipilih selalu disimpan pertama
+            $selectedOrderIds = !empty($data['order_ids'])
+                ? $data['order_ids']
+                : (!empty($data['order_id']) ? [$data['order_id']] : []);
+            $orderIdsOrder = !empty($selectedOrderIds) ? array_flip($selectedOrderIds) : [];
+            $orderItemIdsOrder = array_flip($data['order_item_ids']);
+
+            $orderItems = $orderItems->sortBy(function ($item) use ($orderIdsOrder, $orderItemIdsOrder) {
+                $orderIdx = isset($orderIdsOrder[$item->order_id]) ? $orderIdsOrder[$item->order_id] : 999999;
+                $itemIdx = isset($orderItemIdsOrder[$item->id]) ? $orderItemIdsOrder[$item->id] : 999999;
+                return sprintf('%06d-%06d', $orderIdx, $itemIdx);
+            })->values();
+
             if (!($data['show_period'] ?? true)) {
                 $latestExitDate = $orderItems->map(function ($oi) {
                     return $oi->exit_date ? \Carbon\Carbon::parse($oi->exit_date)->format('Y-m-d') : null;
@@ -1224,6 +1237,19 @@ class InvoiceController extends Controller
             },
         ])->whereIn('id', $validated['order_item_ids'])->get();
 
+        // Urutkan kontainer agar kontainer dari order pertama yang dipilih selalu muncul pertama
+        $selectedOrderIds = !empty($validated['order_ids'])
+            ? $validated['order_ids']
+            : (!empty($validated['order_id']) ? [$validated['order_id']] : []);
+        $orderIdsOrder = !empty($selectedOrderIds) ? array_flip($selectedOrderIds) : [];
+        $orderItemIdsOrder = array_flip($validated['order_item_ids']);
+
+        $orderItems = $orderItems->sortBy(function ($item) use ($orderIdsOrder, $orderItemIdsOrder) {
+            $orderIdx = isset($orderIdsOrder[$item->order_id]) ? $orderIdsOrder[$item->order_id] : 999999;
+            $itemIdx = isset($orderItemIdsOrder[$item->id]) ? $orderItemIdsOrder[$item->id] : 999999;
+            return sprintf('%06d-%06d', $orderIdx, $itemIdx);
+        })->values();
+
         if (!($validated['show_period'] ?? true)) {
             $latestExitDate = $orderItems->map(function ($oi) {
                 $raw = $oi->exit_date;
@@ -1238,6 +1264,11 @@ class InvoiceController extends Controller
         // Kumpulkan semua nomor order/AJU yang terkait dengan kontainer-kontainer yang dipilih
         $orderIds = $orderItems->pluck('order_id')->filter()->unique()->values();
         $orders = Order::whereIn('id', $orderIds)->get();
+        if (!empty($orderIdsOrder)) {
+            $orders = $orders->sortBy(function ($o) use ($orderIdsOrder) {
+                return $orderIdsOrder[$o->id] ?? 999999;
+            })->values();
+        }
         $orderIdStrings = $orders->map(function ($o) {
             return (!empty($o->no_aju) && trim($o->no_aju) !== '' && $o->no_aju !== '-')
                 ? $o->no_aju

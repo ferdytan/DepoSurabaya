@@ -99,8 +99,8 @@ export function AppSidebar() {
         // Admin: tanpa User, Customers, Shippers, Products
         filteredNavItems = baseNavItems.filter((item) => !['/users', '/products'].includes(item.href));
     } else if (isChecker) {
-        // Checker & Ops Checker: menu tunggal Orders saja
-        filteredNavItems = baseNavItems.filter((item) => item.href == '/orders');
+        // Checker & Ops Checker: Orders dan Temperature (Monitoring Suhu)
+        filteredNavItems = baseNavItems.filter((item) => ['/orders', '/temperature-records'].includes(item.href));
     } else if (roleId == 4) {
         // Karantina: hanya menu Dashboard (menu Karantina di-hide sementara)
         filteredNavItems = [

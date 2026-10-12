@@ -303,9 +303,11 @@ export default function CreateInvoice() {
         return selectedCustomer?.orders || [];
     }, [selectedCustomer]);
 
-    // Orders yang sedang aktif / dipilih
+    // Orders yang sedang aktif / dipilih (urut sesuai urutan pemilihan di selectedOrderIds)
     const activeOrders = useMemo(() => {
-        return orders.filter((o) => selectedOrderIds.includes(o.id.toString()));
+        return selectedOrderIds
+            .map((idStr) => orders.find((o) => o.id.toString() === idStr))
+            .filter((o): o is NonNullable<typeof o> => Boolean(o));
     }, [orders, selectedOrderIds]);
 
     // Deteksi apakah kontainer yang dipilih memiliki layanan jenis Fumigasi
@@ -739,27 +741,41 @@ export default function CreateInvoice() {
                 ),
         );
 
-        // Susun daftar order items (kontainer) dengan quantity
-        const orderItemSelections = Array.from(selectedContainers).map((id) => {
-            const it = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === id);
-            return {
-                order_item_id: id,
-                quantity: it ? getItemQty(it) : 1,
-            };
-        });
+        // Susun daftar order items (kontainer) dengan quantity sesuai urutan order yang dipilih
+        const orderedSelectedItems: NonNullable<typeof activeOrders[0]['order_items']> = [];
+        const orderedItemIds: number[] = [];
 
-        const orderItemPriceSelections = Array.from(selectedContainers).map((id) => {
-            const it = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === id);
-            return {
-                order_item_id: id,
-                price_value: it ? getItemPrice(it) : 0,
-            };
-        });
+        for (const order of activeOrders) {
+            for (const item of order.order_items || []) {
+                if (selectedContainers.has(item.id)) {
+                    orderedSelectedItems.push(item);
+                    orderedItemIds.push(item.id);
+                }
+            }
+        }
+        // Fallback jika ada kontainer yang terpilih di luar loop di atas
+        for (const cid of selectedContainers) {
+            if (!orderedItemIds.includes(cid)) {
+                const found = activeOrders.flatMap((o) => o.order_items || []).find((i) => i.id === cid);
+                if (found) {
+                    orderedSelectedItems.push(found);
+                    orderedItemIds.push(cid);
+                }
+            }
+        }
+
+        const orderItemSelections = orderedSelectedItems.map((it) => ({
+            order_item_id: it.id,
+            quantity: getItemQty(it),
+        }));
+
+        const orderItemPriceSelections = orderedSelectedItems.map((it) => ({
+            order_item_id: it.id,
+            price_value: getItemPrice(it),
+        }));
 
         // Cari tanggal keluar (exit_date) paling terakhir dari kontainer yang dipilih
-        const selectedItems = activeOrders
-            .flatMap((o) => o.order_items || [])
-            .filter((it) => selectedContainers.has(it.id));
+        const selectedItems = orderedSelectedItems;
         const exitTimestamps = selectedItems
             .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
@@ -777,7 +793,7 @@ export default function CreateInvoice() {
             invoice_number: dynamicInvoiceNumber || invoice_number || '',
             order_id: selectedOrderIds[0] || null,
             order_ids: selectedOrderIds,
-            order_item_ids: Array.from(selectedContainers),
+            order_item_ids: orderedItemIds,
             order_item_quantities: orderItemSelections,
             order_item_prices: orderItemPriceSelections,
             period_start: showPeriod ? periodStart : effectiveDate,

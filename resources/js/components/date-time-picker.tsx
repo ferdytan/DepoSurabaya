@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { DismissableLayerBranch } from '@radix-ui/react-dismissable-layer';
 import {
@@ -10,9 +10,12 @@ import {
     X,
     Check,
     RotateCcw,
+    Plus,
+    Minus,
+    Zap,
 } from 'lucide-react';
 
-interface DateTimePickerProps {
+export interface DateTimePickerProps {
     value?: string; // 'YYYY-MM-DD' or 'YYYY-MM-DDTHH:mm' or 'YYYY-MM-DD HH:mm:ss'
     onChange: (val: string) => void;
     withTime?: boolean;
@@ -27,10 +30,14 @@ interface DateTimePickerProps {
 
 const MONTH_NAMES = [
     'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
 ];
 
 const DAY_NAMES = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+const DAY_NAMES_FULL = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+
+const HOURS_LIST = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
+const MINUTES_LIST = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, '0'));
 
 function getNowLocalTime(): string {
     const now = new Date();
@@ -106,34 +113,32 @@ export function DateTimePicker({
 }: DateTimePickerProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isShortViewport, setIsShortViewport] = useState(false);
     const [isInsideDialog, setIsInsideDialog] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
+    const portalWrapperRef = useRef<HTMLDivElement>(null);
 
     const initial = parseValue(value, withTime);
     const defaultToday = formatYMD(new Date());
     const defaultNow = getNowLocalTime();
-    const [selectedDate, setSelectedDate] = useState<string>(initial.date);
+
+    const [selectedDate, setSelectedDate] = useState<string>(initial.date || defaultToday);
     const [selectedTime, setSelectedTime] = useState<string>(initial.time || defaultNow);
 
-    const initialTimeParts = (initial.time || defaultNow).split(':');
-    const [hourVal, setHourVal] = useState<string>(initialTimeParts[0] || '08');
-    const [minuteVal, setMinuteVal] = useState<string>(initialTimeParts[1] || '00');
-    const hourValRef = useRef<string>(initialTimeParts[0] || '08');
-    const minuteValRef = useRef<string>(initialTimeParts[1] || '00');
-    const prevIsOpenRef = useRef<boolean>(false);
-    const prevValueRef = useRef<string>(value);
-    const hourInputRef = useRef<HTMLInputElement>(null);
-    const minuteInputRef = useRef<HTMLInputElement>(null);
-    const portalWrapperRef = useRef<HTMLDivElement>(null);
+    const timeParts = (selectedTime || defaultNow).split(':');
+    const [hourVal, setHourVal] = useState<string>(timeParts[0] || '08');
+    const [minuteVal, setMinuteVal] = useState<string>(timeParts[1] || '00');
 
-    // Current displayed month in calendar
+    // Calendar month/year navigation state
     const initDateObj = parseYMD(initial.date) || new Date();
     const [viewYear, setViewYear] = useState<number>(initDateObj.getFullYear());
     const [viewMonth, setViewMonth] = useState<number>(initDateObj.getMonth());
 
-    const [isShortViewport, setIsShortViewport] = useState(false);
     const [dropPosition, setDropPosition] = useState<'bottom' | 'top'>('bottom');
     const [horizontalAlign, setHorizontalAlign] = useState<'left' | 'right' | 'center'>(align);
+
+    const prevIsOpenRef = useRef<boolean>(false);
+    const prevValueRef = useRef<string>(value);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -163,25 +168,53 @@ export function DateTimePicker({
     );
     const shouldCenter = Boolean(isActuallyInModal || isMobile || isShortViewport);
 
-    // Dynamic placement check for desktop when opened as a dropdown
+    // Sync value changes from props
+    useEffect(() => {
+        const parsed = parseValue(value, withTime);
+        const curToday = formatYMD(new Date());
+        const curNow = getNowLocalTime();
+
+        const justOpened = !prevIsOpenRef.current && isOpen;
+        const valueChangedWhileClosed = !isOpen && value !== prevValueRef.current;
+
+        if (justOpened || valueChangedWhileClosed) {
+            const dateToSet = parsed.date || curToday;
+            const timeToSet = parsed.time || curNow;
+            const parts = timeToSet.split(':');
+            const h = (parts[0] || '08').padStart(2, '0');
+            const m = (parts[1] || '00').padStart(2, '0');
+
+            setSelectedDate(dateToSet);
+            setSelectedTime(`${h}:${m}`);
+            setHourVal(h);
+            setMinuteVal(m);
+
+            const d = parseYMD(dateToSet) || new Date();
+            setViewYear(d.getFullYear());
+            setViewMonth(d.getMonth());
+        }
+
+        prevIsOpenRef.current = isOpen;
+        prevValueRef.current = value;
+    }, [value, withTime, isOpen]);
+
+    // Position detection when open as dropdown
     useEffect(() => {
         if (!isOpen || shouldCenter) return;
 
         const updatePosition = () => {
             if (!containerRef.current) return;
             const rect = containerRef.current.getBoundingClientRect();
-            const popupHeight = 440;
+            const popupHeight = 460;
             const spaceBelow = window.innerHeight - rect.bottom;
             const spaceAbove = rect.top;
 
-            // If space below is not enough for the dropdown and space above is larger, flip upward
             if (spaceBelow < popupHeight && spaceAbove > spaceBelow) {
                 setDropPosition('top');
             } else {
                 setDropPosition('bottom');
             }
 
-            // Check horizontal bounds
             const spaceRight = window.innerWidth - rect.left;
             if (align === 'left' && spaceRight < 340 && rect.right > 340) {
                 setHorizontalAlign('right');
@@ -199,75 +232,9 @@ export function DateTimePicker({
         };
     }, [isOpen, shouldCenter, align]);
 
-    useEffect(() => {
-        const parsed = parseValue(value, withTime);
-        const curToday = formatYMD(new Date());
-        const curNow = getNowLocalTime();
-
-        const justOpened = !prevIsOpenRef.current && isOpen;
-        const valueChangedWhileClosed = !isOpen && value !== prevValueRef.current;
-
-        if (justOpened || valueChangedWhileClosed) {
-            // Ketika baru dibuka atau value berubah dari luar:
-            // Jika value kosong saat picker dibuka, otomatis defaultkan ke Hari Ini & Jam Sekarang
-            const dateToSet = parsed.date || (isOpen ? curToday : '');
-            const timeToSet = parsed.time || curNow;
-            const parts = timeToSet.split(':');
-            const h = parts[0] || '08';
-            const m = parts[1] || '00';
-
-            setSelectedDate(dateToSet);
-            setSelectedTime(timeToSet);
-            setHourVal(h);
-            setMinuteVal(m);
-            hourValRef.current = h;
-            minuteValRef.current = m;
-
-            const d = parseYMD(dateToSet) || new Date();
-            setViewYear(d.getFullYear());
-            setViewMonth(d.getMonth());
-        } else if (isOpen && value !== prevValueRef.current) {
-            setSelectedDate(parsed.date || curToday);
-            const currentRefTime = `${(hourValRef.current || '08').padStart(2, '0')}:${(minuteValRef.current || '00').padStart(2, '0')}`;
-            if (parsed.time && parsed.time !== currentRefTime) {
-                const parts = (parsed.time || curNow).split(':');
-                const h = parts[0] || '08';
-                const m = parts[1] || '00';
-                setSelectedTime(parsed.time);
-                setHourVal(h);
-                setMinuteVal(m);
-                hourValRef.current = h;
-                minuteValRef.current = m;
-            }
-        }
-
-        prevIsOpenRef.current = isOpen;
-        prevValueRef.current = value;
-    }, [value, withTime, isOpen]);
-
-    // Native Focus & Pointer Event Bubbling Isolation:
-    // Prevents focusin, focusout from bubbling up to document,
-    // so Radix UI's Dialog FocusScope on the parent modal NEVER steals focus!
-    useEffect(() => {
-        const el = portalWrapperRef.current;
-        if (!el || !isOpen) return;
-
-        const stopPropagation = (e: Event) => {
-            e.stopPropagation();
-        };
-
-        el.addEventListener('focusin', stopPropagation, false);
-        el.addEventListener('focusout', stopPropagation, false);
-
-        return () => {
-            el.removeEventListener('focusin', stopPropagation, false);
-            el.removeEventListener('focusout', stopPropagation, false);
-        };
-    }, [isOpen, shouldCenter]);
-
+    // Close on click outside when not centered
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
-            // Pada centered modal / portaled popup, penutupan diatur via backdrop overlay
             if (shouldCenter) return;
             if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
                 setIsOpen(false);
@@ -288,6 +255,43 @@ export function DateTimePicker({
         };
     }, [isOpen, shouldCenter]);
 
+    // Update time helper (does NOT require changing date first)
+    const updateTime = (h: string, m: string, emitChange = true) => {
+        const validH = (h || '08').padStart(2, '0');
+        const validM = (m || '00').padStart(2, '0');
+        const fullTime = `${validH}:${validM}`;
+        setHourVal(validH);
+        setMinuteVal(validM);
+        setSelectedTime(fullTime);
+
+        const targetDate = selectedDate || formatYMD(new Date());
+        setSelectedDate(targetDate);
+
+        if (emitChange) {
+            if (withTime) {
+                onChange(`${targetDate}T${fullTime}`);
+            } else {
+                onChange(targetDate);
+            }
+        }
+    };
+
+    // Steppers for hour and minute
+    const stepHour = (delta: number) => {
+        const cur = parseInt(hourVal, 10) || 0;
+        const next = (cur + delta + 24) % 24;
+        const nextStr = String(next).padStart(2, '0');
+        updateTime(nextStr, minuteVal);
+    };
+
+    const stepMinute = (delta: number) => {
+        const cur = parseInt(minuteVal, 10) || 0;
+        const next = (cur + delta + 60) % 60;
+        const nextStr = String(next).padStart(2, '0');
+        updateTime(hourVal, nextStr);
+    };
+
+    // Date navigation
     const prevMonth = () => {
         if (viewMonth === 0) {
             setViewMonth(11);
@@ -306,274 +310,17 @@ export function DateTimePicker({
         }
     };
 
-    const firstDayIndex = new Date(viewYear, viewMonth, 1).getDay();
-    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-    const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
-
-    const updateTimeFromParts = (h: string, m: string) => {
-        const validH = (h || '08').padStart(2, '0');
-        const validM = (m || '00').padStart(2, '0');
-        const fullTime = `${validH}:${validM}`;
-        hourValRef.current = validH;
-        minuteValRef.current = validM;
-        setSelectedTime(fullTime);
-
-        // Pastikan tanggal aktif jika picker terbuka dan sync ke onChange
-        const targetDate = selectedDate || formatYMD(new Date());
-        if (!selectedDate) {
-            setSelectedDate(targetDate);
-        }
-        if (withTime) {
-            onChange(`${targetDate}T${fullTime}`);
-        }
-    };
-
-    const handleHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let raw = e.target.value.replace(/\D/g, '');
-        if (raw === '') {
-            hourValRef.current = '';
-            setHourVal('');
-            return;
-        }
-
-        // Jika user mengetik angka ke-3 ke dalam box yang sudah berisi 2 digit
-        // (tanpa sempat block/select all), ambil digit yang baru diketik!
-        if (raw.length > 2) {
-            raw = raw.slice(-1);
-        }
-
-        const num = parseInt(raw, 10);
-        if (isNaN(num)) return;
-
-        if (raw.length === 2) {
-            const clamped = Math.min(23, Math.max(0, num));
-            const formatted = String(clamped).padStart(2, '0');
-            hourValRef.current = formatted;
-            setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteValRef.current || '00');
-            // Auto-advance ke input menit dan langsung select all teks menit
-            minuteInputRef.current?.focus();
-            requestAnimationFrame(() => minuteInputRef.current?.select());
-        } else {
-            // raw.length === 1
-            if (num > 2) {
-                // Jam dalam format 24h: angka 3 - 9 otomatis jadi 03 - 09
-                const formatted = `0${num}`;
-                hourValRef.current = formatted;
-                setHourVal(formatted);
-                updateTimeFromParts(formatted, minuteValRef.current || '00');
-                // Auto-advance ke input menit dan langsung select all teks menit
-                minuteInputRef.current?.focus();
-                requestAnimationFrame(() => minuteInputRef.current?.select());
-            } else {
-                // Angka 0, 1, 2: tunggu kemungkinan digit kedua (misal 12, 15, 23)
-                hourValRef.current = raw;
-                setHourVal(raw);
-            }
-        }
-    };
-
-    const handleHourBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        const raw = e.target.value.replace(/\D/g, '');
-        let formatted = '08';
-        if (raw !== '') {
-            const num = parseInt(raw, 10);
-            if (!isNaN(num)) {
-                const clamped = Math.min(23, Math.max(0, num));
-                formatted = String(clamped).padStart(2, '0');
-            }
-        }
-        hourValRef.current = formatted;
-        setHourVal(formatted);
-        updateTimeFromParts(formatted, minuteValRef.current || '00');
-    };
-
-    const handleMinuteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let raw = e.target.value.replace(/\D/g, '');
-        if (raw === '') {
-            minuteValRef.current = '';
-            setMinuteVal('');
-            return;
-        }
-
-        // Jika user mengetik angka ke-3 ke dalam box yang sudah berisi 2 digit
-        if (raw.length > 2) {
-            raw = raw.slice(-1);
-        }
-
-        const num = parseInt(raw, 10);
-        if (isNaN(num)) return;
-
-        if (raw.length === 2) {
-            const clamped = Math.min(59, Math.max(0, num));
-            const formatted = String(clamped).padStart(2, '0');
-            minuteValRef.current = formatted;
-            setMinuteVal(formatted);
-            updateTimeFromParts(hourValRef.current || '08', formatted);
-        } else {
-            // raw.length === 1
-            if (num > 5) {
-                // Angka menit 6 - 9 otomatis jadi 06 - 09
-                const formatted = `0${num}`;
-                minuteValRef.current = formatted;
-                setMinuteVal(formatted);
-                updateTimeFromParts(hourValRef.current || '08', formatted);
-            } else {
-                minuteValRef.current = raw;
-                setMinuteVal(raw);
-            }
-        }
-    };
-
-    const handleMinuteBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        const raw = e.target.value.replace(/\D/g, '');
-        let formatted = '00';
-        if (raw !== '') {
-            const num = parseInt(raw, 10);
-            if (!isNaN(num)) {
-                const clamped = Math.min(59, Math.max(0, num));
-                formatted = String(clamped).padStart(2, '0');
-            }
-        }
-        minuteValRef.current = formatted;
-        setMinuteVal(formatted);
-        updateTimeFromParts(hourValRef.current || '08', formatted);
-    };
-
-    const handleHourKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            const cur = parseInt(hourValRef.current || hourVal, 10) || 0;
-            const next = (cur + 1) % 24;
-            const formatted = String(next).padStart(2, '0');
-            hourValRef.current = formatted;
-            setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteValRef.current || '00');
-            requestAnimationFrame(() => hourInputRef.current?.select());
-        } else if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            const cur = parseInt(hourValRef.current || hourVal, 10) || 0;
-            const next = (cur - 1 + 24) % 24;
-            const formatted = String(next).padStart(2, '0');
-            hourValRef.current = formatted;
-            setHourVal(formatted);
-            updateTimeFromParts(formatted, minuteValRef.current || '00');
-            requestAnimationFrame(() => hourInputRef.current?.select());
-        } else if (e.key === 'ArrowRight' || e.key === 'Enter') {
-            e.preventDefault();
-            minuteInputRef.current?.focus();
-            requestAnimationFrame(() => minuteInputRef.current?.select());
-        }
-    };
-
-    const handleMinuteKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            const cur = parseInt(minuteValRef.current || minuteVal, 10) || 0;
-            const next = (cur + 1) % 60;
-            const formatted = String(next).padStart(2, '0');
-            minuteValRef.current = formatted;
-            setMinuteVal(formatted);
-            updateTimeFromParts(hourValRef.current || '08', formatted);
-            requestAnimationFrame(() => minuteInputRef.current?.select());
-        } else if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            const cur = parseInt(minuteValRef.current || minuteVal, 10) || 0;
-            const next = (cur - 1 + 60) % 60;
-            const formatted = String(next).padStart(2, '0');
-            minuteValRef.current = formatted;
-            setMinuteVal(formatted);
-            updateTimeFromParts(hourValRef.current || '08', formatted);
-            requestAnimationFrame(() => minuteInputRef.current?.select());
-        } else if (e.key === 'Backspace' && (minuteVal === '' || minuteInputRef.current?.selectionStart === 0)) {
-            e.preventDefault();
-            hourInputRef.current?.focus();
-            requestAnimationFrame(() => hourInputRef.current?.select());
-        } else if (e.key === 'ArrowLeft') {
-            if (minuteInputRef.current?.selectionStart === 0) {
-                e.preventDefault();
-                hourInputRef.current?.focus();
-                requestAnimationFrame(() => hourInputRef.current?.select());
-            }
-        } else if (e.key === 'Enter') {
-            e.preventDefault();
-            handleApply();
-        }
-    };
-
-    const handleTimePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        const text = e.clipboardData.getData('text').trim();
-        const match = text.match(/^(\d{1,2})[:.](\d{1,2})/);
-        if (match) {
-            const h = String(Math.min(23, Math.max(0, parseInt(match[1], 10)))).padStart(2, '0');
-            const m = String(Math.min(59, Math.max(0, parseInt(match[2], 10)))).padStart(2, '0');
-            hourValRef.current = h;
-            minuteValRef.current = m;
-            setHourVal(h);
-            setMinuteVal(m);
-            updateTimeFromParts(h, m);
-        }
-    };
-
-    const handleApply = (d = selectedDate, t = selectedTime) => {
-        const finalDate = d || formatYMD(new Date());
-        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
-        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
-        const finalTime = `${h}:${m}`;
-        if (withTime) {
-            onChange(`${finalDate}T${finalTime}`);
-        } else {
-            onChange(finalDate);
-        }
-        setIsOpen(false);
-    };
-
-    const handleClear = (e?: React.SyntheticEvent | Event) => {
-        e?.stopPropagation();
-        setSelectedDate('');
-        const nowTime = getNowLocalTime();
-        setSelectedTime(nowTime);
-        const [h, m] = nowTime.split(':');
-        const validH = h || '08';
-        const validM = m || '00';
-        hourValRef.current = validH;
-        minuteValRef.current = validM;
-        setHourVal(validH);
-        setMinuteVal(validM);
-        onChange('');
-        setIsOpen(false);
-    };
-
     const handleDateSelect = (ymd: string) => {
         setSelectedDate(ymd);
-        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
-        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
-        const t = `${h}:${m}`;
+        const fullTime = `${hourVal}:${minuteVal}`;
         if (withTime) {
-            onChange(`${ymd}T${t}`);
+            onChange(`${ymd}T${fullTime}`);
         } else {
             onChange(ymd);
         }
     };
 
-    const handleSetNowTime = () => {
-        const nowTime = getNowLocalTime();
-        setSelectedTime(nowTime);
-        const [h, m] = nowTime.split(':');
-        const validH = h || '08';
-        const validM = m || '00';
-        hourValRef.current = validH;
-        minuteValRef.current = validM;
-        setHourVal(validH);
-        setMinuteVal(validM);
-        const d = selectedDate || formatYMD(new Date());
-        setSelectedDate(d);
-        if (withTime) {
-            onChange(`${d}T${nowTime}`);
-        }
-    };
-
+    // Presets
     const setNow = () => {
         const now = new Date();
         const dateStr = formatYMD(now);
@@ -583,8 +330,6 @@ export function DateTimePicker({
 
         setSelectedDate(dateStr);
         setSelectedTime(timeStr);
-        hourValRef.current = hours;
-        minuteValRef.current = minutes;
         setHourVal(hours);
         setMinuteVal(minutes);
         setViewYear(now.getFullYear());
@@ -604,11 +349,24 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(now.getFullYear());
         setViewMonth(now.getMonth());
-        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
-        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
-        const t = `${h}:${m}`;
+        const fullTime = `${hourVal}:${minuteVal}`;
         if (withTime) {
-            onChange(`${dateStr}T${t}`);
+            onChange(`${dateStr}T${fullTime}`);
+        } else {
+            onChange(dateStr);
+        }
+    };
+
+    const setYesterday = () => {
+        const d = new Date();
+        d.setDate(d.getDate() - 1);
+        const dateStr = formatYMD(d);
+        setSelectedDate(dateStr);
+        setViewYear(d.getFullYear());
+        setViewMonth(d.getMonth());
+        const fullTime = `${hourVal}:${minuteVal}`;
+        if (withTime) {
+            onChange(`${dateStr}T${fullTime}`);
         } else {
             onChange(dateStr);
         }
@@ -621,18 +379,74 @@ export function DateTimePicker({
         setSelectedDate(dateStr);
         setViewYear(d.getFullYear());
         setViewMonth(d.getMonth());
-        const h = (hourValRef.current || hourVal || '08').padStart(2, '0');
-        const m = (minuteValRef.current || minuteVal || '00').padStart(2, '0');
-        const t = `${h}:${m}`;
+        const fullTime = `${hourVal}:${minuteVal}`;
         if (withTime) {
-            onChange(`${dateStr}T${t}`);
+            onChange(`${dateStr}T${fullTime}`);
         } else {
             onChange(dateStr);
         }
     };
 
+    const handleSetNowTime = () => {
+        const nowTime = getNowLocalTime();
+        const [h, m] = nowTime.split(':');
+        updateTime(h || '08', m || '00');
+    };
+
+    const handleApply = () => {
+        const finalDate = selectedDate || formatYMD(new Date());
+        const finalTime = `${hourVal}:${minuteVal}`;
+        if (withTime) {
+            onChange(`${finalDate}T${finalTime}`);
+        } else {
+            onChange(finalDate);
+        }
+        setIsOpen(false);
+    };
+
+    const handleClear = (e?: React.SyntheticEvent | Event) => {
+        e?.stopPropagation();
+        setSelectedDate('');
+        const nowTime = getNowLocalTime();
+        setSelectedTime(nowTime);
+        const [h, m] = nowTime.split(':');
+        setHourVal(h || '08');
+        setMinuteVal(m || '00');
+        onChange('');
+        setIsOpen(false);
+    };
+
+    // Calendar calculations
+    const firstDayIndex = new Date(viewYear, viewMonth, 1).getDay();
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
+
+    // Human readable preview of selected date
+    const selectedDateSummary = useMemo(() => {
+        if (!selectedDate) return 'Belum dipilih';
+        const d = parseYMD(selectedDate);
+        if (!d) return selectedDate;
+        const dayName = DAY_NAMES_FULL[d.getDay()] || '';
+        const dayNum = d.getDate();
+        const monthName = MONTH_NAMES[d.getMonth()] || '';
+        const yearNum = d.getFullYear();
+        if (withTime) {
+            return `${dayName}, ${dayNum} ${monthName} ${yearNum} • ${hourVal}:${minuteVal} WIB`;
+        }
+        return `${dayName}, ${dayNum} ${monthName} ${yearNum}`;
+    }, [selectedDate, hourVal, minuteVal, withTime]);
+
     const defaultPlaceholder = withTime ? 'Pilih tanggal & jam...' : 'Pilih tanggal...';
     const displayVal = formatDisplay(value, withTime);
+
+    // Year selection range
+    const currentYear = new Date().getFullYear();
+    const minYear = Math.min(2018, viewYear - 5);
+    const maxYear = Math.max(currentYear + 10, viewYear + 5);
+    const yearOptions: number[] = [];
+    for (let y = minYear; y <= maxYear; y++) {
+        yearOptions.push(y);
+    }
 
     return (
         <div className={`relative inline-block ${className}`} ref={containerRef}>
@@ -672,7 +486,7 @@ export function DateTimePicker({
                         <button
                             type="button"
                             onClick={handleClear}
-                            className="p-1 rounded-full text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors"
+                            className="p-1 rounded-full text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
                             title="Hapus"
                         >
                             <X className="h-3.5 w-3.5" />
@@ -683,69 +497,84 @@ export function DateTimePicker({
                 </div>
             </div>
 
-            {/* Dropdown Calendar / Time Panel */}
+            {/* Dropdown / Modal Content */}
             {isOpen && (() => {
-                const currentYear = new Date().getFullYear();
-                const minYear = Math.min(2015, viewYear - 5);
-                const maxYear = Math.max(currentYear + 10, viewYear + 5);
-                const yearOptions: number[] = [];
-                for (let y = minYear; y <= maxYear; y++) {
-                    yearOptions.push(y);
-                }
-
                 const panelContent = (
-                    <>
-                        {/* Quick Preset Buttons Header */}
-                        <div className="flex items-center justify-between gap-1.5 pb-2.5 mb-2.5 border-b border-gray-100 shrink-0">
-                            <span className="text-[10px] font-bold tracking-wider text-gray-400 uppercase">
-                                Shortcut
-                            </span>
-                            <div className="flex items-center gap-1">
-                                {withTime && (
+                    <div
+                        className="flex flex-col gap-3 select-none text-gray-800"
+                        onPointerDown={(e) => e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* 1. Header Ringkasan & Shortcuts */}
+                        <div className="flex flex-col gap-2 pb-2.5 border-b border-gray-100 shrink-0">
+                            <div className="flex items-center justify-between gap-1">
+                                <span className="text-[11px] font-bold text-gray-900 flex items-center gap-1.5">
+                                    <CalendarIcon className="h-3.5 w-3.5 text-blue-600" />
+                                    <span>Pilih Tanggal & Waktu</span>
+                                </span>
+                                <div className="flex items-center gap-1">
+                                    {withTime && (
+                                        <button
+                                            type="button"
+                                            onClick={setNow}
+                                            className="px-2 py-1 text-[11px] font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition cursor-pointer flex items-center gap-1"
+                                            title="Set tanggal & jam sekarang"
+                                        >
+                                            <Zap className="h-3 w-3" />
+                                            Sekarang
+                                        </button>
+                                    )}
                                     <button
                                         type="button"
-                                        onClick={setNow}
-                                        className="px-2 py-1 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 rounded transition cursor-pointer"
+                                        onClick={setToday}
+                                        className="px-2 py-1 text-[11px] font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition cursor-pointer"
                                     >
-                                        Sekarang
+                                        Hari Ini
                                     </button>
-                                )}
-                                <button
-                                    type="button"
-                                    onClick={setToday}
-                                    className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
-                                >
-                                    Hari Ini
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={setTomorrow}
-                                    className="px-2 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded transition cursor-pointer"
-                                >
-                                    Besok
-                                </button>
+                                    <button
+                                        type="button"
+                                        onClick={setYesterday}
+                                        className="px-1.5 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded-md transition cursor-pointer"
+                                    >
+                                        Kemarin
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={setTomorrow}
+                                        className="px-1.5 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded-md transition cursor-pointer"
+                                    >
+                                        Besok
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Live Selection Summary Banner */}
+                            <div className="bg-slate-50 border border-slate-200/80 rounded-lg px-2.5 py-1.5 flex items-center justify-between text-xs">
+                                <div className="flex items-center gap-1.5 text-slate-700 font-medium truncate">
+                                    <span className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Terpilih:</span>
+                                    <span className="font-semibold text-slate-900 truncate">{selectedDateSummary}</span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Month & Year Header Navigation */}
-                        <div className="flex items-center justify-between mb-3 px-1 shrink-0">
+                        {/* 2. Navigasi Bulan & Tahun */}
+                        <div className="flex items-center justify-between px-0.5 shrink-0">
                             <button
                                 type="button"
                                 onClick={prevMonth}
-                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
+                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 active:bg-gray-200 transition cursor-pointer"
                                 title="Bulan sebelumnya"
                             >
                                 <ChevronLeft className="h-4 w-4" />
                             </button>
 
                             <div className="flex items-center gap-1.5">
-                                {/* Month Selector */}
+                                {/* Month Dropdown Selector */}
                                 <div className="relative">
                                     <select
                                         value={viewMonth}
                                         onChange={(e) => setViewMonth(Number(e.target.value))}
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="h-7 text-xs font-bold text-gray-800 bg-gray-100 hover:bg-gray-200/80 border border-gray-200/70 rounded-md pl-2 pr-6 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 transition"
+                                        className="h-8 text-xs font-bold text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg pl-2.5 pr-6 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition shadow-2xs"
                                         title="Pilih Bulan"
                                     >
                                         {MONTH_NAMES.map((name, idx) => (
@@ -754,16 +583,15 @@ export function DateTimePicker({
                                             </option>
                                         ))}
                                     </select>
-                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2 pointer-events-none" />
+                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2.5 pointer-events-none" />
                                 </div>
 
-                                {/* Year Selector */}
+                                {/* Year Dropdown Selector */}
                                 <div className="relative">
                                     <select
                                         value={viewYear}
                                         onChange={(e) => setViewYear(Number(e.target.value))}
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="h-7 text-xs font-bold text-gray-800 bg-gray-100 hover:bg-gray-200/80 border border-gray-200/70 rounded-md pl-2 pr-5 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 transition"
+                                        className="h-8 text-xs font-bold text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg pl-2.5 pr-6 py-0 appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition shadow-2xs"
                                         title="Pilih Tahun"
                                     >
                                         {yearOptions.map((y) => (
@@ -772,172 +600,216 @@ export function DateTimePicker({
                                             </option>
                                         ))}
                                     </select>
-                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2 pointer-events-none" />
+                                    <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2.5 pointer-events-none" />
                                 </div>
                             </div>
 
                             <button
                                 type="button"
                                 onClick={nextMonth}
-                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 transition cursor-pointer"
+                                className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-600 active:bg-gray-200 transition cursor-pointer"
                                 title="Bulan berikutnya"
                             >
                                 <ChevronRight className="h-4 w-4" />
                             </button>
                         </div>
 
-                        {/* Days Header */}
-                        <div className="grid grid-cols-7 gap-1 text-center mb-1 shrink-0">
-                            {DAY_NAMES.map((d, idx) => (
-                                <span
-                                    key={d}
-                                    className={`text-[11px] font-semibold ${
-                                        idx === 0 ? 'text-red-500' : 'text-gray-400'
-                                    }`}
-                                >
-                                    {d}
-                                </span>
-                            ))}
-                        </div>
-
-                        {/* Days Grid */}
-                        <div className="grid grid-cols-7 gap-y-1 text-center shrink-0">
-                            {/* Prev month days */}
-                            {Array.from({ length: firstDayIndex }).map((_, i) => {
-                                const prevDay = daysInPrevMonth - firstDayIndex + 1 + i;
-                                return (
-                                    <div
-                                        key={`prev-${i}`}
-                                        className="h-8 flex items-center justify-center text-xs text-gray-300 select-none cursor-default"
-                                    >
-                                        {prevDay}
-                                    </div>
-                                );
-                            })}
-
-                            {/* Current month days */}
-                            {Array.from({ length: daysInMonth }).map((_, i) => {
-                                const day = i + 1;
-                                const dayStr = String(day).padStart(2, '0');
-                                const monthStr = String(viewMonth + 1).padStart(2, '0');
-                                const ymd = `${viewYear}-${monthStr}-${dayStr}`;
-                                const isSelected = ymd === selectedDate;
-                                const isToday = ymd === formatYMD(new Date());
-
-                                return (
-                                    <div
-                                        key={ymd}
-                                        onClick={() => handleDateSelect(ymd)}
-                                        className={`h-8 flex items-center justify-center text-xs font-medium cursor-pointer select-none transition-colors rounded-lg ${
-                                            isSelected
-                                                ? 'bg-gray-900 text-white font-bold shadow-xs'
-                                                : 'hover:bg-gray-100 text-gray-700'
+                        {/* 3. Grid Kalender Hari */}
+                        <div className="shrink-0">
+                            {/* Days of week header */}
+                            <div className="grid grid-cols-7 gap-1 text-center mb-1">
+                                {DAY_NAMES.map((d, idx) => (
+                                    <span
+                                        key={d}
+                                        className={`text-[11px] font-bold ${
+                                            idx === 0 ? 'text-red-500' : 'text-gray-400'
                                         }`}
                                     >
-                                        <span
-                                            className={`flex items-center justify-center w-7 h-7 rounded-full ${
-                                                isToday && !isSelected
-                                                    ? 'border border-gray-900 font-bold text-gray-900'
-                                                    : ''
+                                        {d}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Month Days */}
+                            <div className="grid grid-cols-7 gap-1 text-center">
+                                {/* Previous month muted days */}
+                                {Array.from({ length: firstDayIndex }).map((_, i) => {
+                                    const prevDay = daysInPrevMonth - firstDayIndex + 1 + i;
+                                    return (
+                                        <div
+                                            key={`prev-${i}`}
+                                            className="h-7 sm:h-8 flex items-center justify-center text-xs text-gray-300 select-none cursor-default"
+                                        >
+                                            {prevDay}
+                                        </div>
+                                    );
+                                })}
+
+                                {/* Current month days */}
+                                {Array.from({ length: daysInMonth }).map((_, i) => {
+                                    const day = i + 1;
+                                    const dayStr = String(day).padStart(2, '0');
+                                    const monthStr = String(viewMonth + 1).padStart(2, '0');
+                                    const ymd = `${viewYear}-${monthStr}-${dayStr}`;
+                                    const isSelected = ymd === selectedDate;
+                                    const isToday = ymd === formatYMD(new Date());
+
+                                    return (
+                                        <button
+                                            key={ymd}
+                                            type="button"
+                                            onClick={() => handleDateSelect(ymd)}
+                                            className={`h-7 sm:h-8 flex items-center justify-center text-xs font-semibold cursor-pointer select-none transition-colors rounded-lg ${
+                                                isSelected
+                                                    ? 'bg-blue-600 text-white font-bold shadow-xs'
+                                                    : 'hover:bg-blue-50 text-gray-700 hover:text-blue-700 active:bg-blue-100'
                                             }`}
                                         >
-                                            {day}
-                                        </span>
-                                    </div>
-                                );
-                            })}
+                                            <span
+                                                className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full ${
+                                                    isToday && !isSelected
+                                                        ? 'border border-blue-600 font-bold text-blue-600'
+                                                        : ''
+                                                }`}
+                                            >
+                                                {day}
+                                            </span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
                         </div>
 
-                        {/* Time Picker Section (If withTime is true) */}
+                        {/* 4. Section Waktu (Jam & Menit) yang Bebas & Fleksibel */}
                         {withTime && (
-                            <div className="pt-3 mt-3 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2 shrink-0">
-                                <div className="flex items-center gap-1.5 text-xs text-gray-700 font-semibold">
-                                    <Clock className="h-3.5 w-3.5 text-gray-900" />
-                                    <span>Jam (WIB):</span>
-                                </div>
-
-                                <div className="flex items-center gap-2">
-                                    {/* Direct Editable Time Input Container */}
-                                    <div
-                                        onClick={() => hourInputRef.current?.focus()}
-                                        className="flex items-center bg-gray-50 hover:bg-gray-100/70 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs cursor-text"
-                                    >
-                                        <input
-                                            ref={hourInputRef}
-                                            type="text"
-                                            inputMode="numeric"
-                                            pattern="[0-9]*"
-                                            maxLength={2}
-                                            value={hourVal}
-                                            onChange={handleHourChange}
-                                            onKeyDown={handleHourKeyDown}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    (e.target as HTMLInputElement).select();
-                                                }
-                                            }}
-                                            onFocus={(e) => {
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    const el = e.currentTarget;
-                                                    requestAnimationFrame(() => el.select());
-                                                }
-                                            }}
-                                            onBlur={handleHourBlur}
-                                            onPaste={handleTimePaste}
-                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
-                                            placeholder="JJ"
-                                            title="Ketik 2 digit jam (00 - 23)"
-                                        />
-                                        <span className="font-bold text-gray-400 select-none px-0.5">:</span>
-                                        <input
-                                            ref={minuteInputRef}
-                                            type="text"
-                                            inputMode="numeric"
-                                            pattern="[0-9]*"
-                                            maxLength={2}
-                                            value={minuteVal}
-                                            onChange={handleMinuteChange}
-                                            onKeyDown={handleMinuteKeyDown}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    (e.target as HTMLInputElement).select();
-                                                }
-                                            }}
-                                            onFocus={(e) => {
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    const el = e.currentTarget;
-                                                    requestAnimationFrame(() => el.select());
-                                                }
-                                            }}
-                                            onBlur={handleMinuteBlur}
-                                            onPaste={handleTimePaste}
-                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
-                                            placeholder="MM"
-                                            title="Ketik 2 digit menit (00 - 59)"
-                                        />
+                            <div className="pt-3 border-t border-gray-100 flex flex-col gap-2.5 shrink-0 bg-slate-50/70 p-2.5 rounded-xl border border-slate-200/70">
+                                <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center gap-1.5 text-xs text-gray-800 font-bold">
+                                        <Clock className="h-4 w-4 text-blue-600" />
+                                        <span>Atur Jam & Menit:</span>
                                     </div>
-
                                     <button
                                         type="button"
                                         onClick={handleSetNowTime}
-                                        className="px-2.5 py-1.5 text-[11px] font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition cursor-pointer flex items-center gap-1 shadow-2xs"
-                                        title="Gunakan jam saat ini"
+                                        className="px-2 py-0.5 text-[11px] font-semibold text-blue-700 bg-blue-100/70 hover:bg-blue-200/80 rounded transition cursor-pointer flex items-center gap-1"
+                                        title="Set ke jam saat ini"
                                     >
-                                        <Clock className="h-3 w-3 text-gray-700" />
-                                        <span>Jam Sekarang</span>
+                                        <Clock className="h-3 w-3" />
+                                        Jam Sekarang
                                     </button>
+                                </div>
+
+                                <div className="flex items-center justify-between gap-3">
+                                    {/* Selector Jam (00 - 23) */}
+                                    <div className="flex-1 flex flex-col gap-1">
+                                        <span className="text-[10px] font-bold text-gray-500 uppercase">Jam (00 - 23)</span>
+                                        <div className="flex items-center gap-1">
+                                            <button
+                                                type="button"
+                                                onClick={() => stepHour(-1)}
+                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
+                                                title="Kurangi 1 jam"
+                                            >
+                                                <Minus className="h-3.5 w-3.5" />
+                                            </button>
+                                            <div className="relative flex-1">
+                                                <select
+                                                    value={hourVal}
+                                                    onChange={(e) => updateTime(e.target.value, minuteVal)}
+                                                    className="w-full h-8 text-center text-xs font-mono font-bold text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 shadow-2xs"
+                                                    title="Pilih Jam"
+                                                >
+                                                    {HOURS_LIST.map((h) => (
+                                                        <option key={h} value={h}>
+                                                            {h}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown className="h-3 w-3 text-gray-400 absolute right-1.5 top-2.5 pointer-events-none" />
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={() => stepHour(1)}
+                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
+                                                title="Tambah 1 jam"
+                                            >
+                                                <Plus className="h-3.5 w-3.5" />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <span className="font-bold text-gray-400 text-lg mt-4 select-none">:</span>
+
+                                    {/* Selector Menit (00 - 59) */}
+                                    <div className="flex-1 flex flex-col gap-1">
+                                        <span className="text-[10px] font-bold text-gray-500 uppercase">Menit (00 - 59)</span>
+                                        <div className="flex items-center gap-1">
+                                            <button
+                                                type="button"
+                                                onClick={() => stepMinute(-1)}
+                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
+                                                title="Kurangi 1 menit"
+                                            >
+                                                <Minus className="h-3.5 w-3.5" />
+                                            </button>
+                                            <div className="relative flex-1">
+                                                <select
+                                                    value={minuteVal}
+                                                    onChange={(e) => updateTime(hourVal, e.target.value)}
+                                                    className="w-full h-8 text-center text-xs font-mono font-bold text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 shadow-2xs"
+                                                    title="Pilih Menit"
+                                                >
+                                                    {MINUTES_LIST.map((m) => (
+                                                        <option key={m} value={m}>
+                                                            {m}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown className="h-3 w-3 text-gray-400 absolute right-1.5 top-2.5 pointer-events-none" />
+                                            </div>
+                                            <button
+                                                type="button"
+                                                onClick={() => stepMinute(1)}
+                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
+                                                title="Tambah 1 menit"
+                                            >
+                                                <Plus className="h-3.5 w-3.5" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Preset Jam Populer */}
+                                <div className="flex items-center gap-1.5 pt-1 overflow-x-auto">
+                                    <span className="text-[10px] text-gray-400 font-semibold whitespace-nowrap">Preset:</span>
+                                    {['08:00', '12:00', '16:00', '20:00', '00:00'].map((preset) => {
+                                        const [ph, pm] = preset.split(':');
+                                        const isActive = hourVal === ph && minuteVal === pm;
+                                        return (
+                                            <button
+                                                key={preset}
+                                                type="button"
+                                                onClick={() => updateTime(ph, pm)}
+                                                className={`px-2 py-0.5 text-[10px] font-mono font-semibold rounded transition cursor-pointer ${
+                                                    isActive
+                                                        ? 'bg-blue-600 text-white'
+                                                        : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-100'
+                                                }`}
+                                            >
+                                                {preset}
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}
 
-                        {/* Footer Actions */}
-                        <div className="flex items-center justify-between gap-2 pt-3 mt-3 border-t border-gray-100 shrink-0">
+                        {/* 5. Footer Actions (Simpan, Batal, Hapus) */}
+                        <div className="flex items-center justify-between gap-2 pt-2 border-t border-gray-100 shrink-0">
                             <button
                                 type="button"
                                 onClick={handleClear}
-                                className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 active:bg-red-100 px-2.5 py-1.5 rounded-md transition font-medium flex items-center gap-1 cursor-pointer"
+                                className="text-xs text-red-600 hover:text-red-700 hover:bg-red-50 active:bg-red-100 px-2.5 py-1.5 rounded-lg transition font-medium flex items-center gap-1 cursor-pointer"
                             >
                                 <RotateCcw className="h-3 w-3" />
                                 Hapus
@@ -947,24 +819,29 @@ export function DateTimePicker({
                                 <button
                                     type="button"
                                     onClick={() => setIsOpen(false)}
-                                    className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 active:bg-gray-200 rounded-md transition font-medium cursor-pointer"
+                                    className="px-3 py-1.5 text-xs text-gray-600 hover:text-gray-800 hover:bg-gray-100 active:bg-gray-200 rounded-lg transition font-medium cursor-pointer"
                                 >
                                     Batal
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => handleApply()}
-                                    className="px-3.5 py-1.5 text-xs bg-gray-900 hover:bg-black active:bg-neutral-800 text-white rounded-md transition font-semibold flex items-center gap-1 shadow-xs cursor-pointer"
+                                    onClick={handleApply}
+                                    className="px-4 py-1.5 text-xs bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white rounded-lg transition font-bold flex items-center gap-1 shadow-sm cursor-pointer"
                                 >
                                     <Check className="h-3.5 w-3.5" />
                                     Simpan
                                 </button>
                             </div>
                         </div>
-                    </>
+                    </div>
                 );
 
+                // Modal Popup View (Ketika di dalam Dialog atau di layar kecil)
                 if (shouldCenter && typeof document !== 'undefined') {
+                    const portalTarget =
+                        (containerRef.current ? containerRef.current.closest('[data-slot="dialog-content"], [role="dialog"], [data-radix-dialog-content], .dialog-content') : null) ||
+                        document.body;
+
                     return createPortal(
                         <DismissableLayerBranch asChild>
                             <div
@@ -977,13 +854,13 @@ export function DateTimePicker({
                                 }}
                             >
                                 <div
-                                    className="w-full max-w-[340px] max-h-[92vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
+                                    className="w-full max-w-[340px] sm:max-w-[360px] max-h-[94vh] overflow-y-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-4 animate-in zoom-in-95 duration-150 flex flex-col pointer-events-auto"
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    {/* Header Bar */}
+                                    {/* Modal Top Close Bar */}
                                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
                                         <div className="flex items-center gap-2">
-                                            <CalendarIcon className="h-4 w-4 text-gray-900" />
+                                            <CalendarIcon className="h-4 w-4 text-blue-600" />
                                             <span className="text-xs font-bold text-gray-900">
                                                 {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
                                             </span>
@@ -1002,13 +879,14 @@ export function DateTimePicker({
                                 </div>
                             </div>
                         </DismissableLayerBranch>,
-                        document.body
+                        portalTarget
                     );
                 }
 
+                // Regular Dropdown Popup View
                 return (
                     <div
-                        className={`absolute z-50 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[340px] max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
+                        className={`absolute z-50 bg-white border border-gray-200 rounded-xl shadow-xl p-3.5 w-[320px] sm:w-[350px] max-h-[88vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150 ${
                             dropPosition === 'top' ? 'bottom-full mb-1.5 origin-bottom' : 'top-full mt-1.5 origin-top'
                         } ${
                             horizontalAlign === 'right' ? 'right-0' : horizontalAlign === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0'

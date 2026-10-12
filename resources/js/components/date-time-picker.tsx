@@ -10,8 +10,6 @@ import {
     X,
     Check,
     RotateCcw,
-    Plus,
-    Minus,
     Zap,
 } from 'lucide-react';
 
@@ -34,10 +32,6 @@ const MONTH_NAMES = [
 ];
 
 const DAY_NAMES = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
-const DAY_NAMES_FULL = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-
-const HOURS_LIST = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
-const MINUTES_LIST = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, '0'));
 
 function getNowLocalTime(): string {
     const now = new Date();
@@ -276,21 +270,6 @@ export function DateTimePicker({
         }
     };
 
-    // Steppers for hour and minute
-    const stepHour = (delta: number) => {
-        const cur = parseInt(hourVal, 10) || 0;
-        const next = (cur + delta + 24) % 24;
-        const nextStr = String(next).padStart(2, '0');
-        updateTime(nextStr, minuteVal);
-    };
-
-    const stepMinute = (delta: number) => {
-        const cur = parseInt(minuteVal, 10) || 0;
-        const next = (cur + delta + 60) % 60;
-        const nextStr = String(next).padStart(2, '0');
-        updateTime(hourVal, nextStr);
-    };
-
     // Date navigation
     const prevMonth = () => {
         if (viewMonth === 0) {
@@ -421,21 +400,6 @@ export function DateTimePicker({
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
     const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
 
-    // Human readable preview of selected date
-    const selectedDateSummary = useMemo(() => {
-        if (!selectedDate) return 'Belum dipilih';
-        const d = parseYMD(selectedDate);
-        if (!d) return selectedDate;
-        const dayName = DAY_NAMES_FULL[d.getDay()] || '';
-        const dayNum = d.getDate();
-        const monthName = MONTH_NAMES[d.getMonth()] || '';
-        const yearNum = d.getFullYear();
-        if (withTime) {
-            return `${dayName}, ${dayNum} ${monthName} ${yearNum} • ${hourVal}:${minuteVal} WIB`;
-        }
-        return `${dayName}, ${dayNum} ${monthName} ${yearNum}`;
-    }, [selectedDate, hourVal, minuteVal, withTime]);
-
     const defaultPlaceholder = withTime ? 'Pilih tanggal & jam...' : 'Pilih tanggal...';
     const displayVal = formatDisplay(value, withTime);
 
@@ -505,56 +469,40 @@ export function DateTimePicker({
                         onPointerDown={(e) => e.stopPropagation()}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* 1. Header Ringkasan & Shortcuts */}
-                        <div className="flex flex-col gap-2 pb-2.5 border-b border-gray-100 shrink-0">
-                            <div className="flex items-center justify-between gap-1">
-                                <span className="text-[11px] font-bold text-gray-900 flex items-center gap-1.5">
-                                    <CalendarIcon className="h-3.5 w-3.5 text-blue-600" />
-                                    <span>Pilih Tanggal & Waktu</span>
-                                </span>
-                                <div className="flex items-center gap-1">
-                                    {withTime && (
-                                        <button
-                                            type="button"
-                                            onClick={setNow}
-                                            className="px-2 py-1 text-[11px] font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-md transition cursor-pointer flex items-center gap-1"
-                                            title="Set tanggal & jam sekarang"
-                                        >
-                                            <Zap className="h-3 w-3" />
-                                            Sekarang
-                                        </button>
-                                    )}
-                                    <button
-                                        type="button"
-                                        onClick={setToday}
-                                        className="px-2 py-1 text-[11px] font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition cursor-pointer"
-                                    >
-                                        Hari Ini
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={setYesterday}
-                                        className="px-1.5 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded-md transition cursor-pointer"
-                                    >
-                                        Kemarin
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={setTomorrow}
-                                        className="px-1.5 py-1 text-[11px] font-medium text-gray-600 hover:bg-gray-100 rounded-md transition cursor-pointer"
-                                    >
-                                        Besok
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Live Selection Summary Banner */}
-                            <div className="bg-slate-50 border border-slate-200/80 rounded-lg px-2.5 py-1.5 flex items-center justify-between text-xs">
-                                <div className="flex items-center gap-1.5 text-slate-700 font-medium truncate">
-                                    <span className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Terpilih:</span>
-                                    <span className="font-semibold text-slate-900 truncate">{selectedDateSummary}</span>
-                                </div>
-                            </div>
+                        {/* 1. Shortcuts Tanggal Cepat */}
+                        <div className="flex items-center gap-1.5 pb-2.5 border-b border-gray-100 shrink-0">
+                            {withTime && (
+                                <button
+                                    type="button"
+                                    onClick={setNow}
+                                    className="px-2.5 py-1 text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg transition cursor-pointer flex items-center gap-1 shadow-2xs"
+                                    title="Set tanggal & jam sekarang"
+                                >
+                                    <Zap className="h-3.5 w-3.5" />
+                                    Sekarang
+                                </button>
+                            )}
+                            <button
+                                type="button"
+                                onClick={setToday}
+                                className="px-2.5 py-1 text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition cursor-pointer shadow-2xs"
+                            >
+                                Hari Ini
+                            </button>
+                            <button
+                                type="button"
+                                onClick={setYesterday}
+                                className="px-2.5 py-1 text-xs font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition cursor-pointer"
+                            >
+                                Kemarin
+                            </button>
+                            <button
+                                type="button"
+                                onClick={setTomorrow}
+                                className="px-2.5 py-1 text-xs font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition cursor-pointer"
+                            >
+                                Besok
+                            </button>
                         </div>
 
                         {/* 2. Navigasi Bulan & Tahun */}
@@ -680,127 +628,83 @@ export function DateTimePicker({
                             </div>
                         </div>
 
-                        {/* 4. Section Waktu (Jam & Menit) yang Bebas & Fleksibel */}
+                        {/* 4. Section Waktu (Jam & Menit) Input Langsung Text Field */}
                         {withTime && (
-                            <div className="pt-3 border-t border-gray-100 flex flex-col gap-2.5 shrink-0 bg-slate-50/70 p-2.5 rounded-xl border border-slate-200/70">
-                                <div className="flex items-center justify-between gap-2">
-                                    <div className="flex items-center gap-1.5 text-xs text-gray-800 font-bold">
-                                        <Clock className="h-4 w-4 text-blue-600" />
-                                        <span>Atur Jam & Menit:</span>
-                                    </div>
-                                    <button
-                                        type="button"
-                                        onClick={handleSetNowTime}
-                                        className="px-2 py-0.5 text-[11px] font-semibold text-blue-700 bg-blue-100/70 hover:bg-blue-200/80 rounded transition cursor-pointer flex items-center gap-1"
-                                        title="Set ke jam saat ini"
-                                    >
-                                        <Clock className="h-3 w-3" />
-                                        Jam Sekarang
-                                    </button>
-                                </div>
-
-                                <div className="flex items-center justify-between gap-3">
-                                    {/* Selector Jam (00 - 23) */}
-                                    <div className="flex-1 flex flex-col gap-1">
-                                        <span className="text-[10px] font-bold text-gray-500 uppercase">Jam (00 - 23)</span>
-                                        <div className="flex items-center gap-1">
-                                            <button
-                                                type="button"
-                                                onClick={() => stepHour(-1)}
-                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
-                                                title="Kurangi 1 jam"
-                                            >
-                                                <Minus className="h-3.5 w-3.5" />
-                                            </button>
-                                            <div className="relative flex-1">
-                                                <select
-                                                    value={hourVal}
-                                                    onChange={(e) => updateTime(e.target.value, minuteVal)}
-                                                    className="w-full h-8 text-center text-xs font-mono font-bold text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 shadow-2xs"
-                                                    title="Pilih Jam"
-                                                >
-                                                    {HOURS_LIST.map((h) => (
-                                                        <option key={h} value={h}>
-                                                            {h}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <ChevronDown className="h-3 w-3 text-gray-400 absolute right-1.5 top-2.5 pointer-events-none" />
-                                            </div>
-                                            <button
-                                                type="button"
-                                                onClick={() => stepHour(1)}
-                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
-                                                title="Tambah 1 jam"
-                                            >
-                                                <Plus className="h-3.5 w-3.5" />
-                                            </button>
+                            <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-3 shrink-0 bg-slate-50/80 p-3 rounded-xl border border-slate-200/80">
+                                <div className="flex flex-col gap-1">
+                                    <span className="text-[11px] font-bold text-gray-700 flex items-center gap-1.5">
+                                        <Clock className="h-3.5 w-3.5 text-blue-600" />
+                                        <span>Jam & Menit:</span>
+                                    </span>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="flex items-center bg-white border border-gray-300 rounded-lg px-2 py-1 shadow-2xs focus-within:border-blue-600 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
+                                            <input
+                                                type="text"
+                                                inputMode="numeric"
+                                                pattern="[0-9]*"
+                                                maxLength={2}
+                                                value={hourVal}
+                                                onChange={(e) => {
+                                                    const clean = e.target.value.replace(/\D/g, '').slice(-2);
+                                                    setHourVal(clean);
+                                                    if (clean !== '') {
+                                                        const num = parseInt(clean, 10);
+                                                        const valid = String(Math.min(23, num)).padStart(2, '0');
+                                                        updateTime(valid, minuteVal || '00');
+                                                    }
+                                                }}
+                                                onBlur={() => {
+                                                    const num = hourVal !== '' ? parseInt(hourVal, 10) : 8;
+                                                    const valid = String(isNaN(num) ? 8 : Math.min(23, Math.max(0, num))).padStart(2, '0');
+                                                    setHourVal(valid);
+                                                    updateTime(valid, minuteVal || '00');
+                                                }}
+                                                onFocus={(e) => e.target.select()}
+                                                className="w-10 h-7 text-center text-sm font-mono font-bold text-gray-900 bg-transparent focus:outline-none cursor-text"
+                                                placeholder="00"
+                                                title="Ketik Jam (00 - 23)"
+                                            />
+                                            <span className="font-bold text-gray-400 select-none px-1">:</span>
+                                            <input
+                                                type="text"
+                                                inputMode="numeric"
+                                                pattern="[0-9]*"
+                                                maxLength={2}
+                                                value={minuteVal}
+                                                onChange={(e) => {
+                                                    const clean = e.target.value.replace(/\D/g, '').slice(-2);
+                                                    setMinuteVal(clean);
+                                                    if (clean !== '') {
+                                                        const num = parseInt(clean, 10);
+                                                        const valid = String(Math.min(59, num)).padStart(2, '0');
+                                                        updateTime(hourVal || '08', valid);
+                                                    }
+                                                }}
+                                                onBlur={() => {
+                                                    const num = minuteVal !== '' ? parseInt(minuteVal, 10) : 0;
+                                                    const valid = String(isNaN(num) ? 0 : Math.min(59, Math.max(0, num))).padStart(2, '0');
+                                                    setMinuteVal(valid);
+                                                    updateTime(hourVal || '08', valid);
+                                                }}
+                                                onFocus={(e) => e.target.select()}
+                                                className="w-10 h-7 text-center text-sm font-mono font-bold text-gray-900 bg-transparent focus:outline-none cursor-text"
+                                                placeholder="00"
+                                                title="Ketik Menit (00 - 59)"
+                                            />
                                         </div>
-                                    </div>
-
-                                    <span className="font-bold text-gray-400 text-lg mt-4 select-none">:</span>
-
-                                    {/* Selector Menit (00 - 59) */}
-                                    <div className="flex-1 flex flex-col gap-1">
-                                        <span className="text-[10px] font-bold text-gray-500 uppercase">Menit (00 - 59)</span>
-                                        <div className="flex items-center gap-1">
-                                            <button
-                                                type="button"
-                                                onClick={() => stepMinute(-1)}
-                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
-                                                title="Kurangi 1 menit"
-                                            >
-                                                <Minus className="h-3.5 w-3.5" />
-                                            </button>
-                                            <div className="relative flex-1">
-                                                <select
-                                                    value={minuteVal}
-                                                    onChange={(e) => updateTime(hourVal, e.target.value)}
-                                                    className="w-full h-8 text-center text-xs font-mono font-bold text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 shadow-2xs"
-                                                    title="Pilih Menit"
-                                                >
-                                                    {MINUTES_LIST.map((m) => (
-                                                        <option key={m} value={m}>
-                                                            {m}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <ChevronDown className="h-3 w-3 text-gray-400 absolute right-1.5 top-2.5 pointer-events-none" />
-                                            </div>
-                                            <button
-                                                type="button"
-                                                onClick={() => stepMinute(1)}
-                                                className="w-7 h-8 flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-700 cursor-pointer transition shadow-2xs"
-                                                title="Tambah 1 menit"
-                                            >
-                                                <Plus className="h-3.5 w-3.5" />
-                                            </button>
-                                        </div>
+                                        <span className="text-xs font-semibold text-gray-500">WIB</span>
                                     </div>
                                 </div>
 
-                                {/* Preset Jam Populer */}
-                                <div className="flex items-center gap-1.5 pt-1 overflow-x-auto">
-                                    <span className="text-[10px] text-gray-400 font-semibold whitespace-nowrap">Preset:</span>
-                                    {['08:00', '12:00', '16:00', '20:00', '00:00'].map((preset) => {
-                                        const [ph, pm] = preset.split(':');
-                                        const isActive = hourVal === ph && minuteVal === pm;
-                                        return (
-                                            <button
-                                                key={preset}
-                                                type="button"
-                                                onClick={() => updateTime(ph, pm)}
-                                                className={`px-2 py-0.5 text-[10px] font-mono font-semibold rounded transition cursor-pointer ${
-                                                    isActive
-                                                        ? 'bg-blue-600 text-white'
-                                                        : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-100'
-                                                }`}
-                                            >
-                                                {preset}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
+                                <button
+                                    type="button"
+                                    onClick={handleSetNowTime}
+                                    className="px-3 py-2 text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 active:bg-blue-200 border border-blue-200/60 rounded-lg transition cursor-pointer flex items-center gap-1.5 shadow-2xs self-end mb-0.5"
+                                    title="Set ke jam saat ini"
+                                >
+                                    <Clock className="h-3.5 w-3.5" />
+                                    Jam Sekarang
+                                </button>
                             </div>
                         )}
 
@@ -856,13 +760,7 @@ export function DateTimePicker({
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     {/* Modal Top Close Bar */}
-                                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 shrink-0">
-                                        <div className="flex items-center gap-2">
-                                            <CalendarIcon className="h-4 w-4 text-blue-600" />
-                                            <span className="text-xs font-bold text-gray-900">
-                                                {withTime ? 'Pilih Tanggal & Jam' : 'Pilih Tanggal'}
-                                            </span>
-                                        </div>
+                                    <div className="flex items-center justify-end pb-1 mb-1 shrink-0">
                                         <button
                                             type="button"
                                             onClick={() => setIsOpen(false)}

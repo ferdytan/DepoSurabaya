@@ -32,6 +32,9 @@ const MONTH_NAMES = [
 
 const DAY_NAMES = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
 
+const HOURS_LIST = Array.from({ length: 24 }, (_, i) => String(i).padStart(2, '0'));
+const MINUTES_LIST = Array.from({ length: 60 }, (_, i) => String(i).padStart(2, '0'));
+
 function getNowLocalTime(): string {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -768,10 +771,55 @@ export function DateTimePicker({
                                 </div>
 
                                 <div className="flex items-center gap-2">
-                                    {/* Direct Editable Time Input Container */}
+                                    {/* Mobile/Touch Select Pickers */}
+                                    <div className="flex sm:hidden items-center gap-1">
+                                        <div className="relative">
+                                            <select
+                                                value={hourVal}
+                                                onChange={(e) => {
+                                                    const val = e.target.value;
+                                                    hourValRef.current = val;
+                                                    setHourVal(val);
+                                                    updateTimeFromParts(val, minuteValRef.current || '00');
+                                                }}
+                                                className="h-8 px-2 text-xs font-bold text-gray-900 bg-gray-100 border border-gray-300 rounded-lg appearance-none cursor-pointer pr-5 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                                                title="Pilih Jam"
+                                            >
+                                                {HOURS_LIST.map((h) => (
+                                                    <option key={h} value={h}>
+                                                        {h}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2.5 pointer-events-none" />
+                                        </div>
+                                        <span className="font-bold text-gray-400 select-none">:</span>
+                                        <div className="relative">
+                                            <select
+                                                value={minuteVal}
+                                                onChange={(e) => {
+                                                    const val = e.target.value;
+                                                    minuteValRef.current = val;
+                                                    setMinuteVal(val);
+                                                    updateTimeFromParts(hourValRef.current || '08', val);
+                                                }}
+                                                className="h-8 px-2 text-xs font-bold text-gray-900 bg-gray-100 border border-gray-300 rounded-lg appearance-none cursor-pointer pr-5 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                                                title="Pilih Menit"
+                                            >
+                                                {MINUTES_LIST.map((m) => (
+                                                    <option key={m} value={m}>
+                                                        {m}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown className="h-3 w-3 text-gray-500 absolute right-1.5 top-2.5 pointer-events-none" />
+                                        </div>
+                                    </div>
+
+                                    {/* Desktop Direct Editable Time Input Container */}
                                     <div
                                         onClick={() => hourInputRef.current?.focus()}
-                                        className="flex items-center bg-gray-50 hover:bg-gray-100/70 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs cursor-text"
+                                        className="hidden sm:flex items-center bg-gray-50 hover:bg-gray-100/70 border border-gray-300 rounded-lg px-2 py-1 focus-within:bg-white focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all shadow-xs cursor-text"
                                     >
                                         <input
                                             ref={hourInputRef}
@@ -784,19 +832,15 @@ export function DateTimePicker({
                                             onKeyDown={handleHourKeyDown}
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    (e.target as HTMLInputElement).select();
-                                                }
+                                                (e.target as HTMLInputElement).select();
                                             }}
                                             onFocus={(e) => {
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    const el = e.currentTarget;
-                                                    requestAnimationFrame(() => el.select());
-                                                }
+                                                const el = e.currentTarget;
+                                                requestAnimationFrame(() => el.select());
                                             }}
                                             onBlur={handleHourBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
+                                            className="w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
                                             placeholder="JJ"
                                             title="Ketik 2 digit jam (00 - 23)"
                                         />
@@ -812,19 +856,15 @@ export function DateTimePicker({
                                             onKeyDown={handleMinuteKeyDown}
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    (e.target as HTMLInputElement).select();
-                                                }
+                                                (e.target as HTMLInputElement).select();
                                             }}
                                             onFocus={(e) => {
-                                                if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-                                                    const el = e.currentTarget;
-                                                    requestAnimationFrame(() => el.select());
-                                                }
+                                                const el = e.currentTarget;
+                                                requestAnimationFrame(() => el.select());
                                             }}
                                             onBlur={handleMinuteBlur}
                                             onPaste={handleTimePaste}
-                                            className="w-8 sm:w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
+                                            className="w-7 h-7 text-center text-xs font-mono font-bold text-gray-900 bg-transparent focus:bg-gray-100 rounded focus:outline-none cursor-text transition-colors"
                                             placeholder="MM"
                                             title="Ketik 2 digit menit (00 - 59)"
                                         />

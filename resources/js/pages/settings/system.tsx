@@ -2,6 +2,8 @@ import HeadingSmall from '@/components/heading-small';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
 import { type BreadcrumbItem } from '@/types';
@@ -17,8 +19,12 @@ import {
     PanelLeftOpen,
     Receipt,
     TableProperties,
+    Shield,
+    Search,
+    X,
+    Sparkles,
 } from 'lucide-react';
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -31,6 +37,12 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
+interface ProductItem {
+    id: number;
+    service_type: string;
+    description?: string | null;
+}
+
 interface SystemSettingsProps {
     settings: {
         default_pagination: number;
@@ -38,20 +50,62 @@ interface SystemSettingsProps {
         default_invoice_show_period?: boolean;
         storage_free_hours?: number;
         storage_fumigasi_free_hours?: number;
+        karantina_default_product_ids?: number[];
     };
+    products?: ProductItem[];
     status?: string;
 }
 
 const paginationOptions = [10, 25, 50, 100];
 
-export default function SystemSettings({ settings, status }: SystemSettingsProps) {
+export default function SystemSettings({ settings, products = [], status }: SystemSettingsProps) {
     const { data, setData, put, processing, errors, recentlySuccessful } = useForm({
         default_pagination: settings.default_pagination || 25,
         default_sidebar_state: settings.default_sidebar_state || 'expanded',
         default_invoice_show_period: settings.default_invoice_show_period ?? true,
         storage_free_hours: settings.storage_free_hours ?? 72,
         storage_fumigasi_free_hours: settings.storage_fumigasi_free_hours ?? 120,
+        karantina_default_product_ids: settings.karantina_default_product_ids || [],
     });
+
+    const [productSearch, setProductSearch] = useState('');
+
+    const toggleKarantinaProduct = (id: number) => {
+        const current = [...data.karantina_default_product_ids];
+        const index = current.indexOf(id);
+        if (index > -1) {
+            current.splice(index, 1);
+        } else {
+            current.push(id);
+        }
+        setData('karantina_default_product_ids', current);
+    };
+
+    const isKarantinaOrFumigasi = (p: ProductItem) =>
+        /karantina|fumigasi/i.test(p.service_type) || /karantina|fumigasi/i.test(p.description || '');
+
+    const selectKarantinaOnly = () => {
+        const matched = products.filter(isKarantinaOrFumigasi).map((p) => p.id);
+        setData('karantina_default_product_ids', matched);
+    };
+
+    const selectAllProducts = () => {
+        setData('karantina_default_product_ids', products.map((p) => p.id));
+    };
+
+    const clearAllProducts = () => {
+        setData('karantina_default_product_ids', []);
+    };
+
+    const filteredProducts = useMemo(() => {
+        if (!productSearch.trim()) return products;
+        const q = productSearch.toLowerCase();
+        return products.filter(
+            (p) =>
+                p.service_type.toLowerCase().includes(q) ||
+                (p.description && p.description.toLowerCase().includes(q))
+        );
+    }, [products, productSearch]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -335,6 +389,131 @@ export default function SystemSettings({ settings, status }: SystemSettingsProps
                                     <InputError message={errors.storage_fumigasi_free_hours} />
                                 </div>
                             </div>
+                        </div>
+
+                        {/* Section 5: Default Produk / Layanan Halaman Karantina */}
+                        <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-5 sm:p-6 shadow-xs">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-3">
+                                <div>
+                                    <div className="flex items-center gap-2">
+                                        <Shield className="h-4 w-4 text-blue-600" />
+                                        <Label className="text-sm font-bold text-gray-900">
+                                            Default Produk / Layanan Halaman Karantina
+                                        </Label>
+                                        <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700 border border-blue-200">
+                                            {data.karantina_default_product_ids.length} layanan dipilih
+                                        </span>
+                                    </div>
+                                    <p className="text-xs text-gray-500 mt-1">
+                                        Tentukan layanan yang otomatis tercentang (aktif) setiap kali pengguna membuka menu <strong>Karantina & Fumigasi</strong>. Fitur ini bersifat multi-select.
+                                    </p>
+                                </div>
+                                <div className="flex flex-wrap items-center gap-1.5 pt-1 sm:pt-0">
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={selectKarantinaOnly}
+                                        className="text-xs h-7 px-2.5 text-blue-700 border-blue-200 bg-blue-50/50 hover:bg-blue-100/60 font-semibold gap-1"
+                                        title="Centang otomatis produk yang memiliki kata Karantina atau Fumigasi"
+                                    >
+                                        <Sparkles className="h-3 w-3 text-blue-600" />
+                                        <span>Pilih Karantina & Fumigasi</span>
+                                    </Button>
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={selectAllProducts}
+                                        className="text-xs h-7 px-2 text-gray-700 hover:bg-gray-100"
+                                    >
+                                        Pilih Semua ({products.length})
+                                    </Button>
+                                    <Button
+                                        type="button"
+                                        variant="ghost"
+                                        size="sm"
+                                        onClick={clearAllProducts}
+                                        className="text-xs h-7 px-2 text-rose-600 hover:text-rose-700 hover:bg-rose-50"
+                                    >
+                                        Kosongkan
+                                    </Button>
+                                </div>
+                            </div>
+
+                            {/* Search box layanan */}
+                            <div className="relative max-w-sm">
+                                <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-gray-400" />
+                                <Input
+                                    type="text"
+                                    placeholder="Cari nama produk / layanan..."
+                                    value={productSearch}
+                                    onChange={(e) => setProductSearch(e.target.value)}
+                                    className="h-8 pl-8 pr-7 text-xs rounded-lg border-gray-200 bg-gray-50/50 focus:bg-white"
+                                />
+                                {productSearch && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setProductSearch('')}
+                                        className="absolute right-2.5 top-2 text-gray-400 hover:text-gray-600"
+                                    >
+                                        <X className="h-3.5 w-3.5" />
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* Grid list produk dengan checkbox */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 max-h-80 overflow-y-auto p-1 rounded-lg border border-gray-100 bg-slate-50/40">
+                                {filteredProducts.length === 0 ? (
+                                    <div className="col-span-full py-8 text-center text-xs text-gray-400">
+                                        Tidak ada produk / layanan yang cocok dengan kata kunci.
+                                    </div>
+                                ) : (
+                                    filteredProducts.map((p) => {
+                                        const isSelected = data.karantina_default_product_ids.includes(p.id);
+                                        const isKarantina = isKarantinaOrFumigasi(p);
+                                        return (
+                                            <div
+                                                key={p.id}
+                                                onClick={() => toggleKarantinaProduct(p.id)}
+                                                className={`flex items-start gap-2.5 p-3 rounded-lg border cursor-pointer transition-all select-none ${
+                                                    isSelected
+                                                        ? 'bg-blue-50/70 border-blue-300 shadow-2xs'
+                                                        : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50/60'
+                                                }`}
+                                            >
+                                                <Checkbox
+                                                    checked={isSelected}
+                                                    onCheckedChange={() => toggleKarantinaProduct(p.id)}
+                                                    className="mt-0.5 h-4 w-4 rounded border-gray-300 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+                                                />
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                                        <span
+                                                            className={`text-xs font-bold leading-tight ${
+                                                                isSelected ? 'text-blue-950' : 'text-gray-800'
+                                                            }`}
+                                                        >
+                                                            {p.service_type}
+                                                        </span>
+                                                        {isKarantina && (
+                                                            <span className="text-[9px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.2 rounded">
+                                                                Karantina/Fumigasi
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    {p.description && (
+                                                        <p className="text-[11px] text-gray-500 mt-0.5 truncate">
+                                                            {p.description}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        );
+                                    })
+                                )}
+                            </div>
+                            <InputError message={errors.karantina_default_product_ids as any} />
                         </div>
 
                         {/* Submit Button */}

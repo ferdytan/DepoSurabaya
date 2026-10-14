@@ -188,6 +188,47 @@ class OrderController extends Controller
     }
 
 
+    /**
+     * Dapatkan master default ID produk untuk karantina dari setting.
+     * Jika belum pernah diset sama sekali di database, fallback ke produk dengan kata 'karantina' atau 'fumigasi'.
+     */
+    private function getDefaultKarantinaProductIds(): array
+    {
+        $rawSetting = Setting::get('karantina_default_product_ids', null);
+        if ($rawSetting === null) {
+            $defaultProductIds = Product::where('service_type', 'like', '%karantina%')
+                ->orWhere('service_type', 'like', '%fumigasi%')
+                ->pluck('id')
+                ->toArray();
+        } else {
+            $defaultProductIds = json_decode($rawSetting, true) ?: [];
+        }
+
+        return array_values(array_filter(array_map('intval', (array) $defaultProductIds)));
+    }
+
+    /**
+     * Resolusi ID produk/layanan karantina: jika request memiliki param maka pakai param tsb,
+     * jika tidak (misal baru buka menu), gunakan master default setting dari database.
+     */
+    private function resolveKarantinaProductIds(Request $request): array
+    {
+        $hasProductParam = $request->has('product_ids') || $request->has('products');
+        $productParam = $request->input('product_ids', $request->input('products'));
+
+        if ($hasProductParam) {
+            if (is_array($productParam)) {
+                return array_values(array_filter(array_map('intval', $productParam)));
+            } elseif (is_string($productParam) && trim($productParam) !== '' && $productParam !== 'all') {
+                return array_values(array_filter(array_map('intval', explode(',', $productParam))));
+            }
+            return [];
+        }
+
+        // Jika tidak ada query param sama sekali (misal pertama kali klik menu karantina), pakai master setting
+        return $this->getDefaultKarantinaProductIds();
+    }
+
     protected function getKarantinaQuery(Request $request)
     {
         $trashed = $request->input('trashed');
@@ -200,14 +241,8 @@ class OrderController extends Controller
         $dateTo = $request->input('date_to', $request->input('end_date'));
         $dateType = $request->input('date_type', 'entry_date');
 
-        // Multi-select product filter
-        $productParam = $request->input('product_ids', $request->input('products'));
-        $productIds = [];
-        if (is_array($productParam)) {
-            $productIds = array_values(array_filter(array_map('intval', $productParam)));
-        } elseif (is_string($productParam) && trim($productParam) !== '') {
-            $productIds = array_values(array_filter(array_map('intval', explode(',', $productParam))));
-        }
+        // Multi-select product filter (dengan default setting jika belum difilter manual)
+        $productIds = $this->resolveKarantinaProductIds($request);
 
         $query = OrderItem::with([
             'order:id,customer_id,shipper_id,fumigasi,no_aju,order_id,is_excluded_from_report',
@@ -215,10 +250,27 @@ class OrderController extends Controller
             'order.shipper:id,name',
             'product:id,service_type',
         ])
-        ->whereHas('order', function ($q) {
-            $q->whereNotNull('fumigasi')
-              ->where('fumigasi', '!=', '')
-              ->where('fumigasi', '!=', ' ');
+        ->where(function ($kq) {
+            // 1. Order memiliki data fumigator
+            $kq->whereHas('order', function ($q) {
+                $q->whereNotNull('fumigasi')
+                  ->where('fumigasi', '!=', '')
+                  ->where('fumigasi', '!=', ' ');
+            })
+            // 2. ATAU produk utama bertipe Karantina / Fumigasi
+            ->orWhereHas('product', function ($q) {
+                $q->where('service_type', 'like', '%karantina%')
+                  ->orWhere('service_type', 'like', '%fumigasi%')
+                  ->orWhere('description', 'like', '%karantina%')
+                  ->orWhere('description', 'like', '%fumigasi%');
+            })
+            // 3. ATAU additional products bertipe Karantina / Fumigasi
+            ->orWhereHas('additionalProducts', function ($q) {
+                $q->where('service_type', 'like', '%karantina%')
+                  ->orWhere('service_type', 'like', '%fumigasi%')
+                  ->orWhere('description', 'like', '%karantina%')
+                  ->orWhere('description', 'like', '%fumigasi%');
+            });
         });
 
         if ($trashed) {
@@ -273,14 +325,16 @@ class OrderController extends Controller
             });
         }
 
-        // Filter pencarian teks bebas (nomor kontainer, komoditi, negara, fumigasi, no_aju, order_id, customer, shipper)
+        // Filter pencarian teks bebas (nomor kontainer, komoditi, negara, fumigasi, no_aju, order_id, customer, shipper, produk/layanan)
         if ($search) {
             $query->where(function ($q) use ($search) {
-                $q->where('container_number', 'like', "%{$search}%")
-                  ->orWhere('commodity', 'like', "%{$search}%")
-                  ->orWhere('country', 'like', "%{$search}%")
-                  ->orWhereHas('order', function ($q) use ($search) {
-                      $q->where('fumigasi', 'like', "%{$search}%")
+                $q->where('order_items.container_number', 'like', "%{$search}%")
+                  ->orWhere('order_items.commodity', 'like', "%{$search}%")
+                  ->orWhere('order_items.country', 'like', "%{$search}%")
+                  ->orWhereHas('product', fn($pq) => $pq->where('service_type', 'like', "%{$search}%"))
+                  ->orWhereHas('additionalProducts', fn($apq) => $apq->where('service_type', 'like', "%{$search}%"))
+                  ->orWhereHas('order', function ($oq) use ($search) {
+                      $oq->where('fumigasi', 'like', "%{$search}%")
                         ->orWhere('no_aju', 'like', "%{$search}%")
                         ->orWhere('order_id', 'like', "%{$search}%")
                         ->orWhereHas('shipper', fn($sq) => $sq->where('name', 'like', "%{$search}%"))
@@ -314,18 +368,25 @@ class OrderController extends Controller
         $sortDir = strtolower($request->input('sort_dir', 'asc')) === 'desc' ? 'desc' : 'asc';
 
         if ($sortBy === 'container_number') {
-            $query->orderBy('container_number', $sortDir);
+            $query->orderBy('order_items.container_number', $sortDir);
+        } elseif ($sortBy === 'customers.name') {
+            $query->join('orders as o_sort', 'order_items.order_id', '=', 'o_sort.id')
+                  ->leftJoin('customers as c_sort', 'o_sort.customer_id', '=', 'c_sort.id')
+                  ->select('order_items.*')
+                  ->orderBy('c_sort.name', $sortDir);
         } elseif ($sortBy === 'shippers.name') {
-            $query->join('orders', 'order_items.order_id', '=', 'orders.id')
-                  ->leftJoin('shippers', 'orders.shipper_id', '=', 'shippers.id')
+            $query->join('orders as o_sort', 'order_items.order_id', '=', 'o_sort.id')
+                  ->leftJoin('shippers as s_sort', 'o_sort.shipper_id', '=', 's_sort.id')
                   ->select('order_items.*')
-                  ->orderBy('shippers.name', $sortDir);
+                  ->orderBy('s_sort.name', $sortDir);
         } elseif ($sortBy === 'fumigasi') {
-            $query->join('orders', 'order_items.order_id', '=', 'orders.id')
+            $query->join('orders as o_sort', 'order_items.order_id', '=', 'o_sort.id')
                   ->select('order_items.*')
-                  ->orderBy('orders.fumigasi', $sortDir);
+                  ->orderBy('o_sort.fumigasi', $sortDir);
+        } elseif (in_array($sortBy, ['entry_date', 'eir_date', 'exit_date'])) {
+            $query->orderBy("order_items.{$sortBy}", $sortDir);
         } else {
-            $query->latest();
+            $query->latest('order_items.id');
         }
 
         return $query;
@@ -345,13 +406,8 @@ class OrderController extends Controller
         $sortBy = $request->input('sort_by');
         $sortDir = strtolower($request->input('sort_dir', 'asc')) === 'desc' ? 'desc' : 'asc';
 
-        $productParam = $request->input('product_ids', $request->input('products'));
-        $productIds = [];
-        if (is_array($productParam)) {
-            $productIds = array_values(array_filter(array_map('intval', $productParam)));
-        } elseif (is_string($productParam) && trim($productParam) !== '') {
-            $productIds = array_values(array_filter(array_map('intval', explode(',', $productParam))));
-        }
+        $defaultProductIds = $this->getDefaultKarantinaProductIds();
+        $productIds = $this->resolveKarantinaProductIds($request);
 
         $defaultPagination = (int) Setting::get('default_pagination', 25);
         $perPage = (int) $request->input('per_page', $defaultPagination);
@@ -376,6 +432,7 @@ class OrderController extends Controller
             $data['customer_name'] = $item->order->customer ? $item->order->customer->name : '-';
             $data['shipper_name'] = $item->order->shipper ? $item->order->shipper->name : '-';
             $data['no_aju'] = $item->order->no_aju ?? null;
+            $data['service_type'] = $item->product?->service_type ?? ($item->order?->fumigasi ? 'Fumigasi' : '-');
 
             return $data;
         });
@@ -398,6 +455,7 @@ class OrderController extends Controller
                 'sort_by' => $sortBy,
                 'sort_dir' => $sortDir,
                 'product_ids' => $productIds,
+                'default_product_ids' => array_values(array_filter(array_map('intval', (array) $defaultProductIds))),
                 'per_page' => $perPage,
             ],
             'flash' => [
@@ -405,6 +463,24 @@ class OrderController extends Controller
                 'error' => session('error'),
             ],
         ]);
+    }
+
+    /**
+     * Simpan master default pilihan produk layanan karantina.
+     */
+    public function save_default_karantina_products(Request $request)
+    {
+        $user = $request->user();
+        if (!$user || !in_array($user->role_id, [1, 2])) {
+            return back()->with('error', 'Hanya Superadmin atau Admin yang memiliki akses mengubah master default layanan.');
+        }
+
+        $productIds = $request->input('product_ids', []);
+        $cleanIds = array_values(array_filter(array_map('intval', (array) $productIds)));
+
+        Setting::set('karantina_default_product_ids', json_encode($cleanIds));
+
+        return back()->with('success', 'Master default produk layanan karantina berhasil diperbarui.');
     }
 
     public function karantina_print_data(Request $request)

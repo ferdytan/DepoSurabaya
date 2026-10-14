@@ -104,6 +104,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/karantina', [OrderController::class, 'index_karantina'])->name('index_karantina');
+    Route::post('/karantina/default-products', [OrderController::class, 'save_default_karantina_products'])->name('karantina.save_default_products');
     Route::get('/karantina/print-data', [OrderController::class, 'karantina_print_data'])->name('karantina.print_data');
     Route::get('/containers/quick-search', [OrderController::class, 'quickSearchContainers'])->name('containers.quick-search');
     Route::get('/orderv2', [OrderController::class, 'v2'])->name('orders.v2');

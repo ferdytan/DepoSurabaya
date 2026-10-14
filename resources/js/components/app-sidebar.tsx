@@ -4,10 +4,10 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, SquareUserRound, Tag, Thermometer, Truck, User } from 'lucide-react';
+import { Book, Database, FileSpreadsheet, LayoutGrid, Package, Paperclip, Shield, SquareUserRound, Tag, Thermometer, Truck, User } from 'lucide-react';
 import AppLogo from './app-logo';
 
-// Definisikan item menu utama TANPA menu Karantina
+// Definisikan item menu utama
 const baseNavItems: NavItem[] = [
     {
         title: 'Dashboard',
@@ -59,14 +59,12 @@ const baseNavItems: NavItem[] = [
         href: '/reports',
         icon: FileSpreadsheet,
     },
+    {
+        title: 'Karantina',
+        href: '/karantina',
+        icon: Shield,
+    },
 ];
-
-// Menu Karantina — hanya untuk role_id 4
-const karantinaNavItem: NavItem = {
-    title: 'Karantina',
-    href: '/karantina',
-    icon: User, // Ganti dengan ikon yang sesuai jika perlu
-};
 
 // Footer tetap sama
 const footerNavItems: NavItem[] = [
@@ -93,7 +91,7 @@ export function AppSidebar() {
     let filteredNavItems: NavItem[] = [];
 
     if (roleId == 1) {
-        // Superadmin: semua menu kecuali Karantina (karena hanya untuk role 4)
+        // Superadmin: semua menu
         filteredNavItems = baseNavItems;
     } else if (roleId == 2) {
         // Admin: tanpa User, Customers, Shippers, Products
@@ -102,12 +100,17 @@ export function AppSidebar() {
         // Checker & Ops Checker: Orders dan Temperature (Monitoring Suhu)
         filteredNavItems = baseNavItems.filter((item) => ['/orders', '/temperature-records'].includes(item.href));
     } else if (roleId == 4) {
-        // Karantina: hanya menu Dashboard (menu Karantina di-hide sementara)
+        // Karantina: Dashboard & Karantina
         filteredNavItems = [
             {
                 title: 'Dashboard',
                 href: '/dashboard',
                 icon: LayoutGrid,
+            },
+            {
+                title: 'Karantina',
+                href: '/karantina',
+                icon: Shield,
             },
         ];
     }

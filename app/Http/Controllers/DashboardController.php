@@ -45,14 +45,33 @@ class DashboardController extends Controller
         $gateInHariIni = OrderItem::whereDate('entry_date', $today)->count();
         $gateOutHariIni = OrderItem::whereDate('exit_date', $today)->count();
 
+        // Helper closure untuk kriteria kontainer karantina & fumigasi
+        $karantinaCondition = function ($q) {
+            $q->where(function ($sub) {
+                $sub->whereHas('order', function ($oq) {
+                    $oq->whereNotNull('fumigasi')
+                      ->where('fumigasi', '!=', '')
+                      ->where('fumigasi', '!=', ' ');
+                })
+                ->orWhereHas('product', function ($pq) {
+                    $pq->where('service_type', 'like', '%karantina%')
+                      ->orWhere('service_type', 'like', '%fumigasi%')
+                      ->orWhere('description', 'like', '%karantina%')
+                      ->orWhere('description', 'like', '%fumigasi%');
+                })
+                ->orWhereHas('additionalProducts', function ($apq) {
+                    $apq->where('service_type', 'like', '%karantina%')
+                      ->orWhere('service_type', 'like', '%fumigasi%')
+                      ->orWhere('description', 'like', '%karantina%')
+                      ->orWhere('description', 'like', '%fumigasi%');
+                });
+            });
+        };
+
         // Kontainer karantina / fumigasi yang aktif di depo
         $jumlahFumigasiAktif = OrderItem::whereNotNull('entry_date')
             ->whereNull('exit_date')
-            ->whereHas('order', function ($q) {
-                $q->whereNotNull('fumigasi')
-                  ->where('fumigasi', '!=', '')
-                  ->where('fumigasi', '!=', ' ');
-            })
+            ->where($karantinaCondition)
             ->count();
 
         // Kontainer reefer / butuh pemantauan suhu yang aktif di depo
@@ -179,30 +198,18 @@ class DashboardController extends Controller
             ->limit($isChecker ? 100 : 20)
             ->get();
 
-        // Tab D: Kontainer fumigasi (khusus Karantina dan widget fumigasi)
+        // Tab D: Kontainer karantina & fumigasi (khusus Karantina dan widget fumigasi)
         $dataContainerFumigasi = OrderItem::with($relations)
-            ->whereHas('order', function ($q) {
-                $q->whereNotNull('fumigasi')
-                  ->where('fumigasi', '!=', '')
-                  ->where('fumigasi', '!=', ' ');
-            })
-            ->latest()
+            ->where($karantinaCondition)
+            ->latest('id')
             ->limit(150)
             ->get();
 
         $jumlahFumigasiSelesai = OrderItem::whereNotNull('exit_date')
-            ->whereHas('order', function ($q) {
-                $q->whereNotNull('fumigasi')
-                  ->where('fumigasi', '!=', '')
-                  ->where('fumigasi', '!=', ' ');
-            })
+            ->where($karantinaCondition)
             ->count();
 
-        $jumlahFumigasiTotal = OrderItem::whereHas('order', function ($q) {
-                $q->whereNotNull('fumigasi')
-                  ->where('fumigasi', '!=', '')
-                  ->where('fumigasi', '!=', ' ');
-            })
+        $jumlahFumigasiTotal = OrderItem::where($karantinaCondition)
             ->count();
 
         return Inertia::render('dashboard', [

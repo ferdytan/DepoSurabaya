@@ -30,6 +30,8 @@ import {
     ArrowDown,
     Shield,
     Check,
+    Settings,
+    Sparkles,
 } from 'lucide-react';
 
 interface FlashProps {
@@ -83,6 +85,7 @@ interface OrderItemData {
     fumigasi?: string | null;
     customer_name?: string;
     shipper_name?: string;
+    service_type?: string;
 }
 
 interface Props {
@@ -104,6 +107,7 @@ interface Props {
         shipper_id?: string;
         fumigator?: string;
         product_ids?: number[];
+        default_product_ids?: number[];
         exclude_status?: string;
         date_from?: string;
         date_to?: string;
@@ -313,11 +317,27 @@ export default function KarantinaIndex({
         );
     };
 
+    const [isSavingDefault, setIsSavingDefault] = useState(false);
+
+    const saveCurrentAsDefault = () => {
+        setIsSavingDefault(true);
+        router.post(
+            route('karantina.save_default_products'),
+            {
+                product_ids: selectedProductIds,
+            },
+            {
+                preserveScroll: true,
+                onFinish: () => setIsSavingDefault(false),
+            }
+        );
+    };
+
     const resetFilters = () => {
         setCustomerId('all');
         setShipperId('all');
         setFumigator('');
-        setSelectedProductIds([]);
+        setSelectedProductIds(filters.default_product_ids || []);
         setExcludeStatus('active');
         setDateFrom('');
         setDateTo('');
@@ -334,11 +354,46 @@ export default function KarantinaIndex({
         }
     };
 
+    const defaultProductIds = useMemo(() => {
+        return (filters.default_product_ids || []).map(Number).filter((n) => !isNaN(n));
+    }, [filters.default_product_ids]);
+
+    const isDefaultSelected = useMemo(() => {
+        if (selectedProductIds.length !== defaultProductIds.length) return false;
+        const setA = new Set(selectedProductIds);
+        return defaultProductIds.every((id) => setA.has(id));
+    }, [selectedProductIds, defaultProductIds]);
+
+    const karantinaFumigasiProductIds = useMemo(() => {
+        return products
+            .filter((p) => {
+                const name = (p.service_type || '').toLowerCase();
+                return name.includes('karantina') || name.includes('fumigasi');
+            })
+            .map((p) => p.id);
+    }, [products]);
+
     // Helper Multi-select Product
     const toggleProduct = (id: number) => {
         setSelectedProductIds((prev) =>
             prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
         );
+    };
+
+    const selectDefaultProducts = () => {
+        setSelectedProductIds(defaultProductIds);
+    };
+
+    const selectKarantinaFumigasiProducts = () => {
+        setSelectedProductIds(karantinaFumigasiProductIds);
+    };
+
+    const selectAllProducts = () => {
+        setSelectedProductIds(products.map((p) => p.id));
+    };
+
+    const clearAllProducts = () => {
+        setSelectedProductIds([]);
     };
 
     const filteredProductsList = products.filter((p) =>
@@ -1153,7 +1208,9 @@ export default function KarantinaIndex({
                         <tr>
                             <th style="width: 30px; text-align: center;">No</th>
                             <th>Nomor Kontainer</th>
+                            <th>Customer</th>
                             <th>Nama Shipper</th>
+                            <th>Layanan</th>
                             <th>Fumigator</th>
                             <th style="text-align: center; width: 60px;">Size</th>
                             <th>Tanggal Masuk</th>
@@ -1169,7 +1226,9 @@ export default function KarantinaIndex({
                             <tr>
                                 <td class="text-center">${idx + 1}</td>
                                 <td style="font-weight: 700; font-family: monospace;">${item.container_number}</td>
+                                <td>${item.customer_name ?? '-'}</td>
                                 <td>${item.shipper_name ?? '-'}</td>
+                                <td>${item.service_type ?? '-'}</td>
                                 <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
                                 <td class="text-center">${formatContainerSize(item.price_type)}</td>
                                 <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
@@ -1436,9 +1495,16 @@ export default function KarantinaIndex({
                             {/* 4. Filter Jenis Layanan (Multi-Select) */}
                             <div className="space-y-1.5">
                                 <div className="flex items-center justify-between">
-                                    <Label className="text-xs font-semibold text-gray-700">Jenis Layanan</Label>
+                                    <div className="flex items-center gap-1.5">
+                                        <Label className="text-xs font-semibold text-gray-700">Jenis Layanan</Label>
+                                        {isDefaultSelected && selectedProductIds.length > 0 && (
+                                            <span className="text-[10px] text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                                                Default
+                                            </span>
+                                        )}
+                                    </div>
                                     {selectedProductIds.length > 0 && (
-                                        <span className="text-[10px] text-blue-600 font-bold bg-blue-50 px-1.5 py-0.2 rounded border border-blue-200">
+                                        <span className="text-[10px] text-blue-600 font-bold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">
                                             {selectedProductIds.length} dipilih
                                         </span>
                                     )}
@@ -1453,6 +1519,8 @@ export default function KarantinaIndex({
                                             <span className="truncate">
                                                 {selectedProductIds.length === 0
                                                     ? 'Semua Layanan'
+                                                    : isDefaultSelected
+                                                    ? `Default Layanan (${selectedProductIds.length})`
                                                     : selectedProductIds.length === 1
                                                     ? (products.find((p) => p.id === selectedProductIds[0])?.service_type || '1 Layanan')
                                                     : `${selectedProductIds.length} Layanan Dipilih`}
@@ -1460,37 +1528,65 @@ export default function KarantinaIndex({
                                             <ChevronDown className="ml-1.5 h-3.5 w-3.5 shrink-0 opacity-50" />
                                         </Button>
                                     </DropdownMenuTrigger>
-                                    <DropdownMenuContent className="w-80 p-2 shadow-lg" align="start">
-                                        <div className="flex items-center justify-between px-2 py-1.5 border-b border-gray-100 mb-2">
-                                            <span className="text-xs font-semibold text-gray-700">Pilih Layanan</span>
-                                            <div className="flex gap-2 text-[11px]">
+                                    <DropdownMenuContent className="w-88 p-2.5 shadow-xl max-w-sm" align="start">
+                                        <div className="flex items-center justify-between px-1 pb-2 border-b border-gray-100">
+                                            <span className="text-xs font-semibold text-gray-800">Pilih Layanan</span>
+                                            <div className="flex flex-wrap gap-1.5 text-[11px]">
+                                                {defaultProductIds.length > 0 && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            selectDefaultProducts();
+                                                        }}
+                                                        className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-colors ${
+                                                            isDefaultSelected
+                                                                ? 'bg-emerald-100 text-emerald-800 font-bold'
+                                                                : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                                                        }`}
+                                                        title="Terapkan master default yang tersimpan"
+                                                    >
+                                                        Default ({defaultProductIds.length})
+                                                    </button>
+                                                )}
                                                 <button
                                                     type="button"
                                                     onClick={(e) => {
                                                         e.preventDefault();
-                                                        setSelectedProductIds(products.map((p) => p.id));
+                                                        selectKarantinaFumigasiProducts();
                                                     }}
-                                                    className="text-blue-600 hover:underline font-medium"
+                                                    className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors"
+                                                    title="Pilih semua layanan karantina & fumigasi"
                                                 >
-                                                    Semua ({products.length})
+                                                    Karantina ({karantinaFumigasiProductIds.length})
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        selectAllProducts();
+                                                    }}
+                                                    className="text-gray-600 hover:text-blue-600 text-[10px] font-medium"
+                                                >
+                                                    Semua
                                                 </button>
                                                 <span className="text-gray-300">|</span>
                                                 <button
                                                     type="button"
                                                     onClick={(e) => {
                                                         e.preventDefault();
-                                                        setSelectedProductIds([]);
+                                                        clearAllProducts();
                                                     }}
-                                                    className="text-gray-500 hover:underline"
+                                                    className="text-gray-500 hover:text-rose-600 text-[10px]"
                                                 >
-                                                    Reset
+                                                    Kosongkan
                                                 </button>
                                             </div>
                                         </div>
 
                                         {/* Search Input di dalam Dropdown */}
-                                        <div className="relative mb-2 px-1">
-                                            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-gray-400" />
+                                        <div className="relative my-2 px-0.5">
+                                            <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-gray-400" />
                                             <Input
                                                 type="text"
                                                 placeholder="Cari layanan..."
@@ -1503,7 +1599,7 @@ export default function KarantinaIndex({
                                                 <button
                                                     type="button"
                                                     onClick={() => setProductSearchQuery('')}
-                                                    className="absolute right-3 top-2 text-gray-400 hover:text-gray-600"
+                                                    className="absolute right-2.5 top-2 text-gray-400 hover:text-gray-600"
                                                 >
                                                     <X className="h-3.5 w-3.5" />
                                                 </button>
@@ -1533,7 +1629,7 @@ export default function KarantinaIndex({
                                         )}
 
                                         {/* List Produk */}
-                                        <div className="space-y-0.5 max-h-56 overflow-y-auto">
+                                        <div className="space-y-0.5 max-h-56 overflow-y-auto pr-0.5">
                                             {filteredProductsList.length === 0 ? (
                                                 <div className="py-4 text-center text-xs text-gray-400">
                                                     Tidak ada layanan cocok
@@ -1564,6 +1660,50 @@ export default function KarantinaIndex({
                                                     );
                                                 })
                                             )}
+                                        </div>
+
+                                        {/* Footer Aksi: Simpan Sebagai Default & Link ke Pengaturan Sistem */}
+                                        <div className="mt-2 pt-2 border-t border-gray-100 space-y-1.5">
+                                            <Button
+                                                type="button"
+                                                variant="outline"
+                                                size="sm"
+                                                disabled={isSavingDefault || isDefaultSelected}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    saveCurrentAsDefault();
+                                                }}
+                                                className={`w-full h-8 text-[11px] justify-center gap-1.5 ${
+                                                    isDefaultSelected
+                                                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200 cursor-default opacity-90'
+                                                        : 'hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 text-gray-700'
+                                                }`}
+                                            >
+                                                {isDefaultSelected ? (
+                                                    <>
+                                                        <Check className="h-3.5 w-3.5 text-emerald-600" />
+                                                        <span>Sudah Sesuai Master Default</span>
+                                                    </>
+                                                ) : isSavingDefault ? (
+                                                    <span>Menyimpan Master Default...</span>
+                                                ) : (
+                                                    <>
+                                                        <Sparkles className="h-3.5 w-3.5 text-blue-600" />
+                                                        <span>Jadikan Pilihan Saat Ini Sebagai Master Default</span>
+                                                    </>
+                                                )}
+                                            </Button>
+
+                                            <div className="flex items-center justify-between px-1 text-[11px] text-gray-500">
+                                                <span>Master Setting Global</span>
+                                                <Link
+                                                    href={route('settings.system')}
+                                                    className="inline-flex items-center gap-1 text-blue-600 hover:underline font-medium"
+                                                >
+                                                    <Settings className="h-3 w-3" />
+                                                    Buka Pengaturan Sistem
+                                                </Link>
+                                            </div>
                                         </div>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
@@ -1662,7 +1802,7 @@ export default function KarantinaIndex({
                                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                                 <Input
                                     type="text"
-                                    placeholder="Cari nomor kontainer, customer, shipper, atau komoditi... (Tekan Enter)"
+                                    placeholder="Cari nomor kontainer, customer, shipper, layanan, atau komoditi... (Tekan Enter)"
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                     onKeyDown={handleKeyDownSearch}
@@ -1710,7 +1850,17 @@ export default function KarantinaIndex({
                                         />
                                     </TableHead>
 
-                                    {/* 2. Nama Shipper */}
+                                    {/* 2. Customer */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        <SortButton
+                                            label="Customer"
+                                            field="customers.name"
+                                            currentSort={filters.sort_by}
+                                            currentDir={filters.sort_dir}
+                                        />
+                                    </TableHead>
+
+                                    {/* 3. Nama Shipper */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Nama Shipper"
@@ -1720,12 +1870,17 @@ export default function KarantinaIndex({
                                         />
                                     </TableHead>
 
-                                    {/* 3. Size */}
+                                    {/* 4. Layanan / Jasa */}
+                                    <TableHead className="px-4 py-3.5 whitespace-nowrap">
+                                        Layanan
+                                    </TableHead>
+
+                                    {/* 5. Size */}
                                     <TableHead className="px-4 py-3.5 text-center whitespace-nowrap">
                                         Size
                                     </TableHead>
 
-                                    {/* 4. Tanggal Masuk */}
+                                    {/* 6. Tanggal Masuk */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Tanggal Masuk"
@@ -1735,7 +1890,7 @@ export default function KarantinaIndex({
                                         />
                                     </TableHead>
 
-                                    {/* 5. Tanggal EIR */}
+                                    {/* 7. Tanggal EIR */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Tanggal EIR"
@@ -1745,7 +1900,7 @@ export default function KarantinaIndex({
                                         />
                                     </TableHead>
 
-                                    {/* 6. Tanggal Keluar */}
+                                    {/* 8. Tanggal Keluar */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Tanggal Keluar"
@@ -1755,17 +1910,17 @@ export default function KarantinaIndex({
                                         />
                                     </TableHead>
 
-                                    {/* 7. Komoditi */}
+                                    {/* 9. Komoditi */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         Komoditi
                                     </TableHead>
 
-                                    {/* 8. Negara Tujuan */}
+                                    {/* 10. Negara Tujuan */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         Negara Tujuan
                                     </TableHead>
 
-                                    {/* 9. Fumigator */}
+                                    {/* 11. Fumigator */}
                                     <TableHead className="px-4 py-3.5 whitespace-nowrap">
                                         <SortButton
                                             label="Fumigator"
@@ -1780,7 +1935,7 @@ export default function KarantinaIndex({
                             <TableBody className="divide-y divide-gray-100 bg-white">
                                 {orders.data.length === 0 ? (
                                     <TableRow>
-                                        <TableCell colSpan={9} className="py-12 text-center text-sm text-gray-500">
+                                        <TableCell colSpan={11} className="py-12 text-center text-sm text-gray-500">
                                             <div className="flex flex-col items-center justify-center gap-1.5">
                                                 <Filter className="h-6 w-6 text-gray-300" />
                                                 <span className="font-semibold text-gray-700">Tidak ada data kontainer yang sesuai filter.</span>
@@ -1796,44 +1951,56 @@ export default function KarantinaIndex({
                                                 {item.container_number}
                                             </TableCell>
 
-                                            {/* 2. Nama Shipper */}
-                                            <TableCell className="px-4 py-3 text-sm text-slate-800">
+                                            {/* 2. Customer */}
+                                            <TableCell className="px-4 py-3 text-sm font-semibold text-slate-900">
+                                                {item.order?.customer?.name ?? item.customer_name ?? '-'}
+                                            </TableCell>
+
+                                            {/* 3. Nama Shipper */}
+                                            <TableCell className="px-4 py-3 text-sm text-slate-700">
                                                 {item.order?.shipper?.name ?? item.shipper_name ?? '-'}
                                             </TableCell>
 
-                                            {/* 3. Size */}
+                                            {/* 4. Layanan */}
+                                            <TableCell className="px-4 py-3 text-sm">
+                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 whitespace-nowrap">
+                                                    {item.product?.service_type ?? item.service_type ?? (item.order?.fumigasi ? 'Fumigasi' : '-')}
+                                                </span>
+                                            </TableCell>
+
+                                            {/* 5. Size */}
                                             <TableCell className="px-4 py-3 text-sm text-center">
                                                 <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
                                                     {formatContainerSize(item.price_type)}
                                                 </span>
                                             </TableCell>
 
-                                            {/* 4. Tanggal Masuk */}
+                                            {/* 6. Tanggal Masuk */}
                                             <TableCell className="px-4 py-3 text-sm">
                                                 {formatKarantinaDateTime(item.entry_date)}
                                             </TableCell>
 
-                                            {/* 5. Tanggal EIR */}
+                                            {/* 7. Tanggal EIR */}
                                             <TableCell className="px-4 py-3 text-sm">
                                                 {formatKarantinaDateTime(item.eir_date)}
                                             </TableCell>
 
-                                            {/* 6. Tanggal Keluar */}
+                                            {/* 8. Tanggal Keluar */}
                                             <TableCell className="px-4 py-3 text-sm">
                                                 {formatKarantinaDateTime(item.exit_date)}
                                             </TableCell>
 
-                                            {/* 7. Komoditi */}
+                                            {/* 9. Komoditi */}
                                             <TableCell className="px-4 py-3 text-sm text-slate-800">
                                                 {item.commodity ?? '-'}
                                             </TableCell>
 
-                                            {/* 8. Negara Tujuan */}
+                                            {/* 10. Negara Tujuan */}
                                             <TableCell className="px-4 py-3 text-sm text-slate-800">
                                                 {item.country ?? '-'}
                                             </TableCell>
 
-                                            {/* 9. Fumigator */}
+                                            {/* 11. Fumigator */}
                                             <TableCell className="px-4 py-3 text-sm">
                                                 {item.order?.fumigasi ?? item.fumigasi ? (
                                                     <span className="inline-flex items-center rounded-md bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800 border border-amber-200">

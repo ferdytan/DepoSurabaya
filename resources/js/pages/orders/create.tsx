@@ -1378,7 +1378,7 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
 
                         {/* Temperature Dialog */}
                         <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
-                            <DialogContent className="max-w-3xl">
+                            <DialogContent className="w-[95vw] sm:max-w-3xl">
                                 <DialogHeader>
                                     <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
                                 </DialogHeader>

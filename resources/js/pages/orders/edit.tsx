@@ -1426,7 +1426,7 @@ export default function EditOrder({ order, customers, shippers, return_url: init
 
                         {/* Temperature Dialog */}
                         <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
-                            <DialogContent className="max-w-3xl">
+                            <DialogContent className="w-[95vw] sm:max-w-3xl">
                                 <DialogHeader>
                                     <DialogTitle>Rekam Suhu Kontainer</DialogTitle>
                                 </DialogHeader>

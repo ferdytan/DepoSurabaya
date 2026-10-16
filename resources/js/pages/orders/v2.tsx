@@ -1524,7 +1524,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
 
             {/* Dialog Rekam Suhu & Plug In/Out */}
             <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
-                <DialogContent className="max-w-3xl w-[95vw] sm:w-full p-4 sm:p-6 max-h-[92vh] flex flex-col">
+                <DialogContent className="w-[95vw] sm:max-w-3xl p-4 sm:p-6 max-h-[92vh] flex flex-col">
                     <DialogHeader className="pr-8 text-left shrink-0">
                         <DialogTitle className="flex items-center gap-2 text-sm sm:text-base font-bold text-gray-900 break-words">
                             <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
@@ -1725,17 +1725,17 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                             </Button>
                                         )}
                                     </div>
-                                    <div className="grid max-h-60 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 overflow-y-auto pt-1">
+                                    <div className="grid max-h-72 grid-cols-2 gap-2 overflow-y-auto pt-1">
                                         {[...Array(24)].map((_, h) => (
-                                            <div key={h} className="flex items-center gap-1.5 bg-gray-50/70 p-1 rounded border border-gray-100">
-                                                <Label htmlFor={`temp_v2_${h}`} className="text-xs text-gray-600 w-11 shrink-0 font-mono">{h.toString().padStart(2, '0')}:00</Label>
+                                            <div key={h} className="flex items-center gap-2 bg-gray-50/70 p-1.5 rounded-lg border border-gray-100 hover:border-gray-200 transition-colors">
+                                                <Label htmlFor={`temp_v2_${rIdx}_${h}`} className="text-xs font-semibold text-gray-700 w-12 shrink-0 font-mono text-center">{h.toString().padStart(2, '0')}:00</Label>
                                                 <Input
-                                                    id={`temp_v2_${h}`}
+                                                    id={`temp_v2_${rIdx}_${h}`}
                                                     type="number"
                                                     step="0.1"
                                                     value={rec.temps[h.toString().padStart(2, '0')] || ''}
                                                     onChange={(e) => updateTemp(rIdx, h, e.target.value)}
-                                                    className="flex-1 min-w-0 h-8 text-xs bg-white text-center"
+                                                    className="flex-1 min-w-0 h-8 text-xs bg-white text-center font-mono font-medium px-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                                     placeholder="°C"
                                                 />
                                             </div>

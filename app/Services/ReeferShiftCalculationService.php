@@ -19,7 +19,7 @@ use InvalidArgumentException;
  * bukan sekadar selisih waktu mentah (Plug Out - Plug In).
  *
  * Aturan Bisnis:
- * 1. Durasi dasar 1 shift: 8 jam (480 menit) dengan toleransi (grace period) 45 menit (maks 525 menit).
+ * 1. Durasi dasar 1 shift: 8 jam (480 menit) dengan toleransi (grace period) 43 menit (maks 523 menit).
  * 2. Interval pencatatan suhu: Petugas mencatat suhu berkala (per jam).
  * 3. Deteksi Gap: Jeda antar log melebihi batas toleransi (default 150 menit / 2.5 jam) menandai
  *    berakhirnya siklus shift sebelumnya dan dimulainya siklus shift baru.
@@ -39,7 +39,7 @@ class ReeferShiftCalculationService
     protected int $shiftDurationHours;
 
     /**
-     * Kompensasi/toleransi (grace period) per shift dalam menit (default: 45 menit).
+     * Kompensasi/toleransi (grace period) per shift dalam menit (default: 43 menit).
      */
     protected int $shiftCompensationMinutes;
 
@@ -56,7 +56,7 @@ class ReeferShiftCalculationService
     ) {
         $this->timezone = $timezone;
         $this->shiftDurationHours = $shiftDurationHours ?? (int) Setting::get('shift_duration_hours', 8);
-        $this->shiftCompensationMinutes = $shiftCompensationMinutes ?? (int) Setting::get('shift_compensation_minutes', 45);
+        $this->shiftCompensationMinutes = $shiftCompensationMinutes ?? (int) Setting::get('shift_compensation_minutes', 43);
         $this->idleGapThresholdMinutes = $idleGapThresholdMinutes ?? (int) Setting::get('shift_max_gap_minutes', 150);
 
         if ($this->shiftDurationHours <= 0) {
@@ -130,28 +130,13 @@ class ReeferShiftCalculationService
             throw new InvalidArgumentException('Waktu Plug Out tidak boleh lebih awal dari Start Plug In.');
         }
 
-        // Jika belum plug out, kalkulasi shift berjalan (running) sampai log terakhir atau waktu saat ini
-        $isStillPluggedIn = ($outNorm === null);
-        $effectiveOut = $outNorm ?? Carbon::now($this->timezone);
-
-        $totalDurationMinutes = (int) $startNorm->diffInMinutes($effectiveOut);
-
-        // Ekstraksi dan sanitasi log suhu ke stream kronologis
-        $sanitizedLogs = $this->extractAndSanitizeLogs($rawLogs, $startNorm, $effectiveOut);
-
-        // Edge Case: Tidak ada catatan suhu -> Fallback ke perhitungan selisih durasi mentah
-        if ($sanitizedLogs->isEmpty()) {
-            return $this->calculateRawFallback($startNorm, $effectiveOut, $totalDurationMinutes);
+        // Syarat resmi: ada plug in dan ada plug out
+        if ($outNorm !== null) {
+            return $this->executeHourlyDeductionCalculation($startNorm, $outNorm, $rawLogs);
         }
 
-        // Jalankan Algoritma Shift Windowing
-        return $this->executeShiftWindowing(
-            $startNorm,
-            $effectiveOut,
-            $sanitizedLogs,
-            $totalDurationMinutes,
-            $isStillPluggedIn
-        );
+        // Jika belum plug out, kalkulasi shift berjalan (running) sampai waktu saat ini
+        return $this->executeRunningPlugCalculation($startNorm, $rawLogs);
     }
 
     /**
@@ -164,19 +149,19 @@ class ReeferShiftCalculationService
      *    - Sisa <= $compensationMinutes (default 45 menit): Masuk batas toleransi (grace period), TIDAK menambah shift baru.
      *    - Sisa > $compensationMinutes: Melewati batas toleransi (misal 46 menit), LANGSUNG dihitung sebagai 1 shift baru!
      *
-     * Contoh Kasus (8 jam, toleransi 45 menit):
-     * - 1 menit s.d. 8 jam 45 menit  => 1 shift
-     * - 8 jam 46 menit s.d. 16 jam 45 menit => 2 shift
-     * - 152 jam 00 menit s.d. 152 jam 45 menit => 19 shift (19 x 8 jam = 152 jam)
-     * - 152 jam 46 menit => 20 shift
+     * Contoh Kasus (8 jam, toleransi 43 menit):
+     * - 1 menit s.d. 8 jam 43 menit  => 1 shift
+     * - 8 jam 44 menit s.d. 16 jam 43 menit => 2 shift
+     * - 152 jam 00 menit s.d. 152 jam 43 menit => 19 shift (19 x 8 jam = 152 jam)
+     * - 152 jam 44 menit => 20 shift
      * - 159 jam 34 menit => 20 shift (152 jam + 7 jam 34 menit)
-     * - 160 jam 45 menit => 20 shift
-     * - 160 jam 46 menit => 21 shift
+     * - 160 jam 43 menit => 20 shift
+     * - 160 jam 44 menit => 21 shift
      */
     public static function calculateShiftsFromDuration(
         int $durationMinutes,
         int $shiftDurationHours = 8,
-        int $compensationMinutes = 45
+        int $compensationMinutes = 43
     ): int {
         if ($durationMinutes <= 0) {
             return 1;
@@ -200,13 +185,13 @@ class ReeferShiftCalculationService
             return $fullShifts;
         }
 
-        // Jika kelebihan waktu melebihi batas toleransi kompensasi (lewat 45 menit):
+        // Jika kelebihan waktu melebihi batas toleransi kompensasi (lewat batas toleransi menit):
         // langsung dihitung sebagai 1 shift baru!
         if ($remainderMinutes > $compensationMinutes) {
             return $fullShifts + 1;
         }
 
-        // Jika kelebihan waktu masih dalam batas toleransi (<= 45 menit):
+        // Jika kelebihan waktu masih dalam batas toleransi (<= batas toleransi menit):
         return $fullShifts;
     }
 
@@ -220,6 +205,229 @@ class ReeferShiftCalculationService
             $this->shiftDurationHours,
             $this->shiftCompensationMinutes
         );
+    }
+
+    /**
+     * Hitung durasi dan shift untuk fase Plug In - Plug Out yang telah selesai.
+     * Aturan Bisnis Resmi:
+     * - Syarat: Ada Plug In dan Ada Plug Out.
+     * - Jam-jam operasional di antara Plug In s.d. Plug Out dievaluasi.
+     * - Jika ditemukan jam yang tidak diisi catatan suhu, durasi tagihan dikurangi 1 jam (60 menit) per jam kosong.
+     * - Durasi tertagih dikonversi ke jumlah shift sesuai aturan resmi (default 8 jam per shift).
+     */
+    protected function executeHourlyDeductionCalculation(
+        Carbon $plugIn,
+        Carbon $plugOut,
+        mixed $rawLogs
+    ): ShiftCalculationResult {
+        $rawDurationMinutes = (int) $plugIn->diffInMinutes($plugOut);
+        $filledHoursSet = $this->extractFilledHoursSet($rawLogs);
+        $unfilledHours = $this->detectUnfilledHours($plugIn, $plugOut, $filledHoursSet);
+        $unfilledHoursCount = count($unfilledHours);
+
+        $deductedMinutes = $unfilledHoursCount * 60;
+        $billableMinutes = max(0, $rawDurationMinutes - $deductedMinutes);
+
+        $totalShifts = $billableMinutes > 0
+            ? self::calculateShiftsFromDuration($billableMinutes, $this->shiftDurationHours, $this->shiftCompensationMinutes)
+            : 0;
+
+        $rawHours = floor($rawDurationMinutes / 60);
+        $rawMins = $rawDurationMinutes % 60;
+        $billableHours = floor($billableMinutes / 60);
+        $billableMins = $billableMinutes % 60;
+
+        if ($unfilledHoursCount > 0) {
+            $unfilledDisplay = implode(', ', array_slice(array_map(fn($h) => substr($h, 11, 5), $unfilledHours), 0, 6));
+            if ($unfilledHoursCount > 6) {
+                $unfilledDisplay .= ' dst.';
+            }
+            $summary = "Fase Plug Selesai: Durasi kotor {$rawHours} Jam {$rawMins} Menit ({$rawDurationMinutes} mnt). Ditemukan {$unfilledHoursCount} jam tidak diisi ({$unfilledDisplay}), tagihan dikurangi {$unfilledHoursCount} Jam ({$deductedMinutes} mnt). Total durasi tertagih: {$billableHours} Jam {$billableMins} Menit ({$billableMinutes} mnt) menghasilkan {$totalShifts} Shift.";
+        } else {
+            $summary = "Fase Plug Selesai: Durasi {$rawHours} Jam {$rawMins} Menit ({$rawDurationMinutes} mnt). Semua jam terisi lengkap. Total durasi tertagih: {$billableHours} Jam {$billableMins} Menit ({$billableMinutes} mnt) menghasilkan {$totalShifts} Shift.";
+        }
+
+        $block = [
+            'shift_number' => 1,
+            'start_time' => $plugIn->format('Y-m-d H:i:s'),
+            'end_time' => $plugOut->format('Y-m-d H:i:s'),
+            'raw_duration_minutes' => $rawDurationMinutes,
+            'raw_duration_formatted' => "{$rawHours} Jam {$rawMins} Menit",
+            'unfilled_hours_count' => $unfilledHoursCount,
+            'unfilled_hours' => $unfilledHours,
+            'deducted_minutes' => $deductedMinutes,
+            'duration_minutes' => $billableMinutes,
+            'duration_formatted' => "{$billableHours} Jam {$billableMins} Menit",
+            'shifts_billed' => $totalShifts,
+            'log_count' => count($filledHoursSet),
+        ];
+
+        return new ShiftCalculationResult(
+            totalShifts: $totalShifts,
+            totalDurationMinutes: $billableMinutes,
+            activeMonitoringMinutes: $billableMinutes,
+            idleGapMinutes: $deductedMinutes,
+            isFallback: false,
+            calculationMode: 'hourly_deduction',
+            shiftBlocks: [$block],
+            logsEvaluatedCount: count($filledHoursSet),
+            summary: $summary,
+            isValid: true,
+        );
+    }
+
+    /**
+     * Hitung shift saat kontainer masih berstatus Plug In aktif (belum Plug Out).
+     */
+    protected function executeRunningPlugCalculation(
+        Carbon $plugIn,
+        mixed $rawLogs
+    ): ShiftCalculationResult {
+        $now = Carbon::now($this->timezone);
+        $runningMinutes = (int) $plugIn->diffInMinutes($now);
+        $shiftsBilled = self::calculateShiftsFromDuration($runningMinutes, $this->shiftDurationHours, $this->shiftCompensationMinutes);
+
+        $hours = floor($runningMinutes / 60);
+        $mins = $runningMinutes % 60;
+        $filledHoursSet = $this->extractFilledHoursSet($rawLogs);
+
+        $block = [
+            'shift_number' => 1,
+            'start_time' => $plugIn->format('Y-m-d H:i:s'),
+            'end_time' => null,
+            'raw_duration_minutes' => $runningMinutes,
+            'raw_duration_formatted' => "{$hours} Jam {$mins} Menit (Sedang Berjalan)",
+            'unfilled_hours_count' => 0,
+            'unfilled_hours' => [],
+            'deducted_minutes' => 0,
+            'duration_minutes' => $runningMinutes,
+            'duration_formatted' => "{$hours} Jam {$mins} Menit",
+            'shifts_billed' => $shiftsBilled,
+            'log_count' => count($filledHoursSet),
+        ];
+
+        $summary = "Plug In aktif sejak {$plugIn->format('d/m/Y H:i')} WIB. Sedang berjalan {$hours} Jam {$mins} Menit (Shift {$shiftsBilled} aktif).";
+
+        return new ShiftCalculationResult(
+            totalShifts: max(1, $shiftsBilled),
+            totalDurationMinutes: $runningMinutes,
+            activeMonitoringMinutes: $runningMinutes,
+            idleGapMinutes: 0,
+            isFallback: false,
+            calculationMode: 'running_plug',
+            shiftBlocks: [$block],
+            logsEvaluatedCount: count($filledHoursSet),
+            summary: $summary,
+            isValid: true,
+        );
+    }
+
+    /**
+     * Kumpulkan himpunan jam (tanggal + jam) yang memiliki catatan suhu terisi.
+     * Mengembalikan array dengan key 'YYYY-MM-DD HH' => true.
+     */
+    public function extractFilledHoursSet(mixed $rawLogs): array
+    {
+        $filled = [];
+
+        if (empty($rawLogs)) {
+            return $filled;
+        }
+
+        if ($rawLogs instanceof OrderItem) {
+            $rawLogs->loadMissing('rekamSuhu');
+            $rawLogs = $rawLogs->rekamSuhu;
+        }
+
+        if ($rawLogs instanceof Collection || is_array($rawLogs)) {
+            foreach ($rawLogs as $key => $item) {
+                if ($item instanceof OrderItemRekamSuhu) {
+                    $tanggal = $item->tanggal;
+                    $jamData = is_array($item->jam_data) ? $item->jam_data : (json_decode($item->jam_data ?? '[]', true) ?: []);
+                    foreach ($jamData as $hStr => $val) {
+                        if ($val !== null && trim((string) $val) !== '') {
+                            $hInt = (int) explode(':', (string) $hStr)[0];
+                            $keyStr = sprintf('%s %02d', $tanggal, $hInt);
+                            $filled[$keyStr] = true;
+                        }
+                    }
+                } elseif ($item instanceof ReeferTemperatureLog) {
+                    $ts = $this->normalizeDateTime($item->logged_at);
+                    if ($ts && $item->temperature !== null && trim((string) $item->temperature) !== '') {
+                        $filled[$ts->format('Y-m-d H')] = true;
+                    }
+                } elseif (is_string($key) && is_array($item)) {
+                    // Format $temperature: ['2026-10-19' => ['07' => '-18', '08' => '-18.5']]
+                    $tanggal = $key;
+                    foreach ($item as $hStr => $val) {
+                        if ($val !== null && trim((string) $val) !== '') {
+                            $hInt = (int) explode(':', (string) $hStr)[0];
+                            $keyStr = sprintf('%s %02d', $tanggal, $hInt);
+                            $filled[$keyStr] = true;
+                        }
+                    }
+                } elseif (is_array($item) && isset($item['tanggal']) && isset($item['jam_data'])) {
+                    $tanggal = $item['tanggal'];
+                    $jamData = is_array($item['jam_data']) ? $item['jam_data'] : (json_decode($item['jam_data'] ?? '[]', true) ?: []);
+                    foreach ($jamData as $hStr => $val) {
+                        if ($val !== null && trim((string) $val) !== '') {
+                            $hInt = (int) explode(':', (string) $hStr)[0];
+                            $keyStr = sprintf('%s %02d', $tanggal, $hInt);
+                            $filled[$keyStr] = true;
+                        }
+                    }
+                } elseif (is_array($item) && isset($item['logged_at'])) {
+                    $ts = $this->normalizeDateTime($item['logged_at']);
+                    if ($ts && isset($item['temperature']) && $item['temperature'] !== null && trim((string) $item['temperature']) !== '') {
+                        $filled[$ts->format('Y-m-d H')] = true;
+                    }
+                } elseif ($item instanceof Carbon || (is_string($item) && !empty($item))) {
+                    $ts = $this->normalizeDateTime($item);
+                    if ($ts) {
+                        $filled[$ts->format('Y-m-d H')] = true;
+                    }
+                }
+            }
+        }
+
+        return $filled;
+    }
+
+    /**
+     * Hitung jam-jam yang tidak diisi suhu dalam 1 fase Plug In s.d. Plug Out.
+     * Mengembalikan array list jam yang tidak diisi: ['YYYY-MM-DD HH:00', ...]
+     */
+    public function detectUnfilledHours(Carbon $plugIn, Carbon $plugOut, array $filledHoursSet): array
+    {
+        $unfilled = [];
+        $cursor = $plugIn->copy()->startOfHour();
+        $endLimit = $plugOut->copy()->endOfHour();
+
+        while ($cursor->lte($endLimit)) {
+            $slotStart = $cursor->copy();
+            $slotEnd = $cursor->copy()->addHour();
+
+            // Hitung irisan operasional plug in - plug out dengan slot jam ini
+            $overlapStart = $slotStart->gt($plugIn) ? $slotStart : $plugIn;
+            $overlapEnd = $slotEnd->lt($plugOut) ? $slotEnd : $plugOut;
+
+            $overlapMinutes = 0;
+            if ($overlapEnd->gt($overlapStart)) {
+                $overlapMinutes = (int) $overlapStart->diffInMinutes($overlapEnd);
+            }
+
+            $hourKey = $cursor->format('Y-m-d H');
+            $isFilled = isset($filledHoursSet[$hourKey]);
+
+            // Jika tidak terisi, jam ini dianggap tidak diisi jika kontainer tercolok minimal 30 menit pada jam tersebut
+            if (!$isFilled && $overlapMinutes >= 30) {
+                $unfilled[] = $cursor->format('Y-m-d H:00');
+            }
+
+            $cursor->addHour();
+        }
+
+        return $unfilled;
     }
 
     /**

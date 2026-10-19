@@ -90,7 +90,8 @@ class TemperatureRecordController extends Controller
             if ($item->start_plug_in) {
                 $calc = OrderItem::calculateShifts(
                     Carbon::parse($item->start_plug_in),
-                    $item->plug_out ? Carbon::parse($item->plug_out) : null
+                    $item->plug_out ? Carbon::parse($item->plug_out) : null,
+                    $item->rekamSuhu
                 );
                 $newShifts = $calc['total_shifts'] ?? 1;
                 $newDuration = $calc['duration_minutes'] ?? null;
@@ -172,7 +173,7 @@ class TemperatureRecordController extends Controller
             return redirect()->back()->with('error', 'Waktu Plug Out tidak boleh lebih awal dari Start Plug In.');
         }
 
-        $calc = OrderItem::calculateShifts($start, $time);
+        $calc = OrderItem::calculateShifts($start, $time, $orderItem->rekamSuhu);
 
         $orderItem->plug_out = $time->format('Y-m-d H:i:s');
         $orderItem->plug_duration_minutes = $calc['duration_minutes'];
@@ -220,12 +221,12 @@ class TemperatureRecordController extends Controller
         }
 
         if ($start && $out) {
-            $calc = OrderItem::calculateShifts($start, $out);
+            $calc = OrderItem::calculateShifts($start, $out, $orderItem->rekamSuhu);
             $orderItem->plug_duration_minutes = $calc['duration_minutes'];
             $orderItem->total_shifts = $calc['total_shifts'];
         } elseif ($start && !$out) {
             // Kontainer sedang aktif ter-plug: shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
-            $calc = OrderItem::calculateShifts($start, null);
+            $calc = OrderItem::calculateShifts($start, null, $orderItem->rekamSuhu);
             $orderItem->plug_duration_minutes = null;
             $orderItem->total_shifts = $calc['total_shifts'];
         } else {

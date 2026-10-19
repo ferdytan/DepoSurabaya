@@ -173,7 +173,7 @@ class OrderItem extends Model
             }
             $durationMinutes = (int) $startNorm->diffInMinutes($outNorm);
             $shiftHours = (int) Setting::get('shift_duration_hours', 8);
-            $compMinutes = (int) Setting::get('shift_compensation_minutes', 45);
+            $compMinutes = (int) Setting::get('shift_compensation_minutes', 43);
             $totalShifts = \App\Services\ReeferShiftCalculationService::calculateShiftsFromDuration($durationMinutes, $shiftHours, $compMinutes);
 
             return [

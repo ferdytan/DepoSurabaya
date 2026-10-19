@@ -1068,6 +1068,8 @@ $orderItem->additionalProducts()->sync($syncData);
                     }
                 }
 
+                $this->syncOrderItemShiftAfterTemperatureUpdate($orderItem->id);
+
             } else {
                 // --- TAMBAH ITEM BARU ---
                 $orderItem = $order->items()->create([
@@ -1127,6 +1129,8 @@ $orderItem->additionalProducts()->sync($syncData);
                         }
                     }
                 }
+
+                $this->syncOrderItemShiftAfterTemperatureUpdate($orderItem->id);
             }
         }
 
@@ -1281,6 +1285,8 @@ public function updateTemperature(Request $request, $id)
             }
         }
 
+        $this->syncOrderItemShiftAfterTemperatureUpdate($id);
+
         return redirect()->back()->with('success', 'Entri suhu berhasil dihapus');
     }
 
@@ -1305,6 +1311,8 @@ public function updateTemperature(Request $request, $id)
 
         $rekam->jam_data = $jamData;
         $rekam->save();
+
+        $this->syncOrderItemShiftAfterTemperatureUpdate($id);
 
         return redirect()->back()->with('success', 'Catatan suhu ' . $request->jam . ' (' . $request->suhu . '°C) berhasil disimpan');
     }
@@ -1331,7 +1339,32 @@ public function updateTemperature(Request $request, $id)
         }
     }
 
+    $this->syncOrderItemShiftAfterTemperatureUpdate($id);
+
     return redirect()->back()->with('success', 'Rekam suhu berhasil disimpan');
+}
+
+/**
+ * Sinkronisasi ulang durasi dan shift pada OrderItem setelah ada perubahan rekaman suhu.
+ */
+private function syncOrderItemShiftAfterTemperatureUpdate(int|string $orderItemId): void
+{
+    try {
+        $orderItem = OrderItem::find($orderItemId);
+        if ($orderItem && $orderItem->start_plug_in) {
+            $orderItem->load('rekamSuhu');
+            $calc = OrderItem::calculateShifts(
+                \Carbon\Carbon::parse($orderItem->start_plug_in),
+                $orderItem->plug_out ? \Carbon\Carbon::parse($orderItem->plug_out) : null,
+                $orderItem->rekamSuhu
+            );
+            $orderItem->plug_duration_minutes = $orderItem->plug_out ? $calc['duration_minutes'] : null;
+            $orderItem->total_shifts = $calc['total_shifts'];
+            $orderItem->saveQuietly();
+        }
+    } catch (\Throwable $e) {
+        // Abaikan error background sync jika kalkulasi gagal
+    }
 }
 
 

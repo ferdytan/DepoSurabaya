@@ -39,7 +39,7 @@ class PlugTemperatureSettingController extends Controller
         return Inertia::render('settings/plug-temperature', [
             'settings' => [
                 'shift_duration_hours' => (int) Setting::get('shift_duration_hours', 8),
-                'shift_compensation_minutes' => (int) Setting::get('shift_compensation_minutes', 45),
+                'shift_compensation_minutes' => (int) Setting::get('shift_compensation_minutes', 43),
             ],
             'status' => session('status'),
         ]);

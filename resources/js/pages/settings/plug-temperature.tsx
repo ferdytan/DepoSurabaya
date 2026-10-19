@@ -32,7 +32,7 @@ interface PlugTemperatureSettingsProps {
 export default function PlugTemperatureSettings({ settings, status }: PlugTemperatureSettingsProps) {
     const { data, setData, put, processing, errors, recentlySuccessful } = useForm({
         shift_duration_hours: Number(settings.shift_duration_hours ?? 8),
-        shift_compensation_minutes: Number(settings.shift_compensation_minutes ?? 45),
+        shift_compensation_minutes: Number(settings.shift_compensation_minutes ?? 43),
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -114,7 +114,7 @@ export default function PlugTemperatureSettings({ settings, status }: PlugTemper
                                         required
                                     />
                                     <InputError message={errors.shift_compensation_minutes} />
-                                    <p className="text-[11px] text-gray-400">Standar toleransi keterlambatan: 45 menit</p>
+                                    <p className="text-[11px] text-gray-400">Standar toleransi keterlambatan: 43 menit</p>
                                 </div>
                             </div>
 
@@ -150,10 +150,10 @@ export default function PlugTemperatureSettings({ settings, status }: PlugTemper
                                                 {hours}j {comp + 1}m ({maxShiftMins + 1} mnt) &rarr; <strong className="text-gray-900">2 Shift</strong>
                                             </span>
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
-                                                152j 45m &rarr; <strong className="text-gray-900">19 Shift</strong>
+                                                152j {comp}m &rarr; <strong className="text-gray-900">19 Shift</strong>
                                             </span>
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
-                                                152j 46m &rarr; <strong className="text-gray-900">20 Shift</strong>
+                                                152j {comp + 1}m &rarr; <strong className="text-gray-900">20 Shift</strong>
                                             </span>
                                             <span className="bg-white border border-gray-200 px-2 py-0.5 rounded">
                                                 159j 34m &rarr; <strong className="text-gray-900">20 Shift</strong>

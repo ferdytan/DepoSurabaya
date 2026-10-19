@@ -63,9 +63,15 @@ class ShiftCalculationResult implements Arrayable, JsonSerializable
      */
     public function toArray(): array
     {
+        $block0 = $this->shiftBlocks[0] ?? [];
         return [
             'total_shifts' => $this->totalShifts,
             'duration_minutes' => $this->totalDurationMinutes,
+            'billable_duration_minutes' => $this->totalDurationMinutes,
+            'raw_duration_minutes' => $block0['raw_duration_minutes'] ?? $this->totalDurationMinutes,
+            'unfilled_hours_count' => $block0['unfilled_hours_count'] ?? 0,
+            'unfilled_hours' => $block0['unfilled_hours'] ?? [],
+            'deducted_minutes' => $block0['deducted_minutes'] ?? $this->idleGapMinutes,
             'active_duration_minutes' => $this->activeMonitoringMinutes,
             'idle_duration_minutes' => $this->idleGapMinutes,
             'is_fallback' => $this->isFallback,

@@ -493,7 +493,15 @@ class OrderController extends Controller
             'additionalProducts',
         ]);
 
-        $items = $query->get()->map(function ($item) {
+        $storageFreeHours = (int) Setting::get('storage_free_hours', 72);
+        $storageFumigasiFreeHours = (int) Setting::get('storage_fumigasi_free_hours', 120);
+
+        $items = $query->get()->map(function ($item) use ($storageFreeHours, $storageFumigasiFreeHours) {
+            // Cek apakah order / kontainer ini terkait fumigasi
+            $isOrderFumigasi = !empty($item->order?->fumigasi)
+                || str_contains(strtolower($item->product?->service_type ?? ''), 'fumiga')
+                || str_contains(strtolower($item->product?->service_type ?? ''), 'fumi');
+
             // Hitung harga produk utama
             $basePrice = 0;
             if (!empty($item->price_value) && (float)$item->price_value > 0) {
@@ -501,6 +509,22 @@ class OrderController extends Controller
             } elseif ($item->product) {
                 $basePrice = $this->getPriceForType($item->product, $item->price_type ?? 'global', $item->order);
             }
+
+            // Hitung kuantiti produk utama (Storage / Plug / Reguler)
+            $st = strtolower($item->product?->service_type ?? '');
+            $isPlug = ($item->product?->requires_temperature ?? false) || str_contains($st, 'plug') || str_contains($st, 'reefer') || str_contains($st, 'suhu');
+            $isStorage = str_contains($st, 'storage') || str_contains($st, 'penumpukan');
+            $isStorageFumigasi = $isStorage && ($isOrderFumigasi || str_contains($st, 'fumiga') || str_contains($st, 'fumi'));
+
+            $mainQty = 1;
+            if ($isPlug && $item->total_shifts && $item->total_shifts > 0) {
+                $mainQty = (int) $item->total_shifts;
+            } elseif ($isStorage) {
+                $freeHours = $isStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                $mainQty = $item->calculateStorageDays($freeHours);
+            }
+
+            $baseTotal = $basePrice * $mainQty;
 
             // Hitung harga additional products (jika ada)
             $additionalTotal = 0;
@@ -512,11 +536,25 @@ class OrderController extends Controller
                     } else {
                         $addonPrice = $this->getPriceForType($addon, $item->price_type ?? 'global', $item->order);
                     }
-                    $additionalTotal += $addonPrice;
+
+                    $apSt = strtolower($addon->service_type ?? '');
+                    $isApPlug = ($addon->requires_temperature ?? false) || str_contains($apSt, 'plug') || str_contains($apSt, 'reefer') || str_contains($apSt, 'suhu');
+                    $isApStorage = str_contains($apSt, 'storage') || str_contains($apSt, 'penumpukan');
+                    $isApStorageFumigasi = $isApStorage && ($isOrderFumigasi || str_contains($apSt, 'fumiga') || str_contains($apSt, 'fumi'));
+
+                    $apQty = 1;
+                    if ($isApPlug && $item->total_shifts && $item->total_shifts > 0) {
+                        $apQty = (int) $item->total_shifts;
+                    } elseif ($isApStorage) {
+                        $freeHours = $isApStorageFumigasi ? $storageFumigasiFreeHours : $storageFreeHours;
+                        $apQty = $item->calculateStorageDays($freeHours);
+                    }
+
+                    $additionalTotal += $addonPrice * $apQty;
                 }
             }
 
-            $totalPrice = $basePrice + $additionalTotal;
+            $totalPrice = $baseTotal + $additionalTotal;
             $ppn = (float) round($totalPrice * 0.11);
             $grandItemTotal = $totalPrice + $ppn;
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrderItem;
+use App\Models\OrderItemRekamSuhu;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -133,6 +134,7 @@ class TemperatureRecordController extends Controller
         $validated = $request->validate([
             'time' => ['nullable', 'date'],
             'set_point' => ['nullable', 'numeric', 'between:-99.99,99.99'],
+            'temperature' => ['nullable', 'numeric', 'between:-99.99,99.99'],
         ]);
 
         $time = $request->filled('time')
@@ -149,8 +151,26 @@ class TemperatureRecordController extends Controller
         $orderItem->total_shifts = 1;
         $orderItem->save();
 
+        if ($request->filled('temperature')) {
+            $tanggal = $time->format('Y-m-d');
+            $jamKey = $time->format('H:i');
+
+            $rekam = OrderItemRekamSuhu::firstOrNew([
+                'order_item_id' => $orderItem->id,
+                'tanggal' => $tanggal,
+            ]);
+
+            $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
+            $jamData[$jamKey] = (string) $request->input('temperature');
+            ksort($jamData);
+
+            $rekam->jam_data = $jamData;
+            $rekam->save();
+        }
+
         $setPointMsg = (OrderItem::hasSetPointColumn() && $orderItem->set_point !== null) ? " (Set Point: {$orderItem->set_point}°C)" : "";
-        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB{$setPointMsg} (Shift 1 aktif).");
+        $tempMsg = $request->filled('temperature') ? " (Suhu: {$request->input('temperature')}°C)" : "";
+        return redirect()->back()->with('success', "Start Plug In untuk kontainer {$orderItem->container_number} berhasil dicatat pada {$time->format('d/m/Y H:i:s')} WIB{$setPointMsg}{$tempMsg} (Shift 1 aktif).");
     }
 
     /**
@@ -161,6 +181,11 @@ class TemperatureRecordController extends Controller
         if (!$orderItem->start_plug_in) {
             return redirect()->back()->with('error', "Kontainer {$orderItem->container_number} belum memiliki catatan Start Plug In.");
         }
+
+        $validated = $request->validate([
+            'time' => ['nullable', 'date'],
+            'temperature' => ['nullable', 'numeric', 'between:-99.99,99.99'],
+        ]);
 
         $time = $request->filled('time')
             ? Carbon::parse($request->input('time'), 'Asia/Jakarta')
@@ -173,6 +198,24 @@ class TemperatureRecordController extends Controller
             return redirect()->back()->with('error', 'Waktu Plug Out tidak boleh lebih awal dari Start Plug In.');
         }
 
+        if ($request->filled('temperature')) {
+            $tanggal = $time->format('Y-m-d');
+            $jamKey = $time->format('H:i');
+
+            $rekam = OrderItemRekamSuhu::firstOrNew([
+                'order_item_id' => $orderItem->id,
+                'tanggal' => $tanggal,
+            ]);
+
+            $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
+            $jamData[$jamKey] = (string) $request->input('temperature');
+            ksort($jamData);
+
+            $rekam->jam_data = $jamData;
+            $rekam->save();
+        }
+
+        $orderItem->load('rekamSuhu');
         $calc = OrderItem::calculateShifts($start, $time, $orderItem->rekamSuhu);
 
         $orderItem->plug_out = $time->format('Y-m-d H:i:s');
@@ -184,7 +227,8 @@ class TemperatureRecordController extends Controller
         $durasiMenit = $calc['duration_minutes'] % 60;
         $durasiStr = "{$durasiJam} Jam {$durasiMenit} Menit";
 
-        return redirect()->back()->with('success', "Plug Out kontainer {$orderItem->container_number} berhasil dicatat: {$time->format('d/m/Y H:i:s')} WIB. Durasi: {$durasiStr} ({$calc['total_shifts']} Shift).");
+        $tempMsg = $request->filled('temperature') ? " (Suhu Akhir: {$request->input('temperature')}°C)" : "";
+        return redirect()->back()->with('success', "Plug Out kontainer {$orderItem->container_number} berhasil dicatat: {$time->format('d/m/Y H:i:s')} WIB{$tempMsg}. Durasi: {$durasiStr} ({$calc['total_shifts']} Shift).");
     }
 
     /**

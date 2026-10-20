@@ -137,42 +137,55 @@ export function parseDayRecords(data: TemperaturePrintData | null): DayRecord[] 
     return rawRecords.map((item) => {
         const jamData = item.jam_data || {};
         const numericTemps: number[] = [];
+        const usedKeys = new Set<string>();
+
+        const getSlot = (h: number) => {
+            const hour = h.toString().padStart(2, '0');
+            const matchingKeys = Object.keys(jamData).filter((k) => {
+                const part = k.split(/[:.]/)[0];
+                return parseInt(part, 10) === h;
+            });
+
+            let activeKey: string | undefined = undefined;
+            if (matchingKeys.length > 0) {
+                const withVal = matchingKeys.filter((k) => jamData[k] !== undefined && jamData[k] !== null && String(jamData[k]).trim() !== '');
+                activeKey = withVal.length > 0 ? withVal[0] : matchingKeys[0];
+            }
+
+            if (activeKey) {
+                usedKeys.add(activeKey);
+            } else {
+                usedKeys.add(hour);
+                usedKeys.add(`${hour}:00`);
+            }
+
+            const val = activeKey ? jamData[activeKey] : (jamData[hour] ?? jamData[`${hour}:00`] ?? null);
+            if (val !== null && val !== undefined && val !== '') {
+                const num = parseFloat(String(val).replace(',', '.'));
+                if (!isNaN(num)) numericTemps.push(num);
+            }
+
+            const label = activeKey && (activeKey.includes(':') || activeKey.includes('.'))
+                ? activeKey
+                : `${hour}:00`;
+
+            return {
+                hour,
+                label,
+                value: val !== null && val !== undefined && val !== '' ? String(val) : null,
+            };
+        };
 
         // Row 1: 00 to 11
-        const row1 = Array.from({ length: 12 }).map((_, i) => {
-            const hour = i.toString().padStart(2, '0');
-            const val = jamData[hour] ?? jamData[`${hour}:00`] ?? null;
-            if (val !== null && val !== undefined && val !== '') {
-                const num = parseFloat(String(val).replace(',', '.'));
-                if (!isNaN(num)) numericTemps.push(num);
-            }
-            return {
-                hour,
-                label: `${hour}:00`,
-                value: val !== null && val !== undefined && val !== '' ? String(val) : null,
-            };
-        });
+        const row1 = Array.from({ length: 12 }).map((_, i) => getSlot(i));
 
         // Row 2: 12 to 23
-        const row2 = Array.from({ length: 12 }).map((_, i) => {
-            const h = i + 12;
-            const hour = h.toString().padStart(2, '0');
-            const val = jamData[hour] ?? jamData[`${hour}:00`] ?? null;
-            if (val !== null && val !== undefined && val !== '') {
-                const num = parseFloat(String(val).replace(',', '.'));
-                if (!isNaN(num)) numericTemps.push(num);
-            }
-            return {
-                hour,
-                label: `${hour}:00`,
-                value: val !== null && val !== undefined && val !== '' ? String(val) : null,
-            };
-        });
+        const row2 = Array.from({ length: 12 }).map((_, i) => getSlot(i + 12));
 
-        // Custom minute entries (e.g. 09:25 or 14:15)
+        // Custom minute entries (e.g. 09:25 or 14:15 jika ada lebih dari 1 entri dalam jam yang sama)
         const customEntries: Array<{ time: string; value: string }> = [];
         Object.entries(jamData).forEach(([k, v]) => {
-            if (k.includes(':') && !k.endsWith(':00') && v !== '' && v !== null && v !== undefined) {
+            if (!usedKeys.has(k) && v !== '' && v !== null && v !== undefined) {
                 customEntries.push({ time: k, value: String(v) });
                 const num = parseFloat(String(v).replace(',', '.'));
                 if (!isNaN(num)) numericTemps.push(num);

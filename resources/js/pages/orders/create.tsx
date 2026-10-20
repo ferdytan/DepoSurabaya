@@ -367,12 +367,13 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
         });
     };
 
-    const updateTemp = (recordIdx: number, hour: number, value: string) => {
+    const updateTemp = (recordIdx: number, hour: number | string, value: string) => {
         setTempRecords((prev) => {
             const next = [...prev];
+            const key = typeof hour === 'number' ? hour.toString().padStart(2, '0') : hour;
             next[recordIdx].temps = {
                 ...next[recordIdx].temps,
-                [hour.toString().padStart(2, '0')]: value,
+                [key]: value,
             };
             return next;
         });
@@ -1416,20 +1417,26 @@ export default function CreateOrderWithMultiTemp({ customers, shippers, order_id
                                             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
                                                 {[...Array(24)].map((_, h) => {
                                                     const hourStr = h.toString().padStart(2, '0');
+                                                    const matchingKey = Object.keys(rec.temps).find((k) => {
+                                                        const part = k.split(/[:.]/)[0];
+                                                        return parseInt(part, 10) === h;
+                                                    });
+                                                    const activeKey = matchingKey || hourStr;
+                                                    const label = matchingKey && (matchingKey.includes(':') || matchingKey.includes('.')) ? matchingKey : `${hourStr}:00`;
                                                     return (
                                                         <div
                                                             key={h}
                                                             className="flex flex-col gap-1 p-1.5 rounded-lg border border-gray-100 bg-gray-50/50"
                                                         >
                                                             <span className="text-[10px] font-semibold text-gray-500">
-                                                                {hourStr}:00
+                                                                {label}
                                                             </span>
                                                             <Input
                                                                 type="number"
                                                                 step="0.1"
                                                                 placeholder="°C"
-                                                                value={rec.temps[hourStr] || ''}
-                                                                onChange={(e) => updateTemp(rIdx, h, e.target.value)}
+                                                                value={rec.temps[activeKey] || ''}
+                                                                onChange={(e) => updateTemp(rIdx, activeKey, e.target.value)}
                                                                 className="h-8 text-xs bg-white text-center font-mono"
                                                             />
                                                         </div>

@@ -171,4 +171,38 @@ class ReeferShiftCalculationServiceTest extends TestCase
         $this->assertSame(1, $result->totalShifts);
         $this->assertNull($result->shiftBlocks[0]['end_time']);
     }
+
+    /**
+     * Skenario Plug In Jam Menit Khusus (contoh: 23:15).
+     * Entri jam 23:15 wajib terbaca sebagai jam 23 yang terisi sehingga tidak terkena potongan 1 jam kosong.
+     */
+    public function test_custom_minute_plug_in_entry_is_recognized_as_filled_hour(): void
+    {
+        $plugIn = Carbon::parse('2026-10-19 23:15:00', 'Asia/Jakarta');
+        $plugOut = Carbon::parse('2026-10-20 07:15:00', 'Asia/Jakarta'); // 8 jam persis (480 menit)
+
+        // Suhu dimasukkan pada 23:15 saat plug in, lalu jam 00..06
+        $rekamSuhuData = [
+            '2026-10-19' => [
+                '23:15' => '-18',
+            ],
+            '2026-10-20' => [
+                '00:00' => '-18.1',
+                '01:00' => '-18.0',
+                '02:00' => '-17.9',
+                '03:00' => '-18.0',
+                '04:00' => '-18.2',
+                '05:00' => '-18.0',
+                '06:00' => '-18.1',
+                '07:15' => '-18.0',
+            ],
+        ];
+
+        $result = $this->service->calculate($plugIn, $plugOut, $rekamSuhuData);
+
+        $this->assertSame(0, $result->shiftBlocks[0]['unfilled_hours_count'], 'Tidak boleh ada jam kosong karena 23:15 terhitung mengisi jam 23.');
+        $this->assertSame(0, $result->shiftBlocks[0]['deducted_minutes']);
+        $this->assertSame(480, $result->totalDurationMinutes);
+        $this->assertSame(1, $result->totalShifts);
+    }
 }

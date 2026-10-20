@@ -552,6 +552,16 @@ export default function KarantinaIndex({
             const grandTotalSum = totalPriceSum + totalPpnSum;
             const terbilangStr = terbilang(grandTotalSum);
 
+            const count20 = allPrintData.filter((i: any) => formatStatementBSize(i.price_type) === "20'").length;
+            const count40 = allPrintData.filter((i: any) => formatStatementBSize(i.price_type) === "40'").length;
+            const count45 = allPrintData.filter((i: any) => formatStatementBSize(i.price_type) === "45'").length;
+            const containerSummary = [
+                `20': ${count20} Kontainer`,
+                `40': ${count40} Kontainer`,
+                ...(count45 > 0 ? [`45': ${count45} Kontainer`] : []),
+                `Total: ${allPrintData.length} Kontainer`,
+            ].join(' | ');
+
             let html = '';
 
             if (statementType === 'B') {
@@ -835,7 +845,7 @@ export default function KarantinaIndex({
                         }).join('')}
                         <tr class="summary-row">
                             <td colspan="8" class="text-right">
-                                TOTAL KESELURUHAN (${allPrintData.length} Kontainer)
+                                TOTAL KESELURUHAN (${containerSummary})
                             </td>
                             <td>
                                 <div class="currency-cell">

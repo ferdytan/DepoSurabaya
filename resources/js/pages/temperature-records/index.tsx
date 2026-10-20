@@ -133,6 +133,13 @@ function toDateTimeLocalString(dateStr?: string | Date | null): string {
     return `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 }
 
+function roundToNearest15Minutes(date: Date = new Date()): Date {
+    const d = new Date(date);
+    d.setSeconds(0, 0);
+    const ms = 1000 * 60 * 15;
+    return new Date(Math.round(d.getTime() / ms));
+}
+
 export default function TemperatureRecordsIndex({ records, filters, counts }: Props) {
     const pageProps = usePage<{ flash?: { success?: string; error?: string } }>().props;
     const flash = pageProps.flash;
@@ -160,12 +167,20 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
     const [plugSetPoint, setPlugSetPoint] = useState('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
 
-    // Modal Plug In Pertama Kali (Minta Set Point)
+    // Modal Plug In Pertama Kali (Minta Set Point & Suhu Plug In)
     const [isPlugInDialogOpen, setIsPlugInDialogOpen] = useState(false);
     const [plugInItem, setPlugInItem] = useState<TemperatureRecordItem | null>(null);
     const [plugInTime, setPlugInTime] = useState('');
     const [plugInSetPoint, setPlugInSetPoint] = useState('');
+    const [plugInTemp, setPlugInTemp] = useState('');
     const [isSubmittingPlugIn, setIsSubmittingPlugIn] = useState(false);
+
+    // Modal Plug Out (Minta Waktu & Suhu Plug Out)
+    const [isPlugOutDialogOpen, setIsPlugOutDialogOpen] = useState(false);
+    const [plugOutItem, setPlugOutItem] = useState<TemperatureRecordItem | null>(null);
+    const [plugOutModalTime, setPlugOutModalTime] = useState('');
+    const [plugOutTemp, setPlugOutTemp] = useState('');
+    const [isSubmittingPlugOut, setIsSubmittingPlugOut] = useState(false);
 
     const breadcrumbs: BreadcrumbItem[] = [{ title: 'Monitoring Suhu Kontainer', href: '/temperature-records' }];
 
@@ -267,10 +282,39 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
         setIsPlugModalOpen(true);
     };
 
+    const setPlugInMinute = (minuteStr: '00' | '15' | '30' | '45') => {
+        const base = plugInTime || toDateTimeLocalString(roundToNearest15Minutes());
+        const [dPart, tPart] = base.split('T');
+        const hh = tPart ? tPart.split(':')[0] : '00';
+        setPlugInTime(`${dPart}T${hh}:${minuteStr}`);
+    };
+
+    const setPlugOutMinute = (minuteStr: '00' | '15' | '30' | '45') => {
+        const base = plugOutModalTime || toDateTimeLocalString(roundToNearest15Minutes());
+        const [dPart, tPart] = base.split('T');
+        const hh = tPart ? tPart.split(':')[0] : '00';
+        setPlugOutModalTime(`${dPart}T${hh}:${minuteStr}`);
+    };
+
+    const setPlugStartMinute = (minuteStr: '00' | '15' | '30' | '45') => {
+        const base = plugStartTime || toDateTimeLocalString(roundToNearest15Minutes());
+        const [dPart, tPart] = base.split('T');
+        const hh = tPart ? tPart.split(':')[0] : '00';
+        setPlugStartTime(`${dPart}T${hh}:${minuteStr}`);
+    };
+
+    const setPlugEndMinute = (minuteStr: '00' | '15' | '30' | '45') => {
+        const base = plugOutTime || toDateTimeLocalString(roundToNearest15Minutes());
+        const [dPart, tPart] = base.split('T');
+        const hh = tPart ? tPart.split(':')[0] : '00';
+        setPlugOutTime(`${dPart}T${hh}:${minuteStr}`);
+    };
+
     const handleOpenPlugInDialog = (item: TemperatureRecordItem) => {
         setPlugInItem(item);
-        setPlugInTime(toDateTimeLocalString(new Date()));
+        setPlugInTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())));
         setPlugInSetPoint(item.set_point !== null && item.set_point !== undefined ? String(item.set_point) : '');
+        setPlugInTemp('');
         setIsPlugInDialogOpen(true);
     };
 
@@ -283,11 +327,13 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
             {
                 time: plugInTime ? plugInTime.replace('T', ' ') : null,
                 set_point: plugInSetPoint !== '' ? plugInSetPoint : null,
+                temperature: plugInTemp !== '' ? plugInTemp : null,
             },
             {
                 onSuccess: () => {
                     setIsPlugInDialogOpen(false);
                     setIsSubmittingPlugIn(false);
+                    setPlugInTemp('');
                 },
                 onError: () => {
                     setIsSubmittingPlugIn(false);
@@ -297,10 +343,46 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
         );
     };
 
+    const handleOpenPlugOutDialog = (item: TemperatureRecordItem) => {
+        setPlugOutItem(item);
+        setPlugOutModalTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())));
+        setPlugOutTemp('');
+        setIsPlugOutDialogOpen(true);
+    };
+
+    const handleConfirmPlugOut = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!plugOutItem) return;
+        setIsSubmittingPlugOut(true);
+        router.post(
+            `/orders/item/${plugOutItem.id}/plug-out`,
+            {
+                time: plugOutModalTime ? plugOutModalTime.replace('T', ' ') : null,
+                temperature: plugOutTemp !== '' ? plugOutTemp : null,
+            },
+            {
+                onSuccess: () => {
+                    setIsPlugOutDialogOpen(false);
+                    setIsSubmittingPlugOut(false);
+                    setPlugOutTemp('');
+                },
+                onError: () => {
+                    setIsSubmittingPlugOut(false);
+                },
+                preserveScroll: true,
+            },
+        );
+    };
+
     const handleQuickPlugOut = (orderItemId: number) => {
-        router.post(`/orders/item/${orderItemId}/plug-out`, {}, {
-            preserveScroll: true,
-        });
+        const item = records.data.find(r => r.id === orderItemId);
+        if (item) {
+            handleOpenPlugOutDialog(item);
+        } else {
+            router.post(`/orders/item/${orderItemId}/plug-out`, {}, {
+                preserveScroll: true,
+            });
+        }
     };
 
     const handleSavePlugTimes = (e: React.FormEvent) => {
@@ -673,9 +755,9 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     <div className="flex items-center gap-1">
                                                                         <Button
                                                                             size="sm"
-                                                                            onClick={() => handleQuickPlugOut(item.id)}
+                                                                            onClick={() => handleOpenPlugOutDialog(item)}
                                                                             className="h-7 text-xs px-2 bg-gray-900 hover:bg-black text-white gap-1 font-semibold"
-                                                                            title="Catat Plug Out Real-Time Sekarang & Hitung Shift"
+                                                                            title="Catat Plug Out & Rekam Suhu Akhir"
                                                                         >
                                                                             <Power className="h-3 w-3" />
                                                                             Plug Out
@@ -987,8 +1069,23 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-1.5">
                                                                                             {Array.from({ length: 24 }).map((_, h) => {
                                                                                                 const hourStr = h.toString().padStart(2, '0');
-                                                                                                const val = suhu.jam_data[hourStr] || suhu.jam_data[`${hourStr}:00`];
-                                                                                                const hasVal = val !== undefined && val !== null && val !== '';
+                                                                                                const matchingKeys = Object.keys(suhu.jam_data || {}).filter((k) => {
+                                                                                                    const part = k.split(/[:.]/)[0];
+                                                                                                    return parseInt(part, 10) === h;
+                                                                                                });
+
+                                                                                                let activeKey: string | undefined = undefined;
+                                                                                                if (matchingKeys.length > 0) {
+                                                                                                    const withVal = matchingKeys.filter((k) => suhu.jam_data[k] !== undefined && suhu.jam_data[k] !== null && String(suhu.jam_data[k]).trim() !== '');
+                                                                                                    activeKey = withVal.length > 0 ? withVal[0] : matchingKeys[0];
+                                                                                                }
+
+                                                                                                const val = activeKey ? suhu.jam_data[activeKey] : (suhu.jam_data[hourStr] || suhu.jam_data[`${hourStr}:00`]);
+                                                                                                const hasVal = val !== undefined && val !== null && String(val).trim() !== '';
+
+                                                                                                const displayLabel = activeKey && (activeKey.includes(':') || activeKey.includes('.'))
+                                                                                                    ? activeKey
+                                                                                                    : `${hourStr}:00`;
 
                                                                                                 return (
                                                                                                     <div
@@ -1000,7 +1097,7 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                                         }`}
                                                                                                     >
                                                                                                         <div className="text-[10px] font-semibold text-gray-500">
-                                                                                                            {hourStr}:00
+                                                                                                            {displayLabel}
                                                                                                         </div>
                                                                                                         <div className="text-xs font-mono mt-0.5">
                                                                                                             {hasVal ? `${val}°C` : '-'}
@@ -1326,10 +1423,10 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         </Label>
                                         <button
                                             type="button"
-                                            onClick={() => setPlugStartTime(toDateTimeLocalString(new Date()))}
+                                            onClick={() => setPlugStartTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())))}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
-                                            Set Sekarang
+                                            Set Sekarang (15m)
                                         </button>
                                     </div>
                                     <DateTimePicker
@@ -1341,6 +1438,27 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         placeholder="Pilih tanggal & waktu start plug in..."
                                         className="w-full bg-white"
                                     />
+                                    <div className="flex items-center gap-1.5 pt-0.5">
+                                        <span className="text-[11px] text-gray-500 font-medium">Menit:</span>
+                                        {(['00', '15', '30', '45'] as const).map((m) => {
+                                            const curMin = plugStartTime ? plugStartTime.split('T')[1]?.split(':')[1] : '';
+                                            const isSel = curMin === m;
+                                            return (
+                                                <button
+                                                    key={m}
+                                                    type="button"
+                                                    onClick={() => setPlugStartMinute(m)}
+                                                    className={`px-2 py-0.5 text-[11px] rounded border transition-colors ${
+                                                        isSel
+                                                            ? 'bg-blue-600 text-white border-blue-600 font-bold'
+                                                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+                                                    }`}
+                                                >
+                                                    :{m}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
 
                                 <div className="space-y-1.5">
@@ -1350,10 +1468,10 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         </Label>
                                         <button
                                             type="button"
-                                            onClick={() => setPlugOutTime(toDateTimeLocalString(new Date()))}
+                                            onClick={() => setPlugOutTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())))}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
-                                            Set Sekarang
+                                            Set Sekarang (15m)
                                         </button>
                                     </div>
                                     <DateTimePicker
@@ -1365,6 +1483,27 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         placeholder="Pilih tanggal & waktu plug out..."
                                         className="w-full bg-white"
                                     />
+                                    <div className="flex items-center gap-1.5 pt-0.5">
+                                        <span className="text-[11px] text-gray-500 font-medium">Menit:</span>
+                                        {(['00', '15', '30', '45'] as const).map((m) => {
+                                            const curMin = plugOutTime ? plugOutTime.split('T')[1]?.split(':')[1] : '';
+                                            const isSel = curMin === m;
+                                            return (
+                                                <button
+                                                    key={m}
+                                                    type="button"
+                                                    onClick={() => setPlugEndMinute(m)}
+                                                    className={`px-2 py-0.5 text-[11px] rounded border transition-colors ${
+                                                        isSel
+                                                            ? 'bg-blue-600 text-white border-blue-600 font-bold'
+                                                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+                                                    }`}
+                                                >
+                                                    :{m}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
                                     <p className="text-[11px] text-gray-500 italic">
                                         Biarkan kosong jika kontainer masih terhubung (in progress).
                                     </p>
@@ -1458,6 +1597,25 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     </p>
                                 </div>
 
+                                {/* Input Catat Suhu Plug In */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="quick_plug_temp" className="text-xs font-semibold text-gray-700">
+                                        Catat Suhu Saat Plug In (&deg;C)
+                                    </Label>
+                                    <Input
+                                        id="quick_plug_temp"
+                                        type="number"
+                                        step="0.1"
+                                        value={plugInTemp}
+                                        onChange={(e) => setPlugInTemp(e.target.value)}
+                                        placeholder="Contoh: -18 atau 4.5"
+                                        className="w-full bg-white text-xs h-9 font-medium"
+                                    />
+                                    <p className="text-[11px] text-gray-500">
+                                        Suhu awal saat kontainer di-plug in. Otomatis masuk ke log jam plug in di template rekam suhu.
+                                    </p>
+                                </div>
+
                                 {/* Input Waktu Start Plug In */}
                                 <div className="space-y-1.5">
                                     <div className="flex items-center justify-between">
@@ -1466,10 +1624,10 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         </Label>
                                         <button
                                             type="button"
-                                            onClick={() => setPlugInTime(toDateTimeLocalString(new Date()))}
+                                            onClick={() => setPlugInTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())))}
                                             className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
                                         >
-                                            Set Sekarang
+                                            Set Sekarang (15m)
                                         </button>
                                     </div>
                                     <DateTimePicker
@@ -1481,6 +1639,27 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                         placeholder="Pilih tanggal & waktu start plug in..."
                                         className="w-full bg-white"
                                     />
+                                    <div className="flex items-center gap-1.5 pt-0.5">
+                                        <span className="text-[11px] text-gray-500 font-medium">Pilihan Menit:</span>
+                                        {(['00', '15', '30', '45'] as const).map((m) => {
+                                            const curMin = plugInTime ? plugInTime.split('T')[1]?.split(':')[1] : '';
+                                            const isSel = curMin === m;
+                                            return (
+                                                <button
+                                                    key={m}
+                                                    type="button"
+                                                    onClick={() => setPlugInMinute(m)}
+                                                    className={`px-2.5 py-0.5 text-xs rounded border transition-colors ${
+                                                        isSel
+                                                            ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-xs'
+                                                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100 font-medium'
+                                                    }`}
+                                                >
+                                                    :{m}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
 
                                 <DialogFooter className="gap-2 pt-2">
@@ -1499,6 +1678,124 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                     >
                                         <Zap className="h-3.5 w-3.5" />
                                         <span>{isSubmittingPlugIn ? 'Menyimpan...' : 'Simpan & Plug In'}</span>
+                                    </Button>
+                                </DialogFooter>
+                            </form>
+                        )}
+                    </DialogContent>
+                </Dialog>
+
+                {/* Dialog Plug Out (Minta Waktu & Suhu Plug Out) */}
+                <Dialog open={isPlugOutDialogOpen} onOpenChange={setIsPlugOutDialogOpen}>
+                    <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                            <DialogTitle className="text-base font-bold flex items-center gap-2">
+                                <Power className="h-5 w-5 text-rose-500" />
+                                <span>Plug Out: {plugOutItem?.container_number}</span>
+                            </DialogTitle>
+                        </DialogHeader>
+
+                        {plugOutItem && (
+                            <form onSubmit={handleConfirmPlugOut} className="space-y-4 pt-2">
+                                <div className="rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-xs text-gray-700 space-y-1.5">
+                                    <div className="flex justify-between">
+                                        <span className="text-gray-500">Customer:</span>
+                                        <span className="font-bold">{plugOutItem.order?.customer?.name || '-'}</span>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span className="text-gray-500">Start Plug In:</span>
+                                        <span className="font-bold font-mono">{formatDate(plugOutItem.start_plug_in)}</span>
+                                    </div>
+                                    {plugOutItem.set_point !== null && plugOutItem.set_point !== undefined && (
+                                        <div className="flex justify-between">
+                                            <span className="text-gray-500">Set Point:</span>
+                                            <span className="font-bold text-sky-700">{plugOutItem.set_point}&deg;C</span>
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Input Catat Suhu Plug Out */}
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="quick_plugout_temp" className="text-xs font-semibold text-gray-700">
+                                        Catat Suhu Saat Plug Out (&deg;C)
+                                    </Label>
+                                    <Input
+                                        id="quick_plugout_temp"
+                                        type="number"
+                                        step="0.1"
+                                        value={plugOutTemp}
+                                        onChange={(e) => setPlugOutTemp(e.target.value)}
+                                        placeholder="Contoh: -18 atau 4.5"
+                                        className="w-full bg-white text-xs h-9 font-medium"
+                                        autoFocus
+                                    />
+                                    <p className="text-[11px] text-gray-500">
+                                        Catat suhu akhir saat kontainer di-plug out (opsional).
+                                    </p>
+                                </div>
+
+                                {/* Input Waktu Plug Out */}
+                                <div className="space-y-1.5">
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="quick_plugout_time" className="text-xs font-semibold text-gray-700">
+                                            Waktu Plug Out
+                                        </Label>
+                                        <button
+                                            type="button"
+                                            onClick={() => setPlugOutModalTime(toDateTimeLocalString(roundToNearest15Minutes(new Date())))}
+                                            className="text-[11px] text-gray-900 underline font-semibold hover:text-black"
+                                        >
+                                            Set Sekarang (15m)
+                                        </button>
+                                    </div>
+                                    <DateTimePicker
+                                        id="quick_plugout_time"
+                                        value={plugOutModalTime}
+                                        onChange={(val) => setPlugOutModalTime(val)}
+                                        withTime={true}
+                                        inModal={true}
+                                        placeholder="Pilih tanggal & waktu plug out..."
+                                        className="w-full bg-white"
+                                    />
+                                    <div className="flex items-center gap-1.5 pt-0.5">
+                                        <span className="text-[11px] text-gray-500 font-medium">Pilihan Menit:</span>
+                                        {(['00', '15', '30', '45'] as const).map((m) => {
+                                            const curMin = plugOutModalTime ? plugOutModalTime.split('T')[1]?.split(':')[1] : '';
+                                            const isSel = curMin === m;
+                                            return (
+                                                <button
+                                                    key={m}
+                                                    type="button"
+                                                    onClick={() => setPlugOutMinute(m)}
+                                                    className={`px-2.5 py-0.5 text-xs rounded border transition-colors ${
+                                                        isSel
+                                                            ? 'bg-blue-600 text-white border-blue-600 font-bold shadow-xs'
+                                                            : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100 font-medium'
+                                                    }`}
+                                                >
+                                                    :{m}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+
+                                <DialogFooter className="gap-2 pt-2">
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        onClick={() => setIsPlugOutDialogOpen(false)}
+                                        className="h-9 text-xs"
+                                    >
+                                        Batal
+                                    </Button>
+                                    <Button
+                                        type="submit"
+                                        disabled={isSubmittingPlugOut}
+                                        className="h-9 text-xs bg-rose-600 hover:bg-rose-700 text-white font-semibold gap-1.5"
+                                    >
+                                        <Power className="h-3.5 w-3.5" />
+                                        <span>{isSubmittingPlugOut ? 'Menyimpan...' : 'Simpan & Plug Out'}</span>
                                     </Button>
                                 </DialogFooter>
                             </form>

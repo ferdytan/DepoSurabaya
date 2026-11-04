@@ -1220,7 +1220,6 @@ export default function KarantinaIndex({
                             <th>Nomor Kontainer</th>
                             <th>Customer</th>
                             <th>Nama Shipper</th>
-                            <th>Layanan</th>
                             <th>Fumigator</th>
                             <th style="text-align: center; width: 60px;">Size</th>
                             <th>Tanggal Masuk</th>
@@ -1238,7 +1237,6 @@ export default function KarantinaIndex({
                                 <td style="font-weight: 700; font-family: monospace;">${item.container_number}</td>
                                 <td>${item.customer_name ?? '-'}</td>
                                 <td>${item.shipper_name ?? '-'}</td>
-                                <td>${item.service_type ?? '-'}</td>
                                 <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
                                 <td class="text-center">${formatContainerSize(item.price_type)}</td>
                                 <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>

@@ -31,7 +31,7 @@ interface FlashProps {
 interface Invoice {
     id: number;
     invoice_number: string;
-    customer: { name: string };
+    customer?: { name?: string } | null;
     period_start: string;
     period_end: string;
     subtotal: number;
@@ -58,6 +58,9 @@ interface InvoicesData {
         label: string;
         active: boolean;
     }>;
+    from?: number;
+    to?: number;
+    total?: number;
 }
 
 interface PageProps {
@@ -312,14 +315,14 @@ export default function InvoicesIndex() {
                                                         </div>
                                                     </TableCell>
                                                     <TableCell className="py-3.5 font-medium text-xs text-gray-800">
-                                                        {invoice.customer.name}
+                                                        {invoice.customer?.name || '-'}
                                                     </TableCell>
 
                                                     <TableCell className="py-3.5 text-xs text-gray-600 whitespace-nowrap">
                                                         {invoice.show_period ?? true ? (
                                                             <>
-                                                                {new Date(invoice.period_start).toLocaleDateString('id-ID')} -{' '}
-                                                                {new Date(invoice.period_end).toLocaleDateString('id-ID')}
+                                                                {invoice.period_start ? new Date(invoice.period_start).toLocaleDateString('id-ID') : '-'} -{' '}
+                                                                {invoice.period_end ? new Date(invoice.period_end).toLocaleDateString('id-ID') : '-'}
                                                             </>
                                                         ) : (
                                                             <span className="text-gray-400 font-normal">-</span>
@@ -327,7 +330,7 @@ export default function InvoicesIndex() {
                                                     </TableCell>
 
                                                     <TableCell className="py-3.5 text-center text-xs font-semibold text-gray-800">
-                                                        {invoice.items_count}
+                                                        {invoice.items_count ?? 0}
                                                     </TableCell>
 
                                                     <TableCell className="py-3.5 text-xs font-bold text-gray-900 whitespace-nowrap">
@@ -351,7 +354,7 @@ export default function InvoicesIndex() {
                                                     <TableCell className="py-3.5 text-xs text-gray-500 whitespace-nowrap">
                                                         {isTrashed
                                                             ? (invoice.deleted_at ? new Date(invoice.deleted_at).toLocaleDateString('id-ID') : '-')
-                                                            : new Date(invoice.created_at).toLocaleDateString('id-ID')
+                                                            : (invoice.created_at ? new Date(invoice.created_at).toLocaleDateString('id-ID') : '-')
                                                         }
                                                     </TableCell>
 
@@ -450,7 +453,9 @@ export default function InvoicesIndex() {
                         {invoices?.links && invoices.links.length > 3 && (
                             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3.5 border-t border-gray-100 bg-gray-50/40">
                                 <div className="text-xs text-gray-500">
-                                    Menampilkan <span className="font-semibold text-gray-900">{invoices.data.length}</span> invoice
+                                    Menampilkan <span className="font-semibold text-gray-900">{invoices.from || 0}</span> -{' '}
+                                    <span className="font-semibold text-gray-900">{invoices.to || 0}</span> dari{' '}
+                                    <span className="font-semibold text-gray-900">{invoices.total || invoices.data?.length || 0}</span> invoice
                                 </div>
                                 <div className="flex flex-wrap justify-center gap-1">
                                     {invoices.links.map((link, i) =>
@@ -459,7 +464,8 @@ export default function InvoicesIndex() {
                                                 key={i}
                                                 size="sm"
                                                 variant={link.active ? 'default' : 'outline'}
-                                                onClick={() => router.get(link.url!)}
+                                                disabled={!link.url}
+                                                onClick={() => router.get(link.url!, {}, { preserveScroll: true, preserveState: true })}
                                                 className={`h-8 px-3 text-xs whitespace-nowrap ${link.active ? 'bg-gray-900 hover:bg-black text-white' : ''}`}
                                             >
                                                 {link.label.replace(/&laquo; Previous|Next &raquo;/, (match) => {

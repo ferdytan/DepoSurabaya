@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class InvoiceController extends Controller
 {
@@ -28,7 +29,8 @@ class InvoiceController extends Controller
         $trashed = $request->boolean('trashed', false);
 
         $invoices = Invoice::with([
-                'customer:id,name'  // hanya ambil id dan name
+                'customer' => fn($q) => $q->withTrashed()->select('id', 'name'),
+                'items:id,invoice_id,additional_products',
             ])
             ->withCount('items as items_count')
             ->when($trashed, function ($query) {
@@ -186,7 +188,7 @@ class InvoiceController extends Controller
             })
             ->with([
                 'orders' => function ($q) use ($invoicedOrderItemIds) {
-                    $q->select('id', 'order_id', 'no_aju', 'customer_id')
+                    $q->select('id', 'order_id', 'no_aju', 'customer_id', 'created_at')
                         ->whereHas('order_items', function ($iq) use ($invoicedOrderItemIds) {
                             if (!empty($invoicedOrderItemIds)) {
                                 $iq->whereNotIn('id', $invoicedOrderItemIds);
@@ -306,7 +308,7 @@ class InvoiceController extends Controller
             }
 
             $orderItems = OrderItem::with([
-                'order:id,customer_id,fumigasi',
+                'order:id,customer_id,fumigasi,created_at',
                 'product:id,service_type,requires_temperature',
                 'additionalProducts' => fn($q) => $q->withPivot(['price_value']),
             ])->whereIn('id', $data['order_item_ids'])->get();
@@ -450,7 +452,12 @@ class InvoiceController extends Controller
                 $isReuse = true;
             } else {
                 $hasFumigasi = $this->hasFumigasiService($orderItems);
-                $invoiceNumber = $this->generateInvoiceNumber($hasFumigasi);
+                $targetDate = $this->resolveOrderReferenceDate(
+                    $orderItems,
+                    $data['period_start'] ?? null,
+                    !empty($selectedOrderIds[0]) ? (int)$selectedOrderIds[0] : null
+                );
+                $invoiceNumber = $this->generateInvoiceNumber($hasFumigasi, $targetDate);
 
                 $invoice = Invoice::create([
                     'invoice_number' => $invoiceNumber,
@@ -1230,7 +1237,7 @@ class InvoiceController extends Controller
         $customer = Customer::findOrFail($validated['customer_id']);
 
         $orderItems = OrderItem::with([
-            'order:id,order_id,fumigasi',
+            'order:id,order_id,fumigasi,created_at',
             'product:id,service_type,requires_temperature',
             'additionalProducts' => function ($q) {
                 $q->withPivot(['price_value']);
@@ -1321,9 +1328,14 @@ class InvoiceController extends Controller
         $terbilang = $this->numberToWords($grand);
 
         $hasFumigasi = $this->hasFumigasiService($orderItems);
+        $targetDate = $this->resolveOrderReferenceDate(
+            $orderItems,
+            $validated['period_start'] ?? null,
+            !empty($selectedOrderIds[0]) ? (int)$selectedOrderIds[0] : null
+        );
         $previewInvoiceNumber = !empty($validated['reuse_id'])
             ? ($validated['invoice_number'] ?? null)
-            : $this->getNextInvoicePreview($hasFumigasi);
+            : $this->getNextInvoicePreview($hasFumigasi, $targetDate);
 
         $preview = [
             'reuse_id'       => $validated['reuse_id'] ?? null,
@@ -1516,6 +1528,66 @@ class InvoiceController extends Controller
         $nextSeq = ($last ? (int)$last : 0) + 1;
 
         return $prefix . str_pad((string)$nextSeq, 4, '0', STR_PAD_LEFT);
+    }
+
+    public function getNextNumber(Request $request)
+    {
+        $hasFumigasi = $request->boolean('has_fumigasi', false);
+        $date = $request->input('date');
+        $number = $this->getNextInvoicePreview($hasFumigasi, $date);
+        return response()->json(['invoice_number' => $number]);
+    }
+
+    protected function resolveOrderReferenceDate($orderItems, ?string $periodStart = null, ?int $primaryOrderId = null): ?string
+    {
+        $dates = [];
+
+        // 1. Jika primaryOrderId ada, prioritaskan item dari order tersebut
+        if ($primaryOrderId) {
+            foreach ($orderItems as $oi) {
+                if ($oi->order_id == $primaryOrderId && !empty($oi->entry_date)) {
+                    $dates[] = Carbon::parse($oi->entry_date);
+                }
+            }
+            if (empty($dates)) {
+                foreach ($orderItems as $oi) {
+                    if ($oi->order_id == $primaryOrderId && !empty($oi->order?->created_at)) {
+                        $dates[] = Carbon::parse($oi->order->created_at);
+                    }
+                }
+            }
+        }
+
+        // 2. Jika belum dapat, periksa seluruh item (entry_date)
+        if (empty($dates)) {
+            foreach ($orderItems as $oi) {
+                if (!empty($oi->entry_date)) {
+                    $dates[] = Carbon::parse($oi->entry_date);
+                }
+            }
+        }
+
+        // 3. Jika belum dapat, periksa seluruh order (created_at)
+        if (empty($dates)) {
+            foreach ($orderItems as $oi) {
+                if (!empty($oi->order?->created_at)) {
+                    $dates[] = Carbon::parse($oi->order->created_at);
+                }
+            }
+        }
+
+        if (!empty($dates)) {
+            usort($dates, fn($a, $b) => $a->timestamp <=> $b->timestamp);
+            return $dates[0]->toDateString();
+        }
+
+        if (!empty($periodStart)) {
+            try {
+                return Carbon::parse($periodStart)->toDateString();
+            } catch (\Throwable $e) {}
+        }
+
+        return now()->toDateString();
     }
 
 

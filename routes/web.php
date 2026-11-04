@@ -184,6 +184,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('invoices')->name('invoices.')->group(function () {
         Route::get('/create', [InvoiceController::class, 'create'])->name('create');
+        Route::get('/next-number', [InvoiceController::class, 'getNextNumber'])->name('next-number');
         // Route::post('/preview', [InvoiceController::class, 'preview'])->name('preview');
         Route::post('/store', [InvoiceController::class, 'store'])->name('store');
         Route::get('/', [InvoiceController::class, 'index'])->name('index');

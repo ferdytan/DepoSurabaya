@@ -161,6 +161,7 @@ interface Order {
     entry_date?: string | null;
     exit_date?: string | null;
     fumigasi?: boolean | number | null;
+    created_at?: string;
     order_items: OrderItem[];
 }
 
@@ -241,6 +242,7 @@ export default function CreateInvoice() {
     const [showPeriod, setShowPeriod] = useState(() => {
         return default_show_period !== undefined ? Boolean(default_show_period) : true;
     });
+    const [periodTouched, setPeriodTouched] = useState(false);
 
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
     const urlCustomerId = urlParams?.get('customer_id');
@@ -328,16 +330,104 @@ export default function CreateInvoice() {
         return false;
     }, [activeOrders, selectedContainers]);
 
+    // Target order date untuk nomor invoice & penentuan periode otomatis
+    const targetOrderDate = useMemo(() => {
+        const selectedItems = activeOrders
+            .flatMap((o) => o.order_items || [])
+            .filter((it) => selectedContainers.has(it.id));
+
+        const entryTimestamps = selectedItems
+            .map((it) => (it.entry_date ? new Date(it.entry_date.replace(' ', 'T')).getTime() : 0))
+            .filter((ts) => ts > 0 && !isNaN(ts));
+
+        if (entryTimestamps.length > 0) {
+            const minTs = Math.min(...entryTimestamps);
+            const d = new Date(minTs);
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+        }
+
+        const orderTimestamps = activeOrders
+            .map((o) => (o.created_at ? new Date(o.created_at.replace(' ', 'T')).getTime() : 0))
+            .filter((ts) => ts > 0 && !isNaN(ts));
+
+        if (orderTimestamps.length > 0) {
+            const minTs = Math.min(...orderTimestamps);
+            const d = new Date(minTs);
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+        }
+
+        return null;
+    }, [activeOrders, selectedContainers]);
+
+    const [fetchedInvoiceNumber, setFetchedInvoiceNumber] = useState<string | null>(null);
+
+    // Fetch nomor invoice yang sesuai bulan/tahun order yang dipilih
+    useEffect(() => {
+        if (reuse_invoice || selectedContainers.size === 0) {
+            setFetchedInvoiceNumber(null);
+            return;
+        }
+
+        const abortController = new AbortController();
+        const query = new URLSearchParams({
+            has_fumigasi: hasSelectedFumigasi ? '1' : '0',
+        });
+        if (targetOrderDate) {
+            query.set('date', targetOrderDate);
+        }
+
+        fetch(`/invoices/next-number?${query.toString()}`, { signal: abortController.signal })
+            .then((r) => r.json())
+            .then((data) => {
+                if (data.invoice_number) {
+                    setFetchedInvoiceNumber(data.invoice_number);
+                }
+            })
+            .catch(() => {});
+
+        return () => abortController.abort();
+    }, [reuse_invoice, selectedContainers.size, hasSelectedFumigasi, targetOrderDate]);
+
+    // Otomatis sesuaikan periodStart & periodEnd dengan tanggal order jika belum pernah diedit manual oleh user
+    useEffect(() => {
+        if (!periodTouched && targetOrderDate && !reuse_invoice) {
+            setPeriodStart(targetOrderDate);
+            const selectedItems = activeOrders
+                .flatMap((o) => o.order_items || [])
+                .filter((it) => selectedContainers.has(it.id));
+            const exitTimestamps = selectedItems
+                .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
+                .filter((ts) => ts > 0 && !isNaN(ts));
+
+            if (exitTimestamps.length > 0) {
+                const maxTs = Math.max(...exitTimestamps);
+                const d = new Date(maxTs);
+                const pad = (n: number) => n.toString().padStart(2, '0');
+                setPeriodEnd(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`);
+            } else {
+                const d = new Date(targetOrderDate);
+                d.setDate(d.getDate() + 7);
+                const pad = (n: number) => n.toString().padStart(2, '0');
+                setPeriodEnd(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`);
+            }
+        }
+    }, [targetOrderDate, periodTouched, reuse_invoice, activeOrders, selectedContainers]);
+
     // Dynamic nomor invoice preview
     const dynamicInvoiceNumber = useMemo(() => {
         if (reuse_invoice) return reuse_invoice.invoice_number;
         if (selectedContainers.size === 0) {
             return invoice_number || 'Otomatis di-generate saat simpan';
         }
+        if (fetchedInvoiceNumber) {
+            return fetchedInvoiceNumber;
+        }
         return hasSelectedFumigasi
             ? (next_in1_number || invoice_number || 'Otomatis di-generate saat simpan')
             : (next_in2_number || invoice_number || 'Otomatis di-generate saat simpan');
-    }, [reuse_invoice, selectedContainers.size, hasSelectedFumigasi, invoice_number, next_in1_number, next_in2_number]);
+    }, [reuse_invoice, selectedContainers.size, fetchedInvoiceNumber, hasSelectedFumigasi, invoice_number, next_in1_number, next_in2_number]);
 
     // Orders yang masih tersedia untuk ditambahkan / digabungkan
     const availableOrdersToAdd = useMemo(() => {
@@ -418,6 +508,7 @@ export default function CreateInvoice() {
         setSelectedCustomerId(val);
         setSelectedOrderIds([]);
         setSelectedContainers(new Set());
+        setPeriodTouched(false);
         setAddQty({});
         setItemQty({});
         setItemCustomPrices({});
@@ -779,7 +870,7 @@ export default function CreateInvoice() {
         const exitTimestamps = selectedItems
             .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
-        let effectiveDate = new Date().toISOString().split('T')[0];
+        let effectiveDate = targetOrderDate || new Date().toISOString().split('T')[0];
         if (exitTimestamps.length > 0) {
             const maxTs = Math.max(...exitTimestamps);
             const d = new Date(maxTs);
@@ -1105,7 +1196,10 @@ export default function CreateInvoice() {
                                         <DateTimePicker
                                             id="period_start"
                                             value={periodStart}
-                                            onChange={(val) => setPeriodStart(val)}
+                                            onChange={(val) => {
+                                                setPeriodStart(val);
+                                                setPeriodTouched(true);
+                                            }}
                                             withTime={false}
                                             placeholder="Pilih tanggal mulai..."
                                             className="w-full"
@@ -1118,7 +1212,10 @@ export default function CreateInvoice() {
                                         <DateTimePicker
                                             id="period_end"
                                             value={periodEnd}
-                                            onChange={(val) => setPeriodEnd(val)}
+                                            onChange={(val) => {
+                                                setPeriodEnd(val);
+                                                setPeriodTouched(true);
+                                            }}
                                             withTime={false}
                                             placeholder="Pilih tanggal selesai..."
                                             className="w-full"

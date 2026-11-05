@@ -137,7 +137,7 @@ function roundToNearest15Minutes(date: Date = new Date()): Date {
     const d = new Date(date);
     d.setSeconds(0, 0);
     const ms = 1000 * 60 * 15;
-    return new Date(Math.round(d.getTime() / ms));
+    return new Date(Math.round(d.getTime() / ms) * ms);
 }
 
 export default function TemperatureRecordsIndex({ records, filters, counts }: Props) {

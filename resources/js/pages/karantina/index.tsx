@@ -414,8 +414,8 @@ export default function KarantinaIndex({
         }
     };
 
-    // Cetak Billing Statement (A atau B)
-    const handlePrint = async (statementType: 'A' | 'B' | 'B_CLASSIC' = 'A') => {
+    // Cetak Billing Statement (A, B, C, atau D)
+    const handlePrint = async (statementType: 'A' | 'B' | 'B_CLASSIC' | 'C' | 'D' | 'D_CLASSIC' = 'A') => {
         const printWindow = window.open('', '_blank');
         if (!printWindow) {
             alert('Gagal membuka jendela cetak. Pastikan izin popup browser diaktifkan.');
@@ -427,7 +427,13 @@ export default function KarantinaIndex({
                 ? 'Billing Statement B (Versi 2 Modern)'
                 : statementType === 'B_CLASSIC'
                 ? 'Billing Statement B (Versi 1 Klasik)'
-                : 'Billing Statement';
+                : statementType === 'C'
+                ? 'Billing Statement C'
+                : statementType === 'D'
+                ? 'Billing Statement D (Versi 2 Modern)'
+                : statementType === 'D_CLASSIC'
+                ? 'Billing Statement D (Versi 1 Klasik)'
+                : 'Billing Statement A';
 
         printWindow.document.write(`
             <!DOCTYPE html>
@@ -564,16 +570,17 @@ export default function KarantinaIndex({
 
             let html = '';
 
-            if (statementType === 'B') {
+            if (statementType === 'B' || statementType === 'D') {
+                const isStatementD = statementType === 'D';
                 // ==========================================
-                // BILLING STATEMENT B - VERSI 2 (MODERN A4 LANDSCAPE)
+                // BILLING STATEMENT B / D - VERSI 2 (MODERN A4 LANDSCAPE)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>Billing Statement B - PT. Depo Surabaya Sejahtera</title>
+                <title>${isStatementD ? 'Billing Statement D' : 'Billing Statement B'} - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -756,17 +763,19 @@ export default function KarantinaIndex({
                         </div>
                     </div>
                     <div class="header-right">
-                        <div class="statement-title">BILLING STATEMENT</div>
+                        <div class="statement-title">${isStatementD ? 'BILLING STATEMENT D' : 'BILLING STATEMENT'}</div>
                     </div>
                 </div>
 
                 <div class="meta-panel">
                     <div class="meta-col">
+                        ${isStatementD ? '' : `
                         <div class="meta-item">
                             <span class="meta-label">Customer</span>
                             <span>:</span>
                             <span class="meta-value" style="font-size: 9.5pt; color: #0284c7;">${customerNameLabel}</span>
                         </div>
+                        `}
                         <div class="meta-item">
                             <span class="meta-label">Periode</span>
                             <span>:</span>
@@ -878,16 +887,17 @@ export default function KarantinaIndex({
             </body>
             </html>
                 `;
-            } else if (statementType === 'B_CLASSIC') {
+            } else if (statementType === 'B_CLASSIC' || statementType === 'D_CLASSIC') {
+                const isStatementD = statementType === 'D_CLASSIC';
                 // ==========================================
-                // BILLING STATEMENT B - VERSI 1 (KLASIK / RETRO A4 LANDSCAPE)
+                // BILLING STATEMENT B / D - VERSI 1 (KLASIK / RETRO A4 LANDSCAPE)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>Billing Statement B (Klasik) - PT. Depo Surabaya Sejahtera</title>
+                <title>${isStatementD ? 'Billing Statement D (Klasik)' : 'Billing Statement B (Klasik)'} - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -1017,13 +1027,15 @@ export default function KarantinaIndex({
                 </div>
 
                 <div class="statement-title-section">
-                    <div class="statement-title">BILLING STATEMENT</div>
+                    <div class="statement-title">${isStatementD ? 'BILLING STATEMENT D' : 'BILLING STATEMENT'}</div>
                     <table class="meta-table">
+                        ${isStatementD ? '' : `
                         <tr>
                             <td class="meta-label">Customer</td>
                             <td class="meta-sep">:</td>
                             <td class="meta-value">${customerNameLabel}</td>
                         </tr>
+                        `}
                         <tr>
                             <td class="meta-label">Periode</td>
                             <td class="meta-sep">:</td>
@@ -1105,15 +1117,16 @@ export default function KarantinaIndex({
             </html>
                 `;
             } else {
+                const isStatementC = statementType === 'C';
                 // ==========================================
-                // BILLING STATEMENT (FORMAT A)
+                // BILLING STATEMENT (FORMAT A / C)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>${titleText} - PT. Depo Surabaya Sejahtera</title>
+                <title>${isStatementC ? 'Billing Statement C' : 'Billing Statement'} - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -1197,7 +1210,7 @@ export default function KarantinaIndex({
                             </div>
                         </td>
                         <td style="text-align: right; vertical-align: middle;">
-                            <div class="report-title">${titleText}</div>
+                            <div class="report-title">${isStatementC ? 'BILLING STATEMENT C' : 'BILLING STATEMENT'}</div>
                             <div style="font-size: 10pt; color: #475569; font-weight: 600;">Layanan Karantina & Fumigasi</div>
                         </td>
                     </tr>
@@ -1218,9 +1231,9 @@ export default function KarantinaIndex({
                         <tr>
                             <th style="width: 30px; text-align: center;">No</th>
                             <th>Nomor Kontainer</th>
-                            <th>Customer</th>
+                            ${isStatementC ? '' : '<th>Customer</th>'}
                             <th>Nama Shipper</th>
-                            <th>Fumigator</th>
+                            ${isStatementC ? '' : '<th>Fumigator</th>'}
                             <th style="text-align: center; width: 60px;">Size</th>
                             <th>Tanggal Masuk</th>
                             <th>Tanggal Keluar</th>
@@ -1235,9 +1248,9 @@ export default function KarantinaIndex({
                             <tr>
                                 <td class="text-center">${idx + 1}</td>
                                 <td style="font-weight: 700; font-family: monospace;">${item.container_number}</td>
-                                <td>${item.customer_name ?? '-'}</td>
+                                ${isStatementC ? '' : `<td>${item.customer_name ?? '-'}</td>`}
                                 <td>${item.shipper_name ?? '-'}</td>
-                                <td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>
+                                ${isStatementC ? '' : `<td>${item.fumigasi ?? '<span class="text-gray-400">–</span>'}</td>`}
                                 <td class="text-center">${formatContainerSize(item.price_type)}</td>
                                 <td>${item.entry_date ? formatKarantinaDateTimeString(item.entry_date) : '<span class="text-gray-400">–</span>'}</td>
                                 <td>${item.exit_date ? formatKarantinaDateTimeString(item.exit_date) : '<span class="text-gray-400">–</span>'}</td>
@@ -1378,17 +1391,17 @@ export default function KarantinaIndex({
                             )}
                         </Button>
 
-                        {/* Button Billing Statement */}
+                        {/* Button Billing Statement A */}
                         <Button
                             type="button"
                             size="sm"
                             disabled={isPrinting}
                             onClick={() => handlePrint('A')}
                             className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
-                            title="Cetak Billing Statement"
+                            title="Cetak Billing Statement A (Format Lengkap)"
                         >
                             <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : ''}`} />
-                            <span>Billing Statement</span>
+                            <span>Billing Statement A</span>
                         </Button>
 
                         {/* Dropdown Button Billing Statement B */}
@@ -1430,6 +1443,64 @@ export default function KarantinaIndex({
                                     </div>
                                     <span className="text-[11px] text-gray-500 mt-1 pl-5">
                                         Format tabel standar klasik / retro
+                                    </span>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+
+                        {/* Button Billing Statement C */}
+                        <Button
+                            type="button"
+                            size="sm"
+                            disabled={isPrinting}
+                            onClick={() => handlePrint('C')}
+                            variant="outline"
+                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
+                            title="Cetak Billing Statement C (Format A tanpa Customer & Fumigator)"
+                        >
+                            <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : 'text-gray-600'}`} />
+                            <span>Billing Statement C</span>
+                        </Button>
+
+                        {/* Dropdown Button Billing Statement D */}
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    type="button"
+                                    size="sm"
+                                    disabled={isPrinting}
+                                    variant="outline"
+                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
+                                    title="Pilih dan Cetak Billing Statement Format D (Format B tanpa Customer)"
+                                >
+                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                    <span>Billing Statement D</span>
+                                    <ChevronDown className="h-3 w-3 text-gray-400 ml-0.5" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-72">
+                                <DropdownMenuItem
+                                    onClick={() => handlePrint('D')}
+                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3"
+                                >
+                                    <div className="font-semibold text-xs text-gray-900 flex items-center gap-1.5">
+                                        <Printer className="h-3.5 w-3.5 text-blue-600" />
+                                        <span>Versi 2 (Modern - Tanpa Customer)</span>
+                                    </div>
+                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
+                                        Format B Modern tanpa menampilkan nama customer
+                                    </span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                    onClick={() => handlePrint('D_CLASSIC')}
+                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3 border-t border-gray-100"
+                                >
+                                    <div className="font-semibold text-xs text-gray-700 flex items-center gap-1.5">
+                                        <Printer className="h-3.5 w-3.5 text-gray-500" />
+                                        <span>Versi 1 (Klasik - Tanpa Customer)</span>
+                                    </div>
+                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
+                                        Format B Klasik tanpa menampilkan nama customer
                                     </span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>

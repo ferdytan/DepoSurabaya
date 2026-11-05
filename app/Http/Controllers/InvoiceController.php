@@ -454,8 +454,8 @@ class InvoiceController extends Controller
                 $hasFumigasi = $this->hasFumigasiService($orderItems);
                 $targetDate = $this->resolveOrderReferenceDate(
                     $orderItems,
-                    $data['period_start'] ?? null,
-                    !empty($selectedOrderIds[0]) ? (int)$selectedOrderIds[0] : null
+                    $data['period_end'] ?? null,
+                    $data['period_start'] ?? null
                 );
                 $invoiceNumber = $this->generateInvoiceNumber($hasFumigasi, $targetDate);
 
@@ -1330,8 +1330,8 @@ class InvoiceController extends Controller
         $hasFumigasi = $this->hasFumigasiService($orderItems);
         $targetDate = $this->resolveOrderReferenceDate(
             $orderItems,
-            $validated['period_start'] ?? null,
-            !empty($selectedOrderIds[0]) ? (int)$selectedOrderIds[0] : null
+            $validated['period_end'] ?? null,
+            $validated['period_start'] ?? null
         );
         $previewInvoiceNumber = !empty($validated['reuse_id'])
             ? ($validated['invoice_number'] ?? null)
@@ -1538,49 +1538,31 @@ class InvoiceController extends Controller
         return response()->json(['invoice_number' => $number]);
     }
 
-    protected function resolveOrderReferenceDate($orderItems, ?string $periodStart = null, ?int $primaryOrderId = null): ?string
+    protected function resolveOrderReferenceDate($orderItems, ?string $periodEnd = null, ?string $periodStart = null): ?string
     {
-        $dates = [];
+        $exitDates = [];
 
-        // 1. Jika primaryOrderId ada, prioritaskan item dari order tersebut
-        if ($primaryOrderId) {
-            foreach ($orderItems as $oi) {
-                if ($oi->order_id == $primaryOrderId && !empty($oi->entry_date)) {
-                    $dates[] = Carbon::parse($oi->entry_date);
-                }
-            }
-            if (empty($dates)) {
-                foreach ($orderItems as $oi) {
-                    if ($oi->order_id == $primaryOrderId && !empty($oi->order?->created_at)) {
-                        $dates[] = Carbon::parse($oi->order->created_at);
-                    }
-                }
+        // 1. Ambil tanggal keluar (exit_date) dari kontainer
+        foreach ($orderItems as $oi) {
+            if (!empty($oi->exit_date)) {
+                $exitDates[] = Carbon::parse($oi->exit_date);
             }
         }
 
-        // 2. Jika belum dapat, periksa seluruh item (entry_date)
-        if (empty($dates)) {
-            foreach ($orderItems as $oi) {
-                if (!empty($oi->entry_date)) {
-                    $dates[] = Carbon::parse($oi->entry_date);
-                }
-            }
+        // Jika ada tanggal keluar, nomor invoice mengacu pada tanggal keluar paling terakhir (terbaru)
+        if (!empty($exitDates)) {
+            usort($exitDates, fn($a, $b) => $b->timestamp <=> $a->timestamp);
+            return $exitDates[0]->toDateString();
         }
 
-        // 3. Jika belum dapat, periksa seluruh order (created_at)
-        if (empty($dates)) {
-            foreach ($orderItems as $oi) {
-                if (!empty($oi->order?->created_at)) {
-                    $dates[] = Carbon::parse($oi->order->created_at);
-                }
-            }
+        // 2. Jika kontainer belum keluar, gunakan period_end jika ada
+        if (!empty($periodEnd)) {
+            try {
+                return Carbon::parse($periodEnd)->toDateString();
+            } catch (\Throwable $e) {}
         }
 
-        if (!empty($dates)) {
-            usort($dates, fn($a, $b) => $a->timestamp <=> $b->timestamp);
-            return $dates[0]->toDateString();
-        }
-
+        // 3. Jika period_end belum ada, cek period_start
         if (!empty($periodStart)) {
             try {
                 return Carbon::parse($periodStart)->toDateString();

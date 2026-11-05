@@ -330,8 +330,8 @@ export default function CreateInvoice() {
         return false;
     }, [activeOrders, selectedContainers]);
 
-    // Target order date untuk nomor invoice & penentuan periode otomatis
-    const targetOrderDate = useMemo(() => {
+    // Tanggal masuk terawal untuk default periodStart
+    const earliestEntryDate = useMemo(() => {
         const selectedItems = activeOrders
             .flatMap((o) => o.order_items || [])
             .filter((it) => selectedContainers.has(it.id));
@@ -361,9 +361,33 @@ export default function CreateInvoice() {
         return null;
     }, [activeOrders, selectedContainers]);
 
+    // Target tanggal acuan nomor invoice (berdasarkan tanggal keluar kontainer)
+    const targetInvoiceDate = useMemo(() => {
+        const selectedItems = activeOrders
+            .flatMap((o) => o.order_items || [])
+            .filter((it) => selectedContainers.has(it.id));
+
+        const exitTimestamps = selectedItems
+            .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
+            .filter((ts) => ts > 0 && !isNaN(ts));
+
+        if (exitTimestamps.length > 0) {
+            const maxTs = Math.max(...exitTimestamps);
+            const d = new Date(maxTs);
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+        }
+
+        if (periodEnd) {
+            return periodEnd;
+        }
+
+        return null;
+    }, [activeOrders, selectedContainers, periodEnd]);
+
     const [fetchedInvoiceNumber, setFetchedInvoiceNumber] = useState<string | null>(null);
 
-    // Fetch nomor invoice yang sesuai bulan/tahun order yang dipilih
+    // Fetch nomor invoice yang sesuai bulan/tahun tanggal keluar kontainer (atau periodEnd)
     useEffect(() => {
         if (reuse_invoice || selectedContainers.size === 0) {
             setFetchedInvoiceNumber(null);
@@ -374,8 +398,8 @@ export default function CreateInvoice() {
         const query = new URLSearchParams({
             has_fumigasi: hasSelectedFumigasi ? '1' : '0',
         });
-        if (targetOrderDate) {
-            query.set('date', targetOrderDate);
+        if (targetInvoiceDate) {
+            query.set('date', targetInvoiceDate);
         }
 
         fetch(`/invoices/next-number?${query.toString()}`, { signal: abortController.signal })
@@ -388,12 +412,15 @@ export default function CreateInvoice() {
             .catch(() => {});
 
         return () => abortController.abort();
-    }, [reuse_invoice, selectedContainers.size, hasSelectedFumigasi, targetOrderDate]);
+    }, [reuse_invoice, selectedContainers.size, hasSelectedFumigasi, targetInvoiceDate]);
 
-    // Otomatis sesuaikan periodStart & periodEnd dengan tanggal order jika belum pernah diedit manual oleh user
+    // Otomatis sesuaikan periodStart & periodEnd jika belum pernah diedit manual oleh user
     useEffect(() => {
-        if (!periodTouched && targetOrderDate && !reuse_invoice) {
-            setPeriodStart(targetOrderDate);
+        if (!periodTouched && !reuse_invoice && selectedContainers.size > 0) {
+            const pad = (n: number) => n.toString().padStart(2, '0');
+            const start = earliestEntryDate || new Date().toISOString().split('T')[0];
+            setPeriodStart(start);
+
             const selectedItems = activeOrders
                 .flatMap((o) => o.order_items || [])
                 .filter((it) => selectedContainers.has(it.id));
@@ -404,16 +431,14 @@ export default function CreateInvoice() {
             if (exitTimestamps.length > 0) {
                 const maxTs = Math.max(...exitTimestamps);
                 const d = new Date(maxTs);
-                const pad = (n: number) => n.toString().padStart(2, '0');
                 setPeriodEnd(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`);
             } else {
-                const d = new Date(targetOrderDate);
+                const d = new Date(start);
                 d.setDate(d.getDate() + 7);
-                const pad = (n: number) => n.toString().padStart(2, '0');
                 setPeriodEnd(`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`);
             }
         }
-    }, [targetOrderDate, periodTouched, reuse_invoice, activeOrders, selectedContainers]);
+    }, [earliestEntryDate, periodTouched, reuse_invoice, activeOrders, selectedContainers]);
 
     // Dynamic nomor invoice preview
     const dynamicInvoiceNumber = useMemo(() => {
@@ -870,7 +895,7 @@ export default function CreateInvoice() {
         const exitTimestamps = selectedItems
             .map((it) => (it.exit_date ? new Date(it.exit_date.replace(' ', 'T')).getTime() : 0))
             .filter((ts) => ts > 0);
-        let effectiveDate = targetOrderDate || new Date().toISOString().split('T')[0];
+        let effectiveDate = targetInvoiceDate || new Date().toISOString().split('T')[0];
         if (exitTimestamps.length > 0) {
             const maxTs = Math.max(...exitTimestamps);
             const d = new Date(maxTs);

@@ -415,7 +415,7 @@ export default function KarantinaIndex({
     };
 
     // Cetak Billing Statement (A, B, C, atau D)
-    const handlePrint = async (statementType: 'A' | 'B' | 'B_CLASSIC' | 'C' | 'D' | 'D_CLASSIC' = 'A') => {
+    const handlePrint = async (statementType: 'A' | 'B' | 'B_CLASSIC' | 'C' | 'D' = 'A') => {
         const printWindow = window.open('', '_blank');
         if (!printWindow) {
             alert('Gagal membuka jendela cetak. Pastikan izin popup browser diaktifkan.');
@@ -430,9 +430,7 @@ export default function KarantinaIndex({
                 : statementType === 'C'
                 ? 'Billing Statement C'
                 : statementType === 'D'
-                ? 'Billing Statement D (Versi 2 Modern)'
-                : statementType === 'D_CLASSIC'
-                ? 'Billing Statement D (Versi 1 Klasik)'
+                ? 'Billing Statement D (Klasik)'
                 : 'Billing Statement A';
 
         printWindow.document.write(`
@@ -570,17 +568,16 @@ export default function KarantinaIndex({
 
             let html = '';
 
-            if (statementType === 'B' || statementType === 'D') {
-                const isStatementD = statementType === 'D';
+            if (statementType === 'B') {
                 // ==========================================
-                // BILLING STATEMENT B / D - VERSI 2 (MODERN A4 LANDSCAPE)
+                // BILLING STATEMENT B - VERSI 2 (MODERN A4 LANDSCAPE)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>${isStatementD ? 'Billing Statement D' : 'Billing Statement B'} - PT. Depo Surabaya Sejahtera</title>
+                <title>Billing Statement B - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -763,19 +760,17 @@ export default function KarantinaIndex({
                         </div>
                     </div>
                     <div class="header-right">
-                        <div class="statement-title">${isStatementD ? 'BILLING STATEMENT D' : 'BILLING STATEMENT'}</div>
+                        <div class="statement-title">BILLING STATEMENT</div>
                     </div>
                 </div>
 
                 <div class="meta-panel">
                     <div class="meta-col">
-                        ${isStatementD ? '' : `
                         <div class="meta-item">
                             <span class="meta-label">Customer</span>
                             <span>:</span>
                             <span class="meta-value" style="font-size: 9.5pt; color: #0284c7;">${customerNameLabel}</span>
                         </div>
-                        `}
                         <div class="meta-item">
                             <span class="meta-label">Periode</span>
                             <span>:</span>
@@ -887,17 +882,17 @@ export default function KarantinaIndex({
             </body>
             </html>
                 `;
-            } else if (statementType === 'B_CLASSIC' || statementType === 'D_CLASSIC') {
-                const isStatementD = statementType === 'D_CLASSIC';
+            } else if (statementType === 'B_CLASSIC' || statementType === 'D') {
+                const isStatementD = statementType === 'D';
                 // ==========================================
-                // BILLING STATEMENT B / D - VERSI 1 (KLASIK / RETRO A4 LANDSCAPE)
+                // BILLING STATEMENT B (KLASIK) / D (KLASIK TANPA CUSTOMER)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>${isStatementD ? 'Billing Statement D (Klasik)' : 'Billing Statement B (Klasik)'} - PT. Depo Surabaya Sejahtera</title>
+                <title>${isStatementD ? 'Billing Statement D' : 'Billing Statement B (Klasik)'} - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -1397,11 +1392,11 @@ export default function KarantinaIndex({
                             size="sm"
                             disabled={isPrinting}
                             onClick={() => handlePrint('A')}
-                            className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
+                            className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
                             title="Cetak Billing Statement A (Format Lengkap)"
                         >
                             <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : ''}`} />
-                            <span>Billing Statement A</span>
+                            <span>Statement A</span>
                         </Button>
 
                         {/* Dropdown Button Billing Statement B */}
@@ -1412,11 +1407,11 @@ export default function KarantinaIndex({
                                     size="sm"
                                     disabled={isPrinting}
                                     variant="outline"
-                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
+                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs whitespace-nowrap"
                                     title="Pilih dan Cetak Billing Statement Format B"
                                 >
                                     <Printer className="h-3.5 w-3.5 text-gray-600" />
-                                    <span>Billing Statement B</span>
+                                    <span>Statement B</span>
                                     <ChevronDown className="h-3 w-3 text-gray-400 ml-0.5" />
                                 </Button>
                             </DropdownMenuTrigger>
@@ -1455,56 +1450,26 @@ export default function KarantinaIndex({
                             disabled={isPrinting}
                             onClick={() => handlePrint('C')}
                             variant="outline"
-                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs disabled:opacity-70"
+                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
                             title="Cetak Billing Statement C (Format A tanpa Customer & Fumigator)"
                         >
                             <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : 'text-gray-600'}`} />
-                            <span>Billing Statement C</span>
+                            <span>Statement C</span>
                         </Button>
 
-                        {/* Dropdown Button Billing Statement D */}
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button
-                                    type="button"
-                                    size="sm"
-                                    disabled={isPrinting}
-                                    variant="outline"
-                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3.5 gap-1.5 shadow-2xs"
-                                    title="Pilih dan Cetak Billing Statement Format D (Format B tanpa Customer)"
-                                >
-                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
-                                    <span>Billing Statement D</span>
-                                    <ChevronDown className="h-3 w-3 text-gray-400 ml-0.5" />
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="w-72">
-                                <DropdownMenuItem
-                                    onClick={() => handlePrint('D')}
-                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3"
-                                >
-                                    <div className="font-semibold text-xs text-gray-900 flex items-center gap-1.5">
-                                        <Printer className="h-3.5 w-3.5 text-blue-600" />
-                                        <span>Versi 2 (Modern - Tanpa Customer)</span>
-                                    </div>
-                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
-                                        Format B Modern tanpa menampilkan nama customer
-                                    </span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem
-                                    onClick={() => handlePrint('D_CLASSIC')}
-                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3 border-t border-gray-100"
-                                >
-                                    <div className="font-semibold text-xs text-gray-700 flex items-center gap-1.5">
-                                        <Printer className="h-3.5 w-3.5 text-gray-500" />
-                                        <span>Versi 1 (Klasik - Tanpa Customer)</span>
-                                    </div>
-                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
-                                        Format B Klasik tanpa menampilkan nama customer
-                                    </span>
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+                        {/* Button Billing Statement D (Langsung Klasik tanpa Customer) */}
+                        <Button
+                            type="button"
+                            size="sm"
+                            disabled={isPrinting}
+                            onClick={() => handlePrint('D')}
+                            variant="outline"
+                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
+                            title="Cetak Billing Statement D (Format B Klasik tanpa Customer)"
+                        >
+                            <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : 'text-gray-600'}`} />
+                            <span>Statement D</span>
+                        </Button>
                     </div>
                 </div>
 

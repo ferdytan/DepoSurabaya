@@ -1438,7 +1438,7 @@ export default function KarantinaIndex({
                                         <span>Laporan Fumigasi</span>
                                     </div>
                                     <span className="text-[11px] text-gray-500 mt-1 pl-5">
-                                        Format lengkap dengan kolom Customer & Fumigator
+                                        Laporan Format Lengkap
                                     </span>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem

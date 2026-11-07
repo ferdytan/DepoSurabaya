@@ -252,6 +252,41 @@ export default function EditOrder({ order, customers, shippers, return_url: init
     // ==================================
     const [collapsedItems, setCollapsedItems] = useState<Record<number, boolean>>({});
     const [additionalSearch, setAdditionalSearch] = useState<Record<number, string>>({});
+    const [highlightedItemId, setHighlightedItemId] = useState<number | null>(null);
+
+    // Otomatis fokus ke kontainer atau tambahkan kontainer baru dari parameter URL
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetItemId = urlParams.get('item');
+        const action = urlParams.get('action');
+
+        if (action === 'add') {
+            addOrderItem();
+            setTimeout(() => {
+                const containerCards = document.querySelectorAll('[id^="container-card-"]');
+                if (containerCards.length > 0) {
+                    const lastCard = containerCards[containerCards.length - 1];
+                    lastCard?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 350);
+        } else if (targetItemId) {
+            const numId = parseInt(targetItemId, 10);
+            if (!isNaN(numId)) {
+                setHighlightedItemId(numId);
+                const foundIdx = order.items.findIndex((it) => it.id === numId);
+                if (foundIdx !== -1) {
+                    setCollapsedItems((prev) => ({ ...prev, [foundIdx]: false }));
+                }
+                setTimeout(() => {
+                    const el =
+                        document.getElementById(`container-card-${numId}`) ||
+                        (foundIdx !== -1 ? document.getElementById(`container-card-${foundIdx}`) : null);
+                    el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 350);
+            }
+        }
+    }, []);
 
     const toggleCollapse = (index: number) => {
         setCollapsedItems((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -826,13 +861,16 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                 );
                                 const hasCardError = itemErrorEntries.length > 0;
                                 const isCollapsed = Boolean(collapsedItems[idx]);
+                                const isHighlighted = item.id !== undefined && item.id === highlightedItemId;
 
                                 return (
                                     <div
                                         key={idx}
-                                        id={`container-card-${idx}`}
+                                        id={item.id ? `container-card-${item.id}` : `container-card-${idx}`}
                                         className={`rounded-xl border bg-white p-4 sm:p-5 shadow-xs space-y-4 transition-all ${
-                                            hasCardError
+                                            isHighlighted
+                                                ? 'border-blue-500 ring-4 ring-blue-100 bg-blue-50/15'
+                                                : hasCardError
                                                 ? 'border-red-400 ring-2 ring-red-100 bg-red-50/10'
                                                 : 'border-gray-200 hover:border-gray-300'
                                         }`}
@@ -846,6 +884,11 @@ export default function EditOrder({ order, customers, shippers, return_url: init
                                                 <h3 className="text-sm font-bold text-gray-900">
                                                     Layanan #{idx + 1}
                                                 </h3>
+                                                {isHighlighted && (
+                                                    <span className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 bg-blue-100 border border-blue-300 px-2 py-0.5 rounded animate-pulse">
+                                                        ✏️ Sedang Diedit
+                                                    </span>
+                                                )}
                                                 {item.container_number && (
                                                     <span className="font-mono text-xs bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded border border-blue-200">
                                                         {item.container_number}

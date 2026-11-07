@@ -132,7 +132,7 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
 
                             {!isRoleKarantina && (
                                 <Button variant="outline" size="sm" asChild className="h-9 gap-1.5 shadow-2xs">
-                                    <Link href={route('orders.items.edit', { order: order.id, orderItem: orderItem.id })}>
+                                    <Link href={`${route('orders.edit', order.id)}?item=${orderItem.id}${backUrl ? `&return_url=${encodeURIComponent(backUrl)}` : ''}`}>
                                         <Pencil className="h-3.5 w-3.5 text-gray-600" />
                                         <span>Edit Kontainer</span>
                                     </Link>

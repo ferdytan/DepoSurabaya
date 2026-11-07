@@ -963,7 +963,7 @@ function getNowLocalISO(): string {
                                                                             onClick={(e) => {
                                                                                 e.stopPropagation();
                                                                                 router.post(
-                                                                                    route('orders.restore', firstOrder.order.id),
+                                                                                    route('orders.restore', firstOrder.order?.id ?? firstOrder.order_id),
                                                                                     {},
                                                                                     {
                                                                                         onSuccess: () => {
@@ -975,11 +975,11 @@ function getNowLocalISO(): string {
                                                                                     },
                                                                                 );
                                                                             }}
-                                                                            className="inline-flex items-center gap-1 h-7 text-xs px-2"
-                                                                            title="Pulihkan Order"
+                                                                            className="inline-flex items-center gap-1 h-7 text-xs px-2 text-emerald-800 border-emerald-300 bg-emerald-50/50 hover:bg-emerald-100"
+                                                                            title="Pulihkan Order & Semua Kontainernya"
                                                                         >
-                                                                            <RotateCcw className="h-3.5 w-3.5" />
-                                                                            Pulihkan
+                                                                            <RotateCcw className="h-3.5 w-3.5 text-emerald-600" />
+                                                                            Pulihkan Order
                                                                         </Button>
                                                                     ) : (
                                                                         <>
@@ -1090,7 +1090,30 @@ function getNowLocalISO(): string {
                                                         <TableRow key={order.id} className="group">
                                                             <TableCell className="py-3 font-medium">{order.order?.customer?.name ?? '-'}</TableCell>
                                                             <TableCell className="py-3">{order.product?.service_type ?? '-'}</TableCell>
-                                                            <TableCell className="py-3">{order.container_number}</TableCell>
+                                                            <TableCell className="py-3">
+                                                                <div className="flex items-center gap-1.5 flex-wrap">
+                                                                    <span>{order.container_number}</span>
+                                                                    {isTrashed && (
+                                                                        <Button
+                                                                            size="sm"
+                                                                            variant="outline"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                router.post(
+                                                                                    route('orders.items.restore', order.id),
+                                                                                    {},
+                                                                                    { preserveScroll: true }
+                                                                                );
+                                                                            }}
+                                                                            className="inline-flex items-center gap-1 h-6 text-[11px] px-1.5 text-emerald-700 border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
+                                                                            title="Pulihkan Kontainer ini ke Ordernya"
+                                                                        >
+                                                                            <RotateCcw className="h-3 w-3" />
+                                                                            <span>Pulihkan</span>
+                                                                        </Button>
+                                                                    )}
+                                                                </div>
+                                                            </TableCell>
                                                             <TableCell className="py-3">{order.price_type ?? '-'}</TableCell>
                                                             <TableCell className="py-3">
                                                                 {order.entry_date ? (

@@ -993,9 +993,9 @@ public function update(Request $request, Order $order)
         $itemsToDelete = array_diff($existingItemIds, $incomingItemIds);
         if (!empty($itemsToDelete)) {
             OrderItem::whereIn('id', $itemsToDelete)->each(function ($item) {
-                $item->rekamSuhu()->forceDelete(); // Hapus rekam suhu fisik
+                $item->rekamSuhu()->delete(); // Soft delete rekam suhu agar dapat dipulihkan jika di-restore
                 $item->additionalProducts()->detach(); // Hapus relasi produk tambahan
-                $item->delete(); // Hapus item
+                $item->delete(); // Soft delete item
             });
         }
 
@@ -1231,10 +1231,17 @@ $orderItem->additionalProducts()->sync($syncData);
 
         DB::beginTransaction();
         try {
+            $order = $orderItem->order;
             $orderItem->update(['delete_reason' => $deleteReason]);
             $orderItem->rekamSuhu()->delete();
             $orderItem->additionalProducts()->detach();
             $orderItem->delete();
+
+            // Jika seluruh kontainer dalam order sudah terhapus, tandai juga order sebagai soft-deleted
+            if ($order && $order->items()->count() === 0) {
+                $order->update(['delete_reason' => $deleteReason]);
+                $order->delete();
+            }
 
             DB::commit();
             return back()->with('success', 'Order Item berhasil dihapus.');
@@ -1244,11 +1251,31 @@ $orderItem->additionalProducts()->sync($syncData);
         }
     }
 
+    /**
+     * Redirect dari edit order item ke halaman edit order dengan fokus kontainer
+     */
+    public function editOrderItem(Request $request, $orderId, $orderItemId = null)
+    {
+        $order = $orderId instanceof Order ? $orderId : Order::findOrFail($orderId);
+        $itemId = $orderItemId instanceof OrderItem ? $orderItemId->id : $orderItemId;
+        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
 
+        return redirect()->route('orders.edit', array_filter([
+            'order' => $order->id,
+            'item' => $itemId,
+            'return_url' => $returnUrl,
+        ]));
+    }
 
-
-
-
+    public function editOrderItemDirect(Request $request, OrderItem $orderItem)
+    {
+        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
+        return redirect()->route('orders.edit', array_filter([
+            'order' => $orderItem->order_id,
+            'item' => $orderItem->id,
+            'return_url' => $returnUrl,
+        ]));
+    }
 
     public function updateEntry(Request $request, OrderItem $orderItem) {
         $request->validate(['entry_date' => 'nullable']);
@@ -1272,36 +1299,90 @@ $orderItem->additionalProducts()->sync($syncData);
     }
 
     public function restore(Request $request, $id)
-{
-    $order = Order::onlyTrashed()->findOrFail($id);
-    DB::beginTransaction();
-    try {
-        // Pulihkan order utama
-        $order->restore();
-        
-        // Pulihkan semua item order
-        $order->items()->onlyTrashed()->restore();
-        
-        // Pulihkan semua rekam suhu dan relasi produk tambahan untuk setiap item
-        foreach ($order->items()->onlyTrashed()->get() as $item) {
-            $item->rekamSuhu()->onlyTrashed()->restore();
-            
-            // Pulihkan relasi produk tambahan
-            // Karena tidak ada soft delete untuk pivot table, kita perlu memulihkan dengan cara lain
-            // Jika Anda menggunakan package untuk soft delete pivot, gunakan method restore
-            // Jika tidak, Anda mungkin perlu menyimpan histori relasi di tabel terpisah
+    {
+        $order = Order::withTrashed()->findOrFail($id);
+        DB::beginTransaction();
+        try {
+            // Pulihkan order utama jika sedang berstatus terhapus
+            if ($order->trashed()) {
+                $order->restore();
+            }
+
+            // Ambil semua item order yang sedang terhapus
+            $trashedItems = $order->items()->onlyTrashed()->get();
+            $restoredCount = 0;
+            $skippedContainers = [];
+
+            foreach ($trashedItems as $item) {
+                // Cegah duplikasi jika ada kontainer dengan nomor sama yang sudah aktif di order ini
+                $hasDuplicate = $order->items()
+                    ->where('container_number', $item->container_number)
+                    ->where('id', '!=', $item->id)
+                    ->exists();
+
+                if ($hasDuplicate) {
+                    $skippedContainers[] = $item->container_number;
+                    continue;
+                }
+
+                $item->rekamSuhu()->onlyTrashed()->restore();
+                $item->restore();
+                $restoredCount++;
+            }
+
+            DB::commit();
+
+            $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
+
+            $msg = "Order #{$order->order_id} (" . ($restoredCount > 0 ? "{$restoredCount} kontainer" : "order") . ") berhasil dipulihkan.";
+            if (!empty($skippedContainers)) {
+                $msg .= " (Kontainer " . implode(', ', $skippedContainers) . " dilewati karena sudah aktif dalam order ini).";
+            }
+
+            return redirect()->to($returnUrl)->with('success', $msg);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('orders.index')->with('error', 'Gagal memulihkan order: ' . $e->getMessage());
         }
-        
-        DB::commit();
-
-        $returnUrl = $this->getSafeReturnUrl($request->input('return_url'));
-
-        return redirect()->to($returnUrl)->with('success', 'Order berhasil dipulihkan.');
-    } catch (\Exception $e) {
-        DB::rollBack();
-        return redirect()->route('orders.index')->with('error', 'Gagal memulihkan order: '.$e->getMessage());
     }
-}
+
+    /**
+     * Pulihkan satu kontainer / order item tertentu
+     */
+    public function restoreOrderItem(Request $request, $id)
+    {
+        $orderItem = OrderItem::onlyTrashed()->findOrFail($id);
+        $order = Order::withTrashed()->findOrFail($orderItem->order_id);
+
+        DB::beginTransaction();
+        try {
+            // Jika order induk sedang berstatus terhapus, pulihkan order induknya juga
+            if ($order->trashed()) {
+                $order->restore();
+            }
+
+            // Cegah duplikasi jika kontainer dengan nomor yang sama sudah aktif dalam order
+            $duplicateActive = $order->items()
+                ->where('container_number', $orderItem->container_number)
+                ->where('id', '!=', $orderItem->id)
+                ->exists();
+
+            if ($duplicateActive) {
+                DB::rollBack();
+                return back()->with('error', "Kontainer '{$orderItem->container_number}' tidak dapat dipulihkan karena nomor kontainer tersebut sudah aktif di dalam order #{$order->order_id}.");
+            }
+
+            $orderItem->rekamSuhu()->onlyTrashed()->restore();
+            $orderItem->restore();
+
+            DB::commit();
+
+            return back()->with('success', "Kontainer '{$orderItem->container_number}' berhasil dipulihkan ke order #{$order->order_id}.");
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'Gagal memulihkan kontainer: ' . $e->getMessage());
+        }
+    }
 
 
 public function updateTemperature(Request $request, $id)

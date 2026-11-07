@@ -131,6 +131,10 @@ Route::middleware(['auth'])->group(function () {
             ->name('items.simple.show') // Nama route yang lebih pendek dan jelas
             ->whereNumber('orderItem');
 
+        Route::get('/item/{orderItem}/edit', [OrderController::class, 'editOrderItemDirect'])
+            ->name('items.simple.edit')
+            ->whereNumber('orderItem');
+
         // Edit order item
         Route::get('/{order}/items/{orderItem}/edit', [OrderController::class, 'editOrderItem'])
             ->name('items.edit')
@@ -138,6 +142,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Order actions
         Route::post('/{order}/restore', [OrderController::class, 'restore'])->name('restore')->whereNumber('order');
+        Route::post('/items/{orderItem}/restore', [OrderController::class, 'restoreOrderItem'])->name('items.restore')->whereNumber('orderItem');
         Route::post('/{order}/toggle-exclude-report', [OrderController::class, 'toggleExcludeReport'])->name('toggle-exclude-report')->whereNumber('order');
         Route::get('/{order}/edit', [OrderController::class, 'edit'])->name('edit')->whereNumber('order');
         Route::put('/{order}', [OrderController::class, 'update'])->name('update')->whereNumber('order');

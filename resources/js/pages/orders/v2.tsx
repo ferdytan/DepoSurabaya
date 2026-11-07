@@ -1033,7 +1033,7 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                         onClick={(e) => {
                                                                             e.stopPropagation();
                                                                             router.post(
-                                                                                route('orders.restore', firstOrder.order.id),
+                                                                                route('orders.restore', firstOrder.order?.id ?? firstOrder.order_id),
                                                                                 {},
                                                                                 {
                                                                                     onSuccess: () => {
@@ -1043,11 +1043,11 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                 },
                                                                             );
                                                                         }}
-                                                                        className="inline-flex items-center gap-1 h-7 text-xs px-2"
-                                                                        title="Pulihkan Order"
+                                                                        className="inline-flex items-center gap-1 h-7 text-xs px-2 text-emerald-800 border-emerald-300 bg-emerald-50/50 hover:bg-emerald-100"
+                                                                        title="Pulihkan Order & Semua Kontainernya"
                                                                     >
-                                                                        <RotateCcw className="h-3.5 w-3.5" />
-                                                                        Pulihkan
+                                                                        <RotateCcw className="h-3.5 w-3.5 text-emerald-600" />
+                                                                        Pulihkan Order
                                                                     </Button>
                                                                 ) : (
                                                                     <>
@@ -1215,6 +1215,27 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                         <Badge variant="outline" className="text-xs px-1.5 py-0 border-gray-300 bg-gray-50 text-gray-700 font-normal shrink-0">
                                                                             {order.price_type}
                                                                         </Badge>
+                                                                    )}
+                                                                    {isTrashed && (
+                                                                        <Button
+                                                                            size="sm"
+                                                                            variant="outline"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                router.post(
+                                                                                    route('orders.items.restore', order.id),
+                                                                                    {},
+                                                                                    {
+                                                                                        preserveScroll: true,
+                                                                                    }
+                                                                                );
+                                                                            }}
+                                                                            className="inline-flex items-center gap-1 h-6 text-[11px] px-1.5 text-emerald-700 border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
+                                                                            title="Pulihkan Kontainer ini ke Ordernya"
+                                                                        >
+                                                                            <RotateCcw className="h-3 w-3" />
+                                                                            <span>Pulihkan</span>
+                                                                        </Button>
                                                                     )}
                                                                 </div>
                                                             </TableCell>

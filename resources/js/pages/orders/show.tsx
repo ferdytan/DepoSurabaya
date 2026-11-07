@@ -18,6 +18,7 @@ import {
     Globe,
     Layers,
     Tag,
+    Plus,
 } from 'lucide-react';
 import { type SharedData } from '@/types';
 import ContainerTemperatureView from '@/components/container-temperature-view';
@@ -113,16 +114,29 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
 
                         <div className="flex items-center gap-2">
                             {!isRoleKarantina && (
-                                <Button variant="outline" size="sm" asChild className="h-9 gap-1.5 shadow-2xs">
-                                    <Link
-                                        href={`${route('orders.edit', order.id)}${
-                                            backUrl ? `?return_url=${encodeURIComponent(backUrl)}` : ''
-                                        }`}
-                                    >
-                                        <Pencil className="h-3.5 w-3.5 text-gray-600" />
-                                        <span>Edit Order</span>
-                                    </Link>
-                                </Button>
+                                <>
+                                    <Button variant="outline" size="sm" asChild className="h-9 gap-1.5 shadow-2xs">
+                                        <Link
+                                            href={`${route('orders.edit', order.id)}${
+                                                backUrl ? `?return_url=${encodeURIComponent(backUrl)}` : ''
+                                            }`}
+                                        >
+                                            <Pencil className="h-3.5 w-3.5 text-gray-600" />
+                                            <span>Edit Order</span>
+                                        </Link>
+                                    </Button>
+
+                                    <Button variant="outline" size="sm" asChild className="h-9 gap-1.5 shadow-2xs border-blue-200 bg-blue-50/50 text-blue-700 hover:bg-blue-100 hover:text-blue-900">
+                                        <Link
+                                            href={`${route('orders.edit', order.id)}?action=add${
+                                                backUrl ? `&return_url=${encodeURIComponent(backUrl)}` : ''
+                                            }`}
+                                        >
+                                            <Plus className="h-3.5 w-3.5" />
+                                            <span>Tambah Kontainer</span>
+                                        </Link>
+                                    </Button>
+                                </>
                             )}
                             <Button size="sm" asChild className="bg-gray-900 hover:bg-black text-white h-9 gap-1.5 shadow-xs">
                                 <Link href={backUrl}>
@@ -262,6 +276,19 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                         </div>
 
                                         <div className="flex items-center gap-2">
+                                            {!isRoleKarantina && (
+                                                <Button
+                                                    size="sm"
+                                                    variant="outline"
+                                                    asChild
+                                                    className="h-8 text-xs font-semibold gap-1.5 border-gray-300 text-blue-600 hover:text-blue-800 shadow-2xs"
+                                                >
+                                                    <Link href={`${route('orders.edit', order.id)}?item=${item.id}${backUrl ? `&return_url=${encodeURIComponent(backUrl)}` : ''}`}>
+                                                        <Pencil className="h-3 w-3" />
+                                                        <span>Edit Kontainer</span>
+                                                    </Link>
+                                                </Button>
+                                            )}
                                             <Button
                                                 size="sm"
                                                 variant="outline"

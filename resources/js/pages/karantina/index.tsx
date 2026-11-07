@@ -15,6 +15,12 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { terbilang } from '@/lib/terbilang';
 import DateRangePicker from '@/components/date-range-picker';
 import {
@@ -1545,9 +1551,37 @@ export default function KarantinaIndex({
                                         )}
                                     </div>
                                     {selectedProductIds.length > 0 && (
-                                        <span className="text-[10px] text-blue-600 font-bold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">
-                                            {selectedProductIds.length} dipilih
-                                        </span>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <button
+                                                    type="button"
+                                                    className="inline-flex items-center gap-1 text-[10px] text-blue-700 font-bold bg-blue-50 hover:bg-blue-100 px-1.5 py-0.5 rounded border border-blue-200 cursor-pointer transition-colors"
+                                                >
+                                                    <span>{selectedProductIds.length} dipilih</span>
+                                                </button>
+                                            </TooltipTrigger>
+                                            <TooltipContent
+                                                side="top"
+                                                align="end"
+                                                className="bg-slate-900 text-slate-100 p-2.5 max-w-xs shadow-xl rounded-lg border border-slate-800 text-[11px] space-y-1.5 z-50"
+                                            >
+                                                <div className="font-semibold text-slate-200 border-b border-slate-700 pb-1 flex items-center justify-between gap-3">
+                                                    <span>Layanan Terpilih ({selectedProductIds.length}):</span>
+                                                </div>
+                                                <ul className="max-h-52 overflow-y-auto space-y-1 pr-1 text-slate-300">
+                                                    {selectedProductIds.map((id) => {
+                                                        const prod = products.find((p) => p.id === id);
+                                                        if (!prod) return null;
+                                                        return (
+                                                            <li key={id} className="flex items-center gap-1.5">
+                                                                <span className="h-1.5 w-1.5 rounded-full bg-blue-400 shrink-0" />
+                                                                <span className="truncate">{prod.service_type}</span>
+                                                            </li>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </TooltipContent>
+                                        </Tooltip>
                                     )}
                                 </div>
                                 <DropdownMenu>
@@ -1804,38 +1838,6 @@ export default function KarantinaIndex({
                             </div>
                         </div>
 
-                        {/* Chips Layanan Terpilih jika ada */}
-                        {selectedProductIds.length > 0 && (
-                            <div className="flex flex-wrap items-center gap-1.5 border-t border-gray-100 pt-2.5">
-                                <span className="text-[11px] text-gray-500 font-medium">Layanan Terpilih:</span>
-                                {selectedProductIds.map((id) => {
-                                    const prod = products.find((p) => p.id === id);
-                                    if (!prod) return null;
-                                    return (
-                                        <span
-                                            key={id}
-                                            className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 border border-blue-200"
-                                        >
-                                            {prod.service_type}
-                                            <button
-                                                type="button"
-                                                onClick={() => toggleProduct(id)}
-                                                className="hover:text-blue-900 focus:outline-none"
-                                            >
-                                                <X className="h-3 w-3" />
-                                            </button>
-                                        </span>
-                                    );
-                                })}
-                                <button
-                                    type="button"
-                                    onClick={() => setSelectedProductIds([])}
-                                    className="text-[11px] text-gray-500 hover:text-rose-600 underline ml-1"
-                                >
-                                    Hapus Semua
-                                </button>
-                            </div>
-                        )}
 
                         {/* Search Bar & Apply Action (Baris Bawah) */}
                         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-gray-100">

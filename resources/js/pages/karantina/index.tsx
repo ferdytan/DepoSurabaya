@@ -32,6 +32,7 @@ import {
     Check,
     Settings,
     Sparkles,
+    FileText,
 } from 'lucide-react';
 
 interface FlashProps {
@@ -424,13 +425,13 @@ export default function KarantinaIndex({
 
         const titleText =
             statementType === 'B'
-                ? 'Billing Statement B (Versi 2 Modern)'
+                ? 'Billing Statement'
                 : statementType === 'B_CLASSIC'
-                ? 'Billing Statement B (Versi 1 Klasik)'
+                ? 'Billing Statement (Klasik)'
                 : statementType === 'C'
                 ? 'Laporan Pemeriksaan On-Chassis'
                 : statementType === 'D'
-                ? 'Billing Statement D'
+                ? 'Laporan Fumigasi B'
                 : 'Laporan Fumigasi';
 
         printWindow.document.write(`
@@ -577,7 +578,7 @@ export default function KarantinaIndex({
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>Billing Statement B - PT. Depo Surabaya Sejahtera</title>
+                <title>Billing Statement - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -1114,22 +1115,27 @@ export default function KarantinaIndex({
                 const showCustomer = statementType === 'A';
                 const showFumigator = statementType === 'A' || statementType === 'D';
 
+                const docTitle =
+                    statementType === 'C'
+                        ? 'Laporan Pemeriksaan On-Chassis'
+                        : statementType === 'D'
+                        ? 'Laporan Fumigasi B'
+                        : 'Laporan Fumigasi';
+
                 const reportTitle =
                     statementType === 'C'
                         ? 'LAPORAN PEMERIKSAAN ON-CHASSIS'
-                        : statementType === 'D'
-                        ? 'BILLING STATEMENT D'
                         : 'LAPORAN FUMIGASI';
 
                 // ==========================================
-                // LAPORAN FUMIGASI (A) / LAPORAN PEMERIKSAAN ON-CHASSIS (C) / STATEMENT D
+                // LAPORAN FUMIGASI (A) / LAPORAN PEMERIKSAAN ON-CHASSIS (C) / LAPORAN FUMIGASI B (D)
                 // ==========================================
                 html = `
             <!DOCTYPE html>
             <html>
             <head>
                 <meta charset="utf-8">
-                <title>${reportTitle} - PT. Depo Surabaya Sejahtera</title>
+                <title>${docTitle} - PT. Depo Surabaya Sejahtera</title>
                 <style>
                     @page {
                         size: A4 landscape;
@@ -1360,7 +1366,7 @@ export default function KarantinaIndex({
                 )}
 
                 {/* Header Title & Top Action Buttons */}
-                <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                         <div className="flex items-center gap-2.5">
                             <Shield className="h-7 w-7 text-gray-900" />
@@ -1376,7 +1382,7 @@ export default function KarantinaIndex({
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                         {/* Toggle Panel Filter */}
                         <Button
                             variant="outline"
@@ -1393,20 +1399,20 @@ export default function KarantinaIndex({
                             )}
                         </Button>
 
-                        {/* Button Laporan Fumigasi (Sebelumnya Statement A) */}
+                        {/* Button 1: Billing Statement (Model Modern langsung tanpa dropdown) */}
                         <Button
                             type="button"
                             size="sm"
                             disabled={isPrinting}
-                            onClick={() => handlePrint('A')}
-                            className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
-                            title="Cetak Laporan Fumigasi"
+                            onClick={() => handlePrint('B')}
+                            className="bg-gray-900 hover:bg-black text-white font-semibold text-xs h-9 px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
+                            title="Cetak Billing Statement Resmi (Model Modern)"
                         >
                             <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : ''}`} />
-                            <span>Laporan Fumigasi</span>
+                            <span>Billing Statement</span>
                         </Button>
 
-                        {/* Dropdown Button Billing Statement B */}
+                        {/* Button 2: Dropdown Menu Laporan */}
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button
@@ -1414,69 +1420,53 @@ export default function KarantinaIndex({
                                     size="sm"
                                     disabled={isPrinting}
                                     variant="outline"
-                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs whitespace-nowrap"
-                                    title="Pilih dan Cetak Billing Statement Format B"
+                                    className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-3 gap-1.5 shadow-2xs whitespace-nowrap"
+                                    title="Pilih dan Cetak Format Laporan"
                                 >
-                                    <Printer className="h-3.5 w-3.5 text-gray-600" />
-                                    <span>Statement B</span>
+                                    <FileText className="h-3.5 w-3.5 text-blue-600" />
+                                    <span>Laporan</span>
                                     <ChevronDown className="h-3 w-3 text-gray-400 ml-0.5" />
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="w-72">
+                            <DropdownMenuContent align="end" className="w-80">
                                 <DropdownMenuItem
-                                    onClick={() => handlePrint('B')}
+                                    onClick={() => handlePrint('A')}
                                     className="cursor-pointer flex flex-col items-start py-2.5 px-3"
                                 >
                                     <div className="font-semibold text-xs text-gray-900 flex items-center gap-1.5">
                                         <Printer className="h-3.5 w-3.5 text-blue-600" />
-                                        <span>Versi 2 (Modern - A4 Landscape)</span>
+                                        <span>Laporan Fumigasi</span>
                                     </div>
                                     <span className="text-[11px] text-gray-500 mt-1 pl-5">
-                                        Desain modern, rekap total, terbilang resmi & kolom tanda tangan
+                                        Format lengkap dengan kolom Customer & Fumigator
                                     </span>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
-                                    onClick={() => handlePrint('B_CLASSIC')}
+                                    onClick={() => handlePrint('D')}
+                                    className="cursor-pointer flex flex-col items-start py-2.5 px-3 border-t border-gray-100"
+                                >
+                                    <div className="font-semibold text-xs text-gray-900 flex items-center gap-1.5">
+                                        <Printer className="h-3.5 w-3.5 text-emerald-600" />
+                                        <span>Laporan Fumigasi B</span>
+                                    </div>
+                                    <span className="text-[11px] text-gray-500 mt-1 pl-5">
+                                        Format Laporan Fumigasi tanpa kolom Customer
+                                    </span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem
+                                    onClick={() => handlePrint('C')}
                                     className="cursor-pointer flex flex-col items-start py-2.5 px-3 border-t border-gray-100"
                                 >
                                     <div className="font-semibold text-xs text-gray-700 flex items-center gap-1.5">
-                                        <Printer className="h-3.5 w-3.5 text-gray-500" />
-                                        <span>Versi 1 (Klasik - A4 Landscape)</span>
+                                        <Printer className="h-3.5 w-3.5 text-gray-600" />
+                                        <span>Laporan Pemeriksaan On-Chassis</span>
                                     </div>
                                     <span className="text-[11px] text-gray-500 mt-1 pl-5">
-                                        Format tabel standar klasik / retro
+                                        Format pemeriksaan tanpa Customer & Fumigator
                                     </span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
-
-                        {/* Button Laporan Pemeriksaan On-Chassis (Sebelumnya Statement C) */}
-                        <Button
-                            type="button"
-                            size="sm"
-                            disabled={isPrinting}
-                            onClick={() => handlePrint('C')}
-                            variant="outline"
-                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
-                            title="Cetak Laporan Pemeriksaan On-Chassis"
-                        >
-                            <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : 'text-gray-600'}`} />
-                            <span>Laporan Pemeriksaan On-Chassis</span>
-                        </Button>
-
-                        {/* Button Billing Statement D (Format seperti Laporan Fumigasi tanpa Customer) */}
-                        <Button
-                            type="button"
-                            size="sm"
-                            disabled={isPrinting}
-                            onClick={() => handlePrint('D')}
-                            variant="outline"
-                            className="border-gray-300 text-gray-800 bg-white hover:bg-gray-50 font-semibold text-xs h-9 px-2.5 sm:px-3 gap-1.5 shadow-2xs disabled:opacity-70 whitespace-nowrap"
-                            title="Cetak Billing Statement D (Format seperti Laporan Fumigasi tanpa Customer)"
-                        >
-                            <Printer className={`h-3.5 w-3.5 ${isPrinting ? 'animate-spin' : 'text-gray-600'}`} />
-                            <span>Statement D</span>
-                        </Button>
                     </div>
                 </div>
 

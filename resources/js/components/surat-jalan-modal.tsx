@@ -441,18 +441,18 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             min-height: 28mm;
         }
         .m-footer-notice {
-            width: 66mm;
+            width: 70mm;
             border-right: 2px solid #000;
             padding: 2mm 3mm;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 1mm;
+            gap: 1.2mm;
             background: #ffffff;
             box-sizing: border-box;
         }
         .m-notice-title {
-            font-size: 8.5pt;
+            font-size: 9.5pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
@@ -461,8 +461,8 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             line-height: 1.15;
         }
         .m-notice-body {
-            font-size: 7.5pt;
-            font-weight: 800;
+            font-size: 8.5pt;
+            font-weight: 900;
             line-height: 1.25;
             color: #000000;
             margin-top: 0.5mm;
@@ -1399,9 +1399,9 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
 
                                         {/* Row 5: Modern Footer & Signatures */}
                                         <div className="flex-[1.4] min-h-[95px] flex items-stretch divide-x-2 divide-black">
-                                            <div className="w-[260px] sm:w-[280px] p-2 bg-white flex flex-col justify-start gap-1">
-                                                <div className="text-[10px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
-                                                <div className="text-[8.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                                            <div className="w-[280px] sm:w-[300px] p-2 bg-white flex flex-col justify-start gap-1">
+                                                <div className="text-[11px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
+                                                <div className="text-[10px] font-black text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
                                             </div>
                                             <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
                                                 <div className="text-[10px] font-black uppercase text-black">DISERAHKAN OLEH</div>

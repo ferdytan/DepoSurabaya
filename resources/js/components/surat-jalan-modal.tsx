@@ -307,18 +307,19 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             line-height: 1.1;
         }
 
-        /* Row 2: Customer & Shipper Banner (2 Kolom Terpisah, Rata Kiri dari Huruf Pertama) */
+        /* Row 2: Customer & Shipper Banner (2 Kolom Terpisah, Label di Atas, Nama di Bawah) */
         .m-row-party {
             display: flex;
             border-bottom: 2px solid #000;
             background: #ffffff;
             flex-shrink: 0;
-            min-height: 8.5mm;
+            min-height: 11mm;
         }
         .m-party-col {
             flex: 1;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
             padding: 1.5mm 3mm;
             box-sizing: border-box;
             min-width: 0;
@@ -326,24 +327,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         .m-party-col:first-child {
             border-right: 2px solid #000;
         }
-        .m-party-lbl {
-            font-size: 8.5pt;
-            font-weight: 900;
-            color: #000000;
-            margin-right: 1.5mm;
-            white-space: nowrap;
-            flex-shrink: 0;
-            line-height: 1.25;
-        }
         .m-party-val {
-            flex: 1;
-            font-size: 10pt;
+            font-size: 10.5pt;
             font-weight: 900;
             color: #000000;
             text-transform: uppercase;
             letter-spacing: 0.1px;
-            line-height: 1.25;
+            line-height: 1.2;
             word-break: break-word;
+            margin-top: 0.8mm;
             text-align: left;
         }
 
@@ -541,15 +533,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     </div>
                 </div>
 
-                <!-- Row 2: Customer & Shipper Banner (2 Kolom Terpisah) -->
+                <!-- Row 2: Customer & Shipper Banner (2 Kolom, Label di Atas) -->
                 <div class="m-row-party">
                     <div class="m-party-col">
-                        <span class="m-party-lbl">CUSTOMER:</span>
-                        <span class="m-party-val">${customerName || '-'}</span>
+                        <div class="m-lbl">CUSTOMER</div>
+                        <div class="m-party-val">${customerName || '-'}</div>
                     </div>
                     <div class="m-party-col">
-                        <span class="m-party-lbl">SHIPPER:</span>
-                        <span class="m-party-val">${shipperName ? `(${shipperName})` : '-'}</span>
+                        <div class="m-lbl">SHIPPER</div>
+                        <div class="m-party-val">${shipperName ? (shipperName.startsWith('(') ? shipperName : `(${shipperName})`) : '-'}</div>
                     </div>
                 </div>
 
@@ -1330,19 +1322,19 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                             </div>
                                         </div>
 
-                                        {/* Row 2: Customer & Shipper Banner (2 Kolom Terpisah, Rata Kiri dari Huruf Pertama) */}
-                                        <div className="shrink-0 border-b-2 border-black grid grid-cols-2 divide-x-2 divide-black bg-white min-h-[38px]">
-                                            <div className="px-3 py-1.5 flex items-start gap-1.5 min-w-0">
-                                                <span className="text-[10px] font-black text-black shrink-0 leading-tight">CUSTOMER:</span>
-                                                <span className="flex-1 text-[11.5px] font-black text-black uppercase tracking-tight leading-tight break-words text-left">
+                                        {/* Row 2: Customer & Shipper Banner (2 Kolom Terpisah, Label di Atas, Nama di Bawah) */}
+                                        <div className="shrink-0 border-b-2 border-black grid grid-cols-2 divide-x-2 divide-black bg-white min-h-[44px]">
+                                            <div className="px-3 py-1.5 flex flex-col justify-center min-w-0">
+                                                <div className="text-[10px] uppercase font-black text-black tracking-wide leading-tight">CUSTOMER</div>
+                                                <div className="text-[12px] font-black text-black uppercase tracking-tight leading-tight break-words mt-0.5 text-left">
                                                     {customerName || '-'}
-                                                </span>
+                                                </div>
                                             </div>
-                                            <div className="px-3 py-1.5 flex items-start gap-1.5 min-w-0">
-                                                <span className="text-[10px] font-black text-black shrink-0 leading-tight">SHIPPER:</span>
-                                                <span className="flex-1 text-[11.5px] font-black text-black uppercase tracking-tight leading-tight break-words text-left">
-                                                    {shipperName ? `(${shipperName})` : '-'}
-                                                </span>
+                                            <div className="px-3 py-1.5 flex flex-col justify-center min-w-0">
+                                                <div className="text-[10px] uppercase font-black text-black tracking-wide leading-tight">SHIPPER</div>
+                                                <div className="text-[12px] font-black text-black uppercase tracking-tight leading-tight break-words mt-0.5 text-left">
+                                                    {shipperName ? (shipperName.startsWith('(') ? shipperName : `(${shipperName})`) : '-'}
+                                                </div>
                                             </div>
                                         </div>
 

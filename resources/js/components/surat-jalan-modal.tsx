@@ -260,24 +260,30 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             white-space: nowrap;
         }
 
-        /* Unified Master Form Frame (Rapat, Kokoh, Tanpa Celah Kosong) */
+        /* Unified Master Form Frame (Mengisi 1 Halaman Penuh Secara Proporsional) */
         .m-unified-frame {
             border: 2px solid #000;
             margin-top: 2mm;
             background: #ffffff;
             display: flex;
             flex-direction: column;
+            flex: 1 !important;
         }
 
         /* Row 1: Logistics Bar (4 Kolom Terpadu) */
         .m-row-logistics {
             display: flex;
             border-bottom: 2px solid #000;
+            flex-shrink: 0;
+            min-height: 12mm;
         }
         .m-col-log {
             flex: 1;
-            padding: 1.2mm 2.5mm;
+            padding: 1.5mm 2.5mm;
             border-right: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .m-col-log:last-child {
             border-right: none;
@@ -294,71 +300,72 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             font-size: 11pt;
             font-weight: 900;
             color: #000000;
-            margin-top: 0.8mm;
+            margin-top: 1mm;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             line-height: 1.1;
         }
 
-        /* Row 2: Customer & Shipper Banner */
+        /* Row 2: Customer & Shipper Banner (Full Width, Tidak Terpotong) */
         .m-row-party {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             border-bottom: 2px solid #000;
-            padding: 1.2mm 3mm;
+            padding: 2mm 3mm;
             background: #ffffff;
-            font-size: 10.5pt;
+            flex-shrink: 0;
+            gap: 1mm;
         }
-        .m-party-cust {
+        .m-party-line {
+            font-size: 11pt;
             font-weight: 900;
-            font-size: 10.5pt;
             color: #000000;
             text-transform: uppercase;
             letter-spacing: 0.2px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.25;
+            word-break: break-word;
         }
-        .m-party-ship {
+        .m-party-lbl {
+            font-size: 9.5pt;
             font-weight: 900;
-            font-size: 10.5pt;
             color: #000000;
-            text-transform: uppercase;
-            letter-spacing: 0.2px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding-left: 2mm;
+            margin-right: 1.5mm;
+        }
+        .m-party-val {
+            font-size: 11pt;
+            font-weight: 900;
+            color: #000000;
         }
 
-        /* Row 3: Hero Container Box */
+        /* Row 3: Hero Container Box (Lapang & Menonjol) */
         .m-row-hero {
             display: flex;
             border-bottom: 2px solid #000;
-            min-height: 19mm;
+            flex: 1.3;
+            min-height: 22mm;
         }
         .m-hero-left {
             flex: 1;
             border-right: 2px solid #000;
-            padding: 1.5mm 3mm;
+            padding: 2mm 3.5mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .m-hero-cont-num {
-            font-size: 26pt;
+            font-size: 28pt;
             font-weight: 900;
             letter-spacing: 0.5px;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            line-height: 1;
-            margin-top: 0.8mm;
+            line-height: 1.05;
+            margin-top: 1mm;
             color: #000000;
         }
         .m-hero-right {
             width: 58mm;
-            padding: 1.5mm 2mm;
+            padding: 2mm 2mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -367,11 +374,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             background: #ffffff;
         }
         .m-hero-size-val {
-            font-size: 18pt;
+            font-size: 20pt;
             font-weight: 900;
             letter-spacing: 0.5px;
-            line-height: 1;
-            margin-top: 0.8mm;
+            line-height: 1.05;
+            margin-top: 1mm;
             color: #000000;
         }
 
@@ -379,10 +386,11 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         .m-row-subgrid {
             display: flex;
             border-bottom: 2px solid #000;
-            min-height: 18mm;
+            flex: 1.1;
+            min-height: 20mm;
         }
         .m-sub-col {
-            padding: 1.2mm 2.5mm;
+            padding: 2mm 2.5mm;
             border-right: 2px solid #000;
             display: flex;
             flex-direction: column;
@@ -407,20 +415,20 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             flex: 1;
             display: flex;
             align-items: center;
-            margin-top: 0.8mm;
+            margin-top: 1mm;
         }
         .m-sub-val {
-            font-size: 10.5pt;
+            font-size: 11pt;
             font-weight: 900;
             color: #000000;
-            line-height: 1.2;
+            line-height: 1.25;
             word-break: break-word;
         }
         .m-layanan-val {
-            font-size: 12pt;
+            font-size: 12.5pt;
             font-weight: 900;
             text-transform: uppercase;
-            line-height: 1.15;
+            line-height: 1.2;
             letter-spacing: 0.2px;
             color: #000000;
             text-align: center;
@@ -429,15 +437,17 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         /* Row 5: Signatures & Disclaimer */
         .m-row-footer {
             display: flex;
-            height: 26mm;
+            flex: 1.4;
+            min-height: 28mm;
         }
         .m-footer-notice {
             width: 54mm;
             border-right: 2px solid #000;
-            padding: 1.5mm 2.5mm;
+            padding: 2mm 2.5mm;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 1.5mm;
             background: #ffffff;
         }
         .m-notice-title {
@@ -446,13 +456,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-transform: uppercase;
             color: #000000;
             text-decoration: underline;
-            margin-bottom: 0.5mm;
             letter-spacing: 0.2px;
+            line-height: 1.2;
         }
         .m-notice-body {
             font-size: 8.5pt;
             font-weight: 800;
-            line-height: 1.25;
+            line-height: 1.35;
             color: #000000;
         }
         .m-sig-col {
@@ -461,7 +471,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 1.5mm 1mm;
+            padding: 2mm 1.5mm 1.5mm 1.5mm;
             text-align: center;
             background: #ffffff;
         }
@@ -477,7 +487,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-sig-line {
             border-bottom: 2px dotted #000;
-            margin: 0 2.5mm 0.8mm 2.5mm;
+            margin: 0 2.5mm 1mm 2.5mm;
         }
     </style>
 </head>
@@ -522,8 +532,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
 
                 <!-- Row 2: Customer & Shipper Banner -->
                 <div class="m-row-party">
-                    <div class="m-party-cust">CUSTOMER: ${customerName}</div>
-                    ${shipperName ? `<div class="m-party-ship">SHIPPER: (${shipperName})</div>` : ''}
+                    <div class="m-party-line">
+                        <span class="m-party-lbl">CUSTOMER:</span>
+                        <span class="m-party-val">${customerName}</span>
+                    </div>
+                    ${shipperName ? `
+                    <div class="m-party-line">
+                        <span class="m-party-lbl">SHIPPER:</span>
+                        <span class="m-party-val">(${shipperName})</span>
+                    </div>` : ''}
                 </div>
 
                 <!-- Row 3: Hero Container Box -->
@@ -1281,42 +1298,44 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                         </div>
                                     </div>
 
-                                    {/* Master Unified Form Frame (Rapat, Kokoh, Tanpa Celah Kosong) */}
-                                    <div className="border-2 border-black bg-white flex flex-col mt-2">
+                                    {/* Master Unified Form Frame (Mengisi 1 Halaman Penuh Secara Proporsional) */}
+                                    <div className="border-2 border-black bg-white flex flex-col mt-2 flex-1">
                                         {/* Row 1: Logistics Bar (4 Kolom Terpadu) */}
-                                        <div className="grid grid-cols-4 border-b-2 border-black divide-x-2 divide-black">
-                                            <div className="p-1.5">
+                                        <div className="shrink-0 grid grid-cols-4 border-b-2 border-black divide-x-2 divide-black min-h-[46px]">
+                                            <div className="p-1.5 flex flex-col justify-center">
                                                 <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">TANGGAL</div>
                                                 <div className="text-[13px] font-black text-black truncate mt-0.5">{tanggal || '-'}</div>
                                             </div>
-                                            <div className="p-1.5">
+                                            <div className="p-1.5 flex flex-col justify-center">
                                                 <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">JAM KELUAR</div>
                                                 <div className="text-[13px] font-black text-black truncate mt-0.5">{jamKeluar || '-'}</div>
                                             </div>
-                                            <div className="p-1.5">
+                                            <div className="p-1.5 flex flex-col justify-center">
                                                 <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">NO. POLISI</div>
                                                 <div className="text-[13px] font-black text-black truncate mt-0.5">{noPol || '-'}</div>
                                             </div>
-                                            <div className="p-1.5">
+                                            <div className="p-1.5 flex flex-col justify-center">
                                                 <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">TUJUAN</div>
                                                 <div className="text-[13px] font-black text-black truncate mt-0.5">{tujuan || '-'}</div>
                                             </div>
                                         </div>
 
-                                        {/* Row 2: Customer & Shipper Banner */}
-                                        <div className="flex justify-between items-center border-b-2 border-black px-2.5 py-1.5 text-[12.5px] bg-white">
-                                            <div className="font-black text-black uppercase tracking-tight truncate">
-                                                CUSTOMER: <span className="font-black">{customerName}</span>
+                                        {/* Row 2: Customer & Shipper Banner (Full Width, Tidak Terpotong) */}
+                                        <div className="shrink-0 border-b-2 border-black px-3 py-1.5 flex flex-col justify-center gap-0.5 bg-white text-[12.5px]">
+                                            <div className="font-black text-black uppercase tracking-tight leading-tight">
+                                                <span className="text-[11px] font-bold text-gray-700 mr-1.5">CUSTOMER:</span>
+                                                {customerName}
                                             </div>
                                             {shipperName && (
-                                                <div className="font-black text-black uppercase tracking-tight truncate pl-2">
-                                                    SHIPPER: ({shipperName})
+                                                <div className="font-black text-black uppercase tracking-tight leading-tight">
+                                                    <span className="text-[11px] font-bold text-gray-700 mr-1.5">SHIPPER:</span>
+                                                    ({shipperName})
                                                 </div>
                                             )}
                                         </div>
 
                                         {/* Row 3: Hero Container Box */}
-                                        <div className="flex border-b-2 border-black min-h-[68px]">
+                                        <div className="flex-[1.3] min-h-[75px] border-b-2 border-black flex">
                                             <div className="flex-1 border-r-2 border-black p-2 flex flex-col justify-center">
                                                 <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">NO. CONTAINER</div>
                                                 <div className="text-2xl sm:text-3xl font-black tracking-wider text-black mt-0.5 leading-none">
@@ -1330,7 +1349,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                         </div>
 
                                         {/* Row 4: Subgrid Muatan & Layanan */}
-                                        <div className="flex border-b-2 border-black min-h-[64px]">
+                                        <div className="flex-[1.1] min-h-[70px] border-b-2 border-black flex">
                                             <div className="flex-1 border-r-2 border-black grid grid-cols-12 divide-x-2 divide-black bg-white">
                                                 <div className="col-span-5 px-2 pt-1 pb-1.5 flex flex-col justify-between">
                                                     <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">
@@ -1376,7 +1395,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                         </div>
 
                                         {/* Row 5: Modern Footer & Signatures */}
-                                        <div className="flex h-[95px] items-stretch divide-x-2 divide-black">
+                                        <div className="flex-[1.4] min-h-[95px] flex items-stretch divide-x-2 divide-black">
                                             <div className="w-[220px] sm:w-[240px] p-2 bg-white flex flex-col justify-between">
                                                 <div className="text-[10.5px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
                                                 <div className="text-[9.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>

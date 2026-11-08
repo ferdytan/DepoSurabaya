@@ -138,7 +138,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     // Generate standalone, self-contained HTML for printing (guaranteed 1 page, 210mm x 140mm)
     const generatePrintHtml = () => {
         const logoImgTag = showLogo
-            ? `<img src="${window.location.origin}/logo.png" class="depo-logo" alt="Logo" style="height: 32px; max-height: 32px; width: 38px; max-width: 38px; object-fit: contain; margin-right: 6px;" />`
+            ? `<img src="${window.location.origin}/logo.png" class="depo-logo" alt="Logo" style="height: 30px; max-height: 30px; width: 36px; max-width: 36px; object-fit: contain;" />`
             : '';
 
         const { pageWidthMm, pageHeightMm } = currentDim;
@@ -207,42 +207,57 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             align-items: center;
             border-bottom: 2px solid #000;
             padding-bottom: 1.2mm;
+            gap: 2mm;
         }
         .m-brand {
             display: flex;
             align-items: center;
-            gap: 2.5mm;
+            gap: 2mm;
+            min-width: 0;
+            flex: 1;
         }
         .depo-logo {
-            height: 32px !important;
-            max-height: 32px !important;
-            width: 38px !important;
+            height: 30px !important;
+            max-height: 30px !important;
+            width: 36px !important;
+            max-width: 36px !important;
             object-fit: contain !important;
+            flex-shrink: 0;
             filter: grayscale(100%) contrast(150%);
         }
+        .m-brand-info {
+            min-width: 0;
+            flex: 1;
+        }
         .m-brand-title {
-            font-size: 12.5pt;
+            font-size: 12pt;
             font-weight: 900;
             letter-spacing: -0.2px;
             line-height: 1.1;
             color: #000000;
+            white-space: nowrap;
         }
         .m-brand-desc {
-            font-size: 9pt;
+            font-size: 7.6pt;
             font-weight: 800;
             color: #000000;
             line-height: 1.2;
             margin-top: 1px;
+            white-space: nowrap;
+            letter-spacing: -0.25px;
         }
         .m-doc-box {
             text-align: right;
+            flex-shrink: 0;
+            margin-left: 2mm;
         }
         .m-doc-title {
-            font-size: 18pt;
+            font-size: 15.5pt;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             line-height: 1;
             color: #000000;
+            white-space: nowrap;
         }
 
         /* 4-Box Logistics Bar */
@@ -497,7 +512,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                 <div class="m-header">
                     <div class="m-brand">
                         ${logoImgTag}
-                        <div>
+                        <div class="m-brand-info">
                             <div class="m-brand-title">PT. DEPO SURABAYA SEJAHTERA</div>
                             <div class="m-brand-desc">Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482</div>
                         </div>
@@ -666,39 +681,45 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         .company-wrapper {
             display: flex;
             align-items: flex-start;
-            max-width: 82mm;
+            max-width: 85mm;
+            min-width: 0;
         }
         .depo-logo {
-            height: 32px !important;
-            max-height: 32px !important;
-            width: 38px !important;
-            max-width: 38px !important;
+            height: 30px !important;
+            max-height: 30px !important;
+            width: 36px !important;
+            max-width: 36px !important;
             object-fit: contain !important;
             margin-right: 6px !important;
+            flex-shrink: 0;
             filter: grayscale(100%) contrast(150%);
         }
         .company-text {
             flex: 1;
+            min-width: 0;
         }
         .company-name {
-            font-size: 13pt;
+            font-size: 12.5pt;
             font-weight: 900;
             letter-spacing: 0px;
             line-height: 1.15;
             color: #000000;
+            white-space: nowrap;
         }
         .company-address {
-            font-size: 9pt;
+            font-size: 8.5pt;
             font-weight: 800;
             line-height: 1.25;
             margin-top: 1px;
             color: #000000;
+            white-space: nowrap;
         }
         .company-phone {
-            font-size: 8.5pt;
+            font-size: 8pt;
             font-weight: 800;
             line-height: 1.2;
             color: #000000;
+            white-space: nowrap;
         }
         .customer-info {
             margin-top: 1.5mm;
@@ -724,6 +745,8 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-align: center;
             align-self: flex-start;
             margin: 0 1.5mm;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         .title-text {
             font-size: 12.5pt;
@@ -731,6 +754,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             letter-spacing: 2px;
             line-height: 1;
             color: #000000;
+            white-space: nowrap;
         }
 
         /* Meta Box Right */
@@ -1256,27 +1280,27 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                 <div className="w-full h-full flex flex-col justify-between">
                                     {/* Modern Header */}
                                     <div>
-                                        <div className="flex justify-between items-center border-b-2 border-black pb-1.5">
-                                            <div className="flex items-center gap-2.5">
+                                        <div className="flex justify-between items-center border-b-2 border-black pb-1.5 gap-2">
+                                            <div className="flex items-center gap-2 min-w-0 flex-1">
                                                 {showLogo && (
                                                     <img
                                                         src="/logo.png"
                                                         alt="Logo Depo"
-                                                        className="h-8 w-auto max-w-[38px] object-contain filter grayscale contrast-150 shrink-0"
-                                                        style={{ maxHeight: '32px', maxWidth: '38px' }}
+                                                        className="h-7 w-auto max-w-[36px] object-contain filter grayscale contrast-150 shrink-0"
+                                                        style={{ maxHeight: '30px', maxWidth: '36px' }}
                                                     />
                                                 )}
-                                                <div>
-                                                    <div className="font-black text-[14px] tracking-tight text-black leading-tight">
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="font-black text-[13.5px] tracking-tight text-black leading-tight whitespace-nowrap">
                                                         PT. DEPO SURABAYA SEJAHTERA
                                                     </div>
-                                                    <div className="text-[11px] font-bold text-black leading-tight mt-0.5">
+                                                    <div className="text-[10px] sm:text-[10.5px] font-bold text-black leading-tight mt-0.5 whitespace-nowrap tracking-tight">
                                                         Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="text-right">
-                                                <div className="font-black text-xl tracking-[2px] text-black leading-none">
+                                            <div className="text-right shrink-0 ml-2">
+                                                <div className="font-black text-lg sm:text-xl tracking-[1.5px] text-black leading-none whitespace-nowrap">
                                                     SURAT JALAN
                                                 </div>
                                             </div>
@@ -1405,31 +1429,31 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     <div>
                                         <div className="flex justify-between items-start">
                                             {/* Identitas Perusahaan */}
-                                            <div className="flex items-start max-w-[340px]">
+                                            <div className="flex items-start max-w-[340px] min-w-0">
                                                 {showLogo && (
                                                     <img
                                                         src="/logo.png"
                                                         alt="Logo Depo"
-                                                        className="h-8 w-auto max-w-[38px] object-contain filter grayscale contrast-150 shrink-0 mr-2"
-                                                        style={{ maxHeight: '32px', maxWidth: '38px' }}
+                                                        className="h-7 w-auto max-w-[36px] object-contain filter grayscale contrast-150 shrink-0 mr-2"
+                                                        style={{ maxHeight: '30px', maxWidth: '36px' }}
                                                     />
                                                 )}
-                                                <div className="company-text">
-                                                    <div className="font-black text-[14px] tracking-normal text-black leading-tight">
+                                                <div className="company-text min-w-0">
+                                                    <div className="font-black text-[13.5px] tracking-normal text-black leading-tight whitespace-nowrap">
                                                         PT. DEPO SURABAYA SEJAHTERA
                                                     </div>
-                                                    <div className="font-bold text-[11px] text-black leading-snug mt-0.5">
+                                                    <div className="font-bold text-[10.5px] text-black leading-snug mt-0.5 whitespace-nowrap">
                                                         Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1)
                                                     </div>
-                                                    <div className="font-bold text-[10.5px] text-black leading-snug">
+                                                    <div className="font-bold text-[10px] text-black leading-snug whitespace-nowrap">
                                                         Telp. 031-353 9484, 031-3539485 &nbsp; Fax. 031-3539482
                                                     </div>
                                                 </div>
                                             </div>
 
                                             {/* Box Judul SURAT JALAN */}
-                                            <div className="border-2 border-black px-3 py-1 text-center self-start">
-                                                <div className="font-black text-sm tracking-[2px] text-black">
+                                            <div className="border-2 border-black px-3 py-1 text-center self-start shrink-0 whitespace-nowrap">
+                                                <div className="font-black text-sm tracking-[2px] text-black whitespace-nowrap">
                                                     SURAT JALAN
                                                 </div>
                                             </div>

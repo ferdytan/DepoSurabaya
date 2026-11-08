@@ -441,29 +441,31 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             min-height: 28mm;
         }
         .m-footer-notice {
-            width: 54mm;
+            width: 66mm;
             border-right: 2px solid #000;
-            padding: 2mm 2.5mm;
+            padding: 2mm 3mm;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 1.5mm;
+            gap: 1mm;
             background: #ffffff;
+            box-sizing: border-box;
         }
         .m-notice-title {
-            font-size: 9pt;
+            font-size: 8.5pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
             text-decoration: underline;
             letter-spacing: 0.2px;
-            line-height: 1.2;
+            line-height: 1.15;
         }
         .m-notice-body {
-            font-size: 8.5pt;
+            font-size: 7.5pt;
             font-weight: 800;
-            line-height: 1.35;
+            line-height: 1.25;
             color: #000000;
+            margin-top: 0.5mm;
         }
         .m-sig-col {
             flex: 1;
@@ -474,12 +476,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             padding: 2mm 1.5mm 1.5mm 1.5mm;
             text-align: center;
             background: #ffffff;
+            box-sizing: border-box;
         }
         .m-sig-col:last-child {
             border-right: none;
         }
         .m-sig-role {
-            font-size: 8.8pt;
+            font-size: 8.5pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
@@ -487,7 +490,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .m-sig-line {
             border-bottom: 2px dotted #000;
-            margin: 0 2.5mm 1mm 2.5mm;
+            margin: 0 2mm 1mm 2mm;
         }
     </style>
 </head>
@@ -1396,20 +1399,20 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
 
                                         {/* Row 5: Modern Footer & Signatures */}
                                         <div className="flex-[1.4] min-h-[95px] flex items-stretch divide-x-2 divide-black">
-                                            <div className="w-[220px] sm:w-[240px] p-2 bg-white flex flex-col justify-between">
-                                                <div className="text-[10.5px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
-                                                <div className="text-[9.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                                            <div className="w-[260px] sm:w-[280px] p-2 bg-white flex flex-col justify-start gap-1">
+                                                <div className="text-[10px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
+                                                <div className="text-[8.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
                                             </div>
                                             <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
-                                                <div className="text-[10.5px] font-black uppercase text-black">DISERAHKAN OLEH</div>
+                                                <div className="text-[10px] font-black uppercase text-black">DISERAHKAN OLEH</div>
                                                 <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
                                             </div>
                                             <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
-                                                <div className="text-[10.5px] font-black uppercase text-black">SOPIR TRUK</div>
+                                                <div className="text-[10px] font-black uppercase text-black">SOPIR TRUK</div>
                                                 <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
                                             </div>
                                             <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
-                                                <div className="text-[10.5px] font-black uppercase text-black">PENERIMA BARANG / DEPO</div>
+                                                <div className="text-[10px] font-black uppercase text-black">PENERIMA BARANG / DEPO</div>
                                                 <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
                                             </div>
                                         </div>

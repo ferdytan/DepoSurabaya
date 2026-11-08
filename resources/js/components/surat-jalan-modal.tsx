@@ -192,7 +192,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             max-height: ${pageHeightMm}mm !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: space-between !important;
+            justify-content: flex-start !important;
             overflow: hidden !important;
             page-break-before: avoid !important;
             page-break-inside: avoid !important;
@@ -205,8 +205,8 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #000;
-            padding-bottom: 1.2mm;
+            border-bottom: 2.5px solid #000;
+            padding-bottom: 1.5mm;
             gap: 2mm;
         }
         .m-brand {
@@ -230,7 +230,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             flex: 1;
         }
         .m-brand-title {
-            font-size: 12pt;
+            font-size: 12.5pt;
             font-weight: 900;
             letter-spacing: -0.2px;
             line-height: 1.1;
@@ -238,7 +238,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             white-space: nowrap;
         }
         .m-brand-desc {
-            font-size: 7.6pt;
+            font-size: 7.8pt;
             font-weight: 800;
             color: #000000;
             line-height: 1.2;
@@ -252,7 +252,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             margin-left: 2mm;
         }
         .m-doc-title {
-            font-size: 15.5pt;
+            font-size: 16pt;
             font-weight: 900;
             letter-spacing: 1.5px;
             line-height: 1;
@@ -260,111 +260,105 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             white-space: nowrap;
         }
 
-        /* 4-Box Logistics Bar */
-        .m-logistics-bar {
-            display: flex;
-            gap: 1.5mm;
-            margin-top: 1.2mm;
-        }
-        .m-log-card {
-            flex: 1;
+        /* Unified Master Form Frame (Rapat, Kokoh, Tanpa Celah Kosong) */
+        .m-unified-frame {
             border: 2px solid #000;
-            padding: 1.2mm 2mm;
+            margin-top: 2mm;
             background: #ffffff;
+            display: flex;
+            flex-direction: column;
         }
-        .m-log-card:last-child {
-            flex: 1.2;
+
+        /* Row 1: Logistics Bar (4 Kolom Terpadu) */
+        .m-row-logistics {
+            display: flex;
+            border-bottom: 2px solid #000;
         }
-        .m-log-label {
-            font-size: 9.5pt;
-            text-transform: uppercase;
+        .m-col-log {
+            flex: 1;
+            padding: 1.2mm 2.5mm;
+            border-right: 2px solid #000;
+        }
+        .m-col-log:last-child {
+            border-right: none;
+        }
+        .m-lbl {
+            font-size: 8.5pt;
             font-weight: 900;
+            text-transform: uppercase;
             color: #000000;
             letter-spacing: 0.3px;
+            line-height: 1;
         }
-        .m-log-value {
+        .m-val-log {
             font-size: 11pt;
             font-weight: 900;
             color: #000000;
-            margin-top: 0.5px;
+            margin-top: 0.8mm;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.1;
+        }
+
+        /* Row 2: Customer & Shipper Banner */
+        .m-row-party {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #000;
+            padding: 1.2mm 3mm;
+            background: #ffffff;
+            font-size: 10.5pt;
+        }
+        .m-party-cust {
+            font-weight: 900;
+            font-size: 10.5pt;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
-        /* Customer Banner */
-        .m-party-banner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #ffffff;
-            border: 2px solid #000;
-            border-left: 5px solid #000;
-            padding: 1.2mm 3mm;
-            margin-top: 1.2mm;
-            font-size: 11pt;
-        }
-        .m-party-cust {
-            font-weight: 900;
-            font-size: 11pt;
-            color: #000000;
-            text-transform: uppercase;
-            letter-spacing: 0.2px;
-        }
         .m-party-ship {
             font-weight: 900;
-            font-size: 11pt;
+            font-size: 10.5pt;
             color: #000000;
             text-transform: uppercase;
             letter-spacing: 0.2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 2mm;
         }
 
-        /* Hero Container Display */
-        .m-container-hero {
-            border: 2px solid #000;
-            margin-top: 1.2mm;
-            background: #ffffff;
+        /* Row 3: Hero Container Box */
+        .m-row-hero {
             display: flex;
-            flex-direction: column;
-        }
-        .m-hero-row {
-            display: flex;
-            width: 100%;
-        }
-        .m-hero-row-top {
             border-bottom: 2px solid #000;
-            min-height: 18mm;
+            min-height: 19mm;
         }
-        .m-hero-row-bottom {
-            min-height: 16mm;
-        }
-        .m-cont-box {
+        .m-hero-left {
             flex: 1;
             border-right: 2px solid #000;
-            padding: 1.2mm 3mm;
+            padding: 1.5mm 3mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        .m-cont-lbl {
-            font-size: 9.5pt;
-            font-weight: 900;
-            color: #000000;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-        }
-        .m-cont-number {
-            font-size: 25pt;
+        .m-hero-cont-num {
+            font-size: 26pt;
             font-weight: 900;
             letter-spacing: 0.5px;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            line-height: 1.05;
-            margin-top: 0.5mm;
+            line-height: 1;
+            margin-top: 0.8mm;
             color: #000000;
         }
-        .m-size-box {
+        .m-hero-right {
             width: 58mm;
-            padding: 1.2mm 1.5mm;
+            padding: 1.5mm 2mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -372,108 +366,87 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-align: center;
             background: #ffffff;
         }
-        .m-size-val {
-            font-size: 17pt;
+        .m-hero-size-val {
+            font-size: 18pt;
             font-weight: 900;
             letter-spacing: 0.5px;
-            line-height: 1.05;
-            margin-top: 0.5mm;
+            line-height: 1;
+            margin-top: 0.8mm;
             color: #000000;
         }
-        .m-subgrid-box {
-            flex: 1;
-            border-right: 2px solid #000;
+
+        /* Row 4: Subgrid Muatan & Layanan */
+        .m-row-subgrid {
             display: flex;
+            border-bottom: 2px solid #000;
+            min-height: 18mm;
         }
-        .m-subcol {
-            padding: 1mm 2mm;
+        .m-sub-col {
+            padding: 1.2mm 2.5mm;
             border-right: 2px solid #000;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
         }
-        .m-subcol:last-child {
-            border-right: none;
+        .m-sub-isi {
+            flex: 1.6;
         }
-        .m-subcol-isi {
-            flex: 1.5;
-        }
-        .m-subcol-segel {
+        .m-sub-segel {
             flex: 1;
         }
-        .m-subcol-ket {
-            flex: 1.3;
+        .m-sub-ket {
+            flex: 1.2;
         }
-        .m-subcol-lbl {
-            font-size: 9.5pt;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #000000;
-            letter-spacing: 0.2px;
-            line-height: 1.1;
+        .m-sub-layanan {
+            width: 58mm;
+            border-right: none;
+            align-items: center;
+            text-align: center;
         }
-        .m-subcol-val-wrap {
+        .m-sub-val-wrap {
             flex: 1;
             display: flex;
             align-items: center;
+            margin-top: 0.8mm;
         }
-        .m-subcol-val {
+        .m-sub-val {
             font-size: 10.5pt;
             font-weight: 900;
             color: #000000;
             line-height: 1.2;
             word-break: break-word;
-            white-space: normal;
         }
-        .m-service-box {
-            width: 58mm;
-            padding: 1mm 1.5mm;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            background: #ffffff;
-        }
-        .m-service-val-wrap {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .m-service-val {
-            font-size: 12.5pt;
+        .m-layanan-val {
+            font-size: 12pt;
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1.15;
             letter-spacing: 0.2px;
             color: #000000;
+            text-align: center;
         }
 
-        /* Modern Signatures */
-        .m-footer-section {
+        /* Row 5: Signatures & Disclaimer */
+        .m-row-footer {
             display: flex;
-            gap: 2mm;
-            margin-top: 1.2mm;
-            align-items: stretch;
-            height: 23mm;
+            height: 26mm;
         }
-        .m-notice-box {
+        .m-footer-notice {
             width: 54mm;
-            border: 2px solid #000;
-            padding: 1.5mm 2mm;
-            background: #ffffff;
+            border-right: 2px solid #000;
+            padding: 1.5mm 2.5mm;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background: #ffffff;
         }
         .m-notice-title {
-            font-size: 9.5pt;
+            font-size: 9pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
             text-decoration: underline;
-            margin-bottom: 0.8mm;
+            margin-bottom: 0.5mm;
             letter-spacing: 0.2px;
         }
         .m-notice-body {
@@ -482,25 +455,29 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             line-height: 1.25;
             color: #000000;
         }
-        .m-sig-card {
+        .m-sig-col {
             flex: 1;
-            border: 2px solid #000;
+            border-right: 2px solid #000;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 1.2mm;
+            padding: 1.5mm 1mm;
             text-align: center;
             background: #ffffff;
         }
+        .m-sig-col:last-child {
+            border-right: none;
+        }
         .m-sig-role {
-            font-size: 9pt;
+            font-size: 8.8pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
+            letter-spacing: 0.2px;
         }
         .m-sig-line {
             border-bottom: 2px dotted #000;
-            margin: 0 3mm 0.8mm 3mm;
+            margin: 0 2.5mm 0.8mm 2.5mm;
         }
     </style>
 </head>
@@ -508,106 +485,105 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     <div class="sj-print-wrapper">
         <div class="sj-page">
             <!-- Modern Header -->
-            <div>
-                <div class="m-header">
-                    <div class="m-brand">
-                        ${logoImgTag}
-                        <div class="m-brand-info">
-                            <div class="m-brand-title">PT. DEPO SURABAYA SEJAHTERA</div>
-                            <div class="m-brand-desc">Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482</div>
-                        </div>
+            <div class="m-header">
+                <div class="m-brand">
+                    ${logoImgTag}
+                    <div class="m-brand-info">
+                        <div class="m-brand-title">PT. DEPO SURABAYA SEJAHTERA</div>
+                        <div class="m-brand-desc">Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482</div>
                     </div>
-                    <div class="m-doc-box">
-                        <div class="m-doc-title">SURAT JALAN</div>
+                </div>
+                <div class="m-doc-box">
+                    <div class="m-doc-title">SURAT JALAN</div>
+                </div>
+            </div>
+
+            <!-- Unified Master Form Frame (Rapat, Kokoh, Tanpa Celah Kosong) -->
+            <div class="m-unified-frame">
+                <!-- Row 1: Logistics Bar (4 Kolom Terpadu) -->
+                <div class="m-row-logistics">
+                    <div class="m-col-log">
+                        <div class="m-lbl">TANGGAL</div>
+                        <div class="m-val-log">${tanggal || '-'}</div>
+                    </div>
+                    <div class="m-col-log">
+                        <div class="m-lbl">JAM KELUAR</div>
+                        <div class="m-val-log">${jamKeluar || '-'}</div>
+                    </div>
+                    <div class="m-col-log">
+                        <div class="m-lbl">NO. POLISI</div>
+                        <div class="m-val-log">${noPol || '-'}</div>
+                    </div>
+                    <div class="m-col-log">
+                        <div class="m-lbl">TUJUAN</div>
+                        <div class="m-val-log">${tujuan || '-'}</div>
                     </div>
                 </div>
 
-                <!-- Logistics Cards -->
-                <div class="m-logistics-bar">
-                    <div class="m-log-card">
-                        <div class="m-log-label">TANGGAL</div>
-                        <div class="m-log-value">${tanggal || '-'}</div>
-                    </div>
-                    <div class="m-log-card">
-                        <div class="m-log-label">JAM KELUAR</div>
-                        <div class="m-log-value">${jamKeluar || '-'}</div>
-                    </div>
-                    <div class="m-log-card">
-                        <div class="m-log-label">NO. POLISI</div>
-                        <div class="m-log-value">${noPol || '-'}</div>
-                    </div>
-                    <div class="m-log-card">
-                        <div class="m-log-label">TUJUAN</div>
-                        <div class="m-log-value">${tujuan || '-'}</div>
-                    </div>
-                </div>
-
-                <!-- Customer & Shipper Banner -->
-                <div class="m-party-banner">
+                <!-- Row 2: Customer & Shipper Banner -->
+                <div class="m-row-party">
                     <div class="m-party-cust">CUSTOMER: ${customerName}</div>
                     ${shipperName ? `<div class="m-party-ship">SHIPPER: (${shipperName})</div>` : ''}
                 </div>
-            </div>
 
-            <!-- Hero Container Box -->
-            <div class="m-container-hero">
-                <div class="m-hero-row m-hero-row-top">
-                    <div class="m-cont-box">
-                        <div class="m-cont-lbl">NO. CONTAINER</div>
-                        <div class="m-cont-number">${containerNumber || '-'}</div>
+                <!-- Row 3: Hero Container Box -->
+                <div class="m-row-hero">
+                    <div class="m-hero-left">
+                        <div class="m-lbl">NO. CONTAINER</div>
+                        <div class="m-hero-cont-num">${containerNumber || '-'}</div>
                     </div>
-                    <div class="m-size-box">
-                        <div class="m-cont-lbl">JUMLAH / UKURAN</div>
-                        <div class="m-size-val">${ukuranCont}</div>
-                    </div>
-                </div>
-                <div class="m-hero-row m-hero-row-bottom">
-                    <div class="m-subgrid-box">
-                        <div class="m-subcol m-subcol-isi">
-                            <div class="m-subcol-lbl">ISI KONTAINER</div>
-                            <div class="m-subcol-val-wrap">
-                                <div class="m-subcol-val">${isi || 'FULL CONT(ON-CHASIS)'}</div>
-                            </div>
-                        </div>
-                        <div class="m-subcol m-subcol-segel">
-                            <div class="m-subcol-lbl">NO. SEGEL</div>
-                            <div class="m-subcol-val-wrap">
-                                <div class="m-subcol-val">${noSegel || '-'}</div>
-                            </div>
-                        </div>
-                        <div class="m-subcol m-subcol-ket">
-                            <div class="m-subcol-lbl">KETERANGAN</div>
-                            <div class="m-subcol-val-wrap">
-                                <div class="m-subcol-val">${keterangan || '-'}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="m-service-box">
-                        <div class="m-cont-lbl">NAMA PRODUK / LAYANAN</div>
-                        <div class="m-service-val-wrap">
-                            <div class="m-service-val">${layanan}</div>
-                        </div>
+                    <div class="m-hero-right">
+                        <div class="m-lbl">JUMLAH / UKURAN</div>
+                        <div class="m-hero-size-val">${ukuranCont}</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Modern Footer & Signatures -->
-            <div class="m-footer-section">
-                <div class="m-notice-box">
-                    <div class="m-notice-title">PERHATIAN PENTING :</div>
-                    <div class="m-notice-body">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                <!-- Row 4: Subgrid Muatan & Layanan -->
+                <div class="m-row-subgrid">
+                    <div class="m-sub-col m-sub-isi">
+                        <div class="m-lbl">ISI KONTAINER</div>
+                        <div class="m-sub-val-wrap">
+                            <div class="m-sub-val">${isi || 'FULL CONT(ON-CHASIS)'}</div>
+                        </div>
+                    </div>
+                    <div class="m-sub-col m-sub-segel">
+                        <div class="m-lbl">NO. SEGEL</div>
+                        <div class="m-sub-val-wrap">
+                            <div class="m-sub-val">${noSegel || '-'}</div>
+                        </div>
+                    </div>
+                    <div class="m-sub-col m-sub-ket">
+                        <div class="m-lbl">KETERANGAN</div>
+                        <div class="m-sub-val-wrap">
+                            <div class="m-sub-val">${keterangan || '-'}</div>
+                        </div>
+                    </div>
+                    <div class="m-sub-col m-sub-layanan">
+                        <div class="m-lbl">NAMA PRODUK / LAYANAN</div>
+                        <div class="m-sub-val-wrap" style="justify-content: center;">
+                            <div class="m-layanan-val">${layanan}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="m-sig-card">
-                    <div class="m-sig-role">DISERAHKAN OLEH</div>
-                    <div class="m-sig-line"></div>
-                </div>
-                <div class="m-sig-card">
-                    <div class="m-sig-role">SOPIR TRUK</div>
-                    <div class="m-sig-line"></div>
-                </div>
-                <div class="m-sig-card">
-                    <div class="m-sig-role">PENERIMA BARANG / DEPO</div>
-                    <div class="m-sig-line"></div>
+
+                <!-- Row 5: Signatures & Disclaimer -->
+                <div class="m-row-footer">
+                    <div class="m-footer-notice">
+                        <div class="m-notice-title">PERHATIAN PENTING :</div>
+                        <div class="m-notice-body">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                    </div>
+                    <div class="m-sig-col">
+                        <div class="m-sig-role">DISERAHKAN OLEH</div>
+                        <div class="m-sig-line"></div>
+                    </div>
+                    <div class="m-sig-col">
+                        <div class="m-sig-role">SOPIR TRUK</div>
+                        <div class="m-sig-line"></div>
+                    </div>
+                    <div class="m-sig-col">
+                        <div class="m-sig-role">PENERIMA BARANG / DEPO</div>
+                        <div class="m-sig-line"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1277,148 +1253,146 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                         >
                             {layoutStyle === 'modern' ? (
                                 /* ===== PREVIEW LAYOUT BARU: MODERN CLEAN ===== */
-                                <div className="w-full h-full flex flex-col justify-between">
+                                <div className="w-full h-full flex flex-col justify-start">
                                     {/* Modern Header */}
-                                    <div>
-                                        <div className="flex justify-between items-center border-b-2 border-black pb-1.5 gap-2">
-                                            <div className="flex items-center gap-2 min-w-0 flex-1">
-                                                {showLogo && (
-                                                    <img
-                                                        src="/logo.png"
-                                                        alt="Logo Depo"
-                                                        className="h-7 w-auto max-w-[36px] object-contain filter grayscale contrast-150 shrink-0"
-                                                        style={{ maxHeight: '30px', maxWidth: '36px' }}
-                                                    />
-                                                )}
-                                                <div className="min-w-0 flex-1">
-                                                    <div className="font-black text-[13.5px] tracking-tight text-black leading-tight whitespace-nowrap">
-                                                        PT. DEPO SURABAYA SEJAHTERA
-                                                    </div>
-                                                    <div className="text-[10px] sm:text-[10.5px] font-bold text-black leading-tight mt-0.5 whitespace-nowrap tracking-tight">
-                                                        Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482
-                                                    </div>
+                                    <div className="flex justify-between items-center border-b-2 border-black pb-1.5 gap-2">
+                                        <div className="flex items-center gap-2 min-w-0 flex-1">
+                                            {showLogo && (
+                                                <img
+                                                    src="/logo.png"
+                                                    alt="Logo Depo"
+                                                    className="h-7 w-auto max-w-[36px] object-contain filter grayscale contrast-150 shrink-0"
+                                                    style={{ maxHeight: '30px', maxWidth: '36px' }}
+                                                />
+                                            )}
+                                            <div className="min-w-0 flex-1">
+                                                <div className="font-black text-[13.5px] tracking-tight text-black leading-tight whitespace-nowrap">
+                                                    PT. DEPO SURABAYA SEJAHTERA
                                                 </div>
-                                            </div>
-                                            <div className="text-right shrink-0 ml-2">
-                                                <div className="font-black text-lg sm:text-xl tracking-[1.5px] text-black leading-none whitespace-nowrap">
-                                                    SURAT JALAN
+                                                <div className="text-[10px] sm:text-[10.5px] font-bold text-black leading-tight mt-0.5 whitespace-nowrap tracking-tight">
+                                                    Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1) &bull; Telp. 031-353 9484 / 3539485 &bull; Fax. 031-3539482
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="text-right shrink-0 ml-2">
+                                            <div className="font-black text-lg sm:text-xl tracking-[1.5px] text-black leading-none whitespace-nowrap">
+                                                SURAT JALAN
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                        {/* 4-Box Logistics Bar */}
-                                        <div className="grid grid-cols-4 gap-1.5 mt-1.5">
-                                            <div className="border-2 border-black p-1.5 bg-white rounded-xs">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">TANGGAL</div>
-                                                <div className="text-[14px] font-black text-black truncate mt-0.5">{tanggal || '-'}</div>
+                                    {/* Master Unified Form Frame (Rapat, Kokoh, Tanpa Celah Kosong) */}
+                                    <div className="border-2 border-black bg-white flex flex-col mt-2">
+                                        {/* Row 1: Logistics Bar (4 Kolom Terpadu) */}
+                                        <div className="grid grid-cols-4 border-b-2 border-black divide-x-2 divide-black">
+                                            <div className="p-1.5">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">TANGGAL</div>
+                                                <div className="text-[13px] font-black text-black truncate mt-0.5">{tanggal || '-'}</div>
                                             </div>
-                                            <div className="border-2 border-black p-1.5 bg-white rounded-xs">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">JAM KELUAR</div>
-                                                <div className="text-[14px] font-black text-black truncate mt-0.5">{jamKeluar || '-'}</div>
+                                            <div className="p-1.5">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">JAM KELUAR</div>
+                                                <div className="text-[13px] font-black text-black truncate mt-0.5">{jamKeluar || '-'}</div>
                                             </div>
-                                            <div className="border-2 border-black p-1.5 bg-white rounded-xs">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">NO. POLISI</div>
-                                                <div className="text-[14px] font-black text-black truncate mt-0.5">{noPol || '-'}</div>
+                                            <div className="p-1.5">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">NO. POLISI</div>
+                                                <div className="text-[13px] font-black text-black truncate mt-0.5">{noPol || '-'}</div>
                                             </div>
-                                            <div className="border-2 border-black p-1.5 bg-white rounded-xs">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">TUJUAN</div>
-                                                <div className="text-[14px] font-black text-black truncate mt-0.5">{tujuan || '-'}</div>
+                                            <div className="p-1.5">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">TUJUAN</div>
+                                                <div className="text-[13px] font-black text-black truncate mt-0.5">{tujuan || '-'}</div>
                                             </div>
                                         </div>
 
-                                        {/* Customer & Shipper Banner */}
-                                        <div className="flex justify-between items-center bg-white border-2 border-black border-l-[5px] px-3 py-1.5 mt-1.5 text-[14px]">
-                                            <div className="font-black text-black uppercase tracking-tight">
+                                        {/* Row 2: Customer & Shipper Banner */}
+                                        <div className="flex justify-between items-center border-b-2 border-black px-2.5 py-1.5 text-[12.5px] bg-white">
+                                            <div className="font-black text-black uppercase tracking-tight truncate">
                                                 CUSTOMER: <span className="font-black">{customerName}</span>
                                             </div>
                                             {shipperName && (
-                                                <div className="font-black text-black uppercase tracking-tight">
+                                                <div className="font-black text-black uppercase tracking-tight truncate pl-2">
                                                     SHIPPER: ({shipperName})
                                                 </div>
                                             )}
                                         </div>
-                                    </div>
 
-                                    {/* Hero Container Box */}
-                                    <div className="border-2 border-black rounded-xs overflow-hidden flex flex-col bg-white mt-1.5 min-h-[135px]">
-                                        {/* Baris 1: No. Container & Jumlah / Ukuran */}
-                                        <div className="flex border-b-2 border-black min-h-[70px]">
+                                        {/* Row 3: Hero Container Box */}
+                                        <div className="flex border-b-2 border-black min-h-[68px]">
                                             <div className="flex-1 border-r-2 border-black p-2 flex flex-col justify-center">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">NO. CONTAINER</div>
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">NO. CONTAINER</div>
                                                 <div className="text-2xl sm:text-3xl font-black tracking-wider text-black mt-0.5 leading-none">
                                                     {containerNumber || '-'}
                                                 </div>
                                             </div>
-                                            <div className="w-[220px] sm:w-[240px] p-2 flex flex-col justify-center items-center text-center bg-white">
-                                                <div className="text-[12px] uppercase font-black text-black tracking-wide">JUMLAH / UKURAN</div>
+                                            <div className="w-[200px] sm:w-[220px] p-2 flex flex-col justify-center items-center text-center bg-white">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">JUMLAH / UKURAN</div>
                                                 <div className="text-xl sm:text-2xl font-black text-black mt-0.5 leading-none">{ukuranCont}</div>
                                             </div>
                                         </div>
 
-                                        {/* Baris 2: Subgrid 3 Kolom & Nama Produk / Layanan */}
-                                        <div className="flex min-h-[65px]">
+                                        {/* Row 4: Subgrid Muatan & Layanan */}
+                                        <div className="flex border-b-2 border-black min-h-[64px]">
                                             <div className="flex-1 border-r-2 border-black grid grid-cols-12 divide-x-2 divide-black bg-white">
                                                 <div className="col-span-5 px-2 pt-1 pb-1.5 flex flex-col justify-between">
-                                                    <div className="text-[11.5px] uppercase font-black text-black tracking-wide leading-tight">
+                                                    <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">
                                                         ISI KONTAINER
                                                     </div>
                                                     <div className="flex-1 flex items-center">
-                                                        <div className="text-[12px] font-black text-black break-words whitespace-normal leading-tight">
+                                                        <div className="text-[11.5px] font-black text-black break-words whitespace-normal leading-tight">
                                                             {isi || 'FULL CONT(ON-CHASIS)'}
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-span-3 px-2 pt-1 pb-1.5 flex flex-col justify-between">
-                                                    <div className="text-[11.5px] uppercase font-black text-black tracking-wide leading-tight">
+                                                    <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">
                                                         NO. SEGEL
                                                     </div>
                                                     <div className="flex-1 flex items-center">
-                                                        <div className="text-[12px] font-black text-black break-words">
+                                                        <div className="text-[11.5px] font-black text-black break-words">
                                                             {noSegel || '-'}
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-span-4 px-2 pt-1 pb-1.5 flex flex-col justify-between">
-                                                    <div className="text-[11.5px] uppercase font-black text-black tracking-wide leading-tight">
+                                                    <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">
                                                         KETERANGAN
                                                     </div>
                                                     <div className="flex-1 flex items-center">
-                                                        <div className="text-[12px] font-black text-black break-words">
+                                                        <div className="text-[11.5px] font-black text-black break-words">
                                                             {keterangan || '-'}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="w-[220px] sm:w-[240px] px-2 pt-1 pb-1.5 flex flex-col items-center text-center bg-white justify-between">
-                                                <div className="text-[11.5px] uppercase font-black text-black tracking-wide leading-tight">
+                                            <div className="w-[200px] sm:w-[220px] px-2 pt-1 pb-1.5 flex flex-col items-center text-center bg-white justify-between">
+                                                <div className="text-[10.5px] uppercase font-black text-black tracking-wide leading-tight">
                                                     NAMA PRODUK / LAYANAN
                                                 </div>
                                                 <div className="flex-1 flex items-center justify-center">
-                                                    <div className="text-sm sm:text-base font-black uppercase tracking-tight leading-tight text-black">
+                                                    <div className="text-xs sm:text-sm font-black uppercase tracking-tight leading-tight text-black">
                                                         {layanan}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Modern Footer & Signatures */}
-                                    <div className="flex gap-2 h-[100px] items-stretch mt-1.5">
-                                        <div className="w-[230px] sm:w-[250px] border-2 border-black p-2 bg-white flex flex-col justify-between">
-                                            <div className="text-[11.5px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
-                                            <div className="text-[10.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum keluar depo. Komplain setelah keluar bukan tanggung jawab kami.</div>
-                                        </div>
-                                        <div className="flex-1 border-2 border-black p-1.5 bg-white flex flex-col justify-between text-center">
-                                            <div className="text-[11px] font-black uppercase text-black">DISERAHKAN OLEH</div>
-                                            <div className="border-b-2 border-dotted border-black mx-3"></div>
-                                        </div>
-                                        <div className="flex-1 border-2 border-black p-1.5 bg-white flex flex-col justify-between text-center">
-                                            <div className="text-[11px] font-black uppercase text-black">SOPIR TRUK</div>
-                                            <div className="border-b-2 border-dotted border-black mx-3"></div>
-                                        </div>
-                                        <div className="flex-1 border-2 border-black p-1.5 bg-white flex flex-col justify-between text-center">
-                                            <div className="text-[11px] font-black uppercase text-black">PENERIMA</div>
-                                            <div className="border-b-2 border-dotted border-black mx-3"></div>
+                                        {/* Row 5: Modern Footer & Signatures */}
+                                        <div className="flex h-[95px] items-stretch divide-x-2 divide-black">
+                                            <div className="w-[220px] sm:w-[240px] p-2 bg-white flex flex-col justify-between">
+                                                <div className="text-[10.5px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
+                                                <div className="text-[9.5px] font-bold text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                                            </div>
+                                            <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
+                                                <div className="text-[10.5px] font-black uppercase text-black">DISERAHKAN OLEH</div>
+                                                <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
+                                            </div>
+                                            <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
+                                                <div className="text-[10.5px] font-black uppercase text-black">SOPIR TRUK</div>
+                                                <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
+                                            </div>
+                                            <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
+                                                <div className="text-[10.5px] font-black uppercase text-black">PENERIMA BARANG / DEPO</div>
+                                                <div className="border-b-2 border-dotted border-black mx-2 mb-0.5"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

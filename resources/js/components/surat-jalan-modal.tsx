@@ -307,34 +307,47 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             line-height: 1.1;
         }
 
-        /* Row 2: Customer & Shipper Banner (Full Width, Tidak Terpotong) */
+        /* Row 2: Customer & Shipper Banner (Sejajar Horizontal & Tidak Terpotong) */
         .m-row-party {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 2px solid #000;
-            padding: 2mm 3mm;
+            padding: 1.5mm 3mm;
             background: #ffffff;
             flex-shrink: 0;
-            gap: 1mm;
+            gap: 3mm;
+            min-height: 8.5mm;
         }
-        .m-party-line {
-            font-size: 11pt;
+        .m-party-cust {
+            flex: 1;
+            font-size: 10.5pt;
             font-weight: 900;
             color: #000000;
             text-transform: uppercase;
-            letter-spacing: 0.2px;
-            line-height: 1.25;
+            letter-spacing: 0.1px;
+            line-height: 1.2;
             word-break: break-word;
         }
+        .m-party-ship {
+            flex: 1;
+            font-size: 10.5pt;
+            font-weight: 900;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.1px;
+            line-height: 1.2;
+            word-break: break-word;
+            text-align: right;
+        }
         .m-party-lbl {
-            font-size: 9.5pt;
+            font-size: 9pt;
             font-weight: 900;
             color: #000000;
             margin-right: 1.5mm;
         }
         .m-party-val {
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 900;
             color: #000000;
         }
@@ -441,7 +454,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             min-height: 28mm;
         }
         .m-footer-notice {
-            width: 70mm;
+            width: 74mm;
             border-right: 2px solid #000;
             padding: 2mm 3mm;
             display: flex;
@@ -452,7 +465,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             box-sizing: border-box;
         }
         .m-notice-title {
-            font-size: 9.5pt;
+            font-size: 10pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
@@ -461,7 +474,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             line-height: 1.15;
         }
         .m-notice-body {
-            font-size: 8.5pt;
+            font-size: 10.5pt;
             font-weight: 900;
             line-height: 1.25;
             color: #000000;
@@ -533,14 +546,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     </div>
                 </div>
 
-                <!-- Row 2: Customer & Shipper Banner -->
+                <!-- Row 2: Customer & Shipper Banner (Sejajar) -->
                 <div class="m-row-party">
-                    <div class="m-party-line">
+                    <div class="m-party-cust">
                         <span class="m-party-lbl">CUSTOMER:</span>
                         <span class="m-party-val">${customerName}</span>
                     </div>
                     ${shipperName ? `
-                    <div class="m-party-line">
+                    <div class="m-party-ship">
                         <span class="m-party-lbl">SHIPPER:</span>
                         <span class="m-party-val">(${shipperName})</span>
                     </div>` : ''}
@@ -1323,15 +1336,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                             </div>
                                         </div>
 
-                                        {/* Row 2: Customer & Shipper Banner (Full Width, Tidak Terpotong) */}
-                                        <div className="shrink-0 border-b-2 border-black px-3 py-1.5 flex flex-col justify-center gap-0.5 bg-white text-[12.5px]">
-                                            <div className="font-black text-black uppercase tracking-tight leading-tight">
-                                                <span className="text-[11px] font-bold text-gray-700 mr-1.5">CUSTOMER:</span>
+                                        {/* Row 2: Customer & Shipper Banner (Sejajar Horizontal & Tidak Terpotong) */}
+                                        <div className="shrink-0 border-b-2 border-black px-3 py-1.5 flex justify-between items-center gap-3 bg-white text-[12px] min-h-[38px]">
+                                            <div className="flex-1 font-black text-black uppercase tracking-tight leading-tight break-words">
+                                                <span className="text-[10.5px] font-bold text-gray-700 mr-1.5">CUSTOMER:</span>
                                                 {customerName}
                                             </div>
                                             {shipperName && (
-                                                <div className="font-black text-black uppercase tracking-tight leading-tight">
-                                                    <span className="text-[11px] font-bold text-gray-700 mr-1.5">SHIPPER:</span>
+                                                <div className="flex-1 text-right font-black text-black uppercase tracking-tight leading-tight break-words">
+                                                    <span className="text-[10.5px] font-bold text-gray-700 mr-1.5">SHIPPER:</span>
                                                     ({shipperName})
                                                 </div>
                                             )}
@@ -1399,9 +1412,9 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
 
                                         {/* Row 5: Modern Footer & Signatures */}
                                         <div className="flex-[1.4] min-h-[95px] flex items-stretch divide-x-2 divide-black">
-                                            <div className="w-[280px] sm:w-[300px] p-2 bg-white flex flex-col justify-start gap-1">
-                                                <div className="text-[11px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
-                                                <div className="text-[10px] font-black text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
+                                            <div className="w-[300px] sm:w-[325px] p-2 bg-white flex flex-col justify-start gap-1">
+                                                <div className="text-[11.5px] font-black uppercase text-black underline tracking-wide leading-tight">PERHATIAN PENTING :</div>
+                                                <div className="text-[12px] font-black text-black leading-snug mt-0.5">Mohon kondisi container dan segel dicek terlebih dahulu sebelum meninggalkan area depo. Segala bentuk komplain setelah keluar depo di luar tanggung jawab kami.</div>
                                             </div>
                                             <div className="flex-1 p-1.5 bg-white flex flex-col justify-between text-center">
                                                 <div className="text-[10px] font-black uppercase text-black">DISERAHKAN OLEH</div>

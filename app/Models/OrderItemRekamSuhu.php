@@ -13,11 +13,16 @@ class OrderItemRekamSuhu extends Model
     use HasFactory;
     use SoftDeletes;
     
-    protected $fillable = ['order_item_id', 'tanggal', 'jam_data'];
+    protected $fillable = ['order_item_id', 'user_id', 'tanggal', 'jam_data'];
 
     public function orderItem()
     {
         return $this->belongsTo(OrderItem::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     // Cast kolom JSON ke array otomatis

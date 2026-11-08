@@ -19,6 +19,7 @@ import {
     Layers,
     Tag,
     Plus,
+    User,
 } from 'lucide-react';
 import { type SharedData } from '@/types';
 import ContainerTemperatureView from '@/components/container-temperature-view';
@@ -30,8 +31,14 @@ interface OrderItem {
     product: { id?: number; service_type: string };
     container_number: string;
     entry_date?: string | null;
+    entry_by_user?: { id: number; name: string } | null;
+    entry_recorded_at?: string | null;
     eir_date?: string | null;
     exit_date?: string | null;
+    exit_by_user?: { id: number; name: string } | null;
+    exit_recorded_at?: string | null;
+    temperature_by_user?: { id: number; name: string } | null;
+    temperature_recorded_at?: string | null;
     commodity?: string | null;
     country?: string | null;
     vessel?: string | null;
@@ -63,6 +70,8 @@ interface Props {
 export default function ShowOrder({ order, return_url: initialReturnUrl }: Props) {
     const { auth } = usePage<SharedData>().props;
     const roleId = auth?.user?.role_id;
+    const roleName = (auth?.user as any)?.role_name || (auth?.user as any)?.role?.name || '';
+    const isSuperAdmin = roleId === 1 || /super/i.test(roleName);
     const isRoleKarantina = roleId == 4;
 
     const returnUrl =
@@ -314,6 +323,12 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                             <p className="text-gray-800">
                                                 {formatDateTimeIndo(item.entry_date)}
                                             </p>
+                                            {isSuperAdmin && item.entry_by_user && (
+                                                <span className="inline-flex items-center gap-1 text-[11px] text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded font-medium mt-1" title={`Diproses oleh ${item.entry_by_user.name}${item.entry_recorded_at ? ` pada ${formatDateTimeIndo(item.entry_recorded_at)}` : ''}`}>
+                                                    <User className="h-3 w-3 text-blue-600" />
+                                                    {item.entry_by_user.name}
+                                                </span>
+                                            )}
                                         </div>
 
                                         {/* EIR Date */}
@@ -336,6 +351,12 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                             <p className="text-gray-800">
                                                 {formatDateTimeIndo(item.exit_date)}
                                             </p>
+                                            {isSuperAdmin && item.exit_by_user && (
+                                                <span className="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded font-medium mt-1" title={`Diproses oleh ${item.exit_by_user.name}${item.exit_recorded_at ? ` pada ${formatDateTimeIndo(item.exit_recorded_at)}` : ''}`}>
+                                                    <User className="h-3 w-3 text-amber-600" />
+                                                    {item.exit_by_user.name}
+                                                </span>
+                                            )}
                                         </div>
 
                                         {/* Harga */}
@@ -409,6 +430,15 @@ export default function ShowOrder({ order, return_url: initialReturnUrl }: Props
                                     {/* Monitoring & Matriks Suhu (Format Representatif PDF) */}
                                     {hasTemp && (
                                         <div className="mt-3 border-t border-gray-100 pt-3">
+                                            {isSuperAdmin && item.temperature_by_user && (
+                                                <div className="text-[11px] text-gray-600 bg-sky-50/70 border border-sky-200 rounded-lg px-3 py-1.5 flex items-center gap-1.5 mb-2.5">
+                                                    <User className="h-3.5 w-3.5 text-sky-600 shrink-0" />
+                                                    <span>Suhu terakhir diproses oleh: <strong className="text-gray-900 font-semibold">{item.temperature_by_user.name}</strong></span>
+                                                    {item.temperature_recorded_at && (
+                                                        <span className="text-gray-400">({formatDateTimeIndo(item.temperature_recorded_at)})</span>
+                                                    )}
+                                                </div>
+                                            )}
                                             <ContainerTemperatureView
                                                 containerNumber={item.container_number}
                                                 rekamSuhu={item.rekam_suhu}

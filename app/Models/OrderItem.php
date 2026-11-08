@@ -84,17 +84,23 @@ class OrderItem extends Model
     
     protected $fillable = [
         'order_id', 'product_id', 'container_number',
-        'entry_date', 'eir_date', 'exit_date',
+        'entry_date', 'entry_by_user_id', 'entry_recorded_at',
+        'eir_date',
+        'exit_date', 'exit_by_user_id', 'exit_recorded_at',
         'commodity', 'country', 'vessel',
         'price_type', 'price_value', 'delete_reason',
         'is_excluded_from_report',
         'start_plug_in', 'plug_out', 'plug_duration_minutes', 'total_shifts',
+        'temperature_by_user_id', 'temperature_recorded_at',
         'set_point', 'storage_days',
         'shift_calculation_mode', 'shift_details', 'last_calculated_at',
     ];
 
     protected $casts = [
         'is_excluded_from_report' => 'boolean',
+        'entry_recorded_at' => 'datetime:Y-m-d H:i:s',
+        'exit_recorded_at' => 'datetime:Y-m-d H:i:s',
+        'temperature_recorded_at' => 'datetime:Y-m-d H:i:s',
         'start_plug_in' => 'datetime:Y-m-d H:i:s',
         'plug_out' => 'datetime:Y-m-d H:i:s',
         'plug_duration_minutes' => 'integer',
@@ -251,5 +257,28 @@ class OrderItem extends Model
     public function temperatureLogs()
     {
         return $this->hasMany(ReeferTemperatureLog::class, 'order_item_id')->orderBy('logged_at');
+    }
+
+    public function entryByUser()
+    {
+        return $this->belongsTo(User::class, 'entry_by_user_id');
+    }
+
+    public function exitByUser()
+    {
+        return $this->belongsTo(User::class, 'exit_by_user_id');
+    }
+
+    public function temperatureByUser()
+    {
+        return $this->belongsTo(User::class, 'temperature_by_user_id');
+    }
+
+    public function activityLogs()
+    {
+        return $this->hasMany(ActivityLog::class, 'model_id')
+            ->where('model_type', 'OrderItem')
+            ->with('user:id,name')
+            ->latest();
     }
 }

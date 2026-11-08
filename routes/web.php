@@ -135,6 +135,10 @@ Route::middleware(['auth'])->group(function () {
             ->name('items.simple.edit')
             ->whereNumber('orderItem');
 
+        Route::get('/items/{orderItem}/activity-logs', [OrderController::class, 'getOrderItemActivityLogs'])
+            ->name('items.activity-logs')
+            ->whereNumber('orderItem');
+
         // Edit order item
         Route::get('/{order}/items/{orderItem}/edit', [OrderController::class, 'editOrderItem'])
             ->name('items.edit')

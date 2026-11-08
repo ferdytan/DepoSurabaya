@@ -42,8 +42,11 @@ import {
     Receipt,
     RotateCcw,
     Search,
+    ShieldCheck,
     Thermometer,
     Trash2,
+    User as UserIcon,
+    History,
     X,
     Zap,
 } from 'lucide-react';
@@ -120,8 +123,14 @@ type Order = {
     container_number: string;
     order: OrderParent;
     entry_date: string | null;
+    entry_by_user?: { id: number; name: string } | null;
+    entry_recorded_at?: string | null;
     eir_date: string | null;
     exit_date: string | null;
+    exit_by_user?: { id: number; name: string } | null;
+    exit_recorded_at?: string | null;
+    temperature_by_user?: { id: number; name: string } | null;
+    temperature_recorded_at?: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
     set_point?: number | string | null;
@@ -313,6 +322,47 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
     const [plugOutTime, setPlugOutTime] = useState<string>('');
     const [tempSetPoint, setTempSetPoint] = useState<string>('');
     const [isSubmittingPlug, setIsSubmittingPlug] = useState(false);
+
+    // Modal Riwayat Log Petugas (Khusus Super Admin)
+    const [isActivityLogOpen, setIsActivityLogOpen] = useState(false);
+    const [activityLogData, setActivityLogData] = useState<{
+        container_number: string;
+        entry_date?: string | null;
+        entry_by_user?: { id: number; name: string } | null;
+        entry_recorded_at?: string | null;
+        exit_date?: string | null;
+        exit_by_user?: { id: number; name: string } | null;
+        exit_recorded_at?: string | null;
+        temperature_by_user?: { id: number; name: string } | null;
+        temperature_recorded_at?: string | null;
+        start_plug_in?: string | null;
+        plug_out?: string | null;
+        logs: Array<{
+            id: number;
+            action: string;
+            user_name: string;
+            old_values?: any;
+            new_values?: any;
+            created_at: string;
+        }>;
+    } | null>(null);
+    const [isLoadingActivityLogs, setIsLoadingActivityLogs] = useState(false);
+
+    const openActivityLogModal = (orderItemId: number) => {
+        setIsLoadingActivityLogs(true);
+        setIsActivityLogOpen(true);
+        axios
+            .get(`/orders/items/${orderItemId}/activity-logs`)
+            .then((res) => {
+                setActivityLogData(res.data);
+            })
+            .catch((err) => {
+                console.error('Failed to load activity logs:', err);
+            })
+            .finally(() => {
+                setIsLoadingActivityLogs(false);
+            });
+    };
 
     const handleOpenTempModal = (order: Order) => {
         setTempOrder(order);
@@ -1242,62 +1292,94 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
 
                                                             {/* 4. Tanggal Masuk (Stacked Date on top, Time underneath) */}
                                                             <TableCell className="py-3">
-                                                                {inDt ? (
-                                                                    <button
-                                                                        type="button"
-                                                                        onClick={() => handleEditEntryDate(order.id, order.entry_date ?? '')}
-                                                                        className="flex items-start gap-1 hover:underline text-left group/date"
-                                                                        title="Klik untuk ubah tanggal masuk"
-                                                                    >
-                                                                        <div className="flex flex-col leading-tight">
-                                                                            <span>{inDt.date}</span>
-                                                                            <span className="text-xs text-gray-500">{inDt.time}</span>
-                                                                        </div>
-                                                                        <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
-                                                                    </button>
-                                                                ) : (
-                                                                    <button
-                                                                        type="button"
-                                                                        onClick={() => handleAddEntryDate(order.id)}
-                                                                        className="flex items-center gap-1 hover:underline text-green-600"
-                                                                    >
-                                                                        Tambah
-                                                                        <Plus className="h-4 w-4 text-green-500" />
-                                                                    </button>
-                                                                )}
+                                                                <div className="flex flex-col items-start gap-1">
+                                                                    {inDt ? (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => handleEditEntryDate(order.id, order.entry_date ?? '')}
+                                                                            className="flex items-start gap-1 hover:underline text-left group/date"
+                                                                            title="Klik untuk ubah tanggal masuk"
+                                                                        >
+                                                                            <div className="flex flex-col leading-tight">
+                                                                                <span>{inDt.date}</span>
+                                                                                <span className="text-xs text-gray-500">{inDt.time}</span>
+                                                                            </div>
+                                                                            <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
+                                                                        </button>
+                                                                    ) : (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => handleAddEntryDate(order.id)}
+                                                                            className="flex items-center gap-1 hover:underline text-green-600"
+                                                                        >
+                                                                            Tambah
+                                                                            <Plus className="h-4 w-4 text-green-500" />
+                                                                        </button>
+                                                                    )}
+                                                                    {isSuperAdmin && order.entry_by_user && (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                openActivityLogModal(order.id);
+                                                                            }}
+                                                                            className="inline-flex items-center gap-1 text-[10px] text-blue-700 bg-blue-50/90 hover:bg-blue-100 border border-blue-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[140px] text-left transition-colors cursor-pointer"
+                                                                            title={`Gate In diproses oleh ${order.entry_by_user.name}${order.entry_recorded_at ? ` pada ${formatDate(order.entry_recorded_at)}` : ''}. Klik untuk lihat riwayat lengkap.`}
+                                                                        >
+                                                                            <UserIcon className="h-2.5 w-2.5 shrink-0 text-blue-600" />
+                                                                            <span className="truncate">{order.entry_by_user.name}</span>
+                                                                        </button>
+                                                                    )}
+                                                                </div>
                                                             </TableCell>
 
                                                             {/* 5. Tanggal Keluar (Stacked Date on top, Time underneath) */}
                                                             <TableCell className="py-3">
-                                                                {outDt ? (
-                                                                    <button
-                                                                        type="button"
-                                                                        onClick={() => handleEditExitDate(order.id, order.exit_date ?? '')}
-                                                                        className="flex items-start gap-1 hover:underline text-left group/date"
-                                                                        title="Klik untuk ubah tanggal keluar"
-                                                                    >
-                                                                        <div className="flex flex-col leading-tight">
-                                                                            <span>{outDt.date}</span>
-                                                                            <span className="text-xs text-gray-500">{outDt.time}</span>
-                                                                        </div>
-                                                                        <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
-                                                                    </button>
-                                                                ) : (
-                                                                    <button
-                                                                        type="button"
-                                                                        onClick={() => handleAddExitDate(order.id)}
-                                                                        className="flex items-center gap-1 hover:underline text-green-600"
-                                                                    >
-                                                                        Tambah
-                                                                        <Plus className="h-4 w-4 text-green-500" />
-                                                                    </button>
-                                                                )}
+                                                                <div className="flex flex-col items-start gap-1">
+                                                                    {outDt ? (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => handleEditExitDate(order.id, order.exit_date ?? '')}
+                                                                            className="flex items-start gap-1 hover:underline text-left group/date"
+                                                                            title="Klik untuk ubah tanggal keluar"
+                                                                        >
+                                                                            <div className="flex flex-col leading-tight">
+                                                                                <span>{outDt.date}</span>
+                                                                                <span className="text-xs text-gray-500">{outDt.time}</span>
+                                                                            </div>
+                                                                            <Pencil className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 opacity-80 group-hover/date:opacity-100" />
+                                                                        </button>
+                                                                    ) : (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={() => handleAddExitDate(order.id)}
+                                                                            className="flex items-center gap-1 hover:underline text-green-600"
+                                                                        >
+                                                                            Tambah
+                                                                            <Plus className="h-4 w-4 text-green-500" />
+                                                                        </button>
+                                                                    )}
+                                                                    {isSuperAdmin && order.exit_by_user && (
+                                                                        <button
+                                                                            type="button"
+                                                                            onClick={(e) => {
+                                                                                e.stopPropagation();
+                                                                                openActivityLogModal(order.id);
+                                                                            }}
+                                                                            className="inline-flex items-center gap-1 text-[10px] text-amber-700 bg-amber-50/90 hover:bg-amber-100 border border-amber-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[140px] text-left transition-colors cursor-pointer"
+                                                                            title={`Gate Out diproses oleh ${order.exit_by_user.name}${order.exit_recorded_at ? ` pada ${formatDate(order.exit_recorded_at)}` : ''}. Klik untuk lihat riwayat lengkap.`}
+                                                                        >
+                                                                            <UserIcon className="h-2.5 w-2.5 shrink-0 text-amber-600" />
+                                                                            <span className="truncate">{order.exit_by_user.name}</span>
+                                                                        </button>
+                                                                    )}
+                                                                </div>
                                                             </TableCell>
 
                                                             {/* 6. Temperatur & Shift (Cool Pastel Blue Badge) */}
                                                             <TableCell className="py-3 text-center">
                                                                 {canItemRecordTemperature(order, groupOrders) ? (
-                                                                    <div className="flex items-center justify-center">
+                                                                    <div className="flex flex-col items-center justify-center gap-1">
                                                                         {order.total_shifts && order.total_shifts > 0 ? (
                                                                             <button
                                                                                 type="button"
@@ -1329,6 +1411,20 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                                                                 <Thermometer className="h-4 w-4 text-sky-600" />
                                                                                 <span className="text-xs">Suhu</span>
                                                                             </Button>
+                                                                        )}
+                                                                        {isSuperAdmin && order.temperature_by_user && (
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={(e) => {
+                                                                                    e.stopPropagation();
+                                                                                    openActivityLogModal(order.id);
+                                                                                }}
+                                                                                className="inline-flex items-center gap-1 text-[10px] text-sky-800 bg-sky-50/90 hover:bg-sky-100 border border-sky-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[125px] text-left transition-colors cursor-pointer"
+                                                                                title={`Suhu terakhir diproses oleh ${order.temperature_by_user.name}${order.temperature_recorded_at ? ` pada ${formatDate(order.temperature_recorded_at)}` : ''}. Klik untuk lihat riwayat lengkap.`}
+                                                                            >
+                                                                                <UserIcon className="h-2.5 w-2.5 shrink-0 text-sky-600" />
+                                                                                <span className="truncate">{order.temperature_by_user.name}</span>
+                                                                            </button>
                                                                         )}
                                                                     </div>
                                                                 ) : (
@@ -1547,10 +1643,24 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
             <Dialog open={isTempDialogOpen} onOpenChange={setIsTempDialogOpen}>
                 <DialogContent className="w-[95vw] sm:max-w-3xl p-4 sm:p-6 max-h-[92vh] flex flex-col">
                     <DialogHeader className="pr-8 text-left shrink-0">
-                        <DialogTitle className="flex items-center gap-2 text-sm sm:text-base font-bold text-gray-900 break-words">
-                            <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
-                            <span className="leading-tight">Rekam Suhu & Plug In/Out &mdash; Kontainer {tempOrder?.container_number}</span>
-                        </DialogTitle>
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                            <DialogTitle className="flex items-center gap-2 text-sm sm:text-base font-bold text-gray-900 break-words">
+                                <Thermometer className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500 shrink-0" />
+                                <span className="leading-tight">Rekam Suhu & Plug In/Out &mdash; Kontainer {tempOrder?.container_number}</span>
+                            </DialogTitle>
+                            {isSuperAdmin && tempOrder && (
+                                <Button
+                                    type="button"
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => openActivityLogModal(tempOrder.id)}
+                                    className="h-7 text-xs gap-1 border-purple-200 bg-purple-50 text-purple-700 hover:bg-purple-100"
+                                >
+                                    <History className="h-3.5 w-3.5" />
+                                    Riwayat Petugas
+                                </Button>
+                            )}
+                        </div>
                     </DialogHeader>
                     <div className="flex-1 space-y-5 overflow-y-auto pr-1 sm:pr-2">
                         {/* Section Plug In / Out */}
@@ -1583,6 +1693,14 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                                     )}
                                 </div>
                             </div>
+
+                            {isSuperAdmin && tempOrder?.temperature_by_user && (
+                                <div className="text-[11px] text-gray-600 bg-white border border-gray-200 rounded-lg px-3 py-1.5 flex items-center gap-1.5">
+                                    <UserIcon className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                                    <span>Terakhir diproses oleh: <strong className="text-gray-900 font-semibold">{tempOrder.temperature_by_user.name}</strong></span>
+                                    {tempOrder.temperature_recorded_at && <span className="text-gray-400">({formatDate(tempOrder.temperature_recorded_at)})</span>}
+                                </div>
+                            )}
 
                             {/* Quick Action Buttons */}
                             <div className="flex flex-wrap items-center gap-2">
@@ -1824,6 +1942,123 @@ export default function OrdersV2Index({ orders, filters: rawFilters }: Props) {
                 onClose={() => setSuratJalanModalOpen(false)}
                 data={selectedSuratJalan}
             />
+
+            {/* Modal Riwayat Log Petugas (Khusus Super Admin) */}
+            <Dialog open={isActivityLogOpen} onOpenChange={setIsActivityLogOpen}>
+                <DialogContent className="w-[95vw] sm:max-w-2xl p-4 sm:p-6 max-h-[90vh] flex flex-col">
+                    <DialogHeader className="pr-8 text-left shrink-0 border-b pb-3">
+                        <DialogTitle className="flex items-center gap-2 text-base font-bold text-gray-900">
+                            <ShieldCheck className="h-5 w-5 text-indigo-600" />
+                            <span>Riwayat Petugas &mdash; Kontainer {activityLogData?.container_number || '...'}</span>
+                        </DialogTitle>
+                        <p className="text-xs text-gray-500 mt-1">
+                            Log audit pemrosesan Gate In, Gate Out, dan Entry Suhu (khusus Super Admin).
+                        </p>
+                    </DialogHeader>
+
+                    <div className="flex-1 overflow-y-auto space-y-4 py-3">
+                        {isLoadingActivityLogs ? (
+                            <div className="text-center py-8 text-sm text-gray-500">Memuat riwayat log...</div>
+                        ) : !activityLogData ? (
+                            <div className="text-center py-8 text-sm text-gray-500">Data log tidak ditemukan.</div>
+                        ) : (
+                            <>
+                                {/* Ringkasan Status Saat Ini */}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                    <div className="bg-blue-50/70 border border-blue-200 rounded-lg p-2.5">
+                                        <span className="text-[11px] font-semibold text-blue-800 uppercase block tracking-wider">Gate In</span>
+                                        <div className="text-xs font-bold text-gray-900 mt-0.5">
+                                            {activityLogData.entry_date ? formatDate(activityLogData.entry_date) : '-'}
+                                        </div>
+                                        <div className="text-[11px] text-gray-600 mt-1 flex items-center gap-1">
+                                            <UserIcon className="h-3 w-3 text-blue-600 shrink-0" />
+                                            <span className="truncate">{activityLogData.entry_by_user?.name || 'Tidak tercatat'}</span>
+                                        </div>
+                                        {activityLogData.entry_recorded_at && (
+                                            <span className="text-[10px] text-gray-400 block mt-0.5">Input: {activityLogData.entry_recorded_at}</span>
+                                        )}
+                                    </div>
+
+                                    <div className="bg-amber-50/70 border border-amber-200 rounded-lg p-2.5">
+                                        <span className="text-[11px] font-semibold text-amber-800 uppercase block tracking-wider">Gate Out</span>
+                                        <div className="text-xs font-bold text-gray-900 mt-0.5">
+                                            {activityLogData.exit_date ? formatDate(activityLogData.exit_date) : '-'}
+                                        </div>
+                                        <div className="text-[11px] text-gray-600 mt-1 flex items-center gap-1">
+                                            <UserIcon className="h-3 w-3 text-amber-600 shrink-0" />
+                                            <span className="truncate">{activityLogData.exit_by_user?.name || 'Tidak tercatat'}</span>
+                                        </div>
+                                        {activityLogData.exit_recorded_at && (
+                                            <span className="text-[10px] text-gray-400 block mt-0.5">Input: {activityLogData.exit_recorded_at}</span>
+                                        )}
+                                    </div>
+
+                                    <div className="bg-sky-50/70 border border-sky-200 rounded-lg p-2.5">
+                                        <span className="text-[11px] font-semibold text-sky-800 uppercase block tracking-wider">Suhu / Plug In</span>
+                                        <div className="text-xs font-bold text-gray-900 mt-0.5">
+                                            {activityLogData.start_plug_in ? `Plug In: ${formatDate(activityLogData.start_plug_in)}` : 'Suhu Terakhir'}
+                                        </div>
+                                        <div className="text-[11px] text-gray-600 mt-1 flex items-center gap-1">
+                                            <UserIcon className="h-3 w-3 text-sky-600 shrink-0" />
+                                            <span className="truncate">{activityLogData.temperature_by_user?.name || 'Tidak tercatat'}</span>
+                                        </div>
+                                        {activityLogData.temperature_recorded_at && (
+                                            <span className="text-[10px] text-gray-400 block mt-0.5">Input: {activityLogData.temperature_recorded_at}</span>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Timeline Log Kronologis */}
+                                <div className="space-y-2 pt-2">
+                                    <h4 className="text-xs font-bold text-gray-800 uppercase tracking-wider">Riwayat Aktivitas</h4>
+                                    {activityLogData.logs.length === 0 ? (
+                                        <div className="text-xs text-gray-400 italic py-4 text-center bg-gray-50 rounded-lg">
+                                            Belum ada catatan aktivitas audit baru untuk kontainer ini.
+                                        </div>
+                                    ) : (
+                                        <div className="divide-y divide-gray-100 border rounded-lg overflow-hidden bg-white">
+                                            {activityLogData.logs.map((log) => {
+                                                const actionLabels: Record<string, { label: string; color: string }> = {
+                                                    update_gate_in: { label: 'Update Gate In', color: 'bg-blue-100 text-blue-800' },
+                                                    update_gate_out: { label: 'Update Gate Out', color: 'bg-amber-100 text-amber-800' },
+                                                    entry_suhu: { label: 'Catat Suhu', color: 'bg-sky-100 text-sky-800' },
+                                                    entry_suhu_bulk: { label: 'Simpan Rekam Suhu', color: 'bg-cyan-100 text-cyan-800' },
+                                                    delete_suhu: { label: 'Hapus Entri Suhu', color: 'bg-red-100 text-red-800' },
+                                                    plug_in: { label: 'Start Plug In', color: 'bg-emerald-100 text-emerald-800' },
+                                                    plug_out: { label: 'Plug Out', color: 'bg-rose-100 text-rose-800' },
+                                                    update_plug_times: { label: 'Edit Waktu Plug', color: 'bg-indigo-100 text-indigo-800' },
+                                                    reset_plug: { label: 'Reset Status Plug', color: 'bg-gray-100 text-gray-800' },
+                                                };
+                                                const act = actionLabels[log.action] || { label: log.action, color: 'bg-gray-100 text-gray-800' };
+
+                                                return (
+                                                    <div key={log.id} className="p-3 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-gray-50/70">
+                                                        <div className="flex items-center gap-2">
+                                                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${act.color}`}>
+                                                                {act.label}
+                                                            </span>
+                                                            <span className="font-semibold text-gray-900">{log.user_name}</span>
+                                                        </div>
+                                                        <div className="text-gray-500 text-[11px] font-mono">
+                                                            {log.created_at}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    )}
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    <DialogFooter className="pt-2 border-t">
+                        <Button type="button" variant="outline" size="sm" onClick={() => setIsActivityLogOpen(false)}>
+                            Tutup
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }

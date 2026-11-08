@@ -9,7 +9,7 @@ import TemperatureRecordsLayout from '@/layouts/temperature-records/layout';
 import DateTimePicker from '@/components/date-time-picker';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
-import { CheckCircle2, ChevronDown, ChevronUp, Clock, Eye, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, X, Zap } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, Clock, Eye, Pencil, Plus, Power, Printer, RotateCcw, Search, Thermometer, Trash2, User as UserIcon, X, Zap } from 'lucide-react';
 import { Fragment, useState } from 'react';
 import { executeTemperaturePrint, executeTemperatureRekapPrint } from '@/components/temperature-print-modal';
 
@@ -19,7 +19,13 @@ type TemperatureRecordItem = {
     price_type: string | null;
     commodity: string | null;
     entry_date: string | null;
+    entry_by_user?: { id: number; name: string } | null;
+    entry_recorded_at?: string | null;
     exit_date: string | null;
+    exit_by_user?: { id: number; name: string } | null;
+    exit_recorded_at?: string | null;
+    temperature_by_user?: { id: number; name: string } | null;
+    temperature_recorded_at?: string | null;
     start_plug_in?: string | null;
     plug_out?: string | null;
     set_point?: number | string | null;
@@ -38,6 +44,7 @@ type TemperatureRecordItem = {
         id: number;
         tanggal: string;
         jam_data: Record<string, string>;
+        user?: { id: number; name: string } | null;
     }>;
 };
 
@@ -141,7 +148,10 @@ function roundToNearest15Minutes(date: Date = new Date()): Date {
 }
 
 export default function TemperatureRecordsIndex({ records, filters, counts }: Props) {
-    const pageProps = usePage<{ flash?: { success?: string; error?: string } }>().props;
+    const pageProps = usePage<any>().props;
+    const roleId = pageProps.auth?.user?.role_id;
+    const roleName = pageProps.auth?.user?.role_name || pageProps.auth?.user?.role?.name || '';
+    const isSuperAdmin = roleId === 1 || /super/i.test(roleName);
     const flash = pageProps.flash;
 
     const [search, setSearch] = useState(filters.search || '');
@@ -708,9 +718,20 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
 
                                                         {/* Waktu Masuk */}
                                                         <TableCell className="py-3.5">
-                                                            <span className="text-xs text-gray-700 whitespace-nowrap">
-                                                                {formatDate(item.entry_date)}
-                                                            </span>
+                                                            <div className="flex flex-col items-start gap-1">
+                                                                <span className="text-xs text-gray-700 whitespace-nowrap">
+                                                                    {formatDate(item.entry_date)}
+                                                                </span>
+                                                                {isSuperAdmin && item.entry_by_user && (
+                                                                    <span
+                                                                        className="inline-flex items-center gap-1 text-[10px] text-blue-700 bg-blue-50/90 border border-blue-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[140px]"
+                                                                        title={`Gate In diproses oleh ${item.entry_by_user.name}${item.entry_recorded_at ? ` pada ${formatDate(item.entry_recorded_at)}` : ''}`}
+                                                                    >
+                                                                        <UserIcon className="h-2.5 w-2.5 shrink-0 text-blue-600" />
+                                                                        <span className="truncate">{item.entry_by_user.name}</span>
+                                                                    </span>
+                                                                )}
+                                                            </div>
                                                         </TableCell>
 
                                                         {/* Plug In/Out */}
@@ -750,6 +771,15 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                     {item.set_point !== null && item.set_point !== undefined && String(item.set_point).trim() !== '' && (
                                                                         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-200">
                                                                             Set Point: {item.set_point}&deg;C
+                                                                        </span>
+                                                                    )}
+                                                                    {isSuperAdmin && item.temperature_by_user && (
+                                                                        <span
+                                                                            className="inline-flex items-center gap-1 text-[10px] text-indigo-700 bg-indigo-50/90 border border-indigo-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[140px]"
+                                                                            title={`Plug In diatur oleh ${item.temperature_by_user.name}${item.temperature_recorded_at ? ` pada ${formatDate(item.temperature_recorded_at)}` : ''}`}
+                                                                        >
+                                                                            <UserIcon className="h-2.5 w-2.5 shrink-0 text-indigo-600" />
+                                                                            <span className="truncate">{item.temperature_by_user.name}</span>
                                                                         </span>
                                                                     )}
                                                                     <div className="flex items-center gap-1">
@@ -798,6 +828,15 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                         <div className="font-semibold text-gray-800">
                                                                             Durasi: {Math.floor((item.plug_duration_minutes || 0) / 60)}j {(item.plug_duration_minutes || 0) % 60}m
                                                                         </div>
+                                                                        {isSuperAdmin && item.temperature_by_user && (
+                                                                            <span
+                                                                                className="inline-flex items-center gap-1 text-[10px] text-indigo-700 bg-indigo-50/90 border border-indigo-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[140px] mt-0.5"
+                                                                                title={`Plug diatur oleh ${item.temperature_by_user.name}${item.temperature_recorded_at ? ` pada ${formatDate(item.temperature_recorded_at)}` : ''}`}
+                                                                            >
+                                                                                <UserIcon className="h-2.5 w-2.5 shrink-0 text-indigo-600" />
+                                                                                <span className="truncate">{item.temperature_by_user.name}</span>
+                                                                            </span>
+                                                                        )}
                                                                     </div>
                                                                 </div>
                                                             )}
@@ -831,6 +870,15 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                 ) : (
                                                                     <span className="text-xs text-gray-400 italic">
                                                                         Belum ada catatan
+                                                                    </span>
+                                                                )}
+                                                                {isSuperAdmin && item.temperature_by_user && (
+                                                                    <span
+                                                                        className="inline-flex items-center gap-1 text-[10px] text-sky-800 bg-sky-50/90 border border-sky-200/80 px-1.5 py-0.5 rounded font-medium truncate max-w-[125px]"
+                                                                        title={`Suhu terakhir dicatat oleh ${item.temperature_by_user.name}${item.temperature_recorded_at ? ` pada ${formatDate(item.temperature_recorded_at)}` : ''}`}
+                                                                    >
+                                                                        <UserIcon className="h-2.5 w-2.5 shrink-0 text-sky-600" />
+                                                                        <span className="truncate">{item.temperature_by_user.name}</span>
                                                                     </span>
                                                                 )}
                                                             </div>
@@ -987,6 +1035,16 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                 </span>
                                                                             </div>
                                                                         </div>
+
+                                                                        {isSuperAdmin && item.temperature_by_user && (
+                                                                            <div className="text-[11px] text-gray-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 flex items-center gap-1.5 mt-2">
+                                                                                <UserIcon className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                                                                                <span>Terakhir diproses oleh: <strong className="text-gray-900 font-semibold">{item.temperature_by_user.name}</strong></span>
+                                                                                {item.temperature_recorded_at && (
+                                                                                    <span className="text-gray-400">({formatDate(item.temperature_recorded_at)})</span>
+                                                                                )}
+                                                                            </div>
+                                                                        )}
                                                                     </div>
 
                                                                     <div className="flex items-center justify-between">
@@ -1057,9 +1115,17 @@ export default function TemperatureRecordsIndex({ records, filters, counts }: Pr
                                                                                         className="rounded-xl border border-gray-200 bg-white p-3 shadow-2xs space-y-3"
                                                                                     >
                                                                                         <div className="flex items-center justify-between border-b border-gray-100 pb-2">
-                                                                                            <span className="text-xs font-bold text-gray-900">
-                                                                                                Tanggal: {suhu.tanggal}
-                                                                                            </span>
+                                                                                            <div className="flex items-center gap-2">
+                                                                                                <span className="text-xs font-bold text-gray-900">
+                                                                                                    Tanggal: {suhu.tanggal}
+                                                                                                </span>
+                                                                                                {isSuperAdmin && suhu.user && (
+                                                                                                    <span className="inline-flex items-center gap-1 text-[10px] text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.2 rounded font-medium">
+                                                                                                        <UserIcon className="h-2.5 w-2.5 text-blue-600" />
+                                                                                                        {suhu.user.name}
+                                                                                                    </span>
+                                                                                                )}
+                                                                                            </div>
                                                                                             <span className="text-[11px] text-gray-500 font-medium">
                                                                                                 {sortedEntries.length} entri jam tercatat
                                                                                             </span>

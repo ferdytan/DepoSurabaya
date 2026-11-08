@@ -12,6 +12,8 @@ use Inertia\Inertia;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\ActivityLog;
+use App\Models\User;
 
 class OrderController extends Controller
 {
@@ -33,6 +35,12 @@ class OrderController extends Controller
         $dateFrom = $request->input('date_from');
         $dateTo = $request->input('date_to');
 
+        $user = $request->user();
+        $isSuperAdmin = $user && ((int) $user->role_id === 1 || in_array(
+            strtolower($user->role?->name ?? ''),
+            ['super user', 'superadmin', 'super-admin']
+        ));
+
         $defaultPagination = (int) Setting::get('default_pagination', 25);
         $perPage = (int) $request->input('per_page', $defaultPagination);
         if (!in_array($perPage, [10, 25, 50, 100])) {
@@ -42,15 +50,24 @@ class OrderController extends Controller
         // Simpan full URL saat ini ke session agar saat edit/update selesai, user kembali ke halaman & filter yang persis sama
         session(['orders_index_url' => $request->fullUrl()]);
 
-        $query = OrderItem::with([
+        $relations = [
             'order.customer',
             'order.shipper',
             'order.items.product',
             'order.items.additionalProducts',
             'product',
             'additionalProducts',
-            'rekamSuhu'
-        ]);
+            'rekamSuhu',
+        ];
+
+        if ($isSuperAdmin) {
+            $relations[] = 'entryByUser:id,name';
+            $relations[] = 'exitByUser:id,name';
+            $relations[] = 'temperatureByUser:id,name';
+            $relations[] = 'rekamSuhu.user:id,name';
+        }
+
+        $query = OrderItem::with($relations);
 
         if ($trashed) {
             $query->onlyTrashed();
@@ -119,7 +136,7 @@ class OrderController extends Controller
         };
 
         // Transform untuk tambahkan temperature dan status layanan suhu
-        $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService, $invoicedOrderItemIds) {
+        $orders->getCollection()->transform(function ($item) use ($isPlugOrSuhuService, $invoicedOrderItemIds, $isSuperAdmin) {
             $data = $item->toArray();
             $data['temperature'] = [];
             foreach ($item->rekamSuhu as $rekam) {
@@ -166,6 +183,14 @@ class OrderController extends Controller
             $data['has_temperature_service'] = $itemHasTempService;
             $data['order_has_temperature_service'] = $orderHasTempService;
             $data['is_invoiced'] = in_array($item->id, $invoicedOrderItemIds);
+
+            // Audit log untuk Super Admin
+            $data['entry_by_user'] = $isSuperAdmin && $item->entryByUser ? ['id' => $item->entryByUser->id, 'name' => $item->entryByUser->name] : null;
+            $data['exit_by_user'] = $isSuperAdmin && $item->exitByUser ? ['id' => $item->exitByUser->id, 'name' => $item->exitByUser->name] : null;
+            $data['temperature_by_user'] = $isSuperAdmin && $item->temperatureByUser ? ['id' => $item->temperatureByUser->id, 'name' => $item->temperatureByUser->name] : null;
+            $data['entry_recorded_at'] = $isSuperAdmin && $item->entry_recorded_at ? $item->entry_recorded_at->format('Y-m-d H:i:s') : null;
+            $data['exit_recorded_at'] = $isSuperAdmin && $item->exit_recorded_at ? $item->exit_recorded_at->format('Y-m-d H:i:s') : null;
+            $data['temperature_recorded_at'] = $isSuperAdmin && $item->temperature_recorded_at ? $item->temperature_recorded_at->format('Y-m-d H:i:s') : null;
 
             return $data;
         });
@@ -709,12 +734,22 @@ class OrderController extends Controller
 
         // Proses setiap item
         foreach ($validated['order_items'] as $itemData) {
+            $hasEntry = !empty($itemData['entry_date']);
+            $hasExit = !empty($itemData['exit_date']);
+            $hasTemp = !empty($itemData['temperature']) && is_array($itemData['temperature']);
+
             $orderItem = $order->items()->create([
                 'product_id' => $itemData['product_id'],
                 'container_number' => $itemData['container_number'],
-                'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                'entry_date' => $hasEntry ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                'entry_by_user_id' => $hasEntry && auth()->check() ? auth()->id() : null,
+                'entry_recorded_at' => $hasEntry ? now() : null,
                 'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
-                'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
+                'exit_date' => $hasExit ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
+                'exit_by_user_id' => $hasExit && auth()->check() ? auth()->id() : null,
+                'exit_recorded_at' => $hasExit ? now() : null,
+                'temperature_by_user_id' => $hasTemp && auth()->check() ? auth()->id() : null,
+                'temperature_recorded_at' => $hasTemp ? now() : null,
                 'commodity' => $itemData['commodity'] ?? null,
                 'country' => $itemData['country'] ?? null,
                 'vessel' => $itemData['vessel'] ?? null,
@@ -768,6 +803,7 @@ class OrderController extends Controller
                 foreach ($itemData['temperature'] as $tanggal => $jamData) {
                     if (is_string($tanggal) && is_array($jamData)) {
                         $orderItem->rekamSuhu()->create([
+                            'user_id' => auth()->id(),
                             'tanggal' => $tanggal,
                             'jam_data' => $jamData,
                         ]);
@@ -788,13 +824,28 @@ class OrderController extends Controller
 
     public function show(Request $request, Order $order)
     {
-        $order->load([
+        $user = $request->user();
+        $isSuperAdmin = $user && ((int) $user->role_id === 1 || in_array(
+            strtolower($user->role?->name ?? ''),
+            ['super user', 'superadmin', 'super-admin']
+        ));
+
+        $relations = [
             'customer:id,name',
             'shipper:id,name',
             'items.product:id,service_type',
             'items.additionalProducts:id,service_type',
             'items.rekamSuhu'
-        ]);
+        ];
+
+        if ($isSuperAdmin) {
+            $relations[] = 'items.entryByUser:id,name';
+            $relations[] = 'items.exitByUser:id,name';
+            $relations[] = 'items.temperatureByUser:id,name';
+            $relations[] = 'items.rekamSuhu.user:id,name';
+        }
+
+        $order->load($relations);
 
         return Inertia::render('orders/show', [
             'order' => $order,
@@ -805,15 +856,29 @@ class OrderController extends Controller
     public function showOrderItemSimple(OrderItem $orderItem)
     {
         // $orderItem sudah di-resolve oleh Route Model Binding
+        $user = auth()->user();
+        $isSuperAdmin = $user && ((int) $user->role_id === 1 || in_array(
+            strtolower($user->role?->name ?? ''),
+            ['super user', 'superadmin', 'super-admin']
+        ));
 
         // Load relasi yang diperlukan
-        $orderItem->load([
+        $relations = [
             'order.customer:id,name',
             'order.shipper:id,name',
             'product',
             'additionalProducts',
             'rekamSuhu'
-        ]);
+        ];
+
+        if ($isSuperAdmin) {
+            $relations[] = 'entryByUser:id,name';
+            $relations[] = 'exitByUser:id,name';
+            $relations[] = 'temperatureByUser:id,name';
+            $relations[] = 'rekamSuhu.user:id,name';
+        }
+
+        $orderItem->load($relations);
 
         // Ambil order terkait
         $order = $orderItem->order;
@@ -1022,18 +1087,38 @@ public function update(Request $request, Order $order)
                 if (!$orderItem) continue;
 
                 // Update atribut dasar item
-                $orderItem->update([
+                $oldEntryStr = $orderItem->entry_date ? \Carbon\Carbon::parse($orderItem->entry_date)->format('Y-m-d H:i:s') : null;
+                $newEntryStr = !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date'])->format('Y-m-d H:i:s') : null;
+                $entryChanged = $oldEntryStr !== $newEntryStr;
+
+                $oldExitStr = $orderItem->exit_date ? \Carbon\Carbon::parse($orderItem->exit_date)->format('Y-m-d H:i:s') : null;
+                $newExitStr = !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date'])->format('Y-m-d H:i:s') : null;
+                $exitChanged = $oldExitStr !== $newExitStr;
+
+                $updatePayload = [
                     'product_id' => $itemData['product_id'],
                     'container_number' => $itemData['container_number'],
-                    'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                    'entry_date' => $newEntryStr ? \Carbon\Carbon::parse($newEntryStr) : null,
                     'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
-                    'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
+                    'exit_date' => $newExitStr ? \Carbon\Carbon::parse($newExitStr) : null,
                     'commodity' => $itemData['commodity'] ?? null,
                     'country' => $itemData['country'] ?? null,
                     'vessel' => $itemData['vessel'] ?? null,
                     'price_type' => $itemData['price_type'] ?? 'global',
                     'price_value' => $itemData['price_value'] ?? null,
-                ]);
+                ];
+
+                if ($entryChanged && auth()->check()) {
+                    $updatePayload['entry_by_user_id'] = auth()->id();
+                    $updatePayload['entry_recorded_at'] = now();
+                }
+
+                if ($exitChanged && auth()->check()) {
+                    $updatePayload['exit_by_user_id'] = auth()->id();
+                    $updatePayload['exit_recorded_at'] = now();
+                }
+
+                $orderItem->update($updatePayload);
 
                 // === PROSES PRODUK TAMBAHAN (UPDATE) ===
 $syncData = [];
@@ -1099,10 +1184,16 @@ $orderItem->additionalProducts()->sync($syncData);
                     foreach ($itemData['temperature'] as $tanggal => $jamData) {
                         if (is_string($tanggal) && is_array($jamData)) {
                             $orderItem->rekamSuhu()->create([
+                                'user_id' => auth()->id(),
                                 'tanggal' => $tanggal,
                                 'jam_data' => $jamData,
                             ]);
                         }
+                    }
+                    if (auth()->check()) {
+                        $orderItem->temperature_by_user_id = auth()->id();
+                        $orderItem->temperature_recorded_at = now();
+                        $orderItem->saveQuietly();
                     }
                 }
 
@@ -1110,12 +1201,22 @@ $orderItem->additionalProducts()->sync($syncData);
 
             } else {
                 // --- TAMBAH ITEM BARU ---
+                $hasEntry = !empty($itemData['entry_date']);
+                $hasExit = !empty($itemData['exit_date']);
+                $hasTemp = !empty($itemData['temperature']) && is_array($itemData['temperature']);
+
                 $orderItem = $order->items()->create([
                     'product_id' => $itemData['product_id'],
                     'container_number' => $itemData['container_number'],
-                    'entry_date' => !empty($itemData['entry_date']) ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                    'entry_date' => $hasEntry ? \Carbon\Carbon::parse($itemData['entry_date']) : null,
+                    'entry_by_user_id' => $hasEntry && auth()->check() ? auth()->id() : null,
+                    'entry_recorded_at' => $hasEntry ? now() : null,
                     'eir_date' => !empty($itemData['eir_date']) ? \Carbon\Carbon::parse($itemData['eir_date']) : null,
-                    'exit_date' => !empty($itemData['exit_date']) ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
+                    'exit_date' => $hasExit ? \Carbon\Carbon::parse($itemData['exit_date']) : null,
+                    'exit_by_user_id' => $hasExit && auth()->check() ? auth()->id() : null,
+                    'exit_recorded_at' => $hasExit ? now() : null,
+                    'temperature_by_user_id' => $hasTemp && auth()->check() ? auth()->id() : null,
+                    'temperature_recorded_at' => $hasTemp ? now() : null,
                     'commodity' => $itemData['commodity'] ?? null,
                     'country' => $itemData['country'] ?? null,
                     'vessel' => $itemData['vessel'] ?? null,
@@ -1161,6 +1262,7 @@ $orderItem->additionalProducts()->sync($syncData);
                     foreach ($itemData['temperature'] as $tanggal => $jamData) {
                         if (is_string($tanggal) && is_array($jamData)) {
                             $orderItem->rekamSuhu()->create([
+                                'user_id' => auth()->id(),
                                 'tanggal' => $tanggal,
                                 'jam_data' => $jamData,
                             ]);
@@ -1279,8 +1381,30 @@ $orderItem->additionalProducts()->sync($syncData);
 
     public function updateEntry(Request $request, OrderItem $orderItem) {
         $request->validate(['entry_date' => 'nullable']);
-        $orderItem->entry_date = !empty($request->entry_date) ? \Carbon\Carbon::parse($request->entry_date) : null;
+        $oldEntry = $orderItem->entry_date;
+        $newEntry = !empty($request->entry_date) ? \Carbon\Carbon::parse($request->entry_date) : null;
+
+        $orderItem->entry_date = $newEntry;
+        if (auth()->check()) {
+            $orderItem->entry_by_user_id = auth()->id();
+            $orderItem->entry_recorded_at = now();
+        }
         $orderItem->save();
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'update_gate_in',
+                'OrderItem',
+                $orderItem->id,
+                ['entry_date' => $oldEntry ? (string)$oldEntry : null],
+                [
+                    'entry_date' => $newEntry ? (string)$newEntry : null,
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
+
         return back()->with('success', 'Tanggal masuk berhasil diperbarui.');
     }
 
@@ -1293,8 +1417,30 @@ $orderItem->additionalProducts()->sync($syncData);
 
     public function updateExit(Request $request, OrderItem $orderItem) {
         $request->validate(['exit_date' => 'nullable']);
-        $orderItem->exit_date = !empty($request->exit_date) ? \Carbon\Carbon::parse($request->exit_date) : null;
+        $oldExit = $orderItem->exit_date;
+        $newExit = !empty($request->exit_date) ? \Carbon\Carbon::parse($request->exit_date) : null;
+
+        $orderItem->exit_date = $newExit;
+        if (auth()->check()) {
+            $orderItem->exit_by_user_id = auth()->id();
+            $orderItem->exit_recorded_at = now();
+        }
         $orderItem->save();
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'update_gate_out',
+                'OrderItem',
+                $orderItem->id,
+                ['exit_date' => $oldExit ? (string)$oldExit : null],
+                [
+                    'exit_date' => $newExit ? (string)$newExit : null,
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
+
         return back()->with('success', 'Tanggal keluar berhasil diperbarui.');
     }
 
@@ -1395,13 +1541,34 @@ public function updateTemperature(Request $request, $id)
 
         if ($rekam) {
             $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
+            $deletedVal = $jamData[$request->delete_jam] ?? null;
             unset($jamData[$request->delete_jam]);
             if (empty($jamData)) {
                 $rekam->delete();
             } else {
                 $rekam->jam_data = $jamData;
+                if (auth()->check()) {
+                    $rekam->user_id = auth()->id();
+                }
                 $rekam->save();
             }
+
+            if (auth()->check()) {
+                ActivityLog::log(
+                    'delete_suhu',
+                    'OrderItem',
+                    $id,
+                    ['tanggal' => $request->delete_tanggal, 'jam' => $request->delete_jam, 'suhu' => $deletedVal],
+                    ['user_name' => auth()->user()->name, 'recorded_at' => now()->toDateTimeString()]
+                );
+            }
+        }
+
+        $orderItem = OrderItem::find($id);
+        if ($orderItem && auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+            $orderItem->saveQuietly();
         }
 
         $this->syncOrderItemShiftAfterTemperatureUpdate($id);
@@ -1423,13 +1590,38 @@ public function updateTemperature(Request $request, $id)
         ]);
 
         $jamData = is_array($rekam->jam_data) ? $rekam->jam_data : (json_decode($rekam->jam_data ?? '[]', true) ?: []);
+        $oldVal = $jamData[$request->jam] ?? null;
         $jamData[$request->jam] = (string) $request->suhu;
 
         // Urutkan jam secara kronologis
         ksort($jamData);
 
         $rekam->jam_data = $jamData;
+        if (auth()->check()) {
+            $rekam->user_id = auth()->id();
+        }
         $rekam->save();
+
+        $orderItem = OrderItem::find($id);
+        if ($orderItem && auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+            $orderItem->saveQuietly();
+
+            ActivityLog::log(
+                'entry_suhu',
+                'OrderItem',
+                $orderItem->id,
+                ['tanggal' => $request->tanggal, 'jam' => $request->jam, 'suhu' => $oldVal],
+                [
+                    'tanggal' => $request->tanggal,
+                    'jam' => $request->jam,
+                    'suhu' => (string) $request->suhu,
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
 
         $this->syncOrderItemShiftAfterTemperatureUpdate($id);
 
@@ -1450,6 +1642,7 @@ public function updateTemperature(Request $request, $id)
             ksort($jam_data);
             \DB::table('order_item_rekam_suhus')->insert([
                 'order_item_id' => $id,
+                'user_id' => auth()->id(),
                 'tanggal' => $tanggal,
                 'jam_data' => json_encode($jam_data),
                 'created_at' => now(),
@@ -1458,9 +1651,75 @@ public function updateTemperature(Request $request, $id)
         }
     }
 
+    $orderItem = OrderItem::find($id);
+    if ($orderItem && auth()->check()) {
+        $orderItem->temperature_by_user_id = auth()->id();
+        $orderItem->temperature_recorded_at = now();
+        $orderItem->saveQuietly();
+
+        ActivityLog::log(
+            'entry_suhu_bulk',
+            'OrderItem',
+            $orderItem->id,
+            null,
+            [
+                'user_name' => auth()->user()->name,
+                'recorded_at' => now()->toDateTimeString(),
+                'dates_count' => count($request->temperature),
+            ]
+        );
+    }
+
     $this->syncOrderItemShiftAfterTemperatureUpdate($id);
 
     return redirect()->back()->with('success', 'Rekam suhu berhasil disimpan');
+}
+
+/**
+ * Get Activity Logs for specific Order Item (Hanya untuk Super Admin)
+ */
+public function getOrderItemActivityLogs(OrderItem $orderItem)
+{
+    $user = auth()->user();
+    $isSuperAdmin = $user && ((int) $user->role_id === 1 || in_array(
+        strtolower($user->role?->name ?? ''),
+        ['super user', 'superadmin', 'super-admin']
+    ));
+
+    if (!$isSuperAdmin) {
+        abort(403, 'Akses ditolak. Riwayat pemrosesan data hanya dapat dilihat oleh Super Admin.');
+    }
+
+    $logs = ActivityLog::where('model_type', 'OrderItem')
+        ->where('model_id', $orderItem->id)
+        ->with('user:id,name')
+        ->latest()
+        ->take(50)
+        ->get();
+
+    return response()->json([
+        'container_number' => $orderItem->container_number,
+        'entry_date' => $orderItem->entry_date,
+        'entry_by_user' => $orderItem->entryByUser ? ['id' => $orderItem->entryByUser->id, 'name' => $orderItem->entryByUser->name] : null,
+        'entry_recorded_at' => $orderItem->entry_recorded_at ? $orderItem->entry_recorded_at->format('d/m/Y H:i:s') : null,
+        'exit_date' => $orderItem->exit_date,
+        'exit_by_user' => $orderItem->exitByUser ? ['id' => $orderItem->exitByUser->id, 'name' => $orderItem->exitByUser->name] : null,
+        'exit_recorded_at' => $orderItem->exit_recorded_at ? $orderItem->exit_recorded_at->format('d/m/Y H:i:s') : null,
+        'temperature_by_user' => $orderItem->temperatureByUser ? ['id' => $orderItem->temperatureByUser->id, 'name' => $orderItem->temperatureByUser->name] : null,
+        'temperature_recorded_at' => $orderItem->temperature_recorded_at ? $orderItem->temperature_recorded_at->format('d/m/Y H:i:s') : null,
+        'start_plug_in' => $orderItem->start_plug_in,
+        'plug_out' => $orderItem->plug_out,
+        'logs' => $logs->map(function ($log) {
+            return [
+                'id' => $log->id,
+                'action' => $log->action,
+                'user_name' => $log->user?->name ?? ($log->new_values['user_name'] ?? 'Sistem'),
+                'old_values' => $log->old_values,
+                'new_values' => $log->new_values,
+                'created_at' => $log->created_at ? $log->created_at->format('d/m/Y H:i:s') : null,
+            ];
+        }),
+    ]);
 }
 
 /**

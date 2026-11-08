@@ -17,6 +17,7 @@ import {
     Layers,
     Tag,
     Pencil,
+    User,
 } from 'lucide-react';
 import { type SharedData } from '@/types';
 import ContainerTemperatureView from '@/components/container-temperature-view';
@@ -27,8 +28,14 @@ interface OrderItem {
     product: { id?: number; service_type: string };
     container_number: string;
     entry_date?: string | null;
+    entry_by_user?: { id: number; name: string } | null;
+    entry_recorded_at?: string | null;
     eir_date?: string | null;
     exit_date?: string | null;
+    exit_by_user?: { id: number; name: string } | null;
+    exit_recorded_at?: string | null;
+    temperature_by_user?: { id: number; name: string } | null;
+    temperature_recorded_at?: string | null;
     commodity?: string | null;
     country?: string | null;
     vessel?: string | null;
@@ -60,6 +67,8 @@ interface Props {
 export default function ShowSingleOrderItem({ order, orderItem, return_url: initialReturnUrl }: Props) {
     const { auth } = usePage<SharedData>().props;
     const roleId = auth?.user?.role_id;
+    const roleName = (auth?.user as any)?.role_name || (auth?.user as any)?.role?.name || '';
+    const isSuperAdmin = roleId === 1 || /super/i.test(roleName);
     const isRoleKarantina = roleId == 4;
 
     const returnUrl =
@@ -220,6 +229,12 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                 <p className="text-gray-800">
                                     {formatDateTimeIndo(orderItem.entry_date)}
                                 </p>
+                                {isSuperAdmin && orderItem.entry_by_user && (
+                                    <span className="inline-flex items-center gap-1 text-[11px] text-blue-700 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded font-medium mt-1" title={`Diproses oleh ${orderItem.entry_by_user.name}${orderItem.entry_recorded_at ? ` pada ${formatDateTimeIndo(orderItem.entry_recorded_at)}` : ''}`}>
+                                        <User className="h-3 w-3 text-blue-600" />
+                                        {orderItem.entry_by_user.name}
+                                    </span>
+                                )}
                             </div>
 
                             <div className="space-y-0.5">
@@ -240,6 +255,12 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                                 <p className="text-gray-800">
                                     {formatDateTimeIndo(orderItem.exit_date)}
                                 </p>
+                                {isSuperAdmin && orderItem.exit_by_user && (
+                                    <span className="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded font-medium mt-1" title={`Diproses oleh ${orderItem.exit_by_user.name}${orderItem.exit_recorded_at ? ` pada ${formatDateTimeIndo(orderItem.exit_recorded_at)}` : ''}`}>
+                                        <User className="h-3 w-3 text-amber-600" />
+                                        {orderItem.exit_by_user.name}
+                                    </span>
+                                )}
                             </div>
 
                             <div className="space-y-0.5">
@@ -308,6 +329,15 @@ export default function ShowSingleOrderItem({ order, orderItem, return_url: init
                         {/* Bagian Rekam Suhu & Operasional Reefer */}
                         {hasTemp ? (
                             <div className="mt-4 border-t border-gray-100 pt-4">
+                                {isSuperAdmin && orderItem.temperature_by_user && (
+                                    <div className="text-[11px] text-gray-600 bg-sky-50/70 border border-sky-200 rounded-lg px-3 py-1.5 flex items-center gap-1.5 mb-2.5">
+                                        <User className="h-3.5 w-3.5 text-sky-600 shrink-0" />
+                                        <span>Suhu terakhir diproses oleh: <strong className="text-gray-900 font-semibold">{orderItem.temperature_by_user.name}</strong></span>
+                                        {orderItem.temperature_recorded_at && (
+                                            <span className="text-gray-400">({formatDateTimeIndo(orderItem.temperature_recorded_at)})</span>
+                                        )}
+                                    </div>
+                                )}
                                 <ContainerTemperatureView
                                     containerNumber={orderItem.container_number}
                                     rekamSuhu={orderItem.rekam_suhu}

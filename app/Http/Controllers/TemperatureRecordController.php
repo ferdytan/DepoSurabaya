@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OrderItem;
 use App\Models\OrderItemRekamSuhu;
+use App\Models\ActivityLog;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -71,7 +72,13 @@ class TemperatureRecordController extends Controller
             $query->whereNotNull('exit_date');
         }
 
-        $records = $query->with([
+        $user = $request->user();
+        $isSuperAdmin = $user && ((int) $user->role_id === 1 || in_array(
+            strtolower($user->role?->name ?? ''),
+            ['super user', 'superadmin', 'super-admin']
+        ));
+
+        $relations = [
             'order:id,order_id,no_aju,customer_id,shipper_id',
             'order.customer:id,name',
             'order.shipper:id,name',
@@ -80,7 +87,16 @@ class TemperatureRecordController extends Controller
             'rekamSuhu' => function ($q) {
                 $q->orderBy('tanggal', 'desc');
             },
-        ])
+        ];
+
+        if ($isSuperAdmin) {
+            $relations[] = 'entryByUser:id,name';
+            $relations[] = 'exitByUser:id,name';
+            $relations[] = 'temperatureByUser:id,name';
+            $relations[] = 'rekamSuhu.user:id,name';
+        }
+
+        $records = $query->with($relations)
         ->orderByRaw('CASE WHEN exit_date IS NULL THEN 0 ELSE 1 END')
         ->orderByDesc('entry_date')
         ->paginate($perPage)
@@ -149,6 +165,10 @@ class TemperatureRecordController extends Controller
         }
         // Shift pertama adalah menit pertama di plug sampai 8 jam (minimal 1 shift)
         $orderItem->total_shifts = 1;
+        if (auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+        }
         $orderItem->save();
 
         if ($request->filled('temperature')) {
@@ -165,7 +185,26 @@ class TemperatureRecordController extends Controller
             ksort($jamData);
 
             $rekam->jam_data = $jamData;
+            if (auth()->check()) {
+                $rekam->user_id = auth()->id();
+            }
             $rekam->save();
+        }
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'plug_in',
+                'OrderItem',
+                $orderItem->id,
+                null,
+                [
+                    'start_plug_in' => $orderItem->start_plug_in,
+                    'set_point' => $orderItem->set_point,
+                    'temperature' => $request->input('temperature'),
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
         }
 
         $setPointMsg = (OrderItem::hasSetPointColumn() && $orderItem->set_point !== null) ? " (Set Point: {$orderItem->set_point}°C)" : "";
@@ -212,6 +251,9 @@ class TemperatureRecordController extends Controller
             ksort($jamData);
 
             $rekam->jam_data = $jamData;
+            if (auth()->check()) {
+                $rekam->user_id = auth()->id();
+            }
             $rekam->save();
         }
 
@@ -221,7 +263,27 @@ class TemperatureRecordController extends Controller
         $orderItem->plug_out = $time->format('Y-m-d H:i:s');
         $orderItem->plug_duration_minutes = $calc['duration_minutes'];
         $orderItem->total_shifts = $calc['total_shifts'];
+        if (auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+        }
         $orderItem->save();
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'plug_out',
+                'OrderItem',
+                $orderItem->id,
+                null,
+                [
+                    'plug_out' => $orderItem->plug_out,
+                    'temperature' => $request->input('temperature'),
+                    'total_shifts' => $orderItem->total_shifts,
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
 
         $durasiJam = floor($calc['duration_minutes'] / 60);
         $durasiMenit = $calc['duration_minutes'] % 60;
@@ -278,7 +340,28 @@ class TemperatureRecordController extends Controller
             $orderItem->total_shifts = null;
         }
 
+        if (auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+        }
+
         $orderItem->save();
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'update_plug_times',
+                'OrderItem',
+                $orderItem->id,
+                null,
+                [
+                    'start_plug_in' => $orderItem->start_plug_in,
+                    'plug_out' => $orderItem->plug_out,
+                    'set_point' => $orderItem->set_point,
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
 
         return redirect()->back()->with('success', "Waktu Plug In & Out kontainer {$orderItem->container_number} berhasil diperbarui.");
     }
@@ -292,7 +375,24 @@ class TemperatureRecordController extends Controller
         $orderItem->plug_out = null;
         $orderItem->plug_duration_minutes = null;
         $orderItem->total_shifts = null;
+        if (auth()->check()) {
+            $orderItem->temperature_by_user_id = auth()->id();
+            $orderItem->temperature_recorded_at = now();
+        }
         $orderItem->save();
+
+        if (auth()->check()) {
+            ActivityLog::log(
+                'reset_plug',
+                'OrderItem',
+                $orderItem->id,
+                null,
+                [
+                    'user_name' => auth()->user()->name,
+                    'recorded_at' => now()->toDateTimeString(),
+                ]
+            );
+        }
 
         return redirect()->back()->with('success', "Status Plug In & Out kontainer {$orderItem->container_number} berhasil di-reset.");
     }

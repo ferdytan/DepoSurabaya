@@ -30,37 +30,53 @@ interface SuratJalanModalProps {
 }
 
 export const SCALE_CONFIG = {
-    '88': {
-        pageWidthMm: 184,
+    '100': {
+        pageWidthMm: 202,
         pageHeightMm: 124,
-        previewW: 696,
-        previewH: 466,
-        label: '88% (Rekomendasi Dot Matrix)',
-        desc: 'Standar paling optimal untuk continuous form agar tidak terpotong tepi/traktor',
+        previewW: 764,
+        previewH: 468,
+        label: '100% (Rekomendasi Lebar)',
+        desc: 'Lebar maksimal memenuhi continuous form rata kiri dan kanan',
+    },
+    '95': {
+        pageWidthMm: 195,
+        pageHeightMm: 124,
+        previewW: 738,
+        previewH: 468,
+        label: '95%',
+        desc: 'Lebar proporsional dengan margin aman',
+    },
+    '90': {
+        pageWidthMm: 188,
+        pageHeightMm: 124,
+        previewW: 710,
+        previewH: 468,
+        label: '90%',
+        desc: 'Ukuran sedang',
     },
     '85': {
-        pageWidthMm: 178,
+        pageWidthMm: 180,
         pageHeightMm: 120,
-        previewW: 672,
-        previewH: 450,
+        previewW: 680,
+        previewH: 454,
         label: '85% (Kompak)',
         desc: 'Ekstra aman dari pinggiran kertas & lipatan perforasi',
     },
-    '92': {
-        pageWidthMm: 192,
-        pageHeightMm: 128,
-        previewW: 726,
-        previewH: 484,
-        label: '92%',
-        desc: 'Sedikit lebih lebar',
+    '88': {
+        pageWidthMm: 202,
+        pageHeightMm: 124,
+        previewW: 764,
+        previewH: 468,
+        label: '100% (Rekomendasi Lebar)',
+        desc: 'Lebar maksimal memenuhi continuous form rata kiri dan kanan',
     },
-    '100': {
-        pageWidthMm: 200,
-        pageHeightMm: 132,
-        previewW: 756,
-        previewH: 500,
-        label: '100% (Penuh)',
-        desc: 'Ukuran media penuh tanpa pengurangan',
+    '92': {
+        pageWidthMm: 195,
+        pageHeightMm: 124,
+        previewW: 738,
+        previewH: 468,
+        label: '95%',
+        desc: 'Lebar proporsional dengan margin aman',
     },
 } as const;
 
@@ -104,7 +120,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     const [layanan, setLayanan] = useState(() => data?.service_type || 'PLUG & MONITORING TEMPERATURE');
     const [showLogo, setShowLogo] = useState(false); // Default false matching continuous form sample photo
     const [layoutStyle, setLayoutStyle] = useState<'standard' | 'modern'>('modern'); // Opsi pilihan layout (default modern)
-    const [printScale, setPrintScale] = useState<PrintScaleKey>('88'); // Default 88% untuk dot matrix anti terpotong
+    const [printScale, setPrintScale] = useState<PrintScaleKey>('100'); // Default 100% (202mm lebar penuh)
 
     useEffect(() => {
         if (data) {
@@ -133,7 +149,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
     const customerName = data?.customer_name || '-';
     const shipperName = data?.shipper_name || null;
 
-    const currentDim = SCALE_CONFIG[printScale] || SCALE_CONFIG['88'];
+    const currentDim = SCALE_CONFIG[printScale] || SCALE_CONFIG['100'];
 
     // Generate standalone, self-contained HTML for printing (guaranteed 1 page, 210mm x 140mm)
     const generatePrintHtml = () => {
@@ -179,10 +195,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             height: 140mm !important;
             max-height: 140mm !important;
             display: flex !important;
+            flex-direction: column !important;
             align-items: center !important;
-            justify-content: center !important;
+            justify-content: flex-start !important;
             box-sizing: border-box !important;
-            padding: 0 !important;
+            padding-top: 20px !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            padding-bottom: 0 !important;
             margin: 0 !important;
         }
         .sj-page {
@@ -646,10 +666,14 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             height: 140mm !important;
             max-height: 140mm !important;
             display: flex !important;
+            flex-direction: column !important;
             align-items: center !important;
-            justify-content: center !important;
+            justify-content: flex-start !important;
             box-sizing: border-box !important;
-            padding: 0 !important;
+            padding-top: 20px !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            padding-bottom: 0 !important;
             margin: 0 !important;
         }
         .sj-page {
@@ -1101,7 +1125,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                         {/* Selector Skala Ukuran Cetak (Anti Terpotong di Printer Dot Matrix) */}
                         <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg p-0.5">
                             <span className="text-[11px] font-semibold text-slate-500 pl-2 pr-1">Skala Cetak:</span>
-                            {(['88', '85', '92', '100'] as const).map((key) => {
+                            {(['100', '95', '90', '85'] as const).map((key) => {
                                 const s = SCALE_CONFIG[key];
                                 return (
                                     <button
@@ -1115,7 +1139,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                         }`}
                                         title={s.desc}
                                     >
-                                        {key === '88' ? '88% (Rekomendasi Dot Matrix)' : `${key}%`}
+                                        {key === '100' ? '100% (Lebar Maksimal)' : `${key}%`}
                                     </button>
                                 );
                             })}
@@ -1242,7 +1266,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     {/* Wadah Simulasi Kertas Ukuran 210mm x 140mm (~794px x 529px) */}
                     <div
                         ref={printContainerRef}
-                        className="relative bg-white shadow-md border border-gray-400 w-[794px] min-w-[794px] h-[529px] min-h-[529px] rounded flex items-center justify-center select-none"
+                        className="relative bg-white shadow-md border border-gray-400 w-[794px] min-w-[794px] h-[529px] min-h-[529px] rounded flex flex-col items-center justify-start pt-[20px] select-none"
                         style={{ fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif' }}
                     >
                         {/* Sprocket Holes Indicator (Kiri & Kanan Kertas Dot Matrix) */}

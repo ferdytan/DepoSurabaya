@@ -32,51 +32,35 @@ interface SuratJalanModalProps {
 export const SCALE_CONFIG = {
     '100': {
         pageWidthMm: 202,
-        pageHeightMm: 124,
+        pageHeightMm: 128,
         previewW: 764,
-        previewH: 468,
-        label: '100% (Rekomendasi Lebar)',
-        desc: 'Lebar maksimal memenuhi continuous form rata kiri dan kanan',
+        previewH: 485,
+        label: '100% (Rekomendasi Lebar & Tinggi 13 cm)',
+        desc: 'Lebar maksimal memenuhi continuous form dan tinggi 13 cm',
     },
     '95': {
         pageWidthMm: 195,
-        pageHeightMm: 124,
+        pageHeightMm: 128,
         previewW: 738,
-        previewH: 468,
+        previewH: 485,
         label: '95%',
         desc: 'Lebar proporsional dengan margin aman',
     },
     '90': {
         pageWidthMm: 188,
-        pageHeightMm: 124,
+        pageHeightMm: 128,
         previewW: 710,
-        previewH: 468,
+        previewH: 485,
         label: '90%',
         desc: 'Ukuran sedang',
     },
     '85': {
         pageWidthMm: 180,
-        pageHeightMm: 120,
+        pageHeightMm: 128,
         previewW: 680,
-        previewH: 454,
+        previewH: 485,
         label: '85% (Kompak)',
         desc: 'Ekstra aman dari pinggiran kertas & lipatan perforasi',
-    },
-    '88': {
-        pageWidthMm: 202,
-        pageHeightMm: 124,
-        previewW: 764,
-        previewH: 468,
-        label: '100% (Rekomendasi Lebar)',
-        desc: 'Lebar maksimal memenuhi continuous form rata kiri dan kanan',
-    },
-    '92': {
-        pageWidthMm: 195,
-        pageHeightMm: 124,
-        previewW: 738,
-        previewH: 468,
-        label: '95%',
-        desc: 'Lebar proporsional dengan margin aman',
     },
 } as const;
 
@@ -683,7 +667,7 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             align-items: center !important;
             justify-content: flex-start !important;
             box-sizing: border-box !important;
-            padding-top: 15px !important;
+            padding-top: 5mm !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
             padding-bottom: 0 !important;
@@ -693,9 +677,10 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         .sj-page {
             width: ${pageWidthMm}mm !important;
             max-width: ${pageWidthMm}mm !important;
+            height: 128mm !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: flex-start !important;
+            justify-content: space-between !important;
             overflow: hidden !important;
             page-break-before: avoid !important;
             page-break-inside: avoid !important;
@@ -704,20 +689,26 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             background: transparent !important;
         }
 
-        /* V2 Excel Master Frame (1 Kotak Utuh Mengelilingi Keseluruhan) */
+        /* V2 Excel Master Frame (1 Kotak Utuh Mengelilingi Keseluruhan Tinggi ~128mm / 13 cm) */
         .v2-master-frame {
             width: 100%;
+            height: 128mm !important;
             border: 1px solid #000000 !important;
             box-sizing: border-box !important;
             background: transparent !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             page-break-inside: avoid !important;
         }
         .v2-top-header {
             display: flex;
             justify-content: space-between;
             align-items: stretch;
+            height: 32mm !important;
             border-bottom: 1px solid #000000 !important;
             background: transparent !important;
+            box-sizing: border-box !important;
         }
         .v2-company-box {
             flex: 1;
@@ -729,59 +720,62 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             background: transparent !important;
         }
         .v2-company-name {
-            font-size: 13pt;
-            font-weight: 900;
+            font-size: 14.5pt;
+            font-weight: bold;
             line-height: 1.15;
             color: #000000 !important;
             white-space: nowrap;
             letter-spacing: 0px;
         }
         .v2-company-addr {
-            font-size: 8.5pt;
+            font-size: 9.5pt;
             font-weight: bold;
             line-height: 1.25;
             color: #000000 !important;
-            margin-top: 0.5mm;
+            margin-top: 0.8mm;
             white-space: nowrap;
         }
         .v2-company-telp {
-            font-size: 8pt;
+            font-size: 9pt;
             font-weight: bold;
             line-height: 1.2;
             color: #000000 !important;
             white-space: nowrap;
         }
         .v2-customer-line {
-            margin-top: 1.5mm;
-            font-size: 10pt;
-            font-weight: 900;
+            margin-top: 2.5mm;
+            font-size: 11pt;
+            font-weight: bold;
             color: #000000 !important;
             line-height: 1.2;
             text-transform: uppercase;
             word-break: break-word;
         }
         .v2-shipper-line {
-            font-size: 9pt;
-            font-weight: 900;
+            font-size: 10pt;
+            font-weight: bold;
             color: #000000 !important;
             line-height: 1.2;
             text-transform: uppercase;
             word-break: break-word;
-            padding-left: 20mm;
+            padding-left: 24mm;
         }
         .v2-meta-table {
-            width: 60mm;
+            width: 65mm;
+            height: 32mm !important;
             border-left: 1px solid #000000 !important;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             background: transparent !important;
+            box-sizing: border-box !important;
         }
         .v2-meta-row {
             display: flex;
             align-items: center;
             border-bottom: 1px solid #000000 !important;
-            height: 6mm;
-            font-size: 9pt;
+            height: 8mm !important;
+            font-size: 9.5pt;
             font-weight: bold;
             color: #000000 !important;
             box-sizing: border-box !important;
@@ -790,13 +784,13 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             border-bottom: none !important;
         }
         .v2-meta-lbl {
-            width: 22mm;
+            width: 24mm;
             padding-left: 2mm;
             color: #000000 !important;
             white-space: nowrap;
         }
         .v2-meta-sep {
-            width: 2.5mm;
+            width: 3mm;
             text-align: center;
             color: #000000 !important;
         }
@@ -809,13 +803,15 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             text-overflow: ellipsis;
         }
 
-        /* V2 Main Grid Table */
+        /* V2 Main Grid Table (~51mm) */
         table.v2-grid {
             width: 100%;
+            height: 51mm !important;
             border-collapse: collapse !important;
             border: none !important;
             background: transparent !important;
             page-break-inside: avoid !important;
+            box-sizing: border-box !important;
         }
         table.v2-grid tr {
             page-break-inside: avoid !important;
@@ -836,9 +832,9 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             color: #000000 !important;
         }
         .v2-cont-num {
-            height: 14mm;
-            font-size: 24pt;
-            font-weight: 900;
+            height: 13.5mm;
+            font-size: 14.5pt;
+            font-weight: bold;
             letter-spacing: 1px;
             text-align: center;
             vertical-align: middle;
@@ -846,18 +842,18 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .v2-size-col {
             width: 52mm;
-            height: 8.5mm;
+            height: 13.5mm;
             font-size: 12pt;
-            font-weight: 900;
+            font-weight: bold;
             text-align: center;
             vertical-align: middle;
             border-bottom: 1px solid #000000 !important;
             color: #000000 !important;
         }
         .v2-val-row {
-            height: 7.5mm;
-            font-size: 10pt;
-            font-weight: 900;
+            height: 12.5mm;
+            font-size: 10.5pt;
+            font-weight: bold;
             text-align: center;
             vertical-align: middle;
             padding: 0 2mm;
@@ -865,26 +861,28 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
         }
         .v2-service-col {
             width: 52mm;
+            height: 37.5mm;
             text-align: center;
             vertical-align: middle;
             padding: 2mm 1mm;
-            font-size: 16pt;
-            font-weight: 900;
+            font-size: 15pt;
+            font-weight: bold;
             font-style: italic;
             text-transform: uppercase;
             line-height: 1.2;
             color: #000000 !important;
         }
 
-        /* V2 Footer Table */
+        /* V2 Footer Table (~45mm - Ruang TTD Luas & Proporsional) */
         table.v2-footer {
             width: 100%;
+            height: 45mm !important;
             border-collapse: collapse !important;
             border: none !important;
             border-top: 1px solid #000000 !important;
-            height: 25mm;
             background: transparent !important;
             page-break-inside: avoid !important;
+            box-sizing: border-box !important;
         }
         table.v2-footer tr {
             page-break-inside: avoid !important;
@@ -898,28 +896,28 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
             box-sizing: border-box !important;
         }
         .v2-notice-col {
-            width: 56mm;
-            padding: 1.5mm 2.5mm;
-            font-size: 8.5pt;
+            width: 58mm;
+            padding: 2.5mm 3mm;
+            font-size: 9pt;
             font-weight: bold;
-            line-height: 1.25;
+            line-height: 1.35;
             color: #000000 !important;
         }
         .v2-notice-col u {
-            font-weight: 900;
+            font-weight: bold;
         }
         .v2-sig-col {
-            width: 32mm;
+            width: 34mm;
             text-align: center;
-            padding-top: 1.5mm;
-            font-size: 9pt;
+            padding-top: 2mm;
+            font-size: 9.5pt;
             font-weight: bold;
             color: #000000 !important;
         }
         .v2-sig-last {
             text-align: center;
-            padding-top: 1.5mm;
-            font-size: 9pt;
+            padding-top: 2mm;
+            font-size: 9.5pt;
             font-weight: bold;
             color: #000000 !important;
         }
@@ -1329,32 +1327,16 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                     </div>
                 </div>
 
-                {/* AREA PREVIEW SURAT JALAN (Simulasi Kertas Continuous Form 21 x 14 cm) */}
+                {/* AREA PREVIEW SURAT JALAN (Simulasi Kertas 21 x 14 cm) */}
                 <div className="flex flex-col items-center p-3 bg-slate-200/70 rounded-xl overflow-x-auto space-y-2 sj-preview-container">
-                    {/* Wadah Simulasi Kertas Ukuran 210mm x 140mm (~794px x 529px) */}
+                    {/* Wadah Kertas Bersih Ukuran 210mm x 140mm (~794px x 529px) */}
                     <div
                         ref={printContainerRef}
                         id="sj-print-paper-root"
-                        className="relative bg-white shadow-md border border-gray-400 w-[794px] min-w-[794px] h-[529px] min-h-[529px] rounded flex flex-col items-center justify-start pt-[20px] select-none sj-printable-paper"
+                        className="relative bg-white shadow-md border border-slate-300 w-[794px] min-w-[794px] h-[529px] min-h-[529px] rounded-lg flex flex-col items-center justify-start pt-[18px] select-none sj-printable-paper"
                         style={{ fontFamily: layoutStyle === 'standard' ? '"Courier New", Courier, monospace' : 'Arial, "Helvetica Neue", Helvetica, sans-serif' }}
                     >
-                        {/* Sprocket Holes Indicator (Kiri & Kanan Kertas Dot Matrix) */}
-                        <div className="absolute left-1.5 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-25 sj-sprocket-holes">
-                            {Array.from({ length: 16 }).map((_, i) => (
-                                <div key={i} className="w-2.5 h-2.5 rounded-full bg-gray-700"></div>
-                            ))}
-                        </div>
-                        <div className="absolute right-1.5 top-0 bottom-0 flex flex-col justify-between py-2 pointer-events-none opacity-25 sj-sprocket-holes">
-                            {Array.from({ length: 16 }).map((_, i) => (
-                                <div key={i} className="w-2.5 h-2.5 rounded-full bg-gray-700"></div>
-                            ))}
-                        </div>
-
-                        {/* Garis Perforasi Batas Traktor */}
-                        <div className="absolute left-[44px] top-0 bottom-0 border-r border-dashed border-gray-300 pointer-events-none sj-perforation-line" title="Batas perforasi traktor kiri"></div>
-                        <div className="absolute right-[44px] top-0 bottom-0 border-l border-dashed border-gray-300 pointer-events-none sj-perforation-line" title="Batas perforasi traktor kanan"></div>
-
-                        {/* Konten Area Cetak Dinamis Sesuai Skala */}
+                        {/* Konten Area Cetak Dinamis Sesuai Skala (~13 cm / 485px tinggi) */}
                         <div
                             className="flex flex-col justify-between"
                             style={{
@@ -1513,110 +1495,114 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                     </div>
                                 </div>
                             ) : (
-                                /* ===== PREVIEW LAYOUT VERSI 2: FORMAT EXCEL / CONTINUOUS FORM FISIK KLASIK ===== */
+                                /* ===== PREVIEW LAYOUT VERSI 2: FORMAT EXCEL / CONTINUOUS FORM FISIK KLASIK (TINGGI 13 CM) ===== */
                                 <div
-                                    className="w-full h-full flex flex-col justify-start select-none"
+                                    className="w-full h-full flex flex-col justify-between select-none"
                                     style={{ fontFamily: '"Courier New", Courier, monospace' }}
                                 >
-                                    <div className="w-full border border-black bg-white flex flex-col">
-                                        {/* Top Header Section */}
-                                        <div className="flex justify-between items-stretch border-b border-black">
+                                    <div className="w-full h-full border border-black bg-white flex flex-col justify-between">
+                                        {/* Top Header Section (Tinggi ~120px / 32mm) */}
+                                        <div className="flex justify-between items-stretch border-b border-black h-[120px] shrink-0">
                                             {/* Identitas Perusahaan & Customer */}
-                                            <div className="flex-1 p-2 flex flex-col justify-between min-w-0">
+                                            <div className="flex-1 p-2.5 flex flex-col justify-between min-w-0">
                                                 <div className="flex items-start">
                                                     {showLogo && (
                                                         <img
                                                             src="/logo.png"
                                                             alt="Logo Depo"
-                                                            className="h-7 w-auto max-w-[36px] object-contain filter grayscale contrast-150 shrink-0 mr-2"
-                                                            style={{ maxHeight: '30px', maxWidth: '36px' }}
+                                                            className="h-8 w-auto max-w-[38px] object-contain filter grayscale contrast-150 shrink-0 mr-2"
+                                                            style={{ maxHeight: '32px', maxWidth: '38px' }}
                                                         />
                                                     )}
                                                     <div className="min-w-0">
-                                                        <div className="font-bold text-[13px] tracking-normal text-black leading-tight whitespace-nowrap">
+                                                        {/* Font Nama PT Depo sama besar dengan No. Container (~18px / 14.5pt) */}
+                                                        <div className="font-bold text-[18px] tracking-normal text-black leading-tight whitespace-nowrap">
                                                             PT. DEPO SURABAYA SEJAHTERA
                                                         </div>
-                                                        <div className="font-bold text-[10px] text-black leading-tight mt-0.5 whitespace-nowrap">
+                                                        <div className="font-bold text-[11px] text-black leading-tight mt-1 whitespace-nowrap">
                                                             Jl. Tanjung Sadari No. 90 (Tanjung Batu No. 1)
                                                         </div>
-                                                        <div className="font-bold text-[9.5px] text-black leading-tight whitespace-nowrap">
+                                                        <div className="font-bold text-[10.5px] text-black leading-tight mt-0.5 whitespace-nowrap">
                                                             Telp. 031-353 9484, 031-3539485 &nbsp; Fax. 031-3539482
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="mt-2 text-[12px] font-black text-black leading-tight uppercase">
-                                                    Customer : {customerName || '-'}
-                                                </div>
-                                                {shipperName && (
-                                                    <div className="text-[11px] font-black text-black leading-tight uppercase pl-16 mt-0.5">
-                                                        ({shipperName})
+                                                <div className="mt-1">
+                                                    <div className="text-[13px] font-bold text-black leading-tight uppercase">
+                                                        Customer : {customerName || '-'}
                                                     </div>
-                                                )}
+                                                    {shipperName && (
+                                                        <div className="text-[12px] font-bold text-black leading-tight uppercase pl-24 mt-0.5">
+                                                            ({shipperName})
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
 
-                                            {/* Meta Box Kanan Atas (4 Baris Bergaris Tipis) */}
-                                            <div className="w-[210px] sm:w-[220px] border-l border-black text-[11px] flex flex-col">
-                                                <div className="flex items-center border-b border-black h-[22px] px-2 font-bold">
-                                                    <div className="w-[72px] text-black">Tanggal</div>
+                                            {/* Meta Box Kanan Atas (4 Baris Bergaris Tipis, Total Tinggi 120px, Masing-masing 30px) */}
+                                            <div className="w-[230px] sm:w-[245px] border-l border-black text-[12px] flex flex-col justify-between shrink-0">
+                                                <div className="flex items-center border-b border-black h-[30px] px-2.5 font-bold">
+                                                    <div className="w-[85px] text-black">Tanggal</div>
                                                     <div className="w-3 text-center text-black">:</div>
                                                     <div className="flex-1 text-black truncate">{tanggal || '-'}</div>
                                                 </div>
-                                                <div className="flex items-center border-b border-black h-[22px] px-2 font-bold">
-                                                    <div className="w-[72px] text-black">Jam Keluar</div>
+                                                <div className="flex items-center border-b border-black h-[30px] px-2.5 font-bold">
+                                                    <div className="w-[85px] text-black">Jam Keluar</div>
                                                     <div className="w-3 text-center text-black">:</div>
                                                     <div className="flex-1 text-black truncate">{jamKeluar || '-'}</div>
                                                 </div>
-                                                <div className="flex items-center border-b border-black h-[22px] px-2 font-bold">
-                                                    <div className="w-[72px] text-black">No. Pol</div>
+                                                <div className="flex items-center border-b border-black h-[30px] px-2.5 font-bold">
+                                                    <div className="w-[85px] text-black">No. Pol</div>
                                                     <div className="w-3 text-center text-black">:</div>
                                                     <div className="flex-1 text-black truncate">{noPol || '-'}</div>
                                                 </div>
-                                                <div className="flex items-center h-[22px] px-2 font-bold">
-                                                    <div className="w-[72px] text-black">Tujuan</div>
+                                                <div className="flex items-center h-[30px] px-2.5 font-bold">
+                                                    <div className="w-[85px] text-black">Tujuan</div>
                                                     <div className="w-3 text-center text-black">:</div>
                                                     <div className="flex-1 text-black truncate">{tujuan || '-'}</div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        {/* Main Table Grid */}
-                                        <table className="w-full border-collapse border-b border-black text-black">
+                                        {/* Main Table Grid (Tinggi ~195px / 51mm) */}
+                                        <table className="w-full border-collapse border-b border-black text-black h-[195px]">
                                             <tbody>
-                                                <tr>
-                                                    <td className="w-[110px] sm:w-[120px] border-r border-b border-black p-1.5 font-bold text-center text-[11px] uppercase leading-tight align-middle">
+                                                <tr className="h-[50px]">
+                                                    <td className="w-[120px] sm:w-[130px] border-r border-b border-black p-1.5 font-bold text-center text-[12px] uppercase leading-tight align-middle">
                                                         NO<br />CONTAINER
                                                     </td>
-                                                    <td className="border-r border-b border-black p-1 font-black text-2xl sm:text-3xl text-center tracking-normal align-middle">
+                                                    {/* Font No. Container sama besar dengan Nama PT Depo (~18px / 14.5pt) */}
+                                                    <td className="border-r border-b border-black p-1 font-bold text-[18px] text-center tracking-wider align-middle">
                                                         {containerNumber || '-'}
                                                     </td>
-                                                    <td className="w-[180px] sm:w-[195px] border-b border-black p-1 text-center align-middle font-bold text-sm sm:text-base">
+                                                    <td className="w-[190px] sm:w-[205px] border-b border-black p-1 text-center align-middle font-bold text-sm sm:text-[15px]">
                                                         {ukuranCont}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="border-r border-b border-black p-1 font-bold text-center text-[11px] uppercase align-middle">
+                                                <tr className="h-[48px]">
+                                                    <td className="border-r border-b border-black p-1 font-bold text-center text-[12px] uppercase align-middle">
                                                         ISI
                                                     </td>
                                                     <td className="border-r border-b border-black p-1 px-2.5 font-bold text-xs sm:text-[13px] text-center align-middle">
                                                         {isi || 'FULL CONT(ON-CHASIS)'}
                                                     </td>
                                                     <td rowSpan={3} className="border-black p-2 text-center align-middle">
-                                                        <div className="text-base sm:text-lg font-black italic uppercase tracking-wide leading-tight">
+                                                        <div className="text-[16px] sm:text-[17px] font-bold italic uppercase tracking-wide leading-tight">
                                                             {layanan}
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="border-r border-b border-black p-1 font-bold text-center text-[11px] uppercase align-middle">
+                                                <tr className="h-[48px]">
+                                                    <td className="border-r border-b border-black p-1 font-bold text-center text-[12px] uppercase align-middle">
                                                         NO SEGEL
                                                     </td>
                                                     <td className="border-r border-b border-black p-1 px-2.5 font-bold text-xs sm:text-[13px] text-center align-middle">
                                                         {noSegel || '-'}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td className="border-r border-black p-1 font-bold text-center text-[11px] uppercase align-middle">
+                                                <tr className="h-[48px]">
+                                                    <td className="border-r border-black p-1 font-bold text-center text-[12px] uppercase align-middle">
                                                         KETERANGAN
                                                     </td>
                                                     <td className="border-r border-black p-1 px-2.5 font-bold text-xs sm:text-[13px] text-center align-middle">
@@ -1626,21 +1612,21 @@ export default function SuratJalanModal({ isOpen, onClose, data }: SuratJalanMod
                                             </tbody>
                                         </table>
 
-                                        {/* Footer Signatures Grid */}
-                                        <table className="w-full border-collapse h-[90px] text-black">
+                                        {/* Footer Signatures Grid (Tinggi ~170px / 45mm - Ruang Tanda Tangan Sangat Lapang) */}
+                                        <table className="w-full border-collapse h-[170px] text-black">
                                             <tbody>
                                                 <tr>
-                                                    <td className="w-[210px] sm:w-[230px] border-r border-black p-2 text-[10px] sm:text-[10.5px] font-bold leading-tight align-top">
-                                                        <u className="font-black">PERHATIAN :</u> Mohon container dicek terlebih dahulu, komplain setelah keluar depo bukan tanggung jawab kami.
+                                                    <td className="w-[220px] sm:w-[245px] border-r border-black p-3 text-[11px] font-bold leading-relaxed align-top">
+                                                        <u className="font-bold">PERHATIAN :</u> Mohon container dicek terlebih dahulu, komplain setelah keluar depo bukan tanggung jawab kami.
                                                     </td>
-                                                    <td className="w-[115px] sm:w-[125px] border-r border-black text-center p-1.5 align-top">
-                                                        <div className="font-bold text-[11px]">Diserahkan Oleh</div>
+                                                    <td className="w-[125px] sm:w-[135px] border-r border-black text-center p-2 align-top">
+                                                        <div className="font-bold text-[12px]">Diserahkan Oleh</div>
                                                     </td>
-                                                    <td className="w-[115px] sm:w-[125px] border-r border-black text-center p-1.5 align-top">
-                                                        <div className="font-bold text-[11px]">Sopir</div>
+                                                    <td className="w-[125px] sm:w-[135px] border-r border-black text-center p-2 align-top">
+                                                        <div className="font-bold text-[12px]">Sopir</div>
                                                     </td>
-                                                    <td className="text-center p-1.5 align-top">
-                                                        <div className="font-bold text-[11px]">{recipientTitle || 'Vessel Schedule'}</div>
+                                                    <td className="text-center p-2 align-top">
+                                                        <div className="font-bold text-[12px]">{recipientTitle || 'Vessel Schedule'}</div>
                                                     </td>
                                                 </tr>
                                             </tbody>
